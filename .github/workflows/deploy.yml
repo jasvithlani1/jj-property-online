@@ -31,5 +31,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./public_html/
-          # Optional: Delete files on server not in dist/
-          # delete-removed: true
+          # Hostinger-specific fixes:
+          protocol: ftp
+          port: 21
+          # Attempt to use Secure FTP (FTPS)
+          security: loose
+          timeout: 60000 # Increase timeout to 60 seconds
