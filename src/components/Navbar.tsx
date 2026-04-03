@@ -120,9 +120,9 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <button
             onClick={openCalendly}
-            className="hidden lg:block rounded-full px-6 py-2.5 text-sm bg-red-600 text-white hover:bg-red-500 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold"
+            className="hidden lg:block rounded-full px-6 py-2.5 text-sm bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold"
           >
-            Book Session (DEBUG)
+            Book Session
           </button>
 
           {/* Mobile Hamburger */}
