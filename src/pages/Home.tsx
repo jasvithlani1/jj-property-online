@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quote } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { openCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
 
 // ── Data ──────────────────────────────────────────────────────────────────────
@@ -127,7 +128,7 @@ export default function Home() {
         </p>
 
         <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
-          <button onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base bg-black text-white hover:scale-[1.03] transition-transform duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-black/10 cursor-pointer">
+          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-black text-white hover:scale-[1.03] transition-transform duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-black/10 cursor-pointer">
             Book Session
           </button>
           <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-black/10 bg-white/50 backdrop-blur-sm text-black hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
@@ -245,7 +246,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-serif mb-8 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
             Start your Sydney <br className="hidden md:block" />success story.
           </h2>
-          <button onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base bg-white text-black hover:scale-[1.03] transition-transform duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-black/20 cursor-pointer">
+          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-white text-black hover:scale-[1.03] transition-transform duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-black/20 cursor-pointer">
             Book 30m Strategy Session
           </button>
         </motion.div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Menu, X } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { openCalendly } from '../utils/calendly';
 
 const navLinks = [
   { name: 'Home', path: '/', isHash: false },
@@ -118,7 +119,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <button
-            onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+            onClick={openCalendly}
             className="hidden lg:block rounded-full px-6 py-2.5 text-sm bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold"
           >
             Book Session
@@ -159,8 +160,7 @@ export default function Navbar() {
               <button
                 onClick={() => {
                   setIsMenuOpen(false);
-                  navigate('/contact');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  openCalendly();
                 }}
                 className="mt-6 rounded-full w-full px-8 py-5 text-xl bg-sky-500 text-white font-black uppercase tracking-widest shadow-2xl hover:bg-sky-400 active:scale-95 transition-all"
               >
