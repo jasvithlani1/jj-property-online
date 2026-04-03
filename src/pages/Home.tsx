@@ -10,21 +10,21 @@ import { caseStudies } from '../data/caseStudies';
 const servicesPreview = [
   {
     title: 'First Home Buyers',
-    description: 'Navigate the Sydney market with a veteran ally. We unlock off-market access and secure your foundation.',
+    description: 'Navigate the Sydney market with an experienced partner. We unlock exclusive off-market opportunities and secure a strong foundation for your future.',
     icon: <HomeIcon className="w-6 h-6" />,
     color: 'bg-[#E6FBFF]',
     anchor: 'first-home-buyers',
   },
   {
     title: 'Property Investors',
-    description: 'Data-driven acquisition. We target high-yield, high-growth assets using 20+ years of local expertise.',
+    description: 'Strategic, data-driven acquisitions focused on high-yield and high-growth opportunities, backed by over 20 years of in-depth local market expertise.',
     icon: <TrendingUp className="w-6 h-6" />,
     color: 'bg-[#F0F7FF]',
     anchor: 'property-investors',
   },
   {
     title: 'SMSF Property',
-    description: 'Strategic superannuation growth through direct property investment. Secure your retirement with precision.',
+    description: 'Strategic superannuation growth through direct property investment. Build a secure retirement with precision.',
     icon: <ShieldCheck className="w-6 h-6" />,
     color: 'bg-[#F5F5F5]',
     anchor: 'smsf-property',
@@ -47,11 +47,16 @@ const row2Reviews = [...googleReviews].reverse();
 const row2Extended = [...row2Reviews, ...row2Reviews];
 
 const faqs = [
-  { question: 'Do you only buy properties in Sydney?', answer: 'While Sydney is our primary market and where our deepest off-market networks lie, we also represent clients in select high-growth regional corridors.' },
-  { question: 'What is your fee structure?', answer: 'We operate on a transparent fixed-fee or percentage basis depending on the complexity of the brief. This ensures our incentives are perfectly aligned with securing your property at the absolute best price.' },
-  { question: 'How long does the process take?', answer: 'On average, our clients secure a property within 30 to 45 days. However, our focus is on precision, not speed. We will never rush an acquisition if the data doesn\'t align with your goals.' },
-  { question: 'What makes off-market properties better?', answer: 'Off-market properties allow you to bypass the emotional bidding wars of public auctions. You get first access to premium assets and can negotiate rationally based on pure data.' },
-  { question: 'Can you help with SMSF investing?', answer: 'Yes. In fact, SMSF property acquisition is one of our core specialties. We work closely with your financial planner and accountant to ensure strict compliance and targeted growth.' },
+  { question: 'Do you only buy properties in Sydney?', answer: 'While Sydney remains our core focus, where we maintain strong off-market networks, we also assist clients in carefully selected high-growth regional locations that align with strategic investment objectives.' },
+  { question: 'What is your fee structure?', answer: 'Our fee structure is fully transparent and may be fixed or percentage-based, depending on the complexity of your brief. This ensures our interests are aligned with securing the best possible outcome for you.' },
+  { question: 'How long does the acquisition process take?', answer: 'Most clients secure a property within 30 to 45 days. However, our priority is strategic precision, not speed. Every acquisition is guided by data and aligned strictly with your long-term goals.' },
+  { question: 'What are the advantages of off-market properties?', answer: 'Off-market opportunities provide access to premium properties before public exposure, allowing you to avoid competitive bidding environments and negotiate strategically based on data-driven insights.' },
+  { question: 'Do you assist with SMSF property investments?', answer: 'Yes, SMSF property acquisition is a key area of expertise. We collaborate with your financial advisor and accountant to ensure compliance while focusing on long-term portfolio growth' },
+  { question: 'Do you help first home buyers navigate the market?', answer: 'Absolutely. We guide first home buyers through every stage, from strategy and property selection to negotiation, ensuring a confident and informed entry into the Sydney property market.' },
+  { question: 'How do you identify high-growth investment opportunities?', answer: 'We leverage advanced market analytics, local expertise, and off-market intelligence to identify properties with strong capital growth potential and sustainable rental yield.' },
+  { question: 'Can I book a consultation before committing?', answer: 'Yes, we offer a complimentary 30-minute strategy session to understand your goals, outline our approach, and determine how we can deliver value tailored to your needs.' },
+  { question: 'Do you negotiate on behalf of clients?', answer: 'Yes, negotiation is a core part of our service. We represent your interests exclusively, using market data and strategic positioning to secure properties at optimal value.' },
+  { question: 'What makes JJ Property Partner PTY LTD different from other buyers agents?', answer: 'We combine 20+ years of IT-driven analytical expertise with real estate acquisition strategy, offering a highly precise, data-led approach that consistently delivers superior outcomes for our clients.' }
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -88,7 +93,7 @@ export default function Home() {
 
     const handleEnded = () => {
       setOpacity(0);
-      setTimeout(() => { if (video) { video.currentTime = 0; video.play().catch(() => {}); } }, resetDelay);
+      setTimeout(() => { if (video) { video.currentTime = 0; video.play().catch(() => { }); } }, resetDelay);
     };
 
     video.addEventListener('ended', handleEnded);
@@ -157,8 +162,8 @@ export default function Home() {
             </h2>
 
             <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-              <p>Alex brings a rare dual perspective to the Sydney market. With <span className="text-black font-semibold">20+ years of deep technical IT systems</span> and property acquisition experience, he treats property search as a high-precision operation.</p>
-              <p>He doesn't just find houses — he architecturally dissects market value and leverages data-driven insights to secure assets before they hit public portals.</p>
+              <p>Alex, recognised as the <span className="text-black font-semibold">best real estate agent of Sydney</span>,brings 20+ years of IT and property expertise to<span className='text-black font-semibold'>J Property Partner PTY LTD, Parramatta.</span></p>
+              <p>As a licensed buyers agent, he uses data-driven strategies to secure high-value properties before public listings, helping First Home Buyers, Investors, and SMSF clients achieve long-term growth with confidence.</p>
             </div>
 
             <div className="mt-8 flex items-center gap-4">
@@ -194,7 +199,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Built for results.</h2>
-              <p className="text-muted text-lg font-sans max-w-lg">Tailored acquisition strategies for every stage of your property journey.</p>
+              <p className="text-muted text-lg font-sans max-w-lg">TCustomized acquisition strategies designed to support every stage of your property journey.</p>
             </div>
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
