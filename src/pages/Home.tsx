@@ -174,7 +174,7 @@ export default function Home() {
             </h2>
 
             <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-              <p>Alex, recognised as the <span className="text-black font-semibold">best real estate agent of Sydney</span>,brings 20+ years of IT and property expertise to<span className='text-black font-semibold'>JJ Property Partner PTY LTD, Parramatta.</span></p>
+              <p>Alex, recognised as the <span className="text-black font-semibold">best real estate agent of Sydney</span>, brings 20+ years of IT and property expertise to<span className='text-black font-semibold'> JJ Property Partner PTY LTD, Parramatta.</span></p>
               <p>As a licensed buyers agent, he uses data-driven strategies to secure high-value properties before public listings, helping First Home Buyers, Investors, and SMSF clients achieve long-term growth with confidence.</p>
             </div>
 
