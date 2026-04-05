@@ -108,9 +108,10 @@ export default function Home() {
       <motion.section
         id="home"
         style={{ scale: heroScale, opacity: heroOpacity }}
-        className="relative h-screen bg-white flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-36 md:pt-40"
+        className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-28 md:pt-32"
       >
-        <div className="absolute top-[300px] inset-x-0 bottom-0 -z-10">
+        {/* Video Background — full coverage */}
+        <div className="absolute inset-0 -z-20">
           <video
             ref={videoRef}
             src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
@@ -118,25 +119,30 @@ export default function Home() {
             className="h-full w-full object-cover transition-opacity duration-100"
             style={{ opacity }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
         </div>
 
-        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal leading-[0.95] tracking-[-2.46px] text-black font-serif">
-          The <span className="italic text-muted">advantage</span> for <br className="hidden md:block" />
-          <span className="italic text-muted">Sydney</span> Property Buyers.
+        {/* Dark overlay for text contrast */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/90 via-[#021f3a]/80 to-[#011122]/95 pointer-events-none" />
+
+        {/* Decorative accent glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+
+        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal leading-[0.95] tracking-[-2.46px] text-white font-serif drop-shadow-lg">
+          The <span className="italic text-sky-400">advantage</span> for <br className="hidden md:block" />
+          <span className="italic text-sky-400">Sydney</span> Property Buyers.
         </h1>
 
-        <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-muted font-sans">
+        <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
           Securing elite off-market access for home buyers and investors.
           With 20+ years of property and IT expertise, we navigate the noise
           to build your $5M+ portfolio with absolute precision.
         </p>
 
         <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
-          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-black text-white hover:scale-[1.03] transition-transform duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-black/10 cursor-pointer">
+          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
             Book Session
           </button>
-          <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-black/10 bg-white/50 backdrop-blur-sm text-black hover:bg-black hover:text-white transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
+          <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-sky-400/30 bg-white/10 backdrop-blur-sm text-white hover:bg-sky-500 hover:border-sky-500 transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
             Client Stories
           </button>
         </div>
