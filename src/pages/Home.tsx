@@ -76,6 +76,12 @@ export default function Home() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    // Force play immediately to fix the issue where mobile/safari browsers defer autoplay until scroll
+    video.play().catch(() => {
+      // Ignore autoplay prevention errors, it will play on interaction
+    });
+
     let frameId: number;
     const fadeDuration = 0.5;
     const resetDelay = 100;
@@ -115,7 +121,7 @@ export default function Home() {
           <video
             ref={videoRef}
             src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
-            autoPlay muted playsInline
+            autoPlay muted playsInline preload="auto"
             className="h-full w-full object-cover transition-opacity duration-100"
             style={{ opacity }}
           />
