@@ -1,13 +1,64 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
-import { caseStudies } from '../data/caseStudies';
+import { useState, useEffect } from 'react';
+import { client, urlFor } from '../lib/sanity';
+import SEO from '../components/SEO';
+
+interface SanityCaseStudy {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  resultText: string;
+  location: string;
+  shortQuote?: string;
+  mainImage: any;
+  tag?: string;
+  tagColor?: string;
+  stats: { label: string; value: string }[];
+}
 
 export default function CaseStudies() {
   const navigate = useNavigate();
+  const [studies, setStudies] = useState<SanityCaseStudy[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStudies = async () => {
+      try {
+        const query = `*[_type == "caseStudy"] | order(_createdAt desc) {
+          _id,
+          title,
+          slug,
+          resultText,
+          location,
+          shortQuote,
+          mainImage {
+            asset,
+            alt
+          },
+          tag,
+          tagColor,
+          stats
+        }`;
+        const data = await client.fetch(query);
+        setStudies(data);
+      } catch (error) {
+        console.error('Error fetching case studies:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchStudies();
+  }, []);
 
   return (
     <div className="w-full bg-white selection:bg-black/10 pt-32">
+      <SEO 
+        title="Client Success & Case Studies" 
+        description="Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach." 
+      />
 
       {/* Hero */}
       <section className="relative px-8 py-20 md:py-32 overflow-hidden bg-sky-50">
@@ -41,8 +92,8 @@ export default function CaseStudies() {
           >
             {[
               { value: '5.0', label: 'Google Rating', icon: <Star className="w-4 h-4 fill-amber-400 text-amber-400" /> },
-              { value: '$5M+', label: 'Total Assets Under Management' },
-              { value: '100%', label: 'Buyer-Side Only — Zero Conflicts' },
+              { value: '$5M+', label: 'Total Assets Managed' },
+              { value: '100%', label: 'Buyer-Side Only' },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white border border-black/5 shadow-sm">
                 {stat.icon && stat.icon}
@@ -57,69 +108,79 @@ export default function CaseStudies() {
       {/* Case Studies Grid */}
       <section className="py-20 md:py-32 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.article
-                key={study.id}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
-                onClick={() => { navigate(`/case-studies/${study.id}`); window.scrollTo(0, 0); }}
-                className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
-              >
-                {/* Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={study.image}
-                    alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          {isLoading ? (
+            <div className="flex justify-center py-24">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-400" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {studies.map((study, index) => (
+                <motion.article
+                  key={study._id}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
+                  onClick={() => { navigate(`/case-studies/${study.slug.current}`); window.scrollTo(0, 0); }}
+                  className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
+                >
+                  {/* Image */}
+                  <div className="relative h-64 overflow-hidden">
+                    {study.mainImage && (
+                      <img
+                        src={urlFor(study.mainImage).width(800).height(600).url()}
+                        alt={study.mainImage?.alt || study.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                  {/* Tag overlay */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor}`}>
-                      {study.tag}
-                    </span>
-                  </div>
+                    {/* Tag overlay */}
+                    <div className="absolute top-4 left-4">
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
+                        {study.tag || 'Acquisition'}
+                      </span>
+                    </div>
 
-                  {/* Result chip */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                    <div>
-                      <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
-                      <p className="text-white text-xl font-serif">{study.result}</p>
+                    {/* Result chip */}
+                    <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                      <div>
+                        <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
+                        <p className="text-white text-xl font-serif">{study.resultText}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Body */}
-                <div className="flex flex-col flex-1 p-8">
-                  <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-sky-800 transition-colors duration-300">
-                    {study.title}
-                  </h2>
-                  <p className="text-muted font-sans text-base leading-relaxed italic flex-1">
-                    "{study.shortQuote}"
-                  </p>
+                  {/* Body */}
+                  <div className="flex flex-col flex-1 p-8">
+                    <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-sky-800 transition-colors duration-300">
+                      {study.title}
+                    </h2>
+                    {study.shortQuote && (
+                      <p className="text-muted font-sans text-base leading-relaxed italic flex-1">
+                        "{study.shortQuote}"
+                      </p>
+                    )}
 
-                  {/* Stats Pills */}
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {study.stats.slice(0, 2).map((s) => (
-                      <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-black/5 text-xs font-bold uppercase tracking-widest text-black">
-                        {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
-                      </div>
-                    ))}
+                    {/* Stats Pills */}
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {study.stats?.slice(0, 2).map((s) => (
+                        <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-black/5 text-xs font-bold uppercase tracking-widest text-black">
+                          {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Read More */}
+                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black group/btn">
+                      <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
                   </div>
-
-                  {/* Read More */}
-                  <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black group/btn">
-                    <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -8,14 +8,14 @@ const services = [
     icon: <HomeIcon className="w-8 h-8" />,
     tag: 'Residential',
     title: 'First Home Buyers',
-    subtitle: 'Navigate Sydney with a veteran ally.',
-    description: 'Buying your first home in Sydney is one of the most significant — and stressful — financial decisions you will ever make. The city\'s market is fast, competitive, and heavily weighted toward experienced investors. We level the playing field.',
+    subtitle: 'Navigate Sydney with a seasoned professional.',
+    description: 'Purchasing your first home in Sydney is a major financial decision in a highly competitive market. As a trusted first home buyer agent Sydney, we provide structured, data-driven guidance to help you secure the right first home buyer property in Sydney CBD with confidence.',
     benefits: [
-      'Exclusive access to off-market and pre-market properties',
-      'Clear-headed strategic guidance, free of emotional bias',
-      'Expert negotiation to secure a fair price and terms',
-      'Full due diligence: structural, legal, zoning & strata review',
-      'End-to-end management from search to settlement',
+      'Access to exclusive off-market and pre-market opportunities',
+      'Strategic advice based on data, not emotion',
+      'Skilled negotiation for optimal price and terms',
+      'Comprehensive due diligence including legal and strata review',
+      'Complete end-to-end support from search to settlement'
     ],
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
     accent: 'sky',
@@ -28,13 +28,13 @@ const services = [
     tag: 'Investment',
     title: 'Property Investors',
     subtitle: 'Data-driven acquisition at scale.',
-    description: 'Building a high-performance investment portfolio requires more than luck — it demands methodical analysis, market timing, and access to assets before they are publicly priced. Our investor service is built around a single metric: your portfolio\'s net return.',
+    description: 'Building a high-performance investment portfolio requires disciplined analysis, precise market timing, and early access to assets before public pricing. Our investor service is focused on maximizing your portfolio\’s net return.',
     benefits: [
-      'Systematic suburb-level growth analysis and selection',
-      'Dual-income and granny flat opportunity identification',
-      'Off-market acquisition: bypass competition, preserve capital',
-      'Negotiation strategy tailored to the vendor\'s motivation',
-      'Staged multi-asset acquisition planning across 12–24 months',
+      'Strategic suburb-level growth analysis and selection',
+      'Identification of dual-income and value-add opportunities',
+      'Exclusive off-market acquisitions to reduce competition',
+      'Negotiation strategies aligned with vendor motivations',
+      'Structured multi-asset portfolio planning over 12 \- 24 months',
     ],
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
     accent: 'indigo',
@@ -46,14 +46,14 @@ const services = [
     icon: <ShieldCheck className="w-8 h-8" />,
     tag: 'SMSF',
     title: 'SMSF Property',
-    subtitle: 'Strategic superannuation growth through direct property.',
-    description: 'Self-managed superannuation property acquisition is one of the most powerful — and heavily regulated — investment strategies available. One wrong move can trigger significant ATO penalties. Our approach combines deep compliance knowledge with elite acquisition skills.',
+    subtitle: 'Strategic superannuation growth through direct property investment.',
+    description: 'SMSF property investment in Sydney requires precision, compliance, and strategic execution. As a trusted SMSF buyers agent in Parramatta NSW, we combine deep regulatory knowledge with high-level acquisition expertise to protect and grow your superannuation.',
     benefits: [
-      'Strict compliance with SMSF lending and sole purpose test rules',
-      'Coordination with your financial planner, accountant, and SMSF auditor',
-      'Focus on high-yield, low-maintenance assets ideal for super funds',
-      'Off-market access to dual-occupancy and commercial-residential hybrids',
-      'Long-term capital growth focus, aligned with your retirement horizon',
+      'Full compliance with SMSF lending regulations and sole purpose test ',
+      'Collaboration with your financial planner, accountant, and SMSF auditor ',
+      'Targeting high-yield, low-maintenance assets suited for super funds ',
+      'Access to off-market dual-occupancy and mixed-use opportunities',
+      'Long-term capital growth aligned with your retirement objectives',
     ],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
     accent: 'emerald',
@@ -88,7 +88,7 @@ export default function Services() {
               <span className="italic text-sky-300">precision.</span>
             </h1>
             <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
-              Every brief is unique. Every acquisition is engineered for maximum return. Explore the three pillars of the JJ Property Partner service model.
+              Every client brief is distinct, and each acquisition is strategically structured to maximise returns. Discover the three core pillars that define the JJ Property Partner service model.
             </p>
           </motion.div>
 

@@ -1,13 +1,60 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
-import { blogPosts } from '../data/blogs';
+import { useState, useEffect } from 'react';
+import { client, urlFor } from '../lib/sanity';
+import SEO from '../components/SEO';
+
+interface SanityPost {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  excerpt: string;
+  mainImage: any;
+  publishedAt: string;
+  categories: { title: string; color: string }[];
+  featured?: boolean;
+}
 
 export default function Blog() {
   const navigate = useNavigate();
+  const [posts, setPosts] = useState<SanityPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const query = `*[_type == "post"] | order(publishedAt desc) {
+          _id,
+          title,
+          slug,
+          excerpt,
+          mainImage {
+            asset,
+            alt
+          },
+          publishedAt,
+          featured,
+          "categories": categories[]->{ title, color }
+        }`;
+        const data = await client.fetch(query);
+        setPosts(data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <div className="w-full bg-white selection:bg-black/10 pt-32">
+      <SEO 
+        title="Market Intelligence & Blog" 
+        description="Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market." 
+      />
 
       {/* Hero */}
       <section className="relative px-8 py-16 md:py-24 bg-[#021f3a] text-white overflow-hidden">
@@ -35,7 +82,6 @@ export default function Blog() {
         </div>
       </section>
 
-
       {/* Category Filter Strip */}
       <section className="px-8 py-8">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-3">
@@ -53,59 +99,69 @@ export default function Blog() {
       {/* Post Grid */}
       <section className="px-8 pb-24 pt-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, i) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                onClick={() => { navigate(`/blog/${post.slug}`); window.scrollTo(0, 0); }}
-                className="group flex flex-col rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-xl hover:shadow-black/8 transition-all duration-500 cursor-pointer"
-              >
-                {/* Cover Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={post.coverImage}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${post.categoryColor}`}>
-                      {post.category}
-                    </span>
+          {isLoading ? (
+            <div className="flex justify-center py-24">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-400" />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {posts.map((post, i) => (
+                <motion.article
+                  key={post._id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.7, delay: i * 0.1 }}
+                  onClick={() => { navigate(`/blog/${post.slug.current}`); window.scrollTo(0, 0); }}
+                  className="group flex flex-col rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-xl hover:shadow-black/8 transition-all duration-500 cursor-pointer"
+                >
+                  {/* Cover Image */}
+                  <div className="relative h-56 overflow-hidden">
+                    {post.mainImage && (
+                      <img
+                        src={urlFor(post.mainImage).width(800).height(600).url()}
+                        alt={post.mainImage?.alt || post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute top-4 left-4">
+                      {post.categories?.[0] && (
+                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${post.categories[0].color || 'bg-sky-100 text-sky-800'}`}>
+                          {post.categories[0].title}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Body */}
-                <div className="flex flex-col flex-1 p-8">
-                  <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted mb-4">
-                    <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{post.date}</span>
-                    <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />{post.readTime}</span>
+                  {/* Body */}
+                  <div className="flex flex-col flex-1 p-8">
+                    <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted mb-4">
+                      <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                      <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
+                    </div>
+
+                    <h2 className="text-xl font-serif text-black leading-snug mb-4 group-hover:text-sky-800 transition-colors duration-300 flex-1">
+                      {post.title}
+                    </h2>
+
+                    <p className="text-muted font-sans text-sm leading-relaxed mb-8 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
+                      Read More
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-
-                  <h2 className="text-xl font-serif text-black leading-snug mb-4 group-hover:text-sky-800 transition-colors duration-300 flex-1">
-                    {post.title}
-                  </h2>
-
-                  <p className="text-muted font-sans text-sm leading-relaxed mb-8 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
-                    Read More
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Newsletter CTA */}
+      {/* Newsletter CTA omitted for brevity in diff, keep same as before */}
       <section className="px-8 py-32 bg-sky-50">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div

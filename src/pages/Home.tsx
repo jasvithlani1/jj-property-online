@@ -162,7 +162,7 @@ export default function Home() {
             </h2>
 
             <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-              <p>Alex, recognised as the <span className="text-black font-semibold">best real estate agent of Sydney</span>,brings 20+ years of IT and property expertise to<span className='text-black font-semibold'>J Property Partner PTY LTD, Parramatta.</span></p>
+              <p>Alex, recognised as the <span className="text-black font-semibold">best real estate agent of Sydney</span>,brings 20+ years of IT and property expertise to<span className='text-black font-semibold'>JJ Property Partner PTY LTD, Parramatta.</span></p>
               <p>As a licensed buyers agent, he uses data-driven strategies to secure high-value properties before public listings, helping First Home Buyers, Investors, and SMSF clients achieve long-term growth with confidence.</p>
             </div>
 
@@ -199,7 +199,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Built for results.</h2>
-              <p className="text-muted text-lg font-sans max-w-lg">TCustomized acquisition strategies designed to support every stage of your property journey.</p>
+              <p className="text-muted text-lg font-sans max-w-lg">Customized acquisition strategies designed to support every stage of your property journey.</p>
             </div>
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}

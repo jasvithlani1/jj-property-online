@@ -18,16 +18,21 @@ export default function Footer() {
 
           {/* Logo Column */}
           <div className="lg:col-span-1 flex flex-col">
-            <div className="font-serif text-2xl tracking-tight text-white leading-none uppercase mb-1">JJ PROPERTY</div>
-            <div className="font-serif text-sm tracking-[0.2em] text-sky-300 leading-none uppercase mb-6">PARTNER</div>
-            <p className="text-sm text-sky-200/60 font-sans leading-relaxed max-w-[180px]">
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.png" alt="JJ Logo" className="w-12 h-12 object-contain" />
+              <div className="flex flex-col">
+                <div className="font-serif text-xl tracking-tight text-white leading-none uppercase">JJ PROPERTY</div>
+                <div className="font-serif text-[10px] tracking-[0.2em] text-sky-300 leading-none uppercase mt-1">PARTNER</div>
+              </div>
+            </div>
+            <p className="text-sm text-sky-200/60 font-sans leading-relaxed">
               Sydney's premier buyer's agency. Precision. Discretion. Results.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold mb-6 font-sans">Quick Links</h4>
+            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Quick Links</h4>
             <ul className="space-y-3 font-sans text-sky-200">
               <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
               <li><a href="/about" className="hover:text-white transition-colors">About us</a></li>
@@ -40,7 +45,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold mb-6 font-sans">Services</h4>
+            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Services</h4>
             <ul className="space-y-3 font-sans text-sky-200">
               <li><a href="/services#first-home-buyers" className="hover:text-white transition-colors">First Home Buyers</a></li>
               <li><a href="/services#property-investors" className="hover:text-white transition-colors">Property Investors</a></li>
@@ -50,7 +55,7 @@ export default function Footer() {
 
           {/* Contact Us */}
           <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold mb-6 font-sans">Contact Us</h4>
+            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Contact Us</h4>
             <ul className="space-y-4 font-sans text-sky-200">
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-sky-400 shrink-0" />
@@ -65,7 +70,7 @@ export default function Footer() {
 
           {/* Subscribe + Socials */}
           <div className="lg:col-span-1 flex flex-col">
-            <h4 className="text-lg font-bold mb-6 font-sans">Subscribe</h4>
+            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Subscribe</h4>
             <div className="relative mb-8">
               <input
                 type="email"
@@ -77,15 +82,15 @@ export default function Footer() {
               </button>
             </div>
 
-            <div className="flex items-center gap-3 mt-auto flex-wrap">
+            <div className="flex items-center gap-2.5 mt-auto">
               {[
-                { icon: <FaInstagram className="w-4 h-4 text-white" />, label: 'Instagram' },
-                { icon: <FaFacebookF className="w-4 h-4 text-white" />, label: 'Facebook' },
-                { icon: <FaYoutube className="w-4 h-4 text-white" />, label: 'YouTube' },
-                { icon: <FaTwitter className="w-4 h-4 text-white" />, label: 'Twitter' },
-                { icon: <FaLinkedinIn className="w-4 h-4 text-white" />, label: 'LinkedIn' },
+                { icon: <FaInstagram className="w-3.5 h-3.5 text-white" />, label: 'Instagram' },
+                { icon: <FaFacebookF className="w-3.5 h-3.5 text-white" />, label: 'Facebook' },
+                { icon: <FaYoutube className="w-3.5 h-3.5 text-white" />, label: 'YouTube' },
+                { icon: <FaTwitter className="w-3.5 h-3.5 text-white" />, label: 'Twitter' },
+                { icon: <FaLinkedinIn className="w-3.5 h-3.5 text-white" />, label: 'LinkedIn' },
               ].map((s) => (
-                <a key={s.label} href="#" aria-label={s.label} className="w-9 h-9 rounded-full bg-sky-600 hover:bg-sky-500 flex items-center justify-center transition-colors">
+                <a key={s.label} href="#" aria-label={s.label} className="w-8 h-8 rounded-full bg-sky-600 hover:bg-sky-500 flex items-center justify-center transition-all hover:scale-110">
                   {s.icon}
                 </a>
               ))}
