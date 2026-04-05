@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUp, Mail, Phone } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
@@ -47,9 +48,9 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Services</h4>
             <ul className="space-y-3 font-sans text-sky-200">
-              <li><a href="/services#first-home-buyers" className="hover:text-white transition-colors">First Home Buyers</a></li>
-              <li><a href="/services#property-investors" className="hover:text-white transition-colors">Property Investors</a></li>
-              <li><a href="/services#smsf-property" className="hover:text-white transition-colors">SMSF Property</a></li>
+              <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors">First Home Buyers</Link></li>
+              <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors">Property Investors</Link></li>
+              <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors">SMSF Property</Link></li>
             </ul>
           </div>
 

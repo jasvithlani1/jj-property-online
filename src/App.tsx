@@ -9,6 +9,9 @@ import CaseStudies from './pages/CaseStudies';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
+import FirstHomeBuyers from './pages/FirstHomeBuyers';
+import PropertyInvestors from './pages/PropertyInvestors';
+import SmsfProperty from './pages/SmsfProperty';
 import FloatingContactButton from './components/FloatingContactButton';
 import './App.css';
 
@@ -22,6 +25,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/first-home-buyers" element={<FirstHomeBuyers />} />
+          <Route path="/services/property-investors" element={<PropertyInvestors />} />
+          <Route path="/services/smsf-property" element={<SmsfProperty />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
           <Route path="/blog" element={<Blog />} />
