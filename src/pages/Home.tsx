@@ -108,7 +108,7 @@ export default function Home() {
       <motion.section
         id="home"
         style={{ scale: heroScale, opacity: heroOpacity }}
-        className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-28 md:pt-32"
+        className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-28 md:pt-32 bg-[#011122]"
       >
         {/* Video Background — full coverage */}
         <div className="absolute inset-0 -z-20">
@@ -121,8 +121,8 @@ export default function Home() {
           />
         </div>
 
-        {/* Dark overlay for text contrast */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/90 via-[#021f3a]/80 to-[#011122]/95 pointer-events-none" />
+        {/* Dark overlay for text contrast — fully opaque to prevent white bleed */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122] via-[#021f3a]/90 to-[#011122] pointer-events-none" />
 
         {/* Decorative accent glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
