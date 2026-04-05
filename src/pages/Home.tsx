@@ -121,8 +121,8 @@ export default function Home() {
           />
         </div>
 
-        {/* Dark overlay for text contrast — fully opaque to prevent white bleed */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122] via-[#021f3a]/90 to-[#011122] pointer-events-none" />
+        {/* Dark overlay for text contrast */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/85 via-[#021f3a]/75 to-[#011122]/90 pointer-events-none" />
 
         {/* Decorative accent glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
