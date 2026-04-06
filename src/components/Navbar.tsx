@@ -10,6 +10,7 @@ const navLinks = [
   { name: 'About us', path: '/about', isHash: false },
   { name: 'Services', path: '/services', isHash: false },
   { name: 'Case Studies', path: '/case-studies', isHash: false },
+  { name: 'Reviews', path: '/#reviews', isHash: true },
   { name: 'Blog', path: '/blog', isHash: false },
   { name: 'Contact us', path: '/contact', isHash: false },
 ];
