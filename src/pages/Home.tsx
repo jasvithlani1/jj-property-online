@@ -193,7 +193,7 @@ export default function Home() {
       </motion.section>
 
       {/* ── About Alex Preview ───────────────────────────────────────────── */}
-      <section id="about" className="relative z-10 py-32 px-8 bg-gradient-to-b from-white to-sky-50">
+      <section id="about" className="relative z-10 py-16 md:py-32 px-8 bg-gradient-to-b from-white to-sky-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -244,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* ── Services Preview ─────────────────────────────────────────────── */}
-      <section id="services" className="relative z-10 py-32 bg-gradient-to-b from-sky-50 to-sky-100 px-8">
+      <section id="services" className="relative z-10 py-16 md:py-32 bg-gradient-to-b from-sky-50 to-sky-100 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -286,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA Section ──────────────────────────────────────────────────── */}
-      <section className="relative py-40 px-8 bg-black text-white text-center overflow-hidden flex flex-col items-center justify-center">
+      <section className="relative py-20 md:py-40 px-8 bg-black text-white text-center overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 pointer-events-none" />
@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-      <section id="case-studies" className="relative py-32 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
+      <section id="case-studies" className="relative py-16 md:py-32 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -363,8 +363,8 @@ export default function Home() {
       </section>
 
       {/* ── Google Reviews ───────────────────────────────────────────────── */}
-      <section id="reviews" className="relative py-32 bg-white overflow-hidden flex flex-col items-center">
-        <div className="mb-16 text-center">
+      <section id="reviews" className="relative py-16 md:py-32 bg-white overflow-hidden flex flex-col items-center">
+        <div className="mb-10 md:mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-4xl font-serif text-black font-bold">5.0</span>
             <div className="flex gap-1">
@@ -403,7 +403,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="relative py-32 bg-gradient-to-b from-white to-sky-100 px-8">
+      <section className="relative py-16 md:py-32 bg-gradient-to-b from-white to-sky-100 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
             <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
