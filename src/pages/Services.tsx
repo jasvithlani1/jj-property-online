@@ -199,13 +199,13 @@ export default function Services() {
               <span className="italic text-muted">Let's find out together.</span>
             </h2>
             <p className="text-xl text-muted font-sans mb-12 max-w-2xl mx-auto">
-              Book a free 30-minute discovery call. No pressure, no pitch — just a frank conversation about your property targets.
+              Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets.
             </p>
             <button
               onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
               className="group rounded-full px-14 py-5 bg-black text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
             >
-              Book a Free Discovery Call
+              Book a Free Call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
