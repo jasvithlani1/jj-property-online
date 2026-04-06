@@ -66,6 +66,8 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeftStart = useRef(0);
   const [opacity, setOpacity] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
@@ -82,6 +84,7 @@ export default function Home() {
 
     let rafId: number;
     const animateScroll = () => {
+      // Auto scroll only if not interacting
       if (!isReviewPaused && !isDragging.current) {
         el.scrollLeft += 1;
         const singleSetWidth = el.scrollWidth / 4; 
@@ -94,6 +97,23 @@ export default function Home() {
     rafId = requestAnimationFrame(animateScroll);
     return () => cancelAnimationFrame(rafId);
   }, [isReviewPaused]);
+
+  // Desktop Mouse Dragging handlers for Carousel
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    setIsReviewPaused(true);
+    if (!carouselRef.current) return;
+    startX.current = e.pageX - carouselRef.current.offsetLeft;
+    scrollLeftStart.current = carouselRef.current.scrollLeft;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current || !carouselRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // Drag speed multiplier
+    carouselRef.current.scrollLeft = scrollLeftStart.current - walk;
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -363,10 +383,11 @@ export default function Home() {
           ref={carouselRef}
           className="w-full flex gap-6 overflow-x-auto no-scrollbar snap-x px-8 pb-8 cursor-grab active:cursor-grabbing"
           onMouseEnter={() => setIsReviewPaused(true)}
-          onMouseLeave={() => setIsReviewPaused(false)}
+          onMouseLeave={() => { setIsReviewPaused(false); isDragging.current = false; }}
           onTouchStart={() => { setIsReviewPaused(true); isDragging.current = true; }}
           onTouchEnd={() => { setIsReviewPaused(false); isDragging.current = false; }}
-          onMouseDown={() => { setIsReviewPaused(true); isDragging.current = true; }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
           {[...googleReviews, ...googleReviews, ...googleReviews, ...googleReviews].map((review, i) => (
