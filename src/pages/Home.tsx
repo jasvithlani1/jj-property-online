@@ -64,6 +64,8 @@ const faqs = [
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
   const [opacity, setOpacity] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
@@ -72,6 +74,26 @@ export default function Home() {
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end end'] });
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+
+  // Carousel Auto-scroll effect
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+
+    let rafId: number;
+    const animateScroll = () => {
+      if (!isReviewPaused && !isDragging.current) {
+        el.scrollLeft += 1;
+        const singleSetWidth = el.scrollWidth / 4; 
+        if (el.scrollLeft >= singleSetWidth * 2) {
+          el.scrollLeft = singleSetWidth;
+        }
+      }
+      rafId = requestAnimationFrame(animateScroll);
+    };
+    rafId = requestAnimationFrame(animateScroll);
+    return () => cancelAnimationFrame(rafId);
+  }, [isReviewPaused]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -338,41 +360,28 @@ export default function Home() {
         </div>
 
         <div
-          className="w-[200vw] sm:w-[150vw] md:w-[120vw] flex flex-col gap-8 -ml-[10vw]"
+          ref={carouselRef}
+          className="w-full flex gap-6 overflow-x-auto no-scrollbar snap-x px-8 pb-8 cursor-grab active:cursor-grabbing"
           onMouseEnter={() => setIsReviewPaused(true)}
           onMouseLeave={() => setIsReviewPaused(false)}
+          onTouchStart={() => { setIsReviewPaused(true); isDragging.current = true; }}
+          onTouchEnd={() => { setIsReviewPaused(false); isDragging.current = false; }}
+          onMouseDown={() => { setIsReviewPaused(true); isDragging.current = true; }}
+          onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
-          <div className={`flex gap-6 min-w-max animate-marquee-reverse ${isReviewPaused ? 'pause-animation' : ''}`}>
-            {row1Reviews.map((review, i) => (
-              <div key={`r1-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0">
-                <div className="flex items-center gap-1 mb-4">{[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}</div>
-                <p className="text-black font-serif text-lg leading-relaxed italic mb-6">"{review.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans">{review.name.charAt(0)}</div>
-                  <div>
-                    <h4 className="text-sm font-bold text-black font-sans">{review.name}</h4>
-                    <span className="text-xs text-muted font-sans">{review.date}</span>
-                  </div>
+          {[...googleReviews, ...googleReviews, ...googleReviews, ...googleReviews].map((review, i) => (
+            <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 snap-center">
+              <div className="flex items-center gap-1 mb-4">{[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}</div>
+              <p className="text-black font-serif text-lg leading-relaxed italic mb-6">"{review.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
+                <div>
+                  <h4 className="text-sm font-bold text-black font-sans">{review.name}</h4>
+                  <span className="text-xs text-muted font-sans">{review.date}</span>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div className={`flex gap-6 min-w-max animate-marquee ${isReviewPaused ? 'pause-animation' : ''}`}>
-            {row2Extended.map((review, i) => (
-              <div key={`r2-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0">
-                <div className="flex items-center gap-1 mb-4">{[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}</div>
-                <p className="text-black font-serif text-lg leading-relaxed italic mb-6">"{review.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-700 font-bold font-sans">{review.name.charAt(0)}</div>
-                  <div>
-                    <h4 className="text-sm font-bold text-black font-sans">{review.name}</h4>
-                    <span className="text-xs text-muted font-sans">{review.date}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
