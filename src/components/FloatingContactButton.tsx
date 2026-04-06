@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, X, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Phone } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const PHONE_NUMBER = '+61400000000';
@@ -10,118 +9,48 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 );
 
 export default function FloatingContactButton() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const actions = [
-    {
-      id: 'whatsapp',
-      label: 'WhatsApp',
-      sublabel: 'Chat instantly',
-      icon: <FaWhatsapp className="w-5 h-5" />,
-      href: `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`,
-      bgClass: 'bg-[#25D366] hover:bg-[#1ebe5d]',
-      external: true,
-    },
-    {
-      id: 'call',
-      label: 'Call Alex',
-      sublabel: '+61 400 000 000',
-      icon: <Phone className="w-5 h-5" />,
-      href: `tel:${PHONE_NUMBER}`,
-      bgClass: 'bg-[#021f3a] hover:bg-[#033057]',
-      external: false,
-    },
-  ];
-
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-3">
-      {/* Action Buttons */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 16 }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="flex flex-col items-end gap-3"
-          >
-            {actions.map((action, i) => (
-              <motion.a
-                key={action.id}
-                href={action.href}
-                target={action.external ? '_blank' : undefined}
-                rel={action.external ? 'noopener noreferrer' : undefined}
-                initial={{ opacity: 0, x: 20, scale: 0.9 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                exit={{ opacity: 0, x: 20, scale: 0.9 }}
-                transition={{ duration: 0.2, delay: i * 0.06 }}
-                className={`flex items-center gap-3 pl-4 pr-5 py-3 rounded-full shadow-2xl text-white font-bold text-sm uppercase tracking-widest transition-all duration-300 group cursor-pointer ${action.bgClass}`}
-              >
-                {/* Icon */}
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 shrink-0 group-hover:scale-110 transition-transform">
-                  {action.icon}
-                </span>
-                {/* Label */}
-                <div className="flex flex-col leading-none">
-                  <span className="text-xs font-bold tracking-widest uppercase">{action.label}</span>
-                  <span className="text-[10px] font-normal opacity-70 normal-case tracking-normal mt-0.5">{action.sublabel}</span>
-                </div>
-              </motion.a>
-            ))}
-
-            {/* Subtle backdrop to guide focus */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 -z-10"
-              onClick={() => setIsOpen(false)}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Main FAB Toggle Button */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.08 }}
+    <>
+      {/* Call Button (Left Side) */}
+      <motion.a
+        href={`tel:${PHONE_NUMBER}`}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`relative w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-white transition-all duration-500 ${
-          isOpen
-            ? 'bg-neutral-800 shadow-neutral-900/40'
-            : 'bg-sky-500 shadow-sky-500/40'
-        }`}
-        aria-label="Contact options"
+        className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-[5000] flex items-center gap-3 pl-3 pr-4 md:pl-4 md:pr-5 py-2 md:py-3 rounded-full shadow-2xl text-white font-bold text-xs md:text-sm uppercase tracking-widest bg-[#021f3a] hover:bg-[#033057] transition-colors group"
       >
-        {/* Ping ring when closed */}
-        {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-sky-400 animate-ping opacity-30 pointer-events-none" />
-        )}
+        <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 shrink-0 group-hover:scale-110 transition-transform">
+          <Phone className="w-4 h-4 md:w-5 md:h-5" />
+        </span>
+        <div className="flex flex-col leading-none">
+          <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">Call Alex</span>
+          <span className="text-[9px] md:text-[10px] font-normal opacity-70 normal-case tracking-normal mt-0.5 whitespace-nowrap">+61 400 000 000</span>
+        </div>
+      </motion.a>
 
-        <AnimatePresence mode="wait">
-          {isOpen ? (
-            <motion.span
-              key="close"
-              initial={{ rotate: -90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: 90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <X className="w-6 h-6" />
-            </motion.span>
-          ) : (
-            <motion.span
-              key="open"
-              initial={{ rotate: 90, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              exit={{ rotate: -90, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <MessageCircle className="w-6 h-6" />
-            </motion.span>
-          )}
-        </AnimatePresence>
-      </motion.button>
-    </div>
+      {/* WhatsApp Button (Right Side) */}
+      <motion.a
+        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[5000] flex items-center gap-3 pl-3 pr-4 md:pl-4 md:pr-5 py-2 md:py-3 rounded-full shadow-2xl text-white font-bold text-xs md:text-sm uppercase tracking-widest bg-[#25D366] hover:bg-[#1ebe5d] transition-colors group"
+      >
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-30 pointer-events-none" />
+        <span className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/20 shrink-0 group-hover:scale-110 transition-transform">
+          <FaWhatsapp className="w-4 h-4 md:w-5 md:h-5" />
+        </span>
+        <div className="flex flex-col leading-none relative">
+          <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase">WhatsApp</span>
+          <span className="text-[9px] md:text-[10px] font-normal opacity-70 normal-case tracking-normal mt-0.5 whitespace-nowrap">Chat instantly</span>
+        </div>
+      </motion.a>
+    </>
   );
 }
