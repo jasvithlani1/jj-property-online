@@ -42,10 +42,6 @@ const googleReviews = [
   { name: 'Robert K.', text: 'Exceptional due diligence. He spotted structural issues we missed.', date: '2 years ago', rating: 5 },
 ];
 
-const row1Reviews = [...googleReviews, ...googleReviews];
-const row2Reviews = [...googleReviews].reverse();
-const row2Extended = [...row2Reviews, ...row2Reviews];
-
 const faqs = [
   { question: 'Do you only buy properties in Sydney?', answer: 'While Sydney remains our core focus, where we maintain strong off-market networks, we also assist clients in carefully selected high-growth regional locations that align with strategic investment objectives.' },
   { question: 'What is your fee structure?', answer: 'Our fee structure is fully transparent and may be fixed or percentage-based, depending on the complexity of your brief. This ensures our interests are aligned with securing the best possible outcome for you.' },
