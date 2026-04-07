@@ -22,8 +22,8 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img src="/logo.png" alt="JJ Logo" className="w-12 h-12 object-contain" />
               <div className="flex flex-col">
-                <div className="font-sans font-black text-xl tracking-widest text-white leading-none uppercase">JJ PROPERTY</div>
-                <div className="font-sans font-bold text-[10px] tracking-[0.3em] text-sky-300 leading-none uppercase mt-1.5 ml-0.5">PARTNER</div>
+                <div className="font-sans font-black text-lg tracking-widest text-white leading-none uppercase pr-4">JJ PROPERTY PARTNER</div>
+                <div className="font-sans font-bold text-[8px] md:text-[9px] tracking-[0.2em] text-sky-300 leading-none uppercase mt-1.5">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </div>
             <p className="text-sm text-sky-200/60 font-sans leading-relaxed">

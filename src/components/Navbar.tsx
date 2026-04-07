@@ -94,11 +94,11 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <div className="font-sans font-black text-xl md:text-2xl lg:text-3xl tracking-widest text-white leading-none uppercase">
-                JJ PROPERTY
+              <div className="font-sans font-black text-base md:text-lg lg:text-xl xl:text-2xl tracking-widest text-white leading-none uppercase">
+                JJ PROPERTY PARTNER
               </div>
-              <div className="font-sans font-bold text-xs md:text-sm lg:text-xl tracking-[0.3em] text-sky-300 leading-none uppercase mt-1">
-                PARTNER
+              <div className="font-sans font-bold text-[8px] md:text-[10px] lg:text-sm tracking-[0.2em] text-sky-300 leading-none uppercase mt-1.5">
+                YOUR PROPERTY, OUR PRIORITY
               </div>
             </div>
           </Link>
@@ -161,11 +161,11 @@ export default function Navbar() {
               {/* Drawer Header */}
               <div className="flex justify-between items-center mb-12">
                 <div className="flex flex-col">
-                  <div className="font-sans font-black text-xl tracking-widest text-white leading-none uppercase">
-                    JJ PROPERTY
+                  <div className="font-sans font-black text-sm sm:text-base md:text-lg tracking-widest text-white leading-none uppercase">
+                    JJ PROPERTY PARTNER
                   </div>
-                  <div className="font-sans font-bold text-[10px] tracking-[0.3em] text-sky-400 leading-none uppercase mt-1.5 ml-0.5">
-                    PARTNER
+                  <div className="font-sans font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.2em] text-sky-400 leading-none uppercase mt-1.5">
+                    YOUR PROPERTY, OUR PRIORITY
                   </div>
                 </div>
                 <button
