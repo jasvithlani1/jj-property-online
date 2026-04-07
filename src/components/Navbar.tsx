@@ -128,47 +128,81 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-white hover:text-sky-300 transition-colors z-[10001] relative"
+            onClick={() => setIsMenuOpen(true)}
+            className="lg:hidden p-2 text-white hover:text-sky-300 transition-colors z-[100] relative"
+            aria-label="Open Mobile Menu"
           >
-            {isMenuOpen ? <X className="w-10 h-10" /> : <Menu className="w-10 h-10" />}
+            <Menu className="w-8 h-8 md:w-10 md:h-10" />
           </button>
         </nav>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence mode="wait">
+      {/* Mobile Menu Drawer */}
+      <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[10000] bg-slate-950 flex flex-col justify-center items-center text-center p-10 lg:hidden"
-          >
-            <div className="flex flex-col gap-8 w-full max-w-sm">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.path}
-                  onClick={(e) => handleLinkClick(e, link.path, link.isHash)}
-                  className="text-4xl font-serif text-white hover:text-sky-400 transition-colors py-3 font-bold block"
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm lg:hidden"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 left-0 z-[9999] w-[80%] max-w-sm bg-[#011122] shadow-2xl flex flex-col p-8 lg:hidden border-r border-sky-900/50"
+            >
+              {/* Drawer Header */}
+              <div className="flex justify-between items-center mb-12">
+                <div className="flex flex-col">
+                  <div className="font-serif text-xl tracking-tight text-white leading-none uppercase">
+                    JJ PROPERTY
+                  </div>
+                  <div className="font-serif text-xs tracking-[0.2em] text-sky-400 leading-none uppercase mt-1">
+                    PARTNER
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 text-white/70 hover:text-white hover:bg-white/10 transition-colors rounded-full"
+                  aria-label="Close Mobile Menu"
                 >
-                  {link.name}
-                </a>
-              ))}
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
 
+              {/* Drawer Links */}
+              <div className="flex flex-col gap-6 flex-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.path}
+                    onClick={(e) => handleLinkClick(e, link.path, link.isHash)}
+                    className={`text-base uppercase tracking-widest font-bold transition-colors ${isActive(link.path) ? 'text-white pl-2 border-l-2 border-sky-400' : 'text-[#7dd3fc] hover:text-white'}`}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+
+              {/* Drawer Footer CTA */}
               <button
                 onClick={() => {
                   setIsMenuOpen(false);
                   openCalendly();
                 }}
-                className="mt-6 rounded-full w-full px-8 py-5 text-xl bg-sky-500 text-white font-black uppercase tracking-widest shadow-2xl hover:bg-sky-400 active:scale-95 transition-all"
+                className="mt-6 rounded-full w-full px-6 py-4 text-sm bg-sky-500 text-white font-bold uppercase tracking-widest shadow-2xl hover:bg-sky-400 active:scale-95 transition-all"
               >
                 Book Session
               </button>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
