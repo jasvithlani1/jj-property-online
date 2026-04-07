@@ -94,10 +94,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <div className="font-serif text-xl md:text-2xl lg:text-3xl tracking-tight text-white leading-none uppercase">
+              <div className="font-sans font-black text-xl md:text-2xl lg:text-3xl tracking-widest text-white leading-none uppercase">
                 JJ PROPERTY
               </div>
-              <div className="font-serif text-xs md:text-sm lg:text-xl tracking-[0.2em] text-sky-300 leading-none uppercase -mt-0.5">
+              <div className="font-sans font-bold text-xs md:text-sm lg:text-xl tracking-[0.3em] text-sky-300 leading-none uppercase mt-1">
                 PARTNER
               </div>
             </div>
@@ -161,10 +161,10 @@ export default function Navbar() {
               {/* Drawer Header */}
               <div className="flex justify-between items-center mb-12">
                 <div className="flex flex-col">
-                  <div className="font-serif text-xl tracking-tight text-white leading-none uppercase">
+                  <div className="font-sans font-black text-xl tracking-widest text-white leading-none uppercase">
                     JJ PROPERTY
                   </div>
-                  <div className="font-serif text-xs tracking-[0.2em] text-sky-400 leading-none uppercase mt-1">
+                  <div className="font-sans font-bold text-[10px] tracking-[0.3em] text-sky-400 leading-none uppercase mt-1.5 ml-0.5">
                     PARTNER
                   </div>
                 </div>
