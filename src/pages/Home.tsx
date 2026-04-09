@@ -178,7 +178,7 @@ export default function Home() {
       <motion.section
         id="home"
         style={{ scale: heroScale, opacity: heroOpacity }}
-        className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122]"
+        className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-20 lg:pt-32"
       >
         {/* Video Background — full coverage */}
         <div className="absolute inset-0 -z-20">
