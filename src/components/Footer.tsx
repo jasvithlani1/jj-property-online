@@ -60,11 +60,11 @@ export default function Footer() {
             <ul className="space-y-4 font-sans text-sky-200">
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-sky-400 shrink-0" />
-                <a href="mailto:alex@jjproperty.com.au" className="hover:text-white transition-colors text-sm break-all">alex@jjproperty.com.au</a>
+                <a href="mailto:jjpropertypartner@gmail.com" className="hover:text-white transition-colors text-sm break-all">jjpropertypartner@gmail.com</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-sky-400 shrink-0" />
-                <a href="tel:+61400000000" className="text-sm hover:text-white transition-colors">0400 000 000 (Alex)</a>
+                <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors">+61 481 334 458 (Alex)</a>
               </li>
             </ul>
           </div>

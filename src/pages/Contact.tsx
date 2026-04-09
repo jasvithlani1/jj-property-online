@@ -52,8 +52,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h4>
-                    <a href="mailto:alex@jjproperty.com.au" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
-                      alex@jjproperty.com.au
+                    <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
+                      jjpropertypartner@gmail.com
                     </a>
                   </div>
                 </div>
@@ -65,8 +65,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h4>
-                    <a href="tel:+61400000000" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
-                      +61 400 000 000
+                    <a href="tel:+61481334458" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
+                      +61 481 334 458
                     </a>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h4>
-                    <a href="https://wa.me/61400000000" target="_blank" rel="noopener noreferrer" className="text-xl font-serif text-black hover:text-[#25D366] transition-colors">
+                    <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-serif text-black hover:text-[#25D366] transition-colors">
                       Message us instantly
                     </a>
                   </div>
@@ -90,9 +90,9 @@ export default function Contact() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Service Territories</h4>
+                    <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Our Office</h4>
                     <p className="text-lg font-serif text-black leading-relaxed">
-                      Sydney CBD, Parramatta, <br />Northern Beaches, Eastern Suburbs
+                      U110, 6-10 Charles Street, <br />Parramatta, NSW 2150, Australia
                     </p>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export default function Contact() {
                     <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Phone</label>
                     <input
                       type="tel"
-                      placeholder="0400 000 000"
+                      placeholder="+61 481 334 458"
                       className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
                     />
                   </div>

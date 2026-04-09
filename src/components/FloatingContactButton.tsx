@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
-const PHONE_NUMBER = '+61400000000';
-const WHATSAPP_NUMBER = '61400000000'; // no + for wa.me
+const PHONE_NUMBER = '+61481334458';
+const WHATSAPP_NUMBER = '61481334458'; // no + for wa.me
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hi Alex, I found your website and I'd love to discuss a property acquisition. Can we connect?"
 );
