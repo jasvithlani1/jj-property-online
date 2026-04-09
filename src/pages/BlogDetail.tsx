@@ -130,7 +130,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-32">
+    <div className="w-full bg-white selection:bg-black/10 pt-20">
       <SEO 
         title={post.seo?.metaTitle || post.title} 
         description={post.seo?.metaDescription || post.excerpt}
@@ -139,7 +139,7 @@ export default function BlogDetail() {
       />
 
       {/* Back nav */}
-      <div className="px-8 pt-6">
+      <div className="px-8 pt-10">
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => { navigate('/blog'); window.scrollTo(0, 0); }}
@@ -152,7 +152,7 @@ export default function BlogDetail() {
       </div>
 
       {/* Article Header */}
-      <header className="px-8 pt-10 pb-12">
+      <header className="px-8 pt-12 pb-16">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -210,7 +210,7 @@ export default function BlogDetail() {
       </div>
 
       {/* Article Body + Sidebar */}
-      <div className="px-8 pb-24">
+      <div className="px-8 pb-32 md:pb-48">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Main Content */}
@@ -243,7 +243,7 @@ export default function BlogDetail() {
 
           {/* Sidebar */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-40 flex flex-col gap-8">
+            <div className="sticky top-32 flex flex-col gap-8">
               {/* CTA Card */}
               <div className="p-8 rounded-[2.5rem] bg-[#021f3a] text-white">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-4">Work With Us</p>

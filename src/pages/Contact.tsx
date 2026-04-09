@@ -4,9 +4,9 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   return (
-    <div className="w-full bg-sky-50 selection:bg-black/10 pt-32 pb-20">
+    <div className="w-full bg-sky-50 selection:bg-black/10 pt-20 pb-20">
       {/* Hero Section */}
-      <section className="relative px-8 pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden text-center z-10">
+      <section className="relative px-8 pt-20 pb-16 md:pt-32 md:pb-20 overflow-hidden text-center z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -27,7 +27,7 @@ export default function Contact() {
       </section>
 
       {/* Main Content: Contact Cards & Form */}
-      <section className="relative px-8 z-10">
+      <section className="relative px-8 pb-20 md:pb-40 z-10">
         <div className="max-w-7xl mx-auto bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
           {/* Subtle bg glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#E6FBFF] blur-[150px] rounded-full opacity-60 -z-10" />

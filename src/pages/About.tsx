@@ -3,10 +3,10 @@ import { ShieldCheck, Target, Search } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-32">
+    <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero Section */}
-      <section className="relative px-8 py-24 md:py-32 bg-sky-50 overflow-hidden">
+      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-sky-50 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -45,7 +45,7 @@ export default function About() {
       </section>
 
       {/* Profile Section */}
-      <section className="py-32 px-8">
+      <section className="py-20 md:py-40 px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -101,7 +101,7 @@ export default function About() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-32 px-8 bg-black text-white relative overflow-hidden">
+      <section className="py-20 md:py-40 px-8 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full opacity-10">
           <div className="absolute top-10 left-10 w-72 h-72 bg-sky-500 rounded-full blur-[100px]" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-[120px]" />

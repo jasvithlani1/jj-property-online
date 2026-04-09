@@ -32,9 +32,9 @@ export default function FirstHomeBuyers() {
         <meta name="description" content="Acquisition strategies designed for confident first home buyers in Sydney. Discover the three core pillars of the JJ Property Partner approach." />
       </Helmet>
       
-      <div className="w-full bg-white selection:bg-black/10 pt-32">
+      <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
-        <section className="relative px-8 py-20 md:py-32 bg-[#021f3a] text-white overflow-hidden">
+        <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
           {/* bg glow blobs */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -60,7 +60,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-20 md:py-32 px-6 md:px-8 bg-white">
+        <section className="py-20 md:py-40 px-6 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto flex flex-col gap-24 md:gap-32">
             {pillars.map((pillar, index) => (
               <motion.div
@@ -101,7 +101,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 px-8 bg-[#011122] text-white">
+        <section className="py-20 md:py-40 px-8 bg-[#011122] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

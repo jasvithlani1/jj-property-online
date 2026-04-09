@@ -54,14 +54,14 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-32">
+    <div className="w-full bg-white selection:bg-black/10 pt-20">
       <SEO 
         title="Client Success & Case Studies" 
         description="Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach." 
       />
 
       {/* Hero */}
-      <section className="relative px-8 py-20 md:py-32 overflow-hidden bg-sky-50">
+      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 overflow-hidden bg-sky-50">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#E6FBFF] blur-[150px] rounded-full opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -106,7 +106,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-20 md:py-32 px-8 bg-white">
+      <section className="py-20 md:py-40 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-24">
@@ -185,7 +185,7 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
+      <section className="py-20 md:py-40 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-400 rounded-full blur-[200px]" />
         </div>

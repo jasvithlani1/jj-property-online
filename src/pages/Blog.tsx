@@ -50,14 +50,14 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-32">
+    <div className="w-full bg-white selection:bg-black/10 pt-20">
       <SEO 
         title="Market Intelligence & Blog" 
         description="Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market." 
       />
 
       {/* Hero */}
-      <section className="relative px-8 py-16 md:py-24 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-sky-400 rounded-full blur-[200px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-600 rounded-full blur-[150px]" />
@@ -161,8 +161,8 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Newsletter CTA omitted for brevity in diff, keep same as before */}
-      <section className="px-8 py-32 bg-sky-50">
+      {/* Newsletter CTA */}
+      <section className="px-8 py-20 md:py-40 bg-sky-50">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

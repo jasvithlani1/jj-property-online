@@ -104,7 +104,7 @@ export default function CaseStudyDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-32">
+    <div className="w-full bg-white selection:bg-black/10 pt-20">
       <SEO 
         title={study.seo?.metaTitle || study.title} 
         description={study.seo?.metaDescription || study.outcome.substring(0, 160)}
@@ -112,7 +112,7 @@ export default function CaseStudyDetail() {
       />
 
       {/* Back navigation */}
-      <div className="px-8 pt-6 pb-0">
+      <div className="px-8 pt-10 pb-0">
         <div className="max-w-7xl mx-auto">
           <button
             onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
@@ -125,7 +125,7 @@ export default function CaseStudyDetail() {
       </div>
 
       {/* Hero Image */}
-      <section className="relative mt-8 mx-4 md:mx-8 h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden">
+      <section className="relative mt-10 mx-4 md:mx-8 h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden">
         {study.mainImage && (
           <img
             src={urlFor(study.mainImage).url()}
@@ -160,7 +160,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Stats Row */}
-      <section className="px-8 py-12">
+      <section className="px-8 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {study.stats?.map((stat, i) => (
@@ -180,7 +180,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Main Body */}
-      <section className="px-8 py-12 md:py-20">
+      <section className="px-8 py-16 md:py-32">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Content Column */}
@@ -266,7 +266,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Other Case Studies */}
-      <section className="px-8 py-20 bg-sky-50">
+      <section className="px-8 py-24 md:py-40 bg-sky-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-serif text-black mb-10">More Client Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

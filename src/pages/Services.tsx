@@ -66,10 +66,10 @@ export default function Services() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-32">
+    <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero */}
-      <section className="relative px-8 py-20 md:py-32 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
         {/* bg glow blobs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -115,7 +115,7 @@ export default function Services() {
       </section>
 
       {/* Service Sections */}
-      <section className="py-16 md:py-32 px-8 bg-white">
+      <section className="py-20 md:py-40 px-8 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col gap-24 md:gap-40">
           {services.map((service, index) => (
             <motion.div
@@ -186,7 +186,7 @@ export default function Services() {
       </section>
 
       {/* CTA Bar */}
-      <section className="py-32 px-8 bg-sky-50">
+      <section className="py-20 md:py-40 px-8 bg-sky-50">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
