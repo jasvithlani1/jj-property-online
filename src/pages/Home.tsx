@@ -4,6 +4,7 @@ import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quot
 import { Link, useNavigate } from 'react-router-dom';
 import { openCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
+import { client } from '../lib/sanity';
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -67,7 +68,32 @@ export default function Home() {
   const [opacity, setOpacity] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
+  const [reviews, setReviews] = useState<any[]>([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const query = `*[_type == "review"] | order(order asc, _createdAt desc) {
+          name,
+          text,
+          rating,
+          date,
+          authorImage
+        }`;
+        const data = await client.fetch(query);
+        if (data && data.length > 0) {
+          setReviews(data);
+        } else {
+          setReviews(googleReviews);
+        }
+      } catch (error) {
+        console.error('Error fetching reviews:', error);
+        setReviews(googleReviews);
+      }
+    };
+    fetchReviews();
+  }, []);
 
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end end'] });
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -386,12 +412,16 @@ export default function Home() {
           onMouseMove={handleMouseMove}
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
-          {[...googleReviews, ...googleReviews, ...googleReviews, ...googleReviews].map((review, i) => (
+          {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
             <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 snap-center">
               <div className="flex items-center gap-1 mb-4">{[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}</div>
               <p className="text-black font-serif text-lg leading-relaxed italic mb-6">"{review.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
+                {review.authorImage ? (
+                  <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
+                ) : (
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
+                )}
                 <div>
                   <h4 className="text-sm font-bold text-black font-sans">{review.name}</h4>
                   <span className="text-xs text-muted font-sans">{review.date}</span>
