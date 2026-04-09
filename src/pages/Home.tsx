@@ -413,10 +413,14 @@ export default function Home() {
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
           {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
-            <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 snap-center">
-              <div className="flex items-center gap-1 mb-4">{[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}</div>
-              <p className="text-black font-serif text-lg leading-relaxed italic mb-6">"{review.text}"</p>
-              <div className="flex items-center gap-3">
+            <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 snap-center flex flex-col h-[320px] md:h-[350px]">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+              </div>
+              <p className="text-black font-serif text-lg leading-relaxed italic mb-6 line-clamp-4 md:line-clamp-5 overflow-hidden">
+                "{review.text}"
+              </p>
+              <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
                 {review.authorImage ? (
                   <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
                 ) : (

@@ -36,4 +36,4 @@ jobs:
           port: 21
           # Attempt to use Secure FTP (FTPS)
           security: loose
-          timeout: 60000 # Increase timeout to 60 seconds
+          timeout: 90000 # Increase timeout to 90 seconds
