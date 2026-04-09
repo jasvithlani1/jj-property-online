@@ -34,7 +34,7 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
             {/* Left Column: Details */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -43,7 +43,7 @@ export default function Contact() {
               <h2 className="text-4xl font-serif text-black leading-tight mb-10">
                 Let's discuss your targets.
               </h2>
-              
+
               <div className="space-y-8">
                 {/* Email */}
                 <div className="flex items-start gap-5 group">
@@ -100,19 +100,19 @@ export default function Contact() {
             </motion.div>
 
             {/* Right Column: Form */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="bg-white/80 p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-xl shadow-sky-900/5 relative"
             >
               <h3 className="text-2xl font-serif text-black mb-8">Request a Call</h3>
-              
+
               <form className="space-y-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Full Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="E.g. John Doe"
                     className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
                   />
@@ -121,16 +121,16 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Email</label>
-                    <input 
-                      type="email" 
+                    <input
+                      type="email"
                       placeholder="john@example.com"
                       className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Phone</label>
-                    <input 
-                      type="tel" 
+                    <input
+                      type="tel"
                       placeholder="0400 000 000"
                       className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
                     />
@@ -149,7 +149,7 @@ export default function Contact() {
 
                 <div className="space-y-2">
                   <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Brief Overview (Optional)</label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     placeholder="Tell us a bit about what you are looking to achieve..."
                     className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans resize-none"
