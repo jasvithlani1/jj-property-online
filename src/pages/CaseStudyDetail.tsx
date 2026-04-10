@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, MapPin, Quote } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
+import { openCalendly } from '../utils/calendly';
 
 interface SanityCaseStudy {
   _id: string;
@@ -253,10 +254,10 @@ export default function CaseStudyDetail() {
                 <p className="text-sm text-muted mt-1">{study.location}</p>
 
                 <button
-                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                  onClick={openCalendly}
                   className="mt-10 w-full rounded-2xl px-6 py-5 bg-black text-white font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group"
                 >
-                  Start Your Brief
+                  Book 30m Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </motion.div>

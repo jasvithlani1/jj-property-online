@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Home as HomeIcon, TrendingUp, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { openCalendly } from '../utils/calendly';
 
 const services = [
   {
@@ -202,10 +203,10 @@ export default function Services() {
               Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets.
             </p>
             <button
-              onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+              onClick={openCalendly}
               className="group rounded-full px-14 py-5 bg-black text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
             >
-              Book a Free Call
+              Book 30m Strategy Session
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

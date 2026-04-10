@@ -5,7 +5,7 @@
 export const openCalendly = () => {
   if ((window as any).Calendly) {
     (window as any).Calendly.initPopupWidget({
-      url: 'https://calendly.com/jjpropertypartner/30min'
+      url: 'https://calendly.com/jjpropertyseo'
     });
   } else {
     console.error('Calendly script not loaded yet.');

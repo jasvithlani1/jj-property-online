@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
 import SEO from '../components/SEO';
+import { openCalendly } from '../utils/calendly';
 
 interface SanityPost {
   _id: string;
@@ -252,10 +253,10 @@ export default function BlogDetail() {
                   Our active roster is strictly limited. Book a confidential strategy call to discuss your brief.
                 </p>
                 <button
-                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                  onClick={openCalendly}
                   className="w-full rounded-2xl px-6 py-4 bg-sky-500 hover:bg-sky-400 text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
-                  Book Strategy Call
+                  Book 30m Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
