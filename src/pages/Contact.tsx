@@ -16,11 +16,23 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email) return;
+    console.log('Submission attempt started...', formData);
+
+    if (!import.meta.env.VITE_SANITY_WRITE_TOKEN) {
+      console.error('MISSING API TOKEN: Please add VITE_SANITY_WRITE_TOKEN to your GitHub Secrets or .env file.');
+      setStatus('error');
+      return;
+    }
+
+    if (!formData.name || !formData.email) {
+      console.warn('Validation failed: Name and Email are required.');
+      return;
+    }
 
     setStatus('submitting');
     try {
-      await writeClient.create({
+      console.log('Sending data to Sanity...');
+      const response = await writeClient.create({
         _type: 'inquiry',
         name: formData.name,
         email: formData.email,
@@ -30,10 +42,11 @@ export default function Contact() {
         submittedAt: new Date().toISOString(),
         status: 'new'
       });
+      console.log('Submission successful:', response._id);
       setStatus('success');
       setFormData({ name: '', email: '', phone: '', goal: '', message: '' });
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('Sanity creation error:', error);
       setStatus('error');
     }
   };
@@ -160,6 +173,12 @@ export default function Contact() {
               ) : (
                 <>
                   <h3 className="text-2xl font-serif text-black mb-8">Request a Call</h3>
+
+                  {!import.meta.env.VITE_SANITY_WRITE_TOKEN && (
+                    <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs font-sans leading-relaxed">
+                      <strong>Deployment Notice:</strong> Contact storage is pending final activation. Please ensure your GitHub Secrets are configured with the API token.
+                    </div>
+                  )}
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
