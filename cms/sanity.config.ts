@@ -7,6 +7,7 @@ import category from './schemas/category';
 import caseStudy from './schemas/caseStudy';
 import seo from './schemas/seo';
 import review from './schemas/review';
+import inquiry from './schemas/inquiry';
 
 export default defineConfig({
   name: 'default',
@@ -18,6 +19,6 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
 
   schema: {
-    types: [post, author, category, caseStudy, seo, review],
+    types: [post, author, category, caseStudy, seo, review, inquiry],
   },
 });

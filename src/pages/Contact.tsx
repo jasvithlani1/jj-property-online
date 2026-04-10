@@ -1,8 +1,43 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useState } from 'react';
+import { writeClient } from '../lib/sanity';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    goal: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) return;
+
+    setStatus('submitting');
+    try {
+      await writeClient.create({
+        _type: 'inquiry',
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        goal: formData.goal,
+        message: formData.message,
+        submittedAt: new Date().toISOString(),
+        status: 'new'
+      });
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', goal: '', message: '' });
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+    }
+  };
+
   return (
     <div className="w-full bg-sky-50 selection:bg-black/10 pt-20 pb-20">
       {/* Hero Section */}
@@ -106,66 +141,109 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="bg-white/80 p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-xl shadow-sky-900/5 relative"
             >
-              <h3 className="text-2xl font-serif text-black mb-8">Request a Call</h3>
-
-              <form className="space-y-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="E.g. John Doe"
-                    className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Email</label>
-                    <input
-                      type="email"
-                      placeholder="john@example.com"
-                      className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
-                    />
+              {status === 'success' ? (
+                <div className="py-20 text-center animate-fade-in">
+                  <div className="w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-600">
+                    <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Phone</label>
-                    <input
-                      type="tel"
-                      placeholder="+61 481 334 458"
-                      className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Purchasing Goal</label>
-                  <select defaultValue="" className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans appearance-none cursor-pointer">
-                    <option value="" disabled>Select an option...</option>
-                    <option value="owner-occupier">Owner Occupier / First Home</option>
-                    <option value="investment">Investment Property</option>
-                    <option value="smsf">SMSF Acquisition</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Brief Overview (Optional)</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us a bit about what you are looking to achieve..."
-                    className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans resize-none"
-                  ></textarea>
-                </div>
-
-                <div className="pt-4">
-                  <button type="button" className="w-full rounded-2xl px-6 py-5 text-sm bg-black text-white hover:scale-[1.02] transition-transform duration-300 uppercase tracking-widest font-bold shadow-xl shadow-black/10 flex items-center justify-center gap-2 group">
-                    Submit Inquiry
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <p className="text-center text-[10px] text-muted uppercase tracking-widest mt-4">
-                    Strictly confidential. No spam.
+                  <h3 className="text-3xl font-serif text-black mb-4">Inquiry Received</h3>
+                  <p className="text-muted text-lg mb-8 max-w-sm mx-auto">
+                    Thank you. We have received your details and will reach out for a confidential discussion shortly.
                   </p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="text-sm font-bold uppercase tracking-widest text-black underline underline-offset-4"
+                  >
+                    Send another inquiry
+                  </button>
                 </div>
-              </form>
+              ) : (
+                <>
+                  <h3 className="text-2xl font-serif text-black mb-8">Request a Call</h3>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Full Name</label>
+                      <input
+                        required
+                        type="text"
+                        placeholder="E.g. John Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Email</label>
+                        <input
+                          required
+                          type="email"
+                          placeholder="john@example.com"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Phone</label>
+                        <input
+                          type="tel"
+                          placeholder="+61 481 334 458"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Purchasing Goal</label>
+                      <select
+                        value={formData.goal}
+                        onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
+                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans appearance-none cursor-pointer"
+                      >
+                        <option value="" disabled>Select an option...</option>
+                        <option value="owner-occupier">Owner Occupier / First Home</option>
+                        <option value="investment">Investment Property</option>
+                        <option value="smsf">SMSF Acquisition</option>
+                      </select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Brief Overview (Optional)</label>
+                      <textarea
+                        rows={4}
+                        placeholder="Tell us a bit about what you are looking to achieve..."
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans resize-none"
+                      ></textarea>
+                    </div>
+
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        disabled={status === 'submitting'}
+                        className={`w-full rounded-2xl px-6 py-5 text-sm bg-black text-white hover:scale-[1.02] transition-transform duration-300 uppercase tracking-widest font-bold shadow-xl shadow-black/10 flex items-center justify-center gap-2 group ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      >
+                        {status === 'submitting' ? 'Sending...' : 'Submit Inquiry'}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                      {status === 'error' && (
+                        <p className="text-center text-xs text-red-500 mt-4 font-bold uppercase tracking-widest">
+                          Network error. Please try again or email us directly.
+                        </p>
+                      )}
+                      <p className="text-center text-[10px] text-muted uppercase tracking-widest mt-4">
+                        Strictly confidential. No spam.
+                      </p>
+                    </div>
+                  </form>
+                </>
+              )}
             </motion.div>
 
           </div>
