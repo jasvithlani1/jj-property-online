@@ -87,7 +87,7 @@ export default function About() {
             className="md:w-5/12 aspect-[3/4] relative rounded-[3rem] overflow-hidden"
           >
             <img
-              src="/alex.png"
+              src="/alex.jpg"
               alt="Alex - Principal"
               className="absolute inset-0 w-full h-full object-cover filter grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             />
