@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quote } from 'lucide-react';
+import { FaHome, FaChartLine, FaShieldAlt, FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { openCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
@@ -14,6 +15,7 @@ const servicesPreview = [
     title: 'First Home Buyer',
     description: 'You will be confidently and decisively guided through your property market journey by clarifying your budget and strategy, and helping you to locate the proper property anywhere in Australia.',
     icon: <HomeIcon className="w-6 h-6" />,
+    solidIcon: <FaHome className="w-6 h-6" />,
     color: 'bg-[#E6FBFF]',
     anchor: 'first-home-buyers',
   },
@@ -21,6 +23,7 @@ const servicesPreview = [
     title: 'Property Investors',
     description: 'Utilising a data-driven approach, you will identify properties with the most growth potential and rental return through multiple Australian property markets.',
     icon: <TrendingUp className="w-6 h-6" />,
+    solidIcon: <FaChartLine className="w-6 h-6" />,
     color: 'bg-[#F0F7FF]',
     anchor: 'property-investors',
   },
@@ -28,6 +31,7 @@ const servicesPreview = [
     title: 'SMSF Property',
     description: 'Strategic property acquisitions for superannuation funds require accurate acquisition and compliance processes. Each property is invested towards meeting your long-term retirement objectives.',
     icon: <ShieldCheck className="w-6 h-6" />,
+    solidIcon: <FaShieldAlt className="w-6 h-6" />,
     color: 'bg-[#F5F5F5]',
     anchor: 'smsf-property',
   },
@@ -352,15 +356,43 @@ export default function Home() {
             {servicesPreview.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial="initial"
+                whileHover="hover"
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
                 onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
-                className="p-10 rounded-3xl bg-white border border-black/5 flex flex-col items-start text-left hover:shadow-2xl hover:shadow-black/5 transition-all duration-300 cursor-pointer"
+                className="p-10 rounded-3xl bg-white border border-black/5 flex flex-col items-start text-left hover:shadow-2xl hover:shadow-black/5 transition-all duration-300 cursor-pointer group"
               >
-                <div className={`p-4 rounded-2xl ${service.color} mb-8 text-black`}>{service.icon}</div>
+                <div className={`p-4 rounded-2xl ${service.color} mb-8 text-black group-hover:bg-black group-hover:text-white transition-colors duration-500`}>
+                  <motion.div
+                    variants={{
+                      initial: { rotateY: 0 },
+                      hover: { rotateY: 180 }
+                    }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-6 h-6"
+                  >
+                    <motion.div
+                      className="absolute inset-0 h-full w-full flex items-center justify-center"
+                      variants={{
+                        initial: { opacity: 1, visibility: 'visible' },
+                        hover: { opacity: 0, visibility: 'hidden' }
+                      }}
+                    >
+                      {service.icon}
+                    </motion.div>
+                    <motion.div
+                      className="absolute inset-0 h-full w-full flex items-center justify-center"
+                      style={{ rotateY: 180 }}
+                      variants={{
+                        initial: { opacity: 0, visibility: 'hidden' },
+                        hover: { opacity: 1, visibility: 'visible' }
+                      }}
+                    >
+                      {service.solidIcon}
+                    </motion.div>
+                  </motion.div>
+                </div>
                 <h3 className="text-2xl font-serif text-black mb-4">{service.title}</h3>
                 <p className="text-muted leading-relaxed font-sans mb-8 flex-1">{service.description}</p>
                 <span className="mt-auto flex items-center gap-2 group/btn text-sm font-bold uppercase tracking-widest text-black">

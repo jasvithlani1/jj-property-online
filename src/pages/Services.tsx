@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Home as HomeIcon, TrendingUp, ShieldCheck, CheckCircle2, Plus } from 'lucide-react';
+import { FaHome, FaChartLine, FaShieldAlt } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
 
@@ -48,6 +49,7 @@ const services = [
   {
     id: 'first-home-buyers',
     icon: <HomeIcon className="w-8 h-8" />,
+    solidIcon: <FaHome className="w-8 h-8" />,
     tag: 'Residential',
     title: 'First-Time Buyers',
     subtitle: 'Confident and decisive market entry.',
@@ -67,6 +69,7 @@ const services = [
   {
     id: 'property-investors',
     icon: <TrendingUp className="w-8 h-8" />,
+    solidIcon: <FaChartLine className="w-8 h-8" />,
     tag: 'Investment',
     title: 'Property Investors',
     subtitle: 'Massive data-driven acquisitions.',
@@ -86,6 +89,7 @@ const services = [
   {
     id: 'smsf-property',
     icon: <ShieldCheck className="w-8 h-8" />,
+    solidIcon: <FaShieldAlt className="w-8 h-8" />,
     tag: 'SMSF',
     title: 'Growing SMSF through Property Investments',
     subtitle: 'Compliance-first wealth building.',
@@ -170,8 +174,8 @@ export default function Services() {
             <motion.div
               key={service.id}
               id={service.id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="initial"
+              whileHover="hover"
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.9, ease: 'easeOut' }}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
@@ -179,8 +183,35 @@ export default function Services() {
               {/* Text Side */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-4 rounded-2xl ${service.iconClass}`}>
-                    {service.icon}
+                  <div className={`p-4 rounded-2xl ${service.iconClass} group-hover:bg-black group-hover:text-white transition-colors duration-500`}>
+                    <motion.div
+                      variants={{
+                        initial: { rotateY: 0 },
+                        hover: { rotateY: 180 }
+                      }}
+                      transition={{ duration: 0.6 }}
+                      className="relative w-8 h-8"
+                    >
+                      <motion.div
+                        className="absolute inset-0 h-full w-full flex items-center justify-center"
+                        variants={{
+                          initial: { opacity: 1, visibility: 'visible' },
+                          hover: { opacity: 0, visibility: 'hidden' }
+                        }}
+                      >
+                        {service.icon}
+                      </motion.div>
+                      <motion.div
+                        className="absolute inset-0 h-full w-full flex items-center justify-center"
+                        style={{ rotateY: 180 }}
+                        variants={{
+                          initial: { opacity: 0, visibility: 'hidden' },
+                          hover: { opacity: 1, visibility: 'visible' }
+                        }}
+                      >
+                        {service.solidIcon}
+                      </motion.div>
+                    </motion.div>
                   </div>
                   <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${service.accentClass} border`}>
                     {service.tag}
