@@ -250,7 +250,7 @@ export default function Home() {
         {/* Decorative accent glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-        <h1 className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl max-w-7xl font-normal leading-[0.95] tracking-[-2.46px] text-white font-serif drop-shadow-lg">
+        <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
           The <span className="italic text-sky-400">advantage</span> for <br className="hidden md:block" />
           <span className="italic text-sky-400">Sydney</span> Property Buyers.
         </h1>

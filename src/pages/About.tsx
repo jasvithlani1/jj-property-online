@@ -23,11 +23,11 @@ export default function About() {
             <div className="inline-block px-4 py-1.5 rounded-full border border-black/5 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-6 shadow-sm">
               Our Vision
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif text-black leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-black leading-[1.1] mb-6">
               Strategic Vision. <br />
               <span className="italic text-muted line-through decoration-1 decoration-sky-300">Tactical</span> Execution.
             </h1>
-            <p className="text-xl text-muted font-sans max-w-lg leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted font-sans max-w-lg leading-relaxed">
               We bring clinical precision to Sydney's emotional property market. Your portfolio's growth is our single, uncompromising metric.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="flex-1 space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black leading-tight">
               A Smarter Way to Buy Property, <br />
               <span className="italic text-muted">Built on Experience and Trust.</span>
             </h2>

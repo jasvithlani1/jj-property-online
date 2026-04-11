@@ -118,7 +118,7 @@ export default function Services() {
       <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero */}
-      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-6 py-16 sm:px-8 sm:py-24 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
         {/* bg glow blobs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -132,7 +132,7 @@ export default function Services() {
             <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-300 mb-8">
               Our Services
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-8 max-w-4xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-4xl">
               Acquisition strategies built for{' '}
               <span className="italic text-sky-300">precision.</span>
             </h1>
@@ -221,7 +221,7 @@ export default function Services() {
               </div>
 
               {/* Image Side */}
-              <div className={`relative h-[480px] md:h-[560px] rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+              <div className={`relative h-[320px] sm:h-[480px] md:h-[560px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <img
                   src={service.image}
                   alt={service.title}
@@ -252,7 +252,7 @@ export default function Services() {
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                 >
-                  <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                  <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
                     {faq.question}
                   </span>
                   <motion.div
@@ -260,7 +260,7 @@ export default function Services() {
                     transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                     className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
                   >
-                    <Plus className="w-5 h-5" />
+                    <Plus className="w-5 h-5 md:w-6 md:h-6" />
                   </motion.div>
                 </button>
                 <AnimatePresence>
@@ -291,16 +291,16 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-serif text-black mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-black mb-8 leading-tight">
               Not sure which service fits? <br />
               <span className="italic text-muted">Let's find out together.</span>
             </h2>
-            <p className="text-xl text-muted font-sans mb-12 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-muted font-sans mb-12 max-w-2xl mx-auto">
               Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets.
             </p>
             <button
               onClick={openCalendly}
-              className="group rounded-full px-14 py-5 bg-black text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
+              className="group rounded-full px-8 sm:px-14 py-4 sm:py-5 bg-black text-white text-sm sm:text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
             >
               Book 30m Strategy Session
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

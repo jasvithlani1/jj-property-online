@@ -69,7 +69,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 md:gap-5">
-            <span className="hidden lg:inline text-sky-400/50 mr-2">Connect with us:</span>
+            <span className="hidden xl:inline text-sky-400/50 mr-2">Connect with us:</span>
             <div className="flex items-center gap-4">
               <a href="https://www.instagram.com/jjpropertypartner/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:text-white transition-all transform hover:scale-110"><FaFacebookF className="w-3.5 h-3.5" /></a>
@@ -93,24 +93,24 @@ export default function Navbar() {
                 transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
               />
             </div>
-            <div className="flex flex-col">
-              <div className="font-sans font-black text-base md:text-lg lg:text-xl xl:text-2xl tracking-widest text-white leading-none uppercase">
+            <div className="flex flex-col min-w-0">
+              <div className="font-sans font-black text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-widest text-white leading-none uppercase truncate">
                 JJ PROPERTY PARTNER
               </div>
-              <div className="font-sans font-bold text-[8px] md:text-[10px] lg:text-sm tracking-[0.2em] text-sky-300 leading-none uppercase mt-1.5">
+              <div className="font-sans font-bold text-[6px] sm:text-[8px] md:text-[9px] lg:text-xs tracking-[0.2em] text-sky-300 leading-none uppercase mt-1.5 truncate">
                 YOUR PROPERTY, OUR PRIORITY
               </div>
             </div>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.path}
                 onClick={(e) => handleLinkClick(e, link.path, link.isHash)}
-                className={`group relative text-sm font-medium transition-colors hover:text-white cursor-pointer ${isActive(link.path) ? 'text-white' : 'text-[#7dd3fc]'}`}
+                className={`group relative text-[13px] 2xl:text-sm font-medium transition-colors hover:text-white cursor-pointer whitespace-nowrap ${isActive(link.path) ? 'text-white' : 'text-[#7dd3fc]'}`}
               >
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-sky-400 transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -121,7 +121,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <button
             onClick={openCalendly}
-            className="hidden lg:block rounded-full px-6 py-2.5 text-sm bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold"
+            className="hidden xl:block rounded-full px-6 py-2.5 text-sm bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold whitespace-nowrap"
           >
             Book Session
           </button>
@@ -129,7 +129,7 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="lg:hidden p-2 text-white hover:text-sky-300 transition-colors z-[100] relative"
+            className="xl:hidden p-2 text-white hover:text-sky-300 transition-colors z-[100] relative"
             aria-label="Open Mobile Menu"
           >
             <Menu className="w-8 h-8 md:w-10 md:h-10" />
@@ -142,22 +142,22 @@ export default function Navbar() {
         {isMenuOpen && (
           <>
             {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm lg:hidden"
-              onClick={() => setIsMenuOpen(false)}
-            />
-            {/* Drawer */}
-            <motion.div
-              initial={{ x: '-100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 left-0 z-[9999] w-[80%] max-w-sm bg-[#011122] shadow-2xl flex flex-col p-8 lg:hidden border-r border-sky-900/50"
-            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm xl:hidden"
+                onClick={() => setIsMenuOpen(false)}
+              />
+              {/* Drawer */}
+              <motion.div
+                initial={{ x: '-100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '-100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="fixed inset-y-0 left-0 z-[9999] w-[80%] max-w-sm bg-[#011122] shadow-2xl flex flex-col p-8 xl:hidden border-r border-sky-900/50"
+              >
               {/* Drawer Header */}
               <div className="flex justify-between items-center mb-12">
                 <div className="flex flex-col">

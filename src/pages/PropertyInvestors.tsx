@@ -79,7 +79,7 @@ export default function PropertyInvestors() {
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
-        <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
+        <section className="relative px-6 py-16 sm:px-8 sm:py-24 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
           {/* bg glow blobs */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -93,7 +93,7 @@ export default function PropertyInvestors() {
               <div className="inline-block px-4 py-1.5 rounded-full border border-sky-400/30 bg-white/5 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-300 mb-8 backdrop-blur-sm">
                 Property Investors
               </div>
-              <h1 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
                 Acquisition strategies engineered for{' '}
                 <span className="italic text-sky-400">investment precision.</span>
               </h1>
@@ -163,7 +163,7 @@ export default function PropertyInvestors() {
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
                       {faq.question}
                     </span>
                     <motion.div
@@ -202,7 +202,7 @@ export default function PropertyInvestors() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
                 Ready to scale your <span className="italic text-sky-400">portfolio</span>?
               </h2>
               <p className="text-lg text-sky-100/80 font-sans mb-12">
