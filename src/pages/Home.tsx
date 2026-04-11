@@ -147,7 +147,6 @@ export default function Home() {
         
         // Seamless reset
         const totalWidth = el.scrollWidth;
-        const visibleWidth = el.offsetWidth;
         // We have 4 sets, so each set is totalWidth / 4
         const singleSetWidth = totalWidth / 4;
         
