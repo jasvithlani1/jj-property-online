@@ -263,7 +263,7 @@ export default function Home() {
             transition={{ duration: 1, ease: 'easeOut' }}
             className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
           >
-            <img src="/alex.jpg" alt="Alex - Principal Agent" className="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-700" />
+            <img src="/alex.jpg" alt="Alex - Principal Agent" className="w-full h-full object-cover object-top grayscale-[0.2] hover:scale-105 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </motion.div>
         </div>

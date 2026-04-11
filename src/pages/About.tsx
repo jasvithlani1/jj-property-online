@@ -89,7 +89,7 @@ export default function About() {
             <img
               src="/alex.jpg"
               alt="Alex - Principal"
-              className="absolute inset-0 w-full h-full object-cover filter grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              className="absolute inset-0 w-full h-full object-cover object-top filter grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 text-white">
