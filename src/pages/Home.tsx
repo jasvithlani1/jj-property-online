@@ -171,6 +171,19 @@ export default function Home() {
     return () => { video.removeEventListener('ended', handleEnded); cancelAnimationFrame(frameId); };
   }, []);
 
+  useEffect(() => {
+    // Re-initialize Calendly widget if it exists
+    if ((window as any).Calendly) {
+      (window as any).Calendly.initBadgeWidget({
+        url: 'https://calendly.com/jjpropertyseo',
+        text: 'Book session',
+        color: '#000000',
+        textColor: '#ffffff',
+        branding: true
+      });
+    }
+  }, []);
+
   return (
     <div ref={containerRef} className="relative w-full bg-sky-50 selection:bg-black/10">
 
@@ -483,6 +496,46 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ── Calendly Booking ────────────────────────────────────────────────── */}
+      <section className="relative py-24 bg-white px-8 overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-block px-4 py-1.5 rounded-full border border-black/5 bg-sky-50 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-600 mb-6 shadow-sm">
+              Take the next step
+            </div>
+            <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+              Book your <span className="italic text-muted">strategy session.</span>
+            </h2>
+            <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
+              Select a date and time that suits you for a confidential 30-minute consultation with Alex.
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
+        >
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/jjpropertyseo?hide_landing_page_details=1&hide_gdpr_banner=1" 
+            style={{ minWidth: '320px', height: '700px' }} 
+          />
+        </motion.div>
+
+        {/* Decorative background elements */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[120px] opacity-60 -z-10" />
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E6FBFF] rounded-full blur-[100px] opacity-40 -z-10" />
+      </section>
+
     </div>
   );
 }
