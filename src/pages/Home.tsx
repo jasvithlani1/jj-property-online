@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quote } from 'lucide-react';
-import { FaHome, FaChartLine, FaShieldAlt, FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaHome, FaChartLine, FaShieldAlt } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { openCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
