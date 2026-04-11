@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from 'react';
@@ -52,7 +53,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="w-full bg-sky-50 selection:bg-black/10 pt-20 pb-20">
+    <>
+      <Helmet>
+        <title>Contact JJ Property Partner | Australia Buyers Agent</title>
+        <meta name="description" content="Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today." />
+      </Helmet>
+
+      <div className="w-full bg-sky-50 selection:bg-black/10 pt-20 pb-20">
       {/* Hero Section */}
       <section className="relative px-8 pt-20 pb-16 md:pt-32 md:pb-20 overflow-hidden text-center z-10">
         <motion.div

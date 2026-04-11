@@ -73,8 +73,8 @@ export default function FirstHomeBuyers() {
   return (
     <>
       <Helmet>
-        <title>First Home Buyers | JJ Property Partner</title>
-        <meta name="description" content="Acquisition strategies designed for confident first home buyers in Sydney. Discover the three core pillars of the JJ Property Partner approach." />
+        <title>First Home Buyers Australia | JJ Property Partner</title>
+        <meta name="description" content="Expert guidance for first home buyers across Australia. JJ Property Partner offers strategy, off-market access and end-to-end support for confident buying." />
       </Helmet>
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">

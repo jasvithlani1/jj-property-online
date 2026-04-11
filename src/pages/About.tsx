@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { ShieldCheck, Target, Search } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-20">
+    <>
+      <Helmet>
+        <title>About Us - Trusted Buyers Agent Australia | JJ Property Partner</title>
+        <meta name="description" content="JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies." />
+      </Helmet>
+      
+      <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero Section */}
       <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-24 bg-sky-50 overflow-hidden">

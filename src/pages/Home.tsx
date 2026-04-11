@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quote } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { openCalendly } from '../utils/calendly';
@@ -218,7 +219,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full bg-sky-50 selection:bg-black/10">
+    <>
+      <Helmet>
+        <title>Buyers Agent Parramatta AU | JJ Property Partner</title>
+        <meta name="description" content="JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition." />
+      </Helmet>
+
+      <div ref={containerRef} className="relative w-full bg-sky-50 selection:bg-black/10">
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <motion.section

@@ -73,8 +73,8 @@ export default function SmsfProperty() {
   return (
     <>
       <Helmet>
-        <title>SMSF Property | JJ Property Partner</title>
-        <meta name="description" content="Acquisition strategies built for compliant precision. Explore our approach to strategic SMSF property investment." />
+        <title>SMSF Property Investment Experts AU| JJ Property Partner</title>
+        <meta name="description" content="Build wealth with SMSF property investment. JJ Property Partner delivers compliant strategies, off-market deals & long-term growth across Australia." />
       </Helmet>
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">

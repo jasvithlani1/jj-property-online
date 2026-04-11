@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Home as HomeIcon, TrendingUp, ShieldCheck, CheckCircle2, Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
@@ -108,7 +109,13 @@ export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-20">
+    <>
+      <Helmet>
+        <title>Property Buying Services Australia | JJ Property Partner</title>
+        <meta name="description" content="JJ Property Partner offers expert buyer’s agent services across Australia for first home buyers, property investors, and SMSF property strategies with data-driven results." />
+      </Helmet>
+
+      <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero */}
       <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">

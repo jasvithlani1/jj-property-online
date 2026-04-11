@@ -73,8 +73,8 @@ export default function PropertyInvestors() {
   return (
     <>
       <Helmet>
-        <title>Property Investors | JJ Property Partner</title>
-        <meta name="description" content="Acquisition strategies engineered for investment precision. Explore our approach to strategic portfolio growth." />
+        <title>Property Investors Strategy AU | JJ Property Partner</title>
+        <meta name="description" content="Grow your portfolio with expert buyer agents at JJ Property Partner. Data-driven property investment, off-market deals, and nationwide opportunities." />
       </Helmet>
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">
