@@ -1,29 +1,74 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
+import { useState } from 'react';
+
+const investorFaqs = [
+  {
+    question: 'What type of service can you offer me to invest in properties?',
+    answer: 'JJ Property Partner will offer comprehensive buyer agents services including investment strategies, property searching, due diligence, negotiation and acquisition of properties in order for you to develop a strong portfolio of properties.'
+  },
+  {
+    question: 'Can you help me locate the right places to invest on properties?',
+    answer: 'We assist in acquiring properties in various regions of Australia taking into account the data, potential and compatibility to the goals of our clients.'
+  },
+  {
+    question: 'How can I be sure that my property investment will be profitable?',
+    answer: 'Our way of working entails analysis of suburb potential based on growth potential, rent, infrastructural developments, among other economic factors.'
+  },
+  {
+    question: 'Is there any room to purchase off market property investments?',
+    answer: 'Yes, through our vast networks within the real estate industry, we are able to offer our clients off market properties.'
+  },
+  {
+    question: 'What type of property investments can you offer me?',
+    answer: 'Our specialty lies in high yield property investments, which include dual income properties, add value properties, among others.'
+  },
+  {
+    question: 'What can I do to reduce the risk involved with investing?',
+    answer: 'By conducting an extensive analysis of risks using different methods including financial and market analysis to make sure that the investment made suits your risk profile.'
+  },
+  {
+    question: 'Can you help negotiate property purchase?',
+    answer: 'Yes, we employ strategic negotiation techniques using our market knowledge and understanding of vendors to help negotiate favorable terms of sale.'
+  },
+  {
+    question: 'Do you work with my financial advisor or mortgage broker?',
+    answer: 'Yes, we work in close coordination with your financial advisors, mortgage brokers, and accountants to align your property investments with your financial goals.'
+  },
+  {
+    question: 'Does your service cater to both inexperienced and experienced investors?',
+    answer: 'Yes, our services are geared towards supporting new as well as experienced investors who wish to grow their investment portfolios.'
+  },
+  {
+    question: 'What makes property investors select JJ Property Partner?',
+    answer: 'Our real estate expertise combined with market intelligence and data-driven strategy helps you acquire profitable properties throughout Australia.'
+  }
+];
 
 const pillars = [
   {
-    title: 'Strategic Portfolio Growth',
-    description: 'Building a high-performance property portfolio requires structured planning and disciplined execution. At JJ Property Partner PTY LTD, Parramatta, NSW, we operate as a trusted property buyers agent Sydney, focusing on data-driven acquisitions aligned with your financial goals.\n\nThrough suburb-level growth analysis, rental yield assessment, and long-term capital forecasting, we identify assets positioned for sustainable performance, ensuring each acquisition strengthens portfolio scalability, minimises risk, and delivers consistent returns.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900', // Investor vibe
+    title: 'Property Investors - Strategic Portfolio Growth',
+    description: 'It is essential to take a structured and research-based approach to ensure that you build a profitable property portfolio. JJ Property Partner acts as a buyers\' agent that works in the best interest of the buyer and helps its clients acquire properties that meet their financial objectives.\n\nOur approach is built on comprehensive research, including suburb growth analysis, rental yield evaluation, and future capital growth potential. Every acquisition is guided by your individual investment strategy, ensuring a balance between wealth creation and risk management.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Advanced Acquisition Intelligence',
-    description: 'As a specialist investment buyers agent Sydney, JJ Property Partner PTY LTD, Parramatta, NSW leverages advanced market intelligence to uncover opportunities before they reach public platforms.\n\nWe identify dual-income properties, granny flat potential, and high-yield assets within emerging growth corridors. Through strong off-market networks, we help clients bypass competition, preserve capital, and secure properties based on verified data insights rather than emotional market pressures.',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900', // Charts/Growth vibe
+    description: 'JJ Property Partner leverages advanced market intelligence, industry networks, and analytical frameworks to identify high-performing investment opportunities across Australia before they reach the broader market.\n\nOur strategy focuses on identifying high-growth and high-yield opportunities, including dual-income properties, granny flats, and properties located in emerging growth corridors. Through access to off-market opportunities nationwide, we help clients secure premium assets while avoiding unnecessary competition.',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Precision Negotiation and Execution',
-    description: 'Execution is where true value is realised. At JJ Property Partner PTY LTD, Parramatta, NSW, we implement tailored negotiation strategies based on vendor motivation, market conditions, and asset positioning. Acting solely in your interest, we maintain strict financial discipline while securing properties at optimal value.\n\nFrom acquisition strategy and due diligence to final settlement, our process is designed to maximise net portfolio returns and support long-term wealth creation.',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900', // House/Asset vibe
+    description: 'The success of an investment depends not just on the choice of the investment, but also on the accuracy with which it is carried out. JJ Property Partner makes use of customized negotiation tactics depending on seller motivation, market forces, and asset positioning.\n\nOur company takes care of the entire process of purchasing, from strategy formulation and identification of properties for purchase to negotiations and settlement, making the entire investment process seamless and result-oriented.',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
 export default function PropertyInvestors() {
   const navigate = useNavigate();
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <>
@@ -97,6 +142,54 @@ export default function PropertyInvestors() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-4">
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+                Frequently <br />
+                <span className="italic text-muted">asked questions.</span>
+              </h2>
+              <p className="text-muted text-lg font-sans">Strategic insights for property investors building nationwide portfolios.</p>
+            </div>
+
+            <div className="lg:col-span-8 flex flex-col gap-4">
+              {investorFaqs.map((faq, index) => (
+                <div key={index} className="border-b border-black/10 pb-2">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                  >
+                    <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                      {faq.question}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: openFaq === index ? 45 : 0 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                    >
+                      <Plus className="w-5 h-5" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

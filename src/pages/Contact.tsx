@@ -65,11 +65,11 @@ export default function Contact() {
             Contact Us
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
-            Direct access to Sydney's <br className="hidden md:block" />
-            <span className="italic text-muted line-through decoration-1 decoration-sky-300">public</span> elite market.
+            Exclusive access to Australia’s <br className="hidden md:block" />
+            <span className="italic text-muted">premium</span> property market.
           </h1>
-          <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
-            Reach out for a confidential strategy deep-dive. We strictly limit our active client roster to ensure uncompromised precision for every acquisition.
+          <p className="text-xl text-muted font-sans max-w-3xl mx-auto leading-relaxed">
+            Contact us for a private and comprehensive strategy consultation. We act on behalf of buyers all over Australia, providing customized strategies for acquiring the right property through thorough market research and expert negotiations.
           </p>
         </motion.div>
       </section>

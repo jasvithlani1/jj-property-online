@@ -1,29 +1,74 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
+import { useState } from 'react';
+
+const smsfFaqs = [
+  {
+    question: 'What Is SMSF Property Investment and How Does It Work?',
+    answer: 'SMSF property investment is the process of buying real estate via the self-managed super fund in accordance with the relevant regulations. JJ Property Partner will be glad to guide you through the process.'
+  },
+  {
+    question: 'How Can JJ Property Partner Help with SMSF Property Investments?',
+    answer: 'JJ Property Partner offers an all-inclusive package that includes strategy development, SMSF compliance advice, property search and analysis, negotiations, and settlement.'
+  },
+  {
+    question: 'What areas do you cover for SMSF property investment?',
+    answer: 'We help you find and invest in quality properties in various parts of Australia, depending on the market\'s growth and demand potential.'
+  },
+  {
+    question: 'How do you ensure SMSF compliance during property purchase?',
+    answer: 'Our team collaborates with your financial and legal experts to meet all requirements, including those related to lending laws, legalities, and the sole-purpose test.'
+  },
+  {
+    question: 'What type of properties is appropriate for SMSF investment?',
+    answer: 'We recommend high-quality, low-risk properties like dual occupancy homes, mixed-use developments, and rentals with solid demand.'
+  },
+  {
+    question: 'Are off-market SMSF investments available through your services?',
+    answer: 'Yes, we use our networks to find off-market deals that give you an edge over other investors.'
+  },
+  {
+    question: 'How do you reduce the risks associated with SMSF property investment?',
+    answer: 'We make sure your risk management strategy is considered through compliance and market data analysis.'
+  },
+  {
+    question: 'Are your services coordinated with my financial and legal advisors?',
+    answer: 'Absolutely! Our team coordinates your efforts with your accountant, financial advisor, real estate broker, and SMSF audit professional.'
+  },
+  {
+    question: 'What do you provide in your SMSF property investment service?',
+    answer: 'We provide strategy development, property research, analysis, compliance assistance, negotiations, and settlement services.'
+  },
+  {
+    question: 'Why should SMSF investors consider JJ Property Partner?',
+    answer: 'JJ Property Partner assists investors in developing a strong portfolio by employing a data-driven strategy, national market exposure, and a buyer-centric approach aimed at generating wealth.'
+  }
+];
 
 const pillars = [
   {
-    title: 'Strategic SMSF Property Investment',
-    description: 'SMSF property investment Sydney requires precision, compliance, and long-term vision. At JJ Property Partner PTY LTD, Parramatta, NSW, we guide clients through complex regulations while delivering strategic acquisition outcomes. As a trusted SMSF buyers agent Sydney NSW, we combine deep compliance expertise with data-driven property selection.\n\nOur approach ensures every investment aligns with superannuation objectives, minimises risk, and supports consistent retirement-focused growth in both Sydney and SMSF property investment Melbourne markets.',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900', // SMSF/Corporate vibe
+    title: 'Strategically Structuring an SMSF Property Investment',
+    description: 'An SMSF property investment involves careful planning, an understanding of financial regulations, and a long-term strategic vision. JJ Property Partner offers expert services in navigating through complex financial laws in Australia while helping you acquire the best properties possible.\n\nAs professional buyers’ agents who solely represent the buyer’s best interest, we utilize our knowledge of financial regulation and thorough research to identify lucrative investment properties all over Australia.',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Compliance-Driven Acquisition & Market Access',
-    description: 'SMSF investments demand strict adherence to regulatory frameworks. At JJ Property Partner PTY LTD, Parramatta, NSW, we coordinate closely with your financial planner, accountant, and SMSF auditor to ensure full compliance with lending rules and the sole purpose test.\n\nAs an experienced SMSF property buyers agent Gold Coast and Sydney specialist, we identify high-yield, low-maintenance assets while providing access to off-market opportunities, including dual-occupancy and mixed-use properties tailored for superannuation strategies.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900', // Compliance/Meetings vibe
+    title: 'SMSF-Compliant Purchase & Off-Market Properties',
+    description: 'SMSF acquisitions involve many regulations that must be followed. At JJ Property Partner, we work together with your financial adviser, accountant, and SMSF auditor to make sure all of your purchases are compliant with lending policies and sole purpose tests.\n\nWe excel at sourcing investment properties in Australia that can deliver great yields and minimal costs along with offering you access to exclusive off-market properties.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Long-Term Growth & End-to-End Execution',
-    description: 'Successful SMSF property investment is built on long-term strategy and disciplined execution. At JJ Property Partner PTY LTD, Parramatta, NSW, we focus on securing assets that deliver sustainable capital growth aligned with your retirement horizon.\n\nFrom initial strategy and suburb analysis to negotiation and settlement, our end-to-end service ensures seamless execution. We prioritise performance, compliance, and portfolio strength, helping clients build resilient SMSF property portfolios across Sydney, Melbourne, and key growth regions.',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900', // Solid property asset vibe
+    title: 'The Long-Term Vision of Growth and End-to-End Execution',
+    description: 'The success of any SMSF property investment relies heavily on long-term vision and planning. JJ Property Partner specializes in acquiring those assets that will generate continuous capital growth and meet your retirement needs.\n\nFrom start to finish, our services include strategy development, suburb analysis, negotiations, and settlements. JJ Property Partner helps its clients to develop SMSF property portfolio in a way that ensures strong performance and strategic diversification throughout Australia.',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
 export default function SmsfProperty() {
   const navigate = useNavigate();
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <>
@@ -97,6 +142,54 @@ export default function SmsfProperty() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-4">
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+                Frequently <br />
+                <span className="italic text-muted">asked questions.</span>
+              </h2>
+              <p className="text-muted text-lg font-sans">Essential answers for managing your property investments within an SMSF.</p>
+            </div>
+
+            <div className="lg:col-span-8 flex flex-col gap-4">
+              {smsfFaqs.map((faq, index) => (
+                <div key={index} className="border-b border-black/10 pb-2">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                  >
+                    <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                      {faq.question}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: openFaq === index ? 45 : 0 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                    >
+                      <Plus className="w-5 h-5" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -10,22 +10,22 @@ import { client } from '../lib/sanity';
 
 const servicesPreview = [
   {
-    title: 'First Home Buyers',
-    description: 'Navigate the Sydney market with an experienced partner. We unlock exclusive off-market opportunities and secure a strong foundation for your future.',
+    title: 'First Home Buyer',
+    description: 'You will be confidently and decisively guided through your property market journey by clarifying your budget and strategy, and helping you to locate the proper property anywhere in Australia.',
     icon: <HomeIcon className="w-6 h-6" />,
     color: 'bg-[#E6FBFF]',
     anchor: 'first-home-buyers',
   },
   {
     title: 'Property Investors',
-    description: 'Strategic, data-driven acquisitions focused on high-yield and high-growth opportunities, backed by over 20 years of in-depth local market expertise.',
+    description: 'Utilising a data-driven approach, you will identify properties with the most growth potential and rental return through multiple Australian property markets.',
     icon: <TrendingUp className="w-6 h-6" />,
     color: 'bg-[#F0F7FF]',
     anchor: 'property-investors',
   },
   {
     title: 'SMSF Property',
-    description: 'Strategic superannuation growth through direct property investment. Build a secure retirement with precision.',
+    description: 'Strategic property acquisitions for superannuation funds require accurate acquisition and compliance processes. Each property is invested towards meeting your long-term retirement objectives.',
     icon: <ShieldCheck className="w-6 h-6" />,
     color: 'bg-[#F5F5F5]',
     anchor: 'smsf-property',
@@ -44,16 +44,46 @@ const googleReviews = [
 ];
 
 const faqs = [
-  { question: 'Do you only buy properties in Sydney?', answer: 'While Sydney remains our core focus, where we maintain strong off-market networks, we also assist clients in carefully selected high-growth regional locations that align with strategic investment objectives.' },
-  { question: 'What is your fee structure?', answer: 'Our fee structure is fully transparent and may be fixed or percentage-based, depending on the complexity of your brief. This ensures our interests are aligned with securing the best possible outcome for you.' },
-  { question: 'How long does the acquisition process take?', answer: 'Most clients secure a property within 30 to 45 days. However, our priority is strategic precision, not speed. Every acquisition is guided by data and aligned strictly with your long-term goals.' },
-  { question: 'What are the advantages of off-market properties?', answer: 'Off-market opportunities provide access to premium properties before public exposure, allowing you to avoid competitive bidding environments and negotiate strategically based on data-driven insights.' },
-  { question: 'Do you assist with SMSF property investments?', answer: 'Yes, SMSF property acquisition is a key area of expertise. We collaborate with your financial advisor and accountant to ensure compliance while focusing on long-term portfolio growth' },
-  { question: 'Do you help first home buyers navigate the market?', answer: 'Absolutely. We guide first home buyers through every stage, from strategy and property selection to negotiation, ensuring a confident and informed entry into the Sydney property market.' },
-  { question: 'How do you identify high-growth investment opportunities?', answer: 'We leverage advanced market analytics, local expertise, and off-market intelligence to identify properties with strong capital growth potential and sustainable rental yield.' },
-  { question: 'Can I book a consultation before committing?', answer: 'Yes, we offer a complimentary 30-minute strategy session to understand your goals, outline our approach, and determine how we can deliver value tailored to your needs.' },
-  { question: 'Do you negotiate on behalf of clients?', answer: 'Yes, negotiation is a core part of our service. We represent your interests exclusively, using market data and strategic positioning to secure properties at optimal value.' },
-  { question: 'What makes JJ Property Partner PTY LTD different from other buyers agents?', answer: 'We combine 20+ years of IT-driven analytical expertise with real estate acquisition strategy, offering a highly precise, data-led approach that consistently delivers superior outcomes for our clients.' }
+  {
+    question: 'Will you assist clients in the purchase of real estate throughout Australia?',
+    answer: 'JJ Property Partner can assist clients in various locations in Australia and therefore is not limited to one city or one state as every property search is based on a strategy. The strategy used to identify the right property for the client is based on the growth potential of the area, the rental yield, and the client\'s long-term wealth goals rather than based solely on geographic boundaries.'
+  },
+  {
+    question: 'Could you explain the role of a buyer’s agent and how you plan to represent me?',
+    answer: 'The role of a buyer’s agent is that of advocating solely for the buyer’s interest. The JJ Property Partner will take care of all the procedures in the buying process from making a buying strategy, doing the research, property search, negotiation, and acquisition of the property.'
+  },
+  {
+    question: 'Which types of clients do you work with?',
+    answer: 'JJ Property Partner offers services to first-time home purchasers, property investors and self-managed superannuation fund (SMSF) clients. We offer you a tailored approach to your real estate by creating an investment strategy based on your financial goals and risk tolerance whether you are buying your first property or building a multi-state portfolio.'
+  },
+  {
+    question: 'How do you determine which property I should buy?',
+    answer: 'The buyers\' agent uses a data-driven process to identify appropriate property and make informed recommendations based on the property\'s growth trends, rental yield, infrastructure developing with the property, vacancy rate of the property, change in demographics, and similar property values within each market throughout Australia and therefore understand that it would be wise to select high-performing properties.'
+  },
+  {
+    question: 'Do you have any opportunities for off-market Buying Properties?',
+    answer: 'Absolutely! Our clients have the advantage of accessing off-market and pre-market properties. One of the major benefits of purchasing an off-market property is that they are not advertised for sale. Thus, by purchasing an off-market property you will have to compete against fewer buyers and you will have more negotiating power when it comes time to negotiate.'
+  },
+  {
+    question: 'Do you create a buying strategy for clients?',
+    answer: 'Yes. All of our clients start off with a complete buying strategy which consists of: Setting your goals. Creating a long-term plan/roadmap for future purchases. Identifying key areas to invest in throughout Australia. Evaluating what reports will be required based on your investment objectives. Finding a short and long term, affordable purchase option for you.'
+  },
+  {
+    question: 'How long does it usually take to acquire my property?',
+    answer: 'Generally, our clients can acquire their property within 30 to 45 days from when they initially offered to purchase their desired property. It is also crucial for us to consider that we get our clients\' ideal property, thus time is not always essential than acquiring the right property.'
+  },
+  {
+    question: 'Do you assist clients investing in property through their super fund (SMSF)?',
+    answer: 'JJ Property Partner works with your financial planner (if applicable), accountant and SMSF auditor to ensure that you are remaining compliant while at the same time securing investment Properties that are consistent with your superannuation and long-term goal.'
+  },
+  {
+    question: 'How much do you charge for your services?',
+    answer: 'Our fees are completely transparent. We can provide clients with either fixed fee structures, or fee structures based on a percentage depending on the complexity of their requirements; the goal of all our clients is to provide value to the customer by providing greater opportunities to select better properties and negotiate better.'
+  },
+  {
+    question: 'What makes JJ Property Partner different from other buyers’ agents?',
+    answer: 'The difference lies in the combination of real estate expertise and advanced data analysis. With a background in IT and a proven property portfolio across Australia, the approach is strategic, analytical, and focused on long-term wealth creation rather than transactional buying.'
+  }
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -254,8 +284,8 @@ export default function Home() {
             </h2>
 
             <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-              <p>Alex, recognised as the <span className="text-black font-semibold">best real estate agent of Sydney</span>, brings 20+ years of IT and property expertise to<span className='text-black font-semibold'> JJ Property Partner PTY LTD, Parramatta.</span></p>
-              <p>As a licensed buyers agent, he uses data-driven strategies to secure high-value properties before public listings, helping First Home Buyers, Investors, and SMSF clients achieve long-term growth with confidence.</p>
+              <p>As an experienced builder of his own <span className="text-black font-semibold">$5 million property portfolio</span>, Alex uses a systematic, research-based methodology to ensure sustainable growth and risk management for every client.</p>
+              <p>With firsthand knowledge about different cycles in the Australian real estate market, <span className='text-black font-semibold'>JJ Property Partner</span> offers sound strategies, unbiased opinions, and exclusive off-market access in alignment with your vision.</p>
             </div>
 
             <div className="mt-8 flex items-center gap-4">
@@ -290,8 +320,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Built for results.</h2>
-              <p className="text-muted text-lg font-sans max-w-lg">Customized acquisition strategies designed to support every stage of your property journey.</p>
+              <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Strategic Property Acquisition Solutions.</h2>
+              <p className="text-muted text-lg font-sans max-w-lg">Customised acquisition strategies developed to help you through every phase of your property journey across Australia.</p>
             </div>
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}

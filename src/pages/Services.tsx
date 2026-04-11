@@ -1,22 +1,62 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Home as HomeIcon, TrendingUp, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Home as HomeIcon, TrendingUp, ShieldCheck, CheckCircle2, Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
+import { useState } from 'react';
+
+const servicesFaqs = [
+  {
+    question: 'How can JJ Property Partner assist first home buyers?',
+    answer: 'JJ Property Partner assists first home buyers from start to finish, from determining your ability to borrow to finding the appropriate property across Australia.'
+  },
+  {
+    question: 'What should one consider before purchasing their first home?',
+    answer: 'One must take into consideration their finances, objectives, and market conditions. JJ Property Partner assists you in determining the growth prospects, fundamentals, and value for your investment.'
+  },
+  {
+    question: 'What makes JJ Property Partner different?',
+    answer: 'We are dedicated buyer’s agents. We don’t sell property, we represent you. Every decision is backed by data, strategy, and your personal goals.'
+  },
+  {
+    question: 'How do I select an appropriate investment property in Australia?',
+    answer: 'Criteria may include growth prospects, demand for rentals, infrastructure, and economic conditions. We locate these areas across Australia that match our criteria.'
+  },
+  {
+    question: 'Is it possible for a novice investor to invest in real estate?',
+    answer: 'Yes. With the correct knowledge and approach, a beginner can construct solid portfolios.'
+  },
+  {
+    question: 'How many properties should one own?',
+    answer: 'There is no set number. Rather, one should concentrate on constructing a diverse portfolio according to their financial capability and objectives.'
+  },
+  {
+    question: 'What is SMSF property investment?',
+    answer: 'It allows you to invest your superannuation into property under strict compliance rules to support long-term retirement growth.'
+  },
+  {
+    question: 'Is SMSF property right for everyone?',
+    answer: 'Not always. It requires financial capacity, compliance understanding, and a long-term outlook. We help assess suitability based on your situation.'
+  },
+  {
+    question: 'How do you support SMSF buyers?',
+    answer: 'We work alongside your advisors to ensure compliance while sourcing and securing the right investment aligned with your retirement strategy.'
+  }
+];
 
 const services = [
   {
     id: 'first-home-buyers',
     icon: <HomeIcon className="w-8 h-8" />,
     tag: 'Residential',
-    title: 'First Home Buyers',
-    subtitle: 'Navigate Sydney with a seasoned professional.',
-    description: 'Purchasing your first home in Sydney is a major financial decision in a highly competitive market. As a trusted first home buyer agent Sydney, we provide structured, data-driven guidance to help you secure the right first home buyer property in Sydney CBD with confidence.',
+    title: 'First-Time Buyers',
+    subtitle: 'Confident and decisive market entry.',
+    description: 'Investing in your first home is perhaps the most critical financial investment you will ever make. Instead of tying you down to one location alone, we ensure that you get access to some of the finest opportunities in Australia depending on your objectives, affordability, and preferences. At your service as your buying agents, we free you from all the uncertainty.',
     benefits: [
-      'Access to exclusive off-market and pre-market opportunities',
-      'Strategic advice based on data, not emotion',
-      'Skilled negotiation for optimal price and terms',
-      'Comprehensive due diligence including legal and strata review',
-      'Complete end-to-end support from search to settlement'
+      'Exclusive access to off-market/pre-market properties throughout the nation',
+      'Decision making supported by data analysis instead of emotion',
+      'Highly skilled negotiating techniques for favorable terms',
+      'Extensive due diligence for every property purchase',
+      'Complete assistance starting from planning till settlement'
     ],
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
     accent: 'sky',
@@ -28,14 +68,14 @@ const services = [
     icon: <TrendingUp className="w-8 h-8" />,
     tag: 'Investment',
     title: 'Property Investors',
-    subtitle: 'Data-driven acquisition at scale.',
-    description: 'Building a high-performance investment portfolio requires disciplined analysis, precise market timing, and early access to assets before public pricing. Our investor service is focused on maximizing your portfolio\’s net return.',
+    subtitle: 'Massive data-driven acquisitions.',
+    description: 'An effective portfolio demands strategic planning, timing, and availability of suitable investments. Our investment philosophy lies in selecting the most promising growth and yield markets throughout Australia, not merely a single area. Our team works exclusively for the benefit of the buyer to guarantee that all acquisitions fit into your overall wealth plan.',
     benefits: [
-      'Strategic suburb-level growth analysis and selection',
-      'Identification of dual-income and value-add opportunities',
-      'Exclusive off-market acquisitions to reduce competition',
-      'Negotiation strategies aligned with vendor motivations',
-      'Structured multi-asset portfolio planning over 12 \- 24 months',
+      'Strategic suburb selection based on nationwide research',
+      'Focus on high-growth and cash flow-positive deals',
+      'Access to exclusive listings to minimize competition',
+      'Negotiation strategies customized based on seller motivations',
+      'Professional portfolio planning over a 5 – 10 year horizon',
     ],
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
     accent: 'indigo',
@@ -46,15 +86,15 @@ const services = [
     id: 'smsf-property',
     icon: <ShieldCheck className="w-8 h-8" />,
     tag: 'SMSF',
-    title: 'SMSF Property',
-    subtitle: 'Strategic superannuation growth through direct property investment.',
-    description: 'SMSF property investment in Sydney requires precision, compliance, and strategic execution. As a trusted SMSF buyers agent in Parramatta NSW, we combine deep regulatory knowledge with high-level acquisition expertise to protect and grow your superannuation.',
+    title: 'Growing SMSF through Property Investments',
+    subtitle: 'Compliance-first wealth building.',
+    description: 'Investing in property through an SMSF demands adherence to compliance laws and proper strategies. We make this easier for you by helping find suitable property investments that meet all the necessary compliance and financing requirements, working across national property investment opportunities.',
     benefits: [
-      'Full compliance with SMSF lending regulations and sole purpose test ',
-      'Collaboration with your financial planner, accountant, and SMSF auditor ',
-      'Targeting high-yield, low-maintenance assets suited for super funds ',
-      'Access to off-market dual-occupancy and mixed-use opportunities',
-      'Long-term capital growth aligned with your retirement objectives',
+      'Advice that meets all SMSF compliance requirements',
+      'Working closely with your accountants and financial advisers',
+      'Investment in maintenance-free and highly profitable assets',
+      'Specialised property investments such as dual income properties',
+      'Asset selection to achieve retirement goals',
     ],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
     accent: 'emerald',
@@ -65,6 +105,7 @@ const services = [
 
 export default function Services() {
   const navigate = useNavigate();
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <div className="w-full bg-white selection:bg-black/10 pt-20">
@@ -89,7 +130,7 @@ export default function Services() {
               <span className="italic text-sky-300">precision.</span>
             </h1>
             <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
-              Every client brief is distinct, and each acquisition is strategically structured to maximise returns. Discover the three core pillars that define the JJ Property Partner service model.
+              JJ Property Partner operates as a dedicated buyer’s agent, representing your interests only - sourcing, evaluating, and securing property opportunities across Australia.
             </p>
           </motion.div>
 
@@ -183,6 +224,54 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-4">
+            <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+              Frequently <br />
+              <span className="italic text-muted">asked questions.</span>
+            </h2>
+            <p className="text-muted text-lg font-sans">Everything you need to know about our specialized acquisition services.</p>
+          </div>
+
+          <div className="lg:col-span-8 flex flex-col gap-4">
+            {servicesFaqs.map((faq, index) => (
+              <div key={index} className="border-b border-black/10 pb-2">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                >
+                  <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                    {faq.question}
+                  </span>
+                  <motion.div
+                    animate={{ rotate: openFaq === index ? 45 : 0 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                    className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                  >
+                    <Plus className="w-5 h-5" />
+                  </motion.div>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

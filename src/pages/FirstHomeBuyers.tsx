@@ -1,29 +1,74 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
+import { useState } from 'react';
+
+const firstHomeFaqs = [
+  {
+    question: 'What does JJ Property Partner do for first home buyers?',
+    answer: 'It offers end-to-end services for buying property throughout Australia, including strategic services, property acquisition, negotiation, and post-settlement services.'
+  },
+  {
+    question: 'Which locations do you cover?',
+    answer: 'JJ Property Partner assists those who wish to purchase properties in any part of Australia.'
+  },
+  {
+    question: 'How can you help in choosing the best property?',
+    answer: 'Through thorough research, we assist in selecting properties that match your budget and long-term intentions.'
+  },
+  {
+    question: 'Do you help access off-market properties?',
+    answer: 'Certainly, we give access to such properties in different parts of Australia.'
+  },
+  {
+    question: 'Do you negotiate the prices?',
+    answer: 'Certainly, our firm assists in the entire process of negotiating prices.'
+  },
+  {
+    question: 'Do you help plan your finances?',
+    answer: 'We work alongside your financial advisors to make sure that your purchase matches your finances.'
+  },
+  {
+    question: 'Can this be used by home buyers and investors?',
+    answer: 'This service caters to both home buyers and first time investors.'
+  },
+  {
+    question: 'What services do you offer under this end-to-end service?',
+    answer: 'We offer consultation, strategic advice, property search, due diligence, negotiation, and post-settlement services.'
+  },
+  {
+    question: 'How can transparency be ensured?',
+    answer: 'We ensure there is good communication, thorough reporting, and frank advice for the whole process.'
+  },
+  {
+    question: 'Why would you opt for JJ Property Partner?',
+    answer: 'Our data-driven approach, access to the national markets, and individual buyer representation will help you find the right property anywhere in Australia.'
+  }
+];
 
 const pillars = [
   {
-    title: 'Expert Guidance for First Home Buyers',
-    description: 'Entering the property market requires clarity and strategy. At JJ Property Partner PTY LTD, Parramatta, NSW, we operate as a trusted first home buyer agent Sydney, assisting clients across key locations including first home buyer Northern Beaches, first home buyer Inner West Sydney, and first home buyer Hills District NSW.\n\nOur approach focuses on understanding your goals, financial position, and long-term plans, ensuring informed decisions while guiding you confidently through every stage of your first property acquisition journey.',
+    title: 'First Home Buyers - National Guidance',
+    description: 'Home purchase is a landmark moment which needs clarity, proper planning, and adequate guidance. Being a committed buyers agent, JJ Property Partner assists buyers in finding the most suitable property regardless of the location within Australia.\n\nThe strategy employed by our agents revolves around identifying and understanding your objectives, your finances and future plans. Whether you have decided to buy the house as your place of residence or initiate investments in property, we will assist you at making the best possible decision anywhere in Australia.',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Strategic Property Selection & Market Access',
-    description: 'Finding the right property in competitive areas like first home buyer property Sydney CBD demands precision and timing. At JJ Property Partner PTY LTD, Parramatta, NSW, we leverage data-driven insights, suburb analysis, and exclusive opportunities to identify properties aligned with your budget and growth potential.\n\nWhether for lifestyle or investment, our expertise ensures you secure value-driven assets while also supporting long-term wealth creation strategies.',
+    title: 'Property Strategy & Off-Market Properties Nationwide',
+    description: 'Buying the most suitable property especially in highly competitive markets calls for a lot more besides browsing through listings. What is needed is a proper strategy and access to properties which might not be available to all.\n\nWe find high-quality properties throughout Australia by searching across suburb growth potential, rental return, infrastructure projects and demographics. We also offer access to off-market properties which give our clients the edge in their buying process, helping secure assets that will create immediate value.',
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'End-to-End Support for Confident Decisions',
-    description: 'From initial consultation to final settlement, JJ Property Partner PTY LTD, Parramatta, NSW provides complete support tailored to first home buyers. Our service includes property research, due diligence, negotiation, and transaction management for a seamless experience.\n\nWe collaborate closely with your financial advisors and lending partners to align your purchase with your goals, ensuring transparency, confidence, and a strong foundation for future portfolio growth.',
+    title: 'End-to-End Guidance for Assured Decision-Making',
+    description: 'JJ Property Partner offers end-to-end guidance during your entire journey of purchasing a new property. As your personal buyers’ agent, we act on your behalf at every step of the process.\n\nWe handle everything from researching properties, due diligence, negotiations, and managing the transaction until completion. In addition, we collaborate with your mortgage agents and financial advisers to integrate your purchase with your financial plan, ensuring you set a solid base for future real estate investments.',
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
 export default function FirstHomeBuyers() {
   const navigate = useNavigate();
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
     <>
@@ -53,7 +98,7 @@ export default function FirstHomeBuyers() {
                 <span className="italic text-sky-400">confident</span> first home buyers.
               </h1>
               <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Every journey is unique. Every purchase is carefully structured to secure the right foundation. Discover the three core pillars of the JJ Property Partner approach for first home buyers.
+                Every journey is unique. The process of buying a home requires multiple steps which lead to achieving the best possible outcome. The JJ Property Partner approach for first home buyers consists of three essential elements which form its foundation.
               </p>
             </motion.div>
           </div>
@@ -97,6 +142,54 @@ export default function FirstHomeBuyers() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-4">
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+                Frequently <br />
+                <span className="italic text-muted">asked questions.</span>
+              </h2>
+              <p className="text-muted text-lg font-sans">Essential information for first home buyers navigating the Australian market.</p>
+            </div>
+
+            <div className="lg:col-span-8 flex flex-col gap-4">
+              {firstHomeFaqs.map((faq, index) => (
+                <div key={index} className="border-b border-black/10 pb-2">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                  >
+                    <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                      {faq.question}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: openFaq === index ? 45 : 0 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                    >
+                      <Plus className="w-5 h-5" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -55,18 +55,18 @@ export default function About() {
             className="flex-1 space-y-8"
           >
             <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight">
-              A dual expertise. <br />
-              <span className="italic text-muted">A singular advantage.</span>
+              A Smarter Way to Buy Property, <br />
+              <span className="italic text-muted">Built on Experience and Trust.</span>
             </h2>
             <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
               <p>
-                As Principal Advisor at <span className="text-black font-semibold">JJ Property Partner PTY LTD</span>, Parramatta, NSW, Alex combines 20+ years of enterprise IT systems expertise with high-level property acquisition strategy.
+                <span className="text-black font-semibold">JJ Property Partner</span> is a business established by Alex, a licensed buyer’s agent and IT professional with more than 20 years of experience. Although located in Sydney, he works for clients all around Australia who want to buy property based on their financial strategies.
               </p>
               <p>
-                With a $5M+ personal portfolio and proven client results, he delivers data-driven decisions, advanced suburb modelling, and precise due diligence.
+                “JJ” is derived from the initials of his daughters' names, <span className="text-black font-semibold">Jessica and Jennifer</span>, representing a family-oriented philosophy based on honesty and transparency. Alex himself has developed a property portfolio worth more than $5M across various Australian markets.
               </p>
               <p>
-                As a licensed, independent buyers agent (Lic. No. 20543356), he represents only buyers with zero conflict. Specialising in SMSF and portfolio growth, Alex provides end-to-end service, securing high-performing assets across Sydney through strategy, negotiation, and long-term wealth planning.
+                Through the integration of technology and property markets, Alex utilizes big data analysis to find the best investment opportunities available in the country. We provide personalized buying advice, off-market deals, and professional negotiation skills for successful property purchases.
               </p>
             </div>
 
@@ -118,17 +118,17 @@ export default function About() {
           {[
             {
               title: "Data-Driven Precision",
-              text: "Emotion-led decisions often lead to overpayment. With 20+ years of analytical expertise, we evaluate true market value through advanced data modelling, ensuring disciplined, evidence-based acquisitions.",
+              text: "The method of decision-making which relies on emotions results in organizations spending more money than necessary. Our team uses more than two decades of analytical experience to develop advanced data models which help us understand actual market value for our evidence-based acquisition process.",
               icon: <Target className="w-8 h-8 text-sky-400" />
             },
             {
-              title: "Off-Market Access",
-              text: "Premium properties are rarely publicly listed. Through established industry relationships, we provide access to exclusive off-market opportunities unavailable to the general market.",
+              title: "Off-market Access",
+              text: "Off-market properties are accessible to our team through our established industry contacts who provide us with access to exclusive properties that are not available to the general public.",
               icon: <Search className="w-8 h-8 text-sky-400" />
             },
             {
               title: "Executive Representation",
-              text: "We deliver strategic negotiation with complete discretion. Acting solely in your interest, we protect your identity and apply proven, data-backed tactics to secure optimal outcomes.",
+              text: "Our team provides complete strategic negotiation services while maintaining total confidentiality. We protect your identity through our work as your exclusive representative while using proven data-driven methods to achieve the best possible results for your case.",
               icon: <ShieldCheck className="w-8 h-8 text-sky-400" />
             }
           ].map((val, i) => (
