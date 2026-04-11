@@ -38,6 +38,6 @@ jobs:
           # Hostinger-specific fixes:
           protocol: ftp
           port: 21
-          # Attempt to use Secure FTP (FTPS)
           security: loose
-          timeout: 90000 # Increase timeout to 90 seconds
+          timeout: 600000 # Increased to 10 minutes to prevent control socket timeouts
+          state-name: .ftp-deploy-sync-state.json # Only upload changed files to reduce server load
