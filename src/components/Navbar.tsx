@@ -71,10 +71,10 @@ export default function Navbar() {
           <div className="flex items-center gap-3 md:gap-5">
             <span className="hidden lg:inline text-sky-400/50 mr-2">Connect with us:</span>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-white transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></a>
+              <a href="https://www.instagram.com/jjpropertypartner/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:text-white transition-all transform hover:scale-110"><FaFacebookF className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:text-white transition-all transform hover:scale-110"><FaYoutube className="w-3.5 h-3.5" /></a>
-              <a href="#" className="hover:text-white transition-all transform hover:scale-110"><FaTwitter className="w-3.5 h-3.5" /></a>
+              <a href="https://x.com/jjproperty01" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all transform hover:scale-110"><FaTwitter className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:text-white transition-all transform hover:scale-110"><FaLinkedinIn className="w-3.5 h-3.5" /></a>
             </div>
           </div>

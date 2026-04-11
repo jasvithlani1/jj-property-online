@@ -85,13 +85,13 @@ export default function Footer() {
 
             <div className="flex items-center gap-2.5 mt-auto">
               {[
-                { icon: <FaInstagram className="w-3.5 h-3.5 text-white" />, label: 'Instagram' },
-                { icon: <FaFacebookF className="w-3.5 h-3.5 text-white" />, label: 'Facebook' },
-                { icon: <FaYoutube className="w-3.5 h-3.5 text-white" />, label: 'YouTube' },
-                { icon: <FaTwitter className="w-3.5 h-3.5 text-white" />, label: 'Twitter' },
-                { icon: <FaLinkedinIn className="w-3.5 h-3.5 text-white" />, label: 'LinkedIn' },
+                { icon: <FaInstagram className="w-3.5 h-3.5 text-white" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
+                { icon: <FaFacebookF className="w-3.5 h-3.5 text-white" />, label: 'Facebook', href: '#' },
+                { icon: <FaYoutube className="w-3.5 h-3.5 text-white" />, label: 'YouTube', href: '#' },
+                { icon: <FaTwitter className="w-3.5 h-3.5 text-white" />, label: 'Twitter', href: 'https://x.com/jjproperty01' },
+                { icon: <FaLinkedinIn className="w-3.5 h-3.5 text-white" />, label: 'LinkedIn', href: '#' },
               ].map((s) => (
-                <a key={s.label} href="#" aria-label={s.label} className="w-8 h-8 rounded-full bg-sky-600 hover:bg-sky-500 flex items-center justify-center transition-all hover:scale-110">
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-8 h-8 rounded-full bg-sky-600 hover:bg-sky-500 flex items-center justify-center transition-all hover:scale-110">
                   {s.icon}
                 </a>
               ))}
