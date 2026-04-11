@@ -172,16 +172,19 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Re-initialize Calendly widget if it exists
-    if ((window as any).Calendly) {
-      (window as any).Calendly.initBadgeWidget({
-        url: 'https://calendly.com/jjpropertyseo',
-        text: 'Book session',
-        color: '#000000',
-        textColor: '#ffffff',
-        branding: true
-      });
-    }
+    // Manually initialize the inline Calendly widget
+    const timer = setTimeout(() => {
+      if ((window as any).Calendly) {
+        (window as any).Calendly.initInlineWidget({
+          url: 'https://calendly.com/jjpropertyseo?hide_landing_page_details=1&hide_gdpr_banner=1',
+          parentElement: document.getElementById('calendly-inline-widget'),
+          prefill: {},
+          utm: {}
+        });
+      }
+    }, 500); // Small delay to ensure DOM is ready
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -525,8 +528,8 @@ export default function Home() {
           className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
         >
           <div 
+            id="calendly-inline-widget"
             className="calendly-inline-widget" 
-            data-url="https://calendly.com/jjpropertyseo?hide_landing_page_details=1&hide_gdpr_banner=1" 
             style={{ minWidth: '320px', height: '700px' }} 
           />
         </motion.div>
