@@ -131,25 +131,35 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
   // Carousel Auto-scroll effect
+  const isPausedRef = useRef(false);
+  useEffect(() => {
+    isPausedRef.current = isReviewPaused;
+  }, [isReviewPaused]);
+
   useEffect(() => {
     const el = carouselRef.current;
     if (!el) return;
 
     let rafId: number;
     const animateScroll = () => {
-      // Auto scroll only if not interacting
-      if (!isReviewPaused && !isDragging.current) {
-        el.scrollLeft += 1;
-        const singleSetWidth = el.scrollWidth / 4; 
+      if (!isPausedRef.current && !isDragging.current) {
+        el.scrollLeft += 0.8; // Slightly slower for more premium feel
+        
+        // Seamless reset
+        const totalWidth = el.scrollWidth;
+        const visibleWidth = el.offsetWidth;
+        // We have 4 sets, so each set is totalWidth / 4
+        const singleSetWidth = totalWidth / 4;
+        
         if (el.scrollLeft >= singleSetWidth * 2) {
-          el.scrollLeft = singleSetWidth;
+          el.scrollLeft -= singleSetWidth;
         }
       }
       rafId = requestAnimationFrame(animateScroll);
     };
     rafId = requestAnimationFrame(animateScroll);
     return () => cancelAnimationFrame(rafId);
-  }, [isReviewPaused]);
+  }, []);
 
   // Desktop Mouse Dragging handlers for Carousel
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -456,17 +466,17 @@ export default function Home() {
 
         <div
           ref={carouselRef}
-          className="w-full flex gap-6 overflow-x-auto no-scrollbar snap-x px-8 pb-8 cursor-grab active:cursor-grabbing"
+          className="w-full flex gap-6 overflow-x-auto no-scrollbar px-8 pb-8 cursor-grab active:cursor-grabbing select-none"
           onMouseEnter={() => setIsReviewPaused(true)}
           onMouseLeave={() => { setIsReviewPaused(false); isDragging.current = false; }}
-          onTouchStart={() => { setIsReviewPaused(true); isDragging.current = true; }}
+          onTouchStart={() => { setIsReviewPaused(true); }}
           onTouchEnd={() => { setIsReviewPaused(false); isDragging.current = false; }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
           {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
-            <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 snap-center flex flex-col h-[320px] md:h-[350px]">
+            <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col h-[320px] md:h-[350px]">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
               </div>
