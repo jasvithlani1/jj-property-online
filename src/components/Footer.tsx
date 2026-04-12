@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 relative z-10 pt-8 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
 
           {/* Logo & Info Column */}
           <div className="md:col-span-2 lg:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
@@ -75,22 +75,6 @@ export default function Footer() {
                 <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors">+61 481 334 458</a>
               </li>
             </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Data</h4>
-            <p className="text-sm text-sky-200/60 font-sans mb-6">Off-market Sydney listings.</p>
-            <div className="w-full relative group">
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-sky-400 focus:outline-none focus:border-sky-500 transition-all text-sm font-sans"
-              />
-              <button className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center text-white hover:bg-sky-400 transition-colors shadow-lg">
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
 
         </div>
