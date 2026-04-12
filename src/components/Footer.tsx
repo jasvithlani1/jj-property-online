@@ -17,84 +17,101 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 relative z-10 pt-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
 
-          {/* Logo Column */}
-          <div className="lg:col-span-1 flex flex-col">
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/logo.png" alt="JJ Logo" className="w-12 h-12 object-contain" />
-              <div className="flex flex-col">
-                <div className="font-sans font-black text-lg tracking-widest text-white leading-none uppercase pr-4">JJ PROPERTY PARTNER</div>
-                <div className="font-sans font-bold text-[8px] md:text-[9px] tracking-[0.2em] text-sky-300 leading-none uppercase mt-1.5">YOUR PROPERTY, OUR PRIORITY</div>
+          {/* Logo & Info Column */}
+          <div className="lg:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
+            <Link to="/" onClick={() => window.scrollTo(0, 0)} className="group flex flex-col md:flex-row items-center gap-6 mb-8">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
+                <img src="/logo.png" alt="JJ Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
               </div>
-            </div>
-            <p className="text-sm text-sky-200/60 font-sans leading-relaxed">
-              Sydney's premier buyer's agency. Precision. Discretion. Results.
+              <div className="flex flex-col">
+                <div className="font-sans font-black text-2xl sm:text-3xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
+                <div className="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-sky-400 leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
+              </div>
+            </Link>
+            <p className="text-base text-sky-200/60 font-sans leading-relaxed max-w-sm">
+              Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Quick Links</h4>
-            <ul className="space-y-3 font-sans text-sky-200">
-              <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="/about" className="hover:text-white transition-colors">About us</a></li>
-              <li><a href="/services" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="/case-studies" className="hover:text-white transition-colors">Case Studies</a></li>
-              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact us</a></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Services</h4>
-            <ul className="space-y-3 font-sans text-sky-200">
-              <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors">First Home Buyers</Link></li>
-              <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors">Property Investors</Link></li>
-              <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors">SMSF Property</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Us */}
-          <div className="lg:col-span-1">
-            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Contact Us</h4>
-            <ul className="space-y-4 font-sans text-sky-200">
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-sky-400 shrink-0" />
-                <a href="mailto:jjpropertypartner@gmail.com" className="hover:text-white transition-colors text-sm whitespace-nowrap">jjpropertypartner@gmail.com</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-sky-400 shrink-0" />
-                <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors">+61 481 334 458 (Alex)</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Subscribe + Socials */}
-          <div className="lg:col-span-1 flex flex-col">
-            <h4 className="text-lg font-bold mb-6 font-serif tracking-wide">Subscribe</h4>
-            <div className="relative mb-8">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full bg-transparent border-b border-sky-700 pb-2 text-white placeholder:text-sky-400 focus:outline-none focus:border-white transition-colors text-sm font-sans"
-              />
-              <button className="absolute right-0 top-0 text-white hover:text-sky-300 transition-colors">
-                <ArrowRight className="w-5 h-5" />
-              </button>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+            {/* Quick Links */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Navigation</h4>
+              <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
+                <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Home</Link></li>
+                <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">About Us</Link></li>
+                <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Services</Link></li>
+                <li><Link to="/case-studies" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Case Studies</Link></li>
+                <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Insights & Blog</Link></li>
+                <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Contact Us</Link></li>
+              </ul>
             </div>
 
-            <div className="flex items-center gap-2.5 mt-auto">
-              {[
-                { icon: <FaInstagram className="w-3.5 h-3.5 text-white" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
-                { icon: <FaFacebookF className="w-3.5 h-3.5 text-white" />, label: 'Facebook', href: '#' },
-                { icon: <FaYoutube className="w-3.5 h-3.5 text-white" />, label: 'YouTube', href: '#' },
-                { icon: <FaTwitter className="w-3.5 h-3.5 text-white" />, label: 'Twitter', href: 'https://x.com/jjproperty01' },
-                { icon: <FaLinkedinIn className="w-3.5 h-3.5 text-white" />, label: 'LinkedIn', href: '#' },
-              ].map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-8 h-8 rounded-full bg-sky-600 hover:bg-sky-500 flex items-center justify-center transition-all hover:scale-110">
-                  {s.icon}
-                </a>
-              ))}
+            {/* Services */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Property Expertise</h4>
+              <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
+                <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">First Home Buyers</Link></li>
+                <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Property Investors</Link></li>
+                <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">SMSF Property Investment</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Get In Touch</h4>
+              <ul className="space-y-6 font-sans text-sky-200/80">
+                <li className="flex flex-col items-center md:items-start gap-2">
+                  <div className="flex items-center gap-3 text-white">
+                    <Mail className="w-4 h-4 text-sky-400" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-sky-400/60">Email</span>
+                  </div>
+                  <a href="mailto:jjpropertypartner@gmail.com" className="hover:text-white transition-colors text-sm pl-7">jjpropertypartner@gmail.com</a>
+                </li>
+                <li className="flex flex-col items-center md:items-start gap-2">
+                  <div className="flex items-center gap-3 text-white">
+                    <Phone className="w-4 h-4 text-sky-400" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-sky-400/60">Call Us</span>
+                  </div>
+                  <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors pl-7">+61 481 334 458 (Alex)</a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Newsletter */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Market Intelligence</h4>
+              <p className="text-sm text-sky-200/60 font-sans mb-6">Receive curated Sydney market data & off-market listings.</p>
+              <div className="w-full relative group">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-sky-400 focus:outline-none focus:border-sky-500 transition-all text-sm font-sans"
+                />
+                <button className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-sky-500 rounded-xl flex items-center justify-center text-white hover:bg-sky-400 transition-colors shadow-lg">
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Socials & Summary */}
+          <div className="mt-20 border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <p className="text-xs font-bold uppercase tracking-[0.4em] text-sky-400 mb-6">Follow Our Journey</p>
+              <div className="flex items-center gap-4">
+                {[
+                  { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
+                  { icon: <FaFacebookF className="w-4 h-4" />, label: 'Facebook', href: '#' },
+                  { icon: <FaYoutube className="w-4 h-4" />, label: 'YouTube', href: '#' },
+                  { icon: <FaTwitter className="w-4 h-4" />, label: 'Twitter', href: 'https://x.com/jjproperty01' },
+                  { icon: <FaLinkedinIn className="w-4 h-4" />, label: 'LinkedIn', href: '#' },
+                ].map((s) => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center transition-all hover:scale-110 group shadow-xl">
+                    <span className="text-sky-400 group-hover:text-white transition-colors">{s.icon}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
