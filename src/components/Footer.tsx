@@ -113,9 +113,9 @@ export default function Footer() {
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="absolute right-8 -top-6 w-12 h-12 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center text-white shadow-lg transition-colors border-4 border-[#021f3a]"
+          className="absolute left-1/2 -translate-x-1/2 -top-6 w-12 h-12 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 border-4 border-[#021f3a] group"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
         </button>
       </div>
     </footer>
