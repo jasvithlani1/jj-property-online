@@ -38,7 +38,6 @@ jobs:
           # Hostinger-specific fixes:
           protocol: ftp
           port: 21
-          security: none # Start with plain FTP to ensure connection; change to 'strict' if FTPS is confirmed
+          security: loose
           timeout: 600000 
-          retries: 10 # Add retries to handle temporary server unavailability
           state-name: .ftp-deploy-sync-state.json 
