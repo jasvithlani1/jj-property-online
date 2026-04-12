@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUp, Mail, Phone } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
