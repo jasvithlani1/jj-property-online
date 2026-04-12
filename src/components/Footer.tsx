@@ -109,9 +109,6 @@ export default function Footer() {
             <span className="opacity-30">|</span>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
           </div>
-          <p className="md:text-right">
-            Designed by <span className="text-white font-bold ml-1 tracking-wider uppercase">AETHERA</span>
-          </p>
         </div>
 
         <button
