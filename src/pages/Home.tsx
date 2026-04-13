@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quote } from 'lucide-react';
 import { FaHome, FaChartLine, FaShieldAlt } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import { openCalendly } from '../utils/calendly';
+import { openCalendly, initInlineCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
 import { client } from '../lib/sanity';
 
@@ -216,19 +216,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Manually initialize the inline Calendly widget
-    const timer = setTimeout(() => {
-      if ((window as any).Calendly) {
-        (window as any).Calendly.initInlineWidget({
-          url: 'https://calendly.com/jjpropertyseo?hide_landing_page_details=1&hide_gdpr_banner=1',
-          parentElement: document.getElementById('calendly-inline-widget'),
-          prefill: {},
-          utm: {}
-        });
-      }
-    }, 500); // Small delay to ensure DOM is ready
-
-    return () => clearTimeout(timer);
+    // Manually initialize the inline Calendly widget using the dynamic loader
+    initInlineCalendly('calendly-inline-widget');
   }, []);
 
   return (
@@ -329,7 +318,14 @@ export default function Home() {
             transition={{ duration: 1, ease: 'easeOut' }}
             className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
           >
-            <img src="/alex.jpg" alt="Alex - Principal Agent" className="w-full h-full object-cover object-top grayscale-[0.2] hover:scale-105 transition-transform duration-700" />
+            <img 
+              src="/alex.jpg" 
+              alt="Alex - Principal Agent" 
+              className="w-full h-full object-cover object-top grayscale-[0.2] hover:scale-105 transition-transform duration-700" 
+              loading="lazy" 
+              width="600"
+              height="600"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </motion.div>
         </div>
@@ -408,7 +404,15 @@ export default function Home() {
       {/* ── CTA Section ──────────────────────────────────────────────────── */}
       <section className="relative py-20 md:py-40 px-8 bg-black text-white text-center overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <video src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover opacity-40" />
+          <video 
+            src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="w-full h-full object-cover opacity-40" 
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 pointer-events-none" />
         </div>
         <motion.div
@@ -459,7 +463,12 @@ export default function Home() {
                 className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-sky-900/10 overflow-hidden hover:shadow-sky-900/20 transition-all duration-500 cursor-pointer flex flex-col"
               >
                 <div className="h-48 overflow-hidden">
-                  <img src={story.image} alt={story.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img 
+                    src={story.image} 
+                    alt={story.title} 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-8 flex flex-col flex-1">
                   <div className="mb-4">

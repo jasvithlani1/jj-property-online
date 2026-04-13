@@ -91,6 +91,8 @@ export default function Navbar() {
                 animate={{ rotate: 360 }}
                 whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
                 transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
+                fetchpriority="high"
+                loading="eager"
               />
             </div>
             <div className="flex flex-col min-w-0">
