@@ -40,7 +40,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Expertise</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block">Services</h4>
             <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
               <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">First Home Buyers</Link></li>
               <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Property Investors</Link></li>

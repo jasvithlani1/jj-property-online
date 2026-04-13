@@ -70,7 +70,7 @@ export default function CaseStudies() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-block px-4 py-1.5 rounded-full border border-black/5 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-8 shadow-sm">
+            <div className="inline-block px-5 py-2 rounded-full border border-black/5 bg-white text-xs font-bold uppercase tracking-[0.2em] text-muted mb-8 shadow-sm">
               Client Results
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-black leading-[1.05] mb-8 max-w-5xl mx-auto">

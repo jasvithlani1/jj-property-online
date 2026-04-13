@@ -20,6 +20,21 @@ export default function Blog() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<SanityPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  const [email, setEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setIsSubscribing(true);
+    setTimeout(() => {
+      setIsSubscribing(false);
+      setIsSubscribed(true);
+      setEmail("");
+    }, 1000);
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -68,7 +83,7 @@ export default function Blog() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-300 mb-6">
+            <div className="inline-block px-5 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-[0.2em] text-sky-300 mb-6">
               Market Intelligence
             </div>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-6 max-w-4xl">
@@ -177,18 +192,48 @@ export default function Blog() {
             <p className="text-xl text-muted font-sans mb-10 max-w-xl mx-auto leading-relaxed">
               Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-6 py-4 rounded-2xl bg-white border border-black/10 focus:outline-none focus:border-sky-400 focus:ring-4 focus:ring-sky-100 transition-all font-sans text-base"
-              />
-              <button className="shrink-0 rounded-2xl px-8 py-4 bg-black text-white font-bold uppercase tracking-widest text-sm hover:scale-[1.03] transition-transform duration-300 flex items-center gap-2 group justify-center">
-                Subscribe
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-            <p className="text-xs text-muted mt-4 uppercase tracking-widest font-bold">No spam. Unsubscribe any time.</p>
+            {isSubscribed ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="py-4 px-6 bg-[#021f3a] text-sky-100 rounded-2xl border border-sky-400 font-sans shadow-xl inline-block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <p className="font-bold text-white text-sm">Successfully Subscribed!</p>
+                    <p className="text-xs text-sky-200">You're now on the list for our latest insights.</p>
+                  </div>
+                </div>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="flex-1 px-6 py-4 rounded-2xl bg-white border border-black/10 focus:outline-none focus:border-sky-400 focus:ring-4 focus:ring-sky-100 transition-all font-sans text-base"
+                />
+                <button 
+                  type="submit" 
+                  disabled={isSubscribing}
+                  className={`shrink-0 rounded-2xl px-8 py-4 bg-black text-white font-bold uppercase tracking-widest text-sm transition-transform duration-300 flex items-center gap-2 group justify-center ${isSubscribing ? 'opacity-70' : 'hover:scale-[1.03]'}`}
+                >
+                  {isSubscribing ? 'Sending...' : 'Subscribe'}
+                  {!isSubscribing && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                </button>
+              </form>
+            )}
+            
+            {!isSubscribed && (
+              <p className="text-xs text-muted mt-4 uppercase tracking-widest font-bold">No spam. Unsubscribe any time.</p>
+            )}
           </motion.div>
         </div>
       </section>

@@ -90,7 +90,7 @@ export default function SmsfProperty() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 py-1.5 rounded-full border border-sky-400/30 bg-white/5 text-[10px] font-bold uppercase tracking-[0.2em] text-sky-300 mb-8 backdrop-blur-sm">
+              <div className="inline-block px-5 py-2 rounded-full border border-sky-400/30 bg-white/5 text-xs font-bold uppercase tracking-[0.2em] text-sky-300 mb-8 backdrop-blur-sm">
                 SMSF Property
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">

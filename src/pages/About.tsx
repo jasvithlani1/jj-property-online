@@ -20,7 +20,7 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-4 py-1.5 rounded-full border border-black/5 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-6 shadow-sm">
+            <div className="inline-block px-5 py-2 rounded-full border border-black/5 bg-white text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6 shadow-sm">
               Our Vision
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-black leading-[1.1] mb-6">

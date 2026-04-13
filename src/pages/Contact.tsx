@@ -68,7 +68,7 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full border border-black/5 bg-white text-[10px] font-bold uppercase tracking-[0.2em] text-muted mb-6 shadow-sm">
+          <div className="inline-block px-5 py-2 rounded-full border border-black/5 bg-white text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6 shadow-sm">
             Contact Us
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
