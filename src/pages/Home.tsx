@@ -402,7 +402,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA Section ──────────────────────────────────────────────────── */}
-      <section className="relative py-20 md:py-40 px-8 bg-black text-white text-center overflow-hidden flex flex-col items-center justify-center">
+      <section className="relative py-20 md:py-40 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <video 
             src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" 
@@ -412,7 +412,7 @@ export default function Home() {
             playsInline 
             className="w-full h-full object-cover opacity-40" 
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a] via-[#021f3a]/40 to-[#021f3a]/80 pointer-events-none" />
         </div>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -424,8 +424,8 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-serif mb-8 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
             Start your Sydney <br className="hidden md:block" />success story.
           </h2>
-          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-white text-black hover:scale-[1.03] transition-transform duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-black/20 cursor-pointer">
-            Book 30m Strategy Session
+          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
+            Book Free Session
           </button>
         </motion.div>
       </section>
@@ -508,10 +508,11 @@ export default function Home() {
         <div
           ref={carouselRef}
           className="w-full flex gap-6 overflow-x-auto no-scrollbar px-8 pb-8 cursor-grab active:cursor-grabbing select-none"
-          onMouseEnter={() => setIsReviewPaused(true)}
-          onMouseLeave={() => { setIsReviewPaused(false); isDragging.current = false; }}
+          onPointerEnter={(e) => { if(e.pointerType === 'mouse') setIsReviewPaused(true); }}
+          onPointerLeave={(e) => { if(e.pointerType === 'mouse') { setIsReviewPaused(false); isDragging.current = false; } }}
           onTouchStart={() => { setIsReviewPaused(true); }}
           onTouchEnd={() => { setIsReviewPaused(false); isDragging.current = false; }}
+          onTouchCancel={() => { setIsReviewPaused(false); isDragging.current = false; }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
