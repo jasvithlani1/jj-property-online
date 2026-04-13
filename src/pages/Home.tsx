@@ -241,7 +241,7 @@ export default function Home() {
             ref={videoRef}
             src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
             autoPlay muted playsInline preload="auto"
-            fetchpriority="high"
+            fetchPriority="high"
             className="h-full w-full object-cover transition-opacity duration-100"
             style={{ opacity }}
           />
@@ -412,7 +412,6 @@ export default function Home() {
             loop 
             playsInline 
             className="w-full h-full object-cover opacity-40" 
-            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 pointer-events-none" />
         </div>
