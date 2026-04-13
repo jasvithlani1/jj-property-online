@@ -242,13 +242,21 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <button
-                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                  className="group flex items-center gap-2 rounded-full px-8 py-4 bg-black text-white text-sm font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300"
-                >
-                  Discuss This Strategy
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={() => { navigate(`/services/${service.id}`); window.scrollTo(0, 0); }}
+                    className="group flex items-center justify-center gap-2 rounded-full px-8 py-4 bg-sky-500 hover:bg-sky-400 text-white text-sm font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-xl shadow-sky-500/20"
+                  >
+                    View Details
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  <button
+                    onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                    className="group flex items-center justify-center gap-2 rounded-full px-8 py-4 border border-black/10 bg-white text-black text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    Discuss Strategy
+                  </button>
+                </div>
               </div>
 
               {/* Image Side */}
