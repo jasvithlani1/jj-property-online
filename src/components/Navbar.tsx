@@ -93,6 +93,8 @@ export default function Navbar() {
                 transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
                 fetchpriority="high"
                 loading="eager"
+                width={128}
+                height={128}
               />
             </div>
             <div className="flex flex-col min-w-0">

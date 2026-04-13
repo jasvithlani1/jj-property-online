@@ -106,7 +106,7 @@ export default function Contact() {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h4>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
                     <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
                       jjpropertypartner@gmail.com
                     </a>
@@ -119,7 +119,7 @@ export default function Contact() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h4>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h3>
                     <a href="tel:+61481334458" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
                       +61 481 334 458
                     </a>
@@ -132,7 +132,7 @@ export default function Contact() {
                     <FaWhatsapp className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h4>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
                     <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-serif text-black hover:text-[#25D366] transition-colors">
                       Message us instantly
                     </a>
@@ -145,7 +145,7 @@ export default function Contact() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Our Office</h4>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Our Office</h3>
                     <p className="text-lg font-serif text-black leading-relaxed">
                       U110, 6-10 Charles Street, <br />Parramatta, NSW 2150, Australia
                     </p>

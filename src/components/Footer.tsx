@@ -28,7 +28,7 @@ export default function Footer() {
                 <div className="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-sky-400 leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
-            <p className="text-base text-sky-200/60 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
+            <p className="text-base text-sky-100/90 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
               Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.
             </p>
           </div>
@@ -62,17 +62,17 @@ export default function Footer() {
             <ul className="space-y-6 font-sans text-sky-200/80">
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Mail className="w-4 h-4 text-sky-400" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-400/60">Email</span>
+                  <Mail className="w-4 h-4 text-sky-300" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">Email</span>
                 </div>
-                <a href="mailto:jjpropertypartner@gmail.com" className="hover:text-white transition-colors text-sm break-all md:break-normal">jjpropertypartner@gmail.com</a>
+                <a href="mailto:jjpropertypartner@gmail.com" className="hover:text-white transition-colors text-sm break-all md:break-normal text-sky-100">jjpropertypartner@gmail.com</a>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Phone className="w-4 h-4 text-sky-400" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-400/60">Call</span>
+                  <Phone className="w-4 h-4 text-sky-300" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">Call</span>
                 </div>
-                <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors">+61 481 334 458</a>
+                <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors text-sky-100">+61 481 334 458</a>
               </li>
             </ul>
           </div>
@@ -114,6 +114,7 @@ export default function Footer() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="absolute left-1/2 -translate-x-1/2 -top-6 w-12 h-12 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 border-4 border-[#021f3a] group"
+          aria-label="Back to Top"
         >
           <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
         </button>

@@ -241,6 +241,7 @@ export default function Home() {
             ref={videoRef}
             src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
             autoPlay muted playsInline preload="auto"
+            fetchpriority="high"
             className="h-full w-full object-cover transition-opacity duration-100"
             style={{ opacity }}
           />
@@ -468,6 +469,8 @@ export default function Home() {
                     alt={story.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                     loading="lazy"
+                    width={800}
+                    height={450}
                   />
                 </div>
                 <div className="p-8 flex flex-col flex-1">
@@ -530,7 +533,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
                 )}
                 <div>
-                  <h4 className="text-sm font-bold text-black font-sans">{review.name}</h4>
+                  <h3 className="text-sm font-bold text-black font-sans">{review.name}</h3>
                   <span className="text-xs text-muted font-sans">{review.date}</span>
                 </div>
               </div>
@@ -555,6 +558,8 @@ export default function Home() {
               <div key={index} className="border-b border-black/10 pb-2">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  aria-expanded={openFaq === index}
+                  aria-controls={`faq-answer-${index}`}
                   className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                 >
                   <span className={`text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
@@ -564,6 +569,7 @@ export default function Home() {
                     animate={{ rotate: openFaq === index ? 45 : 0 }}
                     transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                     className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                    aria-hidden="true"
                   >
                     <Plus className="w-5 h-5" />
                   </motion.div>
@@ -571,6 +577,7 @@ export default function Home() {
                 <AnimatePresence>
                   {openFaq === index && (
                     <motion.div
+                      id={`faq-answer-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
