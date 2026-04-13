@@ -241,7 +241,6 @@ export default function Home() {
             ref={videoRef}
             src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
             autoPlay muted playsInline preload="auto"
-            fetchPriority="high"
             className="h-full w-full object-cover transition-opacity duration-100"
             style={{ opacity }}
           />
