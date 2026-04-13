@@ -163,7 +163,7 @@ export default function FirstHomeBuyers() {
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-muted group-hover:text-black'}`}>
+                    <span className={`text-xl sm:text-2xl font-sans font-bold transition-colors duration-300 ${openFaq === index ? 'text-black' : 'text-slate-600 group-hover:text-black'}`}>
                       {faq.question}
                     </span>
                     <motion.div
@@ -183,7 +183,7 @@ export default function FirstHomeBuyers() {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                        <p className="text-lg text-slate-700 font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

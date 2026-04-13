@@ -5,14 +5,7 @@ import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 're
 export default function Footer() {
   return (
     <footer className="relative bg-[#021f3a] text-white pt-20 mt-32 lg:mt-48">
-      {/* Skyline SVG Top Border */}
-      <div className="absolute top-0 inset-x-0 -translate-y-full w-full overflow-hidden leading-none">
-        <svg viewBox="0 -40 1200 160" preserveAspectRatio="none" className="w-full h-24 lg:h-32 text-[#021f3a]" fill="currentColor">
-          <path d="M0,120 L0,100 L20,100 L20,80 L30,80 L30,60 L45,60 L45,30 L60,30 L60,10 L70,10 L70,30 L90,30 L90,60 L110,60 L110,80 L140,80 L140,50 L160,50 L160,0 L180,0 L180,50 L200,50 L200,80 L230,80 L230,60 L245,60 L245,40 L260,40 L260,20 L270,20 L270,70 L290,70 L290,90 L320,90 L320,120 Z" />
-          <path d="M300,120 L300,90 L320,90 L320,60 L330,60 L330,40 L345,40 L345,10 L360,10 L360,-10 L370,-10 L370,10 L390,10 L390,40 L410,40 L410,60 L440,60 L440,30 L460,30 L460,-20 L480,-20 L480,30 L500,30 L500,60 L530,60 L530,40 L545,40 L545,20 L560,20 L560,0 L570,0 L570,50 L590,50 L590,70 L620,70 L620,120 Z" transform="translate(280, 0)" />
-          <path d="M600,120 L600,70 L620,70 L620,40 L630,40 L630,20 L645,20 L645,-10 L660,-10 L660,-30 L670,-30 L670,-10 L690,-10 L690,20 L710,20 L710,40 L740,40 L740,10 L760,10 L760,-40 L780,-40 L780,10 L800,10 L800,40 L830,40 L830,20 L845,20 L845,0 L860,0 L860,-20 L870,-20 L870,30 L890,30 L890,50 L920,50 L920,120 Z" transform="translate(580, 0)" />
-        </svg>
-      </div>
+    <footer className="relative bg-[#021f3a] text-white pt-20 mt-32 lg:mt-48">
 
       <div className="max-w-7xl mx-auto px-8 relative z-10 pt-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
