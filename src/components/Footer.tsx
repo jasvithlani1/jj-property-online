@@ -79,9 +79,9 @@ export default function Footer() {
               {[
                 { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
                 { icon: <FaFacebookF className="w-4 h-4" />, label: 'Facebook', href: '#' },
-                { icon: <FaYoutube className="w-4 h-4" />, label: 'YouTube', href: '#' },
+                { icon: <FaYoutube className="w-4 h-4" />, label: 'YouTube', href: 'https://www.youtube.com/@JJPropertyPartnerBuyersAgent' },
                 { icon: <FaTwitter className="w-4 h-4" />, label: 'Twitter', href: 'https://x.com/jjproperty01' },
-                { icon: <FaLinkedinIn className="w-4 h-4" />, label: 'LinkedIn', href: '#' },
+                { icon: <FaLinkedinIn className="w-4 h-4" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-buyers-agent-930139403/' },
               ].map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center transition-all hover:scale-110 group shadow-xl">
                   <span className="text-sky-400 group-hover:text-white transition-colors">{s.icon}</span>
