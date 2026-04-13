@@ -632,8 +632,7 @@ export default function Home() {
         >
           <div 
             id="calendly-inline-widget"
-            className="calendly-inline-widget" 
-            style={{ minWidth: '320px', height: '700px' }} 
+            className="w-full h-[700px]" 
           />
         </motion.div>
 
