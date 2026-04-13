@@ -329,8 +329,8 @@ export default function Home() {
             className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
           >
             <img 
-              src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=900" 
-              alt="JJ Property Partner Strategy" 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900" 
+              alt="JJ Property Partner HQ" 
               className="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-700" 
               loading="lazy" 
               width="600"
