@@ -145,18 +145,28 @@ export default function Home() {
     if (!el) return;
 
     let rafId: number;
+    let exactScrollLeft = el.scrollLeft;
+
     const animateScroll = () => {
       if (!isPausedRef.current && !isDragging.current) {
-        el.scrollLeft += 0.8; // Slightly slower for more premium feel
+        // Keep exactScrollLeft in sync if user manually scrolled
+        if (Math.abs(exactScrollLeft - el.scrollLeft) > 2) {
+           exactScrollLeft = el.scrollLeft;
+        }
+        
+        exactScrollLeft += 0.8;
+        el.scrollLeft = exactScrollLeft;
         
         // Seamless reset
         const totalWidth = el.scrollWidth;
-        // We have 4 sets, so each set is totalWidth / 4
         const singleSetWidth = totalWidth / 4;
         
         if (el.scrollLeft >= singleSetWidth * 2) {
-          el.scrollLeft -= singleSetWidth;
+          exactScrollLeft -= singleSetWidth;
+          el.scrollLeft = exactScrollLeft;
         }
+      } else {
+        exactScrollLeft = el.scrollLeft;
       }
       rafId = requestAnimationFrame(animateScroll);
     };
