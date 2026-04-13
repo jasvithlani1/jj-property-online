@@ -152,11 +152,11 @@ export default function Navbar() {
               />
               {/* Drawer */}
               <motion.div
-                initial={{ x: '-100%' }}
+                initial={{ x: '100%' }}
                 animate={{ x: 0 }}
-                exit={{ x: '-100%' }}
+                exit={{ x: '100%' }}
                 transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                className="fixed inset-y-0 left-0 z-[9999] w-[80%] max-w-sm bg-[#011122] shadow-2xl flex flex-col p-8 xl:hidden border-r border-sky-900/50"
+                className="fixed inset-y-0 right-0 z-[9999] w-[80%] max-w-sm bg-[#011122] shadow-2xl flex flex-col p-8 xl:hidden border-l border-sky-900/50"
               >
               {/* Drawer Header */}
               <div className="flex justify-between items-center mb-12">
