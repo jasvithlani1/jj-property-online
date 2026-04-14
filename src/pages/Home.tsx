@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Home as HomeIcon, TrendingUp, ShieldCheck, ArrowRight, Plus, Star, Quote } from 'lucide-react';
-import { FaHome, FaChartLine, FaShieldAlt } from 'react-icons/fa';
+import { Home as HomeIcon, TrendingUp, ArrowRight, Plus, Star, Quote } from 'lucide-react';
+import { FaHome, FaChartLine } from 'react-icons/fa';
+import { FaHouseShield } from 'react-icons/fa6';
+import { TbHomeShield } from 'react-icons/tb';
 import { Link, useNavigate } from 'react-router-dom';
 import { openCalendly, initInlineCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
@@ -30,8 +32,8 @@ const servicesPreview = [
   {
     title: 'SMSF Property',
     description: 'Strategic property acquisitions for superannuation funds require accurate acquisition and compliance processes. Each property is invested towards meeting your long-term retirement objectives.',
-    icon: <ShieldCheck className="w-6 h-6" />,
-    solidIcon: <FaShieldAlt className="w-6 h-6" />,
+    icon: <TbHomeShield className="w-6 h-6" />,
+    solidIcon: <FaHouseShield className="w-6 h-6" />,
     color: 'bg-[#F5F5F5]',
     anchor: 'smsf-property',
   },
