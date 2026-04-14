@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUp, Mail, Phone } from 'lucide-react';
+import { ArrowUp, Mail, Phone, Award, Hash } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
@@ -66,13 +66,19 @@ export default function Footer() {
                 </div>
                 <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors text-sky-100">+61 481 334 458</a>
               </li>
-              <li className="flex flex-col items-center md:items-start gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300/60">ABN</span>
-                <span className="text-sm text-sky-100/90 font-sans">71 687 187 113</span>
+              <li className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex items-center gap-3 text-white">
+                  <Hash className="w-4 h-4 text-sky-300" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">ABN</span>
+                </div>
+                <span className="text-sm text-sky-100 transition-colors">71 687 187 113</span>
               </li>
-              <li className="flex flex-col items-center md:items-start gap-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300/60">License</span>
-                <span className="text-sm text-sky-100/90 font-sans">No. 20543356</span>
+              <li className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex items-center gap-3 text-white">
+                  <Award className="w-4 h-4 text-sky-300" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">License</span>
+                </div>
+                <span className="text-sm text-sky-100 transition-colors">No. 20543356</span>
               </li>
             </ul>
           </div>

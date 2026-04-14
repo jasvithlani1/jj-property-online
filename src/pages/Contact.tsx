@@ -107,7 +107,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-sans font-bold text-black hover:text-sky-600 transition-colors">
+                    <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-sans font-medium text-black hover:text-sky-600 transition-colors">
                       jjpropertypartner@gmail.com
                     </a>
                   </div>
@@ -120,7 +120,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h3>
-                    <a href="tel:+61481334458" className="text-xl font-sans font-bold text-black hover:text-sky-600 transition-colors">
+                    <a href="tel:+61481334458" className="text-xl font-sans font-medium text-black hover:text-sky-600 transition-colors">
                       +61 481 334 458
                     </a>
                   </div>
@@ -133,7 +133,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
-                    <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-sans font-bold text-black hover:text-[#25D366] transition-colors">
+                    <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
                       Message us instantly
                     </a>
                   </div>
@@ -146,7 +146,7 @@ export default function Contact() {
                   </div>
                   <div className="flex flex-col justify-center">
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Our Office</h3>
-                    <p className="text-lg font-sans font-bold text-black leading-relaxed">
+                    <p className="text-lg font-sans font-medium text-black leading-relaxed">
                       U110, 6-10 Charles Street, <br />Parramatta, NSW 2150, Australia
                     </p>
                   </div>
