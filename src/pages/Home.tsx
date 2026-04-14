@@ -292,8 +292,8 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#E6FBFF] text-black border border-black/5 text-xs font-bold uppercase tracking-widest mb-8">
-              <span className="block w-2 h-2 rounded-full bg-black animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E6FBFF] text-black border border-black/10 text-sm font-bold uppercase tracking-widest mb-10 shadow-sm scale-110 origin-left">
+              <span className="block w-2.5 h-2.5 rounded-full bg-black animate-pulse" />
               Principal Advisor
             </div>
 
@@ -611,7 +611,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-5 py-2 rounded-full border border-black/5 bg-sky-50 text-xs font-bold uppercase tracking-[0.2em] text-sky-600 mb-6 shadow-sm">
+            <div className="inline-block px-7 py-3 rounded-full border border-sky-400/20 bg-sky-50 text-sm font-bold uppercase tracking-[0.2em] text-sky-600 mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
               Take the next step
             </div>
             <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">

@@ -161,7 +161,7 @@ export default function BlogDetail() {
             transition={{ duration: 0.8 }}
           >
             {post.categories?.[0] && (
-              <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block mb-6 ${post.categories[0].color || 'bg-sky-100 text-sky-800'}`}>
+              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-6 shadow-sm border border-black/5 ${post.categories[0].color || 'bg-sky-100 text-sky-800'}`}>
                 {post.categories[0].title}
               </span>
             )}

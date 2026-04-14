@@ -66,6 +66,14 @@ export default function Footer() {
                 </div>
                 <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors text-sky-100">+61 481 334 458</a>
               </li>
+              <li className="flex flex-col items-center md:items-start gap-1">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300/60">ABN</span>
+                <span className="text-sm text-sky-100/90 font-sans">71 687 187 113</span>
+              </li>
+              <li className="flex flex-col items-center md:items-start gap-1">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300/60">License</span>
+                <span className="text-sm text-sky-100/90 font-sans">No. 20543356</span>
+              </li>
             </ul>
           </div>
 

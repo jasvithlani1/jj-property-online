@@ -68,7 +68,7 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-block px-5 py-2 rounded-full border border-black/5 bg-white text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6 shadow-sm">
+          <div className="inline-block px-7 py-3 rounded-full border border-black/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-black mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
             Contact Us
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
@@ -107,7 +107,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
+                    <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-sans font-bold text-black hover:text-sky-600 transition-colors">
                       jjpropertypartner@gmail.com
                     </a>
                   </div>
@@ -120,7 +120,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h3>
-                    <a href="tel:+61481334458" className="text-xl font-serif text-black hover:text-sky-600 transition-colors">
+                    <a href="tel:+61481334458" className="text-xl font-sans font-bold text-black hover:text-sky-600 transition-colors">
                       +61 481 334 458
                     </a>
                   </div>
@@ -133,7 +133,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
-                    <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-serif text-black hover:text-[#25D366] transition-colors">
+                    <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-sans font-bold text-black hover:text-[#25D366] transition-colors">
                       Message us instantly
                     </a>
                   </div>
@@ -146,7 +146,7 @@ export default function Contact() {
                   </div>
                   <div className="flex flex-col justify-center">
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Our Office</h3>
-                    <p className="text-lg font-serif text-black leading-relaxed">
+                    <p className="text-lg font-sans font-bold text-black leading-relaxed">
                       U110, 6-10 Charles Street, <br />Parramatta, NSW 2150, Australia
                     </p>
                   </div>

@@ -144,7 +144,7 @@ export default function CaseStudyDetail() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
+              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-black/5 ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
                 {study.tag || 'Acquisition'}
               </span>
               <span className="flex items-center gap-1.5 text-white/70 text-sm font-sans">
