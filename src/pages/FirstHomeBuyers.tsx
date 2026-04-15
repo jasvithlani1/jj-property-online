@@ -226,10 +226,10 @@ export default function FirstHomeBuyers() {
                     image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
                   },
                 ].map((card, i, arr) => (
-                  <div key={card.step} className="flex items-stretch gap-6 relative">
+                  <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
 
                     {/* Timeline Rail */}
-                    <div className="hidden lg:block relative w-4 shrink-0">
+                    <div className="relative w-4 shrink-0">
                       {/* Connecting line spanning from current dot to next dot */}
                       {i < arr.length - 1 && (
                         <div className="absolute top-[32px] bottom-[-24px] left-1/2 -translate-x-1/2 w-px bg-white/10 overflow-hidden z-0">
