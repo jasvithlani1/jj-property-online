@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Home as HomeIcon, TrendingUp, CheckCircle2, Plus } from 'lucide-react';
+import { ArrowRight, Home as HomeIcon, TrendingUp, CheckCircle2, Plus, MessageSquare, Gavel, Map } from 'lucide-react';
 import { FaHome, FaChartLine } from 'react-icons/fa';
 import { TbHomeShield } from 'react-icons/tb';
 import { openCalendly } from '../utils/calendly';
@@ -9,40 +9,40 @@ import { useState } from 'react';
 
 const servicesFaqs = [
   {
-    question: 'How can JJ Property Partner assist first home buyers?',
-    answer: 'JJ Property Partner assists first home buyers from start to finish, from determining your ability to borrow to finding the appropriate property across Australia.'
+    question: '1. How can JJ Property Partner assist first home buyers in Australia?',
+    answer: 'As a trusted buyers agent for first home buyers in Australia, JJ Property Partner provides end-to-end support — from borrowing capacity and strategy to property search, negotiation, and settlement, plus guidance on grants and stamp duty concessions.'
   },
   {
-    question: 'What should one consider before purchasing their first home?',
-    answer: 'One must take into consideration their finances, objectives, and market conditions. JJ Property Partner assists you in determining the growth prospects, fundamentals, and value for your investment.'
+    question: '2. Do I need a buyers agent as a first home buyer?',
+    answer: 'Working with a buyers agent first home buyer Australia specialist ensures you avoid costly mistakes, access better opportunities, and receive expert negotiation support while navigating a complex property market.'
   },
   {
-    question: 'What makes JJ Property Partner different?',
-    answer: 'We are dedicated buyer’s agents. We don’t sell property, we represent you. Every decision is backed by data, strategy, and your personal goals.'
+    question: '3. What should I consider before purchasing my first home in Sydney?',
+    answer: 'When seeking first home buyer property advice Sydney, consider borrowing capacity, deposit, suburb selection, lifestyle needs, and long-term goals. We help you define a clear strategy before starting your search.'
   },
   {
-    question: 'How do I select an appropriate investment property in Australia?',
-    answer: 'Criteria may include growth prospects, demand for rentals, infrastructure, and economic conditions. We locate these areas across Australia that match our criteria.'
+    question: '4. How do you find off-market properties in Australia?',
+    answer: 'As an off market property buyers agent Australia, we leverage strong agent relationships, industry networks, and direct channels to access pre-market and off-market opportunities not available to the public.'
   },
   {
-    question: 'Is it possible for a novice investor to invest in real estate?',
-    answer: 'Yes. With the correct knowledge and approach, a beginner can construct solid portfolios.'
+    question: '5. How do you identify the right suburb for investment?',
+    answer: 'If you’re planning to buy investment property in Australia with a buyers agent, we analyse growth trends, rental yields, infrastructure, and demographics to identify high-performing suburbs aligned with your goals.'
   },
   {
-    question: 'How many properties should one own?',
-    answer: 'There is no set number. Rather, one should concentrate on constructing a diverse portfolio according to their financial capability and objectives.'
+    question: '6. What is SMSF property investment in Australia?',
+    answer: 'An SMSF buyers advocate Australia helps you purchase property through your super fund using compliant structures like LRBA, ensuring the investment meets strict regulatory requirements and retirement objectives.'
   },
   {
-    question: 'What is SMSF property investment?',
-    answer: 'It allows you to invest your superannuation into property under strict compliance rules to support long-term retirement growth.'
+    question: '7. Is SMSF property investment right for me?',
+    answer: 'SMSF property investment isn’t suitable for everyone. It generally requires a minimum fund balance of around $160,000, strong borrowing capacity within the fund, and a long-term strategy aligned with retirement goals. At JJ Property Partner, we carry out a detailed suitability assessment to ensure this approach aligns with your financial position, risk profile, and long-term objectives before making any recommendation.'
   },
   {
-    question: 'Is SMSF property right for everyone?',
-    answer: 'Not always. It requires financial capacity, compliance understanding, and a long-term outlook. We help assess suitability based on your situation.'
+    question: '8. What are buyers agent fees in Australia?',
+    answer: 'Buyers agent fees in Australia vary depending on the service scope, typically structured as a fixed fee or percentage. We provide transparent pricing with no hidden costs, aligned to the value delivered.'
   },
   {
-    question: 'How do you support SMSF buyers?',
-    answer: 'We work alongside your advisors to ensure compliance while sourcing and securing the right investment aligned with your retirement strategy.'
+    question: '9. What makes JJ Property Partner different from other buyers agents?',
+    answer: 'JJ Property Partner stands apart through genuine experience, advanced data insights, and personalised service. Alex has built a $5M+ property portfolio using the same strategies he recommends to clients. His 20+ years in IT enables more sophisticated, data-driven decision-making. Most importantly, every client works directly with Alex - ensuring consistent guidance, accountability, and a high level of expertise throughout the entire buying process.'
   }
 ];
 
@@ -52,15 +52,17 @@ const services = [
     icon: <HomeIcon className="w-8 h-8" />,
     solidIcon: <FaHome className="w-8 h-8" />,
     tag: 'Residential',
-    title: 'First-Time Buyers',
-    subtitle: 'Confident and decisive market entry.',
-    description: 'Investing in your first home is perhaps the most critical financial investment you will ever make. Instead of tying you down to one location alone, we ensure that you get access to some of the finest opportunities in Australia depending on your objectives, affordability, and preferences. At your service as your buying agents, we free you from all the uncertainty.',
+    title: 'First Home Buyers',
+    subtitle: 'Expert Guidance for Your Most Important Financial Decision',
+    description: 'Buying your first property in Australia is a major milestone. JJ Property Partner simplifies the journey with structured, research-driven guidance. Our first home buyer assistance Australia service helps you secure the right property at the right price, based on your budget, lifestyle, borrowing capacity, and long-term goals—without location limitations. What we deliver for first home buyers:',
     benefits: [
-      'Exclusive access to off-market/pre-market properties throughout the nation',
-      'Decision making supported by data analysis instead of emotion',
-      'Highly skilled negotiating techniques for favorable terms',
-      'Extensive due diligence for every property purchase',
-      'Complete assistance starting from planning till settlement'
+      'Comprehensive budget and borrowing capacity review with mortgage broker',
+      'Personalised property strategy aligned to your goals and needs',
+      'Suburb research assessing growth potential, liveability, infrastructure, and demand',
+      'Access to exclusive off-market and pre-market properties across Australia-wide',
+      'Professional negotiation securing best price and favourable contract terms',
+      'First Home Owner Grant guidance and eligibility assessment support',
+      'Full coordination due diligence, legal review, and settlement process'
     ],
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
     accent: 'sky',
@@ -73,14 +75,16 @@ const services = [
     solidIcon: <FaChartLine className="w-8 h-8" />,
     tag: 'Investment',
     title: 'Property Investors',
-    subtitle: 'Massive data-driven acquisitions.',
-    description: 'An effective portfolio demands strategic planning, timing, and availability of suitable investments. Our investment philosophy lies in selecting the most promising growth and yield markets throughout Australia, not merely a single area. Our team works exclusively for the benefit of the buyer to guarantee that all acquisitions fit into your overall wealth plan.',
+    subtitle: 'Data-Driven Portfolio Growth Across Australia',
+    description: 'Building a profitable portfolio requires strategy, timing, and expert insight. As your investment property buyers agent Australia, JJ Property Partner uses advanced data modelling and national market intelligence to identify high-growth, cash-flow positive opportunities, focusing on performance-driven assets rather than location familiarity for smarter, scalable investment decisions. Our investment acquisition approach covers:',
     benefits: [
-      'Strategic suburb selection based on nationwide research',
-      'Focus on high-growth and cash flow-positive deals',
-      'Access to exclusive listings to minimize competition',
-      'Negotiation strategies customized based on seller motivations',
-      'Professional portfolio planning over a 5 – 10 year horizon',
+      'Suburb growth analysis covering cycles, vacancies, rental demand Australia',
+      'Identify high-yield dual-income properties including granny flat opportunities Australia',
+      'Find value-add properties with renovation, rezoning, emerging corridor potential',
+      'Access off-market properties reducing competition and improving purchase pricing',
+      'Negotiation strategies tailored to vendor motivation and market conditions',
+      'Five to ten year portfolio roadmap guiding future acquisitions',
+      'Coordinate closely with your financial adviser, broker, and accountant'
     ],
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
     accent: 'indigo',
@@ -92,15 +96,17 @@ const services = [
     icon: <TbHomeShield className="w-8 h-8" />,
     solidIcon: <TbHomeShield className="w-8 h-8" />,
     tag: 'SMSF',
-    title: 'Growing SMSF through Property Investments',
-    subtitle: 'Compliance-first wealth building.',
-    description: 'Investing in property through an SMSF demands adherence to compliance laws and proper strategies. We make this easier for you by helping find suitable property investments that meet all the necessary compliance and financing requirements, working across national property investment opportunities.',
+    title: 'SMSF Property Investment',
+    subtitle: 'Compliant, Strategic Property Acquisitions for Your Superannuation Fund',
+    description: 'SMSF property investment Australia offers powerful wealth-building opportunities, but strict Act 1993 (SIS Act) compliance is essential to avoid penalties. JJ Property Partner specialises in SMSF property acquisitions, guiding Australian investors through every step while collaborating closely with your accountant, financial adviser, and auditor to ensure a compliant, strategic purchase. Our SMSF service includes:',
     benefits: [
-      'Advice that meets all SMSF compliance requirements',
-      'Working closely with your accountants and financial advisers',
-      'Investment in maintenance-free and highly profitable assets',
-      'Specialised property investments such as dual income properties',
-      'Asset selection to achieve retirement goals',
+      'SMSF suitability assessment evaluating balance borrowing capacity risk profile',
+      'Sole purpose test compliance verified for every property considered',
+      'LRBA coordination with compliant lenders for SMSF property finance',
+      'High yield low maintenance properties aligned to income goals',
+      'Dual occupancy and commercial property options where appropriate considered',
+      'Full suburb and due diligence meeting SMSF investment criteria',
+      'End to end execution strategy through settlement with advisors'
     ],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
     accent: 'emerald',
@@ -138,11 +144,11 @@ export default function Services() {
               Our Services
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-4xl">
-              Acquisition strategies built for{' '}
-              <span className="italic text-sky-300">precision.</span>
+              Acquisition Strategies Built for <br />
+              <span className="italic text-sky-300">Precision and Long-Term Wealth.</span>
             </h1>
             <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
-              JJ Property Partner operates as a dedicated buyer’s agent, representing your interests only - sourcing, evaluating, and securing property opportunities across Australia.
+              We provide strategic, confidential negotiation as your dedicated buyers agent, representing only you. Using proven, data-driven techniques, we protect your identity and secure the best possible property price and terms.
             </p>
           </motion.div>
 
@@ -272,6 +278,41 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Additional Services */}
+      <section className="py-20 md:py-32 px-8 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Additional Services</h2>
+            <div className="h-1 w-20 bg-sky-400 mx-auto rounded-full" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-left">
+            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} className="bg-white p-10 rounded-3xl border border-black/5 hover:shadow-xl transition-shadow flex flex-col items-center mx-auto text-center">
+              <div className="w-16 h-16 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6">
+                <MessageSquare className="w-8 h-8 text-sky-500" />
+              </div>
+              <h3 className="text-2xl font-serif text-black mb-4">Negotiation Only Service</h3>
+              <p className="text-muted leading-relaxed font-sans text-base">Already found a property you love? Our property negotiation buyers agent Australia service provides standalone representation, using detailed market data, comparable sales insights, and expert negotiation skills to secure the best possible price and favourable contract terms on your behalf.</p>
+            </motion.div>
+            
+            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.1}} className="bg-white p-10 rounded-3xl border border-black/5 hover:shadow-xl transition-shadow flex flex-col items-center mx-auto text-center">
+              <div className="w-16 h-16 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6">
+                <Gavel className="w-8 h-8 text-sky-500" />
+              </div>
+              <h3 className="text-2xl font-serif text-black mb-4">Auction Bidding Representation</h3>
+              <p className="text-muted leading-relaxed font-sans text-base">Auctions in Australia are fast-paced and emotionally charged, often leading buyers to overpay. Our auction bidding service Australia offers calm, strategic representation, using a pre-set bidding limit and a data-driven approach based on accurate property valuation and local market competition.</p>
+            </motion.div>
+
+            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.2}} className="bg-white p-10 rounded-3xl border border-black/5 hover:shadow-xl transition-shadow flex flex-col items-center mx-auto text-center">
+              <div className="w-16 h-16 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6">
+                <Map className="w-8 h-8 text-sky-500" />
+              </div>
+              <h3 className="text-2xl font-serif text-black mb-4">Portfolio Strategy Sessions</h3>
+              <p className="text-muted leading-relaxed font-sans text-base">For investors wanting to plan their next acquisition or restructure their approach, we offer dedicated portfolio strategy sessions - reviewing your existing holdings, modelling future acquisitions, and developing a structured roadmap for wealth growth.</p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
