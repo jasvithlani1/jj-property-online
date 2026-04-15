@@ -186,8 +186,8 @@ export default function FirstHomeBuyers() {
                 </p>
               </div>
 
-              {/* Right — Scrollable Cards */}
-              <div className="lg:w-[62%] flex flex-col gap-8">
+              {/* Right — Scrollable Cards with Timeline */}
+              <div className="lg:w-[62%] flex flex-col">
                 {[
                   {
                     step: '01',
@@ -225,39 +225,53 @@ export default function FirstHomeBuyers() {
                     body: 'We coordinate with your solicitor, broker, and all relevant parties through to final settlement. Post-purchase, we remain available to answer questions and assist with future planning.',
                     image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
                   },
-                ].map((card) => (
-                  <motion.div
-                    key={card.step}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-80px' }}
-                    transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 hover:bg-white/8 transition-all duration-300 group"
-                  >
-                    {/* Card Image */}
-                    <div className="relative h-56 overflow-hidden">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
-                      {/* Step badge */}
-                      <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-                        Step {card.step}
-                      </div>
+                ].map((card, i, arr) => (
+                  <div key={card.step} className="flex gap-6 items-start">
+
+                    {/* Timeline Rail */}
+                    <div className="hidden lg:flex flex-col items-center shrink-0 pt-[18px]">
+                      {/* Dot */}
+                      <div className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/20 shrink-0 z-10" />
+                      {/* Connecting line to next card */}
+                      {i < arr.length - 1 && (
+                        <div className="w-px flex-1 min-h-[2rem] bg-gradient-to-b from-sky-400/60 to-sky-400/10 mt-2" />
+                      )}
                     </div>
 
-                    {/* Card Body */}
-                    <div className="p-8">
-                      <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
-                        {card.title}
-                      </h3>
-                      <p className="text-white/60 font-sans text-base leading-relaxed">
-                        {card.body}
-                      </p>
-                    </div>
-                  </motion.div>
+                    {/* Card */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-80px' }}
+                      transition={{ duration: 0.7, ease: 'easeOut' }}
+                      className={`flex-1 rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 transition-all duration-300 group ${i < arr.length - 1 ? 'mb-8' : ''}`}
+                    >
+                      {/* Card Image */}
+                      <div className="relative h-56 overflow-hidden">
+                        <img
+                          src={card.image}
+                          alt={card.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
+                        {/* Step badge */}
+                        <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                          Step {card.step}
+                        </div>
+                      </div>
+
+                      {/* Card Body */}
+                      <div className="p-8">
+                        <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
+                          {card.title}
+                        </h3>
+                        <p className="text-white/60 font-sans text-base leading-relaxed">
+                          {card.body}
+                        </p>
+                      </div>
+                    </motion.div>
+
+                  </div>
                 ))}
               </div>
 
