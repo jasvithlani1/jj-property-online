@@ -231,10 +231,24 @@ export default function FirstHomeBuyers() {
                     {/* Timeline Rail */}
                     <div className="hidden lg:flex flex-col items-center shrink-0 pt-[18px]">
                       {/* Dot */}
-                      <div className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/20 shrink-0 z-10" />
+                      <motion.div 
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, margin: '-15%' }}
+                        transition={{ duration: 0.5, ease: 'backOut' }}
+                        className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/20 shrink-0 z-10" 
+                      />
                       {/* Connecting line to next card */}
                       {i < arr.length - 1 && (
-                        <div className="w-px flex-1 min-h-[2rem] bg-gradient-to-b from-sky-400/60 to-sky-400/10 mt-2" />
+                        <div className="w-px flex-1 min-h-[4rem] bg-white/5 mt-2 relative overflow-hidden">
+                          <motion.div 
+                            initial={{ height: '0%' }}
+                            whileInView={{ height: '100%' }}
+                            viewport={{ once: false, margin: '-25%' }}
+                            transition={{ duration: 1, ease: 'easeInOut' }}
+                            className="absolute top-0 left-0 w-full bg-gradient-to-b from-sky-400/80 to-sky-400/10"
+                          />
+                        </div>
                       )}
                     </div>
 
