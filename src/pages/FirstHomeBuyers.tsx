@@ -167,12 +167,12 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* ── What We Do — Sticky Scroll Section ──────────────────────── */}
-        <section className="py-20 md:py-32 px-6 md:px-8 bg-[#021f3a] text-white overflow-hidden">
+        <section className="py-20 md:py-32 px-6 md:px-8 bg-[#021f3a] text-white">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
               {/* Left — Sticky Panel */}
-              <div className="lg:w-[38%] lg:sticky lg:top-32 lg:self-start">
+              <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
                 <div className="mb-6">
                   <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400">Our Process</span>
                 </div>
@@ -184,16 +184,6 @@ export default function FirstHomeBuyers() {
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
                   From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase — so you can move forward with confidence, not guesswork.
                 </p>
-
-                {/* Step counter dots */}
-                <div className="mt-12 hidden lg:flex flex-col gap-3">
-                  {[1,2,3,4,5,6].map((n) => (
-                    <div key={n} className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-sky-400/40" />
-                      <span className="text-xs font-bold uppercase tracking-widest text-sky-400/50">Step {String(n).padStart(2,'0')}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Right — Scrollable Cards */}
