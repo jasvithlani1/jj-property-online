@@ -50,18 +50,25 @@ const firstHomeFaqs = [
 
 const pillars = [
   {
-    title: 'First Home Buyers - National Guidance',
-    description: 'Home purchase is a landmark moment which needs clarity, proper planning, and adequate guidance. Being a committed buyers agent, JJ Property Partner assists buyers in finding the most suitable property regardless of the location within Australia.\n\nThe strategy employed by our agents revolves around identifying and understanding your objectives, your finances and future plans. Whether you have decided to buy the house as your place of residence or initiate investments in property, we will assist you at making the best possible decision anywhere in Australia.',
+    title: 'Why First Home Buyers Need Independent Representation',
+    description: 'When you buy through a traditional real estate process, the selling agent is legally obligated to act in the vendor\'s best interest — not yours. That means every negotiation, every open home conversation, and every contract discussion is handled by someone working against you.\n\nFor a buyers agent first home buyer in Australia, this can be especially challenging. A licensed buyers agent changes that dynamic entirely. We sit on your side of the table. Our goal is to get you the best property at the best price on the best terms — and we are contractually obligated to act exclusively in your interest.',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Property Strategy & Off-Market Properties Nationwide',
-    description: 'Buying the most suitable property especially in highly competitive markets calls for a lot more besides browsing through listings. What is needed is a proper strategy and access to properties which might not be available to all.\n\nWe find high-quality properties throughout Australia by searching across suburb growth potential, rental return, infrastructure projects and demographics. We also offer access to off-market properties which give our clients the edge in their buying process, helping secure assets that will create immediate value.',
+    title: 'Smart Property Buying in Australia Made Simple',
+    description: 'Securing the right property in Australia\'s competitive market takes more than browsing listings. It requires a clear strategy and access to opportunities others miss. At JJ Property Partner, we identify high-quality properties using data-driven insights such as suburb growth, rental yields, infrastructure, and demographics.\n\nWe also unlock off-market opportunities to give you an advantage. Our goal is to help you secure a property that delivers immediate value while supporting strong long-term capital growth.',
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'End-to-End Guidance for Assured Decision-Making',
-    description: 'JJ Property Partner offers end-to-end guidance during your entire journey of purchasing a new property. As your personal buyers’ agent, we act on your behalf at every step of the process.\n\nWe handle everything from researching properties, due diligence, negotiations, and managing the transaction until completion. In addition, we collaborate with your mortgage agents and financial advisers to integrate your purchase with your financial plan, ensuring you set a solid base for future real estate investments.',
+    title: 'The JJ Property Partner Advantage for First Home Buyers',
+    description: '',
+    advantages: [
+      { label: 'Access', text: 'Discover off-market and pre-market properties not available to the public.' },
+      { label: 'Research', text: 'Make informed decisions with data-driven suburb analysis using 10+ key metrics.' },
+      { label: 'Negotiation', text: 'Achieve better outcomes with expert negotiation that outperforms DIY approaches.' },
+      { label: 'Clarity', text: 'Enjoy a smooth, stress-free process with clear, end-to-end guidance.' },
+      { label: 'Independence', text: 'Get unbiased advice with 100% representation and zero conflicts of interest throughout your buying journey.' },
+    ],
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
   }
 ];
@@ -94,11 +101,14 @@ export default function FirstHomeBuyers() {
                 First Home Buyers
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
-                Acquisition strategies designed for{' '}
-                <span className="italic text-sky-400">confident</span> first home buyers.
+                Acquisition Strategies Designed for{' '}
+                <span className="italic text-sky-400">Confident</span> First Home Buyers.
               </h1>
               <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Every journey is unique. The process of buying a home requires multiple steps which lead to achieving the best possible outcome. The JJ Property Partner approach for first home buyers consists of three essential elements which form its foundation.
+                Buying your first home in Australia is increasingly complex, with rising prices, competitive auctions, and confusing grant schemes making the process overwhelming. Without expert support, costly mistakes are easy to make — which is why first home buyer assistance across Australia is more important than ever.
+              </p>
+              <p className="text-base md:text-lg text-sky-100/60 font-sans max-w-3xl mx-auto leading-relaxed mt-4">
+                JJ Property Partner offers dedicated, independent guidance from start to finish. Alex combines over 20 years of IT and property expertise to help you secure the right property, in the right location, at the right price — anywhere in Australia.
               </p>
             </motion.div>
           </div>
@@ -127,9 +137,20 @@ export default function FirstHomeBuyers() {
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
-                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed whitespace-pre-wrap">
-                    {pillar.description}
-                  </div>
+                  {pillar.advantages ? (
+                    <ul className="space-y-4">
+                      {pillar.advantages.map((adv: { label: string; text: string }, i: number) => (
+                        <li key={i} className="flex items-start gap-3 text-base md:text-lg text-muted font-sans leading-relaxed">
+                          <CheckCircle2 className="w-5 h-5 text-sky-500 shrink-0 mt-1" />
+                          <span><span className="font-bold text-black">{adv.label}:</span> {adv.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed whitespace-pre-wrap">
+                      {pillar.description}
+                    </div>
+                  )}
                 </div>
 
                 {/* Image Side */}
