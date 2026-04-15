@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Home as HomeIcon, TrendingUp, CheckCircle2, Plus } from 'lucide-react';
 import { FaHome, FaChartLine } from 'react-icons/fa';
-import { FaHouseShield } from 'react-icons/fa6';
 import { TbHomeShield } from 'react-icons/tb';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
@@ -91,7 +90,7 @@ const services = [
   {
     id: 'smsf-property',
     icon: <TbHomeShield className="w-8 h-8" />,
-    solidIcon: <FaHouseShield className="w-8 h-8" />,
+    solidIcon: <TbHomeShield className="w-8 h-8" />,
     tag: 'SMSF',
     title: 'Growing SMSF through Property Investments',
     subtitle: 'Compliance-first wealth building.',
