@@ -166,6 +166,115 @@ export default function FirstHomeBuyers() {
           </div>
         </section>
 
+        {/* ── What We Do — Sticky Scroll Section ──────────────────────── */}
+        <section className="py-20 md:py-32 px-6 md:px-8 bg-[#021f3a] text-white overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+
+              {/* Left — Sticky Panel */}
+              <div className="lg:w-[38%] lg:sticky lg:top-32 lg:self-start">
+                <div className="mb-6">
+                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400">Our Process</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
+                  What We Do for{' '}
+                  <span className="italic text-sky-300">First Home Buyers</span>
+                </h2>
+                <div className="h-1 w-16 bg-sky-400 mb-8 rounded-full" />
+                <p className="text-white/60 font-sans text-lg leading-relaxed">
+                  From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase — so you can move forward with confidence, not guesswork.
+                </p>
+
+                {/* Step counter dots */}
+                <div className="mt-12 hidden lg:flex flex-col gap-3">
+                  {[1,2,3,4,5,6].map((n) => (
+                    <div key={n} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-sky-400/40" />
+                      <span className="text-xs font-bold uppercase tracking-widest text-sky-400/50">Step {String(n).padStart(2,'0')}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right — Scrollable Cards */}
+              <div className="lg:w-[62%] flex flex-col gap-8">
+                {[
+                  {
+                    step: '01',
+                    title: 'Strategy & Financial Clarity',
+                    body: 'We begin with a thorough understanding of your situation: your borrowing capacity, deposit, first home buyer grant eligibility, stamp duty concessions, target timeline, and long-term property goals. This session produces a clear acquisition brief that guides every subsequent decision.',
+                    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '02',
+                    title: 'Property Strategy & Suburb Research',
+                    body: 'Rather than immediately browsing listings, we first build a strategic framework for your purchase. Using our data modelling approach, we assess suburbs against multiple performance metrics — growth trajectory, rental yield, vacancy rates, infrastructure investment, and demographic trends.',
+                    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '03',
+                    title: 'Property Identification & Off-Market Access',
+                    body: 'We conduct an active, structured property search — engaging our network of selling agents, attending inspections, and monitoring off-market channels to identify suitable opportunities before they reach public listings. Our clients gain access to properties that are never advertised.',
+                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '04',
+                    title: 'Due Diligence',
+                    body: 'Every shortlisted property undergoes thorough due diligence including comparable sales analysis, pest and building inspection coordination, legal contract review in collaboration with your solicitor, body corporate review (for strata), and flood or bushfire overlay checks.',
+                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '05',
+                    title: 'Negotiation & Auction Representation',
+                    body: 'We negotiate on your behalf at private treaty or represent you at auction using a pre-agreed strategy based on property valuation, vendor motivation, and competitive analysis. Professional negotiation consistently delivers better outcomes than buyers self-representing.',
+                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '06',
+                    title: 'Settlement & Post-Purchase Support',
+                    body: 'We coordinate with your solicitor, broker, and all relevant parties through to final settlement. Post-purchase, we remain available to answer questions and assist with future planning.',
+                    image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
+                  },
+                ].map((card) => (
+                  <motion.div
+                    key={card.step}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
+                    className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 hover:bg-white/8 transition-all duration-300 group"
+                  >
+                    {/* Card Image */}
+                    <div className="relative h-56 overflow-hidden">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
+                      {/* Step badge */}
+                      <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                        Step {card.step}
+                      </div>
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="p-8">
+                      <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
+                        {card.title}
+                      </h3>
+                      <p className="text-white/60 font-sans text-base leading-relaxed">
+                        {card.body}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
