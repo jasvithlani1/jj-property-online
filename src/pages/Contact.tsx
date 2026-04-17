@@ -107,8 +107,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <a href="mailto:jjpropertypartner@gmail.com" className="text-xl font-sans font-medium text-black hover:text-sky-600 transition-colors">
-                      jjpropertypartner@gmail.com
+                    <a href="mailto:info@jjpropertypartner.com.au" className="text-xl font-sans font-medium text-black hover:text-sky-600 transition-colors">
+                      info@jjpropertypartner.com.au
                     </a>
                   </div>
                 </div>

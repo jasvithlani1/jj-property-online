@@ -57,7 +57,7 @@ export default function Footer() {
                   <Mail className="w-4 h-4 text-sky-300" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">Email</span>
                 </div>
-                <a href="mailto:jjpropertypartner@gmail.com" className="hover:text-white transition-colors text-sm break-all md:break-normal text-sky-100">jjpropertypartner@gmail.com</a>
+                <a href="mailto:info@jjpropertypartner.com.au" className="hover:text-white transition-colors text-sm break-all md:break-normal text-sky-100">info@jjpropertypartner.com.au</a>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">

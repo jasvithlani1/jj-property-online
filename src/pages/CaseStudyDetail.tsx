@@ -22,6 +22,7 @@ interface SanityCaseStudy {
   outcome: string;
   stats: { label: string; value: string }[];
   seo?: { metaTitle: string; metaDescription: string; ogImage: any };
+  gallery?: any[];
 }
 
 export default function CaseStudyDetail() {
@@ -52,7 +53,8 @@ export default function CaseStudyDetail() {
           strategy,
           outcome,
           stats,
-          seo
+          seo,
+          gallery
         }`;
         const data = await client.fetch(query, { slug: id });
         setStudy(data);
@@ -113,7 +115,7 @@ export default function CaseStudyDetail() {
       />
 
       {/* Back navigation */}
-      <div className="px-8 pt-10 pb-0">
+      <div className="px-8 pt-24 pb-0 relative z-10">
         <div className="max-w-7xl mx-auto">
           <button
             onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
@@ -265,6 +267,28 @@ export default function CaseStudyDetail() {
           </aside>
         </div>
       </section>
+
+      {/* Property Image Gallery */}
+      {study.gallery && study.gallery.length > 0 && (
+        <section className="px-8 pb-16 md:pb-24">
+          <div className="max-w-7xl mx-auto">
+            <h3 className="text-3xl font-serif text-black mb-8">Property Gallery</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {study.gallery.map((img: any, idx: number) => (
+                <div key={idx} className="rounded-3xl overflow-hidden aspect-square md:aspect-video relative group border border-black/5 shadow-sm">
+                  {img && (
+                    <img 
+                      src={urlFor(img).url()} 
+                      alt={img.alt || 'Gallery image'} 
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700" 
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Other Case Studies */}
       <section className="px-8 py-24 md:py-40 bg-sky-50">

@@ -57,9 +57,9 @@ export default function Navbar() {
         {/* Top Banner */}
         <div className="bg-[#011122] text-sky-200/80 py-2 px-6 md:px-8 flex justify-between items-center text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] border-b border-white/5">
           <div className="flex items-center gap-4 md:gap-8">
-            <a href="mailto:jjpropertypartner@gmail.com" className="flex items-center gap-2 hover:text-sky-300 transition-colors">
+            <a href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-2 hover:text-sky-300 transition-colors">
               <Mail className="w-3 md:w-3.5 h-3 md:h-3.5" />
-              <span className="hidden sm:inline">jjpropertypartner@gmail.com</span>
+              <span className="hidden sm:inline">info@jjpropertypartner.com.au</span>
             </a>
             <div className="h-3 w-px bg-white/10 hidden md:block" />
             <a href="tel:+61481334458" className="flex items-center gap-2 hover:text-sky-300 transition-colors">

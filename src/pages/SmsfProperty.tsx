@@ -52,17 +52,17 @@ const pillars = [
   {
     title: 'Strategically Structuring an SMSF Property Investment',
     description: 'An SMSF property investment involves careful planning, an understanding of financial regulations, and a long-term strategic vision. JJ Property Partner offers expert services in navigating through complex financial laws in Australia while helping you acquire the best properties possible.\n\nAs professional buyers’ agents who solely represent the buyer’s best interest, we utilize our knowledge of financial regulation and thorough research to identify lucrative investment properties all over Australia.',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'SMSF-Compliant Purchase & Off-Market Properties',
     description: 'SMSF acquisitions involve many regulations that must be followed. At JJ Property Partner, we work together with your financial adviser, accountant, and SMSF auditor to make sure all of your purchases are compliant with lending policies and sole purpose tests.\n\nWe excel at sourcing investment properties in Australia that can deliver great yields and minimal costs along with offering you access to exclusive off-market properties.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'The Long-Term Vision of Growth and End-to-End Execution',
     description: 'The success of any SMSF property investment relies heavily on long-term vision and planning. JJ Property Partner specializes in acquiring those assets that will generate continuous capital growth and meet your retirement needs.\n\nFrom start to finish, our services include strategy development, suburb analysis, negotiations, and settlements. JJ Property Partner helps its clients to develop SMSF property portfolio in a way that ensures strong performance and strategic diversification throughout Australia.',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=900',
   }
 ];
 

@@ -52,12 +52,12 @@ const pillars = [
   {
     title: 'Why First Home Buyers Need Independent Representation',
     description: 'When you buy through a traditional real estate process, the selling agent is legally obligated to act in the vendor\'s best interest — not yours. That means every negotiation, every open home conversation, and every contract discussion is handled by someone working against you.\n\nFor a buyers agent first home buyer in Australia, this can be especially challenging. A licensed buyers agent changes that dynamic entirely. We sit on your side of the table. Our goal is to get you the best property at the best price on the best terms — and we are contractually obligated to act exclusively in your interest.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Smart Property Buying in Australia Made Simple',
     description: 'Securing the right property in Australia\'s competitive market takes more than browsing listings. It requires a clear strategy and access to opportunities others miss. At JJ Property Partner, we identify high-quality properties using data-driven insights such as suburb growth, rental yields, infrastructure, and demographics.\n\nWe also unlock off-market opportunities to give you an advantage. Our goal is to help you secure a property that delivers immediate value while supporting strong long-term capital growth.',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'The JJ Property Partner Advantage for First Home Buyers',
@@ -69,7 +69,7 @@ const pillars = [
       { label: 'Clarity', text: 'Enjoy a smooth, stress-free process with clear, end-to-end guidance.' },
       { label: 'Independence', text: 'Get unbiased advice with 100% representation and zero conflicts of interest throughout your buying journey.' },
     ],
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=900',
   }
 ];
 

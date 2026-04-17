@@ -52,17 +52,17 @@ const pillars = [
   {
     title: 'Property Investors - Strategic Portfolio Growth',
     description: 'It is essential to take a structured and research-based approach to ensure that you build a profitable property portfolio. JJ Property Partner acts as a buyers\' agent that works in the best interest of the buyer and helps its clients acquire properties that meet their financial objectives.\n\nOur approach is built on comprehensive research, including suburb growth analysis, rental yield evaluation, and future capital growth potential. Every acquisition is guided by your individual investment strategy, ensuring a balance between wealth creation and risk management.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Advanced Acquisition Intelligence',
     description: 'JJ Property Partner leverages advanced market intelligence, industry networks, and analytical frameworks to identify high-performing investment opportunities across Australia before they reach the broader market.\n\nOur strategy focuses on identifying high-growth and high-yield opportunities, including dual-income properties, granny flats, and properties located in emerging growth corridors. Through access to off-market opportunities nationwide, we help clients secure premium assets while avoiding unnecessary competition.',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Precision Negotiation and Execution',
     description: 'The success of an investment depends not just on the choice of the investment, but also on the accuracy with which it is carried out. JJ Property Partner makes use of customized negotiation tactics depending on seller motivation, market forces, and asset positioning.\n\nOur company takes care of the entire process of purchasing, from strategy formulation and identification of properties for purchase to negotiations and settlement, making the entire investment process seamless and result-oriented.',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1556761175-5973dd0f32d7?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
