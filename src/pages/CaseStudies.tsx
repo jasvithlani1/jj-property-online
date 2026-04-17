@@ -106,7 +106,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-20 md:py-40 px-8 bg-white">
+      <section className="py-16 md:py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-24">
@@ -185,7 +185,7 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 md:py-40 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
+      <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-400 rounded-full blur-[200px]" />
         </div>

@@ -129,7 +129,7 @@ export default function Services() {
       <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero */}
-      <section className="relative px-6 py-16 sm:px-8 sm:py-24 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-6 py-16 sm:px-8 sm:py-24 md:pt-32 md:pb-24 bg-[#021f3a] text-white overflow-hidden">
         {/* bg glow blobs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -175,18 +175,22 @@ export default function Services() {
       </section>
 
       {/* Service Sections */}
-      <section className="py-20 md:py-40 px-8 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col gap-24 md:gap-40">
+      <section className="py-16 md:py-24 px-8 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              id={service.id}
-              initial="initial"
-              whileHover="hover"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.9, ease: 'easeOut' }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
+              <motion.div
+                id={service.id}
+                initial="initial"
+                whileHover="hover"
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+              >
               {/* Text Side */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="flex items-center gap-4 mb-6">
@@ -276,13 +280,14 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 md:py-32 px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-16 md:py-24 px-8 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Additional Services</h2>
@@ -365,7 +370,7 @@ export default function Services() {
       </section>
 
       {/* CTA Bar */}
-      <section className="py-20 md:py-40 px-8 bg-sky-50">
+      <section className="py-16 md:py-24 px-8 bg-sky-50">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

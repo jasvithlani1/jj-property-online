@@ -140,7 +140,7 @@ export default function About() {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 md:py-32 px-8 bg-white">
+      <section className="py-16 md:py-24 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Our Core Values</h2>

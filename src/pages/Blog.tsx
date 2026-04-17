@@ -177,7 +177,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="px-8 py-20 md:py-40 bg-sky-50">
+      <section className="px-8 py-16 md:py-24 bg-sky-50">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

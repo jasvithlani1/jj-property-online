@@ -115,8 +115,8 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-20 md:py-40 px-6 md:px-8 bg-white">
-          <div className="max-w-7xl mx-auto flex flex-col gap-24 md:gap-32">
+        <section className="py-16 md:py-24 px-6 md:px-8 bg-white">
+          <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
             {pillars.map((pillar, index) => (
               <motion.div
                 key={index}
@@ -167,7 +167,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* ── What We Do — Sticky Scroll Section ──────────────────────── */}
-        <section className="py-20 md:py-32 px-6 md:px-8 bg-[#021f3a] text-white">
+        <section className="py-16 md:py-24 px-6 md:px-8 bg-[#021f3a] text-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
@@ -344,7 +344,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 md:py-40 px-8 bg-[#011122] text-white">
+        <section className="py-16 md:py-24 px-8 bg-[#011122] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

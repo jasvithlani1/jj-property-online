@@ -413,7 +413,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA Section ──────────────────────────────────────────────────── */}
-      <section className="relative py-20 md:py-40 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+      <section className="relative py-16 md:py-24 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <video 
             src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" 
