@@ -140,7 +140,7 @@ export default function BlogDetail() {
       />
 
       {/* Back nav */}
-      <div className="px-8 pt-10">
+      <div className="px-8 pt-24 pb-0 relative z-10">
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => { navigate('/blog'); window.scrollTo(0, 0); }}
