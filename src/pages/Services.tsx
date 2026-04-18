@@ -193,8 +193,9 @@ export default function Services() {
               >
               {/* Text Side */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-4 rounded-2xl ${service.iconClass} group-hover:bg-black group-hover:text-white transition-colors duration-500`}>
+                <div className="flex items-center gap-6 mb-8 relative">
+                  <div className={`absolute -left-2 top-0 w-20 h-20 blur-2xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity ${service.accentClass.replace('bg-','bg-').replace('-50','-400')}`} />
+                  <div className={`relative p-4 rounded-[1.25rem] bg-[#011122] border border-white/10 shadow-[0_0_25px_rgba(56,189,248,0.3)] drop-shadow-[0_0_12px_rgba(56,189,248,0.8)] group-hover:-translate-y-1 transition-all duration-500 z-10 text-sky-400`}>
                     <motion.div
                       variants={{
                         initial: { rotateY: 0 },
@@ -224,7 +225,7 @@ export default function Services() {
                       </motion.div>
                     </motion.div>
                   </div>
-                  <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${service.accentClass} border`}>
+                  <span className={`text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full ${service.accentClass} border shadow-sm`}>
                     {service.tag}
                   </span>
                 </div>
@@ -294,25 +295,34 @@ export default function Services() {
             <div className="h-1 w-20 bg-sky-400 mx-auto rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-left">
-            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} className="bg-white p-10 rounded-3xl border border-black/5 hover:shadow-xl transition-shadow flex flex-col items-center mx-auto text-center">
-              <div className="w-16 h-16 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6">
-                <MessageSquare className="w-8 h-8 text-sky-500" />
+            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} className="group bg-white p-10 rounded-3xl border border-black/5 hover:shadow-2xl transition-all duration-500 flex flex-col items-center mx-auto text-center">
+              <div className="relative mb-8 group-hover:-translate-y-2 transition-transform duration-500">
+                <div className="absolute inset-0 bg-sky-400 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-full" />
+                <div className="w-16 h-16 bg-[#011122] border border-white/10 rounded-2xl flex items-center justify-center relative shadow-[0_0_20px_rgba(56,189,248,0.3)] group-hover:shadow-[0_0_35px_rgba(56,189,248,0.6)] z-10 transition-shadow duration-500">
+                  <MessageSquare className="w-8 h-8 text-sky-400 drop-shadow-[0_0_12px_currentColor]" />
+                </div>
               </div>
               <h3 className="text-2xl font-serif text-black mb-4">Negotiation Only Service</h3>
               <p className="text-muted leading-relaxed font-sans text-base">Already found a property you love? Our property negotiation buyers agent Australia service provides standalone representation, using detailed market data, comparable sales insights, and expert negotiation skills to secure the best possible price and favourable contract terms on your behalf.</p>
             </motion.div>
             
-            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.1}} className="bg-white p-10 rounded-3xl border border-black/5 hover:shadow-xl transition-shadow flex flex-col items-center mx-auto text-center">
-              <div className="w-16 h-16 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6">
-                <Gavel className="w-8 h-8 text-sky-500" />
+            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.1}} className="group bg-white p-10 rounded-3xl border border-black/5 hover:shadow-2xl transition-all duration-500 flex flex-col items-center mx-auto text-center">
+              <div className="relative mb-8 group-hover:-translate-y-2 transition-transform duration-500">
+                <div className="absolute inset-0 bg-indigo-400 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-full" />
+                <div className="w-16 h-16 bg-[#011122] border border-white/10 rounded-2xl flex items-center justify-center relative shadow-[0_0_20px_rgba(99,102,241,0.3)] group-hover:shadow-[0_0_35px_rgba(99,102,241,0.6)] z-10 transition-shadow duration-500">
+                  <Gavel className="w-8 h-8 text-indigo-400 drop-shadow-[0_0_12px_currentColor]" />
+                </div>
               </div>
               <h3 className="text-2xl font-serif text-black mb-4">Auction Bidding Representation</h3>
               <p className="text-muted leading-relaxed font-sans text-base">Auctions in Australia are fast-paced and emotionally charged, often leading buyers to overpay. Our auction bidding service Australia offers calm, strategic representation, using a pre-set bidding limit and a data-driven approach based on accurate property valuation and local market competition.</p>
             </motion.div>
 
-            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.2}} className="bg-white p-10 rounded-3xl border border-black/5 hover:shadow-xl transition-shadow flex flex-col items-center mx-auto text-center">
-              <div className="w-16 h-16 bg-sky-50 border border-sky-100 rounded-2xl flex items-center justify-center mb-6">
-                <Map className="w-8 h-8 text-sky-500" />
+            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.2}} className="group bg-white p-10 rounded-3xl border border-black/5 hover:shadow-2xl transition-all duration-500 flex flex-col items-center mx-auto text-center">
+              <div className="relative mb-8 group-hover:-translate-y-2 transition-transform duration-500">
+                <div className="absolute inset-0 bg-emerald-400 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-full" />
+                <div className="w-16 h-16 bg-[#011122] border border-white/10 rounded-2xl flex items-center justify-center relative shadow-[0_0_20px_rgba(52,211,153,0.3)] group-hover:shadow-[0_0_35px_rgba(52,211,153,0.6)] z-10 transition-shadow duration-500">
+                  <Map className="w-8 h-8 text-emerald-400 drop-shadow-[0_0_12px_currentColor]" />
+                </div>
               </div>
               <h3 className="text-2xl font-serif text-black mb-4">Portfolio Strategy Sessions</h3>
               <p className="text-muted leading-relaxed font-sans text-base">For investors wanting to plan their next acquisition or restructure their approach, we offer dedicated portfolio strategy sessions - reviewing your existing holdings, modelling future acquisitions, and developing a structured roadmap for wealth growth.</p>
