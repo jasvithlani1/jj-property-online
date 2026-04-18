@@ -1,9 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Home as HomeIcon, TrendingUp, CheckCircle2, Plus, MessageSquare, Gavel, Map } from 'lucide-react';
-import { FaHome, FaChartLine } from 'react-icons/fa';
-import { TbHomeShield } from 'react-icons/tb';
+import { ArrowRight, CheckCircle2, Plus, MessageSquare, Gavel, Map, Key, Building2, Landmark, Crown, ShieldCheck } from 'lucide-react';
+import { FaHome, FaChartLine, FaKey, FaBuilding, FaLandmark, FaShieldAlt } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
 
@@ -49,8 +48,8 @@ const servicesFaqs = [
 const services = [
   {
     id: 'first-home-buyers',
-    icon: <HomeIcon className="w-8 h-8" />,
-    solidIcon: <FaHome className="w-8 h-8" />,
+    icon: <Key className="w-8 h-8" />,
+    solidIcon: <FaKey className="w-8 h-8" />,
     tag: 'Residential',
     title: 'First Home Buyers',
     subtitle: 'Expert Guidance for Your Most Important Financial Decision',
@@ -64,15 +63,15 @@ const services = [
       'First Home Owner Grant guidance and eligibility assessment support',
       'Full coordination due diligence, legal review, and settlement process'
     ],
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200',
     accent: 'sky',
     accentClass: 'bg-sky-50 border-sky-100',
     iconClass: 'bg-sky-100 text-sky-700',
   },
   {
     id: 'property-investors',
-    icon: <TrendingUp className="w-8 h-8" />,
-    solidIcon: <FaChartLine className="w-8 h-8" />,
+    icon: <Building2 className="w-8 h-8" />,
+    solidIcon: <FaBuilding className="w-8 h-8" />,
     tag: 'Investment',
     title: 'Property Investors',
     subtitle: 'Data-Driven Portfolio Growth Across Australia',
@@ -86,15 +85,15 @@ const services = [
       'Five to ten year portfolio roadmap guiding future acquisitions',
       'Coordinate closely with your financial adviser, broker, and accountant'
     ],
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
     accent: 'indigo',
     accentClass: 'bg-indigo-50 border-indigo-100',
     iconClass: 'bg-indigo-100 text-indigo-700',
   },
   {
     id: 'smsf-property',
-    icon: <TbHomeShield className="w-8 h-8" />,
-    solidIcon: <TbHomeShield className="w-8 h-8" />,
+    icon: <Landmark className="w-8 h-8" />,
+    solidIcon: <FaLandmark className="w-8 h-8" />,
     tag: 'SMSF',
     title: 'SMSF Property Investment',
     subtitle: 'Compliant, Strategic Property Acquisitions for Your Superannuation Fund',
@@ -108,7 +107,7 @@ const services = [
       'Full suburb and due diligence meeting SMSF investment criteria',
       'End to end execution strategy through settlement with advisors'
     ],
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200',
     accent: 'emerald',
     accentClass: 'bg-emerald-50 border-emerald-100',
     iconClass: 'bg-emerald-100 text-emerald-700',
@@ -165,9 +164,10 @@ export default function Services() {
               { value: '97%', label: 'Client Satisfaction Rate' },
               { value: '100%', label: 'Buyers Representation' },
             ].map((stat) => (
-              <div key={stat.label} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                <p className="text-3xl font-serif text-white mb-1">{stat.value}</p>
-                <p className="text-xs font-bold uppercase tracking-widest text-sky-300/80">{stat.label}</p>
+              <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-sky-50/50 pointer-events-none" />
+                <p className="relative text-4xl md:text-5xl font-serif text-[#021f3a] mb-2 font-bold">{stat.value}</p>
+                <p className="relative text-xs font-bold uppercase tracking-widest text-sky-600">{stat.label}</p>
               </div>
             ))}
           </motion.div>
