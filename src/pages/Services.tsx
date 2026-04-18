@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Plus, MessageSquare, Gavel, Map, Key, Building2, Landmark, Crown, ShieldCheck } from 'lucide-react';
-import { FaHome, FaChartLine, FaKey, FaBuilding, FaLandmark, FaShieldAlt } from 'react-icons/fa';
+import { ArrowRight, CheckCircle2, Plus, MessageSquare, Gavel, Map, Key, Building2, Landmark } from 'lucide-react';
+import { FaKey, FaBuilding, FaLandmark } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
 
