@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { ShieldCheck, Target, Search, Handshake, Eye, UserCheck, TrendingUp, BadgeCheck, Briefcase, Building2, MapPin, Star } from 'lucide-react';
+import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin } from 'lucide-react';
 
 export default function About() {
   return (
@@ -38,10 +38,10 @@ export default function About() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl"
           >
-            {/* Sydney Lifestyle Image */}
+            {/* Property Buying Image */}
             <img
-              src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=1200"
-              alt="Sydney Architecture"
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
+              alt="Property Buying"
               className="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.1]"
             />
           </motion.div>
@@ -147,45 +147,37 @@ export default function About() {
             <div className="h-1 w-20 bg-sky-400 mx-auto rounded-full" />
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-20 md:gap-y-16">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="flex gap-6">
-              <div className="shrink-0 mt-1 bg-sky-50 w-16 h-16 rounded-2xl flex items-center justify-center border border-sky-100">
-                <ShieldCheck className="w-8 h-8 text-sky-500" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">01</span>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Independence & Zero Conflict of Interest</h4>
               </div>
-              <div>
-                <h4 className="text-2xl font-serif text-black mb-3">Independence & Zero Conflict of Interest</h4>
-                <p className="text-muted text-base md:text-lg leading-relaxed">JJ Property Partner is a buyers-only agency. We never act for sellers, developers, or any third party that could create a conflict of interest. Every recommendation is made solely in the client's best financial interest. We receive no referral commissions or kickbacks from any source — our only income is the agreed service fee paid by our client.</p>
-              </div>
+              <p className="text-muted text-base md:text-lg leading-relaxed">JJ Property Partner is a buyers-only agency. We never act for sellers, developers, or any third party that could create a conflict of interest. Every recommendation is made solely in the client's best financial interest. We receive no referral commissions or kickbacks from any source — our only income is the agreed service fee paid by our client.</p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="flex gap-6">
-              <div className="shrink-0 mt-1 bg-sky-50 w-16 h-16 rounded-2xl flex items-center justify-center border border-sky-100">
-                <Eye className="w-8 h-8 text-sky-500" />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">02</span>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Transparency in Everything</h4>
               </div>
-              <div>
-                <h4 className="text-2xl font-serif text-black mb-3">Transparency in Everything</h4>
-                <p className="text-muted text-base md:text-lg leading-relaxed">From fee structures to market assessments, we believe our clients deserve complete transparency at every stage. We explain our research methodology, share our data, and provide honest assessments even when the honest answer is not what a client hoped to hear.</p>
-              </div>
+              <p className="text-muted text-base md:text-lg leading-relaxed">From fee structures to market assessments, we believe our clients deserve complete transparency at every stage. We explain our research methodology, share our data, and provide honest assessments even when the honest answer is not what a client hoped to hear.</p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="flex gap-6">
-              <div className="shrink-0 mt-1 bg-sky-50 w-16 h-16 rounded-2xl flex items-center justify-center border border-sky-100">
-                <UserCheck className="w-8 h-8 text-sky-500" />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">03</span>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Founder-Led, Personal Service</h4>
               </div>
-              <div>
-                <h4 className="text-2xl font-serif text-black mb-3">Founder-Led, Personal Service</h4>
-                <p className="text-muted text-base md:text-lg leading-relaxed">Unlike many agencies where clients are handed off to junior staff, every JJ Property Partner client works directly and exclusively with Alex from the first strategy session through to settlement. This ensures consistency, accountability, and a genuinely personalised service.</p>
-              </div>
+              <p className="text-muted text-base md:text-lg leading-relaxed">Unlike many agencies where clients are handed off to junior staff, every JJ Property Partner client works directly and exclusively with Alex from the first strategy session through to settlement. This ensures consistency, accountability, and a genuinely personalised service.</p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex gap-6">
-              <div className="shrink-0 mt-1 bg-sky-50 w-16 h-16 rounded-2xl flex items-center justify-center border border-sky-100">
-                <TrendingUp className="w-8 h-8 text-sky-500" />
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">04</span>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Long-Term Wealth Focus</h4>
               </div>
-              <div>
-                <h4 className="text-2xl font-serif text-black mb-3">Long-Term Wealth Focus</h4>
-                <p className="text-muted text-base md:text-lg leading-relaxed">We are not transactional. Our goal is not simply to complete a purchase — it is to help clients build lasting financial security through strategic property investment. Many of our clients return for their second, third, and fourth property acquisitions because they trust the process and value the outcomes.</p>
-              </div>
+              <p className="text-muted text-base md:text-lg leading-relaxed">We are not transactional. Our goal is not simply to complete a purchase — it is to help clients build lasting financial security through strategic property investment. Many of our clients return for their second, third, and fourth property acquisitions because they trust the process and value the outcomes.</p>
             </motion.div>
           </div>
         </div>
@@ -250,13 +242,12 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
             {[
-              { icon: <BadgeCheck className="w-6 h-6 text-sky-500" />, label: "Buyers Agent Licence", value: "No. 20543356", sub: "NSW Fair Trading" },
-              { icon: <Briefcase className="w-6 h-6 text-sky-500" />, label: "ABN", value: "71 687 187 113", sub: "Registered" },
+              { icon: <BadgeCheck className="w-6 h-6 text-sky-500" />, label: "Buyers Agent Licence", value: "20543356", sub: "" },
+              { icon: <Briefcase className="w-6 h-6 text-sky-500" />, label: "ABN", value: "71 687 187 113", sub: "" },
               { icon: <Building2 className="w-6 h-6 text-sky-500" />, label: "Business", value: "JJ Property Partner", sub: "PTY LTD" },
               { icon: <MapPin className="w-6 h-6 text-sky-500" />, label: "Location", value: "Sydney, NSW", sub: "Australia-wide" },
-              { icon: <Star className="w-6 h-6 text-sky-500" />, label: "Google Rating", value: "5 Stars", sub: "Verified reviews" },
             ].map((cred, i) => (
               <motion.div 
                 key={i}
@@ -271,7 +262,7 @@ export default function About() {
                 </div>
                 <h4 className="text-xs font-bold text-muted uppercase tracking-widest mb-2">{cred.label}</h4>
                 <p className="text-lg font-serif text-black mb-1">{cred.value}</p>
-                <p className="text-sm font-sans text-muted">{cred.sub}</p>
+                {cred.sub && <p className="text-sm font-sans text-muted">{cred.sub}</p>}
               </motion.div>
             ))}
           </div>
