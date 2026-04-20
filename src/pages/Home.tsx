@@ -309,7 +309,7 @@ export default function Home() {
             className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
           >
             <img 
-              src="/Users/jas/.gemini/antigravity/brain/46e3a9a7-485d-4069-a96c-26d7a3fe4258/principal_advisor_strategy_scene_1776719385076.png" 
+              src="/advisor-strategy.png" 
               alt="Alex - Principal Property Strategist" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
               loading="lazy" 
