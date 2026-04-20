@@ -95,10 +95,10 @@ export default function CaseStudies() {
               { value: '$5M+', label: 'Total Assets Managed' },
               { value: '100%', label: 'Buyer-Side Only' },
             ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white border border-black/5 shadow-sm">
+              <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#021f3a] shadow-xl border border-sky-900/50 hover:-translate-y-1 transition-transform duration-300">
                 {stat.icon && stat.icon}
-                <span className="text-2xl font-serif text-black">{stat.value}</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</span>
+                <span className="text-2xl font-serif text-white">{stat.value}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#7DD3FC]">{stat.label}</span>
               </div>
             ))}
           </motion.div>
@@ -122,7 +122,7 @@ export default function CaseStudies() {
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
                   onClick={() => { navigate(`/case-studies/${study.slug.current}`); window.scrollTo(0, 0); }}
-                  className="group relative rounded-[2.5rem] overflow-hidden bg-[#021f3a] border border-sky-900 shadow-xl hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(2,31,58,0.25)] transition-all duration-500 cursor-pointer flex flex-col"
+                  className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
                 >
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
@@ -130,14 +130,14 @@ export default function CaseStudies() {
                       <img
                         src={urlFor(study.mainImage).width(800).height(600).url()}
                         alt={study.mainImage?.alt || study.title}
-                        className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a] via-[#021f3a]/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                     {/* Tag overlay */}
                     <div className="absolute top-4 left-4">
-                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-500 text-white shadow-lg'}`}>
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
                         {study.tag || 'Acquisition'}
                       </span>
                     </div>
@@ -145,7 +145,7 @@ export default function CaseStudies() {
                     {/* Result chip */}
                     <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                       <div>
-                        <p className="text-sky-300 text-xs font-bold uppercase tracking-widest">{study.location}</p>
+                        <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
                         <p className="text-white text-xl font-serif">{study.resultText}</p>
                       </div>
                     </div>
@@ -153,11 +153,11 @@ export default function CaseStudies() {
 
                   {/* Body */}
                   <div className="flex flex-col flex-1 p-8">
-                    <h2 className="text-2xl font-serif text-white mb-4 group-hover:text-sky-300 transition-colors duration-300">
+                    <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-sky-800 transition-colors duration-300">
                       {study.title}
                     </h2>
                     {study.shortQuote && (
-                      <p className="text-white/70 font-sans text-base leading-relaxed italic flex-1">
+                      <p className="text-muted font-sans text-base leading-relaxed italic flex-1">
                         "{study.shortQuote}"
                       </p>
                     )}
@@ -165,16 +165,16 @@ export default function CaseStudies() {
                     {/* Stats Pills */}
                     <div className="mt-6 flex flex-wrap gap-2">
                       {study.stats?.slice(0, 2).map((s) => (
-                        <div key={s.label} className="px-4 py-2 rounded-full bg-white/10 border border-white/5 text-xs font-bold uppercase tracking-widest text-sky-100">
-                          {s.value} <span className="font-normal text-white/50 normal-case tracking-normal pl-1">{s.label}</span>
+                        <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-black/5 text-xs font-bold uppercase tracking-widest text-black">
+                          {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Read More */}
-                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-sky-400 group/btn">
-                      <span className="group-hover/btn:text-sky-300 group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:text-sky-300 transition-transform duration-300" />
+                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black group/btn">
+                      <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                   </div>
                 </motion.article>
