@@ -626,7 +626,7 @@ export default function Home() {
           onMouseMove={handleMouseMove}
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
-          {[...googleReviews, ...googleReviews, ...googleReviews, ...googleReviews].map((review, i) => (
+          {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
             <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col h-[320px] md:h-[350px]">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
@@ -635,7 +635,7 @@ export default function Home() {
                 "{review.text}"
               </p>
               <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
-                {review.authorImage ? (
+                {('authorImage' in review && review.authorImage) ? (
                   <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
                 ) : (
                   <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
