@@ -226,62 +226,102 @@ export default function CaseStudies() {
             </motion.div>
           </div>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5"
-          >
-            {/* Stats Table */}
-            <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                <div className="flex flex-col">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Price</span>
-                  <span className="text-2xl font-serif text-black font-bold">$675,100</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Configuration</span>
-                  <span className="text-xl font-sans text-black font-semibold">4 / 2 / 2</span>
-                </div>
-                
-                <div className="flex flex-col pt-4 border-t border-black/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Month</span>
-                  <span className="text-xl font-sans text-black font-semibold">Dec-24</span>
-                </div>
-                <div className="flex flex-col pt-4 border-t border-black/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental</span>
-                  <span className="text-xl font-sans text-black font-semibold">$750 PW</span>
-                </div>
-                
-                <div className="flex flex-col pt-4 border-t border-black/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Current Value (Jan-25)</span>
-                  <span className="text-xl font-serif text-sky-600 font-bold">$690,000</span>
-                </div>
-                <div className="flex flex-col pt-4 border-t border-black/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Land Size</span>
-                  <span className="text-xl font-sans text-black font-semibold">600 sqm</span>
+          <div className="space-y-12">
+            {[
+              {
+                price: "$675,100",
+                config: "4 / 2 / 2",
+                month: "Dec-24",
+                rental: "$750 PW",
+                value: "$695,000",
+                size: "600 sqm",
+                growth: "+$19,900",
+                yield: "5.80%",
+                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
+              },
+              {
+                price: "$1,245,000",
+                config: "2 / 1 / 1",
+                month: "Jan-25",
+                rental: "$850 PW",
+                value: "$1,270,000",
+                size: "Terrace",
+                growth: "+$25,000",
+                yield: "3.60%",
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200"
+              },
+              {
+                price: "$890,000",
+                config: "3 / 2 / 2",
+                month: "Feb-25",
+                rental: "$780 PW",
+                value: "$915,000",
+                size: "450 sqm",
+                growth: "+$25,000",
+                yield: "4.55%",
+                image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200"
+              }
+            ].map((prop, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-sky-200 transition-colors duration-500"
+              >
+                {/* Stats Table */}
+                <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
+                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Price</span>
+                      <span className="text-2xl font-serif text-black font-bold">{prop.price}</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Configuration</span>
+                      <span className="text-xl font-sans text-black font-semibold">{prop.config}</span>
+                    </div>
+                    
+                    <div className="flex flex-col pt-4 border-t border-black/5">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Month</span>
+                      <span className="text-xl font-sans text-black font-semibold">{prop.month}</span>
+                    </div>
+                    <div className="flex flex-col pt-4 border-t border-black/5">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental</span>
+                      <span className="text-xl font-sans text-black font-semibold">{prop.rental}</span>
+                    </div>
+                    
+                    <div className="flex flex-col pt-4 border-t border-black/5">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Current Value</span>
+                      <span className="text-xl font-serif text-sky-600 font-bold">{prop.value}</span>
+                    </div>
+                    <div className="flex flex-col pt-4 border-t border-black/5">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Land Category</span>
+                      <span className="text-xl font-sans text-black font-semibold">{prop.size}</span>
+                    </div>
+
+                    <div className="flex flex-col pt-4 border-t border-black/5">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Capital Growth</span>
+                      <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
+                    </div>
+                    <div className="flex flex-col pt-4 border-t border-black/5">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental Yield</span>
+                      <span className="text-2xl font-serif text-sky-600 font-bold">{prop.yield}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="flex flex-col pt-4 border-t border-black/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Capital Growth</span>
-                  <span className="text-2xl font-serif text-emerald-600 font-bold">+$15,000</span>
+                {/* Image */}
+                <div className="lg:w-[50%] relative min-h-[400px]">
+                  <img 
+                    src={prop.image} 
+                    alt="Latest acquisition property" 
+                    className="absolute inset-0 w-full h-full object-cover" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
                 </div>
-                <div className="flex flex-col pt-4 border-t border-black/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental Yield</span>
-                  <span className="text-2xl font-serif text-sky-600 font-bold">5.80%</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Image */}
-            <div className="lg:w-[50%] relative min-h-[400px]">
-              <img 
-                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200" 
-                alt="Latest acquisition property" 
-                className="absolute inset-0 w-full h-full object-cover" 
-              />
-            </div>
-          </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
