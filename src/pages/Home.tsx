@@ -496,11 +496,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+                className="relative group p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-sky-500/50 transition-all duration-500 shadow-2xl"
               >
                 <div className="text-4xl font-serif text-sky-400/30 mb-6 group-hover:text-sky-400 transition-colors uppercase tracking-widest">{item.step}</div>
                 <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed font-sans">{item.desc}</p>
+                <p className="text-sm text-slate-300 leading-relaxed font-sans">{item.desc}</p>
                 <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
                 </div>
