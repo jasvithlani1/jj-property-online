@@ -142,7 +142,6 @@ export default function Home() {
 
     const animateScroll = () => {
       if (!isPausedRef.current && !isDragging.current) {
-        // Keep exactScrollLeft in sync if user manually scrolled
         if (Math.abs(exactScrollLeft - el.scrollLeft) > 2) {
            exactScrollLeft = el.scrollLeft;
         }
@@ -150,7 +149,6 @@ export default function Home() {
         exactScrollLeft += 0.8;
         el.scrollLeft = exactScrollLeft;
         
-        // Seamless reset
         const totalWidth = el.scrollWidth;
         const singleSetWidth = totalWidth / 4;
         
@@ -167,7 +165,6 @@ export default function Home() {
     return () => cancelAnimationFrame(rafId);
   }, []);
 
-  // Desktop Mouse Dragging handlers for Carousel
   const handleMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
     setIsReviewPaused(true);
@@ -180,7 +177,7 @@ export default function Home() {
     if (!isDragging.current || !carouselRef.current) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1.5; // Drag speed multiplier
+    const walk = (x - startX.current) * 1.5;
     carouselRef.current.scrollLeft = scrollLeftStart.current - walk;
   };
 
@@ -188,10 +185,7 @@ export default function Home() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Force play immediately to fix the issue where mobile/safari browsers defer autoplay until scroll
-    video.play().catch(() => {
-      // Ignore autoplay prevention errors, it will play on interaction
-    });
+    video.play().catch(() => {});
 
     let frameId: number;
     const fadeDuration = 0.5;
@@ -219,7 +213,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Manually initialize the inline Calendly widget using the dynamic loader
     initInlineCalendly('calendly-inline-widget');
   }, []);
 
@@ -238,7 +231,6 @@ export default function Home() {
         style={{ scale: heroScale, opacity: heroOpacity }}
         className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-20 lg:pt-32"
       >
-        {/* Video Background — full coverage */}
         <div className="absolute inset-0 -z-20">
           <video
             ref={videoRef}
@@ -249,10 +241,8 @@ export default function Home() {
           />
         </div>
 
-        {/* Dark overlay for text contrast */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/85 via-[#021f3a]/75 to-[#011122]/90 pointer-events-none" />
 
-        {/* Decorative accent glow */}
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
         <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
@@ -388,6 +378,15 @@ export default function Home() {
                       {service.solidIcon}
                     </motion.div>
                   </motion.div>
+                </div>
+                <h3 className="text-2xl font-serif text-black mb-4">{service.title}</h3>
+                <p className="text-muted leading-relaxed font-sans mb-8 flex-1">{service.description}</p>
+                <span className="mt-auto flex items-center gap-2 group/btn text-sm font-bold uppercase tracking-widest text-black">
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -409,7 +408,8 @@ export default function Home() {
               <p className="text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
                 Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
               </p>
-              <div className="space-y-4">                {[
+              <div className="space-y-4">
+                {[
                   "100% buyer's agent representation — no ties to developers",
                   "Built on real experience with a personal $5M+ portfolio",
                   "20+ years of IT expertise applied to research & data",
@@ -626,7 +626,7 @@ export default function Home() {
           onMouseMove={handleMouseMove}
           onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
         >
-          {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
+          {[...googleReviews, ...googleReviews, ...googleReviews, ...googleReviews].map((review, i) => (
             <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col h-[320px] md:h-[350px]">
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
@@ -701,6 +701,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* ── Calendly Booking ────────────────────────────────────────────────── */}
       <section className="relative py-24 bg-white px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center mb-16">
