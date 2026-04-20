@@ -24,11 +24,11 @@ export default function About() {
               Our Vision
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-black leading-[1.1] mb-6">
-              Strategic Vision. <br />
-              <span className="italic text-muted line-through decoration-1 decoration-sky-300">Tactical</span> Execution.
+              Buy Property with Confidence <br />
+              Through <span className="italic text-muted">Experience, Data and Trust.</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted font-sans max-w-lg leading-relaxed">
-              We bring clinical precision to Sydney's emotional property market. Your portfolio's growth is our single, uncompromising metric.
+              We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own.
             </p>
           </motion.div>
 
@@ -67,10 +67,10 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
               <p>
-                <span className="text-black font-semibold">JJ Property Partner</span> was founded by Alex, a licensed buyers agent, seasoned property investor, and IT professional with over 20 years of experience. Based in Sydney and assisting clients across Australia, he applies a highly analytical, data-driven approach to property buying that sets him apart from typical buyers agents.
+                <span className="text-black font-semibold">JJ Property Partner</span> was founded by Alex, a licensed buyers agent, seasoned property investor, and IT professional with more than 20 years of experience in technology and real estate. Based in Sydney and working with clients across Australia, Alex brings a data-led and highly strategic approach to property buying that helps clients make confident, well-informed decisions.
               </p>
               <p>
-                The name <span className="text-black font-semibold">“JJ”</span> reflects Alex’s daughters, Jessica and Jennifer, and represents a strong family-first philosophy. This drives a commitment to honesty, long-term thinking, and treating every client’s property journey with genuine care and dedication.
+                The name <span className="text-black font-semibold">“JJ”</span> is inspired by Alex’s two daughters, Jessica and Jennifer, and reflects the family values behind the business. That personal foundation shapes every client relationship through honesty, genuine care, and a long-term focus on helping Australians buy the right property with confidence.
               </p>
             </div>
 
@@ -110,10 +110,10 @@ export default function About() {
             <h3 className="text-3xl font-serif mb-6 text-[#021f3a]">Alex's Personal Track Record</h3>
             <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
               <p>
-                Alex has personally built a property portfolio exceeding $5 million across multiple Australian states, giving him genuine, hands-on experience in navigating changing market conditions, interest rate cycles, and economic shifts. This is not just theory - it’s practical knowledge gained from making real investment decisions. Every recommendation he provides is backed by the same disciplined approach and due diligence he applies to his own property portfolio.
+                Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy.
               </p>
               <p>
-                He has supported a wide range of clients across Australia, from first home buyers entering the market for the first time to experienced investors growing portfolios beyond $1 million. Alex also works with SMSF trustees looking for compliant, high-performing property investments, offering tailored guidance at every stage of the buying journey.
+                He has also guided a wide range of buyers, from first home buyers entering the market to experienced investors building portfolios exceeding $1 million, as well as SMSF trustees seeking compliant, well-positioned assets to support long-term retirement goals.
               </p>
             </div>
           </motion.div>
@@ -129,10 +129,10 @@ export default function About() {
             <h3 className="text-3xl font-serif mb-6 relative z-10">The Technology Advantage</h3>
             <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
               <p>
-                Alex’s background in IT isn’t just a bonus - it underpins the entire approach at JJ Property Partner. With over 20 years of experience in information technology, Alex brings advanced expertise in data modelling, analytical thinking, and system-based decision-making to property buying. This allows first home buyers and investors across Australia to benefit from a far more structured and informed strategy when entering the market.
+                Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia.
               </p>
               <p>
-                Rather than relying on generic suburb reports or gut instinct, JJ Property Partner uses in-depth analytical models that assess key metrics such as price trends, rental yields, vacancy rates, infrastructure plans, population growth, and supply-demand balance - helping clients secure smarter, high-performing property outcomes.
+                Rather than relying only on broad suburb reports or gut feel, JJ Property Partner assesses multiple data points at once, including price trends, rental yields, vacancy rates, infrastructure plans, population growth, supply and demand, and changing demographics. This allows for sharper suburb selection and better long-term outcomes for clients.
               </p>
             </div>
           </motion.div>
@@ -148,36 +148,36 @@ export default function About() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">01</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Independence & Zero Conflict of Interest</h4>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Truly Independent, Always Buyer-Focused</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">JJ Property Partner is a buyers-only agency. We never act for sellers, developers, or any third party that could create a conflict of interest. Every recommendation is made solely in the client's best financial interest. We receive no referral commissions or kickbacks from any source — our only income is the agreed service fee paid by our client.</p>
+              <p className="text-muted text-base md:text-lg leading-relaxed">JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.</p>
             </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+ 
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">02</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Transparency in Everything</h4>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Clear Advice, Every Step</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">From fee structures to market assessments, we believe our clients deserve complete transparency at every stage. We explain our research methodology, share our data, and provide honest assessments even when the honest answer is not what a client hoped to hear.</p>
+              <p className="text-muted text-base md:text-lg leading-relaxed">We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.</p>
             </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+ 
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">03</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Founder-Led, Personal Service</h4>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Direct Access, Personal Guidance</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">Unlike many agencies where clients are handed off to junior staff, every JJ Property Partner client works directly and exclusively with Alex from the first strategy session through to settlement. This ensures consistency, accountability, and a genuinely personalised service.</p>
+              <p className="text-muted text-base md:text-lg leading-relaxed">At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.</p>
             </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 border transition-colors group">
+ 
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">04</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Long-Term Wealth Focus</h4>
+                <h4 className="text-2xl font-serif text-[#021f3a]">Building Wealth for the Long Run</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">We are not transactional. Our goal is not simply to complete a purchase — it is to help clients build lasting financial security through strategic property investment. Many of our clients return for their second, third, and fourth property acquisitions because they trust the process and value the outcomes.</p>
+              <p className="text-muted text-base md:text-lg leading-relaxed">Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.</p>
             </motion.div>
           </div>
         </div>
@@ -201,17 +201,17 @@ export default function About() {
           {[
             {
               title: "Data-Driven Precision",
-              text: "20+ years of data-driven expertise guiding suburb analysis. We assess properties based on facts, not emotion, helping Australian buyers secure fair value and strong long-term growth potential.",
+              text: "Backed by over 20 years of analytical experience, we use advanced suburb research and property assessment to guide every recommendation. Our approach is grounded in evidence, not emotion, helping identify true value and long-term growth potential.",
               icon: <Target className="w-8 h-8 text-sky-400" />
             },
             {
               title: "Off-Market Access",
-              text: "Strong relationships with selling agents across Australia give our clients access to exclusive off-market and pre-market properties, reducing competition and helping secure better prices with stronger negotiating leverage.",
+              text: "Through strong relationships with selling agents and industry professionals across Australia, we help clients access quality off-market and pre-market opportunities, reducing competition and creating better conditions for smarter buying decisions.",
               icon: <Search className="w-8 h-8 text-sky-400" />
             },
             {
               title: "Executive Representation",
-              text: "We provide strategic, confidential negotiation as your dedicated buyers agent, representing only you. Using proven, data-driven techniques, we protect your identity and secure the best possible property price and terms.",
+              text: "We act solely in your best interests, managing negotiations with discretion, protecting your privacy, and representing you throughout the purchase process with a strategic, data-led approach designed to secure the right terms.",
               icon: <Handshake className="w-8 h-8 text-sky-400" />
             }
           ].map((val, i) => (
