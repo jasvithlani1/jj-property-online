@@ -148,36 +148,36 @@ export default function About() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">01</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Truly Independent, Always Buyer-Focused</h4>
+                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">01</span>
+                <h4 className="text-2xl font-serif text-white">Truly Independent, Always Buyer-Focused</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.</p>
+              <p className="text-white/70 text-base md:text-lg leading-relaxed">JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.</p>
             </motion.div>
  
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">02</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Clear Advice, Every Step</h4>
+                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">02</span>
+                <h4 className="text-2xl font-serif text-white">Clear Advice, Every Step</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.</p>
+              <p className="text-white/70 text-base md:text-lg leading-relaxed">We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.</p>
             </motion.div>
  
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">03</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Direct Access, Personal Guidance</h4>
+                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">03</span>
+                <h4 className="text-2xl font-serif text-white">Direct Access, Personal Guidance</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.</p>
+              <p className="text-white/70 text-base md:text-lg leading-relaxed">At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.</p>
             </motion.div>
  
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-sky-50 transition-colors group">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-200 group-hover:text-sky-400 transition-colors">04</span>
-                <h4 className="text-2xl font-serif text-[#021f3a]">Building Wealth for the Long Run</h4>
+                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">04</span>
+                <h4 className="text-2xl font-serif text-white">Building Wealth for the Long Run</h4>
               </div>
-              <p className="text-muted text-base md:text-lg leading-relaxed">Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.</p>
+              <p className="text-white/70 text-base md:text-lg leading-relaxed">Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.</p>
             </motion.div>
           </div>
         </div>
