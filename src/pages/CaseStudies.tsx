@@ -122,7 +122,7 @@ export default function CaseStudies() {
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
                   onClick={() => { navigate(`/case-studies/${study.slug.current}`); window.scrollTo(0, 0); }}
-                  className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
+                  className="group relative rounded-[2.5rem] overflow-hidden bg-[#021f3a] border border-sky-900 shadow-xl hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(2,31,58,0.25)] transition-all duration-500 cursor-pointer flex flex-col"
                 >
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
@@ -130,14 +130,14 @@ export default function CaseStudies() {
                       <img
                         src={urlFor(study.mainImage).width(800).height(600).url()}
                         alt={study.mainImage?.alt || study.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a] via-[#021f3a]/40 to-transparent" />
 
                     {/* Tag overlay */}
                     <div className="absolute top-4 left-4">
-                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-500 text-white shadow-lg'}`}>
                         {study.tag || 'Acquisition'}
                       </span>
                     </div>
@@ -145,7 +145,7 @@ export default function CaseStudies() {
                     {/* Result chip */}
                     <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                       <div>
-                        <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
+                        <p className="text-sky-300 text-xs font-bold uppercase tracking-widest">{study.location}</p>
                         <p className="text-white text-xl font-serif">{study.resultText}</p>
                       </div>
                     </div>
@@ -153,11 +153,11 @@ export default function CaseStudies() {
 
                   {/* Body */}
                   <div className="flex flex-col flex-1 p-8">
-                    <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-sky-800 transition-colors duration-300">
+                    <h2 className="text-2xl font-serif text-white mb-4 group-hover:text-sky-300 transition-colors duration-300">
                       {study.title}
                     </h2>
                     {study.shortQuote && (
-                      <p className="text-muted font-sans text-base leading-relaxed italic flex-1">
+                      <p className="text-white/70 font-sans text-base leading-relaxed italic flex-1">
                         "{study.shortQuote}"
                       </p>
                     )}
@@ -165,16 +165,16 @@ export default function CaseStudies() {
                     {/* Stats Pills */}
                     <div className="mt-6 flex flex-wrap gap-2">
                       {study.stats?.slice(0, 2).map((s) => (
-                        <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-black/5 text-xs font-bold uppercase tracking-widest text-black">
-                          {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
+                        <div key={s.label} className="px-4 py-2 rounded-full bg-white/10 border border-white/5 text-xs font-bold uppercase tracking-widest text-sky-100">
+                          {s.value} <span className="font-normal text-white/50 normal-case tracking-normal pl-1">{s.label}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Read More */}
-                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black group/btn">
-                      <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-sky-400 group/btn">
+                      <span className="group-hover/btn:text-sky-300 group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:text-sky-300 transition-transform duration-300" />
                     </div>
                   </div>
                 </motion.article>
@@ -210,6 +210,77 @@ export default function CaseStudies() {
               Start Your Brief
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Latest Acquisition Showcase */}
+      <section className="py-24 px-8 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="text-4xl md:text-5xl font-serif text-[#021f3a] mb-6">Explore our latest property acquisitions</h2>
+              <p className="text-lg text-muted font-sans max-w-3xl mx-auto leading-relaxed">
+                Strategically selected for high growth, strong rental yields, and long-term value. Every purchase is backed by thorough research and due diligence to ensure smart investments.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }} 
+            className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5"
+          >
+            {/* Stats Table */}
+            <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Price</span>
+                  <span className="text-2xl font-serif text-black font-bold">$675,100</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Configuration</span>
+                  <span className="text-xl font-sans text-black font-semibold">4 / 2 / 2</span>
+                </div>
+                
+                <div className="flex flex-col pt-4 border-t border-black/5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Month</span>
+                  <span className="text-xl font-sans text-black font-semibold">Dec-24</span>
+                </div>
+                <div className="flex flex-col pt-4 border-t border-black/5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental</span>
+                  <span className="text-xl font-sans text-black font-semibold">$750 PW</span>
+                </div>
+                
+                <div className="flex flex-col pt-4 border-t border-black/5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Current Value (Jan-25)</span>
+                  <span className="text-xl font-serif text-sky-600 font-bold">$690,000</span>
+                </div>
+                <div className="flex flex-col pt-4 border-t border-black/5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Land Size</span>
+                  <span className="text-xl font-sans text-black font-semibold">600 sqm</span>
+                </div>
+
+                <div className="flex flex-col pt-4 border-t border-black/5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Capital Growth</span>
+                  <span className="text-2xl font-serif text-emerald-600 font-bold">+$15,000</span>
+                </div>
+                <div className="flex flex-col pt-4 border-t border-black/5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental Yield</span>
+                  <span className="text-2xl font-serif text-sky-600 font-bold">5.80%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="lg:w-[50%] relative min-h-[400px]">
+              <img 
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200" 
+                alt="Latest acquisition property" 
+                className="absolute inset-0 w-full h-full object-cover" 
+              />
+            </div>
           </motion.div>
         </div>
       </section>
