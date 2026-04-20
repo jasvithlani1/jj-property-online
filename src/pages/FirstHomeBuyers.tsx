@@ -8,66 +8,50 @@ import { useState } from 'react';
 const firstHomeFaqs = [
   {
     question: 'What does JJ Property Partner do for first home buyers?',
-    answer: 'It offers end-to-end services for buying property throughout Australia, including strategic services, property acquisition, negotiation, and post-settlement services.'
+    answer: 'JJ Property Partner supports first home buyers from start to finish, helping with strategy, budget planning, suburb research, property shortlisting, due diligence, negotiation, and settlement support. Alex personally manages every step, making the process clearer, smoother, and far less overwhelming.'
   },
   {
-    question: 'Which locations do you cover?',
-    answer: 'JJ Property Partner assists those who wish to purchase properties in any part of Australia.'
+    question: 'Do I need a buyers agent if I already know where I want to buy?',
+    answer: 'Even if you already know the area, a buying first home Australia buyers agent can add real value by reviewing suburb data, identifying stronger streets and property types, uncovering off-market options, and negotiating a better result on your behalf.'
   },
   {
-    question: 'How can you help in choosing the best property?',
-    answer: 'Through thorough research, we assist in selecting properties that match your budget and long-term intentions.'
+    question: 'How do you access off-market properties as a buyers agent?',
+    answer: 'We access off-market properties through long-standing relationships with selling agents, property managers, and industry contacts across Australia. Because trusted buyers agents can move quickly and professionally, we are often introduced to opportunities before they are publicly advertised.'
   },
   {
-    question: 'Do you help access off-market properties?',
-    answer: 'Certainly, we give access to such properties in different parts of Australia.'
+    question: 'Do you assist with the First Home Owner Grant as a buyers agent?',
+    answer: 'Yes. As a first home owner grant buyers agent, we help you understand available grants and government schemes, check your eligibility, and work alongside your mortgage broker to align these benefits with your buying strategy, budget, and purchase timeline.'
   },
   {
-    question: 'Do you negotiate the prices?',
-    answer: 'Certainly, our firm assists in the entire process of negotiating prices.'
+    question: 'Can JJ Property Partner help me buy property outside NSW?',
+    answer: 'Absolutely. JJ Property Partner helps first home buyers purchase property across Australia, not just in NSW. We provide the research, due diligence, and buyer representation needed to make an interstate purchase feel clear, secure, and far less stressful.'
   },
   {
-    question: 'Do you help plan your finances?',
-    answer: 'We work alongside your financial advisors to make sure that your purchase matches your finances.'
-  },
-  {
-    question: 'Can this be used by home buyers and investors?',
-    answer: 'This service caters to both home buyers and first time investors.'
-  },
-  {
-    question: 'What services do you offer under this end-to-end service?',
-    answer: 'We offer consultation, strategic advice, property search, due diligence, negotiation, and post-settlement services.'
-  },
-  {
-    question: 'How can transparency be ensured?',
-    answer: 'We ensure there is good communication, thorough reporting, and frank advice for the whole process.'
-  },
-  {
-    question: 'Why would you opt for JJ Property Partner?',
-    answer: 'Our data-driven approach, access to the national markets, and individual buyer representation will help you find the right property anywhere in Australia.'
+    question: 'What does your service cost for first home buyers?',
+    answer: 'Our fees are fully transparent and explained upfront, so you know exactly what to expect. Depending on the service, we offer fixed-fee or percentage-based pricing. In many cases, the savings achieved through smart buying and negotiation can outweigh the fee.'
   }
 ];
 
 const pillars = [
   {
-    title: 'Why First Home Buyers Need Independent Representation',
-    description: 'When you buy through a traditional real estate process, the selling agent is legally obligated to act in the vendor\'s best interest — not yours. That means every negotiation, every open home conversation, and every contract discussion is handled by someone working against you.\n\nFor a buyers agent first home buyer in Australia, this can be especially challenging. A licensed buyers agent changes that dynamic entirely. We sit on your side of the table. Our goal is to get you the best property at the best price on the best terms — and we are contractually obligated to act exclusively in your interest.',
+    title: 'Why First Home Buyers Should Have an Independent Buyers Agent',
+    description: 'Buying your first home can feel exciting, but it also comes with real pressure. In a standard property transaction, the selling agent works for the vendor, which means their role is to secure the best outcome for the seller, not for you.\n\nAn independent buyers agent works solely in your best interest. At JJ Property Partner, we guide first home buyers through every stage of the process, helping you avoid costly mistakes, negotiate with confidence, and secure the right property on the right terms.',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Smart Property Buying in Australia Made Simple',
-    description: 'Securing the right property in Australia\'s competitive market takes more than browsing listings. It requires a clear strategy and access to opportunities others miss. At JJ Property Partner, we identify high-quality properties using data-driven insights such as suburb growth, rental yields, infrastructure, and demographics.\n\nWe also unlock off-market opportunities to give you an advantage. Our goal is to help you secure a property that delivers immediate value while supporting strong long-term capital growth.',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=900',
+    title: 'Smart Property Strategies for Confident First Home Buyers',
+    description: 'Buying your first home in Australia can feel overwhelming, with rising prices, complex grants, fast-moving auctions, and too much conflicting advice making the process harder than it should be. Without the right support, it is easy to overpay or choose a property that does not suit your long-term goals.\n\nJJ Property Partner gives first home buyers independent, end-to-end representation focused entirely on their best interests. With 20+ years of IT and property experience, Alex helps you identify the right property, assess the right location, and negotiate the right outcome anywhere across Australia.',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=crop&q=80&w=900',
   },
   {
-    title: 'The JJ Property Partner Advantage for First Home Buyers',
+    title: 'The JJ Property Partner Advantage',
     description: '',
     advantages: [
-      { label: 'Access', text: 'Discover off-market and pre-market properties not available to the public.' },
-      { label: 'Research', text: 'Make informed decisions with data-driven suburb analysis using 10+ key metrics.' },
-      { label: 'Negotiation', text: 'Achieve better outcomes with expert negotiation that outperforms DIY approaches.' },
-      { label: 'Clarity', text: 'Enjoy a smooth, stress-free process with clear, end-to-end guidance.' },
-      { label: 'Independence', text: 'Get unbiased advice with 100% representation and zero conflicts of interest throughout your buying journey.' },
+      { label: 'Access', text: 'Quality off-market and pre-market properties unavailable to the general public.' },
+      { label: 'Research', text: 'Data-driven suburb analysis using detailed performance metrics across Australia.' },
+      { label: 'Negotiation', text: 'Professional, disciplined negotiation that consistently outperforms self-representation.' },
+      { label: 'Clarity', text: 'End-to-end guidance that removes the confusion and emotional pressure of buying.' },
+      { label: 'Independence', text: '100% on your side — acting solely in your interest with zero conflicts.' },
     ],
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=900',
   }
@@ -101,14 +85,14 @@ export default function FirstHomeBuyers() {
                 First Home Buyers
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
-                Acquisition Strategies Designed for{' '}
+                Smart Property Strategies for <br />
                 <span className="italic text-sky-400">Confident</span> First Home Buyers.
               </h1>
               <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Buying your first home in Australia is increasingly complex, with rising prices, competitive auctions, and confusing grant schemes making the process overwhelming. Without expert support, costly mistakes are easy to make — which is why first home buyer assistance across Australia is more important than ever.
+                Buying your first home in Australia can feel overwhelming, with rising prices, complex grants, fast-moving auctions, and too much conflicting advice making the process harder than it should be. Without the right support, it is easy to overpay or choose a property that does not suit your long-term goals.
               </p>
               <p className="text-base md:text-lg text-sky-100/60 font-sans max-w-3xl mx-auto leading-relaxed mt-4">
-                JJ Property Partner offers dedicated, independent guidance from start to finish. Alex combines over 20 years of IT and property expertise to help you secure the right property, in the right location, at the right price — anywhere in Australia.
+                JJ Property Partner gives first home buyers independent, end-to-end representation focused entirely on their best interests. With 20+ years of IT and property experience, Alex helps you identify the right property, assess the right location, and negotiate the right outcome anywhere across Australia.
               </p>
             </motion.div>
           </div>
@@ -191,38 +175,38 @@ export default function FirstHomeBuyers() {
                 {[
                   {
                     step: '01',
-                    title: 'Strategy & Financial Clarity',
-                    body: 'We begin with a thorough understanding of your situation: your borrowing capacity, deposit, first home buyer grant eligibility, stamp duty concessions, target timeline, and long-term property goals. This session produces a clear acquisition brief that guides every subsequent decision.',
+                    title: 'Step 1 - Strategy & Financial Clarity',
+                    body: 'We start by getting a clear picture of where you stand financially and what you want to achieve. That includes your borrowing capacity, deposit, eligibility for first home buyer incentives, stamp duty savings, preferred timeframe, and long-term plans. From there, we create a well-defined property brief that shapes every step of the buying process.',
                     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '02',
-                    title: 'Property Strategy & Suburb Research',
-                    body: 'Rather than immediately browsing listings, we first build a strategic framework for your purchase. Using our data modelling approach, we assess suburbs against multiple performance metrics — growth trajectory, rental yield, vacancy rates, infrastructure investment, and demographic trends.',
+                    title: 'Step 2 - Property Strategy & Suburb Research',
+                    body: 'Before we start inspecting properties, we map out a clear buying strategy tailored to your goals, budget, and lifestyle. Using data-led suburb research, we assess key factors such as price growth, market demand, infrastructure, local amenities, and long-term potential to identify the right locations across Australia, not just the areas you may already be considering.',
                     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '03',
-                    title: 'Property Identification & Off-Market Access',
-                    body: 'We conduct an active, structured property search — engaging our network of selling agents, attending inspections, and monitoring off-market channels to identify suitable opportunities before they reach public listings. Our clients gain access to properties that are never advertised.',
+                    title: 'Step 3 - Property Identification & Off-Market Access',
+                    body: 'We carry out a proactive and well-structured property search, tapping into our network of selling agents, attending inspections, and tracking off-market opportunities to uncover the right properties before they hit the open market. This gives our clients access to quality homes that are often never publicly advertised.',
                     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '04',
-                    title: 'Due Diligence',
-                    body: 'Every shortlisted property undergoes thorough due diligence including comparable sales analysis, pest and building inspection coordination, legal contract review in collaboration with your solicitor, body corporate review (for strata), and flood or bushfire overlay checks.',
+                    title: 'Step 4 - Due Diligence',
+                    body: 'Every property we shortlist is carefully assessed through detailed due diligence, including comparable sales research, coordination of building and pest inspections, contract review with your solicitor, strata checks where required, and flood or bushfire risk assessments.',
                     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '05',
-                    title: 'Negotiation & Auction Representation',
-                    body: 'We negotiate on your behalf at private treaty or represent you at auction using a pre-agreed strategy based on property valuation, vendor motivation, and competitive analysis. Professional negotiation consistently delivers better outcomes than buyers self-representing.',
+                    title: 'Step 5 - Negotiation & Auction Representation',
+                    body: 'We negotiate on your behalf for private treaty purchases or represent you at auction with a clear, pre-agreed strategy. Using property value, seller motivation, and market competition, we work to secure the right property on the best possible terms with confidence and discipline.',
                     image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '06',
-                    title: 'Settlement & Post-Purchase Support',
-                    body: 'We coordinate with your solicitor, broker, and all relevant parties through to final settlement. Post-purchase, we remain available to answer questions and assist with future planning.',
+                    title: 'Step 6 - Settlement & Post-Purchase Support',
+                    body: 'We work closely with your solicitor, mortgage broker, and all key parties to keep everything moving smoothly through to settlement. Even after your purchase is complete, we stay on hand to answer questions and support your next property decisions.',
                     image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
                   },
                 ].map((card, i, arr) => (
