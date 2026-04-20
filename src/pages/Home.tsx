@@ -13,8 +13,8 @@ import { client } from '../lib/sanity';
 
 const servicesPreview = [
   {
-    title: 'First Home Buyer',
-    description: 'You will be confidently and decisively guided through your property market journey by clarifying your budget and strategy, and helping you to locate the proper property anywhere in Australia.',
+    title: 'First Home Buyers',
+    description: "Buying your first home is a major milestone, and having the right guidance makes all the difference. We help you clarify your budget, assess borrowing capacity, find the right property, and negotiate strongly so you can buy with confidence.",
     icon: <HomeIcon className="w-6 h-6" />,
     solidIcon: <FaHome className="w-6 h-6" />,
     color: 'bg-[#E6FBFF]',
@@ -22,7 +22,7 @@ const servicesPreview = [
   },
   {
     title: 'Property Investors',
-    description: 'Utilising a data-driven approach, you will identify properties with the most growth potential and rental return through multiple Australian property markets.',
+    description: "Building a strong property portfolio takes strategy, not guesswork. At JJ Property Partner, we use data-led research to identify high-growth, high-yield opportunities across Australia, helping you secure smart investments that match your income goals and risk profile.",
     icon: <TrendingUp className="w-6 h-6" />,
     solidIcon: <FaChartLine className="w-6 h-6" />,
     color: 'bg-[#F0F7FF]',
@@ -30,7 +30,7 @@ const servicesPreview = [
   },
   {
     title: 'SMSF Property',
-    description: 'Strategic property acquisitions for superannuation funds require accurate acquisition and compliance processes. Each property is invested towards meeting your long-term retirement objectives.',
+    description: "Buying property through an SMSF comes with strict rules, and getting it right matters. We work closely with your specialists to secure compliant, investment-grade properties that align with your long-term retirement goals.",
     icon: <TbHomeShield className="w-6 h-6" />,
     solidIcon: <TbHomeShield className="w-6 h-6" />,
     color: 'bg-[#F5F5F5]',
@@ -51,44 +51,36 @@ const googleReviews = [
 
 const faqs = [
   {
-    question: 'Will you assist clients in the purchase of real estate throughout Australia?',
-    answer: 'JJ Property Partner can assist clients in various locations in Australia and therefore is not limited to one city or one state as every property search is based on a strategy. The strategy used to identify the right property for the client is based on the growth potential of the area, the rental yield, and the client\'s long-term wealth goals rather than based solely on geographic boundaries.'
+    question: 'Do you help clients buy property across Australia?',
+    answer: 'Yes. JJ Property Partner works with buyers across Australia. We take a strategy-first approach, identifying the right locations based on growth potential, rental returns, and your long-term property goals, rather than limiting your search to one city or state.'
   },
   {
-    question: 'Could you explain the role of a buyer’s agent and how you plan to represent me?',
-    answer: 'The role of a buyer’s agent is that of advocating solely for the buyer’s interest. The JJ Property Partner will take care of all the procedures in the buying process from making a buying strategy, doing the research, property search, negotiation, and acquisition of the property.'
+    question: 'What does a buyer’s agent actually do?',
+    answer: 'A buyer’s agent works solely for you, not the seller. They handle the full buying process, including strategy, property research, shortlist creation, inspections, negotiations, and settlement support, while protecting your interests and helping you buy with greater confidence.'
   },
   {
-    question: 'Which types of clients do you work with?',
-    answer: 'JJ Property Partner offers services to first-time home purchasers, property investors and self-managed superannuation fund (SMSF) clients. We offer you a tailored approach to your real estate by creating an investment strategy based on your financial goals and risk tolerance whether you are buying your first property or building a multi-state portfolio.'
+    question: 'Who do you work with?',
+    answer: 'We work with first home buyers, owner-occupiers, property investors, and SMSF buyers across Australia. Whether you need guidance in a competitive market or a clear long-term buying strategy, our advice is tailored to your goals, budget, and risk profile.'
   },
   {
-    question: 'How do you determine which property I should buy?',
-    answer: 'The buyers\' agent uses a data-driven process to identify appropriate property and make informed recommendations based on the property\'s growth trends, rental yield, infrastructure developing with the property, vacancy rate of the property, change in demographics, and similar property values within each market throughout Australia and therefore understand that it would be wise to select high-performing properties.'
+    question: 'How do you find the right property for me?',
+    answer: 'We combine local market insight with data-backed research to shortlist properties that match your goals. We assess suburb performance, rental demand, vacancy levels, future infrastructure, and comparable sales to help you buy with clarity and confidence.'
   },
   {
-    question: 'Do you have any opportunities for off-market Buying Properties?',
-    answer: 'Absolutely! Our clients have the advantage of accessing off-market and pre-market properties. One of the major benefits of purchasing an off-market property is that they are not advertised for sale. Thus, by purchasing an off-market property you will have to compete against fewer buyers and you will have more negotiating power when it comes time to negotiate.'
+    question: 'Can you help us access off-market property opportunities?',
+    answer: 'Yes. We regularly source off-market and pre-market properties through our trusted industry network. This gives our clients early access to quality opportunities, less competition from other buyers, and a stronger position when it comes to negotiating with confidence.'
   },
   {
-    question: 'Do you create a buying strategy for clients?',
-    answer: 'Yes. All of our clients start off with a complete buying strategy which consists of: Setting your goals. Creating a long-term plan/roadmap for future purchases. Identifying key areas to invest in throughout Australia. Evaluating what reports will be required based on your investment objectives. Finding a short and long term, affordable purchase option for you.'
+    question: 'How quickly can you help me secure the right property?',
+    answer: 'Most buyers secure a suitable property within 30 to 60 days of getting started. The timeframe depends on your brief, market conditions, and property type, but our focus is always on securing the right property, not rushing the process.'
   },
   {
-    question: 'How long does it usually take to acquire my property?',
-    answer: 'Generally, our clients can acquire their property within 30 to 45 days from when they initially offered to purchase their desired property. It is also crucial for us to consider that we get our clients\' ideal property, thus time is not always essential than acquiring the right property.'
+    question: 'How are your buyer’s agent fees structured?',
+    answer: 'Our fees are straightforward and clearly explained from the start. Depending on the level of support you need, we offer fixed-fee or percentage-based options, with a focus on securing better property outcomes, stronger negotiations, and long-term value.'
   },
   {
-    question: 'Do you assist clients investing in property through their super fund (SMSF)?',
-    answer: 'JJ Property Partner works with your financial planner (if applicable), accountant and SMSF auditor to ensure that you are remaining compliant while at the same time securing investment Properties that are consistent with your superannuation and long-term goal.'
-  },
-  {
-    question: 'How much do you charge for your services?',
-    answer: 'Our fees are completely transparent. We can provide clients with either fixed fee structures, or fee structures based on a percentage depending on the complexity of their requirements; the goal of all our clients is to provide value to the customer by providing greater opportunities to select better properties and negotiate better.'
-  },
-  {
-    question: 'What makes JJ Property Partner different from other buyers’ agents?',
-    answer: 'The difference lies in the combination of real estate expertise and advanced data analysis. With a background in IT and a proven property portfolio across Australia, the approach is strategic, analytical, and focused on long-term wealth creation rather than transactional buying.'
+    question: 'Why do buyers choose JJ Property Partner over other buyer’s agents?',
+    answer: 'JJ Property Partner offers a more personal, strategy-led service. You deal directly with Alex, who combines 20+ years of IT and property experience, a $5M+ personal portfolio, and specialised SMSF knowledge, with no handovers to junior staff.'
   }
 ];
 
@@ -264,14 +256,13 @@ export default function Home() {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
         <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
-          The <span className="italic text-sky-400">advantage</span> for <br className="hidden md:block" />
-          <span className="italic text-sky-400">Sydney</span> Property Buyers.
+          Strategist. <span className="italic text-sky-400">Insider.</span> <br className="hidden md:block" />
+          Your <span className="italic text-sky-400">Dedicated</span> Advocate.
         </h1>
 
         <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
-          Securing elite off-market access for home buyers and investors.
-          With 20+ years of property and IT expertise, we navigate the noise
-          to build your $5M+ portfolio with absolute precision.
+          JJ Property Partner — Your Trusted Buyers Agent in Sydney, Australia. 
+          Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition.
         </p>
 
         <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
@@ -299,13 +290,13 @@ export default function Home() {
             </div>
 
             <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.1] mb-8">
-              Strategist. Insider. <br />
-              <span className="italic text-muted">Your Unfair Advantage.</span>
+              Property Strategist. <br />
+              <span className="italic text-muted">Dedicated Buyer Advocate.</span>
             </h2>
 
             <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-              <p>As an experienced builder of his own <span className="text-black font-semibold">$5 million property portfolio</span>, Alex uses a systematic, research-based methodology to ensure sustainable growth and risk management for every client.</p>
-              <p>With firsthand knowledge about different cycles in the Australian real estate market, <span className='text-black font-semibold'>JJ Property Partner</span> offers sound strategies, unbiased opinions, and exclusive off-market access in alignment with your vision.</p>
+              <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
+              <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$5M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
             </div>
 
             <div className="mt-8 flex items-center gap-4">
@@ -316,9 +307,7 @@ export default function Home() {
             </div>
 
             <div className="mt-12 p-6 rounded-2xl border border-black/5 bg-neutral-50 flex items-center gap-6">
-              <div className="text-3xl font-serif text-black">No. 20543356</div>
-              <div className="h-10 w-px bg-black/10" />
-              <div className="text-sm font-medium uppercase tracking-widest text-muted">Licensed <br /> Buyers Agent</div>
+              <div className="text-xl sm:text-2xl font-serif text-black">No. 20543356 | ABN 71 687 187 113</div>
             </div>
           </motion.div>
 
@@ -347,8 +336,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Strategic Property Acquisition Solutions.</h2>
-              <p className="text-muted text-lg font-sans max-w-lg">Customised acquisition strategies developed to help you through every phase of your property journey across Australia.</p>
+              <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Our Core Services.</h2>
+              <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investment portfolios, we provide the data-led guidance you need to buy with total confidence.</p>
             </div>
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
@@ -399,13 +388,122 @@ export default function Home() {
                       {service.solidIcon}
                     </motion.div>
                   </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Difference Section ───────────────────────────────────────────── */}
+      <section className="py-24 px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-8">
+                The JJ Property <br />
+                <span className="italic text-muted">Partner Difference.</span>
+              </h2>
+              <p className="text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
+                Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
+              </p>
+              <div className="space-y-4">                {[
+                  "100% buyer's agent representation — no ties to developers",
+                  "Built on real experience with a personal $5M+ portfolio",
+                  "20+ years of IT expertise applied to research & data",
+                  "Exclusive access to off-market and pre-market properties",
+                  "Founder-led service managed personally by Alex",
+                  "Transparent, fixed or percentage-based fee structures",
+                  "Australia-wide support guided by performance data",
+                  "5-star Google reviewed — verified results"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 text-lg text-slate-700 font-sans">
+                    <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 mt-12">
+                  <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 1" />
+                  </div>
+                  <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 2" />
+                  </div>
                 </div>
-                <h3 className="text-2xl font-serif text-black mb-4">{service.title}</h3>
-                <p className="text-muted leading-relaxed font-sans mb-8 flex-1">{service.description}</p>
-                <span className="mt-auto flex items-center gap-2 group/btn text-sm font-bold uppercase tracking-widest text-black">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </span>
+                <div className="space-y-4">
+                  <div className="aspect-square rounded-[2rem] bg-sky-50 overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 3" />
+                  </div>
+                  <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 4" />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sky-500 rounded-full blur-[100px] opacity-20 -z-10" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Process Section ──────────────────────────────────────────────── */}
+      <section className="py-24 px-8 bg-[#011122] text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
+              Our Proven <br />
+              <span className="italic text-sky-400">5-Step Buying Approach.</span>
+            </h2>
+            <p className="text-xl text-white/60 font-sans max-w-2xl mx-auto">A clinical, data-led process from initial session to long-term support.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Strategy Session",
+                desc: "Free 30-minute map of your goals, budget, and timeline."
+              },
+              {
+                step: "02",
+                title: "Suburb Research",
+                desc: "Data-driven analysis of growth, yield, and infrastructure."
+              },
+              {
+                step: "03",
+                title: "Due Diligence",
+                desc: "Legal, structural, and financial checks on every property."
+              },
+              {
+                step: "04",
+                title: "Negotiation",
+                desc: "Strategic representation based on market conditions."
+              },
+              {
+                step: "05",
+                title: "Settlement",
+                desc: "Coordination with professionals through to handover."
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+              >
+                <div className="text-4xl font-serif text-sky-400/30 mb-6 group-hover:text-sky-400 transition-colors uppercase tracking-widest">{item.step}</div>
+                <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed font-sans">{item.desc}</p>
+                <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                </div>
               </motion.div>
             ))}
           </div>
