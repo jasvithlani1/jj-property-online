@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block font-sans">Navigation</h4>            <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
+            <h4 className="text-lg font-bold text-white mb-6 font-sans">Navigation</h4>            <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
               <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Home</Link></li>
               <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">About Us</Link></li>
               <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Services</Link></li>
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block font-sans">Services</h4>            <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
+            <h4 className="text-lg font-bold text-white mb-6 font-sans">Services</h4>            <ul className="space-y-4 font-sans text-sky-200/80 text-sm">
               <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">First Home Buyers</Link></li>
               <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Property Investors</Link></li>
               <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">SMSF Investment</Link></li>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-[11px] font-bold uppercase tracking-[0.3em] text-sky-400 mb-8 border-b border-sky-400/20 pb-2 inline-block font-sans">Connect</h4>            <ul className="space-y-6 font-sans text-sky-200/80">
+            <h4 className="text-lg font-bold text-white mb-6 font-sans">Connect</h4>            <ul className="space-y-6 font-sans text-sky-200/80">
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Mail className="w-4 h-4 text-sky-300" />
