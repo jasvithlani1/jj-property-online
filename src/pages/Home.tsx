@@ -94,7 +94,7 @@ export default function Home() {
   const startX = useRef(0);
   const scrollLeftStart = useRef(0);
   const [opacity, setOpacity] = useState(0);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
   const [reviews, setReviews] = useState<any[]>([]);
   const navigate = useNavigate();

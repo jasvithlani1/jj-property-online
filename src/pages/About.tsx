@@ -25,7 +25,7 @@ export default function About() {
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-black leading-[1.1] mb-6">
               Buy Property with Confidence <br />
-              Through <span className="italic text-muted">Experience, Data and Trust.</span>
+              Through <span className="text-muted">Experience, Data and Trust.</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted font-sans max-w-lg leading-relaxed">
               We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own.
@@ -63,7 +63,7 @@ export default function About() {
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black leading-tight">
               A Smarter Way to Buy Property, <br />
-              <span className="italic text-muted">Built on Experience, Data, and Trust.</span>
+              <span className="text-muted">Built on Experience, Data, and Trust.</span>
             </h2>
             <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
               <p>

@@ -68,7 +68,7 @@ const pillars = [
 
 export default function SmsfProperty() {
   const navigate = useNavigate();
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>

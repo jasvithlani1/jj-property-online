@@ -112,7 +112,7 @@ const services = [
 
 export default function Services() {
   const navigate = useNavigate();
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
@@ -229,7 +229,7 @@ export default function Services() {
                 <h2 className="text-4xl md:text-5xl font-serif text-black mb-4 leading-tight">
                   {service.title}
                 </h2>
-                <p className="text-lg text-muted font-sans italic mb-6 font-serif">{service.subtitle}</p>
+                <p className="text-lg text-muted font-serif mb-6">{service.subtitle}</p>
                 <p className="text-lg text-muted font-sans leading-relaxed mb-10">
                   {service.description}
                 </p>

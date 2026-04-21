@@ -59,7 +59,7 @@ const pillars = [
 
 export default function FirstHomeBuyers() {
   const navigate = useNavigate();
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <>
