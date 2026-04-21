@@ -143,15 +143,15 @@ export default function Home() {
     const animateScroll = () => {
       if (!isPausedRef.current && !isDragging.current) {
         if (Math.abs(exactScrollLeft - el.scrollLeft) > 2) {
-           exactScrollLeft = el.scrollLeft;
+          exactScrollLeft = el.scrollLeft;
         }
-        
+
         exactScrollLeft += 0.8;
         el.scrollLeft = exactScrollLeft;
-        
+
         const totalWidth = el.scrollWidth;
         const singleSetWidth = totalWidth / 4;
-        
+
         if (el.scrollLeft >= singleSetWidth * 2) {
           exactScrollLeft -= singleSetWidth;
           el.scrollLeft = exactScrollLeft;
@@ -185,7 +185,7 @@ export default function Home() {
     const video = videoRef.current;
     if (!video) return;
 
-    video.play().catch(() => {});
+    video.play().catch(() => { });
 
     let frameId: number;
     const fadeDuration = 0.5;
@@ -225,537 +225,533 @@ export default function Home() {
 
       <div ref={containerRef} className="relative w-full bg-sky-50 selection:bg-black/10">
 
-      {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <motion.section
-        id="home"
-        style={{ scale: heroScale, opacity: heroOpacity }}
-        className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-12 lg:pt-20"
-      >
-        <div className="absolute inset-0 -z-20">
-          <video
-            ref={videoRef}
-            src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
-            autoPlay muted playsInline preload="auto"
-            className="h-full w-full object-cover transition-opacity duration-100"
-            style={{ opacity }}
-          />
-        </div>
-
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/85 via-[#021f3a]/75 to-[#011122]/90 pointer-events-none" />
-
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
-
-        <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
-          Strategist. <span className="italic text-sky-400">Insider.</span> <br className="hidden md:block" />
-          Your <span className="italic text-sky-400">Dedicated</span> Advocate.
-        </h1>
-
-        <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
-          JJ Property Partner — Your Trusted Buyers Agent in Sydney, Australia. 
-          Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition.
-        </p>
-
-        <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
-          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
-            Book Session
-          </button>
-          <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-sky-400/30 bg-white/10 backdrop-blur-sm text-white hover:bg-sky-500 hover:border-sky-500 transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
-            Client Stories
-          </button>
-        </div>
-      </motion.section>
-
-      {/* ── About Alex Preview ───────────────────────────────────────────── */}
-      <section id="about" className="relative z-10 py-6 md:py-8 px-8 bg-gradient-to-b from-white to-sky-50">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E6FBFF] text-black border border-black/10 text-sm font-bold uppercase tracking-widest mb-10 shadow-sm scale-110 origin-left">
-              <span className="block w-2.5 h-2.5 rounded-full bg-black animate-pulse" />
-              Principal Advisor
-            </div>
-
-            <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.1] mb-8">
-              Property Strategist. <br />
-              <span className="italic text-muted">Dedicated Buyer Advocate.</span>
-            </h2>
-
-            <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-              <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
-              <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$5M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
-            </div>
-
-            <div className="mt-8 flex items-center gap-4">
-              <Link to="/about" className="group text-sm font-bold uppercase tracking-widest text-black flex items-center gap-2">
-                Read Full Profile
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
-            <div className="mt-12 p-6 rounded-2xl border border-white/10 bg-[#021f3a] shadow-xl flex items-center gap-6 relative overflow-hidden group/box">
-              <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
-              <div className="text-xl sm:text-2xl font-serif text-sky-100 relative z-10 leading-none">
-                <span className="text-sky-400 font-bold mr-2 text-sm uppercase tracking-widest block mb-2 opacity-70">Credentials</span>
-                No. 20543356 | ABN 71 687 187 113
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: 'easeOut' }}
-            className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
-          >
-            <img 
-              src="/advisor-parramatta.png" 
-              alt="Alex - Principal Property Strategist" 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
-              loading="lazy" 
-              width="600"
-              height="600"
+        {/* ── Hero ─────────────────────────────────────────────────────────── */}
+        <motion.section
+          id="home"
+          style={{ scale: heroScale, opacity: heroOpacity }}
+          className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-12 lg:pt-20"
+        >
+          <div className="absolute inset-0 -z-20">
+            <video
+              ref={videoRef}
+              src="https://res.cloudinary.com/drhnyntss/video/upload/v1774989962/Drone_push-in_Parramatta_202604010157_bogw13.mp4"
+              autoPlay muted playsInline preload="auto"
+              className="h-full w-full object-cover transition-opacity duration-100"
+              style={{ opacity }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/40 via-transparent to-transparent pointer-events-none" />
-          </motion.div>
-        </div>
-      </section>
+          </div>
 
-      {/* ── Services Preview ─────────────────────────────────────────────── */}
-      <section id="services" className="relative z-10 py-12 md:py-20 bg-white px-8 overflow-hidden border-t border-black/5">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-sky-50/50 blur-[120px] rounded-full -z-10" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-50/30 blur-[100px] rounded-full -z-10" />
-        
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
-            <div className="relative">
-              <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-sky-100/30 -z-10 pointer-events-none select-none">Services</div>
-              <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="italic text-sky-600">Services.</span></h2>
-              <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
-            </div>
-            <button
-              onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
-              className="group flex items-center gap-3 shrink-0 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
-            >
-              View Full Spectrum
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/85 via-[#021f3a]/75 to-[#011122]/90 pointer-events-none" />
+
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+
+          <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
+            Strategist. <span className="italic text-sky-400">Insider.</span> <br className="hidden md:block" />
+            Your <span className="italic text-sky-400">Dedicated</span> Advocate.
+          </h1>
+
+          <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
+            JJ Property Partner — Your Trusted Buyers Agent in Australia.
+            Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition.
+          </p>
+
+          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
+            <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
+              Book Session
+            </button>
+            <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-sky-400/30 bg-white/10 backdrop-blur-sm text-white hover:bg-sky-500 hover:border-sky-500 transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
+              Client Stories
             </button>
           </div>
+        </motion.section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {servicesPreview.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
-                className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${
-                  index === 1 
-                    ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:scale-105 md:z-20' 
-                    : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
-                }`}
-              >
-                {/* Featured Badge */}
-                {index === 1 && (
-                  <div className="absolute top-6 right-8 px-4 py-1.5 rounded-full bg-sky-500 text-[10px] font-black uppercase tracking-[0.25em] text-white shadow-lg">
-                    Highest Yield
-                  </div>
-                )}
-
-                <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${
-                  index === 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
-                }`}>
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    {service.icon}
-                  </div>
-                </div>
-                
-                <h3 className={`text-3xl font-serif mb-6 leading-tight ${index === 1 ? 'text-white' : 'text-black font-semibold'}`}>
-                  {service.title}
-                </h3>
-                <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index === 1 ? 'text-sky-100/70' : 'text-muted'}`}>
-                  {service.description}
-                </p>
-                
-                <div className="mt-auto w-full flex items-center justify-between group/link">
-                  <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${
-                    index === 1 ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
-                  }`}>
-                    Learn More
-                  </span>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
-                    index === 1 ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
-                  }`}>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-[3.5rem] border-2 border-sky-400/0 group-hover:border-sky-400/20 transition-colors pointer-events-none" />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Difference Section ───────────────────────────────────────────── */}
-      <section className="py-10 md:py-12 px-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        {/* ── About Alex Preview ───────────────────────────────────────────── */}
+        <section id="about" className="relative z-10 py-6 md:py-8 px-8 bg-gradient-to-b from-white to-sky-50">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-8">
-                The JJ Property <br />
-                <span className="italic text-muted">Partner Difference.</span>
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E6FBFF] text-black border border-black/10 text-sm font-bold uppercase tracking-widest mb-10 shadow-sm scale-110 origin-left">
+                <span className="block w-2.5 h-2.5 rounded-full bg-black animate-pulse" />
+                Principal Advisor
+              </div>
+
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.1] mb-8">
+                Property Strategist. <br />
+                <span className="italic text-muted">Dedicated Buyer Advocate.</span>
               </h2>
-              <p className="text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
-                Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "100% buyer's agent representation — no ties to developers",
-                  "Built on real experience with a personal $5M+ portfolio",
-                  "20+ years of IT expertise applied to research & data",
-                  "Exclusive access to off-market and pre-market properties",
-                  "Founder-led service managed personally by Alex",
-                  "Transparent, fixed or percentage-based fee structures",
-                  "Australia-wide support guided by performance data",
-                  "5-star Google reviewed — verified results"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 text-lg text-slate-700 font-sans">
-                    <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
-                    {item}
-                  </div>
-                ))}
+
+              <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
+                <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
+                <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$5M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
+              </div>
+
+              <div className="mt-8 flex items-center gap-4">
+                <Link to="/about" className="group text-sm font-bold uppercase tracking-widest text-black flex items-center gap-2">
+                  Read Full Profile
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+
+              <div className="mt-12 p-6 rounded-2xl border border-white/10 bg-[#021f3a] shadow-xl flex items-center gap-6 relative overflow-hidden group/box">
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
+                <div className="text-xl sm:text-2xl font-serif text-sky-100 relative z-10 leading-none">
+                  <span className="text-sky-400 font-bold mr-2 text-sm uppercase tracking-widest block mb-2 opacity-70">Credentials</span>
+                  No. 20543356 | ABN 71 687 187 113
+                </div>
               </div>
             </motion.div>
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4 mt-12">
-                  <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 1" />
-                  </div>
-                  <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="aspect-square rounded-[2rem] bg-sky-50 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
-                  </div>
-                  <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sky-500 rounded-full blur-[100px] opacity-20 -z-10" />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── Process Section ──────────────────────────────────────────────── */}
-      <section className="py-10 md:py-12 px-8 bg-[#011122] text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
-              Our Proven <br />
-              <span className="italic text-sky-400">5-Step Buying Approach.</span>
-            </h2>
-            <p className="text-xl text-white/60 font-sans max-w-2xl mx-auto">A clinical, data-led process from initial session to long-term support.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Strategy Session",
-                desc: "Free 30-minute map of your goals, budget, and timeline."
-              },
-              {
-                step: "02",
-                title: "Suburb Research",
-                desc: "Data-driven analysis of growth, yield, and infrastructure."
-              },
-              {
-                step: "03",
-                title: "Due Diligence",
-                desc: "Legal, structural, and financial checks on every property."
-              },
-              {
-                step: "04",
-                title: "Negotiation",
-                desc: "Strategic representation based on market conditions."
-              },
-              {
-                step: "05",
-                title: "Settlement",
-                desc: "Coordination with professionals through to handover."
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="relative group p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-sky-500/50 transition-all duration-500 shadow-2xl"
-              >
-                <div className="text-4xl font-serif text-sky-400/30 mb-6 group-hover:text-sky-400 transition-colors uppercase tracking-widest">{item.step}</div>
-                <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
-                <p className="text-sm text-slate-300 leading-relaxed font-sans">{item.desc}</p>
-                <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA Section ──────────────────────────────────────────────────── */}
-      <section className="relative py-8 md:py-10 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <video 
-            src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline 
-            className="w-full h-full object-cover opacity-40" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a] via-[#021f3a]/40 to-[#021f3a]/80 pointer-events-none" />
-        </div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10"
-        >
-          <h2 className="text-4xl md:text-6xl font-serif mb-8 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
-            Start your Sydney <br className="hidden md:block" />success story.
-          </h2>
-          <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
-            Book Free Session
-          </button>
-        </motion.div>
-      </section>
-
-      {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-      <section id="case-studies" className="relative py-6 md:py-8 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-4">
-                Real world results. <br />
-                <span className="italic text-muted">The JJ Advantage.</span>
-              </h2>
-              <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investments — curated results that define our standard.</p>
-            </div>
-            <button
-              onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
-              className="group flex items-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+              className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
             >
-              All Case Studies
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+              <img
+                src="/advisor-parramatta.png"
+                alt="Alex - Principal Property Strategist"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                loading="lazy"
+                width="600"
+                height="600"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/40 via-transparent to-transparent pointer-events-none" />
+            </motion.div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudies.map((story, index) => (
-              <motion.div
-                key={story.id}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
-                onClick={() => { navigate(`/case-studies/${story.id}`); window.scrollTo(0, 0); }}
-                className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-sky-900/10 overflow-hidden hover:shadow-sky-900/20 transition-all duration-500 cursor-pointer flex flex-col"
+        {/* ── Services Preview ─────────────────────────────────────────────── */}
+        <section id="services" className="relative z-10 py-12 md:py-20 bg-white px-8 overflow-hidden border-t border-black/5">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-sky-50/50 blur-[120px] rounded-full -z-10" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-50/30 blur-[100px] rounded-full -z-10" />
+
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
+              <div className="relative">
+                <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-sky-100/30 -z-10 pointer-events-none select-none">Services</div>
+                <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="italic text-sky-600">Services.</span></h2>
+                <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
+              </div>
+              <button
+                onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
+                className="group flex items-center gap-3 shrink-0 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
               >
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={story.image} 
-                    alt={story.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                    loading="lazy"
-                    width={800}
-                    height={450}
-                  />
-                </div>
-                <div className="p-8 flex flex-col flex-1">
-                  <div className="mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
-                    <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
-                    <span className="text-sm font-bold text-black bg-[#E6FBFF] inline-block px-3 py-1 rounded-full">{story.result}</span>
+                View Full Spectrum
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {servicesPreview.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: index * 0.15 }}
+                  onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
+                  className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index === 1
+                    ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:scale-105 md:z-20'
+                    : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
+                    }`}
+                >
+                  {/* Featured Badge */}
+                  {index === 1 && (
+                    <div className="absolute top-6 right-8 px-4 py-1.5 rounded-full bg-sky-500 text-[10px] font-black uppercase tracking-[0.25em] text-white shadow-lg">
+                      Highest Yield
+                    </div>
+                  )}
+
+                  <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index === 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
+                    }`}>
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      {service.icon}
+                    </div>
                   </div>
-                  <p className="text-muted font-serif italic text-base flex-1">"{story.shortQuote}"</p>
-                  <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
-                    <Quote className="w-3.5 h-3.5" />
-                    Read Story
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+
+                  <h3 className={`text-3xl font-serif mb-6 leading-tight ${index === 1 ? 'text-white' : 'text-black font-semibold'}`}>
+                    {service.title}
+                  </h3>
+                  <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index === 1 ? 'text-sky-100/70' : 'text-muted'}`}>
+                    {service.description}
+                  </p>
+
+                  <div className="mt-auto w-full flex items-center justify-between group/link">
+                    <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index === 1 ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                      }`}>
+                      Learn More
+                    </span>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index === 1 ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                      }`}>
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
+
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 rounded-[3.5rem] border-2 border-sky-400/0 group-hover:border-sky-400/20 transition-colors pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Difference Section ───────────────────────────────────────────── */}
+        <section className="py-10 md:py-12 px-8 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-8">
+                  The JJ Property <br />
+                  <span className="italic text-muted">Partner Difference.</span>
+                </h2>
+                <p className="text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
+                  Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "100% buyer's agent representation — no ties to developers",
+                    "Built on real experience with a personal $5M+ portfolio",
+                    "20+ years of IT expertise applied to research & data",
+                    "Exclusive access to off-market and pre-market properties",
+                    "Founder-led service managed personally by Alex",
+                    "Transparent, fixed or percentage-based fee structures",
+                    "Australia-wide support guided by performance data",
+                    "5-star Google reviewed — verified results"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 text-lg text-slate-700 font-sans">
+                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </motion.div>
-            ))}
-          </div>
-        </div>
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[#E6FBFF] blur-[120px] rounded-full opacity-30 animate-pulse" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F0F7FF] blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
-      </section>
-
-      {/* ── Google Reviews ───────────────────────────────────────────────── */}
-      <section id="reviews" className="relative py-6 md:py-8 bg-white overflow-hidden flex flex-col items-center">
-        <div className="mb-10 md:mb-16 text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-4xl font-serif text-black font-bold">5.0</span>
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
-            </div>
-          </div>
-          <h2 className="text-3xl font-serif text-black mb-2">Google Verified Results</h2>
-          <p className="text-muted font-sans text-sm tracking-widest uppercase">Trusted by Sydney's premium buyers</p>
-        </div>
-
-        <div
-          ref={carouselRef}
-          className="w-full flex gap-6 overflow-x-auto no-scrollbar px-8 pb-8 cursor-grab active:cursor-grabbing select-none"
-          onPointerEnter={(e) => { if(e.pointerType === 'mouse') setIsReviewPaused(true); }}
-          onPointerLeave={(e) => { if(e.pointerType === 'mouse') { setIsReviewPaused(false); isDragging.current = false; } }}
-          onTouchStart={() => { setIsReviewPaused(true); }}
-          onTouchEnd={() => { setIsReviewPaused(false); isDragging.current = false; }}
-          onTouchCancel={() => { setIsReviewPaused(false); isDragging.current = false; }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
-        >
-          {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
-            <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col h-[320px] md:h-[350px]">
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
-              </div>
-              <p className="text-black font-serif text-lg leading-relaxed italic mb-6 line-clamp-4 md:line-clamp-5 overflow-hidden">
-                "{review.text}"
-              </p>
-              <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
-                {('authorImage' in review && review.authorImage) ? (
-                  <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
-                ) : (
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
-                )}
-                <div>
-                  <h3 className="text-sm font-bold text-black font-sans">{review.name}</h3>
-                  <span className="text-xs text-muted font-sans">{review.date}</span>
+              <div className="relative">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4 mt-12">
+                    <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
+                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 1" />
+                    </div>
+                    <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
+                      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="aspect-square rounded-[2rem] bg-sky-50 overflow-hidden shadow-2xl">
+                      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
+                    </div>
+                    <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
+                      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
+                    </div>
+                  </div>
                 </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sky-500 rounded-full blur-[100px] opacity-20 -z-10" />
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-sky-100 px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-4">
-            <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
-              Frequently <br />
-              <span className="italic text-muted">asked questions.</span>
-            </h2>
-            <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
           </div>
+        </section>
 
-          <div className="lg:col-span-8 flex flex-col gap-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-black/10 pb-2">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  aria-expanded={openFaq === index}
-                  aria-controls={`faq-answer-${index}`}
-                  className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+        {/* ── Process Section ──────────────────────────────────────────────── */}
+        <section className="py-10 md:py-12 px-8 bg-[#011122] text-white overflow-hidden">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
+                Our Proven <br />
+                <span className="italic text-sky-400">5-Step Buying Approach.</span>
+              </h2>
+              <p className="text-xl text-white/60 font-sans max-w-2xl mx-auto">A clinical, data-led process from initial session to long-term support.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+              {[
+                {
+                  step: "01",
+                  title: "Strategy Session",
+                  desc: "Free 30-minute map of your goals, budget, and timeline."
+                },
+                {
+                  step: "02",
+                  title: "Suburb Research",
+                  desc: "Data-driven analysis of growth, yield, and infrastructure."
+                },
+                {
+                  step: "03",
+                  title: "Due Diligence",
+                  desc: "Legal, structural, and financial checks on every property."
+                },
+                {
+                  step: "04",
+                  title: "Negotiation",
+                  desc: "Strategic representation based on market conditions."
+                },
+                {
+                  step: "05",
+                  title: "Settlement",
+                  desc: "Coordination with professionals through to handover."
+                }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="relative group p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-sky-500/50 transition-all duration-500 shadow-2xl"
                 >
-                  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-600 group-hover:text-[#021f3a]'}`}>
-                    {faq.question}
-                  </span>
-                  <motion.div
-                    animate={{ rotate: openFaq === index ? 45 : 0 }}
-                    transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                    className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
-                    aria-hidden="true"
-                  >
-                    <Plus className="w-5 h-5" />
-                  </motion.div>
-                </button>
-                <AnimatePresence>
-                  {openFaq === index && (
-                    <motion.div
-                      id={`faq-answer-${index}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden"
-                    >
-                      <p className="text-lg text-slate-800 font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
+                  <div className="text-4xl font-serif text-sky-400/30 mb-6 group-hover:text-sky-400 transition-colors uppercase tracking-widest">{item.step}</div>
+                  <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed font-sans">{item.desc}</p>
+                  <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-      <section className="relative py-10 md:py-12 bg-white px-8 overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        {/* ── CTA Section ──────────────────────────────────────────────────── */}
+        <section className="relative py-8 md:py-10 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <video
+              src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a] via-[#021f3a]/40 to-[#021f3a]/80 pointer-events-none" />
+          </div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="relative z-10"
           >
-            <div className="inline-block px-7 py-3 rounded-full border border-sky-400/20 bg-sky-50 text-sm font-bold uppercase tracking-[0.2em] text-sky-600 mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-              Take the next step
-            </div>
-            <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
-              Book your <span className="italic text-muted">strategy session.</span>
+            <h2 className="text-4xl md:text-6xl font-serif mb-8 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
+              Start your Real Estate <br className="hidden md:block" />success story.
             </h2>
-            <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
-              Select a date and time that suits you for a confidential 30-minute consultation with Alex.
-            </p>
+            <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
+              Book Free Session
+            </button>
           </motion.div>
-        </div>
+        </section>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
-        >
-          <div 
-            id="calendly-inline-widget"
-            className="w-full h-[700px]" 
-          />
-        </motion.div>
+        {/* ── Case Studies Preview ─────────────────────────────────────────── */}
+        <section id="case-studies" className="relative py-6 md:py-8 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div>
+                <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-4">
+                  Real world results. <br />
+                  <span className="italic text-muted">The JJ Advantage.</span>
+                </h2>
+                <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investments — curated results that define our standard.</p>
+              </div>
+              <button
+                onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
+                className="group flex items-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
+              >
+                All Case Studies
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
 
-        {/* Decorative background elements */}
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[120px] opacity-60 -z-10" />
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E6FBFF] rounded-full blur-[100px] opacity-40 -z-10" />
-      </section>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {caseStudies.map((story, index) => (
+                <motion.div
+                  key={story.id}
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
+                  onClick={() => { navigate(`/case-studies/${story.id}`); window.scrollTo(0, 0); }}
+                  className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-sky-900/10 overflow-hidden hover:shadow-sky-900/20 transition-all duration-500 cursor-pointer flex flex-col"
+                >
+                  <div className="h-48 overflow-hidden">
+                    <img
+                      src={story.image}
+                      alt={story.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                      width={800}
+                      height={450}
+                    />
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <div className="mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
+                      <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
+                      <span className="text-sm font-bold text-black bg-[#E6FBFF] inline-block px-3 py-1 rounded-full">{story.result}</span>
+                    </div>
+                    <p className="text-muted font-serif italic text-base flex-1">"{story.shortQuote}"</p>
+                    <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
+                      <Quote className="w-3.5 h-3.5" />
+                      Read Story
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[#E6FBFF] blur-[120px] rounded-full opacity-30 animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F0F7FF] blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
+        </section>
 
-    </div>
+        {/* ── Google Reviews ───────────────────────────────────────────────── */}
+        <section id="reviews" className="relative py-6 md:py-8 bg-white overflow-hidden flex flex-col items-center">
+          <div className="mb-10 md:mb-16 text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-4xl font-serif text-black font-bold">5.0</span>
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
+              </div>
+            </div>
+            <h2 className="text-3xl font-serif text-black mb-2">Google Verified Results</h2>
+            <p className="text-muted font-sans text-sm tracking-widest uppercase">Trusted by Australia's premium buyers</p>
+          </div>
+
+          <div
+            ref={carouselRef}
+            className="w-full flex gap-6 overflow-x-auto no-scrollbar px-8 pb-8 cursor-grab active:cursor-grabbing select-none"
+            onPointerEnter={(e) => { if (e.pointerType === 'mouse') setIsReviewPaused(true); }}
+            onPointerLeave={(e) => { if (e.pointerType === 'mouse') { setIsReviewPaused(false); isDragging.current = false; } }}
+            onTouchStart={() => { setIsReviewPaused(true); }}
+            onTouchEnd={() => { setIsReviewPaused(false); isDragging.current = false; }}
+            onTouchCancel={() => { setIsReviewPaused(false); isDragging.current = false; }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
+          >
+            {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
+              <div key={`r-${i}`} className="w-80 md:w-96 p-8 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col h-[320px] md:h-[350px]">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
+                </div>
+                <p className="text-black font-serif text-lg leading-relaxed italic mb-6 line-clamp-4 md:line-clamp-5 overflow-hidden">
+                  "{review.text}"
+                </p>
+                <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
+                  {('authorImage' in review && review.authorImage) ? (
+                    <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
+                  )}
+                  <div>
+                    <h3 className="text-sm font-bold text-black font-sans">{review.name}</h3>
+                    <span className="text-xs text-muted font-sans">{review.date}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+        <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-sky-100 px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-4">
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+                Frequently <br />
+                <span className="italic text-muted">asked questions.</span>
+              </h2>
+              <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
+            </div>
+
+            <div className="lg:col-span-8 flex flex-col gap-4">
+              {faqs.map((faq, index) => (
+                <div key={index} className="border-b border-black/10 pb-2">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                  >
+                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-600 group-hover:text-[#021f3a]'}`}>
+                      {faq.question}
+                    </span>
+                    <motion.div
+                      animate={{ rotate: openFaq === index ? 45 : 0 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                      aria-hidden="true"
+                    >
+                      <Plus className="w-5 h-5" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {openFaq === index && (
+                      <motion.div
+                        id={`faq-answer-${index}`}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-lg text-slate-800 font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Calendly Booking ────────────────────────────────────────────────── */}
+        <section className="relative py-10 md:py-12 bg-white px-8 overflow-hidden">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-block px-7 py-3 rounded-full border border-sky-400/20 bg-sky-50 text-sm font-bold uppercase tracking-[0.2em] text-sky-600 mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+                Take the next step
+              </div>
+              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+                Book your <span className="italic text-muted">strategy session.</span>
+              </h2>
+              <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
+                Select a date and time that suits you for a confidential 30-minute consultation with Alex.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
+          >
+            <div
+              id="calendly-inline-widget"
+              className="w-full h-[700px]"
+            />
+          </motion.div>
+
+          {/* Decorative background elements */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[120px] opacity-60 -z-10" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E6FBFF] rounded-full blur-[100px] opacity-40 -z-10" />
+        </section>
+
+      </div>
     </>
   );
 }
