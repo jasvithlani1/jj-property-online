@@ -72,7 +72,7 @@ export default function Blog() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-16 pb-12 md:pt-24 md:pb-16 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-8 pt-12 pb-10 md:pt-16 md:pb-10 bg-[#021f3a] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-sky-400 rounded-full blur-[200px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-600 rounded-full blur-[150px]" />
@@ -98,7 +98,7 @@ export default function Blog() {
       </section>
 
       {/* Category Filter Strip */}
-      <section className="px-8 py-8">
+      <section className="px-8 py-4">
         <div className="max-w-7xl mx-auto flex flex-wrap gap-3">
           {['All Articles', 'Market Intelligence', 'Market Analysis', 'SMSF Strategy', 'First Home', 'Strategy'].map((cat) => (
             <button
@@ -112,7 +112,7 @@ export default function Blog() {
       </section>
 
       {/* Post Grid */}
-      <section className="px-8 pb-16 pt-8">
+      <section className="px-8 pb-10 pt-4">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-24">
@@ -177,7 +177,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="px-8 py-12 md:py-16 bg-sky-50">
+      <section className="px-8 py-8 md:py-10 bg-sky-50">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -124,7 +124,7 @@ export default function Services() {
       <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero */}
-      <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-16 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-6 py-8 sm:px-8 sm:py-10 md:pt-16 md:pb-10 bg-[#021f3a] text-white overflow-hidden">
         {/* bg glow blobs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -171,7 +171,7 @@ export default function Services() {
       </section>
 
       {/* Service Sections */}
-      <section className="py-12 md:py-16 px-8 bg-white">
+      <section className="py-8 md:py-10 px-8 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
           {services.map((service, index) => (
             <motion.div
@@ -284,7 +284,7 @@ export default function Services() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-12 md:py-16 px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-8 md:py-10 px-8 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Additional Services</h2>
@@ -328,7 +328,7 @@ export default function Services() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-10 md:py-16 bg-gradient-to-b from-white to-sky-100 px-8">
+      <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-sky-100 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
             <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
@@ -376,7 +376,7 @@ export default function Services() {
       </section>
 
       {/* CTA Bar */}
-      <section className="py-12 md:py-16 px-8 bg-sky-50">
+      <section className="py-8 md:py-10 px-8 bg-sky-50">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

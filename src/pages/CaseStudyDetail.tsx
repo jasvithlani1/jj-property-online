@@ -107,7 +107,7 @@ export default function CaseStudyDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-20">
+    <div className="w-full bg-white selection:bg-black/10 pt-12">
       <SEO 
         title={study.seo?.metaTitle || study.title} 
         description={study.seo?.metaDescription || study.outcome.substring(0, 160)}
@@ -115,7 +115,7 @@ export default function CaseStudyDetail() {
       />
 
       {/* Back navigation */}
-      <div className="px-8 pt-24 pb-0 relative z-10">
+      <div className="px-8 pt-12 pb-0 relative z-10">
         <div className="max-w-7xl mx-auto">
           <button
             onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
@@ -128,7 +128,7 @@ export default function CaseStudyDetail() {
       </div>
 
       {/* Hero Image */}
-      <section className="relative mt-10 mx-4 md:mx-8 h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden">
+      <section className="relative mt-4 mx-4 md:mx-8 h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden">
         {study.mainImage && (
           <img
             src={urlFor(study.mainImage).url()}
@@ -139,7 +139,7 @@ export default function CaseStudyDetail() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
         {/* Overlay Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Stats Row */}
-      <section className="px-8 py-16 md:py-24">
+      <section className="px-8 py-8 md:py-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {study.stats?.map((stat, i) => (
@@ -183,7 +183,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Main Body */}
-      <section className="px-8 py-16 md:py-24">
+      <section className="px-8 py-8 md:py-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Content Column */}
@@ -245,7 +245,7 @@ export default function CaseStudyDetail() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="sticky top-40 p-8 md:p-10 rounded-[2.5rem] bg-sky-50 border border-sky-100"
+                className="sticky top-28 p-6 md:p-8 rounded-[2.5rem] bg-sky-50 border border-sky-100"
               >
                 <Quote className="w-10 h-10 text-sky-300 mb-6 fill-sky-100" />
                 <p className="text-2xl md:text-3xl font-serif text-black leading-snug italic mb-8">
@@ -270,7 +270,7 @@ export default function CaseStudyDetail() {
 
       {/* Property Image Gallery */}
       {study.gallery && study.gallery.length > 0 && (
-        <section className="px-8 pb-16 md:pb-24">
+        <section className="px-8 pb-10 md:pb-12">
           <div className="max-w-7xl mx-auto">
             <h3 className="text-3xl font-serif text-black mb-8">Property Gallery</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -291,7 +291,7 @@ export default function CaseStudyDetail() {
       )}
 
       {/* Other Case Studies */}
-      <section className="px-8 py-16 md:py-24 bg-sky-50">
+      <section className="px-8 py-8 md:py-10 bg-sky-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-serif text-black mb-10">More Client Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

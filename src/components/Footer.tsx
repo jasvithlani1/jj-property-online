@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 're
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#021f3a] text-white pt-20 mt-16 lg:mt-24">
+    <footer className="relative bg-[#021f3a] text-white pt-12 mt-8 lg:mt-12">
 
       <div className="max-w-7xl mx-auto px-8 relative z-10 pt-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">

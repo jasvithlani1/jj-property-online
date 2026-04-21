@@ -131,7 +131,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-20">
+    <div className="w-full bg-white selection:bg-black/10 pt-12">
       <SEO 
         title={post.seo?.metaTitle || post.title} 
         description={post.seo?.metaDescription || post.excerpt}
@@ -140,7 +140,7 @@ export default function BlogDetail() {
       />
 
       {/* Back nav */}
-      <div className="px-8 pt-24 pb-0 relative z-10">
+      <div className="px-8 pt-12 pb-0 relative z-10">
         <div className="max-w-4xl mx-auto">
           <button
             onClick={() => { navigate('/blog'); window.scrollTo(0, 0); }}
@@ -153,7 +153,7 @@ export default function BlogDetail() {
       </div>
 
       {/* Article Header */}
-      <header className="px-8 pt-12 pb-16">
+      <header className="px-8 pt-8 pb-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -198,7 +198,7 @@ export default function BlogDetail() {
       </header>
 
       {/* Cover Image */}
-      <div className="px-4 md:px-8 mb-16">
+      <div className="px-4 md:px-8 mb-10">
         <div className="max-w-5xl mx-auto h-[45vh] md:h-[55vh] rounded-[2.5rem] overflow-hidden">
           {post.mainImage && (
             <img
@@ -211,7 +211,7 @@ export default function BlogDetail() {
       </div>
 
       {/* Article Body + Sidebar */}
-      <div className="px-8 pb-32 md:pb-48">
+      <div className="px-8 pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Main Content */}
@@ -225,7 +225,7 @@ export default function BlogDetail() {
             </motion.div>
 
             {/* Author Bio */}
-            <div className="mt-20 p-8 rounded-3xl bg-sky-50 border border-sky-100 flex items-center gap-6">
+            <div className="mt-10 p-8 rounded-3xl bg-sky-50 border border-sky-100 flex items-center gap-6">
               <div className="w-16 h-16 rounded-2xl bg-[#021f3a] flex items-center justify-center text-white font-bold font-serif text-2xl shrink-0 overflow-hidden">
                 {post.author?.image ? (
                   <img src={urlFor(post.author.image).width(200).height(200).url()} alt={post.author.name} className="w-full h-full object-cover" />
