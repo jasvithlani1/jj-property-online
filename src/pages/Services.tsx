@@ -189,7 +189,7 @@ export default function Services() {
               >
               {/* Text Side */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <div className="flex items-center gap-6 mb-8 relative">
+                <div className="flex items-center gap-6 mb-6 relative">
                   <div className={`absolute -left-2 top-0 w-20 h-20 blur-2xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity ${service.accentClass.replace('bg-','bg-').replace('-50','-400')}`} />
                   <div className={`relative p-4 rounded-[1.25rem] bg-[#011122] border border-white/10 shadow-[0_0_25px_rgba(56,189,248,0.3)] drop-shadow-[0_0_12px_rgba(56,189,248,0.8)] group-hover:-translate-y-1 transition-all duration-500 z-10 text-sky-400`}>
                     <motion.div
@@ -229,12 +229,12 @@ export default function Services() {
                 <h2 className="text-4xl md:text-5xl font-serif text-black mb-4 leading-tight">
                   {service.title}
                 </h2>
-                <p className="text-lg text-muted font-serif mb-6">{service.subtitle}</p>
-                <p className="text-lg text-muted font-sans leading-relaxed mb-10">
+                <p className="text-lg text-muted font-serif mb-4">{service.subtitle}</p>
+                <p className="text-lg text-muted font-sans leading-relaxed mb-8">
                   {service.description}
                 </p>
 
-                <ul className="space-y-4 mb-10">
+                <ul className="space-y-4 mb-8">
                   {service.benefits.map((b, i) => (
                     <motion.li
                       key={i}
@@ -268,7 +268,7 @@ export default function Services() {
               </div>
 
               {/* Image Side */}
-              <div className={`relative h-[320px] sm:h-[480px] md:h-[560px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+              <div className={`relative h-[320px] sm:h-[520px] md:h-[650px] lg:h-[750px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <img
                   src={service.image}
                   alt={service.title}
