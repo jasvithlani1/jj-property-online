@@ -313,7 +313,7 @@ export default function Home() {
             className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
           >
             <img 
-              src="/advisor-man.png" 
+              src="/advisor-parramatta.png" 
               alt="Alex - Principal Property Strategist" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
               loading="lazy" 
