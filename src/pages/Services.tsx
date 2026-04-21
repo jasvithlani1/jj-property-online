@@ -244,7 +244,7 @@ export default function Services() {
                       transition={{ delay: i * 0.1, duration: 0.5 }}
                       className="flex items-start gap-3 text-base font-sans text-muted"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-black shrink-0 mt-0.5" />
+                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2" />
                       {b}
                     </motion.li>
                   ))}
