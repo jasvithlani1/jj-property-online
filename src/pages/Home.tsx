@@ -296,8 +296,12 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-12 p-6 rounded-2xl border border-black/5 bg-neutral-50 flex items-center gap-6">
-              <div className="text-xl sm:text-2xl font-serif text-black">No. 20543356 | ABN 71 687 187 113</div>
+            <div className="mt-12 p-6 rounded-2xl border border-white/10 bg-[#021f3a] shadow-xl flex items-center gap-6 relative overflow-hidden group/box">
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
+              <div className="text-xl sm:text-2xl font-serif text-sky-100 relative z-10 leading-none">
+                <span className="text-sky-400 font-bold mr-2 text-sm uppercase tracking-widest block mb-2 opacity-70">Credentials</span>
+                No. 20543356 | ABN 71 687 187 113
+              </div>
             </div>
           </motion.div>
 
@@ -309,82 +313,92 @@ export default function Home() {
             className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
           >
             <img 
-              src="/advisor-strategy.png" 
+              src="/advisor-man.png" 
               alt="Alex - Principal Property Strategist" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
               loading="lazy" 
               width="600"
               height="600"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/40 via-transparent to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </section>
 
       {/* ── Services Preview ─────────────────────────────────────────────── */}
-      <section id="services" className="relative z-10 py-6 md:py-8 bg-gradient-to-b from-sky-50 to-sky-100 px-8">
+      <section id="services" className="relative z-10 py-12 md:py-20 bg-white px-8 overflow-hidden border-t border-black/5">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-sky-50/50 blur-[120px] rounded-full -z-10" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-50/30 blur-[100px] rounded-full -z-10" />
+        
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <h2 className="text-4xl md:text-6xl font-serif text-black mb-4">Our Core Services.</h2>
-              <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investment portfolios, we provide the data-led guidance you need to buy with total confidence.</p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
+            <div className="relative">
+              <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-sky-100/30 -z-10 pointer-events-none select-none">Services</div>
+              <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="italic text-sky-600">Services.</span></h2>
+              <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
             </div>
             <button
               onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
-              className="group flex items-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
+              className="group flex items-center gap-3 shrink-0 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
             >
-              All Services
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              View Full Spectrum
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {servicesPreview.map((service, index) => (
               <motion.div
                 key={service.title}
-                initial="initial"
-                whileHover="hover"
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
                 onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
-                className="p-10 rounded-3xl bg-white border border-black/5 flex flex-col items-start text-left hover:shadow-2xl hover:shadow-black/5 transition-all duration-300 cursor-pointer group"
+                className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${
+                  index === 1 
+                    ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:scale-105 md:z-20' 
+                    : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
+                }`}
               >
-                <div className={`p-4 rounded-2xl ${service.color} mb-8 text-black group-hover:bg-black group-hover:text-white transition-colors duration-500`}>
-                  <motion.div
-                    variants={{
-                      initial: { rotateY: 0 },
-                      hover: { rotateY: 180 }
-                    }}
-                    transition={{ duration: 0.6 }}
-                    className="relative w-6 h-6"
-                  >
-                    <motion.div
-                      className="absolute inset-0 h-full w-full flex items-center justify-center"
-                      variants={{
-                        initial: { opacity: 1, visibility: 'visible' },
-                        hover: { opacity: 0, visibility: 'hidden' }
-                      }}
-                    >
-                      {service.icon}
-                    </motion.div>
-                    <motion.div
-                      className="absolute inset-0 h-full w-full flex items-center justify-center"
-                      style={{ rotateY: 180 }}
-                      variants={{
-                        initial: { opacity: 0, visibility: 'hidden' },
-                        hover: { opacity: 1, visibility: 'visible' }
-                      }}
-                    >
-                      {service.solidIcon}
-                    </motion.div>
-                  </motion.div>
+                {/* Featured Badge */}
+                {index === 1 && (
+                  <div className="absolute top-6 right-8 px-4 py-1.5 rounded-full bg-sky-500 text-[10px] font-black uppercase tracking-[0.25em] text-white shadow-lg">
+                    Highest Yield
+                  </div>
+                )}
+
+                <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${
+                  index === 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
+                }`}>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    {service.icon}
+                  </div>
                 </div>
-                <h3 className="text-2xl font-serif text-black mb-4">{service.title}</h3>
-                <p className="text-muted leading-relaxed font-sans mb-8 flex-1">{service.description}</p>
-                <span className="mt-auto flex items-center gap-2 group/btn text-sm font-bold uppercase tracking-widest text-black">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </span>
+                
+                <h3 className={`text-3xl font-serif mb-6 leading-tight ${index === 1 ? 'text-white' : 'text-black font-semibold'}`}>
+                  {service.title}
+                </h3>
+                <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index === 1 ? 'text-sky-100/70' : 'text-muted'}`}>
+                  {service.description}
+                </p>
+                
+                <div className="mt-auto w-full flex items-center justify-between group/link">
+                  <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${
+                    index === 1 ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                  }`}>
+                    Learn More
+                  </span>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    index === 1 ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                  }`}>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 rounded-[3.5rem] border-2 border-sky-400/0 group-hover:border-sky-400/20 transition-colors pointer-events-none" />
               </motion.div>
             ))}
           </div>
