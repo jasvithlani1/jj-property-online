@@ -70,7 +70,7 @@ export default function FirstHomeBuyers() {
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
-        <section className="relative px-6 py-16 sm:px-8 sm:py-24 md:pt-32 md:pb-40 bg-[#021f3a] text-white overflow-hidden">
+        <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-16 bg-[#021f3a] text-white overflow-hidden">
           {/* bg glow blobs */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -99,7 +99,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-16 md:py-24 px-6 md:px-8 bg-white">
+        <section className="py-12 md:py-16 px-6 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
             {pillars.map((pillar, index) => (
               <motion.div
@@ -151,7 +151,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* ── What We Do — Sticky Scroll Section ──────────────────────── */}
-        <section className="py-16 md:py-24 px-6 md:px-8 bg-[#021f3a] text-white">
+        <section className="py-12 md:py-16 px-6 md:px-8 bg-[#021f3a] text-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
@@ -280,7 +280,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
+        <section className="relative py-10 md:py-16 bg-gradient-to-b from-white to-sky-100 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
@@ -328,7 +328,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-24 px-8 bg-[#011122] text-white">
+        <section className="py-12 md:py-16 px-8 bg-[#011122] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

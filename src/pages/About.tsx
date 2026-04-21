@@ -13,7 +13,7 @@ export default function About() {
       <div className="w-full bg-white selection:bg-black/10 pt-20">
 
       {/* Hero Section */}
-      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-24 bg-sky-50 overflow-hidden">
+      <section className="relative px-8 pt-20 pb-12 md:pt-32 md:pb-16 bg-sky-50 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -42,7 +42,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
               alt="Property Buying"
-              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.1]"
+              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.1] hover:scale-105 transition-transform duration-700"
             />
           </motion.div>
         </div>
@@ -52,7 +52,7 @@ export default function About() {
       </section>
 
       {/* Profile Section */}
-      <section className="py-20 md:py-24 px-8">
+      <section className="py-12 md:py-16 px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -86,7 +86,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900"
               alt="JJ Property Partner HQ"
-              className="absolute inset-0 w-full h-full object-cover filter grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              className="absolute inset-0 w-full h-full object-cover filter grayscale-[0.2] hover:grayscale-0 hover:scale-105 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 text-white">
@@ -98,7 +98,7 @@ export default function About() {
       </section>
 
       {/* Track Record & Tech Advantage */}
-      <section className="py-20 md:py-24 bg-sky-50 px-8 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-sky-50 px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -140,7 +140,7 @@ export default function About() {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 md:py-24 px-8 bg-white">
+      <section className="py-12 md:py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Our Core Values</h2>
@@ -184,7 +184,7 @@ export default function About() {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-20 md:py-24 px-8 bg-[#021f3a] text-white relative overflow-hidden">
+      <section className="py-12 md:py-16 px-8 bg-[#021f3a] text-white relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full opacity-20">
           <div className="absolute top-10 left-10 w-72 h-72 bg-sky-400 rounded-full blur-[120px]" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-500 rounded-full blur-[140px]" />
@@ -236,7 +236,7 @@ export default function About() {
       </section>
 
       {/* Credentials */}
-      <section className="py-16 md:py-20 px-4 sm:px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-12 md:py-12 px-4 sm:px-8 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>

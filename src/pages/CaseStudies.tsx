@@ -61,7 +61,7 @@ export default function CaseStudies() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-20 pb-20 md:pt-32 md:pb-40 overflow-hidden bg-sky-50">
+      <section className="relative px-8 pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden bg-sky-50">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#E6FBFF] blur-[150px] rounded-full opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -106,7 +106,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-16 md:py-24 px-8 bg-white">
+      <section className="py-12 md:py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-24">
@@ -185,7 +185,7 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
+      <section className="py-12 md:py-16 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-400 rounded-full blur-[200px]" />
         </div>
@@ -215,7 +215,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Latest Acquisition Showcase */}
-      <section className="py-24 px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-12 md:py-16 px-8 bg-slate-50 border-t border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -315,7 +315,7 @@ export default function CaseStudies() {
                   <img 
                     src={prop.image} 
                     alt="Latest acquisition property" 
-                    className="absolute inset-0 w-full h-full object-cover" 
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
                 </div>

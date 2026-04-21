@@ -266,7 +266,7 @@ export default function Home() {
       </motion.section>
 
       {/* ── About Alex Preview ───────────────────────────────────────────── */}
-      <section id="about" className="relative z-10 py-12 md:py-24 px-8 bg-gradient-to-b from-white to-sky-50">
+      <section id="about" className="relative z-10 py-10 md:py-16 px-8 bg-gradient-to-b from-white to-sky-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -322,7 +322,7 @@ export default function Home() {
       </section>
 
       {/* ── Services Preview ─────────────────────────────────────────────── */}
-      <section id="services" className="relative z-10 py-12 md:py-24 bg-gradient-to-b from-sky-50 to-sky-100 px-8">
+      <section id="services" className="relative z-10 py-10 md:py-16 bg-gradient-to-b from-sky-50 to-sky-100 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -392,7 +392,7 @@ export default function Home() {
       </section>
 
       {/* ── Difference Section ───────────────────────────────────────────── */}
-      <section className="py-24 px-8 bg-white overflow-hidden">
+      <section className="py-16 md:py-20 px-8 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
@@ -430,18 +430,18 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4 mt-12">
                   <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 1" />
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 1" />
                   </div>
                   <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 2" />
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div className="aspect-square rounded-[2rem] bg-sky-50 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 3" />
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
                   </div>
                   <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" alt="Property 4" />
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
                   </div>
                 </div>
               </div>
@@ -452,7 +452,7 @@ export default function Home() {
       </section>
 
       {/* ── Process Section ──────────────────────────────────────────────── */}
-      <section className="py-24 px-8 bg-[#011122] text-white overflow-hidden">
+      <section className="py-16 md:py-20 px-8 bg-[#011122] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
@@ -511,7 +511,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA Section ──────────────────────────────────────────────────── */}
-      <section className="relative py-16 md:py-24 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+      <section className="relative py-12 md:py-16 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <video 
             src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" 
@@ -540,7 +540,7 @@ export default function Home() {
       </section>
 
       {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-      <section id="case-studies" className="relative py-12 md:py-24 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
+      <section id="case-studies" className="relative py-10 md:py-16 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
@@ -602,7 +602,7 @@ export default function Home() {
       </section>
 
       {/* ── Google Reviews ───────────────────────────────────────────────── */}
-      <section id="reviews" className="relative py-12 md:py-24 bg-white overflow-hidden flex flex-col items-center">
+      <section id="reviews" className="relative py-10 md:py-16 bg-white overflow-hidden flex flex-col items-center">
         <div className="mb-10 md:mb-16 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-4xl font-serif text-black font-bold">5.0</span>
@@ -651,7 +651,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="relative py-12 md:py-24 bg-gradient-to-b from-white to-sky-100 px-8">
+      <section className="relative py-10 md:py-16 bg-gradient-to-b from-white to-sky-100 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
             <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
@@ -703,7 +703,7 @@ export default function Home() {
       </section>
 
       {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-      <section className="relative py-24 bg-white px-8 overflow-hidden">
+      <section className="relative py-16 md:py-20 bg-white px-8 overflow-hidden">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
