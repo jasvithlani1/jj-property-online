@@ -113,7 +113,7 @@ export default function FirstHomeBuyers() {
                 {/* Text Side */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="flex items-center gap-3 mb-6">
-                    <CheckCircle2 className="w-6 h-6 text-sky-500" />
+                    <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
                     <span className="text-sm font-bold uppercase tracking-widest text-sky-600">
                       Pillar 0{index + 1}
                     </span>
