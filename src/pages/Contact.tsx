@@ -59,9 +59,9 @@ export default function Contact() {
         <meta name="description" content="Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today." />
       </Helmet>
 
-      <div className="w-full bg-sky-50 selection:bg-black/10 pt-12 pb-8 md:pb-12">
+      <div className="w-full bg-sky-50 selection:bg-black/10 pt-24 pb-8 md:pb-12">
       {/* Hero Section */}
-      <section className="relative px-8 pt-10 pb-8 md:pt-16 md:pb-10 overflow-hidden text-center z-10">
+      <section className="relative px-8 pt-12 pb-8 md:pt-20 md:pb-10 overflow-hidden text-center z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
