@@ -361,12 +361,6 @@ export default function Home() {
                     : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
                     }`}
                 >
-                  {/* Featured Badge */}
-                  {index === 1 && (
-                    <div className="absolute top-6 right-8 px-4 py-1.5 rounded-full bg-sky-500 text-[10px] font-black uppercase tracking-[0.25em] text-white shadow-lg">
-                      Highest Yield
-                    </div>
-                  )}
 
                   <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
                     }`}>
