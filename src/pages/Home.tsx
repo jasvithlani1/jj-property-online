@@ -356,8 +356,8 @@ export default function Home() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.8, delay: index * 0.15 }}
                   onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
-                  className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index === 1
-                    ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:scale-105 md:z-20'
+                  className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index !== 1
+                    ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:z-20'
                     : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
                     }`}
                 >
@@ -368,26 +368,26 @@ export default function Home() {
                     </div>
                   )}
 
-                  <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index === 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
+                  <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
                     }`}>
                     <div className="w-8 h-8 flex items-center justify-center">
                       {service.icon}
                     </div>
                   </div>
 
-                  <h3 className={`text-3xl font-serif mb-6 leading-tight ${index === 1 ? 'text-white' : 'text-black font-semibold'}`}>
+                  <h3 className={`text-3xl font-serif mb-6 leading-tight ${index !== 1 ? 'text-white' : 'text-black font-semibold'}`}>
                     {service.title}
                   </h3>
-                  <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index === 1 ? 'text-sky-100/70' : 'text-muted'}`}>
+                  <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index !== 1 ? 'text-sky-100/70' : 'text-muted'}`}>
                     {service.description}
                   </p>
 
                   <div className="mt-auto w-full flex items-center justify-between group/link">
-                    <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index === 1 ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                    <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
                       }`}>
                       Learn More
                     </span>
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index === 1 ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
                       }`}>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>

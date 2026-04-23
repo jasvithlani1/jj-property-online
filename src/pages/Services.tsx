@@ -290,39 +290,68 @@ export default function Services() {
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Additional Services</h2>
             <div className="h-1 w-20 bg-sky-400 mx-auto rounded-full" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-left">
-            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} className="group bg-white p-10 rounded-3xl border border-black/5 hover:shadow-2xl transition-all duration-500 flex flex-col items-center mx-auto text-center">
-              <div className="relative mb-8 group-hover:-translate-y-2 transition-transform duration-500">
-                <div className="absolute inset-0 bg-sky-400 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-full" />
-                <div className="w-16 h-16 bg-[#011122] border border-white/10 rounded-2xl flex items-center justify-center relative shadow-[0_0_20px_rgba(56,189,248,0.3)] group-hover:shadow-[0_0_35px_rgba(56,189,248,0.6)] z-10 transition-shadow duration-500">
-                  <MessageSquare className="w-8 h-8 text-sky-400 drop-shadow-[0_0_12px_currentColor]" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              {
+                title: 'Negotiation Only Service',
+                description: 'Already found the right property? Our Negotiation Only Service gives you expert buyer-side representation to help secure the best possible price and favourable contract terms. We use market insights, comparable sales data, and proven negotiation strategies to protect your interests every step of the way.',
+                icon: <MessageSquare className="w-8 h-8" />,
+                isFeatured: true
+              },
+              {
+                title: 'Auction Bidding Representation',
+                description: 'Property auctions can move quickly, and emotional bidding often leads to overpaying. JJ Property Partner provides calm, strategic auction representation with a clear bidding limit agreed in advance, backed by property appraisal, market research, and a disciplined approach designed to protect your interests.',
+                icon: <Gavel className="w-8 h-8" />,
+                isFeatured: false
+              },
+              {
+                title: 'Portfolio Strategy Sessions',
+                description: 'For investors planning their next purchase or refining their current approach, our portfolio strategy sessions provide clear, data-led guidance. We review your existing assets, assess future opportunities, and map out a practical strategy designed to support long-term wealth growth across Australia.',
+                icon: <Map className="w-8 h-8" />,
+                isFeatured: true
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${service.isFeatured
+                  ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:z-20'
+                  : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
+                  }`}
+              >
+                <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${service.isFeatured ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
+                  }`}>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    {service.icon}
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-2xl font-serif text-black mb-4">Negotiation Only Service</h3>
-              <p className="text-muted leading-relaxed font-sans text-base">Already found the right property? Our Negotiation Only Service gives you expert buyer-side representation to help secure the best possible price and favourable contract terms. We use market insights, comparable sales data, and proven negotiation strategies to protect your interests every step of the way.</p>
-            </motion.div>
-            
-            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.1}} className="group bg-white p-10 rounded-3xl border border-black/5 hover:shadow-2xl transition-all duration-500 flex flex-col items-center mx-auto text-center">
-              <div className="relative mb-8 group-hover:-translate-y-2 transition-transform duration-500">
-                <div className="absolute inset-0 bg-indigo-400 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-full" />
-                <div className="w-16 h-16 bg-[#011122] border border-white/10 rounded-2xl flex items-center justify-center relative shadow-[0_0_20px_rgba(99,102,241,0.3)] group-hover:shadow-[0_0_35px_rgba(99,102,241,0.6)] z-10 transition-shadow duration-500">
-                  <Gavel className="w-8 h-8 text-indigo-400 drop-shadow-[0_0_12px_currentColor]" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-serif text-black mb-4">Auction Bidding Representation</h3>
-              <p className="text-muted leading-relaxed font-sans text-base">Property auctions can move quickly, and emotional bidding often leads to overpaying. JJ Property Partner provides calm, strategic auction representation with a clear bidding limit agreed in advance, backed by property appraisal, market research, and a disciplined approach designed to protect your interests.</p>
-            </motion.div>
 
-            <motion.div initial={{opacity:0, y:30}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{delay:0.2}} className="group bg-white p-10 rounded-3xl border border-black/5 hover:shadow-2xl transition-all duration-500 flex flex-col items-center mx-auto text-center">
-              <div className="relative mb-8 group-hover:-translate-y-2 transition-transform duration-500">
-                <div className="absolute inset-0 bg-emerald-400 blur-2xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-full" />
-                <div className="w-16 h-16 bg-[#011122] border border-white/10 rounded-2xl flex items-center justify-center relative shadow-[0_0_20px_rgba(52,211,153,0.3)] group-hover:shadow-[0_0_35px_rgba(52,211,153,0.6)] z-10 transition-shadow duration-500">
-                  <Map className="w-8 h-8 text-emerald-400 drop-shadow-[0_0_12px_currentColor]" />
+                <h3 className={`text-3xl font-serif mb-6 leading-tight ${service.isFeatured ? 'text-white' : 'text-black font-semibold'}`}>
+                  {service.title}
+                </h3>
+                <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${service.isFeatured ? 'text-sky-100/70' : 'text-muted'}`}>
+                  {service.description}
+                </p>
+
+                <div className="mt-auto w-full flex items-center justify-between group/link">
+                  <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                    }`}>
+                    Learn More
+                  </span>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.isFeatured ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                    }`}>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-2xl font-serif text-black mb-4">Portfolio Strategy Sessions</h3>
-              <p className="text-muted leading-relaxed font-sans text-base">For investors planning their next purchase or refining their current approach, our portfolio strategy sessions provide clear, data-led guidance. We review your existing assets, assess future opportunities, and map out a practical strategy designed to support long-term wealth growth across Australia.</p>
-            </motion.div>
+
+                {/* Hover Glow Effect */}
+                <div className="absolute inset-0 rounded-[3.5rem] border-2 border-sky-400/0 group-hover:border-sky-400/20 transition-colors pointer-events-none" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
