@@ -84,9 +84,9 @@ export default function About() {
             className="md:w-5/12 aspect-[3/4] relative rounded-[3rem] overflow-hidden"
           >
             <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=900"
-              alt="JJ Property Partner HQ"
-              className="absolute inset-0 w-full h-full object-cover filter grayscale-[0.2] hover:grayscale-0 hover:scale-105 transition-all duration-700"
+              src="/buyers-agent-showing.png"
+              alt="Buyers Agent Showing Property"
+              className="absolute inset-0 w-full h-full object-cover filter hover:scale-105 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 text-white">
