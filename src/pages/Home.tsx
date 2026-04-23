@@ -438,27 +438,21 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
-              <div className="relative">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4 mt-12">
-                    <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 1" />
-                    </div>
-                    <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="aspect-square rounded-[2rem] bg-sky-50 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
-                    </div>
-                    <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
-                    </div>
-                  </div>
-                </div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="relative h-[500px] md:h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl"
+              >
+                <img
+                  src="/broker-handing-keys.png"
+                  alt="Broker handing over keys to clients"
+                  className="absolute inset-0 w-full h-full object-cover filter hover:scale-105 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/40 to-transparent" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sky-500 rounded-full blur-[100px] opacity-20 -z-10" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
