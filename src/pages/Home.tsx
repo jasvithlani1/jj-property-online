@@ -296,9 +296,9 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-12 p-6 rounded-2xl border border-white/10 bg-[#021f3a] shadow-xl flex items-center gap-6 relative overflow-hidden group/box">
+              <div className="mt-12 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#021f3a] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 relative z-10 w-full">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-1.5">Licence No.</span>
                     <span className="text-xl sm:text-2xl font-serif text-sky-50">20543356</span>
