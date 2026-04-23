@@ -298,9 +298,17 @@ export default function Home() {
 
               <div className="mt-12 p-6 rounded-2xl border border-white/10 bg-[#021f3a] shadow-xl flex items-center gap-6 relative overflow-hidden group/box">
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
-                <div className="text-xl sm:text-2xl font-serif text-sky-100 relative z-10 leading-none">
-                  <span className="text-sky-400 font-bold mr-2 text-sm uppercase tracking-widest block mb-2 opacity-70">Credentials</span>
-                  No. 20543356 | ABN 71 687 187 113
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 relative z-10 w-full">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-1.5">Licence No.</span>
+                    <span className="text-xl sm:text-2xl font-serif text-sky-50">20543356</span>
+                  </div>
+                  <div className="hidden sm:block w-px h-10 bg-sky-400/20"></div>
+                  <div className="w-full sm:hidden h-px bg-sky-400/20"></div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-1.5">ABN</span>
+                    <span className="text-xl sm:text-2xl font-serif text-sky-50">71 687 187 113</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
