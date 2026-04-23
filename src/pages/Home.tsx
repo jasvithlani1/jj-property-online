@@ -246,8 +246,8 @@ export default function Home() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
           <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
-            Strategist. <span className="italic text-sky-400">Insider.</span> <br className="hidden md:block" />
-            Your <span className="italic text-sky-400">Dedicated</span> Advocate.
+            Strategist. <span className="text-sky-400">Insider.</span> <br className="hidden md:block" />
+            Your <span className="text-sky-400">Dedicated</span> Advocate.
           </h1>
 
           <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
@@ -281,7 +281,7 @@ export default function Home() {
 
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.1] mb-8">
                 Property Strategist. <br />
-                <span className="italic text-muted">Dedicated Buyer Advocate.</span>
+                <span className="text-muted">Dedicated Buyer Advocate.</span>
               </h2>
 
               <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
@@ -335,7 +335,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
               <div className="relative">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-sky-100/30 -z-10 pointer-events-none select-none">Services</div>
-                <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="italic text-sky-600">Services.</span></h2>
+                <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="text-sky-600">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <button
@@ -413,7 +413,7 @@ export default function Home() {
               >
                 <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-8">
                   The JJ Property <br />
-                  <span className="italic text-muted">Partner Difference.</span>
+                  <span className="text-muted">Partner Difference.</span>
                 </h2>
                 <p className="text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
                   Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
@@ -467,7 +467,7 @@ export default function Home() {
             <div className="text-center mb-20">
               <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
                 Our Proven <br />
-                <span className="italic text-sky-400">5-Step Buying Approach.</span>
+                <span className="text-sky-400">5-Step Buying Approach.</span>
               </h2>
               <p className="text-xl text-white/60 font-sans max-w-2xl mx-auto">A clinical, data-led process from initial session to long-term support.</p>
             </div>
@@ -556,7 +556,7 @@ export default function Home() {
               <div>
                 <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-4">
                   Real world results. <br />
-                  <span className="italic text-muted">The JJ Advantage.</span>
+                  <span className="text-muted">The JJ Advantage.</span>
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investments — curated results that define our standard.</p>
               </div>
@@ -596,7 +596,7 @@ export default function Home() {
                       <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
                       <span className="text-sm font-bold text-black bg-[#E6FBFF] inline-block px-3 py-1 rounded-full">{story.result}</span>
                     </div>
-                    <p className="text-muted font-serif italic text-base flex-1">"{story.shortQuote}"</p>
+                    <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
                     <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
                       <Quote className="w-3.5 h-3.5" />
                       Read Story
@@ -641,7 +641,7 @@ export default function Home() {
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
-                <p className="text-black font-serif text-lg leading-relaxed italic mb-6 line-clamp-4 md:line-clamp-5 overflow-hidden">
+                <p className="text-black font-serif text-lg leading-relaxed mb-6 line-clamp-4 md:line-clamp-5 overflow-hidden">
                   "{review.text}"
                 </p>
                 <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
@@ -666,7 +666,7 @@ export default function Home() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
                 Frequently <br />
-                <span className="italic text-muted">asked questions.</span>
+                <span className="text-muted">asked questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
             </div>
@@ -725,7 +725,7 @@ export default function Home() {
                 Take the next step
               </div>
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
-                Book your <span className="italic text-muted">strategy session.</span>
+                Book your <span className="text-muted">strategy session.</span>
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
                 Select a date and time that suits you for a confidential 30-minute consultation with Alex.

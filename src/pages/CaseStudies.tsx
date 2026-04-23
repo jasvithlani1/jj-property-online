@@ -76,7 +76,7 @@ export default function CaseStudies() {
             <h1 className="text-5xl md:text-7xl font-serif text-black leading-[1.05] mb-8 max-w-5xl mx-auto">
               The JJ Property Advantage
               <br />
-              <span className="italic text-muted">in action.</span>
+              <span className="text-muted">in action.</span>
             </h1>
             <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
               Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach.
@@ -157,7 +157,7 @@ export default function CaseStudies() {
                       {study.title}
                     </h2>
                     {study.shortQuote && (
-                      <p className="text-muted font-sans text-base leading-relaxed italic flex-1">
+                      <p className="text-muted font-sans text-base leading-relaxed flex-1">
                         "{study.shortQuote}"
                       </p>
                     )}
@@ -198,7 +198,7 @@ export default function CaseStudies() {
           >
             <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
               Ready to write your <br />
-              <span className="italic text-sky-300">own success story?</span>
+              <span className="text-sky-300">own success story?</span>
             </h2>
             <p className="text-xl text-white/60 font-sans mb-12 max-w-xl mx-auto">
               Speak directly with Alex about your brief. Our active roster is strictly limited — enquire now.

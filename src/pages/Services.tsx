@@ -140,7 +140,7 @@ export default function Services() {
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-4xl">
               Acquisition Strategies Designed for <br />
-              <span className="italic text-sky-300">Precision and Long-Term Wealth.</span>
+              <span className="text-sky-300">Precision and Long-Term Wealth.</span>
             </h1>
             <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
               JJ Property Partner is an independent buyers agency that works solely for you, guiding you through every stage of the property journey across Australia. Built on independence, smart data-led advice, and personalised service, we give you the confidence to buy with clarity and purpose.
@@ -333,7 +333,7 @@ export default function Services() {
           <div className="lg:col-span-4">
             <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
               Frequently <br />
-              <span className="italic text-muted">asked questions.</span>
+              <span className="text-muted">asked questions.</span>
             </h2>
             <p className="text-muted text-lg font-sans">Everything you need to know about our specialized acquisition services.</p>
           </div>
@@ -386,7 +386,7 @@ export default function Services() {
           >
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-black mb-8 leading-tight">
               Not sure which service fits? <br />
-              <span className="italic text-muted">Let's find out together.</span>
+              <span className="text-muted">Let's find out together.</span>
             </h2>
             <p className="text-lg sm:text-xl text-muted font-sans mb-12 max-w-2xl mx-auto">
               Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets.

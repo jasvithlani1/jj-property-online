@@ -86,7 +86,7 @@ export default function FirstHomeBuyers() {
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
                 Smart Property Strategies for <br />
-                <span className="italic text-sky-400">Confident</span> First Home Buyers.
+                <span className="text-sky-400">Confident</span> First Home Buyers.
               </h1>
               <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 Buying your first home in Australia can feel overwhelming, with rising prices, complex grants, fast-moving auctions, and too much conflicting advice making the process harder than it should be. Without the right support, it is easy to overpay or choose a property that does not suit your long-term goals.
@@ -162,7 +162,7 @@ export default function FirstHomeBuyers() {
                 </div>
                 <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
                   What We Do for{' '}
-                  <span className="italic text-sky-300">First Home Buyers</span>
+                  <span className="text-sky-300">First Home Buyers</span>
                 </h2>
                 <div className="h-1 w-16 bg-sky-400 mb-8 rounded-full" />
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
@@ -285,7 +285,7 @@ export default function FirstHomeBuyers() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
                 Frequently <br />
-                <span className="italic text-muted">asked questions.</span>
+                <span className="text-muted">asked questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Essential information for first home buyers navigating the Australian market.</p>
             </div>
@@ -337,7 +337,7 @@ export default function FirstHomeBuyers() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
-                Ready to secure your <span className="italic text-sky-400">first home</span>?
+                Ready to secure your <span className="text-sky-400">first home</span>?
               </h2>
               <p className="text-lg text-sky-100/80 font-sans mb-12">
                 Book a free strategy session to discuss your goals and understand how our data-driven approach can give you the advantage.

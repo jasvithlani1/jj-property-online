@@ -248,7 +248,7 @@ export default function CaseStudyDetail() {
                 className="sticky top-28 p-6 md:p-8 rounded-[2.5rem] bg-sky-50 border border-sky-100"
               >
                 <Quote className="w-10 h-10 text-sky-300 mb-6 fill-sky-100" />
-                <p className="text-2xl md:text-3xl font-serif text-black leading-snug italic mb-8">
+                <p className="text-2xl md:text-3xl font-serif text-black leading-snug mb-8">
                   "{study.shortQuote}"
                 </p>
                 <div className="h-px bg-sky-200 mb-8" />

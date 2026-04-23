@@ -95,7 +95,7 @@ export default function SmsfProperty() {
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
                 Acquisition strategies built for{' '}
-                <span className="italic text-sky-400">compliant precision.</span>
+                <span className="text-sky-400">compliant precision.</span>
               </h1>
               <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 Every SMSF brief is unique. Every acquisition is structured for long-term, compliant returns. Explore the three core pillars of the JJ Property Partner SMSF property investment approach.
@@ -151,7 +151,7 @@ export default function SmsfProperty() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
                 Frequently <br />
-                <span className="italic text-muted">asked questions.</span>
+                <span className="text-muted">asked questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Essential answers for managing your property investments within an SMSF.</p>
             </div>
@@ -203,7 +203,7 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
-                Ready to secure your <span className="italic text-sky-400">superannuation growth</span>?
+                Ready to secure your <span className="text-sky-400">superannuation growth</span>?
               </h2>
               <p className="text-lg text-sky-100/80 font-sans mb-12">
                 Book a free strategy session with our SMSF experts to discuss compliant, high-yield off-market property options.

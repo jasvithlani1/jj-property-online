@@ -95,7 +95,7 @@ export default function PropertyInvestors() {
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
                 Acquisition strategies engineered for{' '}
-                <span className="italic text-sky-400">investment precision.</span>
+                <span className="text-sky-400">investment precision.</span>
               </h1>
               <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 Every brief is strategically defined. Every acquisition is optimised for maximum portfolio return. Explore the three core pillars of the JJ Property Partner investment approach.
@@ -151,7 +151,7 @@ export default function PropertyInvestors() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
                 Frequently <br />
-                <span className="italic text-muted">asked questions.</span>
+                <span className="text-muted">asked questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Strategic insights for property investors building nationwide portfolios.</p>
             </div>
@@ -203,7 +203,7 @@ export default function PropertyInvestors() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
-                Ready to scale your <span className="italic text-sky-400">portfolio</span>?
+                Ready to scale your <span className="text-sky-400">portfolio</span>?
               </h2>
               <p className="text-lg text-sky-100/80 font-sans mb-12">
                 Book a free strategy session to discuss your investment criteria and discover exclusive off-market opportunities.

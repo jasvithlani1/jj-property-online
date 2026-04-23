@@ -88,7 +88,7 @@ export default function Blog() {
             </div>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-6 max-w-4xl">
               Insights for Sydney's{' '}
-              <span className="italic text-sky-300">informed buyers.</span>
+              <span className="text-sky-300">informed buyers.</span>
             </h1>
             <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
               Data-driven analysis, acquisition strategy, and on-the-ground market intelligence from 20+ years inside Sydney's property market.
@@ -187,7 +187,7 @@ export default function Blog() {
           >
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6 leading-tight">
               Market intelligence, <br />
-              <span className="italic text-muted">direct to your inbox.</span>
+              <span className="text-muted">direct to your inbox.</span>
             </h2>
             <p className="text-xl text-muted font-sans mb-10 max-w-xl mx-auto leading-relaxed">
               Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data.

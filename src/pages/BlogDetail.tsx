@@ -39,7 +39,7 @@ const ptComponents = {
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="my-12 pl-8 border-l-4 border-sky-400">
-        <p className="text-2xl md:text-3xl font-serif text-black italic leading-snug">
+        <p className="text-2xl md:text-3xl font-serif text-black leading-snug">
           {children}
         </p>
       </blockquote>

@@ -73,7 +73,7 @@ export default function Contact() {
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
             Exclusive access to Australia’s <br className="hidden md:block" />
-            <span className="italic text-muted">premium</span> property market.
+            <span className="font-semibold text-muted">premium</span> property market.
           </h1>
           <p className="text-xl text-muted font-sans max-w-3xl mx-auto leading-relaxed">
             Contact us for a private and comprehensive strategy consultation. We act on behalf of buyers all over Australia, providing customized strategies for acquiring the right property through thorough market research and expert negotiations.
