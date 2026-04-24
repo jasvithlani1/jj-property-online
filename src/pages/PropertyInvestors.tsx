@@ -7,62 +7,42 @@ import { useState } from 'react';
 
 const investorFaqs = [
   {
-    question: 'What type of service can you offer me to invest in properties?',
-    answer: 'JJ Property Partner will offer comprehensive buyer agents services including investment strategies, property searching, due diligence, negotiation and acquisition of properties in order for you to develop a strong portfolio of properties.'
+    question: 'How do you identify high-growth suburbs for investors?',
+    answer: 'We use a data-driven framework that analyses vacancy rates, yield trends, infrastructure investment, and population growth drivers across Australia to identify areas with strong capital growth potential.'
   },
   {
-    question: 'Can you help me locate the right places to invest on properties?',
-    answer: 'We assist in acquiring properties in various regions of Australia taking into account the data, potential and compatibility to the goals of our clients.'
+    question: 'Can you help with off-market investment properties?',
+    answer: 'Yes. We have an extensive network of sales agents across Australia, giving our clients access to properties before they are listed on major portals like realestate.com.au or Domain.'
   },
   {
-    question: 'How can I be sure that my property investment will be profitable?',
-    answer: 'Our way of working entails analysis of suburb potential based on growth potential, rent, infrastructural developments, among other economic factors.'
+    question: 'What types of properties do you recommend for long-term growth?',
+    answer: 'We typically focus on well-located residential houses and dual-occupancy properties in established or high-growth corridors that offer a balance of capital upside and sustainable rental yield.'
   },
   {
-    question: 'Is there any room to purchase off market property investments?',
-    answer: 'Yes, through our vast networks within the real estate industry, we are able to offer our clients off market properties.'
+    question: 'How do you manage the due diligence process?',
+    answer: 'We coordinate everything from building and pest inspections to contract reviews with your solicitor, ensuring every purchase is backed by thorough research and professional scrutiny.'
   },
   {
-    question: 'What type of property investments can you offer me?',
-    answer: 'Our specialty lies in high yield property investments, which include dual income properties, add value properties, among others.'
-  },
-  {
-    question: 'What can I do to reduce the risk involved with investing?',
-    answer: 'By conducting an extensive analysis of risks using different methods including financial and market analysis to make sure that the investment made suits your risk profile.'
-  },
-  {
-    question: 'Can you help negotiate property purchase?',
-    answer: 'Yes, we employ strategic negotiation techniques using our market knowledge and understanding of vendors to help negotiate favorable terms of sale.'
-  },
-  {
-    question: 'Do you work with my financial advisor or mortgage broker?',
-    answer: 'Yes, we work in close coordination with your financial advisors, mortgage brokers, and accountants to align your property investments with your financial goals.'
-  },
-  {
-    question: 'Does your service cater to both inexperienced and experienced investors?',
-    answer: 'Yes, our services are geared towards supporting new as well as experienced investors who wish to grow their investment portfolios.'
-  },
-  {
-    question: 'What makes property investors select JJ Property Partner?',
-    answer: 'Our real estate expertise combined with market intelligence and data-driven strategy helps you acquire profitable properties throughout Australia.'
+    question: 'What is your fee structure for property investors?',
+    answer: 'We offer transparent, fixed or percentage-based fee structures tailored to the complexity of your search and acquisition strategy. We discuss this clearly during our initial discovery call.'
   }
 ];
 
 const pillars = [
   {
-    title: 'Investor-Focused Market Intelligence',
-    description: 'At JJ Property Partner, we use IT-backed data analysis to assess investment opportunities across property markets throughout Australia. Instead of relying on broad suburb reports, we apply a more strategic framework that examines:\n\n• Historical price trends and the current market cycle\n• Gross and net rental yields, along with vacancy rate movements\n• Upcoming infrastructure projects such as transport, hospitals, universities, and business hubs\n• Population growth projections and migration trends\n• Supply and demand conditions, including approvals, completions, and available stock\n• Proximity to employment hubs and local economic activity\n• Demographic profiles and socioeconomic movement\n\nThis layered analysis helps identify suburbs with strong upside potential early, allowing our clients to buy at the right stage of the cycle rather than entering after the market has already peaked.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=900',
+    title: 'Data-Led Research & Selection',
+    description: 'We use professional analysis tools to identify high-performing suburbs nationwide. Our research focuses on areas with confirmed infrastructure projects, low vacancy rates, and strong population growth.\n\n• National market exposure\n• Suburb-specific growth drivers\n• Detailed yield & vacancy analysis\n• Infrastructure & development tracking',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Identifying Properties with Strong Growth',
-    description: 'In high-performing locations, we identify the right property types and features that support stronger returns and long-term portfolio growth:\n\n• High-yield residential properties that deliver solid cash flow from the outset\n• Dual income opportunities, including dual occupancy and granny flat potential\n• Value-add properties with renovation, subdivision, or development upside\n• Properties near major infrastructure projects backed by confirmed government funding\n• Emerging growth corridor properties positioned before wider market demand increases',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900',
+    title: 'Off-Market Property Sourcing',
+    description: 'Access properties that never reach the public portals. We use our deep industry network to uncover high-quality investment opportunities with less competition and better buying terms.\n\n• Early access to pre-market deals\n• Exclusive off-market opportunities\n• Direct relationships with sales agents\n• Reduced competition on quality assets',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Negotiating Smarter. Securing Better Outcomes',
-    description: 'Finding the right investment property is only one part of the process. Securing it at the right price and under the right conditions is just as important for long-term performance. JJ Property Partner applies tailored negotiation strategies to help property investors purchase with greater clarity and confidence:\n\n• Comparable sales research and independent value assessment\n• Vendor motivation analysis to uncover negotiating advantages\n• Pre-auction strategy with firm limits and bidding direction\n• Contract negotiation including settlement terms, conditions, and deposit structure\n• End-to-end coordination through exchange and settlement',
-    image: '/negotiation_meeting.png',
+    title: 'Strategic Portfolio Execution',
+    description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction bidding\n• Settlement coordination & support',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
@@ -73,14 +53,13 @@ export default function PropertyInvestors() {
   return (
     <>
       <Helmet>
-        <title>Property Investors Strategy AU | JJ Property Partner</title>
-        <meta name="description" content="Grow your portfolio with expert buyer agents at JJ Property Partner. Data-driven property investment, off-market deals, and nationwide opportunities." />
+        <title>Property Investment Buyers Agent AU | JJ Property Partner</title>
+        <meta name="description" content="Strategic property acquisition for serious investors. Use data-driven research and off-market access to build a high-performing property portfolio." />
       </Helmet>
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
-        <section className="relative px-6 py-8 sm:px-8 sm:py-10 md:pt-16 md:pb-16 bg-[#021f3a] text-white overflow-hidden">
-          {/* bg glow blobs */}
+        <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-20 bg-[#021f3a] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -90,27 +69,22 @@ export default function PropertyInvestors() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-7 py-3 rounded-full border border-sky-400/50 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm scale-110 origin-center translate-y-[-4px]">
+              <div className="inline-block px-7 py-3 rounded-full border border-sky-400/50 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
                 Property Investors
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
-                Precise Acquisition Strategies for{' '}
-                <span className="text-sky-400">Property Investors</span>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+                Acquisition Strategies Engineered for{' '}
+                <span className="text-sky-400">Investment Precision.</span>
               </h1>
-              <div className="text-lg md:text-xl text-sky-100/80 font-sans max-w-4xl mx-auto leading-relaxed space-y-6">
-                <p>
-                  Building a strong investment portfolio takes more than chasing a hotspot or following market noise. It requires clear strategy, careful research, disciplined buying criteria, smart timing, and expert guidance to secure properties that support long-term growth and cash flow.
-                </p>
-                <p>
-                  JJ Property Partner works exclusively for buyers, helping property investors across Australia purchase with confidence. Alex combines 20+ years of IT and data expertise with hands-on experience building a $5M+ portfolio, delivering advice that is strategic, practical, and backed by real-world results.
-                </p>
-              </div>
+              <p className="text-xl md:text-2xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
+                Building a high-performing property portfolio requires more than guesswork. It demands systematic research, strategic timing, and professional execution.
+              </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Why Smart Investors Choose JJ Property Partner Section */}
-        <section className="py-16 md:py-20 px-8 bg-sky-50">
+        {/* Introduction Section */}
+        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -119,16 +93,16 @@ export default function PropertyInvestors() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                Why Smart Investors Choose JJ Property Partner
+                Precise Acquisition Strategies for Property Investors
               </h2>
               <div className="space-y-6 text-lg text-slate-700 font-sans leading-relaxed">
                 <p>
-                  Most property investors do their own research, relying on public data that can be outdated, incomplete, or difficult to interpret accurately. As a result, they often compete for the same listed properties, overpay in competitive markets, and miss valuable off-market opportunities where stronger purchases are often secured.
+                  Building a high-performing property investment portfolio demands systematic research, disciplined acquisition criteria, strategic timing, and professional execution at every stage.
                 </p>
                 <p className="font-semibold text-[#021f3a]">
                   JJ Property Partner gives investors a clear strategic edge:
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-4 pt-2">
                   {[
                     "Access to data-led research and suburb analysis to identify growth opportunities early",
                     "Off-market and pre-market access with less competition and stronger buying positions",
@@ -144,29 +118,25 @@ export default function PropertyInvestors() {
                 </ul>
               </div>
             </motion.div>
-            
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+              transition={{ duration: 0.8 }}
+              className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
-              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=900" alt="Smart Investment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              <img
+                src="https://images.unsplash.com/photo-1460472178825-e5240623abe5?auto=format&fit=crop&q=80&w=1200"
+                alt="Modern City Skyline"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </motion.div>
           </div>
         </section>
 
-        {/* Our Approach Pillar Introduction */}
-        <section className="py-12 md:py-16 px-8 bg-white text-center">
-          <div className="max-w-4xl mx-auto">
-             <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Our Approach to Strategic Property Acquisition</h2>
-             <div className="w-20 h-1 bg-sky-500 mx-auto rounded-full" />
-          </div>
-        </section>
-
         {/* Content Pillars */}
-        <section className="py-8 md:py-10 px-6 md:px-8 bg-white pb-20">
+        <section className="py-8 md:py-16 px-6 md:px-8 bg-slate-50">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
             {pillars.map((pillar, index) => (
               <motion.div
@@ -177,12 +147,11 @@ export default function PropertyInvestors() {
                 transition={{ duration: 0.9, ease: 'easeOut' }}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
               >
-                {/* Text Side */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
-                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
+                  <div className="space-y-4 text-base md:text-lg text-slate-600 font-sans leading-relaxed">
                     {pillar.description.split('\n\n').map((paragraph, pIdx) => {
                       if (paragraph.startsWith('• ')) {
                         return (
@@ -201,7 +170,6 @@ export default function PropertyInvestors() {
                   </div>
                 </div>
 
-                {/* Image Side */}
                 <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image}
@@ -214,8 +182,8 @@ export default function PropertyInvestors() {
           </div>
         </section>
 
-        {/* Strategic Portfolio Building Section */}
-        <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white relative">
+        {/* Strategic Portfolio Section */}
+        <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
@@ -270,10 +238,7 @@ export default function PropertyInvestors() {
                   },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
-
-                    {/* Timeline Rail */}
                     <div className="relative w-4 shrink-0">
-                      {/* Connecting line spanning from current dot to next dot */}
                       {i < arr.length - 1 && (
                         <div className="absolute top-[32px] bottom-[-24px] left-1/2 -translate-x-1/2 w-px bg-white/10 overflow-hidden z-0">
                           <motion.div 
@@ -285,7 +250,6 @@ export default function PropertyInvestors() {
                           />
                         </div>
                       )}
-                      {/* Dot */}
                       <motion.div 
                         initial={{ scale: 0, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
@@ -295,7 +259,6 @@ export default function PropertyInvestors() {
                       />
                     </div>
 
-                    {/* Card Container with padding-bottom instead of margin to allow timeline continuity */}
                     <div className={`flex-1 ${i < arr.length - 1 ? 'pb-12' : ''}`}>
                       <motion.div
                         initial={{ opacity: 0, y: 40 }}
@@ -304,7 +267,6 @@ export default function PropertyInvestors() {
                         transition={{ duration: 0.7, ease: 'easeOut' }}
                         className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 transition-all duration-300 group"
                       >
-                        {/* Card Image */}
                         <div className="relative h-56 overflow-hidden">
                           <img
                             src={card.image}
@@ -312,13 +274,10 @@ export default function PropertyInvestors() {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
-                          {/* Step badge */}
                           <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
                             Step {card.step}
                           </div>
                         </div>
-
-                        {/* Card Body */}
                         <div className="p-8">
                           <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
                             {card.title}
@@ -329,42 +288,146 @@ export default function PropertyInvestors() {
                         </div>
                       </motion.div>
                     </div>
-
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
 
+        {/* Eligibility Section */}
+        <section className="py-16 md:py-24 px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+              <div className="lg:col-span-5">
+                <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
+                  Is Property Investment Right for You?
+                </h2>
+                <p className="text-lg text-slate-700 font-sans leading-relaxed mb-8">
+                  Strategic property investment is a long-term commitment to wealth creation. We help you determine if your current position aligns with a successful acquisition strategy.
+                </p>
+                <div className="bg-sky-50 border border-sky-100 rounded-3xl p-8">
+                  <h3 className="text-xl font-serif text-[#021f3a] mb-4">Investor Strategy Session</h3>
+                  <p className="text-slate-600 mb-6 leading-relaxed">
+                    Ready to build a nationwide portfolio? Our free session will review your current equity, borrowing power, and investment objectives to map out a clear path forward.
+                  </p>
+                  <button
+                    onClick={openCalendly}
+                    className="w-full rounded-full py-4 bg-[#021f3a] text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-600 transition-all duration-300"
+                  >
+                    Discuss My Strategy
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { title: "Minimum Equity", desc: "You have available equity in your home or a deposit of at least $100k-$150k." },
+                    { title: "Long-Term Mindset", desc: "You view property as a 10-20 year wealth creation vehicle, not a quick win." },
+                    { title: "Stable Cash Flow", desc: "You have a steady income to support property holding costs and maintenance." },
+                    { title: "Borrowing Power", desc: "You have a clear understanding of your current and future borrowing capacity." },
+                    { title: "Risk Appetite", desc: "You are comfortable with market cycles and understand the role of leverage." },
+                    { title: "Strategic Goals", desc: "You have clear retirement or lifestyle goals that property will help fund." }
+                  ].map((item, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-sky-200 transition-all duration-300 group"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-sky-500/10 text-sky-600 flex items-center justify-center mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                        <Plus className="w-5 h-5" />
+                      </div>
+                      <h4 className="text-lg font-serif text-[#011122] mb-2">{item.title}</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why JJ Property Partner Section */}
+        <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
+              >
+                Why JJ Property Partner for <span className="text-sky-400">Investor Success</span>
+              </motion.h2>
+              <div className="h-1.5 w-24 bg-sky-500 mx-auto rounded-full" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {[
+                { title: "IT-Powered Research", desc: "Alex's background in data analysis gives you an unfair advantage in selection." },
+                { title: "Proven Experience", desc: "Built from Alex's personal $5M+ portfolio across multiple Australian states." },
+                { title: "Off-Market Access", desc: "Direct access to properties before they hit the market, reducing competition." },
+                { title: "Portfolio Mindset", desc: "We don't just buy a house; we build a strategic 5-10 year acquisition plan." },
+                { title: "Zero Conflict", desc: "100% buyer's representation with no ties to developers or projects." }
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="flex flex-col items-center text-center p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-6 font-serif text-2xl font-bold">
+                    {idx + 1}
+                  </div>
+                  <h3 className="text-xl font-serif mb-4 text-sky-100">{item.title}</h3>
+                  <p className="text-sm text-sky-100/60 leading-relaxed font-sans">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-16 md:py-20 bg-gradient-to-b from-white to-sky-50 px-8">
+        <section className="relative py-20 md:py-32 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+              <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
                 Frequently <br />
-                <span className="text-muted">asked questions.</span>
+                <span className="text-sky-500">asked questions.</span>
               </h2>
-              <p className="text-muted text-lg font-sans">Strategic insights for property investors building nationwide portfolios.</p>
+              <p className="text-slate-600 text-lg font-sans leading-relaxed">Strategic insights for property investors building nationwide portfolios.</p>
             </div>
 
-            <div className="lg:col-span-8 flex flex-col gap-4">
+            <div className="lg:col-span-8 flex flex-col gap-6">
               {investorFaqs.map((faq, index) => (
-                <div key={index} className="border-b border-black/10 pb-2">
+                <motion.div 
+                  key={index} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="border-b border-slate-200 pb-2"
+                >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                    className="w-full flex items-center justify-between py-6 text-left hover:bg-slate-50 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-600 group-hover:text-[#021f3a]'}`}>
+                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-700 group-hover:text-sky-600'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 45 : 0 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-[#021f3a] bg-[#021f3a] text-white shadow-lg' : 'border-slate-200 text-slate-400 group-hover:border-sky-500 group-hover:text-sky-500'}`}
                     >
-                      <Plus className="w-5 h-5" />
+                      <Plus className="w-6 h-6" />
                     </motion.div>
                   </button>
                   <AnimatePresence>
@@ -373,46 +436,47 @@ export default function PropertyInvestors() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-slate-800 font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                        <p className="text-lg text-slate-600 font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-20 px-8 bg-[#011122] text-white">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
-                Ready to scale your <span className="text-sky-400">portfolio</span>?
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
+                Build your <span className="text-sky-400">portfolio</span> with precision.
               </h2>
-              <p className="text-lg text-sky-100/80 font-sans mb-12">
-                Book a free strategy session to discuss your investment criteria and discover exclusive off-market opportunities.
+              <p className="text-xl text-sky-100/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
+                Ready to take your property investment strategy to the next level? Book your free, no-obligation strategy session with Alex today.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-10 py-4 bg-sky-500 text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 shadow-xl shadow-sky-500/20"
+                  className="rounded-full px-12 py-5 bg-sky-500 text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-400 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-sky-500/40"
                 >
-                  Book Session
+                  Book Free Session
                 </button>
                 <button
                   onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                  className="rounded-full px-10 py-4 border border-sky-400/30 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-500 hover:border-sky-500 transition-all duration-300"
+                  className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
-                  Contact Us
+                  Message Alex
                 </button>
               </div>
             </motion.div>

@@ -12,23 +12,37 @@ const smsfFaqs = [
   },
   {
     question: 'Can I live in a residential property purchased through my SMSF?',
-    answer: 'No. Under SMSF rules, you and any related party cannot live in a residential property owned by the fund. The investment must satisfy the sole purpose test and exist only to support retirement benefits, not personal use. Breaching this rule can place the fund’s complying status at risk and may lead to serious tax penalties.'
+    answer: 'No. Under SMSF rules, you and any related party cannot live in a residential property owned by the fund. The investment must satisfy the sole purpose test and exist only to support retirement benefits, not personal use.'
   },
   {
     question: 'Which properties work best for SMSF property investment in Australia?',
-    answer: 'For SMSF property investment in Australia, the right property usually offers strong rental demand, low ongoing maintenance, solid long-term growth, and clear compliance suitability. Well-located residential homes and selected commercial assets may both be appropriate, depending on your fund structure, strategy, and borrowing capacity.'
+    answer: 'The right property usually offers strong rental demand, low ongoing maintenance, solid long-term growth, and clear compliance suitability. Well-located residential homes and selected commercial assets may both be appropriate.'
   },
   {
-    question: 'How do you help keep an SMSF property purchase compliant under the SIS Act?',
-    answer: 'We build compliance into every stage of the purchase process. We work alongside your financial adviser, accountant, and auditor to support SIS Act requirements, confirm the structure is appropriate, and help ensure the property is acquired at genuine market value.'
+    question: 'How do you help keep an SMSF property purchase compliant?',
+    answer: 'We build compliance into every stage. We work alongside your financial adviser, accountant, and auditor to support SIS Act requirements and confirm the structure is appropriate.'
   },
   {
     question: 'Can an SMSF buy off-market property in Australia?',
-    answer: 'Yes. We help SMSF buyers access off-market property opportunities across Australia through our trusted agent network. These properties often involve less competition, stronger negotiating conditions, and better buying opportunities, while supporting a more strategic and sustainable SMSF investment approach.'
+    answer: 'Yes. We help SMSF buyers access off-market property opportunities across Australia through our trusted agent network, giving you a significant advantage in securing quality assets.'
+  }
+];
+
+const pillars = [
+  {
+    title: 'Pillar 1 - Structured Right with Expert Guidance',
+    description: 'Before we shortlist any property, we make sure your SMSF is properly set up and the acquisition structure is compliant from the outset. We work closely with your financial team to ensure alignment with your retirement strategy.\n\n• Acquisition structure review\n• SIS Act compliance alignment\n• Advisory team coordination\n• Borrowing capacity assessment',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=900',
   },
   {
-    question: 'What can I expect from your free SMSF property strategy session?',
-    answer: 'Our free SMSF property strategy session reviews your fund structure, borrowing capacity, investment goals, retirement timeframe, and risk profile. We assess whether an SMSF property purchase suits your situation, outline a compliant strategy, and explain our process and fees clearly.'
+    title: 'Pillar 2 - SMSF Property Research with Purpose',
+    description: 'Not every property is the right fit for an SMSF. We apply a data-driven research process tailored specifically to SMSF acquisition, identifying high-yield, low-maintenance assets in high-demand growth corridors.\n\n• High-yield asset identification\n• Low-maintenance property selection\n• Capital growth analysis\n• National market research',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900',
+  },
+  {
+    title: 'Pillar 3 - Strategic Support Through to Settlement',
+    description: 'SMSF purchases involve more moving parts and stricter documentation. We manage the entire process—from sourcing to coordinating bare trust arrangements and contract management.\n\n• Bare trust coordination\n• Contract management\n• Managed due diligence\n• Settlement oversight',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
@@ -79,15 +93,26 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                Compliant Acquisition Strategies for SMSF Property Success
+                Why SMSF Property Needs a Different Strategy
               </h2>
               <div className="space-y-6 text-lg text-slate-700 font-sans leading-relaxed">
                 <p>
-                  Property investment through an SMSF can be a smart long-term wealth strategy, but it must be handled with care. The Superannuation Industry (Supervision) Act 1993 (SIS Act) sets strict rules, and the wrong purchase structure can lead to costly compliance issues.
+                  SMSF property buying is not the same as a standard investment purchase. It needs a far more careful and compliant approach from the very beginning.
                 </p>
-                <p>
-                  At JJ Property Partner, Alex acts solely for buyers, helping you secure investment properties that align with your fund strategy, borrowing position, and SMSF obligations. The focus is always on compliant acquisitions, smart research, and long-term retirement outcomes.
-                </p>
+                <ul className="space-y-4 pt-2">
+                  {[
+                    "The property must satisfy the sole purpose test for retirement benefits",
+                    "Finance must usually be set up through a Limited Recourse Borrowing Arrangement (LRBA)",
+                    "Every part of the purchase must be completed at genuine market value",
+                    "The fund must hold enough liquidity to manage repayments and expenses",
+                    "Strict alignment with the SIS Act compliance framework is mandatory"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-4">
+                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
             <motion.div
@@ -95,10 +120,10 @@ export default function SmsfProperty() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl"
+              className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200"
                 alt="SMSF Planning"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -107,61 +132,54 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        {/* Why SMSF Needs Different Strategy */}
-        <section className="py-16 md:py-24 px-8 bg-slate-50 overflow-hidden">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative h-[400px] md:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl lg:order-last"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200"
-                alt="SMSF Strategy"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                Why SMSF Property Needs a Different Strategy
-              </h2>
-              <div className="space-y-6 text-lg text-slate-700 font-sans leading-relaxed">
-                <p>
-                  SMSF property buying is not the same as a standard investment purchase. It needs a far more careful and compliant approach from the very beginning.
-                </p>
-                <ul className="space-y-4 pt-4">
-                  {[
-                    "The property must satisfy the sole purpose test, meaning it is purchased only to support members’ retirement benefits",
-                    "It generally cannot be bought from or leased to a related party, except in limited cases such as eligible business real property",
-                    "Finance must usually be set up through a Limited Recourse Borrowing Arrangement (LRBA) with a compliant lender",
-                    "The SMSF must hold enough cash flow and liquidity to manage repayments and ongoing fund expenses",
-                    "Every part of the purchase must be completed at genuine market value and on arm’s length terms",
-                    "Pricing and negotiations must reflect a fair open-market transaction with no special benefits to related parties"
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-4">
-                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="pt-4">
-                  That is why SMSF property requires a specialised acquisition strategy. JJ Property Partner works alongside your adviser, accountant, and auditor to help structure each purchase correctly from the outset.
-                </p>
-              </div>
-            </motion.div>
+        {/* Content Pillars */}
+        <section className="py-8 md:py-16 px-6 md:px-8 bg-slate-50">
+          <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
+            {pillars.map((pillar, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+              >
+                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                  <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
+                    {pillar.title}
+                  </h2>
+                  <div className="space-y-4 text-base md:text-lg text-slate-600 font-sans leading-relaxed">
+                    {pillar.description.split('\n\n').map((paragraph, pIdx) => {
+                      if (paragraph.startsWith('• ')) {
+                        return (
+                          <div key={pIdx} className="space-y-3 mt-4">
+                            {paragraph.split('\n').map((item, iIdx) => (
+                              <div key={iIdx} className="flex items-start gap-4">
+                                <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                                <span>{item.replace('• ', '')}</span>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      }
+                      return <p key={pIdx}>{paragraph}</p>;
+                    })}
+                  </div>
+                </div>
+
+                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                  <img
+                    src={pillar.image}
+                    alt={pillar.title}
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
-        {/* Three-Pillar Timeline Section */}
+        {/* SMSF Process Timeline Section */}
         <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
@@ -173,12 +191,12 @@ export default function SmsfProperty() {
                   <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400">Our Process</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
-                  Our Three-Pillar{' '}
-                  <span className="text-sky-300">SMSF Approach</span>
+                  SMSF Property{' '}
+                  <span className="text-sky-300">Acquisition Process</span>
                 </h2>
                 <div className="h-1 w-16 bg-sky-400 mb-8 rounded-full" />
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
-                  A smarter approach to SMSF buying, focused on compliance, research precision, and seamless execution.
+                  A specialised 6-step process designed to identify high-performing assets while maintaining total SIS Act compliance for your fund.
                 </p>
               </div>
 
@@ -187,22 +205,40 @@ export default function SmsfProperty() {
                 {[
                   {
                     step: '01',
-                    title: 'Pillar 1 - Structured Right with Expert Guidance',
-                    body: 'Before we shortlist any property, we make sure your SMSF is properly set up and the acquisition structure is compliant from the outset. We work closely with your financial adviser, accountant, auditor, and mortgage broker to ensure alignment with your retirement investment strategy.',
-                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
+                    title: 'Step 1 - Fund Discovery & Analysis',
+                    body: 'We review your SMSF structure, borrowing capacity, and investment objectives to ensure property is a suitable and compliant path for your retirement goals.',
+                    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '02',
-                    title: 'Pillar 2 - SMSF Property Research with Purpose',
-                    body: 'Not every property is the right fit for an SMSF. We apply a data-driven research process tailored specifically to SMSF acquisition, identifying high-yield (typically 5%+), low-maintenance assets in high-demand growth corridors to support your fund\'s long-term performance.',
-                    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+                    title: 'Step 2 - Team Coordination',
+                    body: 'We coordinate seamlessly with your financial adviser, accountant, and auditor to ensure every part of the acquisition aligns with your fund’s specific investment strategy.',
+                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '03',
-                    title: 'Pillar 3 - Strategic SMSF Support Through to Settlement',
-                    body: 'SMSF purchases involve more moving parts and stricter documentation. We manage the entire process—from sourcing and due diligence to coordinating bare trust arrangements and contract management—ensuring a compliant path to final settlement.',
+                    title: 'Step 3 - Data-Driven Market Sourcing',
+                    body: 'Using specialist research, we identify high-yield (typically 5%+), low-maintenance properties in high-demand growth corridors specifically suited for SMSF holding.',
+                    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '04',
+                    title: 'Step 4 - Compliance-Focused Due Diligence',
+                    body: 'Every property undergoes rigorous checks, including arm\'s length valuation assessments and coordination of building and pest inspections to protect fund integrity.',
+                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '05',
+                    title: 'Step 5 - Strategic Negotiation',
+                    body: 'We represent your fund in negotiations, ensuring the purchase reflects genuine market value and is secured on the best possible terms for your retirement future.',
+                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '06',
+                    title: 'Step 6 - Settlement & Fund Support',
+                    body: 'We manage the process through to final settlement, ensuring all documentation—including bare trust arrangements—is correctly handled by your legal team.',
                     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
-                  }
+                  },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
                     <div className="relative w-4 shrink-0">
@@ -262,7 +298,7 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        {/* Is SMSF Right Section */}
+        {/* Eligibility Section */}
         <section className="py-16 md:py-24 px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -271,12 +307,12 @@ export default function SmsfProperty() {
                   Is SMSF Property a Smart Move?
                 </h2>
                 <p className="text-lg text-slate-700 font-sans leading-relaxed mb-8">
-                  SMSF property is not the right fit for every investor. It is a specialised path that requires careful consideration of your financial position and long-term objectives.
+                  SMSF property is a specialised path that requires careful consideration of your financial position and long-term retirement objectives.
                 </p>
                 <div className="bg-sky-50 border border-sky-100 rounded-3xl p-8">
-                  <h3 className="text-xl font-serif text-[#021f3a] mb-4">The Free Strategy Session</h3>
+                  <h3 className="text-xl font-serif text-[#021f3a] mb-4">SMSF Strategy Session</h3>
                   <p className="text-slate-600 mb-6 leading-relaxed">
-                    If you are unsure whether SMSF property is the right move, our strategy session is a practical place to start. We will review your position honestly and guide you towards the right professionals where required.
+                    Unsure if your fund is ready? Our free strategy session will review your position honestly and guide you towards the right professionals where required.
                   </p>
                   <button
                     onClick={openCalendly}
@@ -290,30 +326,12 @@ export default function SmsfProperty() {
               <div className="lg:col-span-7">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
-                    {
-                      title: "Fund Balance",
-                      desc: "Your SMSF has a balance of around $160,000 or more to maintain liquidity and diversification."
-                    },
-                    {
-                      title: "Steady Contributions",
-                      desc: "The fund has reliable contributions and income to support an LRBA (borrowing arrangement)."
-                    },
-                    {
-                      title: "Time Horizon",
-                      desc: "You have at least 10 years until retirement, allowing time for long-term capital growth."
-                    },
-                    {
-                      title: "Strategic Clarity",
-                      desc: "Your fund has a clearly documented investment strategy that explicitly includes property."
-                    },
-                    {
-                      title: "Advisory Approval",
-                      desc: "Your accountant or financial adviser has confirmed the approach suits your specific circumstances."
-                    },
-                    {
-                      title: "Risk Awareness",
-                      desc: "You understand the compliance obligations and are committed to maintaining fund integrity."
-                    }
+                    { title: "Fund Balance", desc: "Your SMSF has a balance of around $160k+ to maintain liquidity and diversification." },
+                    { title: "Steady Contributions", desc: "The fund has reliable income to support a compliant borrowing arrangement." },
+                    { title: "Time Horizon", desc: "You have at least 10 years until retirement, allowing time for capital growth." },
+                    { title: "Strategic Clarity", desc: "Your fund has a documented strategy that explicitly includes property." },
+                    { title: "Advisory Approval", desc: "Your accountant or adviser has confirmed the approach suits your situation." },
+                    { title: "Risk Awareness", desc: "You understand the compliance obligations and SIS Act fund requirements." }
                   ].map((item, idx) => (
                     <motion.div
                       key={idx}
@@ -339,7 +357,6 @@ export default function SmsfProperty() {
         {/* Why JJ Property Partner Section */}
         <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
-          
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <motion.h2 
@@ -355,26 +372,11 @@ export default function SmsfProperty() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                {
-                  title: "Specialist Knowledge",
-                  desc: "Specialist SMSF property expertise backed by strong SIS Act compliance knowledge."
-                },
-                {
-                  title: "Personal Experience",
-                  desc: "Built from Alex's $5M+ portfolio experience across real Australian property cycles."
-                },
-                {
-                  title: "Advisory Coordination",
-                  desc: "We coordinate seamlessly with your adviser, accountant, auditor, and lender team."
-                },
-                {
-                  title: "Data-Driven Research",
-                  desc: "Data-backed research identifying compliant, high-performing SMSF property opportunities."
-                },
-                {
-                  title: "Zero Conflict",
-                  desc: "Buyer-only advice with zero conflicts, hidden commissions, or developer ties."
-                }
+                { title: "Specialist Knowledge", desc: "Specialist SMSF property expertise backed by strong SIS Act compliance knowledge." },
+                { title: "Personal Experience", desc: "Built from Alex's personal $5M+ portfolio experience across Australian cycles." },
+                { title: "Advisory Coordination", desc: "We coordinate seamlessly with your adviser, accountant, auditor, and lender." },
+                { title: "Data-Driven Research", desc: "Research identifying compliant, high-performing assets for your retirement fund." },
+                { title: "Zero Conflict", desc: "Buyer-only advice with zero conflicts, hidden commissions, or developer ties." }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -403,9 +405,7 @@ export default function SmsfProperty() {
                 Frequently <br />
                 <span className="text-sky-500">asked questions.</span>
               </h2>
-              <p className="text-slate-600 text-lg font-sans leading-relaxed">
-                Everything you need to know about purchasing property through your Self-Managed Super Fund.
-              </p>
+              <p className="text-slate-600 text-lg font-sans leading-relaxed">Everything you need to know about purchasing property through your Self-Managed Super Fund.</p>
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
@@ -442,9 +442,7 @@ export default function SmsfProperty() {
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-slate-600 font-sans leading-relaxed pb-8 pl-4 pr-12">
-                          {faq.answer}
-                        </p>
+                        <p className="text-lg text-slate-600 font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -454,7 +452,7 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        {/* Final CTA Section */}
+        {/* CTA Section */}
         <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
           <div className="max-w-4xl mx-auto text-center relative z-10">
