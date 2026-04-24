@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Target } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
 
@@ -137,7 +137,7 @@ export default function PropertyInvestors() {
                     "Close collaboration with your broker, accountant, and financial adviser"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-4">
-                      <Target className="w-6 h-6 text-sky-500 shrink-0 mt-1" />
+                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
                       <span>{item}</span>
                     </li>
                   ))}
