@@ -215,7 +215,7 @@ export default function PropertyInvestors() {
         </section>
 
         {/* Strategic Portfolio Building Section */}
-        <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
+        <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
