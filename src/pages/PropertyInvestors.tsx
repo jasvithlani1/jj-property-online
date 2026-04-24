@@ -62,7 +62,7 @@ const pillars = [
   {
     title: 'Negotiating Smarter. Securing Better Outcomes',
     description: 'Finding the right investment property is only one part of the process. Securing it at the right price and under the right conditions is just as important for long-term performance. JJ Property Partner applies tailored negotiation strategies to help property investors purchase with greater clarity and confidence:\n\n• Comparable sales research and independent value assessment\n• Vendor motivation analysis to uncover negotiating advantages\n• Pre-auction strategy with firm limits and bidding direction\n• Contract negotiation including settlement terms, conditions, and deposit structure\n• End-to-end coordination through exchange and settlement',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dd0f32d7?auto=format&fit=crop&q=80&w=900',
+    image: '/negotiation_meeting.png',
   }
 ];
 
@@ -179,17 +179,25 @@ export default function PropertyInvestors() {
               >
                 {/* Text Side */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <CheckCircle2 className="w-6 h-6 text-sky-500" />
-                    <span className="text-sm font-bold uppercase tracking-widest text-sky-600">
-                      Pillar 0{index + 1}
-                    </span>
-                  </div>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
-                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed whitespace-pre-wrap">
-                    {pillar.description}
+                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
+                    {pillar.description.split('\n\n').map((paragraph, pIdx) => {
+                      if (paragraph.startsWith('• ')) {
+                        return (
+                          <div key={pIdx} className="space-y-3 mt-4">
+                            {paragraph.split('\n').map((item, iIdx) => (
+                              <div key={iIdx} className="flex items-start gap-4">
+                                <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                                <span>{item.replace('• ', '')}</span>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      }
+                      return <p key={pIdx}>{paragraph}</p>;
+                    })}
                   </div>
                 </div>
 

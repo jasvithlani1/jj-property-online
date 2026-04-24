@@ -118,12 +118,7 @@ export default function SmsfProperty() {
               >
                 {/* Text Side */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <CheckCircle2 className="w-6 h-6 text-sky-500" />
-                    <span className="text-sm font-bold uppercase tracking-widest text-sky-600">
-                      Pillar 0{index + 1}
-                    </span>
-                  </div>
+
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
