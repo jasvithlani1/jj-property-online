@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle2, Plus, Target } from 'lucide-react';
+import { Plus, Target } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
 
