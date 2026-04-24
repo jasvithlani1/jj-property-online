@@ -442,7 +442,7 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4 mt-12">
                     <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 1" />
+                      <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
                     <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
                       <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
