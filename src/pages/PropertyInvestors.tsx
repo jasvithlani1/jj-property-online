@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { CheckCircle2, Plus } from 'lucide-react';
+import { CheckCircle2, Plus, Target } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
 
@@ -50,18 +50,18 @@ const investorFaqs = [
 
 const pillars = [
   {
-    title: 'Property Investors - Strategic Portfolio Growth',
-    description: 'It is essential to take a structured and research-based approach to ensure that you build a profitable property portfolio. JJ Property Partner acts as a buyers\' agent that works in the best interest of the buyer and helps its clients acquire properties that meet their financial objectives.\n\nOur approach is built on comprehensive research, including suburb growth analysis, rental yield evaluation, and future capital growth potential. Every acquisition is guided by your individual investment strategy, ensuring a balance between wealth creation and risk management.',
+    title: 'Investor-Focused Market Intelligence',
+    description: 'At JJ Property Partner, we use IT-backed data analysis to assess investment opportunities across property markets throughout Australia. Instead of relying on broad suburb reports, we apply a more strategic framework that examines:\n\n• Historical price trends and the current market cycle\n• Gross and net rental yields, along with vacancy rate movements\n• Upcoming infrastructure projects such as transport, hospitals, universities, and business hubs\n• Population growth projections and migration trends\n• Supply and demand conditions, including approvals, completions, and available stock\n• Proximity to employment hubs and local economic activity\n• Demographic profiles and socioeconomic movement\n\nThis layered analysis helps identify suburbs with strong upside potential early, allowing our clients to buy at the right stage of the cycle rather than entering after the market has already peaked.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Advanced Acquisition Intelligence',
-    description: 'JJ Property Partner leverages advanced market intelligence, industry networks, and analytical frameworks to identify high-performing investment opportunities across Australia before they reach the broader market.\n\nOur strategy focuses on identifying high-growth and high-yield opportunities, including dual-income properties, granny flats, and properties located in emerging growth corridors. Through access to off-market opportunities nationwide, we help clients secure premium assets while avoiding unnecessary competition.',
+    title: 'Identifying Properties with Strong Growth',
+    description: 'In high-performing locations, we identify the right property types and features that support stronger returns and long-term portfolio growth:\n\n• High-yield residential properties that deliver solid cash flow from the outset\n• Dual income opportunities, including dual occupancy and granny flat potential\n• Value-add properties with renovation, subdivision, or development upside\n• Properties near major infrastructure projects backed by confirmed government funding\n• Emerging growth corridor properties positioned before wider market demand increases',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Precision Negotiation and Execution',
-    description: 'The success of an investment depends not just on the choice of the investment, but also on the accuracy with which it is carried out. JJ Property Partner makes use of customized negotiation tactics depending on seller motivation, market forces, and asset positioning.\n\nOur company takes care of the entire process of purchasing, from strategy formulation and identification of properties for purchase to negotiations and settlement, making the entire investment process seamless and result-oriented.',
+    title: 'Negotiating Smarter. Securing Better Outcomes',
+    description: 'Finding the right investment property is only one part of the process. Securing it at the right price and under the right conditions is just as important for long-term performance. JJ Property Partner applies tailored negotiation strategies to help property investors purchase with greater clarity and confidence:\n\n• Comparable sales research and independent value assessment\n• Vendor motivation analysis to uncover negotiating advantages\n• Pre-auction strategy with firm limits and bidding direction\n• Contract negotiation including settlement terms, conditions, and deposit structure\n• End-to-end coordination through exchange and settlement',
     image: 'https://images.unsplash.com/photo-1556761175-5973dd0f32d7?auto=format&fit=crop&q=80&w=900',
   }
 ];
@@ -79,7 +79,7 @@ export default function PropertyInvestors() {
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
-        <section className="relative px-6 py-8 sm:px-8 sm:py-10 md:pt-16 md:pb-10 bg-[#021f3a] text-white overflow-hidden">
+        <section className="relative px-6 py-8 sm:px-8 sm:py-10 md:pt-16 md:pb-16 bg-[#021f3a] text-white overflow-hidden">
           {/* bg glow blobs */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -93,19 +93,80 @@ export default function PropertyInvestors() {
               <div className="inline-block px-7 py-3 rounded-full border border-sky-400/50 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm scale-110 origin-center translate-y-[-4px]">
                 Property Investors
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-4xl mx-auto px-4">
-                Acquisition strategies engineered for{' '}
-                <span className="text-sky-400">investment precision.</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+                Precise Acquisition Strategies for{' '}
+                <span className="text-sky-400">Property Investors</span>
               </h1>
-              <p className="text-lg md:text-xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Every brief is strategically defined. Every acquisition is optimised for maximum portfolio return. Explore the three core pillars of the JJ Property Partner investment approach.
-              </p>
+              <div className="text-lg md:text-xl text-sky-100/80 font-sans max-w-4xl mx-auto leading-relaxed space-y-6">
+                <p>
+                  Building a strong investment portfolio takes more than chasing a hotspot or following market noise. It requires clear strategy, careful research, disciplined buying criteria, smart timing, and expert guidance to secure properties that support long-term growth and cash flow.
+                </p>
+                <p>
+                  JJ Property Partner works exclusively for buyers, helping property investors across Australia purchase with confidence. Alex combines 20+ years of IT and data expertise with hands-on experience building a $5M+ portfolio, delivering advice that is strategic, practical, and backed by real-world results.
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
 
+        {/* Why Smart Investors Choose JJ Property Partner Section */}
+        <section className="py-16 md:py-20 px-8 bg-sky-50">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
+                Why Smart Investors Choose JJ Property Partner
+              </h2>
+              <div className="space-y-6 text-lg text-slate-700 font-sans leading-relaxed">
+                <p>
+                  Most property investors do their own research, relying on public data that can be outdated, incomplete, or difficult to interpret accurately. As a result, they often compete for the same listed properties, overpay in competitive markets, and miss valuable off-market opportunities where stronger purchases are often secured.
+                </p>
+                <p className="font-semibold text-[#021f3a]">
+                  JJ Property Partner gives investors a clear strategic edge:
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Access to data-led research and suburb analysis to identify growth opportunities early",
+                    "Off-market and pre-market access with less competition and stronger buying positions",
+                    "Skilled negotiation that helps secure better terms than going it alone",
+                    "A long-term portfolio strategy focused on 5-10 year wealth creation",
+                    "Close collaboration with your broker, accountant, and financial adviser"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-4">
+                      <Target className="w-6 h-6 text-sky-500 shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+            >
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=900" alt="Smart Investment" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Our Approach Pillar Introduction */}
+        <section className="py-12 md:py-16 px-8 bg-white text-center">
+          <div className="max-w-4xl mx-auto">
+             <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Our Approach to Strategic Property Acquisition</h2>
+             <div className="w-20 h-1 bg-sky-500 mx-auto rounded-full" />
+          </div>
+        </section>
+
         {/* Content Pillars */}
-        <section className="py-8 md:py-10 px-6 md:px-8 bg-white">
+        <section className="py-8 md:py-10 px-6 md:px-8 bg-white pb-20">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
             {pillars.map((pillar, index) => (
               <motion.div
@@ -145,8 +206,60 @@ export default function PropertyInvestors() {
           </div>
         </section>
 
+        {/* Strategic Portfolio Building Section */}
+        <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
+          <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-5"
+            >
+              <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight drop-shadow-lg">
+                Strategic Portfolio Building for Investors
+              </h2>
+              <div className="w-16 h-1 bg-sky-400 mb-8 rounded-full" />
+              <p className="text-lg text-sky-100/90 font-sans leading-relaxed mb-6">
+                Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
+              </p>
+              <p className="text-lg text-sky-100/90 font-sans leading-relaxed">
+                This disciplined, portfolio-led mindset is what separates serious investors from one-off buyers - and it is the approach JJ Property Partner brings to every investor journey.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-7 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl"
+            >
+              <ul className="space-y-6">
+                {[
+                  "Define a clear investment strategy - capital growth, rental yield, or a balanced approach",
+                  "Build a 5 to 10 year acquisition plan aligned with your income, borrowing power, and risk profile",
+                  "Spread investments across different locations to minimise concentration risk",
+                  "Balance high-growth properties with assets that support stronger cash flow",
+                  "Consider each purchase in the context of the next - equity position, finance capacity, and tax planning"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex gap-4">
+                    <div className="w-10 h-10 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 font-bold font-serif text-lg">
+                      {idx + 1}
+                    </div>
+                    <p className="text-lg font-sans text-sky-50 pt-1.5 leading-relaxed">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            
+          </div>
+        </section>
+
         {/* FAQ Section */}
-        <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-sky-100 px-8">
+        <section className="relative py-16 md:py-20 bg-gradient-to-b from-white to-sky-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
@@ -194,7 +307,7 @@ export default function PropertyInvestors() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-8 md:py-10 px-8 bg-[#011122] text-white">
+        <section className="py-16 md:py-20 px-8 bg-[#011122] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
