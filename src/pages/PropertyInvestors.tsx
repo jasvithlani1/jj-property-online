@@ -217,52 +217,124 @@ export default function PropertyInvestors() {
         {/* Strategic Portfolio Building Section */}
         <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
-          <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-5"
-            >
-              <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight drop-shadow-lg">
-                Strategic Portfolio Building for Investors
-              </h2>
-              <div className="w-16 h-1 bg-sky-400 mb-8 rounded-full" />
-              <p className="text-lg text-sky-100/90 font-sans leading-relaxed mb-6">
-                Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
-              </p>
-              <p className="text-lg text-sky-100/90 font-sans leading-relaxed">
-                This disciplined, portfolio-led mindset is what separates serious investors from one-off buyers - and it is the approach JJ Property Partner brings to every investor journey.
-              </p>
-            </motion.div>
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-7 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl"
-            >
-              <ul className="space-y-6">
+              {/* Left — Sticky Panel */}
+              <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
+                <div className="mb-6">
+                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400">Our Strategy</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
+                  Strategic Portfolio Building for{' '}
+                  <span className="text-sky-300">Investors</span>
+                </h2>
+                <div className="h-1 w-16 bg-sky-400 mb-8 rounded-full" />
+                <p className="text-white/60 font-sans text-lg leading-relaxed">
+                  Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
+                </p>
+              </div>
+
+              {/* Right — Scrollable Cards with Timeline */}
+              <div className="lg:w-[62%] flex flex-col">
                 {[
-                  "Define a clear investment strategy - capital growth, rental yield, or a balanced approach",
-                  "Build a 5 to 10 year acquisition plan aligned with your income, borrowing power, and risk profile",
-                  "Spread investments across different locations to minimise concentration risk",
-                  "Balance high-growth properties with assets that support stronger cash flow",
-                  "Consider each purchase in the context of the next - equity position, finance capacity, and tax planning"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 font-bold font-serif text-lg">
-                      {idx + 1}
+                  {
+                    step: '01',
+                    title: 'Step 1 - Investment Thesis & Strategy',
+                    body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '02',
+                    title: 'Step 2 - Long-Term Acquisition Roadmap',
+                    body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.',
+                    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '03',
+                    title: 'Step 3 - Geographic Diversification',
+                    body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.',
+                    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '04',
+                    title: 'Step 4 - Growth & Cash Flow Balance',
+                    body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.',
+                    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
+                  },
+                  {
+                    step: '05',
+                    title: 'Step 5 - Future Acquisition Planning',
+                    body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.',
+                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
+                  },
+                ].map((card, i, arr) => (
+                  <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
+
+                    {/* Timeline Rail */}
+                    <div className="relative w-4 shrink-0">
+                      {/* Connecting line spanning from current dot to next dot */}
+                      {i < arr.length - 1 && (
+                        <div className="absolute top-[32px] bottom-[-24px] left-1/2 -translate-x-1/2 w-px bg-white/10 overflow-hidden z-0">
+                          <motion.div 
+                            initial={{ height: '0%' }}
+                            whileInView={{ height: '100%' }}
+                            viewport={{ once: false, margin: '-25% 0px -25% 0px' }}
+                            transition={{ duration: 1.2, ease: 'easeInOut' }}
+                            className="absolute top-0 left-0 w-full bg-gradient-to-b from-sky-400 to-sky-400/20"
+                          />
+                        </div>
+                      )}
+                      {/* Dot */}
+                      <motion.div 
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, margin: '-15%' }}
+                        transition={{ duration: 0.5, ease: 'backOut' }}
+                        className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/20 absolute left-0 top-[24px] z-10" 
+                      />
                     </div>
-                    <p className="text-lg font-sans text-sky-50 pt-1.5 leading-relaxed">{item}</p>
-                  </li>
+
+                    {/* Card Container with padding-bottom instead of margin to allow timeline continuity */}
+                    <div className={`flex-1 ${i < arr.length - 1 ? 'pb-12' : ''}`}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-80px' }}
+                        transition={{ duration: 0.7, ease: 'easeOut' }}
+                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 transition-all duration-300 group"
+                      >
+                        {/* Card Image */}
+                        <div className="relative h-56 overflow-hidden">
+                          <img
+                            src={card.image}
+                            alt={card.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
+                          {/* Step badge */}
+                          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                            Step {card.step}
+                          </div>
+                        </div>
+
+                        {/* Card Body */}
+                        <div className="p-8">
+                          <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
+                            {card.title}
+                          </h3>
+                          <p className="text-white/60 font-sans text-base leading-relaxed">
+                            {card.body}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </div>
+
+                  </div>
                 ))}
-              </ul>
-            </motion.div>
-            
+              </div>
+
+            </div>
           </div>
         </section>
 
