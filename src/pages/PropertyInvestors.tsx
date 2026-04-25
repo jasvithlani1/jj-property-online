@@ -32,17 +32,17 @@ const pillars = [
   {
     title: 'Data-Led Research & Selection',
     description: 'We use professional analysis tools to identify high-performing suburbs nationwide. Our research focuses on areas with confirmed infrastructure projects, low vacancy rates, and strong population growth.\n\n• National market exposure\n• Suburb-specific growth drivers\n• Detailed yield & vacancy analysis\n• Infrastructure & development tracking',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Off-Market Property Sourcing',
     description: 'Access properties that never reach the public portals. We use our deep industry network to uncover high-quality investment opportunities with less competition and better buying terms.\n\n• Early access to pre-market deals\n• Exclusive off-market opportunities\n• Direct relationships with sales agents\n• Reduced competition on quality assets',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Strategic Portfolio Execution',
     description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction bidding\n• Settlement coordination & support',
-    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
   }
 ];
 
@@ -210,31 +210,31 @@ export default function PropertyInvestors() {
                     step: '01',
                     title: 'Step 1 - Investment Thesis & Strategy',
                     body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Long-Term Acquisition Roadmap',
                     body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.',
-                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '03',
                     title: 'Step 3 - Geographic Diversification',
                     body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.',
-                    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '04',
                     title: 'Step 4 - Growth & Cash Flow Balance',
                     body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.',
-                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '05',
                     title: 'Step 5 - Future Acquisition Planning',
                     body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.',
-                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
                   },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">

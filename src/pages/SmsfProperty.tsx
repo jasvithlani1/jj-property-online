@@ -32,17 +32,17 @@ const pillars = [
   {
     title: 'Compliant Strategy & Structure',
     description: 'Every SMSF purchase must align with your fund\'s written investment strategy and the "sole purpose test." We coordinate with your accountant and financial adviser to ensure the property and purchase structure meet all regulatory requirements.\n\n• Alignment with SMSF investment strategy\n• Coordination with accountants & advisers\n• Bare Trust & LRBA coordination\n• SIS Act compliance focus',
-    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Research with Retirement Purpose',
     description: 'We focus on high-yield, low-maintenance properties that provide consistent cash flow to support your fund\'s liquidity needs, while targeting locations with strong 10-20 year capital growth potential.\n\n• High-yield asset identification (typically 5%+)\n• Low-maintenance building selection\n• Data-led growth corridor research\n• Long-term capital upside assessment',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Support Through to Settlement',
     description: 'The SMSF acquisition process has strict documentation requirements. We manage the search, negotiation, and due diligence while ensuring all paperwork—including the contract of sale—is correctly executed in the name of the trustee.\n\n• Correct entity name contract execution\n• Managed building & pest inspections\n• Strategic negotiation & representation\n• Coordination with SMSF legal specialists',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
   }
 ];
 
@@ -210,37 +210,37 @@ export default function SmsfProperty() {
                     step: '01',
                     title: 'Step 1 - Fund Discovery & Analysis',
                     body: 'We review your SMSF structure, borrowing capacity, and investment objectives to ensure property is a suitable and compliant path for your retirement goals.',
-                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Team Coordination',
                     body: 'We coordinate seamlessly with your financial adviser, accountant, and auditor to ensure every part of the acquisition aligns with your fund’s specific investment strategy.',
-                    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '03',
                     title: 'Step 3 - Data-Driven Market Sourcing',
                     body: 'Using specialist research, we identify high-yield (typically 5%+), low-maintenance properties in high-demand growth corridors specifically suited for SMSF holding.',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '04',
                     title: 'Step 4 - Compliance-Focused Due Diligence',
                     body: 'Every property undergoes rigorous checks, including arm\'s length valuation assessments and coordination of building and pest inspections to protect fund integrity.',
-                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '05',
                     title: 'Step 5 - Strategic Negotiation',
                     body: 'We represent your fund in negotiations, ensuring the purchase reflects genuine market value and is secured on the best possible terms for your retirement future.',
-                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '06',
                     title: 'Step 6 - Settlement & Fund Support',
                     body: 'We manage the process through to final settlement, ensuring all documentation—including bare trust arrangements—is correctly handled by your legal team.',
-                    image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=1200',
                   },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">

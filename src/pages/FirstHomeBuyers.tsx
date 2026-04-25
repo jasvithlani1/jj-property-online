@@ -32,17 +32,17 @@ const pillars = [
   {
     title: 'Financial Clarity & Buying Power',
     description: 'The first step to a successful purchase is knowing exactly where you stand. We help you coordinate with specialist brokers to understand your borrowing capacity, deposit requirements, and eligibility for all available government grants and stamp duty concessions.\n\n• Borrowing capacity assessment\n• Deposit strategy planning\n• Government grant eligibility checks\n• Stamp duty savings analysis',
-    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Suburb Research & Strategy',
     description: 'We don\'t just look at houses; we look at markets. Using data-driven research, we identify suburbs across Australia that offer the best value, growth potential, and lifestyle fit for your specific budget.\n\n• Suburb performance data\n• Infrastructure & growth analysis\n• Market demand tracking\n• Location-specific risk assessment',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Due Diligence & Expert Negotiation',
     description: 'Buying your first home shouldn\'t be a gamble. We manage every aspect of the search and negotiation, ensuring you avoid costly mistakes and secure the property on the best possible terms.\n\n• Contract review coordination\n• Building & pest management\n• Strategic auction representation\n• Private treaty negotiation',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
   }
 ];
 
@@ -210,37 +210,37 @@ export default function FirstHomeBuyers() {
                     step: '01',
                     title: 'Step 1 - Strategy & Financial Clarity',
                     body: 'We start by getting a clear picture of where you stand financially, including borrowing capacity, deposit, and eligibility for first home buyer incentives and stamp duty savings.',
-                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Suburb Research & Targeting',
                     body: 'Using data-led research, we assess price growth, market demand, and local infrastructure to identify the right locations across Australia that fit your lifestyle and budget.',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '03',
                     title: 'Step 3 - Off-Market Property Sourcing',
                     body: 'We tap into our industry network to find properties before they hit realestate.com.au or Domain, giving you access to quality homes without the public competition.',
-                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '04',
                     title: 'Step 4 - Due Diligence & Checks',
                     body: 'Every shortlist property is carefully assessed through detailed research, coordination of building and pest inspections, and contract review with your solicitor.',
-                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '05',
                     title: 'Step 5 - Negotiation & Securing the Deal',
                     body: 'We represent you at auction or in private treaty negotiations, using market data and discipline to secure the property on the best possible terms.',
-                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '06',
                     title: 'Step 6 - Settlement & Keys',
                     body: 'We work with your solicitor and mortgage broker through to final settlement, ensuring a smooth handover so you can celebrate your new home.',
-                    image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=1200',
                   },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
