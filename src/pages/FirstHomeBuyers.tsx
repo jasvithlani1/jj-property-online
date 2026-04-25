@@ -32,17 +32,17 @@ const pillars = [
   {
     title: 'Financial Clarity & Buying Power',
     description: 'The first step to a successful purchase is knowing exactly where you stand. We help you coordinate with specialist brokers to understand your borrowing capacity, deposit requirements, and eligibility for all available government grants and stamp duty concessions.\n\n• Borrowing capacity assessment\n• Deposit strategy planning\n• Government grant eligibility checks\n• Stamp duty savings analysis',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Suburb Research & Strategy',
     description: 'We don\'t just look at houses; we look at markets. Using data-driven research, we identify suburbs across Australia that offer the best value, growth potential, and lifestyle fit for your specific budget.\n\n• Suburb performance data\n• Infrastructure & growth analysis\n• Market demand tracking\n• Location-specific risk assessment',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900',
   },
   {
     title: 'Due Diligence & Expert Negotiation',
     description: 'Buying your first home shouldn\'t be a gamble. We manage every aspect of the search and negotiation, ensuring you avoid costly mistakes and secure the property on the best possible terms.\n\n• Contract review coordination\n• Building & pest management\n• Strategic auction representation\n• Private treaty negotiation',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
@@ -126,7 +126,7 @@ export default function FirstHomeBuyers() {
               className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"
                 alt="Happy Home Owners"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -145,9 +145,9 @@ export default function FirstHomeBuyers() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={index % 2 === 0 ? 'lg:col-start-2' : ''}>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
@@ -170,7 +170,7 @@ export default function FirstHomeBuyers() {
                   </div>
                 </div>
 
-                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -210,13 +210,13 @@ export default function FirstHomeBuyers() {
                     step: '01',
                     title: 'Step 1 - Strategy & Financial Clarity',
                     body: 'We start by getting a clear picture of where you stand financially, including borrowing capacity, deposit, and eligibility for first home buyer incentives and stamp duty savings.',
-                    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Suburb Research & Targeting',
                     body: 'Using data-led research, we assess price growth, market demand, and local infrastructure to identify the right locations across Australia that fit your lifestyle and budget.',
-                    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '03',

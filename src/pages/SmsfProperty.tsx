@@ -7,42 +7,42 @@ import { useState } from 'react';
 
 const smsfFaqs = [
   {
-    question: 'What is a Limited Recourse Borrowing Arrangement (LRBA)?',
-    answer: 'A Limited Recourse Borrowing Arrangement, or LRBA, is the structure that allows an SMSF to borrow for a single investment property. The loan is secured only against that asset, not the rest of the fund, and must be set up carefully with SMSF lending and compliance requirements in mind.'
+    question: 'Why buy property within an SMSF?',
+    answer: 'Purchasing property through an SMSF can offer significant tax advantages, including a flat 15% tax rate on rental income and potential capital gains tax exemptions when the fund enters the pension phase. It also allows for direct control over your retirement assets.'
   },
   {
-    question: 'Can I live in a residential property purchased through my SMSF?',
-    answer: 'No. Under SMSF rules, you and any related party cannot live in a residential property owned by the fund. The investment must satisfy the sole purpose test and exist only to support retirement benefits, not personal use.'
+    question: 'What are the compliance requirements for SMSF property?',
+    answer: 'The property must meet the "sole purpose test" of providing retirement benefits, must be purchased at "arm\'s length," and cannot be lived in by the fund members or their relatives. We work closely with your accountant to ensure total compliance.'
   },
   {
-    question: 'Which properties work best for SMSF property investment in Australia?',
-    answer: 'The right property usually offers strong rental demand, low ongoing maintenance, solid long-term growth, and clear compliance suitability. Well-located residential homes and selected commercial assets may both be appropriate.'
+    question: 'Can I use leverage (borrow) to buy SMSF property?',
+    answer: 'Yes, through a Limited Recourse Borrowing Arrangement (LRBA). This involves a specific legal structure (a Bare Trust) to hold the property. We coordinate with specialist lenders and legal teams to manage this process.'
   },
   {
-    question: 'How do you help keep an SMSF property purchase compliant?',
-    answer: 'We build compliance into every stage. We work alongside your financial adviser, accountant, and auditor to support SIS Act requirements and confirm the structure is appropriate.'
+    question: 'How do you identify properties suitable for SMSF?',
+    answer: 'We focus on high-yield assets in growth corridors that offer strong cash flow to support the fund\'s obligations, while also providing capital growth potential for long-term retirement wealth.'
   },
   {
-    question: 'Can an SMSF buy off-market property in Australia?',
-    answer: 'Yes. We help SMSF buyers access off-market property opportunities across Australia through our trusted agent network, giving you a significant advantage in securing quality assets.'
+    question: 'What is the role of a buyer\'s agent in an SMSF purchase?',
+    answer: 'We provide the expert research, sourcing, and negotiation required to find a high-performing asset, while ensuring the entire acquisition process remains strictly compliant with the SIS Act and your fund\'s investment strategy.'
   }
 ];
 
 const pillars = [
   {
-    title: 'Pillar 1 - Structured Right with Expert Guidance',
-    description: 'Before we shortlist any property, we make sure your SMSF is properly set up and the acquisition structure is compliant from the outset. We work closely with your financial team to ensure alignment with your retirement strategy.\n\n• Acquisition structure review\n• SIS Act compliance alignment\n• Advisory team coordination\n• Borrowing capacity assessment',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=900',
+    title: 'Compliant Strategy & Structure',
+    description: 'Every SMSF purchase must align with your fund\'s written investment strategy and the "sole purpose test." We coordinate with your accountant and financial adviser to ensure the property and purchase structure meet all regulatory requirements.\n\n• Alignment with SMSF investment strategy\n• Coordination with accountants & advisers\n• Bare Trust & LRBA coordination\n• SIS Act compliance focus',
+    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Pillar 2 - SMSF Property Research with Purpose',
-    description: 'Not every property is the right fit for an SMSF. We apply a data-driven research process tailored specifically to SMSF acquisition, identifying high-yield, low-maintenance assets in high-demand growth corridors.\n\n• High-yield asset identification\n• Low-maintenance property selection\n• Capital growth analysis\n• National market research',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=900',
+    title: 'Research with Retirement Purpose',
+    description: 'We focus on high-yield, low-maintenance properties that provide consistent cash flow to support your fund\'s liquidity needs, while targeting locations with strong 10-20 year capital growth potential.\n\n• High-yield asset identification (typically 5%+)\n• Low-maintenance building selection\n• Data-led growth corridor research\n• Long-term capital upside assessment',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=900',
   },
   {
-    title: 'Pillar 3 - Strategic Support Through to Settlement',
-    description: 'SMSF purchases involve more moving parts and stricter documentation. We manage the entire process—from sourcing to coordinating bare trust arrangements and contract management.\n\n• Bare trust coordination\n• Contract management\n• Managed due diligence\n• Settlement oversight',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900',
+    title: 'Support Through to Settlement',
+    description: 'The SMSF acquisition process has strict documentation requirements. We manage the search, negotiation, and due diligence while ensuring all paperwork—including the contract of sale—is correctly executed in the name of the trustee.\n\n• Correct entity name contract execution\n• Managed building & pest inspections\n• Strategic negotiation & representation\n• Coordination with SMSF legal specialists',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
@@ -53,8 +53,8 @@ export default function SmsfProperty() {
   return (
     <>
       <Helmet>
-        <title>SMSF Property Investment | JJ Property Partner</title>
-        <meta name="description" content="Compliant acquisition strategies for SMSF property success. Data-driven research and expert guidance for your retirement fund investments." />
+        <title>SMSF Property Buyers Agent | JJ Property Partner</title>
+        <meta name="description" content="Compliant property acquisition for Self-Managed Super Funds. We identify high-performing, high-yield assets that fit your SMSF investment strategy." />
       </Helmet>
       
       <div className="w-full bg-white selection:bg-black/10 pt-20">
@@ -73,11 +73,11 @@ export default function SmsfProperty() {
                 SMSF Property
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
-                Acquisition Strategies Built for{' '}
-                <span className="text-sky-400">Compliant, Long-Term</span> SMSF Returns
+                Compliant Acquisition Strategies for{' '}
+                <span className="text-sky-400">SMSF Success.</span>
               </h1>
               <p className="text-xl md:text-2xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Investing in property through an SMSF is one of the most powerful wealth-building strategies available — but it demands professional execution and strict compliance.
+                Investing through a Self-Managed Super Fund demands absolute precision. We identify high-performing, high-yield assets that meet strict compliance frameworks.
               </p>
             </motion.div>
           </div>
@@ -93,19 +93,22 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                Why SMSF Property Needs a Different Strategy
+                Acquisition Strategies Built for Compliant, Long-Term SMSF Returns
               </h2>
               <div className="space-y-6 text-lg text-slate-700 font-sans leading-relaxed">
                 <p>
-                  SMSF property buying is not the same as a standard investment purchase. It needs a far more careful and compliant approach from the very beginning.
+                  Investing in property through a Self-Managed Super Fund (SMSF) is one of the most powerful wealth-building strategies available to Australians — but it is also one of the most complex.
+                </p>
+                <p className="font-semibold text-[#021f3a]">
+                  JJ Property Partner provides specialized SMSF support:
                 </p>
                 <ul className="space-y-4 pt-2">
                   {[
-                    "The property must satisfy the sole purpose test for retirement benefits",
-                    "Finance must usually be set up through a Limited Recourse Borrowing Arrangement (LRBA)",
-                    "Every part of the purchase must be completed at genuine market value",
-                    "The fund must hold enough liquidity to manage repayments and expenses",
-                    "Strict alignment with the SIS Act compliance framework is mandatory"
+                    "Deep knowledge of SMSF compliance frameworks and SIS Act requirements",
+                    "Data-driven property research to identify high-performing, compliant assets",
+                    "Specialist coordination with your fund's accountant and legal team",
+                    "Strategic focus on high-yield assets to support fund liquidity",
+                    "Managed due diligence to protect the integrity of your retirement fund"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-4">
                       <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
@@ -142,9 +145,9 @@ export default function SmsfProperty() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={index % 2 === 0 ? 'lg:col-start-2' : ''}>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
@@ -167,7 +170,7 @@ export default function SmsfProperty() {
                   </div>
                 </div>
 
-                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -179,7 +182,7 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        {/* SMSF Process Timeline Section */}
+        {/* SMSF Process Section */}
         <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
@@ -207,19 +210,19 @@ export default function SmsfProperty() {
                     step: '01',
                     title: 'Step 1 - Fund Discovery & Analysis',
                     body: 'We review your SMSF structure, borrowing capacity, and investment objectives to ensure property is a suitable and compliant path for your retirement goals.',
-                    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Team Coordination',
                     body: 'We coordinate seamlessly with your financial adviser, accountant, and auditor to ensure every part of the acquisition aligns with your fund’s specific investment strategy.',
-                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '03',
                     title: 'Step 3 - Data-Driven Market Sourcing',
                     body: 'Using specialist research, we identify high-yield (typically 5%+), low-maintenance properties in high-demand growth corridors specifically suited for SMSF holding.',
-                    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '04',
@@ -237,7 +240,7 @@ export default function SmsfProperty() {
                     step: '06',
                     title: 'Step 6 - Settlement & Fund Support',
                     body: 'We manage the process through to final settlement, ensuring all documentation—including bare trust arrangements—is correctly handled by your legal team.',
-                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1570126618953-d437176e8c79?auto=format&fit=crop&q=80&w=800',
                   },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
@@ -304,21 +307,21 @@ export default function SmsfProperty() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
               <div className="lg:col-span-5">
                 <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                  Is SMSF Property a Smart Move?
+                  Is an SMSF Property Strategy Right for You?
                 </h2>
                 <p className="text-lg text-slate-700 font-sans leading-relaxed mb-8">
-                  SMSF property is a specialised path that requires careful consideration of your financial position and long-term retirement objectives.
+                  Direct property investment through an SMSF is a powerful but highly regulated path. We help you identify if your fund is ready for this strategic diversification.
                 </p>
                 <div className="bg-sky-50 border border-sky-100 rounded-3xl p-8">
-                  <h3 className="text-xl font-serif text-[#021f3a] mb-4">SMSF Strategy Session</h3>
+                  <h3 className="text-xl font-serif text-[#021f3a] mb-4">SMSF Strategy Discovery Call</h3>
                   <p className="text-slate-600 mb-6 leading-relaxed">
-                    Unsure if your fund is ready? Our free strategy session will review your position honestly and guide you towards the right professionals where required.
+                    Unsure about compliance or property selection? Our discovery call helps you understand how JJ Property Partner identifies high-yield assets that fit your fund's strategy.
                   </p>
                   <button
                     onClick={openCalendly}
                     className="w-full rounded-full py-4 bg-[#021f3a] text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-600 transition-all duration-300"
                   >
-                    Assess My Situation
+                    Start SMSF Strategy Call
                   </button>
                 </div>
               </div>
@@ -326,12 +329,12 @@ export default function SmsfProperty() {
               <div className="lg:col-span-7">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
-                    { title: "Fund Balance", desc: "Your SMSF has a balance of around $160k+ to maintain liquidity and diversification." },
-                    { title: "Steady Contributions", desc: "The fund has reliable income to support a compliant borrowing arrangement." },
-                    { title: "Time Horizon", desc: "You have at least 10 years until retirement, allowing time for capital growth." },
-                    { title: "Strategic Clarity", desc: "Your fund has a documented strategy that explicitly includes property." },
-                    { title: "Advisory Approval", desc: "Your accountant or adviser has confirmed the approach suits your situation." },
-                    { title: "Risk Awareness", desc: "You understand the compliance obligations and SIS Act fund requirements." }
+                    { title: "Minimum Fund Balance", desc: "Your fund has a combined balance typically exceeding $250k to justify holding costs." },
+                    { title: "Compliant Mindset", desc: "You are committed to the strict 'sole purpose test' and regulatory framework." },
+                    { title: "Diversification Goal", desc: "You want to reduce reliance on equity markets through tangible property assets." },
+                    { title: "Long-Term Holding", desc: "You intend to hold the property into the pension phase for tax efficiency." },
+                    { title: "Contribution Capacity", desc: "Your fund has steady contributions to support debt repayment or maintenance." },
+                    { title: "Professional Support", desc: "You have (or are building) a team of specialist SMSF advisers and accountants." }
                   ].map((item, idx) => (
                     <motion.div
                       key={idx}
@@ -365,18 +368,18 @@ export default function SmsfProperty() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
               >
-                Why JJ Property Partner for <span className="text-sky-400">SMSF Success</span>
+                Why JJ Property Partner for <span className="text-sky-400">SMSF Acquisitions</span>
               </motion.h2>
               <div className="h-1.5 w-24 bg-sky-500 mx-auto rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {[
-                { title: "Specialist Knowledge", desc: "Specialist SMSF property expertise backed by strong SIS Act compliance knowledge." },
-                { title: "Personal Experience", desc: "Built from Alex's personal $5M+ portfolio experience across Australian cycles." },
-                { title: "Advisory Coordination", desc: "We coordinate seamlessly with your adviser, accountant, auditor, and lender." },
-                { title: "Data-Driven Research", desc: "Research identifying compliant, high-performing assets for your retirement fund." },
-                { title: "Zero Conflict", desc: "Buyer-only advice with zero conflicts, hidden commissions, or developer ties." }
+                { title: "Compliance First", desc: "Absolute focus on SIS Act requirements and fund integrity throughout sourcing." },
+                { title: "Specialist Research", desc: "Targeting high-yield properties (5%+) specifically suited for SMSF cash flow." },
+                { title: "Team Coordination", desc: "We work directly with your accountant and legal team for seamless execution." },
+                { title: "Strategic Selection", desc: "Properties selected for long-term retirement benefits, not short-term speculation." },
+                { title: "Conflict Free", desc: "100% independent representation. We work for your fund, not a developer." }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
@@ -405,7 +408,7 @@ export default function SmsfProperty() {
                 Frequently <br />
                 <span className="text-sky-500">asked questions.</span>
               </h2>
-              <p className="text-slate-600 text-lg font-sans leading-relaxed">Everything you need to know about purchasing property through your Self-Managed Super Fund.</p>
+              <p className="text-slate-600 text-lg font-sans leading-relaxed">Essential information for trustees building property portfolios within their SMSF.</p>
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
@@ -463,23 +466,23 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
-                Secure your <span className="text-sky-400">retirement future.</span>
+                Secure your <span className="text-sky-400">fund's future</span> today.
               </h2>
               <p className="text-xl text-sky-100/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
-                Ready to explore compliant, high-performing property investments for your SMSF? Book your free, no-obligation strategy session today.
+                Ready to explore high-performing property assets for your Self-Managed Super Fund? Book your free, compliant discovery call with Alex today.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
                   className="rounded-full px-12 py-5 bg-sky-500 text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-400 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-sky-500/40"
                 >
-                  Book Free Session
+                  Book SMSF Session
                 </button>
                 <button
                   onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
                   className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
-                  Message Alex
+                  Contact Alex
                 </button>
               </div>
             </motion.div>

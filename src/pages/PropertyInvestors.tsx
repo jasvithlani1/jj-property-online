@@ -42,7 +42,7 @@ const pillars = [
   {
     title: 'Strategic Portfolio Execution',
     description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction bidding\n• Settlement coordination & support',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=900',
   }
 ];
 
@@ -126,7 +126,7 @@ export default function PropertyInvestors() {
               className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1460472178825-e5240623abe5?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
                 alt="Modern City Skyline"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -145,9 +145,9 @@ export default function PropertyInvestors() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={index % 2 === 0 ? 'lg:col-start-2' : ''}>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
@@ -170,7 +170,7 @@ export default function PropertyInvestors() {
                   </div>
                 </div>
 
-                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -216,25 +216,25 @@ export default function PropertyInvestors() {
                     step: '02',
                     title: 'Step 2 - Long-Term Acquisition Roadmap',
                     body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.',
-                    image: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '03',
                     title: 'Step 3 - Geographic Diversification',
                     body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.',
-                    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '04',
                     title: 'Step 4 - Growth & Cash Flow Balance',
                     body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.',
-                    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
                   },
                   {
                     step: '05',
                     title: 'Step 5 - Future Acquisition Planning',
                     body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.',
-                    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800',
+                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800',
                   },
                 ].map((card, i, arr) => (
                   <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
