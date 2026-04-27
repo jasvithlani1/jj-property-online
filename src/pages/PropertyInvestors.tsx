@@ -408,7 +408,7 @@ export default function PropertyInvestors() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="border-b border-slate-200 pb-2"
+                  className="border-b border-gold/20 pb-2"
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}

@@ -241,9 +241,9 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/85 via-[#021f3a]/75 to-[#011122]/90 pointer-events-none" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#011122]/85 via-[#011122]/75 to-[#011122]/90 pointer-events-none" />
 
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
           <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
             Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" />
@@ -296,12 +296,11 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-12 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#021f3a] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
+              <div className="mt-12 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">Licence No.</span>
-                    <span className="text-xl sm:text-2xl font-serif text-sky-50">20543356</span>
                     <span className="text-xl sm:text-2xl font-serif text-white">20543356</span>
                   </div>
                   <div className="hidden sm:block w-px h-10 bg-gold/20"></div>
@@ -418,7 +417,7 @@ export default function Home() {
                   The JJ Property <br />
                   <span className="text-muted">Partner Difference.</span>
                 </h2>
-                <p className="text-lg text-slate-600 font-sans leading-relaxed mb-8 max-w-xl">
+                <p className="text-lg text-muted font-sans leading-relaxed mb-8 max-w-xl">
                   Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
                 </p>
                 <div className="space-y-4">
@@ -432,7 +431,7 @@ export default function Home() {
                     "Australia-wide support guided by performance data",
                     "5-star Google reviewed — verified results"
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 text-lg text-slate-700 font-sans">
+                    <div key={i} className="flex items-center gap-4 text-lg text-muted font-sans">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
                       {item}
                     </div>
@@ -513,7 +512,7 @@ export default function Home() {
                 >
                   <div className="text-4xl font-serif text-gold/30 mb-6 group-hover:text-gold transition-colors uppercase tracking-widest">{item.step}</div>
                   <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
-                  <p className="text-sm text-slate-300 leading-relaxed font-sans">{item.desc}</p>
+                  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.desc}</p>
                   <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-1.5 h-1.5 rounded-full bg-gold" />
                   </div>
@@ -524,7 +523,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="relative py-8 md:py-10 px-8 bg-gradient-to-b from-[#021f3a] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+        <section className="relative py-8 md:py-10 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <video
               src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
@@ -534,7 +533,7 @@ export default function Home() {
               playsInline
               className="w-full h-full object-cover opacity-40"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a] via-[#021f3a]/40 to-[#021f3a]/80 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011122] via-[#011122]/40 to-[#011122]/80 pointer-events-none" />
           </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -553,7 +552,7 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative py-6 md:py-8 bg-gradient-to-b from-sky-50 to-sky-200 px-8 overflow-hidden">
+        <section id="case-studies" className="relative py-6 md:py-8 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
               <div>
@@ -581,7 +580,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
                   onClick={() => { navigate(`/case-studies/${story.id}`); window.scrollTo(0, 0); }}
-                  className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-sky-900/10 overflow-hidden hover:shadow-sky-900/20 transition-all duration-500 cursor-pointer flex flex-col"
+                  className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-gold/10 overflow-hidden hover:shadow-gold/20 transition-all duration-500 cursor-pointer flex flex-col"
                 >
                   <div className="h-48 overflow-hidden">
                     <img
@@ -683,7 +682,7 @@ export default function Home() {
                     aria-controls={`faq-answer-${index}`}
                     className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-slate-600 group-hover:text-gold'}`}>
+                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
@@ -705,7 +704,7 @@ export default function Home() {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-slate-800 font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
