@@ -323,8 +323,12 @@ export default function Services() {
                   : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
                   }`}
               >
-                {/* Icon Box - Matching User Inspiration Image */}
-                <div className="w-16 h-16 rounded-[1.25rem] bg-[#011122] border border-white/10 flex items-center justify-center text-gold mb-10 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                {/* Icon Box - Optimized for visibility on dark/light backgrounds */}
+                <div className={`w-16 h-16 rounded-[1.25rem] border flex items-center justify-center mb-10 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${
+                  service.isFeatured 
+                    ? 'bg-white/10 border-gold/30 text-gold shadow-gold/10' 
+                    : 'bg-[#011122] border-white/10 text-gold'
+                }`}>
                   {service.icon}
                 </div>
 
