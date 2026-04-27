@@ -464,60 +464,75 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="py-10 md:py-12 px-8 bg-[#011122] text-white overflow-hidden">
+        <section className="py-24 md:py-32 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
-                Our Proven <br />
-                <span className="text-gold">5-Step Buying Approach.</span>
+            <div className="text-center mb-24">
+              <div className="inline-block px-4 py-1.5 rounded-full border border-gold/20 bg-gold/5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-6 shadow-sm">
+                How We Work
+              </div>
+              <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight text-[#011122]">
+                Our Proven <span className="text-blue-500 italic font-serif">5-Step</span> Buying Approach
               </h2>
-              <p className="text-xl text-white/60 font-sans max-w-2xl mx-auto">A clinical, data-led process from initial session to long-term support.</p>
+              <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
+                A data-led, clinical process — from initial session to long-term post-settlement support.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-              {[
-                {
-                  step: "01",
-                  title: "Strategy Session",
-                  desc: "Free 30-minute map of your goals, budget, and timeline."
-                },
-                {
-                  step: "02",
-                  title: "Suburb Research",
-                  desc: "Data-driven analysis of growth, yield, and infrastructure."
-                },
-                {
-                  step: "03",
-                  title: "Due Diligence",
-                  desc: "Legal, structural, and financial checks on every property."
-                },
-                {
-                  step: "04",
-                  title: "Negotiation",
-                  desc: "Strategic representation based on market conditions."
-                },
-                {
-                  step: "05",
-                  title: "Settlement",
-                  desc: "Coordination with professionals through to handover."
-                }
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative group p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-gold/50 transition-all duration-500 shadow-2xl"
-                >
-                  <div className="text-4xl font-serif text-gold/30 mb-6 group-hover:text-gold transition-colors uppercase tracking-widest">{item.step}</div>
-                  <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.desc}</p>
-                  <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-                  </div>
-                </motion.div>
-              ))}
+            <div className="relative">
+              {/* Desktop Connecting Line */}
+              <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-[1px] bg-gold/20 z-0" />
+
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-4 relative z-10">
+                {[
+                  {
+                    num: "1",
+                    title: "Strategy Session",
+                    desc: "Free 30-minute mapping of your goals, budget, timeline and property criteria."
+                  },
+                  {
+                    num: "2",
+                    title: "Suburb Research",
+                    desc: "Data-driven analysis of growth potential, yield, vacancy rates and infrastructure pipelines."
+                  },
+                  {
+                    num: "3",
+                    title: "Due Diligence",
+                    desc: "Legal, structural and financial checks on every shortlisted property before you commit."
+                  },
+                  {
+                    num: "4",
+                    title: "Negotiation",
+                    desc: "Strategic representation at private treaty or auction based on market data and vendor motivation."
+                  },
+                  {
+                    num: "5",
+                    title: "Settlement",
+                    desc: "Full coordination with your solicitor, broker and advisers through to handover and beyond."
+                  }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.1 }}
+                    className="flex flex-col items-center text-center group"
+                  >
+                    {/* Circle Marker */}
+                    <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center text-[#011122] text-2xl font-serif mb-8 shadow-[0_8px_30px_rgb(200,169,106,0.3)] group-hover:scale-110 transition-transform duration-500 relative">
+                      {item.num}
+                      <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-20 pointer-events-none group-hover:block hidden" />
+                    </div>
+
+                    <h3 className="text-xl font-serif text-[#011122] mb-4 leading-tight font-medium">
+                      {item.title}
+                    </h3>
+                    <p className="text-[15px] text-muted leading-relaxed font-sans px-4">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
