@@ -17,7 +17,7 @@ const servicesPreview = [
     description: "Buying your first home is a major milestone, and having the right guidance makes all the difference. We help you clarify your budget, assess borrowing capacity, find the right property, and negotiate strongly so you can buy with confidence.",
     icon: <HomeIcon className="w-6 h-6" />,
     solidIcon: <FaHome className="w-6 h-6" />,
-    color: 'bg-[#E6FBFF]',
+    color: 'bg-gold/5',
     anchor: 'first-home-buyers',
   },
   {
@@ -25,7 +25,7 @@ const servicesPreview = [
     description: "Building a strong property portfolio takes strategy, not guesswork. At JJ Property Partner, we use data-led research to identify high-growth, high-yield opportunities across Australia, helping you secure smart investments that match your income goals and risk profile.",
     icon: <TrendingUp className="w-6 h-6" />,
     solidIcon: <FaChartLine className="w-6 h-6" />,
-    color: 'bg-[#F0F7FF]',
+    color: 'bg-gold/10',
     anchor: 'property-investors',
   },
   {
@@ -33,7 +33,7 @@ const servicesPreview = [
     description: "Buying property through an SMSF comes with strict rules, and getting it right matters. We work closely with your specialists to secure compliant, investment-grade properties that align with your long-term retirement goals.",
     icon: <TbHomeShield className="w-6 h-6" />,
     solidIcon: <TbHomeShield className="w-6 h-6" />,
-    color: 'bg-[#F5F5F5]',
+    color: 'bg-gold/5',
     anchor: 'smsf-property',
   },
 ];
@@ -223,7 +223,7 @@ export default function Home() {
         <meta name="description" content="JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition." />
       </Helmet>
 
-      <div ref={containerRef} className="relative w-full bg-sky-50 selection:bg-black/10">
+      <div ref={containerRef} className="relative w-full bg-white selection:bg-gold/20">
 
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
         <motion.section
@@ -250,7 +250,7 @@ export default function Home() {
             Your <span className="text-gold">Dedicated</span> Advocate.
           </h1>
 
-          <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
+          <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
             JJ Property Partner — Your Trusted Buyers Agent in Australia.
             Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition.
           </p>
@@ -266,7 +266,7 @@ export default function Home() {
         </motion.section>
 
         {/* ── About Alex Preview ───────────────────────────────────────────── */}
-        <section id="about" className="relative z-10 py-6 md:py-8 px-8 bg-gradient-to-b from-white to-sky-50">
+        <section id="about" className="relative z-10 py-6 md:py-8 px-8 bg-gradient-to-b from-white to-neutral-50">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -297,17 +297,18 @@ export default function Home() {
               </div>
 
               <div className="mt-12 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#021f3a] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">Licence No.</span>
                     <span className="text-xl sm:text-2xl font-serif text-sky-50">20543356</span>
+                    <span className="text-xl sm:text-2xl font-serif text-white">20543356</span>
                   </div>
                   <div className="hidden sm:block w-px h-10 bg-gold/20"></div>
                   <div className="w-full sm:hidden h-px bg-gold/20"></div>
                   <div className="flex flex-col">
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">ABN</span>
-                    <span className="text-xl sm:text-2xl font-serif text-sky-50">71 687 187 113</span>
+                    <span className="text-xl sm:text-2xl font-serif text-white">71 687 187 113</span>
                   </div>
                 </div>
               </div>
@@ -336,13 +337,13 @@ export default function Home() {
         {/* ── Services Preview ─────────────────────────────────────────────── */}
         <section id="services" className="relative z-10 py-12 md:py-20 bg-white px-8 overflow-hidden border-t border-black/5">
           {/* Decorative elements */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-sky-50/50 blur-[120px] rounded-full -z-10" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-50/30 blur-[100px] rounded-full -z-10" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gold/5 blur-[120px] rounded-full -z-10" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
               <div className="relative">
-                <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-sky-100/30 -z-10 pointer-events-none select-none">Services</div>
+                <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-gold/5 -z-10 pointer-events-none select-none">Services</div>
                 <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
@@ -365,8 +366,8 @@ export default function Home() {
                   transition={{ duration: 0.8, delay: index * 0.15 }}
                   onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
                   className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index !== 1
-                    ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:z-20'
-                    : 'bg-white border-black/5 hover:border-sky-200 hover:shadow-2xl hover:shadow-sky-900/10'
+                    ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 md:z-20'
+                    : 'bg-white border-black/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-gold/10'
                     }`}
                 >
 
@@ -380,7 +381,7 @@ export default function Home() {
                   <h3 className={`text-3xl font-serif mb-6 leading-tight ${index !== 1 ? 'text-white' : 'text-black font-semibold'}`}>
                     {service.title}
                   </h3>
-                  <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index !== 1 ? 'text-sky-100/70' : 'text-muted'}`}>
+                  <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index !== 1 ? 'text-white/70' : 'text-muted'}`}>
                     {service.description}
                   </p>
 
@@ -441,18 +442,18 @@ export default function Home() {
               <div className="relative">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4 mt-12">
-                    <div className="aspect-[4/5] rounded-[2rem] bg-sky-100 overflow-hidden shadow-2xl">
+                    <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
-                    <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
+                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <div className="aspect-square rounded-[2rem] bg-sky-50 overflow-hidden shadow-2xl">
+                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
                     </div>
-                    <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
+                    <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
                     </div>
                   </div>
@@ -609,8 +610,8 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[#E6FBFF] blur-[120px] rounded-full opacity-30 animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F0F7FF] blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
+          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full opacity-30 animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gold/10 blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
         </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
@@ -650,7 +651,7 @@ export default function Home() {
                   {('authorImage' in review && review.authorImage) ? (
                     <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
                   ) : (
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
+                    <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold font-bold font-sans shrink-0">{review.name.charAt(0)}</div>
                   )}
                   <div>
                     <h3 className="text-sm font-bold text-black font-sans">{review.name}</h3>
@@ -663,7 +664,7 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-        <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-sky-100 px-8">
+        <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
@@ -749,8 +750,8 @@ export default function Home() {
           </motion.div>
 
           {/* Decorative background elements */}
-          <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[120px] opacity-60 -z-10" />
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E6FBFF] rounded-full blur-[100px] opacity-40 -z-10" />
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] opacity-60 -z-10" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px] opacity-40 -z-10" />
         </section>
 
       </div>

@@ -20,14 +20,14 @@ const SmsfProperty = lazy(() => import('./pages/SmsfProperty'));
 
 // Loading component for Suspense
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-sky-50">
-    <div className="w-16 h-16 border-4 border-sky-200 border-t-sky-600 rounded-full animate-spin"></div>
+  <div className="min-h-screen flex items-center justify-center bg-gold/5">
+    <div className="w-16 h-16 border-4 border-gold/20 border-t-gold rounded-full animate-spin"></div>
   </div>
 );
 
 function App() {
   return (
-    <div className="min-h-screen font-sans selection:bg-gold/30 selection:text-black bg-sky-50 flex flex-col">
+    <div className="min-h-screen font-sans selection:bg-gold/20 selection:text-black bg-white flex flex-col">
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<PageLoader />}>

@@ -59,10 +59,10 @@ const services = [
       'First Home Owner Grant guidance and eligibility assessment',
       'Full coordination through due diligence, legal review, and settlement'
     ],
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
-    accent: 'sky',
-    accentClass: 'bg-sky-50 border-sky-100',
-    iconClass: 'bg-sky-100 text-sky-700',
+    image: 'https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=1200',
+    accent: 'gold',
+    accentClass: 'bg-gold/5 border-gold/20',
+    iconClass: 'bg-gold/10 text-gold',
   },
   {
     id: 'property-investors',
@@ -81,10 +81,10 @@ const services = [
       '5 to 10 year portfolio roadmap helping plan your next acquisition systematically',
       'Coordination with your financial adviser, mortgage broker, and accountant'
     ],
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
-    accent: 'indigo',
-    accentClass: 'bg-indigo-50 border-indigo-100',
-    iconClass: 'bg-indigo-100 text-indigo-700',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
+    accent: 'gold',
+    accentClass: 'bg-gold/5 border-gold/20',
+    iconClass: 'bg-gold/10 text-gold',
   },
   {
     id: 'smsf-property',
@@ -101,12 +101,12 @@ const services = [
       'High-yield, low-maintenance property sourcing aligned to retirement income goals',
       'Dual occupancy and commercial property options where appropriate',
       'Full suburb and property due diligence meeting strict SMSF investment criteria',
-      'End-to-end execution coordinated with your accountant, adviser, and auditor'
+      'End-to-end execution coordinated with your advisory team'
     ],
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200',
-    accent: 'emerald',
-    accentClass: 'bg-emerald-50 border-emerald-100',
-    iconClass: 'bg-emerald-100 text-emerald-700',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+    accent: 'gold',
+    accentClass: 'bg-gold/5 border-gold/20',
+    iconClass: 'bg-gold/10 text-gold',
   },
 ];
 
@@ -121,10 +121,10 @@ export default function Services() {
         <meta name="description" content="JJ Property Partner offers expert buyer’s agent services across Australia for first home buyers, property investors, and SMSF property strategies with data-driven results." />
       </Helmet>
 
-      <div className="w-full bg-white selection:bg-black/10 pt-20">
+      <div className="w-full bg-white selection:bg-gold/20 pt-20">
 
       {/* Hero */}
-      <section className="relative px-6 py-8 sm:px-8 sm:py-10 md:pt-16 md:pb-10 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-6 py-8 sm:px-8 sm:py-10 md:pt-16 md:pb-10 bg-[#011122] text-white overflow-hidden">
         {/* bg glow blobs */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -162,7 +162,7 @@ export default function Services() {
             ].map((stat) => (
               <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
-                <p className="relative text-4xl md:text-5xl font-serif text-[#021f3a] mb-2 font-bold">{stat.value}</p>
+                <p className="relative text-4xl md:text-5xl font-serif text-[#011122] mb-2 font-bold">{stat.value}</p>
                 <p className="relative text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</p>
               </div>
             ))}
@@ -226,7 +226,7 @@ export default function Services() {
                   </span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-serif text-black mb-4 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-tight">
                   {service.title}
                 </h2>
                 <p className="text-lg text-muted font-serif mb-4">{service.subtitle}</p>
@@ -260,7 +260,7 @@ export default function Services() {
                   </button>
                   <button
                     onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-                    className="group flex items-center justify-center gap-2 rounded-full px-8 py-4 border border-black/10 bg-white text-black text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300"
+                    className="group flex items-center justify-center gap-2 rounded-full px-8 py-4 border border-[#011122]/10 bg-white text-[#011122] text-sm font-bold uppercase tracking-widest hover:bg-[#011122] hover:text-white transition-all duration-300"
                   >
                     Discuss Strategy
                   </button>
@@ -284,10 +284,10 @@ export default function Services() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-8 md:py-10 px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-8 md:py-10 px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Additional Services</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Additional Services</h2>
             <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -319,8 +319,8 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: index * 0.15 }}
                 onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
                 className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${service.isFeatured
-                  ? 'bg-[#021f3a] border-white/10 shadow-2xl shadow-sky-900/20 md:z-20'
-                  : 'bg-white border-black/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-sky-900/10'
+                  ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/20 md:z-20'
+                  : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
                   }`}
               >
                 <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${service.isFeatured ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
@@ -330,19 +330,19 @@ export default function Services() {
                   </div>
                 </div>
 
-                <h3 className={`text-3xl font-serif mb-6 leading-tight ${service.isFeatured ? 'text-white' : 'text-black font-semibold'}`}>
+                <h3 className={`text-3xl font-serif mb-6 leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122] font-semibold'}`}>
                   {service.title}
                 </h3>
-                <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${service.isFeatured ? 'text-sky-100/70' : 'text-muted'}`}>
+                <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${service.isFeatured ? 'text-white/70' : 'text-muted'}`}>
                   {service.description}
                 </p>
 
                 <div className="mt-auto w-full flex items-center justify-between group/link">
-                  <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                  <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-[#011122] opacity-40 group-hover:opacity-100'
                     }`}>
                     Learn More
                   </span>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.isFeatured ? 'bg-white/10 group-hover:bg-gold' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.isFeatured ? 'bg-white/10 group-hover:bg-gold' : 'bg-[#011122]/5 group-hover:bg-[#011122] group-hover:text-white'
                     }`}>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -357,30 +357,30 @@ export default function Services() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-sky-100 px-8">
+      <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-gold/5 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
+            <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-6">
               Frequently <br />
-              <span className="text-muted">asked questions.</span>
+              <span className="text-gold">asked questions.</span>
             </h2>
             <p className="text-muted text-lg font-sans">Everything you need to know about our specialized acquisition services.</p>
           </div>
 
           <div className="lg:col-span-8 flex flex-col gap-4">
             {servicesFaqs.map((faq, index) => (
-              <div key={index} className="border-b border-black/10 pb-2">
+              <div key={index} className="border-b border-[#011122]/10 pb-2">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                  className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
                 >
-                  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-slate-600 group-hover:text-gold'}`}>
+                  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                     {faq.question}
                   </span>
                   <motion.div
                     animate={{ rotate: openFaq === index ? 45 : 0 }}
                     transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                    className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-black/10 text-black group-hover:border-gold group-hover:text-gold'}`}
+                    className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-[#011122]/10 text-[#011122] group-hover:border-gold group-hover:text-gold'}`}
                   >
                     <Plus className="w-5 h-5 md:w-6 md:h-6" />
                   </motion.div>
@@ -394,7 +394,7 @@ export default function Services() {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <p className="text-lg text-slate-800 font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+                      <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -405,7 +405,7 @@ export default function Services() {
       </section>
 
       {/* CTA Bar */}
-      <section className="py-8 md:py-10 px-8 bg-sky-50">
+      <section className="py-8 md:py-10 px-8 bg-gold/5">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -413,16 +413,16 @@ export default function Services() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-black mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-[#011122] mb-8 leading-tight">
               Not sure which service fits? <br />
-              <span className="text-muted">Let's find out together.</span>
+              <span className="text-gold">Let's find out together.</span>
             </h2>
             <p className="text-lg sm:text-xl text-muted font-sans mb-12 max-w-2xl mx-auto">
               Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets.
             </p>
             <button
               onClick={openCalendly}
-              className="group rounded-full px-8 sm:px-14 py-4 sm:py-5 bg-black text-white text-sm sm:text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
+              className="group rounded-full px-8 sm:px-14 py-4 sm:py-5 bg-[#011122] text-white text-sm sm:text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
             >
               Book 30m Strategy Session
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

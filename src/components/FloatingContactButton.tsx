@@ -19,7 +19,7 @@ export default function FloatingContactButton() {
         transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
         whileHover={{ scale: 1.1, backgroundColor: 'rgba(255, 255, 255, 0.2)' }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-[5000] w-14 h-14 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-gold bg-[#021f3a] border border-gold/50 transition-all duration-300 group"
+        className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-[5000] w-14 h-14 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-gold bg-[#011122] border border-gold/50 transition-all duration-300 group"
         aria-label="Call Alex"
       >
         <span className="absolute inset-0 rounded-full bg-gold/20 animate-ping opacity-20 pointer-events-none group-hover:block hidden" />
@@ -36,7 +36,7 @@ export default function FloatingContactButton() {
         transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
         whileHover={{ scale: 1.1, backgroundColor: 'rgba(37, 211, 102, 0.2)' }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[5000] w-14 h-14 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-[#25D366] bg-[#021f3a] border border-[#25D366]/50 transition-all duration-300 group"
+        className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[5000] w-14 h-14 flex items-center justify-center rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.4)] text-[#25D366] bg-[#011122] border border-[#25D366]/50 transition-all duration-300 group"
         aria-label="Chat on WhatsApp"
       >
         <span className="absolute inset-0 rounded-full bg-[#25D366]/20 animate-pulse opacity-30 pointer-events-none" />

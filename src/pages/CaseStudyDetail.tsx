@@ -86,19 +86,19 @@ export default function CaseStudyDetail() {
   if (isLoading) {
     return (
       <div className="flex justify-center py-40 bg-white">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-400" />
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
       </div>
     );
   }
 
   if (!study) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-sky-50 pt-40 text-center px-8">
-        <h1 className="text-5xl font-serif text-black mb-4">Case Study Not Found</h1>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
+        <h1 className="text-5xl font-serif text-[#011122] mb-4">Case Study Not Found</h1>
         <p className="text-muted font-sans mb-10 text-lg">We couldn't find the case study you were looking for.</p>
         <button
           onClick={() => navigate('/case-studies')}
-          className="rounded-full px-8 py-4 bg-black text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
+          className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
         >
           Back to Case Studies
         </button>
@@ -107,7 +107,7 @@ export default function CaseStudyDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-12">
+    <div className="w-full bg-white selection:bg-gold/20 pt-12">
       <SEO 
         title={study.seo?.metaTitle || study.title} 
         description={study.seo?.metaDescription || study.outcome.substring(0, 160)}
@@ -146,7 +146,7 @@ export default function CaseStudyDetail() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-black/5 ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
+              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-gold/10 ${study.tagColor || 'bg-gold/10 text-gold'}`}>
                 {study.tag || 'Acquisition'}
               </span>
               <span className="flex items-center gap-1.5 text-white/70 text-sm font-sans">
@@ -157,7 +157,7 @@ export default function CaseStudyDetail() {
             <h1 className="text-4xl md:text-6xl font-serif text-white leading-tight mb-4">
               {study.title}
             </h1>
-            <p className="text-2xl font-serif text-sky-300">{study.resultText}</p>
+            <p className="text-2xl font-serif text-gold">{study.resultText}</p>
           </motion.div>
         </div>
       </section>
@@ -172,9 +172,9 @@ export default function CaseStudyDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + i * 0.1, duration: 0.6 }}
-                className="p-6 md:p-8 rounded-2xl bg-sky-50 border border-sky-100 text-center"
+                className="p-6 md:p-8 rounded-2xl bg-gold/5 border border-gold/10 text-center"
               >
-                <p className="text-3xl md:text-4xl font-serif text-black mb-2">{stat.value}</p>
+                <p className="text-3xl md:text-4xl font-serif text-[#011122] mb-2">{stat.value}</p>
                 <p className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</p>
               </motion.div>
             ))}
@@ -196,7 +196,7 @@ export default function CaseStudyDetail() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-sky-600 mb-4">The Client</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-4">The Client</p>
               <p className="text-xl md:text-2xl font-sans text-muted leading-relaxed">{study.client}</p>
             </motion.div>
 
@@ -206,10 +206,10 @@ export default function CaseStudyDetail() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="p-8 md:p-12 rounded-3xl bg-neutral-50 border border-black/5"
+              className="p-8 md:p-12 rounded-3xl bg-neutral-50 border border-gold/5"
             >
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-black mb-6">The Challenge</p>
-              <p className="text-xl md:text-2xl font-serif text-black leading-relaxed">{study.challenge}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#011122] mb-6">The Challenge</p>
+              <p className="text-xl md:text-2xl font-serif text-[#011122] leading-relaxed">{study.challenge}</p>
             </motion.div>
 
             {/* The Strategy */}
@@ -219,7 +219,7 @@ export default function CaseStudyDetail() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-sky-600 mb-4">The Strategy</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-4">The Strategy</p>
               <p className="text-xl md:text-2xl font-sans text-muted leading-relaxed">{study.strategy}</p>
             </motion.div>
 
@@ -229,9 +229,9 @@ export default function CaseStudyDetail() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="p-8 md:p-12 rounded-3xl bg-[#021f3a] text-white"
+              className="p-8 md:p-12 rounded-3xl bg-[#011122] text-white"
             >
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400 mb-6">The Outcome</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-gold mb-6">The Outcome</p>
               <p className="text-xl md:text-2xl font-serif leading-relaxed">{study.outcome}</p>
             </motion.div>
           </div>
@@ -245,19 +245,19 @@ export default function CaseStudyDetail() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="sticky top-28 p-6 md:p-8 rounded-[2.5rem] bg-sky-50 border border-sky-100"
+                className="sticky top-28 p-6 md:p-8 rounded-[2.5rem] bg-gold/5 border border-gold/10"
               >
-                <Quote className="w-10 h-10 text-sky-300 mb-6 fill-sky-100" />
-                <p className="text-2xl md:text-3xl font-serif text-black leading-snug mb-8">
+                <Quote className="w-10 h-10 text-gold mb-6 fill-gold/10" />
+                <p className="text-2xl md:text-3xl font-serif text-[#011122] leading-snug mb-8">
                   "{study.shortQuote}"
                 </p>
-                <div className="h-px bg-sky-200 mb-8" />
+                <div className="h-px bg-gold/10 mb-8" />
                 <p className="text-xs font-bold uppercase tracking-widest text-muted">— JJ Property Partner Client</p>
                 <p className="text-sm text-muted mt-1">{study.location}</p>
 
                 <button
                   onClick={openCalendly}
-                  className="mt-10 w-full rounded-2xl px-6 py-5 bg-black text-white font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group"
+                  className="mt-10 w-full rounded-2xl px-6 py-5 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group"
                 >
                   Book 30m Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -272,7 +272,7 @@ export default function CaseStudyDetail() {
       {study.gallery && study.gallery.length > 0 && (
         <section className="px-8 pb-10 md:pb-12">
           <div className="max-w-7xl mx-auto">
-            <h3 className="text-3xl font-serif text-black mb-8">Property Gallery</h3>
+            <h3 className="text-3xl font-serif text-[#011122] mb-8">Property Gallery</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {study.gallery.map((img: any, idx: number) => (
                 <div key={idx} className="rounded-3xl overflow-hidden aspect-square md:aspect-video relative group border border-black/5 shadow-sm">
@@ -291,9 +291,9 @@ export default function CaseStudyDetail() {
       )}
 
       {/* Other Case Studies */}
-      <section className="px-8 py-8 md:py-10 bg-sky-50">
+      <section className="px-8 py-8 md:py-10 bg-gold/5">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-serif text-black mb-10">More Client Results</h2>
+          <h2 className="text-3xl font-serif text-[#011122] mb-10">More Client Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {otherStudies.map((other, i) => (
               <motion.div
@@ -303,7 +303,7 @@ export default function CaseStudyDetail() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 onClick={() => { navigate(`/case-studies/${other.slug.current}`); window.scrollTo(0, 0); }}
-                className="group flex gap-6 p-6 rounded-2xl bg-white border border-black/5 hover:border-black/15 hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
+                className="group flex gap-6 p-6 rounded-2xl bg-white border border-gold/5 hover:border-gold/20 hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
               >
                 <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
                   {other.mainImage && (
@@ -311,11 +311,11 @@ export default function CaseStudyDetail() {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block w-fit ${other.tagColor || 'bg-sky-100 text-sky-800'}`}>{other.tag || 'Acquisition'}</span>
-                  <p className="text-lg font-serif text-black mb-1 group-hover:text-sky-800 transition-colors">{other.title}</p>
+                  <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block w-fit ${other.tagColor || 'bg-gold/10 text-gold'}`}>{other.tag || 'Acquisition'}</span>
+                  <p className="text-lg font-serif text-[#011122] mb-1 group-hover:text-gold transition-colors">{other.title}</p>
                   <p className="text-sm text-muted font-sans">{other.resultText} · {other.location}</p>
                 </div>
-                <ArrowRight className="w-5 h-5 ml-auto shrink-0 text-muted group-hover:text-black group-hover:translate-x-1 transition-all" />
+                <ArrowRight className="w-5 h-5 ml-auto shrink-0 text-muted group-hover:text-[#011122] group-hover:translate-x-1 transition-all" />
               </motion.div>
             ))}
           </div>

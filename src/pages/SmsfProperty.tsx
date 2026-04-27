@@ -57,9 +57,9 @@ export default function SmsfProperty() {
         <meta name="description" content="Compliant property acquisition for Self-Managed Super Funds. We identify high-performing, high-yield assets that fit your SMSF investment strategy." />
       </Helmet>
       
-      <div className="w-full bg-white selection:bg-black/10 pt-20">
+      <div className="w-full bg-white selection:bg-gold/20 pt-20">
         {/* Hero Section */}
-        <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-20 bg-[#021f3a] text-white overflow-hidden">
+        <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-20 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -76,7 +76,7 @@ export default function SmsfProperty() {
                 Compliant Acquisition Strategies for{' '}
                 <span className="text-gold">SMSF Success.</span>
               </h1>
-              <p className="text-xl md:text-2xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 Investing through a Self-Managed Super Fund demands absolute precision. We identify high-performing, high-yield assets that meet strict compliance frameworks.
               </p>
             </motion.div>
@@ -95,11 +95,11 @@ export default function SmsfProperty() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
                 Acquisition Strategies Built for Compliant, Long-Term SMSF Returns
               </h2>
-              <div className="space-y-6 text-lg text-slate-700 font-sans leading-relaxed">
+              <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
                 <p>
                   Investing in property through a Self-Managed Super Fund (SMSF) is one of the most powerful wealth-building strategies available to Australians — but it is also one of the most complex.
                 </p>
-                <p className="font-semibold text-[#021f3a]">
+                <p className="font-semibold text-[#011122]">
                   JJ Property Partner provides specialized SMSF support:
                 </p>
                 <ul className="space-y-4 pt-2">
@@ -136,7 +136,7 @@ export default function SmsfProperty() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-8 md:py-16 px-6 md:px-8 bg-slate-50">
+        <section className="py-8 md:py-16 px-6 md:px-8 bg-neutral-50">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
             {pillars.map((pillar, index) => (
               <motion.div
@@ -151,7 +151,7 @@ export default function SmsfProperty() {
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
-                  <div className="space-y-4 text-base md:text-lg text-slate-600 font-sans leading-relaxed">
+                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
                     {pillar.description.split('\n\n').map((paragraph, pIdx) => {
                       if (paragraph.startsWith('• ')) {
                         return (
@@ -170,7 +170,7 @@ export default function SmsfProperty() {
                   </div>
                 </div>
 
-                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-black/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
+                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image}
                     alt={pillar.title}
@@ -183,7 +183,7 @@ export default function SmsfProperty() {
         </section>
 
         {/* SMSF Process Section */}
-        <section className="py-16 md:py-24 px-8 bg-[#021f3a] text-white overflow-hidden relative">
+        <section className="py-16 md:py-24 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
@@ -274,7 +274,7 @@ export default function SmsfProperty() {
                             alt={card.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/90 via-[#011122]/20 to-transparent" />
                           <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
                             Step {card.step}
                           </div>
@@ -304,12 +304,12 @@ export default function SmsfProperty() {
                 <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
                   Is an SMSF Property Strategy Right for You?
                 </h2>
-                <p className="text-lg text-slate-700 font-sans leading-relaxed mb-8">
+                <p className="text-lg text-muted font-sans leading-relaxed mb-8">
                   Direct property investment through an SMSF is a powerful but highly regulated path. We help you identify if your fund is ready for this strategic diversification.
                 </p>
-                <div className="bg-sky-50 border border-sky-100 rounded-3xl p-8">
-                  <h3 className="text-xl font-serif text-[#021f3a] mb-4">SMSF Strategy Discovery Call</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
+                <div className="bg-gold/5 border border-gold/10 rounded-3xl p-8">
+                  <h3 className="text-xl font-serif text-[#011122] mb-4">SMSF Strategy Discovery Call</h3>
+                  <p className="text-muted mb-6 leading-relaxed">
                     Unsure about compliance or property selection? Our discovery call helps you understand how JJ Property Partner identifies high-yield assets that fit your fund's strategy.
                   </p>
                   <button
@@ -337,13 +337,13 @@ export default function SmsfProperty() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1 }}
-                      className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-sky-200 transition-all duration-300 group"
+                      className="p-6 rounded-[2rem] bg-neutral-50 border border-gold/10 hover:border-gold/20 transition-all duration-300 group"
                     >
                       <div className="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center mb-4 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
                         <Plus className="w-5 h-5" />
                       </div>
                       <h4 className="text-lg font-serif text-[#011122] mb-2">{item.title}</h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                      <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -354,7 +354,7 @@ export default function SmsfProperty() {
 
         {/* Why JJ Property Partner Section */}
         <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-sky-500/50 to-transparent" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">
               <motion.h2 
@@ -387,8 +387,8 @@ export default function SmsfProperty() {
                   <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-serif text-2xl font-bold">
                     {idx + 1}
                   </div>
-                  <h3 className="text-xl font-serif mb-4 text-sky-100">{item.title}</h3>
-                  <p className="text-sm text-sky-100/60 leading-relaxed font-sans">{item.desc}</p>
+                  <h3 className="text-xl font-serif mb-4 text-white">{item.title}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -403,7 +403,7 @@ export default function SmsfProperty() {
                 Frequently <br />
                 <span className="text-gold">asked questions.</span>
               </h2>
-              <p className="text-slate-600 text-lg font-sans leading-relaxed">Essential information for trustees building property portfolios within their SMSF.</p>
+              <p className="text-muted text-lg font-sans leading-relaxed">Essential information for trustees building property portfolios within their SMSF.</p>
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
@@ -418,15 +418,15 @@ export default function SmsfProperty() {
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between py-6 text-left hover:bg-slate-50 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
+                    className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-slate-700 group-hover:text-gold'}`}>
+                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 45 : 0 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-slate-200 text-slate-400 group-hover:border-gold group-hover:text-gold'}`}
+                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
                     >
                       <Plus className="w-6 h-6" />
                     </motion.div>
@@ -440,7 +440,7 @@ export default function SmsfProperty() {
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-slate-600 font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -463,7 +463,7 @@ export default function SmsfProperty() {
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
                 Secure your <span className="text-gold">fund's future</span> today.
               </h2>
-              <p className="text-xl text-sky-100/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-xl text-white/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
                 Ready to explore high-performing property assets for your Self-Managed Super Fund? Book your free, compliant discovery call with Alex today.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">

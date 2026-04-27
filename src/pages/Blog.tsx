@@ -65,14 +65,14 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-20">
+    <div className="w-full bg-white selection:bg-gold/20 pt-20">
       <SEO 
         title="Market Intelligence & Blog" 
         description="Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market." 
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-12 pb-10 md:pt-16 md:pb-10 bg-[#021f3a] text-white overflow-hidden">
+      <section className="relative px-8 pt-12 pb-10 md:pt-16 md:pb-10 bg-[#011122] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gold rounded-full blur-[200px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold rounded-full blur-[150px]" />
@@ -103,7 +103,7 @@ export default function Blog() {
           {['All Articles', 'Market Intelligence', 'Market Analysis', 'SMSF Strategy', 'First Home', 'Strategy'].map((cat) => (
             <button
               key={cat}
-              className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-black/10 bg-white text-muted hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+              className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest border border-[#011122]/10 bg-white text-muted hover:bg-[#011122] hover:text-white hover:border-[#011122] transition-all duration-300"
             >
               {cat}
             </button>
@@ -128,7 +128,7 @@ export default function Blog() {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.7, delay: i * 0.1 }}
                   onClick={() => { navigate(`/blog/${post.slug.current}`); window.scrollTo(0, 0); }}
-                  className="group flex flex-col rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-xl hover:shadow-black/8 transition-all duration-500 cursor-pointer"
+                  className="group flex flex-col rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-xl hover:shadow-gold/10 transition-all duration-500 cursor-pointer"
                 >
                   {/* Cover Image */}
                   <div className="relative h-56 overflow-hidden">
@@ -156,7 +156,7 @@ export default function Blog() {
                       <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
                     </div>
 
-                    <h2 className="text-xl font-serif text-black leading-snug mb-4 group-hover:text-gold transition-colors duration-300 flex-1">
+                    <h2 className="text-xl font-serif text-[#011122] leading-snug mb-4 group-hover:text-gold transition-colors duration-300 flex-1">
                       {post.title}
                     </h2>
 
@@ -164,7 +164,7 @@ export default function Blog() {
                       {post.excerpt}
                     </p>
 
-                    <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
+                    <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#011122]">
                       Read More
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -177,7 +177,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="px-8 py-8 md:py-10 bg-sky-50">
+      <section className="px-8 py-8 md:py-10 bg-gold/5">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -185,9 +185,9 @@ export default function Blog() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-black mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
               Market intelligence, <br />
-              <span className="text-muted">direct to your inbox.</span>
+              <span className="text-gold">direct to your inbox.</span>
             </h2>
             <p className="text-xl text-muted font-sans mb-10 max-w-xl mx-auto leading-relaxed">
               Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data.
@@ -196,7 +196,7 @@ export default function Blog() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="py-4 px-6 bg-[#021f3a] text-gold/20 rounded-2xl border border-gold font-sans shadow-xl inline-block"
+                className="py-4 px-6 bg-[#011122] text-gold/20 rounded-2xl border border-gold font-sans shadow-xl inline-block"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-gold flex items-center justify-center shrink-0">
@@ -218,7 +218,7 @@ export default function Blog() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="flex-1 px-6 py-4 rounded-2xl bg-white border border-black/10 focus:outline-none focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all font-sans text-base"
+                  className="flex-1 px-6 py-4 rounded-2xl bg-white border border-gold/10 focus:outline-none focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all font-sans text-base"
                 />
                 <button 
                   type="submit" 

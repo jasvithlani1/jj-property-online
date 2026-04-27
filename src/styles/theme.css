@@ -8,8 +8,8 @@
   --color-background: #FFFFFF;
   --color-foreground: #000000;
   --color-muted: #6F6F6F;
-  --color-sky-accessible: #0369a1; /* Darker blue for contrast on light backgrounds */
-  --color-sky-light: #7dd3fc;
+  --color-gold: #C8A96A;
+  --color-navy: #011122;
 }
 
 @layer utilities {

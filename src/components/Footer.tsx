@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 're
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#021f3a] text-white pt-12 mt-8 lg:mt-12">
+    <footer className="relative bg-[#011122] text-white pt-12 mt-8 lg:mt-12">
 
       <div className="max-w-7xl mx-auto px-8 relative z-10 pt-8 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
@@ -20,7 +20,7 @@ export default function Footer() {
                 <div className="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-gold leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
-            <p className="text-base text-sky-100/90 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
+            <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
               Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.
             </p>
           </div>
@@ -28,54 +28,54 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
-            <ul className="space-y-4 font-sans text-sky-200/80 text-sm">              <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Home</Link></li>
-              <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">About Us</Link></li>
-              <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Services</Link></li>
-              <li><Link to="/case-studies" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Case Studies</Link></li>
-              <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Insights & Blog</Link></li>
-              <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Contact Us</Link></li>
+            <ul className="space-y-4 font-sans text-white/60 text-sm">              <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">Home</Link></li>
+              <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">About Us</Link></li>
+              <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">Services</Link></li>
+              <li><Link to="/case-studies" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">Case Studies</Link></li>
+              <li><Link to="/blog" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">Insights & Blog</Link></li>
+              <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">Contact Us</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
-            <ul className="space-y-4 font-sans text-sky-200/80 text-sm">              <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">First Home Buyers</Link></li>
-              <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Property Investors</Link></li>
-              <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">SMSF Investment</Link></li>
+            <ul className="space-y-4 font-sans text-white/60 text-sm">              <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">First Home Buyers</Link></li>
+              <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">Property Investors</Link></li>
+              <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-gold hover:translate-x-1 transition-all inline-block">SMSF Investment</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
-            <ul className="space-y-6 font-sans text-sky-200/80">              <li className="flex flex-col items-center md:items-start gap-2">
+            <ul className="space-y-6 font-sans text-white/60">              <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Mail className="w-4 h-4 text-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Email</span>
                 </div>
-                <a href="mailto:info@jjpropertypartner.com.au" className="hover:text-white transition-colors text-sm break-all md:break-normal text-sky-100">info@jjpropertypartner.com.au</a>
+                <a href="mailto:info@jjpropertypartner.com.au" className="hover:text-gold transition-colors text-sm break-all md:break-normal text-white/80">info@jjpropertypartner.com.au</a>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Phone className="w-4 h-4 text-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Call</span>
                 </div>
-                <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors text-sky-100">+61 481 334 458</a>
+                <a href="tel:+61481334458" className="text-sm hover:text-gold transition-colors text-white/80">+61 481 334 458</a>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Hash className="w-4 h-4 text-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold">ABN</span>
                 </div>
-                <span className="text-sm text-sky-100 transition-colors">71 687 187 113</span>
+                <span className="text-sm text-white/80 transition-colors">71 687 187 113</span>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Award className="w-4 h-4 text-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gold">License</span>
                 </div>
-                <span className="text-sm text-sky-100 transition-colors">No. 20543356</span>
+                <span className="text-sm text-white/80 transition-colors">No. 20543356</span>
               </li>
             </ul>
           </div>
@@ -104,19 +104,19 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="border-t border-sky-800/50 py-6 px-8 relative">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-sky-400 font-sans gap-4 text-center md:text-left">
+      <div className="border-t border-white/5 py-6 px-8 relative">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-white/40 font-sans gap-4 text-center md:text-left">
           <p>© Copyright 2026 JJ Property Partner. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
             <span className="opacity-30">|</span>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-gold transition-colors">Terms</a>
           </div>
         </div>
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="absolute left-1/2 -translate-x-1/2 -top-6 w-12 h-12 bg-gold hover:bg-gold-hover rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 border-4 border-[#021f3a] group"
+            className="absolute left-1/2 -translate-x-1/2 -top-6 w-12 h-12 bg-gold hover:bg-gold-hover rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 border-4 border-[#011122] group"
             aria-label="Back to Top"
           >
           <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />

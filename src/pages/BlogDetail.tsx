@@ -23,12 +23,12 @@ interface SanityPost {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-4xl font-serif text-black mt-16 mb-6 leading-tight">
+      <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mt-16 mb-6 leading-tight">
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-2xl font-serif text-black mt-10 mb-4">
+      <h3 className="text-2xl font-serif text-[#011122] mt-10 mb-4">
         {children}
       </h3>
     ),
@@ -38,8 +38,8 @@ const ptComponents = {
       </p>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="my-12 pl-8 border-l-4 border-sky-400">
-        <p className="text-2xl md:text-3xl font-serif text-black leading-snug">
+      <blockquote className="my-12 pl-8 border-l-4 border-gold">
+        <p className="text-2xl md:text-3xl font-serif text-[#011122] leading-snug">
           {children}
         </p>
       </blockquote>
@@ -51,7 +51,7 @@ const ptComponents = {
   listItem: {
     bullet: ({ children }: any) => (
       <li className="flex items-start gap-4 text-lg text-muted font-sans leading-relaxed">
-        <span className="mt-2 shrink-0 w-2 h-2 rounded-full bg-sky-500" />
+        <span className="mt-2 shrink-0 w-2 h-2 rounded-full bg-gold" />
         {children}
       </li>
     ),
@@ -110,19 +110,19 @@ export default function BlogDetail() {
   if (isLoading) {
     return (
       <div className="flex justify-center py-40 bg-white">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-400" />
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
       </div>
     );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-sky-50 pt-40 text-center px-8">
-        <h1 className="text-5xl font-serif text-black mb-4">Article Not Found</h1>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
+        <h1 className="text-5xl font-serif text-[#011122] mb-4">Article Not Found</h1>
         <p className="text-muted font-sans mb-10 text-lg">We couldn't find the article you were looking for.</p>
         <button
           onClick={() => navigate('/blog')}
-          className="rounded-full px-8 py-4 bg-black text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
+          className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
         >
           Back to Blog
         </button>
@@ -131,7 +131,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-12">
+    <div className="w-full bg-white selection:bg-gold/20 pt-12">
       <SEO 
         title={post.seo?.metaTitle || post.title} 
         description={post.seo?.metaDescription || post.excerpt}
@@ -161,12 +161,12 @@ export default function BlogDetail() {
             transition={{ duration: 0.8 }}
           >
             {post.categories?.[0] && (
-              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-6 shadow-sm border border-black/5 ${post.categories[0].color || 'bg-sky-100 text-sky-800'}`}>
+              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-6 shadow-sm border border-gold/10 ${post.categories[0].color || 'bg-gold/10 text-gold'}`}>
                 {post.categories[0].title}
               </span>
             )}
 
-            <h1 className="text-4xl md:text-6xl font-serif text-black leading-[1.05] mb-8">
+            <h1 className="text-4xl md:text-6xl font-serif text-[#011122] leading-[1.05] mb-8">
               {post.title}
             </h1>
 
@@ -174,9 +174,9 @@ export default function BlogDetail() {
               {post.excerpt}
             </p>
 
-            <div className="flex flex-wrap items-center gap-6 pb-10 border-b border-black/8">
+            <div className="flex flex-wrap items-center gap-6 pb-10 border-b border-[#011122]/10">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#021f3a] flex items-center justify-center text-white font-bold font-serif text-lg overflow-hidden">
+                <div className="w-10 h-10 rounded-full bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-lg overflow-hidden">
                   {post.author?.image ? (
                     <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
                   ) : (
@@ -184,7 +184,7 @@ export default function BlogDetail() {
                   )}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-black">{post.author?.name || 'Alex'}</p>
+                  <p className="text-sm font-bold text-[#011122]">{post.author?.name || 'Alex'}</p>
                   <p className="text-xs text-muted">Principal Advisor, JJ Property Partner</p>
                 </div>
               </div>
@@ -225,8 +225,8 @@ export default function BlogDetail() {
             </motion.div>
 
             {/* Author Bio */}
-            <div className="mt-10 p-8 rounded-3xl bg-sky-50 border border-sky-100 flex items-center gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-[#021f3a] flex items-center justify-center text-white font-bold font-serif text-2xl shrink-0 overflow-hidden">
+            <div className="mt-10 p-8 rounded-3xl bg-gold/5 border border-gold/10 flex items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-2xl shrink-0 overflow-hidden">
                 {post.author?.image ? (
                   <img src={urlFor(post.author.image).width(200).height(200).url()} alt={post.author.name} className="w-full h-full object-cover" />
                 ) : (
@@ -234,7 +234,7 @@ export default function BlogDetail() {
                 )}
               </div>
               <div>
-                <p className="text-lg font-serif text-black mb-1">{post.author?.name || 'Alex'} — Principal Advisor</p>
+                <p className="text-lg font-serif text-[#011122] mb-1">{post.author?.name || 'Alex'} — Principal Advisor</p>
                 <p className="text-muted font-sans text-sm leading-relaxed">
                   20+ years operating in the Sydney property market. Specialist in off-market acquisition, SMSF strategy, and data-driven buyer representation.
                 </p>
@@ -246,15 +246,15 @@ export default function BlogDetail() {
           <aside className="lg:col-span-4">
             <div className="sticky top-32 flex flex-col gap-8">
               {/* CTA Card */}
-              <div className="p-8 rounded-[2.5rem] bg-[#021f3a] text-white">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400 mb-4">Work With Us</p>
+              <div className="p-8 rounded-[2.5rem] bg-[#011122] text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-4">Work With Us</p>
                 <h3 className="text-2xl font-serif mb-4 leading-snug">Ready to act on this intelligence?</h3>
                 <p className="text-white/60 font-sans text-sm leading-relaxed mb-8">
                   Our active roster is strictly limited. Book a confidential strategy call to discuss your brief.
                 </p>
                 <button
                   onClick={openCalendly}
-                  className="w-full rounded-2xl px-6 py-4 bg-sky-500 hover:bg-sky-400 text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full rounded-2xl px-6 py-4 bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
                   Book 30m Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -269,7 +269,7 @@ export default function BlogDetail() {
                     <button
                       key={other._id}
                       onClick={() => { navigate(`/blog/${other.slug.current}`); window.scrollTo(0, 0); }}
-                      className="group flex gap-4 items-center text-left hover:bg-neutral-50 rounded-2xl p-3 -mx-3 transition-colors"
+                      className="group flex gap-4 items-center text-left hover:bg-gold/5 rounded-2xl p-3 -mx-3 transition-colors"
                     >
                       <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
                         {other.mainImage && (
@@ -278,9 +278,9 @@ export default function BlogDetail() {
                       </div>
                       <div className="flex flex-col">
                         {other.categories?.[0] && (
-                          <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5 w-fit ${other.categories[0].color || 'bg-sky-100 text-sky-800'}`}>{other.categories[0].title}</span>
+                          <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5 w-fit ${other.categories[0].color || 'bg-gold/10 text-gold'}`}>{other.categories[0].title}</span>
                         )}
-                        <p className="text-sm font-serif text-black leading-snug group-hover:text-sky-800 transition-colors line-clamp-2">{other.title}</p>
+                        <p className="text-sm font-serif text-[#011122] leading-snug group-hover:text-gold transition-colors line-clamp-2">{other.title}</p>
                       </div>
                     </button>
                   ))}

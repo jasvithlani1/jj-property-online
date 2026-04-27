@@ -10,10 +10,10 @@ export default function About() {
         <meta name="description" content="JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies." />
       </Helmet>
       
-      <div className="w-full bg-white selection:bg-black/10 pt-20">
+      <div className="w-full bg-white selection:bg-gold/20 pt-20">
 
       {/* Hero Section */}
-      <section className="relative px-8 pt-12 pb-10 md:pt-20 md:pb-12 bg-sky-50 overflow-hidden">
+      <section className="relative px-8 pt-12 pb-10 md:pt-20 md:pb-12 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -48,7 +48,7 @@ export default function About() {
         </div>
 
         {/* Dynamic Background */}
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#E6FBFF] blur-[150px] rounded-full opacity-60 -z-10" />
+        <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full opacity-60 -z-10" />
       </section>
 
       {/* Profile Section */}
@@ -98,16 +98,16 @@ export default function About() {
       </section>
 
       {/* Track Record & Tech Advantage */}
-      <section className="py-8 md:py-10 bg-sky-50 px-8 relative overflow-hidden">
+      <section className="py-8 md:py-10 bg-white px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-sky-100/50"
+            className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10"
           >
-            <h3 className="text-3xl font-serif mb-6 text-[#021f3a]">Alex's Personal Track Record</h3>
+            <h3 className="text-3xl font-serif mb-6 text-[#011122]">Alex's Personal Track Record</h3>
             <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
               <p>
                 Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy.
@@ -123,9 +123,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#021f3a] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
+            className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-sky-500/10 rounded-full blur-[60px]" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
             <h3 className="text-3xl font-serif mb-6 relative z-10">The Technology Advantage</h3>
             <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
               <p>
@@ -148,7 +148,7 @@ export default function About() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#021f3a] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">01</span>
                 <h4 className="text-2xl font-serif text-white">Truly Independent, Always Buyer-Focused</h4>
@@ -184,7 +184,7 @@ export default function About() {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-8 md:py-10 px-8 bg-[#021f3a] text-white relative overflow-hidden">
+      <section className="py-8 md:py-10 px-8 bg-[#011122] text-white relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full opacity-20">
           <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
@@ -236,7 +236,7 @@ export default function About() {
       </section>
 
       {/* Credentials */}
-      <section className="py-8 md:py-8 px-4 sm:px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-8 md:py-8 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>
@@ -255,7 +255,7 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+                className="bg-white p-6 rounded-2xl shadow-sm border border-gold/10 flex flex-col items-center text-center hover:shadow-md transition-shadow"
               >
                 <div className="w-12 h-12 bg-gold/5 rounded-full flex items-center justify-center mb-4">
                   {cred.icon}

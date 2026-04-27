@@ -59,7 +59,7 @@ export default function Contact() {
         <meta name="description" content="Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today." />
       </Helmet>
 
-      <div className="w-full bg-sky-50 selection:bg-black/10 pt-24 pb-8 md:pb-12">
+      <div className="w-full bg-white selection:bg-gold/20 pt-24 pb-8 md:pb-12">
       {/* Hero Section */}
       <section className="relative px-8 pt-12 pb-8 md:pt-20 md:pb-10 overflow-hidden text-center z-10">
         <motion.div
@@ -73,7 +73,7 @@ export default function Contact() {
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
             Exclusive access to Australia’s <br className="hidden md:block" />
-            <span className="font-semibold text-muted">premium</span> property market.
+            <span className="font-semibold text-gold">premium</span> property market.
           </h1>
           <p className="text-xl text-muted font-sans max-w-3xl mx-auto leading-relaxed">
             Contact us for a private and comprehensive strategy consultation. We act on behalf of buyers all over Australia, providing customized strategies for acquiring the right property through thorough market research and expert negotiations.
@@ -85,7 +85,7 @@ export default function Contact() {
       <section className="relative px-8 pb-8 md:pb-12 z-10">
         <div className="max-w-7xl mx-auto bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
           {/* Subtle bg glow */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#E6FBFF] blur-[150px] rounded-full opacity-60 -z-10" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full opacity-60 -z-10" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
             {/* Left Column: Details */}
@@ -159,7 +159,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-white/80 p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-xl shadow-sky-900/5 relative"
+              className="bg-white/80 p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-xl shadow-gold/5 relative"
             >
               {status === 'success' ? (
                 <div className="py-20 text-center animate-fade-in">

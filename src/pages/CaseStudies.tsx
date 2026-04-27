@@ -54,15 +54,15 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-black/10 pt-20">
+    <div className="w-full bg-white selection:bg-gold/20 pt-20">
       <SEO 
         title="Client Success & Case Studies" 
         description="Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach." 
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-12 pb-10 md:pt-16 md:pb-10 overflow-hidden bg-sky-50">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#E6FBFF] blur-[150px] rounded-full opacity-70 pointer-events-none" />
+      <section className="relative px-8 pt-12 pb-10 md:pt-16 md:pb-10 overflow-hidden bg-gold/5">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -70,13 +70,13 @@ export default function CaseStudies() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-block px-7 py-3 rounded-full border border-black/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-black mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+            <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
               Client Results
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif text-black leading-[1.05] mb-8 max-w-5xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
               The JJ Property Advantage
               <br />
-              <span className="text-muted">in action.</span>
+              <span className="text-gold">in action.</span>
             </h1>
             <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
               Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach.
@@ -95,7 +95,7 @@ export default function CaseStudies() {
               { value: '$5M+', label: 'Total Assets Managed' },
               { value: '100%', label: 'Buyer-Side Only' },
             ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#021f3a] shadow-xl border border-sky-900/50 hover:-translate-y-1 transition-transform duration-300">
+              <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
                 {stat.icon && stat.icon}
                 <span className="text-2xl font-serif text-white">{stat.value}</span>
                 <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
@@ -122,7 +122,7 @@ export default function CaseStudies() {
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
                   onClick={() => { navigate(`/case-studies/${study.slug.current}`); window.scrollTo(0, 0); }}
-                  className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-black/5 hover:border-black/15 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
+                  className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
                 >
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
@@ -153,7 +153,7 @@ export default function CaseStudies() {
 
                   {/* Body */}
                   <div className="flex flex-col flex-1 p-8">
-                    <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-gold transition-colors duration-300">
+                    <h2 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300">
                       {study.title}
                     </h2>
                     {study.shortQuote && (
@@ -165,14 +165,14 @@ export default function CaseStudies() {
                     {/* Stats Pills */}
                     <div className="mt-6 flex flex-wrap gap-2">
                       {study.stats?.slice(0, 2).map((s) => (
-                        <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-black/5 text-xs font-bold uppercase tracking-widest text-black">
+                        <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-gold/10 text-xs font-bold uppercase tracking-widest text-[#011122]">
                           {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Read More */}
-                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black group/btn">
+                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#011122] group/btn">
                       <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
@@ -185,9 +185,9 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-8 md:py-10 px-8 bg-[#021f3a] text-white text-center relative overflow-hidden">
+      <section className="py-8 md:py-10 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-400 rounded-full blur-[200px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold rounded-full blur-[200px]" />
         </div>
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div
@@ -215,11 +215,11 @@ export default function CaseStudies() {
       </section>
 
       {/* Latest Acquisition Showcase */}
-      <section className="py-8 md:py-10 px-8 bg-slate-50 border-t border-slate-200">
+      <section className="py-8 md:py-10 px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl md:text-5xl font-serif text-[#021f3a] mb-6">Explore our latest property acquisitions</h2>
+              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Explore our latest property acquisitions</h2>
               <p className="text-lg text-muted font-sans max-w-3xl mx-auto leading-relaxed">
                 Strategically selected for high growth, strong rental yields, and long-term value. Every purchase is backed by thorough research and due diligence to ensure smart investments.
               </p>
@@ -273,38 +273,38 @@ export default function CaseStudies() {
                 <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
                   <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                     <div className="flex flex-col">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Price</span>
-                      <span className="text-2xl font-serif text-black font-bold">{prop.price}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Price</span>
+                      <span className="text-2xl font-serif text-[#011122] font-bold">{prop.price}</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Configuration</span>
-                      <span className="text-xl font-sans text-black font-semibold">{prop.config}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
+                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.config}</span>
                     </div>
                     
-                    <div className="flex flex-col pt-4 border-t border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Purchase Month</span>
-                      <span className="text-xl font-sans text-black font-semibold">{prop.month}</span>
+                    <div className="flex flex-col pt-4 border-t border-gold/10">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Month</span>
+                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
                     </div>
-                    <div className="flex flex-col pt-4 border-t border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental</span>
-                      <span className="text-xl font-sans text-black font-semibold">{prop.rental}</span>
+                    <div className="flex flex-col pt-4 border-t border-gold/10">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental</span>
+                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
                     </div>
                     
-                    <div className="flex flex-col pt-4 border-t border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Current Value</span>
+                    <div className="flex flex-col pt-4 border-t border-gold/10">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Current Value</span>
                       <span className="text-xl font-serif text-gold font-bold">{prop.value}</span>
                     </div>
-                    <div className="flex flex-col pt-4 border-t border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Land Category</span>
-                      <span className="text-xl font-sans text-black font-semibold">{prop.size}</span>
+                    <div className="flex flex-col pt-4 border-t border-gold/10">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Category</span>
+                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
                     </div>
 
-                    <div className="flex flex-col pt-4 border-t border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Capital Growth</span>
+                    <div className="flex flex-col pt-4 border-t border-gold/10">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Capital Growth</span>
                       <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
                     </div>
-                    <div className="flex flex-col pt-4 border-t border-black/5">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental Yield</span>
+                    <div className="flex flex-col pt-4 border-t border-gold/10">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
                       <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
                     </div>
                   </div>
