@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Plus, MessageSquare, Gavel, Map, Key, Building2, Landmark } from 'lucide-react';
+import { ArrowRight, Plus, MessageSquare, Gavel, Map, Key, Building2, Landmark, Scales, TrendingUp } from 'lucide-react';
 import { FaKey, FaBuilding, FaLandmark } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
@@ -293,21 +293,21 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
-                title: 'Negotiation Only Service',
+                title: 'Negotiation Only',
                 description: 'Already found the right property? Our Negotiation Only Service gives you expert buyer-side representation to help secure the best possible price and favourable contract terms. We use market insights, comparable sales data, and proven negotiation strategies to protect your interests every step of the way.',
-                icon: <MessageSquare className="w-8 h-8" />,
+                icon: <Scales className="w-7 h-7" />,
                 isFeatured: true
               },
               {
-                title: 'Auction Bidding Representation',
+                title: 'Auction Bidding',
                 description: 'Property auctions can move quickly, and emotional bidding often leads to overpaying. JJ Property Partner provides calm, strategic auction representation with a clear bidding limit agreed in advance, backed by property appraisal, market research, and a disciplined approach designed to protect your interests.',
-                icon: <Gavel className="w-8 h-8" />,
+                icon: <Gavel className="w-7 h-7" />,
                 isFeatured: false
               },
               {
-                title: 'Portfolio Strategy Sessions',
+                title: 'Portfolio Strategy',
                 description: 'For investors planning their next purchase or refining their current approach, our portfolio strategy sessions provide clear, data-led guidance. We review your existing assets, assess future opportunities, and map out a practical strategy designed to support long-term wealth growth across Australia.',
-                icon: <Map className="w-8 h-8" />,
+                icon: <TrendingUp className="w-7 h-7" />,
                 isFeatured: true
               }
             ].map((service, index) => (
@@ -323,11 +323,9 @@ export default function Services() {
                   : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
                   }`}
               >
-                <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${service.isFeatured ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
-                  }`}>
-                  <div className="w-8 h-8 flex items-center justify-center">
-                    {service.icon}
-                  </div>
+                {/* Icon Box - Matching User Inspiration Image */}
+                <div className="w-16 h-16 rounded-[1.25rem] bg-[#011122] border border-white/10 flex items-center justify-center text-gold mb-10 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                  {service.icon}
                 </div>
 
                 <h3 className={`text-3xl font-serif mb-6 leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122] font-semibold'}`}>
