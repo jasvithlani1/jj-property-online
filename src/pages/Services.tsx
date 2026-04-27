@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Plus, MessageSquare, Gavel, Map, Key, Building2, Landmark, Scales, TrendingUp } from 'lucide-react';
+import { ArrowRight, Plus, Gavel, Key, Building2, Landmark, Scale, TrendingUp } from 'lucide-react';
 import { FaKey, FaBuilding, FaLandmark } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
@@ -295,7 +295,7 @@ export default function Services() {
               {
                 title: 'Negotiation Only',
                 description: 'Already found the right property? Our Negotiation Only Service gives you expert buyer-side representation to help secure the best possible price and favourable contract terms. We use market insights, comparable sales data, and proven negotiation strategies to protect your interests every step of the way.',
-                icon: <Scales className="w-7 h-7" />,
+                icon: <Scale className="w-7 h-7" />,
                 isFeatured: true
               },
               {
