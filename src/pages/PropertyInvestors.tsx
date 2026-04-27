@@ -196,6 +196,7 @@ export default function PropertyInvestors() {
                   Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
                 </p>
               </div>
+            </div>
 
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">

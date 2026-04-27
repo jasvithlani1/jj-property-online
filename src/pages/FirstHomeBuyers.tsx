@@ -196,6 +196,7 @@ export default function FirstHomeBuyers() {
                   From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase — so you can move forward with confidence, not guesswork.
                 </p>
               </div>
+            </div>
 
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">

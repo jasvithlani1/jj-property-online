@@ -196,6 +196,7 @@ export default function SmsfProperty() {
                   A specialised 6-step process designed to identify high-performing assets while maintaining total SIS Act compliance for your fund.
                 </p>
               </div>
+            </div>
 
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">
