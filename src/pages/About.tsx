@@ -144,13 +144,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Our Core Values</h2>
-            <div className="h-1 w-20 bg-sky-400 mx-auto rounded-full" />
+            <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">01</span>
+                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">01</span>
                 <h4 className="text-2xl font-serif text-white">Truly Independent, Always Buyer-Focused</h4>
               </div>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.</p>
@@ -158,7 +158,7 @@ export default function About() {
  
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">02</span>
+                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">02</span>
                 <h4 className="text-2xl font-serif text-white">Clear Advice, Every Step</h4>
               </div>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.</p>
@@ -166,7 +166,7 @@ export default function About() {
  
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">03</span>
+                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">03</span>
                 <h4 className="text-2xl font-serif text-white">Direct Access, Personal Guidance</h4>
               </div>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.</p>
@@ -174,7 +174,7 @@ export default function About() {
  
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-[#021f3a] border border-white/5 shadow-2xl hover:bg-[#032a4e] transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-sky-400/30 group-hover:text-sky-400 transition-colors">04</span>
+                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">04</span>
                 <h4 className="text-2xl font-serif text-white">Building Wealth for the Long Run</h4>
               </div>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.</p>
@@ -186,8 +186,8 @@ export default function About() {
       {/* Pillars Section */}
       <section className="py-8 md:py-10 px-8 bg-[#021f3a] text-white relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-sky-400 rounded-full blur-[120px]" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-500 rounded-full blur-[140px]" />
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 text-center mb-20">
@@ -202,17 +202,17 @@ export default function About() {
             {
               title: "Data-Driven Precision",
               text: "Backed by over 20 years of analytical experience, we use advanced suburb research and property assessment to guide every recommendation. Our approach is grounded in evidence, not emotion, helping identify true value and long-term growth potential.",
-              icon: <Target className="w-8 h-8 text-sky-400" />
+              icon: <Target className="w-8 h-8 text-gold" />
             },
             {
               title: "Off-Market Access",
               text: "Through strong relationships with selling agents and industry professionals across Australia, we help clients access quality off-market and pre-market opportunities, reducing competition and creating better conditions for smarter buying decisions.",
-              icon: <Search className="w-8 h-8 text-sky-400" />
+              icon: <Search className="w-8 h-8 text-gold" />
             },
             {
               title: "Executive Representation",
               text: "We act solely in your best interests, managing negotiations with discretion, protecting your privacy, and representing you throughout the purchase process with a strategic, data-led approach designed to secure the right terms.",
-              icon: <Handshake className="w-8 h-8 text-sky-400" />
+              icon: <Handshake className="w-8 h-8 text-gold" />
             }
           ].map((val, i) => (
             <motion.div
@@ -221,7 +221,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-sky-400/30 transition-all duration-300 backdrop-blur-sm group"
+              className="p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group"
             >
               <div className="mb-6 p-4 inline-flex bg-white/5 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500">
                 {val.icon}
@@ -244,10 +244,10 @@ export default function About() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
             {[
-              { icon: <BadgeCheck className="w-6 h-6 text-sky-500" />, label: "Buyers Agent Licence", value: "20543356", sub: "" },
-              { icon: <Briefcase className="w-6 h-6 text-sky-500" />, label: "ABN", value: "71 687 187 113", sub: "" },
-              { icon: <Building2 className="w-6 h-6 text-sky-500" />, label: "Business", value: "JJ Property Partner", sub: "PTY LTD" },
-              { icon: <MapPin className="w-6 h-6 text-sky-500" />, label: "Location", value: "Sydney, NSW", sub: "Australia-wide" },
+              { icon: <BadgeCheck className="w-6 h-6 text-gold" />, label: "Buyers Agent Licence", value: "20543356", sub: "" },
+              { icon: <Briefcase className="w-6 h-6 text-gold" />, label: "ABN", value: "71 687 187 113", sub: "" },
+              { icon: <Building2 className="w-6 h-6 text-gold" />, label: "Business", value: "JJ Property Partner", sub: "PTY LTD" },
+              { icon: <MapPin className="w-6 h-6 text-gold" />, label: "Location", value: "Sydney, NSW", sub: "Australia-wide" },
             ].map((cred, i) => (
               <motion.div 
                 key={i}
@@ -257,7 +257,7 @@ export default function About() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition-shadow"
               >
-                <div className="w-12 h-12 bg-sky-50 rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gold/5 rounded-full flex items-center justify-center mb-4">
                   {cred.icon}
                 </div>
                 <h4 className="text-xs font-bold text-muted uppercase tracking-widest mb-2">{cred.label}</h4>

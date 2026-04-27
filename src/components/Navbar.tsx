@@ -116,7 +116,7 @@ export default function Navbar() {
                 className={`group relative text-[13px] 2xl:text-sm font-medium transition-colors hover:text-white cursor-pointer whitespace-nowrap ${isActive(link.path) ? 'text-white' : 'text-[#7dd3fc]'}`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-sky-400 transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </a>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <button
             onClick={openCalendly}
-            className="hidden xl:block rounded-full px-6 py-2.5 text-sm bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold whitespace-nowrap"
+            className="hidden xl:block rounded-full px-6 py-2.5 text-sm bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-bold whitespace-nowrap"
           >
             Book Session
           </button>
@@ -167,7 +167,7 @@ export default function Navbar() {
                   <div className="font-sans font-black text-sm sm:text-base md:text-lg tracking-widest text-white leading-none uppercase">
                     JJ PROPERTY PARTNER
                   </div>
-                  <div className="font-sans font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.2em] text-sky-400 leading-none uppercase mt-1.5">
+                  <div className="font-sans font-bold text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.2em] text-gold leading-none uppercase mt-1.5">
                     YOUR PROPERTY, OUR PRIORITY
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function Navbar() {
                     key={link.name}
                     href={link.path}
                     onClick={(e) => handleLinkClick(e, link.path, link.isHash)}
-                    className={`text-base uppercase tracking-widest font-bold transition-colors ${isActive(link.path) ? 'text-white pl-2 border-l-2 border-sky-400' : 'text-[#7dd3fc] hover:text-white'}`}
+                    className={`text-base uppercase tracking-widest font-bold transition-colors ${isActive(link.path) ? 'text-white pl-2 border-l-2 border-gold' : 'text-[#7dd3fc] hover:text-white'}`}
                   >
                     {link.name}
                   </a>
@@ -200,7 +200,7 @@ export default function Navbar() {
                   setIsMenuOpen(false);
                   openCalendly();
                 }}
-                className="mt-6 rounded-full w-full px-6 py-4 text-sm bg-sky-500 text-white font-bold uppercase tracking-widest shadow-2xl hover:bg-sky-400 active:scale-95 transition-all"
+                className="mt-6 rounded-full w-full px-6 py-4 text-sm bg-gold text-white font-bold uppercase tracking-widest shadow-2xl hover:bg-gold-hover active:scale-95 transition-all"
               >
                 Book Session
               </button>

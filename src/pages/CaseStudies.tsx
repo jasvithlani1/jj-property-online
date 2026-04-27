@@ -98,7 +98,7 @@ export default function CaseStudies() {
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#021f3a] shadow-xl border border-sky-900/50 hover:-translate-y-1 transition-transform duration-300">
                 {stat.icon && stat.icon}
                 <span className="text-2xl font-serif text-white">{stat.value}</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#7DD3FC]">{stat.label}</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
               </div>
             ))}
           </motion.div>
@@ -110,7 +110,7 @@ export default function CaseStudies() {
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-24">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-sky-400" />
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -137,7 +137,7 @@ export default function CaseStudies() {
 
                     {/* Tag overlay */}
                     <div className="absolute top-4 left-4">
-                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-sky-100 text-sky-800'}`}>
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-gold/10 text-gold'}`}>
                         {study.tag || 'Acquisition'}
                       </span>
                     </div>
@@ -153,7 +153,7 @@ export default function CaseStudies() {
 
                   {/* Body */}
                   <div className="flex flex-col flex-1 p-8">
-                    <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-sky-800 transition-colors duration-300">
+                    <h2 className="text-2xl font-serif text-black mb-4 group-hover:text-gold transition-colors duration-300">
                       {study.title}
                     </h2>
                     {study.shortQuote && (
@@ -198,14 +198,14 @@ export default function CaseStudies() {
           >
             <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
               Ready to write your <br />
-              <span className="text-sky-300">own success story?</span>
+              <span className="text-gold">own success story?</span>
             </h2>
             <p className="text-xl text-white/60 font-sans mb-12 max-w-xl mx-auto">
               Speak directly with Alex about your brief. Our active roster is strictly limited — enquire now.
             </p>
             <button
               onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-              className="group rounded-full px-14 py-5 bg-sky-500 hover:bg-sky-400 text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-2xl shadow-sky-900/20 flex items-center gap-3 mx-auto"
+              className="group rounded-full px-14 py-5 bg-gold hover:bg-gold-hover text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-2xl shadow-gold/20 flex items-center gap-3 mx-auto"
             >
               Start Your Brief
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -267,7 +267,7 @@ export default function CaseStudies() {
                 initial={{ opacity: 0, y: 30 }} 
                 whileInView={{ opacity: 1, y: 0 }} 
                 viewport={{ once: true }} 
-                className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-sky-200 transition-colors duration-500"
+                className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-gold/30 transition-colors duration-500"
               >
                 {/* Stats Table */}
                 <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
@@ -292,7 +292,7 @@ export default function CaseStudies() {
                     
                     <div className="flex flex-col pt-4 border-t border-black/5">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Current Value</span>
-                      <span className="text-xl font-serif text-sky-600 font-bold">{prop.value}</span>
+                      <span className="text-xl font-serif text-gold font-bold">{prop.value}</span>
                     </div>
                     <div className="flex flex-col pt-4 border-t border-black/5">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Land Category</span>
@@ -305,7 +305,7 @@ export default function CaseStudies() {
                     </div>
                     <div className="flex flex-col pt-4 border-t border-black/5">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#021f3a] opacity-60 mb-1">Rental Yield</span>
-                      <span className="text-2xl font-serif text-sky-600 font-bold">{prop.yield}</span>
+                      <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
                     </div>
                   </div>
                 </div>

@@ -246,8 +246,8 @@ export default function Home() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-sky-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
           <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
-            Strategist. <span className="text-sky-400">Insider.</span> <br className="hidden md:block" />
-            Your <span className="text-sky-400">Dedicated</span> Advocate.
+            Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" />
+            Your <span className="text-gold">Dedicated</span> Advocate.
           </h1>
 
           <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-sky-100/80 font-sans drop-shadow-md">
@@ -256,10 +256,10 @@ export default function Home() {
           </p>
 
           <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
-            <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
+            <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
               Book Session
             </button>
-            <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-sky-400/30 bg-white/10 backdrop-blur-sm text-white hover:bg-sky-500 hover:border-sky-500 transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
+            <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-gold/30 bg-white/10 backdrop-blur-sm text-white hover:bg-gold hover:border-gold transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
               Client Stories
             </button>
           </div>
@@ -274,8 +274,8 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E6FBFF] text-black border border-black/10 text-sm font-bold uppercase tracking-widest mb-10 shadow-sm scale-110 origin-left">
-                <span className="block w-2.5 h-2.5 rounded-full bg-black animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-10 shadow-sm scale-110 origin-left">
+                <span className="block w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
                 Principal Advisor
               </div>
 
@@ -300,13 +300,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-1.5">Licence No.</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">Licence No.</span>
                     <span className="text-xl sm:text-2xl font-serif text-sky-50">20543356</span>
                   </div>
-                  <div className="hidden sm:block w-px h-10 bg-sky-400/20"></div>
-                  <div className="w-full sm:hidden h-px bg-sky-400/20"></div>
+                  <div className="hidden sm:block w-px h-10 bg-gold/20"></div>
+                  <div className="w-full sm:hidden h-px bg-gold/20"></div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-400/80 mb-1.5">ABN</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">ABN</span>
                     <span className="text-xl sm:text-2xl font-serif text-sky-50">71 687 187 113</span>
                   </div>
                 </div>
@@ -343,7 +343,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
               <div className="relative">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-sky-100/30 -z-10 pointer-events-none select-none">Services</div>
-                <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="text-sky-600">Services.</span></h2>
+                <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <button
@@ -370,7 +370,7 @@ export default function Home() {
                     }`}
                 >
 
-                  <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-sky-500 text-white shadow-[0_0_30px_rgba(14,165,233,0.3)]' : `bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white`
+                  <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
                     }`}>
                     <div className="w-8 h-8 flex items-center justify-center">
                       {service.icon}
@@ -385,18 +385,18 @@ export default function Home() {
                   </p>
 
                   <div className="mt-auto w-full flex items-center justify-between group/link">
-                    <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 ? 'text-sky-400 group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                    <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 ? 'text-gold group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
                       }`}>
                       Learn More
                     </span>
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 ? 'bg-white/10 group-hover:bg-sky-500' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 ? 'bg-white/10 group-hover:bg-gold' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
                       }`}>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
 
                   {/* Hover Glow Effect */}
-                  <div className="absolute inset-0 rounded-[3.5rem] border-2 border-sky-400/0 group-hover:border-sky-400/20 transition-colors pointer-events-none" />
+                  <div className="absolute inset-0 rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
                 </motion.div>
               ))}
             </div>
@@ -432,7 +432,7 @@ export default function Home() {
                     "5-star Google reviewed — verified results"
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 text-lg text-slate-700 font-sans">
-                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
+                      <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
                       {item}
                     </div>
                   ))}
@@ -445,7 +445,7 @@ export default function Home() {
                       <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
                     <div className="aspect-square rounded-[2rem] bg-slate-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
+                      <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
                     </div>
                   </div>
                   <div className="space-y-4">
@@ -453,11 +453,11 @@ export default function Home() {
                       <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
                     </div>
                     <div className="aspect-[4/5] rounded-[2rem] bg-slate-50 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
+                      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
                     </div>
                   </div>
                 </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-sky-500 rounded-full blur-[100px] opacity-20 -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gold rounded-full blur-[100px] opacity-20 -z-10" />
               </div>
             </div>
           </div>
@@ -469,7 +469,7 @@ export default function Home() {
             <div className="text-center mb-20">
               <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
                 Our Proven <br />
-                <span className="text-sky-400">5-Step Buying Approach.</span>
+                <span className="text-gold">5-Step Buying Approach.</span>
               </h2>
               <p className="text-xl text-white/60 font-sans max-w-2xl mx-auto">A clinical, data-led process from initial session to long-term support.</p>
             </div>
@@ -508,13 +508,13 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="relative group p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-sky-500/50 transition-all duration-500 shadow-2xl"
+                  className="relative group p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-sm hover:bg-white/[0.07] hover:border-gold/50 transition-all duration-500 shadow-2xl"
                 >
-                  <div className="text-4xl font-serif text-sky-400/30 mb-6 group-hover:text-sky-400 transition-colors uppercase tracking-widest">{item.step}</div>
+                  <div className="text-4xl font-serif text-gold/30 mb-6 group-hover:text-gold transition-colors uppercase tracking-widest">{item.step}</div>
                   <h3 className="text-xl font-serif text-white mb-4 leading-tight">{item.title}</h3>
                   <p className="text-sm text-slate-300 leading-relaxed font-sans">{item.desc}</p>
                   <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-1.5 h-1.5 rounded-full bg-sky-500" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-gold" />
                   </div>
                 </motion.div>
               ))}
@@ -545,7 +545,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-serif mb-8 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
               Start your Real Estate <br className="hidden md:block" />success story.
             </h2>
-            <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-sky-500 text-white hover:bg-sky-400 hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-sky-500/30 cursor-pointer">
+            <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
               Book Free Session
             </button>
           </motion.div>
@@ -596,7 +596,7 @@ export default function Home() {
                     <div className="mb-4">
                       <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
                       <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
-                      <span className="text-sm font-bold text-black bg-[#E6FBFF] inline-block px-3 py-1 rounded-full">{story.result}</span>
+                      <span className="text-sm font-bold text-gold bg-gold/10 inline-block px-3 py-1 rounded-full">{story.result}</span>
                     </div>
                     <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
                     <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
@@ -682,13 +682,13 @@ export default function Home() {
                     aria-controls={`faq-answer-${index}`}
                     className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-600 group-hover:text-[#021f3a]'}`}>
+                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-slate-600 group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 45 : 0 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-black bg-black text-white' : 'border-black/10 text-black group-hover:border-black'}`}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-black/10 text-black group-hover:border-gold group-hover:text-gold'}`}
                       aria-hidden="true"
                     >
                       <Plus className="w-5 h-5" />
@@ -723,7 +723,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-7 py-3 rounded-full border border-sky-400/20 bg-sky-50 text-sm font-bold uppercase tracking-[0.2em] text-sky-600 mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+              <div className="inline-block px-7 py-3 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
                 Take the next step
               </div>
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">

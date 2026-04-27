@@ -32,7 +32,7 @@ const pillars = [
   {
     title: 'Financial Clarity & Buying Power',
     description: 'The first step to a successful purchase is knowing exactly where you stand. We help you coordinate with specialist brokers to understand your borrowing capacity, deposit requirements, and eligibility for all available government grants and stamp duty concessions.\n\n• Borrowing capacity assessment\n• Deposit strategy planning\n• Government grant eligibility checks\n• Stamp duty savings analysis',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Suburb Research & Strategy',
@@ -42,7 +42,7 @@ const pillars = [
   {
     title: 'Due Diligence & Expert Negotiation',
     description: 'Buying your first home shouldn\'t be a gamble. We manage every aspect of the search and negotiation, ensuring you avoid costly mistakes and secure the property on the best possible terms.\n\n• Contract review coordination\n• Building & pest management\n• Strategic auction representation\n• Private treaty negotiation',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
   }
 ];
 
@@ -60,8 +60,8 @@ export default function FirstHomeBuyers() {
       <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
         <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-20 bg-[#021f3a] text-white overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <motion.div
@@ -69,12 +69,12 @@ export default function FirstHomeBuyers() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-7 py-3 rounded-full border border-sky-400/50 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
+              <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
                 First Home Buyers
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
                 Your Journey to Home Ownership,{' '}
-                <span className="text-sky-400">Simplified & Strategic.</span>
+                <span className="text-gold">Simplified & Strategic.</span>
               </h1>
               <p className="text-xl md:text-2xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 Stop guessing and start moving. We provide the data, strategy, and negotiation power to help you secure your first home without the stress of overpaying.
@@ -111,7 +111,7 @@ export default function FirstHomeBuyers() {
                     "Complete peace of mind through managed due diligence"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-4">
-                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                      <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -158,7 +158,7 @@ export default function FirstHomeBuyers() {
                           <div key={pIdx} className="space-y-3 mt-4">
                             {paragraph.split('\n').map((item, iIdx) => (
                               <div key={iIdx} className="flex items-start gap-4">
-                                <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                                <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                                 <span>{item.replace('• ', '')}</span>
                               </div>
                             ))}
@@ -191,13 +191,7 @@ export default function FirstHomeBuyers() {
               {/* Left — Sticky Panel */}
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
                 <div className="mb-6">
-                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400">Our Process</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
-                  What We Do for{' '}
-                  <span className="text-sky-300">First Home Buyers</span>
-                </h2>
-                <div className="h-1 w-16 bg-sky-400 mb-8 rounded-full" />
+                <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
                   From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase — so you can move forward with confidence, not guesswork.
                 </p>
@@ -210,19 +204,19 @@ export default function FirstHomeBuyers() {
                     step: '01',
                     title: 'Step 1 - Strategy & Financial Clarity',
                     body: 'We start by getting a clear picture of where you stand financially, including borrowing capacity, deposit, and eligibility for first home buyer incentives and stamp duty savings.',
-                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Suburb Research & Targeting',
                     body: 'Using data-led research, we assess price growth, market demand, and local infrastructure to identify the right locations across Australia that fit your lifestyle and budget.',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1543286386-713bdd54867e?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '03',
                     title: 'Step 3 - Off-Market Property Sourcing',
                     body: 'We tap into our industry network to find properties before they hit realestate.com.au or Domain, giving you access to quality homes without the public competition.',
-                    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '04',
@@ -234,7 +228,7 @@ export default function FirstHomeBuyers() {
                     step: '05',
                     title: 'Step 5 - Negotiation & Securing the Deal',
                     body: 'We represent you at auction or in private treaty negotiations, using market data and discipline to secure the property on the best possible terms.',
-                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '06',
@@ -252,7 +246,7 @@ export default function FirstHomeBuyers() {
                             whileInView={{ height: '100%' }}
                             viewport={{ once: false, margin: '-25% 0px -25% 0px' }}
                             transition={{ duration: 1.2, ease: 'easeInOut' }}
-                            className="absolute top-0 left-0 w-full bg-gradient-to-b from-sky-400 to-sky-400/20"
+                            className="absolute top-0 left-0 w-full bg-gradient-to-b from-gold to-gold/20"
                           />
                         </div>
                       )}
@@ -261,7 +255,7 @@ export default function FirstHomeBuyers() {
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: true, margin: '-15%' }}
                         transition={{ duration: 0.5, ease: 'backOut' }}
-                        className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/20 absolute left-0 top-[24px] z-10" 
+                        className="w-4 h-4 rounded-full bg-gold ring-4 ring-gold/20 absolute left-0 top-[24px] z-10" 
                       />
                     </div>
 
@@ -271,7 +265,7 @@ export default function FirstHomeBuyers() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-80px' }}
                         transition={{ duration: 0.7, ease: 'easeOut' }}
-                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 transition-all duration-300 group"
+                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
@@ -280,7 +274,7 @@ export default function FirstHomeBuyers() {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
-                          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
                             Step {card.step}
                           </div>
                         </div>
@@ -319,7 +313,7 @@ export default function FirstHomeBuyers() {
                   </p>
                   <button
                     onClick={openCalendly}
-                    className="w-full rounded-full py-4 bg-[#021f3a] text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-600 transition-all duration-300"
+                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300"
                   >
                     Start My Journey
                   </button>
@@ -344,7 +338,7 @@ export default function FirstHomeBuyers() {
                       transition={{ delay: idx * 0.1 }}
                       className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-sky-200 transition-all duration-300 group"
                     >
-                      <div className="w-10 h-10 rounded-full bg-sky-500/10 text-sky-600 flex items-center justify-center mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                      <div className="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center mb-4 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
                         <Plus className="w-5 h-5" />
                       </div>
                       <h4 className="text-lg font-serif text-[#011122] mb-2">{item.title}</h4>
@@ -368,9 +362,9 @@ export default function FirstHomeBuyers() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
               >
-                Why JJ Property Partner for <span className="text-sky-400">First Home Success</span>
+                Why JJ Property Partner for <span className="text-gold">First Home Success</span>
               </motion.h2>
-              <div className="h-1.5 w-24 bg-sky-500 mx-auto rounded-full" />
+              <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -389,7 +383,7 @@ export default function FirstHomeBuyers() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center text-center p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-6 font-serif text-2xl font-bold">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-serif text-2xl font-bold">
                     {idx + 1}
                   </div>
                   <h3 className="text-xl font-serif mb-4 text-sky-100">{item.title}</h3>
@@ -406,7 +400,7 @@ export default function FirstHomeBuyers() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
                 Frequently <br />
-                <span className="text-sky-500">asked questions.</span>
+                <span className="text-gold">asked questions.</span>
               </h2>
               <p className="text-slate-600 text-lg font-sans leading-relaxed">Everything you need to know about buying your first home with expert representation.</p>
             </div>
@@ -425,13 +419,13 @@ export default function FirstHomeBuyers() {
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full flex items-center justify-between py-6 text-left hover:bg-slate-50 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-700 group-hover:text-sky-600'}`}>
+                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-slate-700 group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 45 : 0 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-[#021f3a] bg-[#021f3a] text-white shadow-lg' : 'border-slate-200 text-slate-400 group-hover:border-sky-500 group-hover:text-sky-500'}`}
+                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-slate-200 text-slate-400 group-hover:border-gold group-hover:text-gold'}`}
                     >
                       <Plus className="w-6 h-6" />
                     </motion.div>
@@ -466,7 +460,7 @@ export default function FirstHomeBuyers() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
-                Secure your <span className="text-sky-400">first home</span> today.
+                Secure your <span className="text-gold">first home</span> today.
               </h2>
               <p className="text-xl text-sky-100/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
                 Ready to stop scrolling and start finding? Book your free, no-obligation strategy session to understand how we can help you get the keys faster.
@@ -474,7 +468,7 @@ export default function FirstHomeBuyers() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-12 py-5 bg-sky-500 text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-400 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-sky-500/40"
+                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40"
                 >
                   Book Free Session
                 </button>

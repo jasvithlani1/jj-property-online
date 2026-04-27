@@ -32,12 +32,12 @@ const pillars = [
   {
     title: 'Data-Led Research & Selection',
     description: 'We use professional analysis tools to identify high-performing suburbs nationwide. Our research focuses on areas with confirmed infrastructure projects, low vacancy rates, and strong population growth.\n\n• National market exposure\n• Suburb-specific growth drivers\n• Detailed yield & vacancy analysis\n• Infrastructure & development tracking',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1543286386-713bdd54867e?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Off-Market Property Sourcing',
     description: 'Access properties that never reach the public portals. We use our deep industry network to uncover high-quality investment opportunities with less competition and better buying terms.\n\n• Early access to pre-market deals\n• Exclusive off-market opportunities\n• Direct relationships with sales agents\n• Reduced competition on quality assets',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Strategic Portfolio Execution',
@@ -60,8 +60,8 @@ export default function PropertyInvestors() {
       <div className="w-full bg-white selection:bg-black/10 pt-20">
         {/* Hero Section */}
         <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-20 bg-[#021f3a] text-white overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 blur-[160px] rounded-full -z-0 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sky-400/10 blur-[120px] rounded-full -z-0 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
           <div className="max-w-7xl mx-auto relative z-10 text-center">
             <motion.div
@@ -69,12 +69,12 @@ export default function PropertyInvestors() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-7 py-3 rounded-full border border-sky-400/50 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
+              <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
                 Property Investors
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
                 Acquisition Strategies Engineered for{' '}
-                <span className="text-sky-400">Investment Precision.</span>
+                <span className="text-gold">Investment Precision.</span>
               </h1>
               <p className="text-xl md:text-2xl text-sky-100/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 Building a high-performing property portfolio requires more than guesswork. It demands systematic research, strategic timing, and professional execution.
@@ -111,7 +111,7 @@ export default function PropertyInvestors() {
                     "Close collaboration with your broker, accountant, and financial adviser"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-4">
-                      <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                      <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -126,8 +126,8 @@ export default function PropertyInvestors() {
               className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
-                alt="Modern City Skyline"
+                src="https://images.unsplash.com/photo-1449156003053-c3d8c89b90c9?auto=format&fit=crop&q=80&w=1200"
+                alt="Modern Residential Building"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -158,7 +158,7 @@ export default function PropertyInvestors() {
                           <div key={pIdx} className="space-y-3 mt-4">
                             {paragraph.split('\n').map((item, iIdx) => (
                               <div key={iIdx} className="flex items-start gap-4">
-                                <div className="w-2 h-2 rounded-full bg-sky-500 shrink-0 mt-2.5" />
+                                <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                                 <span>{item.replace('• ', '')}</span>
                               </div>
                             ))}
@@ -191,13 +191,7 @@ export default function PropertyInvestors() {
               {/* Left — Sticky Panel */}
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
                 <div className="mb-6">
-                  <span className="text-xs font-bold uppercase tracking-[0.25em] text-sky-400">Our Strategy</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
-                  Strategic Portfolio Building for{' '}
-                  <span className="text-sky-300">Investors</span>
-                </h2>
-                <div className="h-1 w-16 bg-sky-400 mb-8 rounded-full" />
+                <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
                   Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
                 </p>
@@ -210,7 +204,7 @@ export default function PropertyInvestors() {
                     step: '01',
                     title: 'Step 1 - Investment Thesis & Strategy',
                     body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.',
-                    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1591123109285-125038ea1d68?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '02',
@@ -246,7 +240,7 @@ export default function PropertyInvestors() {
                             whileInView={{ height: '100%' }}
                             viewport={{ once: false, margin: '-25% 0px -25% 0px' }}
                             transition={{ duration: 1.2, ease: 'easeInOut' }}
-                            className="absolute top-0 left-0 w-full bg-gradient-to-b from-sky-400 to-sky-400/20"
+                            className="absolute top-0 left-0 w-full bg-gradient-to-b from-gold to-gold/20"
                           />
                         </div>
                       )}
@@ -255,7 +249,7 @@ export default function PropertyInvestors() {
                         whileInView={{ scale: 1, opacity: 1 }}
                         viewport={{ once: true, margin: '-15%' }}
                         transition={{ duration: 0.5, ease: 'backOut' }}
-                        className="w-4 h-4 rounded-full bg-sky-400 ring-4 ring-sky-400/20 absolute left-0 top-[24px] z-10" 
+                        className="w-4 h-4 rounded-full bg-gold ring-4 ring-gold/20 absolute left-0 top-[24px] z-10" 
                       />
                     </div>
 
@@ -265,7 +259,7 @@ export default function PropertyInvestors() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-80px' }}
                         transition={{ duration: 0.7, ease: 'easeOut' }}
-                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-sky-400/30 transition-all duration-300 group"
+                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
@@ -274,7 +268,7 @@ export default function PropertyInvestors() {
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#021f3a]/90 via-[#021f3a]/20 to-transparent" />
-                          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-sky-500/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+                          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
                             Step {card.step}
                           </div>
                         </div>
@@ -313,7 +307,7 @@ export default function PropertyInvestors() {
                   </p>
                   <button
                     onClick={openCalendly}
-                    className="w-full rounded-full py-4 bg-[#021f3a] text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-600 transition-all duration-300"
+                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300"
                   >
                     Discuss My Strategy
                   </button>
@@ -338,7 +332,7 @@ export default function PropertyInvestors() {
                       transition={{ delay: idx * 0.1 }}
                       className="p-6 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-sky-200 transition-all duration-300 group"
                     >
-                      <div className="w-10 h-10 rounded-full bg-sky-500/10 text-sky-600 flex items-center justify-center mb-4 group-hover:bg-sky-500 group-hover:text-white transition-colors duration-300">
+                      <div className="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center mb-4 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
                         <Plus className="w-5 h-5" />
                       </div>
                       <h4 className="text-lg font-serif text-[#011122] mb-2">{item.title}</h4>
@@ -362,9 +356,9 @@ export default function PropertyInvestors() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
               >
-                Why JJ Property Partner for <span className="text-sky-400">Investor Success</span>
+                Why JJ Property Partner for <span className="text-gold">Investor Success</span>
               </motion.h2>
-              <div className="h-1.5 w-24 bg-sky-500 mx-auto rounded-full" />
+              <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -383,7 +377,7 @@ export default function PropertyInvestors() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-center text-center p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-6 font-serif text-2xl font-bold">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-serif text-2xl font-bold">
                     {idx + 1}
                   </div>
                   <h3 className="text-xl font-serif mb-4 text-sky-100">{item.title}</h3>
@@ -400,7 +394,7 @@ export default function PropertyInvestors() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
                 Frequently <br />
-                <span className="text-sky-500">asked questions.</span>
+                <span className="text-gold">asked questions.</span>
               </h2>
               <p className="text-slate-600 text-lg font-sans leading-relaxed">Strategic insights for property investors building nationwide portfolios.</p>
             </div>
@@ -419,13 +413,13 @@ export default function PropertyInvestors() {
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full flex items-center justify-between py-6 text-left hover:bg-slate-50 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-[#021f3a]' : 'text-slate-700 group-hover:text-sky-600'}`}>
+                    <span className={`text-xl sm:text-2xl font-serif transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-slate-700 group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 45 : 0 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-[#021f3a] bg-[#021f3a] text-white shadow-lg' : 'border-slate-200 text-slate-400 group-hover:border-sky-500 group-hover:text-sky-500'}`}
+                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-slate-200 text-slate-400 group-hover:border-gold group-hover:text-gold'}`}
                     >
                       <Plus className="w-6 h-6" />
                     </motion.div>
@@ -460,7 +454,7 @@ export default function PropertyInvestors() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
-                Build your <span className="text-sky-400">portfolio</span> with precision.
+                Build your <span className="text-gold">portfolio</span> with precision.
               </h2>
               <p className="text-xl text-sky-100/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
                 Ready to take your property investment strategy to the next level? Book your free, no-obligation strategy session with Alex today.
@@ -468,7 +462,7 @@ export default function PropertyInvestors() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-12 py-5 bg-sky-500 text-white text-sm font-bold uppercase tracking-widest hover:bg-sky-400 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-sky-500/40"
+                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40"
                 >
                   Book Free Session
                 </button>

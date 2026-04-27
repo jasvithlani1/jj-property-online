@@ -156,7 +156,7 @@ export const blogPosts: BlogPost[] = [
     date: 'January 8, 2026',
     author: 'Alex',
     authorRole: 'Principal Advisor, JJ Property Partner',
-    coverImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1400',
+    coverImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1400',
     content: [
       { type: 'paragraph', text: 'The Northern Beaches peninsula stretches 30+ kilometres from Manly to Palm Beach, and the investment performance of a property in Avalon is almost nothing like the performance of an equivalent property in Dee Why — despite both being "Northern Beaches". Understanding these distinctions is the difference between a high-performing investment and a lifestyle purchase that underdelivers on return.' },
       { type: 'heading', text: 'The B-Line Factor' },

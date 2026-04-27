@@ -27,7 +27,7 @@ const PageLoader = () => (
 
 function App() {
   return (
-    <div className="min-h-screen font-sans selection:bg-sky-500/30 selection:text-black bg-sky-50 flex flex-col">
+    <div className="min-h-screen font-sans selection:bg-gold/30 selection:text-black bg-sky-50 flex flex-col">
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<PageLoader />}>

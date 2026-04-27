@@ -102,12 +102,12 @@ export default function Contact() {
               <div className="space-y-8">
                 {/* Email */}
                 <div className="flex items-start gap-5 group">
-                  <div className="p-4 rounded-2xl bg-sky-50 border border-sky-100 text-sky-600 group-hover:bg-black group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <a href="mailto:info@jjpropertypartner.com.au" className="text-xl font-sans font-medium text-black hover:text-sky-600 transition-colors">
+                    <a href="mailto:info@jjpropertypartner.com.au" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
                       info@jjpropertypartner.com.au
                     </a>
                   </div>
@@ -115,12 +115,12 @@ export default function Contact() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-5 group">
-                  <div className="p-4 rounded-2xl bg-sky-50 border border-sky-100 text-sky-600 group-hover:bg-black group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h3>
-                    <a href="tel:+61481334458" className="text-xl font-sans font-medium text-black hover:text-sky-600 transition-colors">
+                    <a href="tel:+61481334458" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
                       +61 481 334 458
                     </a>
                   </div>
@@ -128,7 +128,7 @@ export default function Contact() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start gap-5 group">
-                  <div className="p-4 rounded-2xl bg-sky-50 border border-sky-100 text-sky-600 group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm">
                     <FaWhatsapp className="w-6 h-6" />
                   </div>
                   <div>
@@ -163,7 +163,7 @@ export default function Contact() {
             >
               {status === 'success' ? (
                 <div className="py-20 text-center animate-fade-in">
-                  <div className="w-20 h-20 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-600">
+                  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className="text-3xl font-serif text-black mb-4">Inquiry Received</h3>
@@ -196,7 +196,7 @@ export default function Contact() {
                         placeholder="E.g. John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
+                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
                       />
                     </div>
 
@@ -209,7 +209,7 @@ export default function Contact() {
                           placeholder="john@example.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
+                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
                         />
                       </div>
                       <div className="space-y-2">
@@ -219,7 +219,7 @@ export default function Contact() {
                           placeholder="+61 481 334 458"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans"
+                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
                         />
                       </div>
                     </div>
@@ -229,7 +229,7 @@ export default function Contact() {
                       <select
                         value={formData.goal}
                         onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans appearance-none cursor-pointer"
+                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans appearance-none cursor-pointer"
                       >
                         <option value="" disabled>Select an option...</option>
                         <option value="owner-occupier">Owner Occupier / First Home</option>
@@ -245,7 +245,7 @@ export default function Contact() {
                         placeholder="Tell us a bit about what you are looking to achieve..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-sky-300 focus:outline-none focus:ring-4 focus:ring-sky-100 transition-all outline-none font-sans resize-none"
+                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans resize-none"
                       ></textarea>
                     </div>
 
@@ -253,7 +253,7 @@ export default function Contact() {
                       <button
                         type="submit"
                         disabled={status === 'submitting'}
-                        className={`w-full rounded-2xl px-6 py-5 text-sm bg-black text-white hover:scale-[1.02] transition-transform duration-300 uppercase tracking-widest font-bold shadow-xl shadow-black/10 flex items-center justify-center gap-2 group ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                        className={`w-full rounded-2xl px-6 py-5 text-sm bg-gold text-white hover:bg-gold-hover hover:scale-[1.02] transition-all duration-300 uppercase tracking-widest font-bold shadow-xl shadow-gold/20 flex items-center justify-center gap-2 group ${status === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
                       >
                         {status === 'submitting' ? 'Sending...' : 'Submit Inquiry'}
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

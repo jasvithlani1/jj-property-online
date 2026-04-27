@@ -17,7 +17,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <div className="font-sans font-black text-2xl sm:text-3xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
-                <div className="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-sky-400 leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
+                <div className="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-gold leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
             <p className="text-base text-sky-100/90 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300 mb-8 border-b border-sky-300/20 pb-2 inline-block font-sans">Navigation</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
             <ul className="space-y-4 font-sans text-sky-200/80 text-sm">              <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Home</Link></li>
               <li><Link to="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">About Us</Link></li>
               <li><Link to="/services" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Services</Link></li>
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300 mb-8 border-b border-sky-300/20 pb-2 inline-block font-sans">Services</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
             <ul className="space-y-4 font-sans text-sky-200/80 text-sm">              <li><Link to="/services/first-home-buyers" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">First Home Buyers</Link></li>
               <li><Link to="/services/property-investors" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">Property Investors</Link></li>
               <li><Link to="/services/smsf-property" onClick={() => window.scrollTo(0, 0)} className="hover:text-white hover:translate-x-1 transition-all inline-block">SMSF Investment</Link></li>
@@ -48,32 +48,32 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-sky-300 mb-8 border-b border-sky-300/20 pb-2 inline-block font-sans">Connect</h4>
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
             <ul className="space-y-6 font-sans text-sky-200/80">              <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Mail className="w-4 h-4 text-sky-300" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">Email</span>
+                  <Mail className="w-4 h-4 text-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Email</span>
                 </div>
                 <a href="mailto:info@jjpropertypartner.com.au" className="hover:text-white transition-colors text-sm break-all md:break-normal text-sky-100">info@jjpropertypartner.com.au</a>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Phone className="w-4 h-4 text-sky-300" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">Call</span>
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Call</span>
                 </div>
                 <a href="tel:+61481334458" className="text-sm hover:text-white transition-colors text-sky-100">+61 481 334 458</a>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Hash className="w-4 h-4 text-sky-300" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">ABN</span>
+                  <Hash className="w-4 h-4 text-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">ABN</span>
                 </div>
                 <span className="text-sm text-sky-100 transition-colors">71 687 187 113</span>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
-                  <Award className="w-4 h-4 text-sky-300" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-sky-300">License</span>
+                  <Award className="w-4 h-4 text-gold" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">License</span>
                 </div>
                 <span className="text-sm text-sky-100 transition-colors">No. 20543356</span>
               </li>
@@ -85,7 +85,7 @@ export default function Footer() {
         {/* Socials & Summary */}
         <div className="mt-20 border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-sky-400 mb-6">Follow Our Journey</p>
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-gold mb-6">Follow Our Journey</p>
             <div className="flex items-center gap-4">
               {[
                 { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
@@ -94,8 +94,8 @@ export default function Footer() {
                 { icon: <FaTwitter className="w-4 h-4" />, label: 'Twitter', href: 'https://x.com/jjproperty01' },
                 { icon: <FaLinkedinIn className="w-4 h-4" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-buyers-agent-930139403/' },
               ].map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 hover:bg-sky-500 hover:border-sky-500 flex items-center justify-center transition-all hover:scale-110 group shadow-xl">
-                  <span className="text-sky-400 group-hover:text-white transition-colors">{s.icon}</span>
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 hover:bg-gold hover:border-gold flex items-center justify-center transition-all hover:scale-110 group shadow-xl">
+                  <span className="text-gold group-hover:text-white transition-colors">{s.icon}</span>
                 </a>
               ))}
             </div>
@@ -114,11 +114,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="absolute left-1/2 -translate-x-1/2 -top-6 w-12 h-12 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 border-4 border-[#021f3a] group"
-          aria-label="Back to Top"
-        >
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="absolute left-1/2 -translate-x-1/2 -top-6 w-12 h-12 bg-gold hover:bg-gold-hover rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:scale-110 border-4 border-[#021f3a] group"
+            aria-label="Back to Top"
+          >
           <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
         </button>
       </div>
