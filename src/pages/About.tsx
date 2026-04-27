@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowRight } from 'lucide-react';
 
 export default function About() {
   return (
@@ -134,6 +135,56 @@ export default function About() {
               <p>
                 Rather than relying only on broad suburb reports or gut feel, JJ Property Partner assesses multiple data points at once, including price trends, rental yields, vacancy rates, infrastructure plans, population growth, supply and demand, and changing demographics. This allows for sharper suburb selection and better long-term outcomes for clients.
               </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Purpose Section */}
+      <section className="py-24 md:py-32 px-8 bg-[#FFFBF2] overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="text-8xl md:text-[10rem] font-serif text-gold/40 leading-none mb-4 select-none">JJ</div>
+            <h2 className="text-3xl md:text-5xl font-serif italic text-[#011122] mb-12">
+              A name with purpose. A promise with heart.
+            </h2>
+            
+            <div className="space-y-8 text-lg md:text-xl text-muted font-sans leading-relaxed mb-16">
+              <p>
+                The initials <span className="text-[#011122] font-semibold">JJ</span> carry deep personal meaning. They represent the two people who inspired Alex to build something lasting — his daughters <span className="text-[#011122] font-medium">Jessica and Jennifer</span>.
+              </p>
+              <p>
+                Every property acquisition, every negotiation, every piece of advice is delivered with the same dedication he puts into building their future.
+              </p>
+            </div>
+
+            <div className="mb-24">
+              <Link 
+                to="/contact" 
+                className="inline-flex items-center gap-3 px-10 py-5 bg-gold hover:bg-gold-hover text-[#011122] text-sm font-bold uppercase tracking-[0.2em] rounded-sm shadow-xl transition-all hover:scale-105 active:scale-95 group"
+              >
+                Start Your Journey
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            <div className="flex items-center justify-center gap-12 md:gap-24 relative">
+              <div className="flex flex-col items-center">
+                <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jessica</span>
+              </div>
+              
+              <div className="text-3xl md:text-4xl font-serif text-gold">+</div>
+              
+              <div className="flex flex-col items-center">
+                <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jennifer</span>
+              </div>
             </div>
           </motion.div>
         </div>
