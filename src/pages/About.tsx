@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowRight } from 'lucide-react';
+import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from '../components/Link';
 
 export default function About() {
@@ -124,10 +124,13 @@ export default function About() {
             <div className="mb-24">
               <Link 
                 href="/contact" 
-                className="inline-flex items-center gap-3 px-10 py-5 bg-gold hover:bg-gold-hover text-[#011122] text-sm font-bold uppercase tracking-[0.2em] rounded-sm shadow-xl transition-all hover:scale-105 active:scale-95 group"
+                className="relative inline-flex items-center gap-3 px-12 py-5 bg-gold text-[#011122] text-sm font-bold uppercase tracking-[0.3em] rounded-[2px] shadow-xl transition-all hover:scale-105 active:scale-95 group overflow-hidden"
               >
-                Start Your Journey
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {/* Shine Effect */}
+                <div className="absolute inset-0 w-1/2 h-full bg-white/20 -skew-x-[25deg] -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-in-out" />
+                
+                <span className="relative z-10">Start Your Journey</span>
+                <ArrowUpRight className="relative z-10 w-4 h-4 transition-transform duration-300" />
               </Link>
             </div>
 
