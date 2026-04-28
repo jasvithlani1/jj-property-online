@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
+            <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
             <ul className="space-y-4 font-sans text-white/60 text-sm">
               {navLinks.map((link) => (
                 <li key={link.label}>
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
+            <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
             <ul className="space-y-4 font-sans text-white/60 text-sm">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
@@ -93,33 +93,33 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
+            <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
             <ul className="space-y-6 font-sans text-white/60">
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Mail className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Email</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Email</span>
                 </div>
                 <Link href="mailto:info@jjpropertypartner.com.au" className="hover:text-gold transition-colors text-sm break-all md:break-normal text-white/80">info@jjpropertypartner.com.au</Link>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Phone className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">Call</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Call</span>
                 </div>
                 <Link href="tel:+61481334458" className="text-sm hover:text-gold transition-colors text-white/80">+61 481 334 458</Link>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Hash className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">ABN</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">ABN</span>
                 </div>
                 <span className="text-sm text-white/80">71 687 187 113</span>
               </li>
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Award className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">License</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">License</span>
                 </div>
                 <span className="text-sm text-white/80">No. 20543356</span>
               </li>
@@ -131,7 +131,7 @@ export default function Footer() {
         {/* Socials */}
         <div className="mt-8 border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-gold mb-4">Follow Our Journey</p>
+            <p className="text-[13px] font-bold uppercase tracking-[0.4em] text-gold mb-4">Follow Our Journey</p>
             <div className="flex items-center gap-4">
               {socialLinks.map((s) => (
                 <Link
