@@ -4,10 +4,10 @@ import { Helmet } from 'react-helmet-async';
 import { Home as HomeIcon, TrendingUp, ArrowRight, Plus, Star, Quote } from 'lucide-react';
 import { FaHome, FaChartLine } from 'react-icons/fa';
 import { TbHomeShield } from 'react-icons/tb';
-import { Link, useNavigate } from 'react-router-dom';
 import { openCalendly, initInlineCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
 import { client } from '../lib/sanity';
+import Link from '../components/Link';
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -97,7 +97,6 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
   const [reviews, setReviews] = useState<any[]>([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -259,9 +258,9 @@ export default function Home() {
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
               Book Session
             </button>
-            <button onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }} className="rounded-full px-14 py-5 text-base border border-gold/30 bg-white/10 backdrop-blur-sm text-white hover:bg-gold hover:border-gold transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
+            <Link href="/case-studies" className="rounded-full px-14 py-5 text-base border border-gold/30 bg-white/10 backdrop-blur-sm text-white hover:bg-gold hover:border-gold transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
               Client Stories
-            </button>
+            </Link>
           </div>
         </motion.section>
 
@@ -290,7 +289,7 @@ export default function Home() {
               </div>
 
               <div className="mt-8 flex items-center gap-4">
-                <Link to="/about" className="group text-sm font-bold uppercase tracking-widest text-black flex items-center gap-2">
+                <Link href="/about" className="group text-sm font-bold uppercase tracking-widest text-black flex items-center gap-2">
                   Read Full Profile
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -346,58 +345,61 @@ export default function Home() {
                 <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
-              <button
-                onClick={() => { navigate('/services'); window.scrollTo(0, 0); }}
+              <Link
+                href="/services"
                 className="group flex items-center gap-3 shrink-0 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
               >
                 View Full Spectrum
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {servicesPreview.map((service, index) => (
-                <motion.div
+                <Link
                   key={service.title}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.8, delay: index * 0.15 }}
-                  onClick={() => { navigate(`/services#${service.anchor}`); window.scrollTo(0, 0); }}
+                  href={`/services#${service.anchor}`}
                   className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index !== 1
                     ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 md:z-20'
                     : 'bg-white border-black/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-gold/10'
                     }`}
                 >
-
-                  <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
-                    }`}>
-                    <div className="w-8 h-8 flex items-center justify-center">
-                      {service.icon}
-                    </div>
-                  </div>
-
-                  <h3 className={`text-3xl font-serif mb-6 leading-tight ${index !== 1 ? 'text-white' : 'text-black font-semibold'}`}>
-                    {service.title}
-                  </h3>
-                  <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index !== 1 ? 'text-white/70' : 'text-muted'}`}>
-                    {service.description}
-                  </p>
-
-                  <div className="mt-auto w-full flex items-center justify-between group/link">
-                    <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 ? 'text-gold group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, delay: index * 0.15 }}
+                    className="w-full h-full flex flex-col items-start"
+                  >
+                    <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
                       }`}>
-                      Learn More
-                    </span>
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 ? 'bg-white/10 group-hover:bg-gold' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
-                      }`}>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <div className="w-8 h-8 flex items-center justify-center">
+                        {service.icon}
+                      </div>
                     </div>
-                  </div>
+
+                    <h3 className={`text-3xl font-serif mb-6 leading-tight ${index !== 1 ? 'text-white' : 'text-black font-semibold'}`}>
+                      {service.title}
+                    </h3>
+                    <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index !== 1 ? 'text-white/70' : 'text-muted'}`}>
+                      {service.description}
+                    </p>
+
+                    <div className="mt-auto w-full flex items-center justify-between group/link">
+                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 ? 'text-gold group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                        }`}>
+                        Learn More
+                      </span>
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 ? 'bg-white/10 group-hover:bg-gold' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                        }`}>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </motion.div>
 
                   {/* Hover Glow Effect */}
                   <div className="absolute inset-0 rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
-                </motion.div>
+                </Link>
               ))}
             </div>
           </div>
@@ -577,53 +579,60 @@ export default function Home() {
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investments — curated results that define our standard.</p>
               </div>
-              <button
-                onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
+              <Link
+                href="/case-studies"
                 className="group flex items-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
               >
                 All Case Studies
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {caseStudies.map((story, index) => (
-                <motion.div
+                <Link
                   key={story.id}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
-                  onClick={() => { navigate(`/case-studies/${story.id}`); window.scrollTo(0, 0); }}
+                  href={`/case-studies/${story.id}`}
                   className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-gold/10 overflow-hidden hover:shadow-gold/20 transition-all duration-500 cursor-pointer flex flex-col"
                 >
-                  <div className="h-48 overflow-hidden">
-                    <img
-                      src={story.image}
-                      alt={story.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
-                      width={800}
-                      height={450}
-                    />
-                  </div>
-                  <div className="p-8 flex flex-col flex-1">
-                    <div className="mb-4">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
-                      <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
-                      <span className="text-sm font-bold text-gold bg-gold/10 inline-block px-3 py-1 rounded-full">{story.result}</span>
+                  <motion.div
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
+                    className="w-full h-full flex flex-col"
+                  >
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={story.image}
+                        alt={story.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
+                        width={800}
+                        height={450}
+                      />
                     </div>
-                    <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
-                    <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
-                      <Quote className="w-3.5 h-3.5" />
-                      Read Story
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <div className="p-8 flex flex-col flex-1">
+                      <div className="mb-4">
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
+                        <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
+                        <span className="text-sm font-bold text-gold bg-gold/10 inline-block px-3 py-1 rounded-full">{story.result}</span>
+                      </div>
+                      <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
+                      <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
+                        <Quote className="w-3.5 h-3.5" />
+                        Read Story
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
+          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full opacity-30 animate-pulse" />
+          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gold/10 blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
+        </section>
           <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full opacity-30 animate-pulse" />
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gold/10 blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
         </section>

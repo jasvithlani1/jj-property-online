@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
+import Link from '../components/Link';
 
 const fhbFaqs = [
   {
@@ -47,7 +47,6 @@ const pillars = [
 ];
 
 export default function FirstHomeBuyers() {
-  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -314,7 +313,7 @@ export default function FirstHomeBuyers() {
                   </p>
                   <button
                     onClick={openCalendly}
-                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300"
+                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300 cursor-pointer"
                   >
                     Start My Journey
                   </button>
@@ -469,16 +468,16 @@ export default function FirstHomeBuyers() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40"
+                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
                 >
                   Book Free Session
                 </button>
-                <button
-                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                <Link
+                  href="/contact"
                   className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
                   Contact Alex
-                </button>
+                </Link>
               </div>
             </motion.div>
           </div>

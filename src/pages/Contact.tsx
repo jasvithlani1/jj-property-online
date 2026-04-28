@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useState } from 'react';
 import { writeClient } from '../lib/sanity';
+import Link from '../components/Link';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -107,9 +108,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <a href="mailto:info@jjpropertypartner.com.au" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+                    <Link href="mailto:info@jjpropertypartner.com.au" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
                       info@jjpropertypartner.com.au
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -120,9 +121,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h3>
-                    <a href="tel:+61481334458" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+                    <Link href="tel:+61481334458" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
                       +61 481 334 458
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -133,9 +134,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
-                    <a href="https://wa.me/61481334458" target="_blank" rel="noopener noreferrer" className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
+                    <Link href="https://wa.me/61481334458" className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
                       Message us instantly
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

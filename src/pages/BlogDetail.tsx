@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
 import SEO from '../components/SEO';
 import { openCalendly } from '../utils/calendly';
+import Link from '../components/Link';
 
 interface SanityPost {
   _id: string;
@@ -60,7 +61,6 @@ const ptComponents = {
 
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const [post, setPost] = useState<SanityPost | null>(null);
   const [otherPosts, setOtherPosts] = useState<SanityPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -120,12 +120,12 @@ export default function BlogDetail() {
       <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
         <h1 className="text-5xl font-serif text-[#011122] mb-4">Article Not Found</h1>
         <p className="text-muted font-sans mb-10 text-lg">We couldn't find the article you were looking for.</p>
-        <button
-          onClick={() => navigate('/blog')}
+        <Link
+          href="/blog"
           className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
         >
           Back to Blog
-        </button>
+        </Link>
       </div>
     );
   }
@@ -142,13 +142,13 @@ export default function BlogDetail() {
       {/* Back nav */}
       <div className="px-8 pt-12 pb-0 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <button
-            onClick={() => { navigate('/blog'); window.scrollTo(0, 0); }}
+          <Link
+            href="/blog"
             className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted hover:text-black transition-colors"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             All Articles
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -254,7 +254,7 @@ export default function BlogDetail() {
                 </p>
                 <button
                   onClick={openCalendly}
-                  className="w-full rounded-2xl px-6 py-4 bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full rounded-2xl px-6 py-4 bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Book 30m Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -266,9 +266,9 @@ export default function BlogDetail() {
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6">More Articles</p>
                 <div className="flex flex-col gap-5">
                   {otherPosts.map((other) => (
-                    <button
+                    <Link
                       key={other._id}
-                      onClick={() => { navigate(`/blog/${other.slug.current}`); window.scrollTo(0, 0); }}
+                      href={`/blog/${other.slug.current}`}
                       className="group flex gap-4 items-center text-left hover:bg-gold/5 rounded-2xl p-3 -mx-3 transition-colors"
                     >
                       <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
@@ -282,7 +282,7 @@ export default function BlogDetail() {
                         )}
                         <p className="text-sm font-serif text-[#011122] leading-snug group-hover:text-gold transition-colors line-clamp-2">{other.title}</p>
                       </div>
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>

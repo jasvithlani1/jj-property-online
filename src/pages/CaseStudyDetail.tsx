@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, MapPin, Quote } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import { openCalendly } from '../utils/calendly';
+import Link from '../components/Link';
 
 interface SanityCaseStudy {
   _id: string;
@@ -27,7 +28,6 @@ interface SanityCaseStudy {
 
 export default function CaseStudyDetail() {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const [study, setStudy] = useState<SanityCaseStudy | null>(null);
   const [otherStudies, setOtherStudies] = useState<SanityCaseStudy[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -96,12 +96,12 @@ export default function CaseStudyDetail() {
       <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
         <h1 className="text-5xl font-serif text-[#011122] mb-4">Case Study Not Found</h1>
         <p className="text-muted font-sans mb-10 text-lg">We couldn't find the case study you were looking for.</p>
-        <button
-          onClick={() => navigate('/case-studies')}
+        <Link
+          href="/case-studies"
           className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
         >
           Back to Case Studies
-        </button>
+        </Link>
       </div>
     );
   }
@@ -117,13 +117,13 @@ export default function CaseStudyDetail() {
       {/* Back navigation */}
       <div className="px-8 pt-12 pb-0 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <button
-            onClick={() => { navigate('/case-studies'); window.scrollTo(0, 0); }}
+          <Link
+            href="/case-studies"
             className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted hover:text-black transition-colors"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             All Case Studies
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -257,7 +257,7 @@ export default function CaseStudyDetail() {
 
                 <button
                   onClick={openCalendly}
-                  className="mt-10 w-full rounded-2xl px-6 py-5 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group"
+                  className="mt-10 w-full rounded-2xl px-6 py-5 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-[1.02] transition-transform duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   Book 30m Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -296,13 +296,9 @@ export default function CaseStudyDetail() {
           <h2 className="text-3xl font-serif text-[#011122] mb-10">More Client Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {otherStudies.map((other, i) => (
-              <motion.div
+              <Link
                 key={other._id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                onClick={() => { navigate(`/case-studies/${other.slug.current}`); window.scrollTo(0, 0); }}
+                href={`/case-studies/${other.slug.current}`}
                 className="group flex gap-6 p-6 rounded-2xl bg-white border border-gold/5 hover:border-gold/20 hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
               >
                 <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
@@ -316,7 +312,7 @@ export default function CaseStudyDetail() {
                   <p className="text-sm text-muted font-sans">{other.resultText} · {other.location}</p>
                 </div>
                 <ArrowRight className="w-5 h-5 ml-auto shrink-0 text-muted group-hover:text-[#011122] group-hover:translate-x-1 transition-all" />
-              </motion.div>
+              </Link>
             ))}
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowRight } from 'lucide-react';
+import Link from '../components/Link';
 
 export default function About() {
   return (
@@ -165,7 +165,7 @@ export default function About() {
 
             <div className="mb-24">
               <Link 
-                to="/contact" 
+                href="/contact" 
                 className="inline-flex items-center gap-3 px-10 py-5 bg-gold hover:bg-gold-hover text-[#011122] text-sm font-bold uppercase tracking-[0.2em] rounded-sm shadow-xl transition-all hover:scale-105 active:scale-95 group"
               >
                 Start Your Journey

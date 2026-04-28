@@ -1,10 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Plus, Gavel, Key, Building2, Landmark, Scale, TrendingUp } from 'lucide-react';
 import { FaKey, FaBuilding, FaLandmark } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
+import Link from '../components/Link';
 
 const servicesFaqs = [
   {
@@ -111,7 +111,6 @@ const services = [
 ];
 
 export default function Services() {
-  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -251,19 +250,19 @@ export default function Services() {
                 </ul>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button
-                    onClick={() => { navigate(`/services/${service.id}`); window.scrollTo(0, 0); }}
+                  <Link
+                    href={`/services/${service.id}`}
                     className="group flex items-center justify-center gap-2 rounded-full px-8 py-4 bg-gold hover:bg-gold-hover text-white text-sm font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-xl shadow-gold/20"
                   >
                     View Details
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <button
-                    onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                  </Link>
+                  <Link
+                    href="/contact"
                     className="group flex items-center justify-center gap-2 rounded-full px-8 py-4 border border-[#011122]/10 bg-white text-[#011122] text-sm font-bold uppercase tracking-widest hover:bg-[#011122] hover:text-white transition-all duration-300"
                   >
                     Discuss Strategy
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -311,13 +310,9 @@ export default function Services() {
                 isFeatured: true
               }
             ].map((service, index) => (
-              <motion.div
+              <Link
                 key={service.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                href="/contact"
                 className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${service.isFeatured
                   ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/20 md:z-20'
                   : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
@@ -352,7 +347,7 @@ export default function Services() {
 
                 {/* Hover Glow Effect */}
                 <div className="absolute inset-0 rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
-              </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -424,7 +419,7 @@ export default function Services() {
             </p>
             <button
               onClick={openCalendly}
-              className="group rounded-full px-8 sm:px-14 py-4 sm:py-5 bg-[#011122] text-white text-sm sm:text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto"
+              className="group rounded-full px-8 sm:px-14 py-4 sm:py-5 bg-[#011122] text-white text-sm sm:text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto cursor-pointer"
             >
               Book 30m Strategy Session
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

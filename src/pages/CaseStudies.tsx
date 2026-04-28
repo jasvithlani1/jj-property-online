@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
+import Link from '../components/Link';
 
 interface SanityCaseStudy {
   _id: string;
@@ -19,7 +19,6 @@ interface SanityCaseStudy {
 }
 
 export default function CaseStudies() {
-  const navigate = useNavigate();
   const [studies, setStudies] = useState<SanityCaseStudy[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -115,69 +114,73 @@ export default function CaseStudies() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {studies.map((study, index) => (
-                <motion.article
+                <Link
                   key={study._id}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
-                  onClick={() => { navigate(`/case-studies/${study.slug.current}`); window.scrollTo(0, 0); }}
-                  className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col"
+                  href={`/case-studies/${study.slug.current}`}
+                  className="flex"
                 >
-                  {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    {study.mainImage && (
-                      <img
-                        src={urlFor(study.mainImage).width(800).height(600).url()}
-                        alt={study.mainImage?.alt || study.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <motion.article
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
+                    className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col w-full"
+                  >
+                    {/* Image */}
+                    <div className="relative h-64 overflow-hidden">
+                      {study.mainImage && (
+                        <img
+                          src={urlFor(study.mainImage).width(800).height(600).url()}
+                          alt={study.mainImage?.alt || study.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                    {/* Tag overlay */}
-                    <div className="absolute top-4 left-4">
-                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-gold/10 text-gold'}`}>
-                        {study.tag || 'Acquisition'}
-                      </span>
-                    </div>
+                      {/* Tag overlay */}
+                      <div className="absolute top-4 left-4">
+                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-gold/10 text-gold'}`}>
+                          {study.tag || 'Acquisition'}
+                        </span>
+                      </div>
 
-                    {/* Result chip */}
-                    <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                      <div>
-                        <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
-                        <p className="text-white text-xl font-serif">{study.resultText}</p>
+                      {/* Result chip */}
+                      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                        <div>
+                          <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
+                          <p className="text-white text-xl font-serif">{study.resultText}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Body */}
-                  <div className="flex flex-col flex-1 p-8">
-                    <h2 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300">
-                      {study.title}
-                    </h2>
-                    {study.shortQuote && (
-                      <p className="text-muted font-sans text-base leading-relaxed flex-1">
-                        "{study.shortQuote}"
-                      </p>
-                    )}
+                    {/* Body */}
+                    <div className="flex flex-col flex-1 p-8">
+                      <h2 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300">
+                        {study.title}
+                      </h2>
+                      {study.shortQuote && (
+                        <p className="text-muted font-sans text-base leading-relaxed flex-1">
+                          "{study.shortQuote}"
+                        </p>
+                      )}
 
-                    {/* Stats Pills */}
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {study.stats?.slice(0, 2).map((s) => (
-                        <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-gold/10 text-xs font-bold uppercase tracking-widest text-[#011122]">
-                          {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
-                        </div>
-                      ))}
+                      {/* Stats Pills */}
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {study.stats?.slice(0, 2).map((s) => (
+                          <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-gold/10 text-xs font-bold uppercase tracking-widest text-[#011122]">
+                            {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Read More */}
+                      <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#011122] group/btn">
+                        <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
                     </div>
-
-                    {/* Read More */}
-                    <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#011122] group/btn">
-                      <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </motion.article>
+                  </motion.article>
+                </Link>
               ))}
             </div>
           )}
@@ -203,13 +206,13 @@ export default function CaseStudies() {
             <p className="text-xl text-white/60 font-sans mb-12 max-w-xl mx-auto">
               Speak directly with Alex about your brief. Our active roster is strictly limited — enquire now.
             </p>
-            <button
-              onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
-              className="group rounded-full px-14 py-5 bg-gold hover:bg-gold-hover text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-2xl shadow-gold/20 flex items-center gap-3 mx-auto"
+            <Link
+              href="/contact"
+              className="group rounded-full px-14 py-5 bg-gold hover:bg-gold-hover text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-2xl shadow-gold/20 flex items-center gap-3 mx-auto w-fit"
             >
               Start Your Brief
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </motion.div>
         </div>
       </section>

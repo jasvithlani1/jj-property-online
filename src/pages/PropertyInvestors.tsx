@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
 import { useState } from 'react';
+import Link from '../components/Link';
 
 const investorFaqs = [
   {
@@ -41,13 +41,12 @@ const pillars = [
   },
   {
     title: 'Strategic Portfolio Execution',
-    description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction bidding\n• Settlement coordination & support',
+    description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction representation\n• Settlement coordination & support',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
   }
 ];
 
 export default function PropertyInvestors() {
-  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
@@ -308,7 +307,7 @@ export default function PropertyInvestors() {
                   </p>
                   <button
                     onClick={openCalendly}
-                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300"
+                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300 cursor-pointer"
                   >
                     Discuss My Strategy
                   </button>
@@ -463,16 +462,16 @@ export default function PropertyInvestors() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40"
+                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
                 >
                   Book Free Session
                 </button>
-                <button
-                  onClick={() => { navigate('/contact'); window.scrollTo(0, 0); }}
+                <Link
+                  href="/contact"
                   className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
                   Message Alex
-                </button>
+                </Link>
               </div>
             </motion.div>
           </div>

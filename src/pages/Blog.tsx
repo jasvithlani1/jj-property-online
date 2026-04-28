@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
+import Link from '../components/Link';
 
 interface SanityPost {
   _id: string;
@@ -17,7 +17,6 @@ interface SanityPost {
 }
 
 export default function Blog() {
-  const navigate = useNavigate();
   const [posts, setPosts] = useState<SanityPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   
@@ -121,55 +120,59 @@ export default function Blog() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, i) => (
-                <motion.article
+                <Link
                   key={post._id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ duration: 0.7, delay: i * 0.1 }}
-                  onClick={() => { navigate(`/blog/${post.slug.current}`); window.scrollTo(0, 0); }}
-                  className="group flex flex-col rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-xl hover:shadow-gold/10 transition-all duration-500 cursor-pointer"
+                  href={`/blog/${post.slug.current}`}
+                  className="flex"
                 >
-                  {/* Cover Image */}
-                  <div className="relative h-56 overflow-hidden">
-                    {post.mainImage && (
-                      <img
-                        src={urlFor(post.mainImage).width(800).height(600).url()}
-                        alt={post.mainImage?.alt || post.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      {post.categories?.[0] && (
-                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${post.categories[0].color || 'bg-gold/10 text-gold'}`}>
-                          {post.categories[0].title}
-                        </span>
+                  <motion.article
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.7, delay: i * 0.1 }}
+                    className="group flex flex-col rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-xl hover:shadow-gold/10 transition-all duration-500 cursor-pointer w-full"
+                  >
+                    {/* Cover Image */}
+                    <div className="relative h-56 overflow-hidden">
+                      {post.mainImage && (
+                        <img
+                          src={urlFor(post.mainImage).width(800).height(600).url()}
+                          alt={post.mainImage?.alt || post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                      <div className="absolute top-4 left-4">
+                        {post.categories?.[0] && (
+                          <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${post.categories[0].color || 'bg-gold/10 text-gold'}`}>
+                            {post.categories[0].title}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Body */}
-                  <div className="flex flex-col flex-1 p-8">
-                    <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted mb-4">
-                      <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-                      <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
+                    {/* Body */}
+                    <div className="flex flex-col flex-1 p-8">
+                      <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted mb-4">
+                        <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+                        <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
+                      </div>
+
+                      <h2 className="text-xl font-serif text-[#011122] leading-snug mb-4 group-hover:text-gold transition-colors duration-300 flex-1">
+                        {post.title}
+                      </h2>
+
+                      <p className="text-muted font-sans text-sm leading-relaxed mb-8 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#011122]">
+                        Read More
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-
-                    <h2 className="text-xl font-serif text-[#011122] leading-snug mb-4 group-hover:text-gold transition-colors duration-300 flex-1">
-                      {post.title}
-                    </h2>
-
-                    <p className="text-muted font-sans text-sm leading-relaxed mb-8 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-
-                    <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#011122]">
-                      Read More
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </motion.article>
+                  </motion.article>
+                </Link>
               ))}
             </div>
           )}
