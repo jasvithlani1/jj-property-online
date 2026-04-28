@@ -466,7 +466,7 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="py-24 md:py-32 px-8 bg-white text-[#011122] overflow-hidden">
+        <section className="pt-12 pb-24 md:pt-16 md:pb-32 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-24">
               <div className="inline-block px-4 py-1.5 rounded-full border border-gold/20 bg-gold/5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-6 shadow-sm">
