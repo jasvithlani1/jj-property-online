@@ -469,7 +469,7 @@ export default function Home() {
         <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <div className="inline-block px-4 py-1.5 rounded-full border border-gold/20 bg-gold/5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-6 shadow-sm">
+              <div className="inline-block px-7 py-3 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
                 How We Work
               </div>
               <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight text-[#011122]">
