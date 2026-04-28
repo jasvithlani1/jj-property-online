@@ -633,9 +633,6 @@ export default function Home() {
           <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full opacity-30 animate-pulse" />
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gold/10 blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
         </section>
-          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full opacity-30 animate-pulse" />
-          <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gold/10 blur-[120px] rounded-full opacity-40 animate-pulse delay-700" />
-        </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
         <section id="reviews" className="relative py-6 md:py-8 bg-white overflow-hidden flex flex-col items-center">
