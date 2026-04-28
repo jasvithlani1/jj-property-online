@@ -4,9 +4,9 @@ import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 're
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#011122] text-white pt-12 mt-8 lg:mt-12">
+    <footer className="relative bg-[#011122] text-white pt-8 mt-8 lg:mt-12">
 
-      <div className="max-w-7xl mx-auto px-8 relative z-10 pt-8 pb-16">
+      <div className="max-w-7xl mx-auto px-8 relative z-10 pt-6 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
 
           {/* Logo & Info Column */}
@@ -83,9 +83,9 @@ export default function Footer() {
         </div>
 
         {/* Socials & Summary */}
-        <div className="mt-20 border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="mt-8 border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <p className="text-xs font-bold uppercase tracking-[0.4em] text-gold mb-6">Follow Our Journey</p>
+            <p className="text-xs font-bold uppercase tracking-[0.4em] text-gold mb-4">Follow Our Journey</p>
             <div className="flex items-center gap-4">
               {[
                 { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
