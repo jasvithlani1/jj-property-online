@@ -406,7 +406,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="py-10 md:py-12 px-8 bg-white overflow-hidden">
+        <section className="pt-10 pb-6 md:pt-12 md:pb-8 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <motion.div
@@ -466,9 +466,9 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="pt-12 pb-24 md:pt-16 md:pb-32 px-8 bg-white text-[#011122] overflow-hidden">
+        <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-24">
+            <div className="text-center mb-12">
               <div className="inline-block px-4 py-1.5 rounded-full border border-gold/20 bg-gold/5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold mb-6 shadow-sm">
                 How We Work
               </div>
@@ -540,7 +540,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="relative py-8 md:py-10 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+        <section className="relative py-6 md:py-8 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <video
               src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
