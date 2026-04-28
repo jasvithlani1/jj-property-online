@@ -471,10 +471,10 @@ export default function Home() {
                 How We Work
               </div>
               <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight text-[#011122]">
-                Our Proven <span className="text-blue-500 italic font-serif">5-Step</span> Buying Approach
+                Our Proven <span className="text-gold italic font-serif">5-Step</span> Buying Approach
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
-                A data-led, clinical process — from initial session to long-term post-settlement support.
+                A structured, data-led process designed to secure your ideal property with complete confidence.
               </p>
             </div>
 
