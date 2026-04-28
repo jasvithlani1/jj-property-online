@@ -309,7 +309,7 @@ export default function Services() {
                 icon: <TrendingUp className="w-7 h-7" />,
                 isFeatured: true
               }
-            ].map((service, index) => (
+            ].map((service) => (
               <Link
                 key={service.title}
                 href="/contact"
