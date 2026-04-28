@@ -21,11 +21,11 @@ const serviceLinks = [
 ];
 
 const socialLinks = [
-  { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartner/' },
-  { icon: <FaFacebookF className="w-4 h-4" />, label: 'Facebook', href: '#' },
+  { icon: <FaInstagram className="w-4 h-4" />, label: 'Instagram', href: 'https://www.instagram.com/jjpropertypartnerbuyersagent/' },
+  { icon: <FaFacebookF className="w-4 h-4" />, label: 'Facebook', href: 'https://www.facebook.com/jjpropertypartnerbuyersagent/' },
   { icon: <FaYoutube className="w-4 h-4" />, label: 'YouTube', href: 'https://www.youtube.com/@JJPropertyPartnerBuyersAgent' },
-  { icon: <FaTwitter className="w-4 h-4" />, label: 'Twitter', href: 'https://x.com/jjproperty01' },
-  { icon: <FaLinkedinIn className="w-4 h-4" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/alex-buyers-agent-930139403/' },
+  { icon: <FaTwitter className="w-4 h-4" />, label: 'X', href: 'https://x.com/jjbuyersagent' },
+  { icon: <FaLinkedinIn className="w-4 h-4" />, label: 'LinkedIn', href: 'https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/' },
 ];
 
 export default function Footer() {

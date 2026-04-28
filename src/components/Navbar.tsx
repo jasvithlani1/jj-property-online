@@ -45,11 +45,11 @@ export default function Navbar() {
           <div className="flex items-center gap-3 md:gap-5">
             <span className="hidden xl:inline text-white/30 mr-2">Connect with us:</span>
             <div className="flex items-center gap-4">
-              <Link href="https://www.instagram.com/jjpropertypartner/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></Link>
-              <Link href="#" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-3.5 h-3.5" /></Link>
+              <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></Link>
+              <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-3.5 h-3.5" /></Link>
               <Link href="https://www.youtube.com/@JJPropertyPartnerBuyersAgent" className="hover:text-gold transition-all transform hover:scale-110"><FaYoutube className="w-3.5 h-3.5" /></Link>
-              <Link href="https://x.com/jjproperty01" className="hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-3.5 h-3.5" /></Link>
-              <Link href="https://www.linkedin.com/in/alex-buyers-agent-930139403/" className="hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-3.5 h-3.5" /></Link>
+              <Link href="https://x.com/jjbuyersagent" className="hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-3.5 h-3.5" /></Link>
+              <Link href="https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/" className="hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-3.5 h-3.5" /></Link>
             </div>
           </div>
         </div>
