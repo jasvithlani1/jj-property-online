@@ -736,7 +736,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section className="relative py-10 md:py-12 bg-white px-8 overflow-hidden">
+        <section className="relative py-10 md:py-12 bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -761,7 +761,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
+            className="max-w-5xl mx-auto bg-neutral-50 rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
           >
             <div
               id="calendly-inline-widget"
