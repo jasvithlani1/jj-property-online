@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     result: '3 Asset Acquisition',
     location: 'Northern Beaches, NSW',
     shortQuote: 'Scale requires data. JJ Property Partner provided the technical dissection needed to triple my high-yield portfolio.',
-    image: 'https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=900',
+    image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=900',
     tag: 'Property Investment',
     tagColor: 'bg-gold/10 text-gold',
     client: 'A seasoned investor with an existing two-property portfolio engaged JJ Property Partner to accelerate growth. The brief was ambitious: acquire three additional high-yield, capital-growth assets within 18 months without expanding into speculative or regional markets.',

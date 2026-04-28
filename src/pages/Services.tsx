@@ -59,7 +59,7 @@ const services = [
       'First Home Owner Grant guidance and eligibility assessment',
       'Full coordination through due diligence, legal review, and settlement'
     ],
-    image: 'https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
     accent: 'gold',
     accentClass: 'bg-gold/5 border-gold/20',
     iconClass: 'bg-gold/10 text-gold',
