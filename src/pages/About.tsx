@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowUpRight } from 'lucide-react';
 import Link from '../components/Link';
 
 export default function About() {
