@@ -98,48 +98,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Track Record & Tech Advantage */}
-      <section className="py-8 md:py-10 bg-white px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10"
-          >
-            <h3 className="text-3xl font-serif mb-6 text-[#011122]">Alex's Personal Track Record</h3>
-            <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
-              <p>
-                Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy.
-              </p>
-              <p>
-                He has also guided a wide range of buyers, from first home buyers entering the market to experienced investors building portfolios exceeding $1 million, as well as SMSF trustees seeking compliant, well-positioned assets to support long-term retirement goals.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
-            <h3 className="text-3xl font-serif mb-6 relative z-10">The Technology Advantage</h3>
-            <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
-              <p>
-                Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia.
-              </p>
-              <p>
-                Rather than relying only on broad suburb reports or gut feel, JJ Property Partner assesses multiple data points at once, including price trends, rental yields, vacancy rates, infrastructure plans, population growth, supply and demand, and changing demographics. This allows for sharper suburb selection and better long-term outcomes for clients.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Purpose Section */}
       <section className="py-24 md:py-32 px-8 bg-[#FFFBF2] overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
@@ -185,6 +143,48 @@ export default function About() {
                 <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
                 <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jennifer</span>
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Track Record & Tech Advantage */}
+      <section className="py-8 md:py-10 bg-white px-8 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10"
+          >
+            <h3 className="text-3xl font-serif mb-6 text-[#011122]">Alex's Personal Track Record</h3>
+            <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
+              <p>
+                Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy.
+              </p>
+              <p>
+                He has also guided a wide range of buyers, from first home buyers entering the market to experienced investors building portfolios exceeding $1 million, as well as SMSF trustees seeking compliant, well-positioned assets to support long-term retirement goals.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
+            <h3 className="text-3xl font-serif mb-6 relative z-10">The Technology Advantage</h3>
+            <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
+              <p>
+                Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia.
+              </p>
+              <p>
+                Rather than relying only on broad suburb reports or gut feel, JJ Property Partner assesses multiple data points at once, including price trends, rental yields, vacancy rates, infrastructure plans, population growth, supply and demand, and changing demographics. This allows for sharper suburb selection and better long-term outcomes for clients.
+              </p>
             </div>
           </motion.div>
         </div>
