@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, Menu, X } from 'lucide-react';
+import { Mail, Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { openCalendly } from '../utils/calendly';
@@ -9,7 +9,16 @@ import Link from './Link';
 const navLinks = [
   { name: 'Home', path: '/', isHash: false },
   { name: 'About us', path: '/about', isHash: false },
-  { name: 'Services', path: '/services', isHash: false },
+  { 
+    name: 'Services', 
+    path: '/services', 
+    isHash: false,
+    subLinks: [
+      { name: 'First Home Buyers', path: '/services/first-home-buyers' },
+      { name: 'Property Investors', path: '/services/property-investors' },
+      { name: 'SMSF Property', path: '/services/smsf-property' },
+    ]
+  },
   { name: 'Case Studies', path: '/case-studies', isHash: false },
   { name: 'Reviews', path: '/#reviews', isHash: true },
   { name: 'Blog', path: '/blog', isHash: false },
@@ -18,6 +27,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => {
@@ -82,15 +92,49 @@ export default function Navbar() {
           {/* Desktop Links */}
           <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
             {navLinks.map((link) => (
-              <Link
+              <div 
                 key={link.name}
-                href={link.path}
-                aria-label={link.name}
-                className={`group relative text-[13px] 2xl:text-sm font-medium transition-colors hover:text-gold cursor-pointer whitespace-nowrap ${isActive(link.path) ? 'text-gold' : 'text-white/60'}`}
+                className="relative py-4"
+                onMouseEnter={() => link.name === 'Services' && setIsServicesDropdownOpen(true)}
+                onMouseLeave={() => link.name === 'Services' && setIsServicesDropdownOpen(false)}
               >
-                {link.name}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-              </Link>
+                <Link
+                  href={link.path}
+                  aria-label={link.name}
+                  className={`group relative text-[13px] 2xl:text-sm font-medium transition-colors hover:text-gold cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${isActive(link.path) ? 'text-gold' : 'text-white/60'}`}
+                >
+                  {link.name}
+                  {link.name === 'Services' && (
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                  )}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                </Link>
+
+                {link.name === 'Services' && (
+                  <AnimatePresence>
+                    {isServicesDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        className="absolute top-[calc(100%-8px)] left-0 w-64 bg-[#011122] border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-3 flex flex-col gap-1 z-[110] backdrop-blur-xl"
+                      >
+                        {link.subLinks?.map((s) => (
+                          <Link
+                            key={s.name}
+                            href={s.path}
+                            onClick={() => setIsServicesDropdownOpen(false)}
+                            className="text-[11px] font-bold uppercase tracking-widest text-white/60 hover:text-gold hover:bg-white/5 p-3 rounded-xl transition-all"
+                          >
+                            {s.name}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             ))}
           </div>
 
@@ -154,17 +198,32 @@ export default function Navbar() {
               </div>
 
               {/* Drawer Links */}
-              <div className="flex flex-col gap-6 flex-1">
+              <div className="flex flex-col gap-6 flex-1 overflow-y-auto pr-4">
                 {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    aria-label={link.name}
-                    className={`text-base uppercase tracking-widest font-bold transition-colors ${isActive(link.path) ? 'text-white pl-2 border-l-2 border-gold' : 'text-white/60 hover:text-white'}`}
-                  >
-                    {link.name}
-                  </Link>
+                  <div key={link.name} className="flex flex-col gap-4">
+                    <Link
+                      href={link.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      aria-label={link.name}
+                      className={`text-base uppercase tracking-widest font-bold transition-colors ${isActive(link.path) ? 'text-white pl-2 border-l-2 border-gold' : 'text-white/60 hover:text-white'}`}
+                    >
+                      {link.name}
+                    </Link>
+                    {link.name === 'Services' && (
+                      <div className="flex flex-col gap-3 pl-4 border-l border-white/5">
+                        {link.subLinks?.map((s) => (
+                          <Link
+                            key={s.name}
+                            href={s.path}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-xs uppercase tracking-widest font-bold text-white/40 hover:text-gold transition-colors"
+                          >
+                            {s.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
 
