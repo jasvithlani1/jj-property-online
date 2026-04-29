@@ -304,14 +304,15 @@ export default function PropertyInvestors() {
                 <p className="text-lg text-muted font-sans leading-relaxed mb-8">
                   Strategic property investment is a long-term commitment to wealth creation. We help you determine if your current position aligns with a successful acquisition strategy.
                 </p>
-                <div className="bg-gold/5 border border-gold/10 rounded-3xl p-8">
-                  <h3 className="text-xl font-serif text-[#011122] mb-4">Investor Strategy Session</h3>
-                  <p className="text-muted mb-6 leading-relaxed">
+                <div className="bg-[#011122] text-white rounded-[2.5rem] p-10 shadow-2xl relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-3xl -mr-16 -mt-16 group-hover:bg-gold/20 transition-colors" />
+                  <h3 className="text-2xl font-serif text-white mb-4 relative z-10">Investor Strategy Session</h3>
+                  <p className="text-white/60 mb-8 leading-relaxed relative z-10">
                     Ready to build a nationwide portfolio? Our free session will review your current equity, borrowing power, and investment objectives to map out a clear path forward.
                   </p>
                   <button
                     onClick={openCalendly}
-                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover transition-all duration-300 cursor-pointer"
+                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10"
                   >
                     Discuss My Strategy
                   </button>
@@ -319,7 +320,7 @@ export default function PropertyInvestors() {
               </div>
 
               <div className="lg:col-span-7">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
                   {[
                     { title: "Minimum Equity", desc: "You have available equity in your home or a deposit of at least $100k-$150k." },
                     { title: "Long-Term Mindset", desc: "You view property as a 10-20 year wealth creation vehicle, not a quick win." },
@@ -334,13 +335,14 @@ export default function PropertyInvestors() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: idx * 0.1 }}
-                      className="p-6 rounded-[2rem] bg-neutral-50 border border-gold/10 hover:border-gold/20 transition-all duration-300 group"
+                      className="group"
                     >
-                      <div className="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center mb-4 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
-                        <Plus className="w-5 h-5" />
-                      </div>
-                      <h4 className="text-lg font-serif text-[#011122] mb-2">{item.title}</h4>
-                      <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
+                      <div className="h-px w-12 bg-gold/30 mb-8 group-hover:w-full transition-all duration-700" />
+                      <h4 className="text-2xl font-serif text-[#011122] mb-4 flex items-center gap-3">
+                        <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">0{idx + 1}</span>
+                        {item.title}
+                      </h4>
+                      <p className="text-base text-muted leading-relaxed font-sans">{item.desc}</p>
                     </motion.div>
                   ))}
                 </div>
