@@ -215,6 +215,22 @@ export default function Home() {
     initInlineCalendly('calendly-inline-widget');
   }, []);
 
+  // Handle hash scroll on mount (e.g., coming from another page to #reviews)
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        // Small delay to ensure layout has settled and images/fonts are loading
+        const timer = setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
   return (
     <>
       <Helmet>

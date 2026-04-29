@@ -34,10 +34,12 @@ export const Link: React.FC<LinkProps> = ({
 
   const isHash = path.startsWith('#') || (path.includes('#') && path.split('#')[0] === location.pathname);
   const isFunctional = path.startsWith('mailto:') || path.startsWith('tel:');
+  const hasHash = path.includes('#');
   
   // Per requirements, navigational links should open in new tab unless they are hash links,
   // functional triggers, or explicitly requested to stay in tab.
-  const shouldOpenInNewTab = path && !isHash && !isFunctional && !stayInTab;
+  // UPDATE: Any link with a hash should stay in tab to ensure smooth section jumping.
+  const shouldOpenInNewTab = path && !isHash && !isFunctional && !stayInTab && !hasHash;
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isHash) {
