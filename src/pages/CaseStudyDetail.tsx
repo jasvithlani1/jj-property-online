@@ -129,10 +129,16 @@ export default function CaseStudyDetail() {
 
       {/* Hero Image */}
       <section className="relative mt-4 mx-4 md:mx-8 h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden">
-        {study.mainImage && (
+        {study.mainImage ? (
           <img
             src={urlFor(study.mainImage).url()}
             alt={study.mainImage?.alt || study.title}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src={`https://images.unsplash.com/photo-${study.title.length % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=1200`}
+            alt={study.title}
             className="w-full h-full object-cover"
           />
         )}
@@ -302,8 +308,10 @@ export default function CaseStudyDetail() {
                 className="group flex gap-6 p-6 rounded-2xl bg-white border border-gold/5 hover:border-gold/20 hover:shadow-xl transition-all duration-300 cursor-pointer items-center"
               >
                 <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0">
-                  {other.mainImage && (
+                  {other.mainImage ? (
                     <img src={urlFor(other.mainImage).width(200).height(200).url()} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  ) : (
+                    <img src={`https://images.unsplash.com/photo-${other.title.length % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=200`} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   )}
                 </div>
                 <div className="flex flex-col">

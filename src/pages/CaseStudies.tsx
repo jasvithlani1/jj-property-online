@@ -128,10 +128,16 @@ export default function CaseStudies() {
                   >
                     {/* Image */}
                     <div className="relative h-64 overflow-hidden">
-                      {study.mainImage && (
+                      {study.mainImage ? (
                         <img
                           src={urlFor(study.mainImage).width(800).height(600).url()}
                           alt={study.mainImage?.alt || study.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      ) : (
+                        <img
+                          src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=800`}
+                          alt={study.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       )}
