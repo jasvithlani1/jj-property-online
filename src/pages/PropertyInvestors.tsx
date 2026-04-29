@@ -32,7 +32,7 @@ const pillars = [
   {
     title: 'Data-Led Research & Selection',
     description: 'We use professional analysis tools to identify high-performing suburbs nationwide. Our research focuses on areas with confirmed infrastructure projects, low vacancy rates, and strong population growth.\n\n• National market exposure\n• Suburb-specific growth drivers\n• Detailed yield & vacancy analysis\n• Infrastructure & development tracking',
-    image: 'https://images.unsplash.com/photo-1543286386-713bdd54867e?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Off-Market Property Sourcing',
@@ -191,6 +191,10 @@ export default function PropertyInvestors() {
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
                 <div className="mb-6">
                 <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
+                <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
+                  Strategic Portfolio <br />
+                  <span className="text-gold">Execution</span>
+                </h2>
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
                   Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
                 </p>
@@ -204,13 +208,13 @@ export default function PropertyInvestors() {
                     step: '01',
                     title: 'Step 1 - Investment Thesis & Strategy',
                     body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.',
-                    image: 'https://images.unsplash.com/photo-1591123109285-125038ea1d68?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '02',
                     title: 'Step 2 - Long-Term Acquisition Roadmap',
                     body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '03',
@@ -222,7 +226,7 @@ export default function PropertyInvestors() {
                     step: '04',
                     title: 'Step 4 - Growth & Cash Flow Balance',
                     body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.',
-                    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '05',
