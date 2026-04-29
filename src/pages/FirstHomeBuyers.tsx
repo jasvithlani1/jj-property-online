@@ -32,7 +32,7 @@ const pillars = [
   {
     title: 'Financial Clarity & Buying Power',
     description: 'The first step to a successful purchase is knowing exactly where you stand. We help you coordinate with specialist brokers to understand your borrowing capacity, deposit requirements, and eligibility for all available government grants and stamp duty concessions.\n\n• Borrowing capacity assessment\n• Deposit strategy planning\n• Government grant eligibility checks\n• Stamp duty savings analysis',
-    image: 'https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
   },
   {
     title: 'Suburb Research & Strategy',
@@ -191,6 +191,10 @@ export default function FirstHomeBuyers() {
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
                 <div className="mb-6">
                 <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
+                <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
+                  The First Home <br />
+                  <span className="text-gold">Journey</span>
+                </h2>
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
                   From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase — so you can move forward with confidence, not guesswork.
                 </p>
@@ -210,7 +214,7 @@ export default function FirstHomeBuyers() {
                     step: '02',
                     title: 'Step 2 - Suburb Research & Targeting',
                     body: 'Using data-led research, we assess price growth, market demand, and local infrastructure to identify the right locations across Australia that fit your lifestyle and budget.',
-                    image: 'https://images.unsplash.com/photo-1543286386-713bdd54867e?auto=format&fit=crop&q=80&w=1200',
+                    image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1200',
                   },
                   {
                     step: '03',
