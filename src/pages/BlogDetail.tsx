@@ -200,10 +200,16 @@ export default function BlogDetail() {
       {/* Cover Image */}
       <div className="px-4 md:px-8 mb-10">
         <div className="max-w-5xl mx-auto h-[45vh] md:h-[55vh] rounded-[2.5rem] overflow-hidden">
-          {post.mainImage && (
+          {post.mainImage ? (
             <img
               src={urlFor(post.mainImage).url()}
               alt={post.mainImage?.alt || post.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={`https://images.unsplash.com/photo-${post.title.length % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=1200`}
+              alt={post.title}
               className="w-full h-full object-cover"
             />
           )}
@@ -272,8 +278,10 @@ export default function BlogDetail() {
                       className="group flex gap-4 items-center text-left hover:bg-gold/5 rounded-2xl p-3 -mx-3 transition-colors"
                     >
                       <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
-                        {other.mainImage && (
+                        {other.mainImage ? (
                           <img src={urlFor(other.mainImage).width(200).height(200).url()} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        ) : (
+                          <img src={`https://images.unsplash.com/photo-${other.title.length % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=200`} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                         )}
                       </div>
                       <div className="flex flex-col">

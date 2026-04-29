@@ -134,10 +134,16 @@ export default function Blog() {
                   >
                     {/* Cover Image */}
                     <div className="relative h-56 overflow-hidden">
-                      {post.mainImage && (
+                      {post.mainImage ? (
                         <img
                           src={urlFor(post.mainImage).width(800).height(600).url()}
                           alt={post.mainImage?.alt || post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      ) : (
+                        <img
+                          src={`https://images.unsplash.com/photo-${i % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=800`}
+                          alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       )}
