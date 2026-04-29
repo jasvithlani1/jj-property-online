@@ -386,11 +386,15 @@ export default function Home() {
                     </p>
 
                     <div className="mt-auto w-full flex items-center justify-between group/link">
-                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 ? 'text-gold group-hover:text-white' : 'text-black opacity-40 group-hover:opacity-100'
+                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 
+                        ? 'text-gold group-hover:text-white' 
+                        : 'text-gold group-hover:text-gold-hover'
                         }`}>
                         Learn More
                       </span>
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 ? 'bg-white/10 group-hover:bg-gold' : 'bg-black/5 group-hover:bg-black group-hover:text-white'
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index !== 1 
+                        ? 'bg-white/10 group-hover:bg-gold' 
+                        : 'bg-gold/10 group-hover:bg-gold group-hover:text-white text-gold'
                         }`}>
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </div>
