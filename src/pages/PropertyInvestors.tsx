@@ -125,7 +125,7 @@ export default function PropertyInvestors() {
               className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1449156003053-c3d8c89b90c9?auto=format&fit=crop&q=80&w=1200"
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
                 alt="Modern Residential Building"
                 className="absolute inset-0 w-full h-full object-cover"
               />
