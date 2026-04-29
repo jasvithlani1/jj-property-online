@@ -32,7 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Force hardware acceleration on fixed/absolute layers to prevent flickering */
+.fixed, .absolute {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Custom Utilities */
@@ -84,6 +92,15 @@ a {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 20s linear infinite;
 }
 
 .animate-fade-rise {

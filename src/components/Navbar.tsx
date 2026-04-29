@@ -55,16 +55,14 @@ export default function Navbar() {
         </div>
 
         {/* Navigation Bar */}
-        <nav className="w-full px-6 md:px-8 py-2 flex justify-between items-center bg-[#011122]/90 backdrop-blur-md shadow-xl border-b border-white/5 transition-colors duration-300" style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}>
+        <nav className="w-full px-6 md:px-8 py-2 flex justify-between items-center bg-[#011122] shadow-xl border-b border-white/5 transition-colors duration-300 relative">
           <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center">
-              <motion.img
+              <img
                 src="/logo.png"
                 alt="JJ Logo"
-                className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain cursor-pointer max-w-none"
+                className="absolute w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain cursor-pointer max-w-none animate-slow-spin"
                 style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
                 fetchPriority="high"
                 loading="eager"
                 width={128}
