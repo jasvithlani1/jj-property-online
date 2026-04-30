@@ -14,7 +14,7 @@ export default function About() {
       <div className="w-full bg-white selection:bg-gold/20 pt-20">
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-24 bg-[#011122] overflow-hidden">
+      <section className="relative pt-16 md:pt-24 pb-10 md:pb-12 bg-[#011122] overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/10 blur-[160px] rounded-full -mr-96 -mt-96 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[140px] rounded-full -ml-48 -mb-48 pointer-events-none" />
@@ -83,7 +83,7 @@ export default function About() {
       </section>
 
       {/* Profile Section */}
-      <section className="py-20 md:py-32 px-8 bg-white">
+      <section className="pt-10 md:pt-16 pb-20 md:pb-32 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
             <motion.div
