@@ -235,7 +235,7 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="pt-16 md:pt-24 pb-8 md:pb-12 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
               <motion.div
@@ -325,7 +325,7 @@ export default function SmsfProperty() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative pt-20 md:pt-32 pb-4 md:pb-6 bg-white px-8">
+        <section className="relative pt-8 md:pt-12 pb-4 md:pb-6 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
