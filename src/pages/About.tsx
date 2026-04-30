@@ -14,87 +14,147 @@ export default function About() {
       <div className="w-full bg-white selection:bg-gold/20 pt-20">
 
       {/* Hero Section */}
-      <section className="relative px-8 pt-12 pb-10 md:pt-20 md:pb-12 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-block px-7 py-3 rounded-full border border-black/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-black mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-              Our Vision
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-black leading-[1.1] mb-6">
-              Buy Property with Confidence <br />
-              Through <span className="text-muted">Experience, Data and Trust.</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-muted font-sans max-w-lg leading-relaxed">
-              We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl"
-          >
-            {/* Property Buying Image */}
-            <img
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
-              alt="Property Buying"
-              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.85] contrast-[1.1] hover:scale-105 transition-transform duration-700"
-            />
-          </motion.div>
+      <section className="relative pt-32 pb-20 md:pt-44 md:pb-24 bg-[#011122] overflow-hidden">
+        {/* Abstract Background Elements */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/10 blur-[160px] rounded-full -mr-96 -mt-96 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[140px] rounded-full -ml-48 -mb-48 pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
+          <div className="max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block px-6 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-bold uppercase tracking-[0.3em] mb-8 backdrop-blur-sm"
+            >
+              About JJ Property Partner
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl sm:text-6xl md:text-8xl font-serif text-white leading-[1.05] mb-10"
+            >
+              Buy Property <br />
+              With <span className="text-gold italic">Absolute Confidence.</span>
+            </motion.h1>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-col md:flex-row gap-8 items-start md:items-center"
+            >
+              <div className="h-px w-24 bg-gold/40 hidden md:block" />
+              <p className="text-xl md:text-2xl text-white/60 font-sans max-w-2xl leading-relaxed">
+                We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Dynamic Background */}
-        <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full opacity-60 -z-10" />
+        {/* Floating Image Card */}
+        <div className="max-w-7xl mx-auto px-8 mt-20 relative z-20">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-white/10"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"
+              alt="Premium Property Architecture"
+              className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-[1.1]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011122] via-transparent to-transparent opacity-60" />
+            
+            {/* Mission Badge */}
+            <div className="absolute bottom-10 right-10 hidden md:block">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] max-w-sm">
+                <p className="text-gold font-sans text-xs font-black uppercase tracking-[0.2em] mb-4">Our Vision</p>
+                <p className="text-white text-lg font-serif leading-relaxed">
+                  "To empower Australians with data-driven insights and professional representation that turns the property journey into a success story."
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Profile Section */}
-      <section className="py-8 md:py-10 px-8">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 space-y-8"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black leading-tight">
-              A Smarter Way to Buy Property, <br />
-              <span className="text-muted">Built on Experience, Data, and Trust.</span>
-            </h2>
-            <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
-              <p>
-                <span className="text-black font-semibold">JJ Property Partner</span> was founded by Alex, a licensed buyers agent, seasoned property investor, and IT professional with more than 20 years of experience in technology and real estate. Based in Sydney and working with clients across Australia, Alex brings a data-led and highly strategic approach to property buying that helps clients make confident, well-informed decisions.
-              </p>
-              <p>
-                The name <span className="text-black font-semibold">“JJ”</span> is inspired by Alex’s two daughters, Jessica and Jennifer, and reflects the family values behind the business. That personal foundation shapes every client relationship through honesty, genuine care, and a long-term focus on helping Australians buy the right property with confidence.
-              </p>
-            </div>
+      <section className="py-20 md:py-32 px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
+                <img
+                  src="/buyers-agent-showing.png"
+                  alt="Alex - Founder of JJ Property Partner"
+                  className="w-full aspect-[4/5] object-cover hover:scale-105 transition-all duration-700 brightness-[0.95]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/60 via-transparent to-transparent" />
+                <div className="absolute bottom-10 left-10 text-white">
+                  <p className="text-4xl font-serif mb-1">Alex</p>
+                  <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold font-bold">Founder & Principal Advisor</p>
+                </div>
+              </div>
+              
+              {/* Decorative gold element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/10 rounded-full blur-3xl -z-10" />
+            </motion.div>
 
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="lg:col-span-7 space-y-10"
+            >
+              <div className="space-y-4">
+                <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.4em]">Our Story</span>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#011122] leading-tight">
+                  A Smarter Way to Buy, <br />
+                  <span className="text-gold italic">Built on Experience.</span>
+                </h2>
+              </div>
+              
+              <div className="space-y-8 text-lg text-muted font-sans leading-relaxed">
+                <p className="text-xl text-[#011122] font-medium leading-relaxed italic">
+                  "JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor."
+                </p>
+                <p>
+                  <span className="text-[#011122] font-bold">Alex</span> brings more than 20 years of experience in technology and real estate to the table. As a licensed buyers agent and seasoned property investor, he bridges the gap between traditional market knowledge and modern data analytics. Based in Sydney and working with clients nationwide, he ensures that every acquisition is treated with the same precision as his own personal portfolio.
+                </p>
+                <p>
+                  The name <span className="text-[#011122] font-bold italic">“JJ”</span> reflects the family values at the heart of our firm. Named after Alex’s daughters, Jessica and Jennifer, the business is a testament to long-term legacy and genuine care. We don't just find houses; we secure the right foundations for your future.
+                </p>
+              </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1 }}
-            className="md:w-5/12 aspect-[3/4] relative rounded-[3rem] overflow-hidden"
-          >
-            <img
-              src="/buyers-agent-showing.png"
-              alt="Buyers Agent Showing Property"
-              className="absolute inset-0 w-full h-full object-cover filter hover:scale-105 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 text-white">
-              <p className="text-3xl font-serif">Alex</p>
-              <p className="text-sm font-sans tracking-widest uppercase opacity-80 mt-1">Founder & Principal Advisor</p>
-            </div>
-          </motion.div>
+              <div className="pt-6 flex flex-wrap gap-8 items-center border-t border-gold/10">
+                <div className="flex flex-col gap-1">
+                  <span className="text-2xl font-serif text-[#011122]">20+ Years</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">IT & Real Estate</span>
+                </div>
+                <div className="w-px h-10 bg-gold/20" />
+                <div className="flex flex-col gap-1">
+                  <span className="text-2xl font-serif text-[#011122]">$5M+</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Personal Portfolio</span>
+                </div>
+                <div className="w-px h-10 bg-gold/20" />
+                <div className="flex flex-col gap-1">
+                  <span className="text-2xl font-serif text-[#011122]">Nationwide</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Service Area</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
