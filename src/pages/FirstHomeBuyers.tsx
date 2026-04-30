@@ -299,61 +299,92 @@ export default function FirstHomeBuyers() {
           </div>
         </section>
 
-        {/* Eligibility Section */}
-        <section className="py-16 md:py-24 px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-              <div className="lg:col-span-5">
-                <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                  Are You Ready for Your First Home?
-                </h2>
-                <p className="text-lg text-muted font-sans leading-relaxed mb-8">
-                  Buying your first home is a huge milestone. We help you identify if you're ready to make the leap and what steps you need to take to get there.
-                </p>
-                <div className="bg-[#011122] text-white rounded-[2.5rem] p-10 shadow-2xl relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-3xl -mr-16 -mt-16 group-hover:bg-gold/20 transition-colors" />
-                  <h3 className="text-2xl font-serif text-white mb-4 relative z-10">First Home Strategy Session</h3>
-                  <p className="text-white/60 mb-8 leading-relaxed relative z-10">
-                    Unsure where to start? Our free discovery call will help you understand your budget, available grants, and the buying process from start to finish.
-                  </p>
-                  <button
-                    onClick={openCalendly}
-                    className="w-full rounded-full py-4 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10"
-                  >
-                    Start My Journey
-                  </button>
-                </div>
-              </div>
+        <section className="py-20 md:py-32 px-8 bg-white overflow-hidden border-t border-gold/5">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6"
+              >
+                Eligibility Criteria
+              </motion.div>
+              <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-8 leading-[1.1]">
+                Are You Ready for <br />
+                <span className="text-gold italic">Your First Home?</span>
+              </h2>
+              <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto">
+                Buying your first home is a huge milestone. We help you identify if you're ready to make the leap and what steps you need to take to get there.
+              </p>
+            </div>
 
-              <div className="lg:col-span-7">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
-                  {[
-                    { title: "Stable Income", desc: "A consistent employment history helps secure a mortgage and build buying power." },
-                    { title: "Deposit Ready", desc: "Having a 5-10% deposit saved, or access to a family guarantee, is a great starting point." },
-                    { title: "Grant Eligibility", desc: "You may qualify for FHOG or stamp duty exemptions that can save you thousands." },
-                    { title: "Primary Residence", desc: "You plan to live in the home for at least the first 6-12 months after purchase." },
-                    { title: "Borrowing Capacity", desc: "You have a clear understanding of your budget and pre-approval status." },
-                    { title: "Goal Clarity", desc: "You have a clear idea of your lifestyle needs and preferred locations." }
-                  ].map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="group"
-                    >
-                      <div className="h-px w-12 bg-gold/30 mb-8 group-hover:w-full transition-all duration-700" />
-                      <h4 className="text-2xl font-serif text-[#011122] mb-4 flex items-center gap-3">
-                        <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em]">0{idx + 1}</span>
-                        {item.title}
-                      </h4>
-                      <p className="text-base text-muted leading-relaxed font-sans">{item.desc}</p>
-                    </motion.div>
-                  ))}
-                </div>
+            <div className="relative">
+              {/* Vertical line connector */}
+              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
+
+              <div className="flex flex-col gap-12 relative z-10">
+                {[
+                  { title: "Stable Income", desc: "A consistent employment history helps secure a mortgage and build buying power." },
+                  { title: "Deposit Ready", desc: "Having a 5-10% deposit saved, or access to a family guarantee, is a great starting point." },
+                  { title: "Grant Eligibility", desc: "You may qualify for FHOG or stamp duty exemptions that can save you thousands." },
+                  { title: "Primary Residence", desc: "You plan to live in the home for at least the first 6-12 months after purchase." },
+                  { title: "Borrowing Capacity", desc: "You have a clear understanding of your budget and pre-approval status." },
+                  { title: "Goal Clarity", desc: "You have a clear idea of your lifestyle needs and preferred locations." }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: idx * 0.1 }}
+                    className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-20`}
+                  >
+                    <div className="flex-1 text-center md:text-left">
+                      <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
+                        <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
+                        <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+                        <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="relative flex items-center justify-center shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-white border-2 border-gold shadow-[0_0_20px_rgba(200,169,106,0.3)] z-10 flex items-center justify-center">
+                        <div className="w-3 h-3 rounded-full bg-gold animate-pulse" />
+                      </div>
+                    </div>
+
+                    <div className="flex-1 hidden md:block" />
+                  </motion.div>
+                ))}
               </div>
             </div>
+
+            {/* Bottom CTA Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-32 max-w-3xl mx-auto"
+            >
+              <div className="bg-[#011122] text-white rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group text-center">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-32 group-hover:bg-gold/20 transition-colors" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-32" />
+                
+                <h3 className="text-4xl font-serif text-white mb-6 relative z-10">First Home Strategy Session</h3>
+                <p className="text-white/60 text-lg mb-10 leading-relaxed relative z-10 max-w-xl mx-auto">
+                  Unsure where to start? Our free discovery call will help you understand your budget, available grants, and the buying process from start to finish.
+                </p>
+                <button
+                  onClick={openCalendly}
+                  className="rounded-full px-16 py-5 bg-gold text-white text-base font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
+                >
+                  Start My Journey
+                </button>
+              </div>
+            </motion.div>
           </div>
         </section>
 
