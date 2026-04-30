@@ -401,7 +401,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-20 md:py-32 bg-white px-8">
+        <section className="relative pt-20 md:pt-32 pb-4 md:pb-6 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
@@ -456,7 +456,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="pt-4 md:pt-6 pb-20 md:pb-32 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.div
