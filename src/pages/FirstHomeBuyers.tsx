@@ -83,7 +83,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Introduction Section */}
-        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden">
+        <section className="py-12 md:py-20 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -182,7 +182,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Process Timeline Section */}
-        <section className="py-16 md:py-24 px-8 bg-[#011122] text-white overflow-hidden relative">
+        <section className="py-12 md:py-20 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
@@ -299,7 +299,7 @@ export default function FirstHomeBuyers() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
               <motion.div
@@ -389,7 +389,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Why JJ Property Partner Section */}
-        <section className="py-20 md:py-32 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="py-16 md:py-24 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20">

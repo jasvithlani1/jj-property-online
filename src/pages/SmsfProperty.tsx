@@ -83,7 +83,7 @@ export default function SmsfProperty() {
         </section>
 
         {/* Introduction Section */}
-        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden">
+        <section className="py-12 md:py-20 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -181,8 +181,8 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        {/* The SMSF Journey Section */}
-        <section className="py-16 md:py-24 px-8 bg-[#011122] text-white overflow-hidden relative">
+        {/* Core Services Section */}
+        <section className="py-12 md:py-20 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">Your SMSF Acquisition <span className="text-gold">Journey</span></h2>
@@ -235,7 +235,7 @@ export default function SmsfProperty() {
           </div>
         </section>
 
-        <section className="py-20 md:py-32 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-20">
               <motion.div
