@@ -21,11 +21,12 @@ interface SanityCaseStudy {
 export default function CaseStudies() {
   const [studies, setStudies] = useState<SanityCaseStudy[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [pageData, setPageData] = useState<any>(null);
 
   useEffect(() => {
     const fetchStudies = async () => {
       try {
-        const query = `*[_type == "caseStudy"] | order(_createdAt desc) {
+        const studiesQuery = `*[_type == "caseStudy"] | order(_createdAt desc) {
           _id,
           title,
           slug,
@@ -40,8 +41,18 @@ export default function CaseStudies() {
           tagColor,
           stats
         }`;
-        const data = await client.fetch(query);
-        setStudies(data);
+        const pageQuery = `*[_type == "caseStudiesPage"][0] {
+          seo,
+          hero
+        }`;
+
+        const [studiesData, pageData] = await Promise.all([
+          client.fetch(studiesQuery),
+          client.fetch(pageQuery)
+        ]);
+
+        setStudies(studiesData);
+        if (pageData) setPageData(pageData);
       } catch (error) {
         console.error('Error fetching case studies:', error);
       } finally {
@@ -55,8 +66,10 @@ export default function CaseStudies() {
   return (
     <div className="w-full bg-white selection:bg-gold/20 pt-20">
       <SEO 
-        title="Client Success & Case Studies" 
-        description="Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach." 
+        title={pageData?.seo?.metaTitle || "Client Success & Case Studies"} 
+        description={pageData?.seo?.metaDescription || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."} 
+        image={pageData?.seo?.ogImage}
+        keywords={pageData?.seo?.keywords}
       />
 
       {/* Hero */}
@@ -70,15 +83,17 @@ export default function CaseStudies() {
             className="text-center"
           >
             <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-              Client Results
+              {pageData?.hero?.badge || "Client Results"}
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
-              The JJ Property Advantage
-              <br />
-              <span className="text-gold">in action.</span>
+              {pageData?.hero?.heading?.includes('Advantage') ? (
+                <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
+              ) : pageData?.hero?.heading || (
+                <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
+              )}
             </h1>
             <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
-              Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach.
+              {pageData?.hero?.subheading || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."}
             </p>
           </motion.div>
 
@@ -89,13 +104,13 @@ export default function CaseStudies() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-16 flex flex-wrap justify-center gap-6"
           >
-            {[
-              { value: '5.0', label: 'Google Rating', icon: <Star className="w-4 h-4 fill-amber-400 text-amber-400" /> },
+            {(pageData?.hero?.stats || [
+              { value: '5.0', label: 'Google Rating', iconName: 'Star' },
               { value: '$5M+', label: 'Total Assets Managed' },
               { value: '100%', label: 'Buyer-Side Only' },
-            ].map((stat) => (
+            ]).map((stat: any) => (
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
-                {stat.icon && stat.icon}
+                {stat.iconName === 'Star' && <Star className="w-4 h-4 fill-amber-400 text-amber-400" />}
                 <span className="text-2xl font-serif text-white">{stat.value}</span>
                 <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
               </div>

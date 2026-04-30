@@ -19,6 +19,7 @@ interface SanityPost {
 export default function Blog() {
   const [posts, setPosts] = useState<SanityPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [pageData, setPageData] = useState<any>(null);
   
   const [email, setEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
@@ -38,7 +39,7 @@ export default function Blog() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const query = `*[_type == "post"] | order(publishedAt desc) {
+        const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
           _id,
           title,
           slug,
@@ -51,8 +52,19 @@ export default function Blog() {
           featured,
           "categories": categories[]->{ title, color }
         }`;
-        const data = await client.fetch(query);
-        setPosts(data);
+        const pageQuery = `*[_type == "blogPage"][0] {
+          seo,
+          hero,
+          newsletter
+        }`;
+
+        const [postsData, pageData] = await Promise.all([
+          client.fetch(postsQuery),
+          client.fetch(pageQuery)
+        ]);
+
+        setPosts(postsData);
+        if (pageData) setPageData(pageData);
       } catch (error) {
         console.error('Error fetching posts:', error);
       } finally {
@@ -66,8 +78,10 @@ export default function Blog() {
   return (
     <div className="w-full bg-white selection:bg-gold/20 pt-20">
       <SEO 
-        title="Market Intelligence & Blog" 
-        description="Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market." 
+        title={pageData?.seo?.metaTitle || "Market Intelligence & Blog"} 
+        description={pageData?.seo?.metaDescription || "Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market."} 
+        image={pageData?.seo?.ogImage}
+        keywords={pageData?.seo?.keywords}
       />
 
       {/* Hero */}
@@ -83,14 +97,17 @@ export default function Blog() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-              Market Intelligence
+              {pageData?.hero?.badge || "Market Intelligence"}
             </div>
             <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-6 max-w-4xl">
-              Insights for Sydney's{' '}
-              <span className="text-gold">informed buyers.</span>
+              {pageData?.hero?.heading?.includes('informed') ? (
+                <>Insights for Sydney's <span className="text-gold">informed buyers.</span></>
+              ) : pageData?.hero?.heading || (
+                <>Insights for Sydney's <span className="text-gold">informed buyers.</span></>
+              )}
             </h1>
             <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
-              Data-driven analysis, acquisition strategy, and on-the-ground market intelligence from 20+ years inside Sydney's property market.
+              {pageData?.hero?.subheading || "Data-driven analysis, acquisition strategy, and on-the-ground market intelligence from 20+ years inside Sydney's property market."}
             </p>
           </motion.div>
         </div>
@@ -195,11 +212,12 @@ export default function Blog() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-              Market intelligence, <br />
-              <span className="text-gold">direct to your inbox.</span>
+              {pageData?.newsletter?.heading || (
+                <>Market intelligence, <br /> <span className="text-gold">direct to your inbox.</span></>
+              )}
             </h2>
             <p className="text-xl text-muted font-sans mb-10 max-w-xl mx-auto leading-relaxed">
-              Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data.
+              {pageData?.newsletter?.description || "Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data."}
             </p>
             {isSubscribed ? (
               <motion.div
@@ -215,7 +233,7 @@ export default function Blog() {
                   </div>
                   <div className="text-left">
                     <p className="font-bold text-white text-sm">Successfully Subscribed!</p>
-                    <p className="text-xs text-gold/60">You're now on the list for our latest insights.</p>
+                    <p className="text-xs text-gold/60">{pageData?.newsletter?.successMessage || "You're now on the list for our latest insights."}</p>
                   </div>
                 </div>
               </motion.div>
@@ -234,7 +252,7 @@ export default function Blog() {
                   disabled={isSubscribing}
                   className={`shrink-0 rounded-2xl px-8 py-4 bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-transform duration-300 flex items-center gap-2 group justify-center ${isSubscribing ? 'opacity-70' : 'hover:scale-[1.03]'}`}
                 >
-                  {isSubscribing ? 'Sending...' : 'Subscribe'}
+                  {isSubscribing ? 'Sending...' : (pageData?.newsletter?.buttonText || 'Subscribe')}
                   {!isSubscribing && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
                 </button>
               </form>

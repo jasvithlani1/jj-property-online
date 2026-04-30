@@ -1,15 +1,43 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { Target, Search, Handshake, BadgeCheck, Briefcase, Building2, MapPin, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, BadgeCheck, Briefcase, Building2, MapPin, Target, Search, Handshake } from 'lucide-react';
 import Link from '../components/Link';
+import { useState, useEffect } from 'react';
+import { client, urlFor } from '../lib/sanity';
+import SEO from '../components/SEO';
 
 export default function About() {
+  const [aboutData, setAboutData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const query = `*[_type == "aboutPage"][0] {
+          seo,
+          hero,
+          profile,
+          purpose,
+          trackRecord,
+          techAdvantage,
+          values
+        }`;
+        const data = await client.fetch(query);
+        if (data) setAboutData(data);
+      } catch (err) {
+        console.error('Error fetching about page data:', err);
+      }
+    };
+    fetchAboutData();
+  }, []);
+
   return (
     <>
-      <Helmet>
-        <title>About Us - Trusted Buyers Agent Australia | JJ Property Partner</title>
-        <meta name="description" content="JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies." />
-      </Helmet>
+      <SEO 
+        title={aboutData?.seo?.metaTitle || "About Us - Trusted Buyers Agent Australia"}
+        description={aboutData?.seo?.metaDescription || "JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies."}
+        image={aboutData?.seo?.ogImage}
+        keywords={aboutData?.seo?.keywords}
+      />
       
       <div className="w-full bg-white selection:bg-gold/20 pt-20">
 
@@ -27,7 +55,7 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="inline-block px-6 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-bold uppercase tracking-[0.3em] mb-8 backdrop-blur-sm"
             >
-              About JJ Property Partner
+              {aboutData?.hero?.badge || "About JJ Property Partner"}
             </motion.div>
             
             <motion.h1
@@ -36,8 +64,11 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-5xl sm:text-6xl md:text-8xl font-serif text-white leading-[1.05] mb-10"
             >
-              Buy Property <br />
-              With <span className="text-gold italic">Absolute Confidence.</span>
+              {aboutData?.hero?.heading?.includes('Confidence') ? (
+                <>Buy Property <br /> With <span className="text-gold italic">Absolute Confidence.</span></>
+              ) : aboutData?.hero?.heading || (
+                <>Buy Property <br /> With <span className="text-gold italic">Absolute Confidence.</span></>
+              )}
             </motion.h1>
             
             <motion.div
@@ -48,7 +79,7 @@ export default function About() {
             >
               <div className="h-px w-24 bg-gold/40 hidden md:block" />
               <p className="text-xl md:text-2xl text-white/60 font-sans max-w-2xl leading-relaxed">
-                We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own.
+                {aboutData?.hero?.subheading || "We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own."}
               </p>
             </motion.div>
           </div>
@@ -63,7 +94,7 @@ export default function About() {
             className="relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-white/10"
           >
             <img
-              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"
+              src={aboutData?.hero?.image ? urlFor(aboutData.hero.image).url() : "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"}
               alt="Premium Property Architecture"
               className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-[1.1]"
             />
@@ -72,9 +103,9 @@ export default function About() {
             {/* Mission Badge */}
             <div className="absolute bottom-10 right-10 hidden md:block">
               <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] max-w-sm">
-                <p className="text-gold font-sans text-xs font-black uppercase tracking-[0.2em] mb-4">Our Vision</p>
+                <p className="text-gold font-sans text-xs font-black uppercase tracking-[0.2em] mb-4">{aboutData?.hero?.badge || "Our Vision"}</p>
                 <p className="text-white text-lg font-serif leading-relaxed">
-                  "To empower Australians with data-driven insights and professional representation that turns the property journey into a success story."
+                  {aboutData?.hero?.missionBadge || "\"To empower Australians with data-driven insights and professional representation that turns the property journey into a success story.\""}
                 </p>
               </div>
             </div>
@@ -95,7 +126,7 @@ export default function About() {
             >
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
                 <img
-                  src="/buyers-agent-showing.png"
+                  src={aboutData?.profile?.image ? urlFor(aboutData.profile.image).url() : "/buyers-agent-showing.png"}
                   alt="Alex - Founder of JJ Property Partner"
                   className="w-full aspect-[4/5] object-cover hover:scale-105 transition-all duration-700 brightness-[0.95]"
                 />
@@ -127,10 +158,10 @@ export default function About() {
               
               <div className="space-y-8 text-lg text-muted font-sans leading-relaxed">
                 <p className="text-xl text-[#011122] font-medium leading-relaxed italic">
-                  "JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor."
+                  {aboutData?.profile?.quote || "\"JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor.\""}
                 </p>
                 <p>
-                  <span className="text-[#011122] font-bold">Alex</span> brings more than 20 years of experience in technology and real estate to the table. As a licensed buyers agent and seasoned property investor, he bridges the gap between traditional market knowledge and modern data analytics. Based in Sydney and working with clients nationwide, he ensures that every acquisition is treated with the same precision as his own personal portfolio.
+                  {aboutData?.profile?.description || "Alex brings more than 20 years of experience in technology and real estate to the table. As a licensed buyers agent and seasoned property investor, he bridges the gap between traditional market knowledge and modern data analytics. Based in Sydney and working with clients nationwide, he ensures that every acquisition is treated with the same precision as his own personal portfolio."}
                 </p>
                 <p>
                   The name <span className="text-[#011122] font-bold italic">“JJ”</span> reflects the family values at the heart of our firm. Named after Alex’s daughters, Jessica and Jennifer, the business is a testament to long-term legacy and genuine care. We don't just find houses; we secure the right foundations for your future.
@@ -138,20 +169,19 @@ export default function About() {
               </div>
 
               <div className="pt-6 flex flex-wrap gap-8 items-center border-t border-gold/10">
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl font-serif text-[#011122]">20+ Years</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">IT & Real Estate</span>
-                </div>
-                <div className="w-px h-10 bg-gold/20" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl font-serif text-[#011122]">$5M+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Personal Portfolio</span>
-                </div>
-                <div className="w-px h-10 bg-gold/20" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-2xl font-serif text-[#011122]">Nationwide</span>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Service Area</span>
-                </div>
+                {(aboutData?.profile?.stats || [
+                  { label: 'IT & Real Estate', value: '20+ Years' },
+                  { label: 'Personal Portfolio', value: '$5M+' },
+                  { label: 'Service Area', value: 'Nationwide' }
+                ]).map((stat: any, i: number) => (
+                  <React.Fragment key={i}>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-2xl font-serif text-[#011122]">{stat.value}</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted">{stat.label}</span>
+                    </div>
+                    {i < (aboutData?.profile?.stats?.length || 3) - 1 && <div className="w-px h-10 bg-gold/20" />}
+                  </React.Fragment>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -169,16 +199,22 @@ export default function About() {
           >
             <div className="text-8xl md:text-[10rem] font-serif text-gold/40 leading-none mb-4 select-none">JJ</div>
             <h2 className="text-3xl md:text-5xl font-serif italic text-[#011122] mb-12">
-              A name with purpose. A promise with heart.
+              {aboutData?.purpose?.heading || "A name with purpose. A promise with heart."}
             </h2>
             
             <div className="space-y-8 text-lg md:text-xl text-muted font-sans leading-relaxed mb-16">
-              <p>
-                The initials <span className="text-[#011122] font-semibold">JJ</span> carry deep personal meaning. They represent the two people who inspired Alex to build something lasting — his daughters <span className="text-[#011122] font-medium">Jessica and Jennifer</span>.
-              </p>
-              <p>
-                Every property acquisition, every negotiation, every piece of advice is delivered with the same dedication he puts into building their future.
-              </p>
+              {aboutData?.purpose?.description ? (
+                <p>{aboutData.purpose.description}</p>
+              ) : (
+                <>
+                  <p>
+                    The initials <span className="text-[#011122] font-semibold">JJ</span> carry deep personal meaning. They represent the two people who inspired Alex to build something lasting — his daughters <span className="text-[#011122] font-medium">Jessica and Jennifer</span>.
+                  </p>
+                  <p>
+                    Every property acquisition, every negotiation, every piece of advice is delivered with the same dedication he puts into building their future.
+                  </p>
+                </>
+              )}
             </div>
 
             <div className="mb-24">
@@ -221,13 +257,10 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10"
           >
-            <h3 className="text-3xl font-serif mb-6 text-[#011122]">Alex's Personal Track Record</h3>
+            <h3 className="text-3xl font-serif mb-6 text-[#011122]">{aboutData?.trackRecord?.title || "Alex's Personal Track Record"}</h3>
             <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
               <p>
-                Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy.
-              </p>
-              <p>
-                He has also guided a wide range of buyers, from first home buyers entering the market to experienced investors building portfolios exceeding $1 million, as well as SMSF trustees seeking compliant, well-positioned assets to support long-term retirement goals.
+                {aboutData?.trackRecord?.content || "Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy."}
               </p>
             </div>
           </motion.div>
@@ -240,13 +273,10 @@ export default function About() {
             className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
-            <h3 className="text-3xl font-serif mb-6 relative z-10">The Technology Advantage</h3>
+            <h3 className="text-3xl font-serif mb-6 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
             <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
               <p>
-                Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia.
-              </p>
-              <p>
-                Rather than relying only on broad suburb reports or gut feel, JJ Property Partner assesses multiple data points at once, including price trends, rental yields, vacancy rates, infrastructure plans, population growth, supply and demand, and changing demographics. This allows for sharper suburb selection and better long-term outcomes for clients.
+                {aboutData?.techAdvantage?.content || "Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia."}
               </p>
             </div>
           </motion.div>
@@ -262,37 +292,27 @@ export default function About() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">01</span>
-                <h4 className="text-2xl font-serif text-white">Truly Independent, Always Buyer-Focused</h4>
-              </div>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed">JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.</p>
-            </motion.div>
- 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">02</span>
-                <h4 className="text-2xl font-serif text-white">Clear Advice, Every Step</h4>
-              </div>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed">We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.</p>
-            </motion.div>
- 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">03</span>
-                <h4 className="text-2xl font-serif text-white">Direct Access, Personal Guidance</h4>
-              </div>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed">At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.</p>
-            </motion.div>
- 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">04</span>
-                <h4 className="text-2xl font-serif text-white">Building Wealth for the Long Run</h4>
-              </div>
-              <p className="text-white/70 text-base md:text-lg leading-relaxed">Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.</p>
-            </motion.div>
+            {(aboutData?.values || [
+              { title: 'Truly Independent, Always Buyer-Focused', description: 'JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.' },
+              { title: 'Clear Advice, Every Step', description: 'We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.' },
+              { title: 'Direct Access, Personal Guidance', description: 'At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.' },
+              { title: 'Building Wealth for the Long Run', description: 'Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.' }
+            ]).map((value: any, index: number) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ duration: 0.6, delay: index * 0.1 }} 
+                className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">{String(index + 1).padStart(2, '0')}</span>
+                  <h4 className="text-2xl font-serif text-white">{value.title}</h4>
+                </div>
+                <p className="text-white/70 text-base md:text-lg leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

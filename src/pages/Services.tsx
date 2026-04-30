@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Plus, Gavel, Key, Building2, Landmark, Scale, TrendingUp } from 'lucide-react';
 import { FaKey, FaBuilding, FaLandmark } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
-import { useState } from 'react';
 import Link from '../components/Link';
+import { useEffect, useState } from 'react';
+import { client, urlFor } from '../lib/sanity';
+import SEO from '../components/SEO';
 
 const servicesFaqs = [
   {
@@ -112,13 +113,34 @@ const services = [
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [pageData, setPageData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchPageData = async () => {
+      try {
+        const query = `*[_type == "servicesPage"][0] {
+          seo,
+          hero,
+          serviceList,
+          faqs
+        }`;
+        const data = await client.fetch(query);
+        if (data) setPageData(data);
+      } catch (err) {
+        console.error('Error fetching services page data:', err);
+      }
+    };
+    fetchPageData();
+  }, []);
 
   return (
     <>
-      <Helmet>
-        <title>Property Buying Services Australia | JJ Property Partner</title>
-        <meta name="description" content="JJ Property Partner offers expert buyer’s agent services across Australia for first home buyers, property investors, and SMSF property strategies with data-driven results." />
-      </Helmet>
+      <SEO 
+        title={pageData?.seo?.metaTitle || "Property Buying Services Australia | JJ Property Partner"}
+        description={pageData?.seo?.metaDescription || "Expert buyers agent services for first home buyers, property investors, and SMSF property acquisition across Australia. Data-led research and off-market access."}
+        image={pageData?.seo?.ogImage}
+        keywords={pageData?.seo?.keywords}
+      />
 
       <div className="w-full bg-white selection:bg-gold/20 pt-20">
 
@@ -134,16 +156,19 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-              Our Services
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-4xl">
-              Acquisition Strategies Designed for <br />
-              <span className="text-gold">Precision and Long-Term Wealth.</span>
-            </h1>
-            <p className="text-xl text-white/60 font-sans max-w-2xl leading-relaxed">
-              JJ Property Partner is an independent buyers agency that works solely for you, guiding you through every stage of the property journey across Australia. Built on independence, smart data-led advice, and personalised service, we give you the confidence to buy with clarity and purpose.
-            </p>
+            <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
+                {pageData?.hero?.badge || "Professional Services"}
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+                {pageData?.hero?.heading?.includes('Property') ? (
+                  <>The Modern Path to <span className="text-gold">Property Acquisition.</span></>
+                ) : pageData?.hero?.heading || (
+                  <>The Modern Path to <span className="text-gold">Property Acquisition.</span></>
+                )}
+              </h1>
+              <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
+                {pageData?.hero?.subheading || "We don’t just find houses; we engineer acquisition strategies. Whether you are buying your first home or building a national portfolio, we provide the data, network, and experience to secure the right asset."}
+              </p>
           </motion.div>
 
           {/* Stats strip */}
@@ -153,12 +178,12 @@ export default function Services() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
-            {[
+            {(pageData?.hero?.stats || [
               { value: '20+', label: 'Years of Experience' },
               { value: '$5M+', label: 'Portfolio Target' },
               { value: '97%', label: 'Client Satisfaction Rate' },
               { value: '100%', label: 'Buyers Representation' },
-            ].map((stat) => (
+            ]).map((stat: any) => (
               <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
                 <p className="relative text-4xl md:text-5xl font-serif text-[#011122] mb-2 font-bold">{stat.value}</p>
@@ -170,9 +195,9 @@ export default function Services() {
       </section>
 
       {/* Service Sections */}
-      <section className="py-8 md:py-10 px-8 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
-          {services.map((service, index) => (
+        <section className="py-12 md:py-20 px-8 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto flex flex-col gap-24 md:gap-32">
+            {(pageData?.serviceList || services).map((service: any, index: number) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 40 }}
@@ -206,7 +231,7 @@ export default function Services() {
                           hover: { opacity: 0, visibility: 'hidden' }
                         }}
                       >
-                        {service.icon}
+                        {service.icon || (index === 0 ? <Key className="w-8 h-8" /> : index === 1 ? <Building2 className="w-8 h-8" /> : <Landmark className="w-8 h-8" />)}
                       </motion.div>
                       <motion.div
                         className="absolute inset-0 h-full w-full flex items-center justify-center"
@@ -216,16 +241,16 @@ export default function Services() {
                           hover: { opacity: 1, visibility: 'visible' }
                         }}
                       >
-                        {service.solidIcon}
+                        {service.solidIcon || (index === 0 ? <FaKey className="w-8 h-8" /> : index === 1 ? <FaBuilding className="w-8 h-8" /> : <FaLandmark className="w-8 h-8" />)}
                       </motion.div>
                     </motion.div>
                   </div>
-                  <span className={`text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full ${service.accentClass} border shadow-sm`}>
+                  <span className={`text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full ${service.accentClass || 'bg-gold/5 border-gold/20'} border shadow-sm`}>
                     {service.tag}
                   </span>
                 </div>
 
-                <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-tight">
+                 <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-tight">
                   {service.title}
                 </h2>
                 <p className="text-lg text-muted font-serif mb-4">{service.subtitle}</p>
@@ -234,7 +259,7 @@ export default function Services() {
                 </p>
 
                 <ul className="space-y-4 mb-8">
-                  {service.benefits.map((b, i) => (
+                  {(service.benefits || []).map((b: string, i: number) => (
                     <motion.li
                       key={i}
                       initial={{ opacity: 0, x: -20 }}
@@ -269,7 +294,7 @@ export default function Services() {
               {/* Image Side */}
               <div className={`relative h-[320px] sm:h-[520px] md:h-[650px] lg:h-[750px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <img
-                  src={service.image}
+                  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
                   alt={service.title}
                   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
@@ -290,26 +315,26 @@ export default function Services() {
             <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
+            {(pageData?.additionalServices || [
               {
                 title: 'Negotiation Only',
                 description: 'Already found the right property? Our Negotiation Only Service gives you expert buyer-side representation to help secure the best possible price and favourable contract terms. We use market insights, comparable sales data, and proven negotiation strategies to protect your interests every step of the way.',
-                icon: <Scale className="w-7 h-7" />,
+                icon: 'Scale',
                 isFeatured: true
               },
               {
                 title: 'Auction Bidding',
                 description: 'Property auctions can move quickly, and emotional bidding often leads to overpaying. JJ Property Partner provides calm, strategic auction representation with a clear bidding limit agreed in advance, backed by property appraisal, market research, and a disciplined approach designed to protect your interests.',
-                icon: <Gavel className="w-7 h-7" />,
+                icon: 'Gavel',
                 isFeatured: false
               },
               {
                 title: 'Portfolio Strategy',
                 description: 'For investors planning their next purchase or refining their current approach, our portfolio strategy sessions provide clear, data-led guidance. We review your existing assets, assess future opportunities, and map out a practical strategy designed to support long-term wealth growth across Australia.',
-                icon: <TrendingUp className="w-7 h-7" />,
+                icon: 'TrendingUp',
                 isFeatured: true
               }
-            ].map((service) => (
+            ]).map((service: any) => (
               <Link
                 key={service.title}
                 href="/contact"
@@ -324,7 +349,7 @@ export default function Services() {
                     ? 'bg-white/10 border-gold/30 text-gold shadow-gold/10' 
                     : 'bg-[#011122] border-white/10 text-gold'
                 }`}>
-                  {service.icon}
+                  {service.icon === 'Scale' ? <Scale className="w-7 h-7" /> : service.icon === 'Gavel' ? <Gavel className="w-7 h-7" /> : <TrendingUp className="w-7 h-7" />}
                 </div>
 
                 <h3 className={`text-3xl font-serif mb-6 leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122] font-semibold'}`}>
@@ -365,7 +390,7 @@ export default function Services() {
           </div>
 
           <div className="lg:col-span-8 flex flex-col gap-4">
-            {servicesFaqs.map((faq, index) => (
+            {(pageData?.faqs || servicesFaqs).map((faq: any, index: number) => (
               <div key={index} className="border-b border-[#011122]/10 pb-2">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
@@ -411,17 +436,18 @@ export default function Services() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-[#011122] mb-8 leading-tight">
-              Not sure which service fits? <br />
-              <span className="text-gold">Let's find out together.</span>
+              {pageData?.finalCta?.heading || (
+                <>Not sure which service fits? <br /> <span className="text-gold">Let's find out together.</span></>
+              )}
             </h2>
             <p className="text-lg sm:text-xl text-muted font-sans mb-12 max-w-2xl mx-auto">
-              Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets.
+              {pageData?.finalCta?.description || "Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets."}
             </p>
             <button
               onClick={openCalendly}
               className="group rounded-full px-8 sm:px-14 py-4 sm:py-5 bg-[#011122] text-white text-sm sm:text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-transform duration-300 shadow-2xl shadow-black/10 flex items-center gap-3 mx-auto cursor-pointer"
             >
-              Book 30m Strategy Session
+              {pageData?.finalCta?.primaryButtonText || "Book 30m Strategy Session"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { useState } from 'react';
-import { writeClient } from '../lib/sanity';
 import Link from '../components/Link';
+import { useEffect, useState } from 'react';
+import { client, writeClient } from '../lib/sanity';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +15,24 @@ export default function Contact() {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [pageData, setPageData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchPageData = async () => {
+      try {
+        const query = `*[_type == "contactPage"][0] {
+          seo,
+          hero,
+          details
+        }`;
+        const data = await client.fetch(query);
+        if (data) setPageData(data);
+      } catch (err) {
+        console.error('Error fetching contact page data:', err);
+      }
+    };
+    fetchPageData();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,10 +73,12 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet>
-        <title>Contact JJ Property Partner | Australia Buyers Agent</title>
-        <meta name="description" content="Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today." />
-      </Helmet>
+      <SEO 
+        title={pageData?.seo?.metaTitle || "Contact JJ Property Partner | Australia Buyers Agent"}
+        description={pageData?.seo?.metaDescription || "Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today."}
+        image={pageData?.seo?.ogImage}
+        keywords={pageData?.seo?.keywords}
+      />
 
       <div className="w-full bg-white selection:bg-gold/20 pt-24 pb-8 md:pb-12">
       {/* Hero Section */}
@@ -70,14 +90,17 @@ export default function Contact() {
           className="max-w-4xl mx-auto"
         >
           <div className="inline-block px-7 py-3 rounded-full border border-black/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-black mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-            Contact Us
+            {pageData?.hero?.badge || "Contact Us"}
           </div>
           <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
-            Exclusive access to Australia’s <br className="hidden md:block" />
-            <span className="font-semibold text-gold">premium</span> property market.
+            {pageData?.hero?.heading?.includes('premium') ? (
+              <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="font-semibold text-gold">premium</span> property market.</>
+            ) : pageData?.hero?.heading || (
+              <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="font-semibold text-gold">premium</span> property market.</>
+            )}
           </h1>
           <p className="text-xl text-muted font-sans max-w-3xl mx-auto leading-relaxed">
-            Contact us for a private and comprehensive strategy consultation. We act on behalf of buyers all over Australia, providing customized strategies for acquiring the right property through thorough market research and expert negotiations.
+            {pageData?.hero?.subheading || "Contact us for a private and comprehensive strategy consultation. We act on behalf of buyers all over Australia, providing customized strategies for acquiring the right property through thorough market research and expert negotiations."}
           </p>
         </motion.div>
       </section>
@@ -97,7 +120,7 @@ export default function Contact() {
               className="flex flex-col justify-center"
             >
               <h2 className="text-4xl font-serif text-black leading-tight mb-10">
-                Let's discuss your targets.
+                {pageData?.details?.heading || "Let's discuss your targets."}
               </h2>
 
               <div className="space-y-8">
@@ -108,8 +131,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <Link href="mailto:info@jjpropertypartner.com.au" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
-                      info@jjpropertypartner.com.au
+                    <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+                      {pageData?.details?.email || "info@jjpropertypartner.com.au"}
                     </Link>
                   </div>
                 </div>
@@ -121,8 +144,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Executive Line</h3>
-                    <Link href="tel:+61481334458" className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
-                      +61 481 334 458
+                    <Link href={`tel:${pageData?.details?.phone?.replace(/\s/g, '') || "+61481334458"}`} className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+                      {pageData?.details?.phone || "+61 481 334 458"}
                     </Link>
                   </div>
                 </div>
@@ -134,7 +157,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
-                    <Link href="https://wa.me/61481334458" className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
+                    <Link href={pageData?.details?.whatsapp || "https://wa.me/61481334458"} className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
                       Message us instantly
                     </Link>
                   </div>
@@ -148,7 +171,7 @@ export default function Contact() {
                   <div className="flex flex-col justify-center">
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Our Office</h3>
                     <p className="text-lg font-sans font-medium text-black leading-relaxed">
-                      U110, 6-10 Charles Street, <br />Parramatta, NSW 2150, Australia
+                      {pageData?.details?.address || "Sydney, Australia"}
                     </p>
                   </div>
                 </div>

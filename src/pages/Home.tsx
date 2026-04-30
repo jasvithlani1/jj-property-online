@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { Home as HomeIcon, TrendingUp, ArrowRight, Plus, Star, Quote } from 'lucide-react';
 import { FaHome, FaChartLine } from 'react-icons/fa';
 import { TbHomeShield } from 'react-icons/tb';
@@ -8,6 +7,7 @@ import { openCalendly, initInlineCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
 import { client } from '../lib/sanity';
 import Link from '../components/Link';
+import SEO from '../components/SEO';
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -97,6 +97,25 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isReviewPaused, setIsReviewPaused] = useState(false);
   const [reviews, setReviews] = useState<any[]>([]);
+  const [homeData, setHomeData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchHomeData = async () => {
+      try {
+        const query = `*[_type == "homePage"][0] {
+          seo,
+          hero,
+          servicesPreview,
+          faqs
+        }`;
+        const data = await client.fetch(query);
+        if (data) setHomeData(data);
+      } catch (err) {
+        console.error('Error fetching home page data:', err);
+      }
+    };
+    fetchHomeData();
+  }, []);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -233,10 +252,12 @@ export default function Home() {
 
   return (
     <>
-      <Helmet>
-        <title>Buyers Agent Parramatta AU | JJ Property Partner</title>
-        <meta name="description" content="JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition." />
-      </Helmet>
+      <SEO 
+        title={homeData?.seo?.metaTitle || "Buyers Agent Parramatta AU"}
+        description={homeData?.seo?.metaDescription || "JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition."}
+        image={homeData?.seo?.ogImage}
+        keywords={homeData?.seo?.keywords}
+      />
 
       <div ref={containerRef} className="relative w-full bg-white selection:bg-gold/20">
 
@@ -261,18 +282,20 @@ export default function Home() {
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
           <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
-            Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" />
-            Your <span className="text-gold">Dedicated</span> Advocate.
+            {homeData?.hero?.heading?.includes('Strategist') ? (
+              <>Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold">Dedicated</span> Advocate.</>
+            ) : homeData?.hero?.heading || (
+              <>Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold">Dedicated</span> Advocate.</>
+            )}
           </h1>
 
           <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
-            JJ Property Partner — Your Trusted Buyers Agent in Australia.
-            Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition.
+            {homeData?.hero?.subheading || "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."}
           </p>
 
           <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
-              Book Session
+              {homeData?.hero?.ctaText || "Book Session"}
             </button>
             <Link href="/case-studies" className="rounded-full px-14 py-5 text-base border border-gold/30 bg-white/10 backdrop-blur-sm text-white hover:bg-gold hover:border-gold transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
               Client Stories
@@ -371,7 +394,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {servicesPreview.map((service, index) => (
+              {(homeData?.servicesPreview || servicesPreview).map((service: any, index: number) => (
                 <Link
                   key={service.title}
                   href={`/services#${service.anchor}`}
@@ -715,7 +738,7 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-4">
-              {faqs.map((faq, index) => (
+              {(homeData?.faqs || faqs).map((faq: any, index: number) => (
                 <div key={index} className="border-b border-black/10 pb-2">
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}

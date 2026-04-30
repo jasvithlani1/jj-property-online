@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
-import { useState } from 'react';
 import Link from '../components/Link';
+import { useEffect, useState } from 'react';
+import { client, urlFor } from '../lib/sanity';
+import SEO from '../components/SEO';
 
 const smsfFaqs = [
   {
@@ -48,13 +49,39 @@ const pillars = [
 
 export default function SmsfProperty() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [pageData, setPageData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchPageData = async () => {
+      try {
+        const query = `*[_type == "servicePage" && slug.current == "smsf-property"][0] {
+          seo,
+          hero,
+          intro,
+          pillars,
+          process,
+          readiness,
+          whyJJ,
+          faqs,
+          finalCta
+        }`;
+        const data = await client.fetch(query);
+        if (data) setPageData(data);
+      } catch (err) {
+        console.error('Error fetching SMSF Property page data:', err);
+      }
+    };
+    fetchPageData();
+  }, []);
 
   return (
     <>
-      <Helmet>
-        <title>SMSF Property Buyers Agent AU | JJ Property Partner</title>
-        <meta name="description" content="Specialist property acquisition for Self-Managed Super Funds. We find high-performing, compliant residential assets to help grow your retirement wealth." />
-      </Helmet>
+      <SEO 
+        title={pageData?.seo?.metaTitle || "SMSF Property Buyers Agent AU"}
+        description={pageData?.seo?.metaDescription || "Specialist property acquisition for Self-Managed Super Funds. We find high-performing, compliant residential assets to help grow your retirement wealth."}
+        image={pageData?.seo?.ogImage}
+        keywords={pageData?.seo?.keywords}
+      />
       
       <div className="w-full bg-white selection:bg-gold/20 pt-20">
         {/* Hero Section */}
@@ -69,14 +96,17 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
-                SMSF Property
+                {pageData?.hero?.badge || "SMSF Property"}
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
-                Strategic Acquisitions for your{' '}
-                <span className="text-gold">Self-Managed Super Fund.</span>
+                {pageData?.hero?.heading?.includes('Fund') ? (
+                  <>Strategic Acquisitions for your <span className="text-gold">Self-Managed Super Fund.</span></>
+                ) : pageData?.hero?.heading || (
+                  <>Strategic Acquisitions for your <span className="text-gold">Self-Managed Super Fund.</span></>
+                )}
               </h1>
               <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Unlock the power of your super with residential property. We help you identify and secure high-performing, compliant assets nationwide.
+                {pageData?.hero?.subheading || "Unlock the power of your super with residential property. We help you identify and secure high-performing, compliant assets nationwide."}
               </p>
             </motion.div>
           </div>
@@ -92,23 +122,23 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                Secure Your Retirement with Smart SMSF Property Choices
+                {pageData?.intro?.heading || "Secure Your Retirement with Smart SMSF Property Choices"}
               </h2>
               <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
                 <p>
-                  Investing in residential property through an SMSF is a powerful way to build retirement wealth, but it requires a specialized approach that prioritizes compliance and long-term stability.
+                  {pageData?.intro?.content || "Investing in residential property through an SMSF is a powerful way to build retirement wealth, but it requires a specialized approach that prioritizes compliance and long-term stability."}
                 </p>
                 <p className="font-semibold text-[#011122]">
-                  How JJ Property Partner supports SMSF investors:
+                  {pageData?.intro?.heading ? "What we offer:" : "How JJ Property Partner supports SMSF investors:"}
                 </p>
                 <ul className="space-y-4 pt-2">
-                  {[
+                  {(pageData?.intro?.benefits || [
                     "Selection of properties that meet strict SMSF lending and compliance criteria",
                     "Nationwide research to find the best growth and yield opportunities for your fund",
                     "Strategic off-market access to secure quality assets with less competition",
                     "Coordination with your accountant, broker, and solicitor for a seamless purchase",
                     "Expert negotiation to ensure you secure the best possible terms for your fund"
-                  ].map((item, idx) => (
+                  ]).map((item: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-4">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                       <span>{item}</span>
@@ -125,7 +155,7 @@ export default function SmsfProperty() {
               className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1200"
+                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1200"}
                 alt="Modern Residential Property"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -137,7 +167,7 @@ export default function SmsfProperty() {
         {/* Content Pillars */}
         <section className="py-8 md:py-16 px-6 md:px-8 bg-neutral-50">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
-            {pillars.map((pillar, index) => (
+            {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 60 }}
@@ -151,7 +181,7 @@ export default function SmsfProperty() {
                     {pillar.title}
                   </h2>
                   <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
-                    {pillar.description.split('\n\n').map((paragraph, pIdx) => {
+                    {(pillar.description || "").split('\n\n').map((paragraph: string, pIdx: number) => {
                       if (paragraph.startsWith('• ')) {
                         return (
                           <div key={pIdx} className="space-y-3 mt-4">
@@ -171,7 +201,7 @@ export default function SmsfProperty() {
 
                 <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
-                    src={pillar.image}
+                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
                     alt={pillar.title}
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
@@ -185,35 +215,23 @@ export default function SmsfProperty() {
         <section className="py-12 md:py-20 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">Your SMSF Acquisition <span className="text-gold">Journey</span></h2>
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">
+              {pageData?.process?.heading || (
+                <>Your SMSF Acquisition <span className="text-gold">Journey</span></>
+              )}
+            </h2>
             <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
           </div>
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: '01',
-                  title: 'Strategy & Setup',
-                  body: 'We coordinate with your financial professionals to ensure your fund is structured correctly and your investment strategy is property-ready.',
-                },
-                {
-                  step: '02',
-                  title: 'Compliant Sourcing',
-                  body: 'We identify residential assets that meet SMSF lending requirements and offer the best long-term growth and yield potential.',
-                },
-                {
-                  step: '03',
-                  title: 'Managed Due Diligence',
-                  body: 'Thorough inspections and professional contract reviews ensure the asset is sound and all SMSF regulatory requirements are met.',
-                },
-                {
-                  step: '04',
-                  title: 'Strategic Settlement',
-                  body: 'We manage the entire process through to settlement, ensuring a seamless transition and property management setup.',
-                },
-              ].map((card, i) => (
+              {(pageData?.process?.steps || [
+                { stepNumber: '01', title: 'Strategy & Setup', body: 'We coordinate with your financial professionals to ensure your fund is structured correctly and your investment strategy is property-ready.' },
+                { stepNumber: '02', title: 'Compliant Sourcing', body: 'We identify residential assets that meet SMSF lending requirements and offer the best long-term growth and yield potential.' },
+                { stepNumber: '03', title: 'Managed Due Diligence', body: 'Thorough inspections and professional contract reviews ensure the asset is sound and all SMSF regulatory requirements are met.' },
+                { stepNumber: '04', title: 'Strategic Settlement', body: 'We manage the entire process through to settlement, ensuring a seamless transition and property management setup.' }
+              ]).map((card: any, i: number) => (
                 <motion.div
-                  key={card.step}
+                  key={card.stepNumber || i}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -221,7 +239,7 @@ export default function SmsfProperty() {
                   className="relative p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
                 >
                   <div className="text-gold font-serif text-5xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
-                    {card.step}
+                    {card.stepNumber || `0${i + 1}`}
                   </div>
                   <h3 className="text-xl font-serif text-white mb-4">
                     {card.title}
@@ -244,14 +262,15 @@ export default function SmsfProperty() {
                 viewport={{ once: true }}
                 className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6"
               >
-                SMSF Compliance
+                {pageData?.readiness?.badge || "SMSF Compliance"}
               </motion.div>
               <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-8 leading-[1.1]">
-                SMSF Property <br />
-                <span className="text-gold italic">Requirements.</span>
+                {pageData?.readiness?.heading || (
+                  <>SMSF Property <br /> <span className="text-gold italic">Requirements.</span></>
+                )}
               </h2>
               <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto">
-                Investing within super involves specific rules and lending criteria. We help you navigate these requirements to ensure your purchase is both compliant and successful.
+                {pageData?.readiness?.description || "Investing within super involves specific rules and lending criteria. We help you navigate these requirements to ensure your purchase is both compliant and successful."}
               </p>
             </div>
 
@@ -260,14 +279,14 @@ export default function SmsfProperty() {
               <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
               <div className="flex flex-col gap-12 relative z-10">
-                {[
-                  { title: "Sole Purpose Test", desc: "The investment must be for the sole purpose of providing retirement benefits to members." },
-                  { title: "No Personal Use", desc: "You or your family cannot live in or use the residential property held by your fund." },
-                  { title: "Arm's Length", desc: "All transactions must be conducted on a purely commercial, arm's-length basis." },
-                  { title: "Lending Rules", desc: "Borrowing is typically done through a Limited Recourse Borrowing Arrangement (LRBA)." },
-                  { title: "Liquidity Buffer", desc: "Lenders often require a cash buffer within the fund after the property purchase." },
-                  { title: "Single Title", desc: "SMSF borrowing rules usually require the property to be on a single title asset." }
-                ].map((item, idx) => (
+                {(pageData?.readiness?.items || [
+                  { title: "Sole Purpose Test", description: "The investment must be for the sole purpose of providing retirement benefits to members." },
+                  { title: "No Personal Use", description: "You or your family cannot live in or use the residential property held by your fund." },
+                  { title: "Arm's Length", description: "All transactions must be conducted on a purely commercial, arm's-length basis." },
+                  { title: "Lending Rules", description: "Borrowing is typically done through a Limited Recourse Borrowing Arrangement (LRBA)." },
+                  { title: "Liquidity Buffer", description: "Lenders often require a cash buffer within the fund after the property purchase." },
+                  { title: "Single Title", description: "SMSF borrowing rules usually require the property to be on a single title asset." }
+                ]).map((item: any, idx: number) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
@@ -281,7 +300,7 @@ export default function SmsfProperty() {
                         <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
                         <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
                         <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
-                          {item.desc}
+                          {item.description || item.desc}
                         </p>
                       </div>
                     </div>
@@ -309,15 +328,15 @@ export default function SmsfProperty() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-32 group-hover:bg-gold/20 transition-colors" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-32" />
                 
-                <h3 className="text-4xl font-serif text-white mb-6 relative z-10">Discuss Your SMSF Strategy</h3>
+                <h3 className="text-4xl font-serif text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Discuss Your SMSF Strategy"}</h3>
                 <p className="text-white/60 text-lg mb-10 leading-relaxed relative z-10 max-w-xl mx-auto">
-                  Ready to build your retirement wealth? Our free discovery call will review your fund's goals and map out a compliant property acquisition path.
+                  {pageData?.readiness?.cta?.description || "Ready to build your retirement wealth? Our free discovery call will review your fund's goals and map out a compliant property acquisition path."}
                 </p>
                 <button
                   onClick={openCalendly}
                   className="rounded-full px-16 py-5 bg-gold text-white text-base font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
                 >
-                  Book Discovery Call
+                  {pageData?.readiness?.cta?.buttonText || "Book Discovery Call"}
                 </button>
               </div>
             </motion.div>
@@ -336,7 +355,7 @@ export default function SmsfProperty() {
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
-              {smsfFaqs.map((faq, index) => (
+              {(pageData?.faqs || smsfFaqs).map((faq: any, index: number) => (
                 <motion.div 
                   key={index} 
                   initial={{ opacity: 0, y: 20 }}
@@ -390,23 +409,25 @@ export default function SmsfProperty() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
-                Secure your <span className="text-gold">future</span> today.
+                {pageData?.finalCta?.heading || (
+                  <>Secure your <span className="text-gold">future</span> today.</>
+                )}
               </h2>
               <p className="text-xl text-white/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
-                Ready to explore how residential property can grow your super? Book your free discovery call with Alex today.
+                {pageData?.finalCta?.description || "Ready to explore how residential property can grow your super? Book your free discovery call with Alex today."}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
                   className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
                 >
-                  Book Discovery Call
+                  {pageData?.finalCta?.primaryButtonText || "Book Discovery Call"}
                 </button>
                 <Link
                   href="/contact"
                   className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
-                  Message Alex
+                  {pageData?.finalCta?.secondaryButtonText || "Message Alex"}
                 </Link>
               </div>
             </motion.div>

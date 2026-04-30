@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
 import { Plus } from 'lucide-react';
 import { openCalendly } from '../utils/calendly';
-import { useState } from 'react';
 import Link from '../components/Link';
+import { useEffect, useState } from 'react';
+import { client, urlFor } from '../lib/sanity';
+import SEO from '../components/SEO';
 
 const investorFaqs = [
   {
@@ -48,13 +49,39 @@ const pillars = [
 
 export default function PropertyInvestors() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [pageData, setPageData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchPageData = async () => {
+      try {
+        const query = `*[_type == "servicePage" && slug.current == "property-investors"][0] {
+          seo,
+          hero,
+          intro,
+          pillars,
+          process,
+          readiness,
+          whyJJ,
+          faqs,
+          finalCta
+        }`;
+        const data = await client.fetch(query);
+        if (data) setPageData(data);
+      } catch (err) {
+        console.error('Error fetching Property Investors page data:', err);
+      }
+    };
+    fetchPageData();
+  }, []);
 
   return (
     <>
-      <Helmet>
-        <title>Property Investment Buyers Agent AU | JJ Property Partner</title>
-        <meta name="description" content="Strategic property acquisition for serious investors. Use data-driven research and off-market access to build a high-performing property portfolio." />
-      </Helmet>
+      <SEO 
+        title={pageData?.seo?.metaTitle || "Property Investment Buyers Agent AU"}
+        description={pageData?.seo?.metaDescription || "Strategic property acquisition for serious investors. Use data-driven research and off-market access to build a high-performing property portfolio."}
+        image={pageData?.seo?.ogImage}
+        keywords={pageData?.seo?.keywords}
+      />
       
       <div className="w-full bg-white selection:bg-gold/20 pt-20">
         {/* Hero Section */}
@@ -69,14 +96,17 @@ export default function PropertyInvestors() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
-                Property Investors
+                {pageData?.hero?.badge || "Property Investors"}
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
-                Acquisition Strategies Engineered for{' '}
-                <span className="text-gold">Investment Precision.</span>
+                {pageData?.hero?.heading?.includes('Precision') ? (
+                  <>Acquisition Strategies Engineered for <span className="text-gold">Investment Precision.</span></>
+                ) : pageData?.hero?.heading || (
+                  <>Acquisition Strategies Engineered for <span className="text-gold">Investment Precision.</span></>
+                )}
               </h1>
               <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
-                Building a high-performing property portfolio requires more than guesswork. It demands systematic research, strategic timing, and professional execution.
+                {pageData?.hero?.subheading || "Building a high-performing property portfolio requires more than guesswork. It demands systematic research, strategic timing, and professional execution."}
               </p>
             </motion.div>
           </div>
@@ -92,23 +122,23 @@ export default function PropertyInvestors() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
-                Precise Acquisition Strategies for Property Investors
+                {pageData?.intro?.heading || "Precise Acquisition Strategies for Property Investors"}
               </h2>
               <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
                 <p>
-                  Building a high-performing property investment portfolio demands systematic research, disciplined acquisition criteria, strategic timing, and professional execution at every stage.
+                  {pageData?.intro?.content || "Building a high-performing property investment portfolio demands systematic research, disciplined acquisition criteria, strategic timing, and professional execution at every stage."}
                 </p>
                 <p className="font-semibold text-[#011122]">
-                  JJ Property Partner gives investors a clear strategic edge:
+                  {pageData?.intro?.heading ? "What we offer:" : "JJ Property Partner gives investors a clear strategic edge:"}
                 </p>
                 <ul className="space-y-4 pt-2">
-                  {[
+                  {(pageData?.intro?.benefits || [
                     "Access to data-led research and suburb analysis to identify growth opportunities early",
                     "Off-market and pre-market access with less competition and stronger buying positions",
                     "Skilled negotiation that helps secure better terms than going it alone",
                     "A long-term portfolio strategy focused on 5-10 year wealth creation",
                     "Close collaboration with your broker, accountant, and financial adviser"
-                  ].map((item, idx) => (
+                  ]).map((item: string, idx: number) => (
                     <li key={idx} className="flex items-start gap-4">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                       <span>{item}</span>
@@ -125,7 +155,7 @@ export default function PropertyInvestors() {
               className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
+                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
                 alt="Modern Residential Building"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -137,7 +167,7 @@ export default function PropertyInvestors() {
         {/* Content Pillars */}
         <section className="py-8 md:py-16 px-6 md:px-8 bg-neutral-50">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
-            {pillars.map((pillar, index) => (
+            {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 60 }}
@@ -151,7 +181,7 @@ export default function PropertyInvestors() {
                     {pillar.title}
                   </h2>
                   <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
-                    {pillar.description.split('\n\n').map((paragraph, pIdx) => {
+                    {(pillar.description || "").split('\n\n').map((paragraph: string, pIdx: number) => {
                       if (paragraph.startsWith('• ')) {
                         return (
                           <div key={pIdx} className="space-y-3 mt-4">
@@ -171,7 +201,7 @@ export default function PropertyInvestors() {
 
                 <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
-                    src={pillar.image}
+                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
                     alt={pillar.title}
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
@@ -192,50 +222,28 @@ export default function PropertyInvestors() {
                 <div className="mb-6">
                 <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
                 <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
-                  Strategic Portfolio <br />
-                  <span className="text-gold">Execution</span>
+                  {pageData?.process?.heading?.includes('Strategic') ? (
+                    <>Strategic Portfolio <br /> <span className="text-gold">Execution</span></>
+                  ) : pageData?.process?.heading || (
+                    <>Strategic Portfolio <br /> <span className="text-gold">Execution</span></>
+                  )}
                 </h2>
                 <p className="text-white/60 font-sans text-lg leading-relaxed">
-                  Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases.
+                  {pageData?.process?.description || "Alex has built a personal property portfolio valued at more than $5 million across several Australian states. That hands-on experience shapes an investment approach focused on long-term portfolio growth, not just individual purchases."}
                 </p>
               </div>
             </div>
 
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">
-                {[
-                  {
-                    step: '01',
-                    title: 'Step 1 - Investment Thesis & Strategy',
-                    body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.',
-                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
-                  },
-                  {
-                    step: '02',
-                    title: 'Step 2 - Long-Term Acquisition Roadmap',
-                    body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.',
-                    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200',
-                  },
-                  {
-                    step: '03',
-                    title: 'Step 3 - Geographic Diversification',
-                    body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.',
-                    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1200',
-                  },
-                  {
-                    step: '04',
-                    title: 'Step 4 - Growth & Cash Flow Balance',
-                    body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.',
-                    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200',
-                  },
-                  {
-                    step: '05',
-                    title: 'Step 5 - Future Acquisition Planning',
-                    body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.',
-                    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
-                  },
-                ].map((card, i, arr) => (
-                  <div key={card.step} className="flex items-stretch gap-4 md:gap-6 relative">
+                {(pageData?.process?.steps || [
+                  { stepNumber: '01', title: 'Step 1 - Investment Thesis & Strategy', body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' },
+                  { stepNumber: '02', title: 'Step 2 - Long-Term Acquisition Roadmap', body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200' },
+                  { stepNumber: '03', title: 'Step 3 - Geographic Diversification', body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.', image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1200' },
+                  { stepNumber: '04', title: 'Step 4 - Growth & Cash Flow Balance', body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.', image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200' },
+                  { stepNumber: '05', title: 'Step 5 - Future Acquisition Planning', body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.', image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200' }
+                ]).map((card: any, i: number, arr: any[]) => (
+                  <div key={card.stepNumber || i} className="flex items-stretch gap-4 md:gap-6 relative">
                     <div className="relative w-4 shrink-0">
                       {i < arr.length - 1 && (
                         <div className="absolute top-[32px] bottom-[-24px] left-1/2 -translate-x-1/2 w-px bg-white/10 overflow-hidden z-0">
@@ -267,13 +275,13 @@ export default function PropertyInvestors() {
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
-                            src={card.image}
+                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200")}
                             alt={card.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/90 via-[#011122]/20 to-transparent" />
                           <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-                            Step {card.step}
+                            Step {card.stepNumber || (i + 1)}
                           </div>
                         </div>
                         <div className="p-8">
@@ -302,14 +310,17 @@ export default function PropertyInvestors() {
                 viewport={{ once: true }}
                 className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6"
               >
-                Investor Readiness
+                {pageData?.readiness?.badge || "Investor Readiness"}
               </motion.div>
               <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-8 leading-[1.1]">
-                Is Property Investment <br />
-                <span className="text-gold italic">Right for You?</span>
+                {pageData?.readiness?.heading?.includes('Right') ? (
+                  <>Is Property Investment <br /> <span className="text-gold italic">Right for You?</span></>
+                ) : pageData?.readiness?.heading || (
+                  <>Is Property Investment <br /> <span className="text-gold italic">Right for You?</span></>
+                )}
               </h2>
               <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto">
-                Strategic property investment is a long-term commitment to wealth creation. We help you determine if your current position aligns with a successful acquisition strategy.
+                {pageData?.readiness?.description || "Strategic property investment is a long-term commitment to wealth creation. We help you determine if your current position aligns with a successful acquisition strategy."}
               </p>
             </div>
 
@@ -318,14 +329,14 @@ export default function PropertyInvestors() {
               <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
               <div className="flex flex-col gap-12 relative z-10">
-                {[
-                  { title: "Minimum Equity", desc: "You have available equity in your home or a deposit of at least $100k-$150k." },
-                  { title: "Long-Term Mindset", desc: "You view property as a 10-20 year wealth creation vehicle, not a quick win." },
-                  { title: "Stable Cash Flow", desc: "You have a steady income to support property holding costs and maintenance." },
-                  { title: "Borrowing Power", desc: "You have a clear understanding of your current and future borrowing capacity." },
-                  { title: "Risk Appetite", desc: "You are comfortable with market cycles and understand the role of leverage." },
-                  { title: "Strategic Goals", desc: "You have clear retirement or lifestyle goals that property will help fund." }
-                ].map((item, idx) => (
+                {(pageData?.readiness?.items || [
+                  { title: "Minimum Equity", description: "You have available equity in your home or a deposit of at least $100k-$150k." },
+                  { title: "Long-Term Mindset", description: "You view property as a 10-20 year wealth creation vehicle, not a quick win." },
+                  { title: "Stable Cash Flow", description: "You have a steady income to support property holding costs and maintenance." },
+                  { title: "Borrowing Power", description: "You have a clear understanding of your current and future borrowing capacity." },
+                  { title: "Risk Appetite", description: "You are comfortable with market cycles and understand the role of leverage." },
+                  { title: "Strategic Goals", description: "You have clear retirement or lifestyle goals that property will help fund." }
+                ]).map((item: any, idx: number) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
@@ -339,7 +350,7 @@ export default function PropertyInvestors() {
                         <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
                         <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
                         <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
-                          {item.desc}
+                          {item.description || item.desc}
                         </p>
                       </div>
                     </div>
@@ -367,15 +378,15 @@ export default function PropertyInvestors() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-32 group-hover:bg-gold/20 transition-colors" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-32" />
                 
-                <h3 className="text-4xl font-serif text-white mb-6 relative z-10">Investor Strategy Session</h3>
+                <h3 className="text-4xl font-serif text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Investor Strategy Session"}</h3>
                 <p className="text-white/60 text-lg mb-10 leading-relaxed relative z-10 max-w-xl mx-auto">
-                  Ready to build a nationwide portfolio? Our free session will review your current equity, borrowing power, and investment objectives to map out a clear path forward.
+                  {pageData?.readiness?.cta?.description || "Ready to build a nationwide portfolio? Our free session will review your current equity, borrowing power, and investment objectives to map out a clear path forward."}
                 </p>
                 <button
                   onClick={openCalendly}
                   className="rounded-full px-16 py-5 bg-gold text-white text-base font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
                 >
-                  Discuss My Strategy
+                  {pageData?.readiness?.cta?.buttonText || "Discuss My Strategy"}
                 </button>
               </div>
             </motion.div>
@@ -393,19 +404,21 @@ export default function PropertyInvestors() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
               >
-                Why JJ Property Partner for <span className="text-gold">Investor Success</span>
+                {pageData?.whyJJ?.heading || (
+                  <>Why JJ Property Partner for <span className="text-gold">Investor Success</span></>
+                )}
               </motion.h2>
               <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-              {[
+              {(pageData?.whyJJ?.reasons || [
                 { title: "IT-Powered Research", desc: "Alex's background in data analysis gives you an unfair advantage in selection." },
                 { title: "Proven Experience", desc: "Built from Alex's personal $5M+ portfolio across multiple Australian states." },
                 { title: "Off-Market Access", desc: "Direct access to properties before they hit the market, reducing competition." },
                 { title: "Portfolio Mindset", desc: "We don't just buy a house; we build a strategic 5-10 year acquisition plan." },
                 { title: "Zero Conflict", desc: "100% buyer's representation with no ties to developers or projects." }
-              ].map((item, idx) => (
+              ]).map((item: any, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -418,7 +431,7 @@ export default function PropertyInvestors() {
                     {idx + 1}
                   </div>
                   <h3 className="text-xl font-serif mb-4 text-white">{item.title}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.desc}</p>
+                  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.description || item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -437,7 +450,7 @@ export default function PropertyInvestors() {
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
-              {investorFaqs.map((faq, index) => (
+              {(pageData?.faqs || investorFaqs).map((faq: any, index: number) => (
                 <motion.div 
                   key={index} 
                   initial={{ opacity: 0, y: 20 }}
@@ -491,23 +504,25 @@ export default function PropertyInvestors() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
-                Build your <span className="text-gold">portfolio</span> with precision.
+                {pageData?.finalCta?.heading || (
+                  <>Secure Your Investment <br /> <span className="text-gold italic">Advantage.</span></>
+                )}
               </h2>
               <p className="text-xl text-white/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
-                Ready to take your property investment strategy to the next level? Book your free, no-obligation strategy session with Alex today.
+                {pageData?.finalCta?.description || "Ready to take your property investment strategy to the next level? Book your free, no-obligation strategy session with Alex today."}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button
                   onClick={openCalendly}
                   className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
                 >
-                  Book Free Session
+                  {pageData?.finalCta?.primaryButtonText || "Book Free Session"}
                 </button>
                 <Link
                   href="/contact"
                   className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
-                  Message Alex
+                  {pageData?.finalCta?.secondaryButtonText || "Message Alex"}
                 </Link>
               </div>
             </motion.div>

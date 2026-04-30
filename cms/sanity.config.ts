@@ -8,6 +8,13 @@ import caseStudy from './schemas/caseStudy';
 import seo from './schemas/seo';
 import review from './schemas/review';
 import inquiry from './schemas/inquiry';
+import homePage from './schemas/homePage';
+import aboutPage from './schemas/aboutPage';
+import servicePage from './schemas/servicePage';
+import contactPage from './schemas/contactPage';
+import servicesPage from './schemas/servicesPage';
+import caseStudiesPage from './schemas/caseStudiesPage';
+import blogPage from './schemas/blogPage';
 
 export default defineConfig({
   name: 'default',
@@ -19,6 +26,21 @@ export default defineConfig({
   plugins: [deskTool(), visionTool()],
 
   schema: {
-    types: [post, author, category, caseStudy, seo, review, inquiry],
+    types: [
+      post, 
+      author, 
+      category, 
+      caseStudy, 
+      seo, 
+      review, 
+      inquiry,
+      homePage,
+      aboutPage,
+      servicePage,
+      contactPage,
+      servicesPage,
+      caseStudiesPage,
+      blogPage
+    ],
   },
 });
