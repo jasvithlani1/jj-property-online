@@ -39,7 +39,7 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 inset-x-0 z-[100] w-full">
         {/* Top Banner */}
-        <div className="bg-[#011122] text-white/70 py-2 px-6 md:px-8 flex justify-between items-center text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] border-b border-white/5">
+        <div className="bg-[#011122] text-gold py-2 px-6 md:px-8 flex justify-between items-center text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] border-b border-white/5">
           <div className="flex items-center gap-4 md:gap-8">
             <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-2 hover:text-[#C8A96A] transition-colors">
               <Mail className="w-3 md:w-3.5 h-3 md:h-3.5" />
@@ -53,7 +53,7 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 md:gap-5">
-            <span className="hidden xl:inline text-white/30 mr-2">Connect with us:</span>
+            <span className="hidden xl:inline text-gold mr-2">Connect with us:</span>
             <div className="flex items-center gap-4">
               <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></Link>
               <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-3.5 h-3.5" /></Link>
