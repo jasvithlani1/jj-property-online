@@ -155,14 +155,18 @@ export default function Services() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center"
           >
             <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
                 {pageData?.hero?.badge || "Professional Services"}
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
-                {pageData?.hero?.heading?.includes('Property') ? (
-                  <>The Modern Path to <span className="text-gold">Property Acquisition.</span></>
-                ) : pageData?.hero?.heading || (
+                {pageData?.hero?.heading ? (
+                  <>
+                    {pageData.hero.heading.split(' ').slice(0, -2).join(' ')}{' '}
+                    <span className="text-gold">{pageData.hero.heading.split(' ').slice(-2).join(' ')}</span>
+                  </>
+                ) : (
                   <>The Modern Path to <span className="text-gold">Property Acquisition.</span></>
                 )}
               </h1>
@@ -231,7 +235,7 @@ export default function Services() {
                           hover: { opacity: 0, visibility: 'hidden' }
                         }}
                       >
-                        {service.icon || (index === 0 ? <Key className="w-8 h-8" /> : index === 1 ? <Building2 className="w-8 h-8" /> : <Landmark className="w-8 h-8" />)}
+                        {service.icon || services.find(s => s.id === service.id)?.icon || (index === 0 ? <Key className="w-8 h-8" /> : index === 1 ? <Building2 className="w-8 h-8" /> : <Landmark className="w-8 h-8" />)}
                       </motion.div>
                       <motion.div
                         className="absolute inset-0 h-full w-full flex items-center justify-center"
@@ -241,7 +245,7 @@ export default function Services() {
                           hover: { opacity: 1, visibility: 'visible' }
                         }}
                       >
-                        {service.solidIcon || (index === 0 ? <FaKey className="w-8 h-8" /> : index === 1 ? <FaBuilding className="w-8 h-8" /> : <FaLandmark className="w-8 h-8" />)}
+                        {service.solidIcon || services.find(s => s.id === service.id)?.solidIcon || (index === 0 ? <FaKey className="w-8 h-8" /> : index === 1 ? <FaBuilding className="w-8 h-8" /> : <FaLandmark className="w-8 h-8" />)}
                       </motion.div>
                     </motion.div>
                   </div>
@@ -294,7 +298,7 @@ export default function Services() {
               {/* Image Side */}
               <div className={`relative h-[320px] sm:h-[520px] md:h-[650px] lg:h-[750px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
                 <img
-                  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
+                  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : (services.find(s => s.id === service.id)?.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"))}
                   alt={service.title}
                   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   loading="lazy"
