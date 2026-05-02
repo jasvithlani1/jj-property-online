@@ -106,7 +106,10 @@ export default function Home() {
           seo,
           hero,
           servicesPreview,
-          faqs
+          faqs,
+          aboutPreview,
+          differenceSection,
+          processSection
         }`;
         const data = await client.fetch(query);
         if (data) setHomeData(data);
@@ -318,18 +321,35 @@ export default function Home() {
               </div>
 
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.1] mb-8">
-                Property Strategist. <br />
-                <span className="text-muted">Dedicated Buyer Advocate.</span>
+                {homeData?.aboutPreview?.heading ? (
+                  <>
+                    {homeData.aboutPreview.heading.split('.').slice(0, -1).join('.')} <br />
+                    <span className="text-muted">{homeData.aboutPreview.subheading}</span>
+                  </>
+                ) : (
+                  <>
+                    Property Strategist. <br />
+                    <span className="text-muted">Dedicated Buyer Advocate.</span>
+                  </>
+                )}
               </h2>
 
               <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
-                <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
-                <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$5M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
+                {homeData?.aboutPreview?.description ? (
+                  homeData.aboutPreview.description.split('\n\n').map((paragraph: string, i: number) => (
+                    <p key={i}>{paragraph}</p>
+                  ))
+                ) : (
+                  <>
+                    <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
+                    <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$5M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
+                  </>
+                )}
               </div>
 
               <div className="mt-8 flex items-center gap-4">
                 <Link href="/about" className="group text-sm font-bold uppercase tracking-widest text-black flex items-center gap-2">
-                  Read Full Profile
+                  {homeData?.aboutPreview?.ctaText || "Read Full Profile"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -459,14 +479,23 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-8">
-                  The JJ Property <br />
-                  <span className="text-muted">Partner Difference.</span>
+                  {homeData?.differenceSection?.heading ? (
+                    <>
+                      {homeData.differenceSection.heading} <br />
+                      <span className="text-muted">{homeData.differenceSection.subheading}</span>
+                    </>
+                  ) : (
+                    <>
+                      The JJ Property <br />
+                      <span className="text-muted">Partner Difference.</span>
+                    </>
+                  )}
                 </h2>
                 <p className="text-lg text-muted font-sans leading-relaxed mb-8 max-w-xl">
                   Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
                 </p>
                 <div className="space-y-4">
-                  {[
+                  {(homeData?.differenceSection?.points || [
                     "100% buyer's agent representation — no ties to developers",
                     "Built on real experience with a personal $5M+ portfolio",
                     "20+ years of IT expertise applied to research & data",
@@ -475,7 +504,7 @@ export default function Home() {
                     "Transparent, fixed or percentage-based fee structures",
                     "Australia-wide support guided by performance data",
                     "5-star Google reviewed — verified results"
-                  ].map((item, i) => (
+                  ]).map((item: string, i: number) => (
                     <div key={i} className="flex items-center gap-4 text-lg text-muted font-sans">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
                       {item}
@@ -516,10 +545,16 @@ export default function Home() {
                 How We Work
               </div>
               <h2 className="text-5xl md:text-7xl font-serif mb-6 leading-tight text-[#011122]">
-                Our Proven <span className="text-gold italic font-serif">5-Step</span> Buying Approach
+                {homeData?.processSection?.heading ? (
+                  <>
+                    {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold italic font-serif">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
+                  </>
+                ) : (
+                  <>Our Proven <span className="text-gold italic font-serif">5-Step</span> Buying Approach</>
+                )}
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
-                A structured, data-led process designed to secure your ideal property with complete confidence.
+                {homeData?.processSection?.subheading || "A structured, data-led process designed to secure your ideal property with complete confidence."}
               </p>
             </div>
 
@@ -528,7 +563,7 @@ export default function Home() {
               <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-[1px] bg-gold/20 z-0" />
 
               <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-4 relative z-10">
-                {[
+                {(homeData?.processSection?.steps || [
                   {
                     num: "1",
                     title: "Strategy Session",
@@ -554,7 +589,7 @@ export default function Home() {
                     title: "Settlement",
                     desc: "Full coordination with your solicitor, broker and advisers through to handover and beyond."
                   }
-                ].map((item, i) => (
+                ]).map((item: any, i: number) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 30 }}

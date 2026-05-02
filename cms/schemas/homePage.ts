@@ -53,5 +53,54 @@ export default {
         },
       ],
     },
+    {
+      name: 'aboutPreview',
+      title: 'About Preview Section',
+      type: 'object',
+      fields: [
+        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'subheading', title: 'Subheading', type: 'string' },
+        { name: 'description', title: 'Description', type: 'text' },
+        { name: 'ctaText', title: 'CTA Button Text', type: 'string' },
+      ],
+    },
+    {
+      name: 'differenceSection',
+      title: 'Difference Section',
+      type: 'object',
+      fields: [
+        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'subheading', title: 'Subheading', type: 'text' },
+        { 
+          name: 'points', 
+          title: 'Bullet Points', 
+          type: 'array', 
+          of: [{ type: 'string' }] 
+        },
+      ],
+    },
+    {
+      name: 'processSection',
+      title: 'Process Section',
+      type: 'object',
+      fields: [
+        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'subheading', title: 'Subheading', type: 'text' },
+        {
+          name: 'steps',
+          title: 'Steps',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'title', title: 'Step Title', type: 'string' },
+                { name: 'desc', title: 'Description', type: 'text' },
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ],
 };
