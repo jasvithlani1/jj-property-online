@@ -93,5 +93,28 @@ export default {
         },
       ],
     },
+    {
+      name: 'pillarsSection',
+      title: 'Pillars Section',
+      type: 'object',
+      fields: [
+        { name: 'heading', title: 'Heading', type: 'string' },
+        { name: 'subheading', title: 'Subheading', type: 'text' },
+        {
+          name: 'pillars',
+          title: 'Pillars',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'title', title: 'Title', type: 'string' },
+                { name: 'text', title: 'Description', type: 'text' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

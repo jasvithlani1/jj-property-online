@@ -19,7 +19,8 @@ export default function About() {
           purpose,
           trackRecord,
           techAdvantage,
-          values
+          values,
+          pillarsSection
         }`;
         const data = await client.fetch(query);
         if (data) setAboutData(data);
@@ -64,9 +65,12 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-5xl sm:text-6xl md:text-8xl font-serif text-white leading-[1.05] mb-10"
             >
-              {aboutData?.hero?.heading?.includes('Confidence') ? (
-                <>Buy Property <br /> With <span className="text-gold italic">Absolute Confidence.</span></>
-              ) : aboutData?.hero?.heading || (
+              {aboutData?.hero?.heading ? (
+                <>
+                  {aboutData.hero.heading.split(' ').slice(0, -2).join(' ')} <br />
+                  <span className="text-gold italic">{aboutData.hero.heading.split(' ').slice(-2).join(' ')}</span>
+                </>
+              ) : (
                 <>Buy Property <br /> With <span className="text-gold italic">Absolute Confidence.</span></>
               )}
             </motion.h1>
@@ -151,8 +155,17 @@ export default function About() {
               <div className="space-y-4">
                 <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.4em]">Our Story</span>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#011122] leading-tight">
-                  A Smarter Way to Buy, <br />
-                  <span className="text-gold italic">Built on Experience.</span>
+                  {aboutData?.profile?.heading ? (
+                    <>
+                      {aboutData.profile.heading.split(',')[0]}, <br />
+                      <span className="text-gold italic">{aboutData.profile.heading.split(',').slice(1).join(',').trim()}</span>
+                    </>
+                  ) : (
+                    <>
+                      A Smarter Way to Buy, <br />
+                      <span className="text-gold italic">Built on Experience.</span>
+                    </>
+                  )}
                 </h2>
               </div>
               
@@ -160,12 +173,20 @@ export default function About() {
                 <p className="text-xl text-[#011122] font-medium leading-relaxed italic">
                   {aboutData?.profile?.quote || "\"JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor.\""}
                 </p>
-                <p>
-                  {aboutData?.profile?.description || "Alex brings more than 20 years of experience in technology and real estate to the table. As a licensed buyers agent and seasoned property investor, he bridges the gap between traditional market knowledge and modern data analytics. Based in Sydney and working with clients nationwide, he ensures that every acquisition is treated with the same precision as his own personal portfolio."}
-                </p>
-                <p>
-                  The name <span className="text-[#011122] font-bold italic">“JJ”</span> reflects the family values at the heart of our firm. Named after Alex’s daughters, Jessica and Jennifer, the business is a testament to long-term legacy and genuine care. We don't just find houses; we secure the right foundations for your future.
-                </p>
+                {aboutData?.profile?.description ? (
+                  aboutData.profile.description.split('\n\n').map((para: string, i: number) => (
+                    <p key={i}>{para}</p>
+                  ))
+                ) : (
+                  <>
+                    <p>
+                      Alex brings more than 20 years of experience in technology and real estate to the table. As a licensed buyers agent and seasoned property investor, he bridges the gap between traditional market knowledge and modern data analytics. Based in Sydney and working with clients nationwide, he ensures that every acquisition is treated with the same precision as his own personal portfolio.
+                    </p>
+                    <p>
+                      The name <span className="text-[#011122] font-bold italic">“JJ”</span> reflects the family values at the heart of our firm. Named after Alex’s daughters, Jessica and Jennifer, the business is a testament to long-term legacy and genuine care. We don't just find houses; we secure the right foundations for your future.
+                    </p>
+                  </>
+                )}
               </div>
 
               <div className="pt-6 flex flex-wrap gap-8 items-center border-t border-gold/10">
@@ -204,7 +225,7 @@ export default function About() {
             
             <div className="space-y-8 text-lg md:text-xl text-muted font-sans leading-relaxed mb-16">
               {aboutData?.purpose?.description ? (
-                <p>{aboutData.purpose.description}</p>
+                aboutData.purpose.description.split('\n\n').map((para: string, i: number) => <p key={i}>{para}</p>)
               ) : (
                 <>
                   <p>
@@ -325,30 +346,27 @@ export default function About() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-lg">Three Pillars of Our Service</h2>
+          <h2 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-lg">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
           <p className="text-lg font-sans text-white/70 max-w-2xl mx-auto">
-            Our unyielding commitment to precision, anonymity, and market-beating results.
+            {aboutData?.pillarsSection?.subheading || "Our unyielding commitment to precision, anonymity, and market-beating results."}
           </p>
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-          {[
+          {(aboutData?.pillarsSection?.pillars || [
             {
               title: "Data-Driven Precision",
-              text: "Backed by over 20 years of analytical experience, we use advanced suburb research and property assessment to guide every recommendation. Our approach is grounded in evidence, not emotion, helping identify true value and long-term growth potential.",
-              icon: <Target className="w-8 h-8 text-gold" />
+              text: "Backed by over 20 years of analytical experience, we use advanced suburb research and property assessment to guide every recommendation. Our approach is grounded in evidence, not emotion, helping identify true value and long-term growth potential."
             },
             {
               title: "Off-Market Access",
-              text: "Through strong relationships with selling agents and industry professionals across Australia, we help clients access quality off-market and pre-market opportunities, reducing competition and creating better conditions for smarter buying decisions.",
-              icon: <Search className="w-8 h-8 text-gold" />
+              text: "Through strong relationships with selling agents and industry professionals across Australia, we help clients access quality off-market and pre-market opportunities, reducing competition and creating better conditions for smarter buying decisions."
             },
             {
               title: "Executive Representation",
-              text: "We act solely in your best interests, managing negotiations with discretion, protecting your privacy, and representing you throughout the purchase process with a strategic, data-led approach designed to secure the right terms.",
-              icon: <Handshake className="w-8 h-8 text-gold" />
+              text: "We act solely in your best interests, managing negotiations with discretion, protecting your privacy, and representing you throughout the purchase process with a strategic, data-led approach designed to secure the right terms."
             }
-          ].map((val, i) => (
+          ]).map((val: any, i: number) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -358,7 +376,7 @@ export default function About() {
               className="p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group"
             >
               <div className="mb-6 p-4 inline-flex bg-white/5 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500">
-                {val.icon}
+                {i === 0 ? <Target className="w-8 h-8 text-gold" /> : i === 1 ? <Search className="w-8 h-8 text-gold" /> : <Handshake className="w-8 h-8 text-gold" />}
               </div>
               <h3 className="text-2xl font-serif mb-4">{val.title}</h3>
               <p className="text-white/60 font-sans leading-relaxed text-lg">
