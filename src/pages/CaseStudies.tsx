@@ -310,7 +310,7 @@ export default function CaseStudies() {
                       <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
                     </div>
                     <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
                       <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
                     </div>
                     
@@ -319,7 +319,7 @@ export default function CaseStudies() {
                       <span className="text-xl font-serif text-gold font-bold">{prop.value}</span>
                     </div>
                     <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Category</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Size</span>
                       <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
                     </div>
 
