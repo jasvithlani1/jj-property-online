@@ -33,7 +33,7 @@ export const openCalendly = async () => {
   
   if ((window as any).Calendly) {
     (window as any).Calendly.initPopupWidget({
-      url: 'https://calendly.com/jjpropertyseo/30min'
+      url: 'https://calendly.com/jjpropertyseo/new-meeting'
     });
   }
 };
@@ -48,7 +48,7 @@ export const initInlineCalendly = async (elementId: string) => {
   if (element && (window as any).Calendly) {
     element.innerHTML = ''; // Prevent duplicate iFrames on Strict Mode
     (window as any).Calendly.initInlineWidget({
-      url: 'https://calendly.com/jjpropertyseo/30min?hide_landing_page_details=1&hide_gdpr_banner=1',
+      url: 'https://calendly.com/jjpropertyseo/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1',
       parentElement: element,
       prefill: {},
       utm: {}
