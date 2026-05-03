@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     question: 'Why do buyers choose JJ Property Partner over other buyer’s agents?',
-    answer: 'JJ Property Partner offers a more personal, strategy-led service. You deal directly with Alex, who combines 20+ years of IT and property experience, a $5M+ personal portfolio, and specialised SMSF knowledge, with no handovers to junior staff.'
+    answer: 'JJ Property Partner offers a more personal, strategy-led service. You deal directly with Alex, who combines 20+ years of IT and property experience, a $6M+ personal portfolio, and specialised SMSF knowledge, with no handovers to junior staff.'
   }
 ];
 
@@ -342,7 +342,7 @@ export default function Home() {
                 ) : (
                   <>
                     <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
-                    <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$5M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
+                    <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$6M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
                   </>
                 )}
               </div>
@@ -497,7 +497,7 @@ export default function Home() {
                 <div className="space-y-4">
                   {(homeData?.differenceSection?.points || [
                     "100% buyer's agent representation — no ties to developers",
-                    "Built on real experience with a personal $5M+ portfolio",
+                    "Built on real experience with a personal $6M+ portfolio",
                     "20+ years of IT expertise applied to research & data",
                     "Exclusive access to off-market and pre-market properties",
                     "Founder-led service managed personally by Alex",

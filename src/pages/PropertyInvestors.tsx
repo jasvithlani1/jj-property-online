@@ -414,7 +414,7 @@ export default function PropertyInvestors() {
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {(pageData?.whyJJ?.reasons || [
                 { title: "IT-Powered Research", desc: "Alex's background in data analysis gives you an unfair advantage in selection." },
-                { title: "Proven Experience", desc: "Built from Alex's personal $5M+ portfolio across multiple Australian states." },
+                { title: "Proven Experience", desc: "Built from Alex's personal $6M+ portfolio across multiple Australian states." },
                 { title: "Off-Market Access", desc: "Direct access to properties before they hit the market, reducing competition." },
                 { title: "Portfolio Mindset", desc: "We don't just buy a house; we build a strategic 5-10 year acquisition plan." },
                 { title: "Zero Conflict", desc: "100% buyer's representation with no ties to developers or projects." }

@@ -106,7 +106,7 @@ export default function CaseStudies() {
           >
             {(pageData?.hero?.stats || [
               { value: '5.0', label: 'Google Rating', iconName: 'Star' },
-              { value: '$5M+', label: 'Total Assets Managed' },
+              { value: '$6M+', label: 'Total Assets Managed' },
               { value: '100%', label: 'Buyer-Side Only' },
             ]).map((stat: any) => (
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">

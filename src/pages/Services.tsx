@@ -38,7 +38,7 @@ const servicesFaqs = [
   },
   {
     question: 'What makes JJ Property Partner different from other buyers agents?',
-    answer: 'JJ Property Partner stands apart through Alex’s hands-on approach, backed by 20+ years of IT experience and a personal $5M+ property portfolio across Australia. Clients work directly with Alex and benefit from data-led research, strategic insight, and genuine buyer-only representation.'
+    answer: 'JJ Property Partner stands apart through Alex’s hands-on approach, backed by 20+ years of IT experience and a personal $6M+ property portfolio across Australia. Clients work directly with Alex and benefit from data-led research, strategic insight, and genuine buyer-only representation.'
   }
 ];
 
@@ -184,7 +184,7 @@ export default function Services() {
           >
             {(pageData?.hero?.stats || [
               { value: '20+', label: 'Years of Experience' },
-              { value: '$5M+', label: 'Portfolio Target' },
+              { value: '$6M+', label: 'Portfolio Target' },
               { value: '97%', label: 'Client Satisfaction Rate' },
               { value: '100%', label: 'Buyers Representation' },
             ]).map((stat: any) => (

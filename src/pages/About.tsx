@@ -192,7 +192,7 @@ export default function About() {
               <div className="pt-6 flex flex-wrap gap-8 items-center border-t border-gold/10">
                 {(aboutData?.profile?.stats || [
                   { label: 'IT & Real Estate', value: '20+ Years' },
-                  { label: 'Personal Portfolio', value: '$5M+' },
+                  { label: 'Personal Portfolio', value: '$6M+' },
                   { label: 'Service Area', value: 'Nationwide' }
                 ]).map((stat: any, i: number) => (
                   <React.Fragment key={i}>
@@ -329,7 +329,7 @@ export default function About() {
               >
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">{String(index + 1).padStart(2, '0')}</span>
-                  <h4 className="text-2xl font-serif text-white">{value.title}</h4>
+                  <h4 className="text-2xl font-serif text-gold">{value.title}</h4>
                 </div>
                 <p className="text-white/70 text-base md:text-lg leading-relaxed">{value.description}</p>
               </motion.div>
@@ -346,9 +346,9 @@ export default function About() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-lg">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
+          <h2 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-lg text-gold">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
           <p className="text-lg font-sans text-white/70 max-w-2xl mx-auto">
-            {aboutData?.pillarsSection?.subheading || "Our unyielding commitment to precision, anonymity, and market-beating results."}
+            {aboutData?.pillarsSection?.subheading || "Our unyielding commitment to precision, integrity, and market-beating results."}
           </p>
         </div>
 
@@ -378,7 +378,7 @@ export default function About() {
               <div className="mb-6 p-4 inline-flex bg-white/5 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500">
                 {i === 0 ? <Target className="w-8 h-8 text-gold" /> : i === 1 ? <Search className="w-8 h-8 text-gold" /> : <Handshake className="w-8 h-8 text-gold" />}
               </div>
-              <h3 className="text-2xl font-serif mb-4">{val.title}</h3>
+              <h3 className="text-2xl font-serif mb-4 text-gold">{val.title}</h3>
               <p className="text-white/60 font-sans leading-relaxed text-lg">
                 {val.text}
               </p>
