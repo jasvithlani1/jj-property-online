@@ -433,7 +433,7 @@ export default function Home() {
                     <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index !== 1 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
                       }`}>
                       <div className="w-8 h-8 flex items-center justify-center">
-                        {service.icon}
+                        {service.icon || servicesPreview.find((s: any) => s.title === service.title)?.icon || servicesPreview[index]?.icon}
                       </div>
                     </div>
 
@@ -600,7 +600,7 @@ export default function Home() {
                   >
                     {/* Circle Marker */}
                     <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center text-[#011122] text-2xl font-serif mb-8 shadow-[0_8px_30px_rgb(200,169,106,0.3)] group-hover:scale-110 transition-transform duration-500 relative">
-                      {item.num}
+                      {item.num || (i + 1)}
                       <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-20 pointer-events-none group-hover:block hidden" />
                     </div>
 
