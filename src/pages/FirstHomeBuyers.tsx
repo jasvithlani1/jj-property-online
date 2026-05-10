@@ -348,7 +348,7 @@ export default function FirstHomeBuyers() {
                   >
                     <div className="flex-1 text-center md:text-left">
                       <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
-                        <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
+                        <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
                         <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
                         <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
                           {item.description || item.desc}

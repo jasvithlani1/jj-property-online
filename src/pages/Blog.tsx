@@ -99,7 +99,7 @@ export default function Blog() {
             <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
               {pageData?.hero?.badge || "Market Intelligence"}
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-6 max-w-4xl">
+            <h1 className="text-5xl md:text-8xl font-serif leading-[1.05] mb-6 max-w-4xl">
               {pageData?.hero?.heading?.includes('informed') ? (
                 <>Insights for Sydney's <span className="text-gold">informed buyers.</span></>
               ) : pageData?.hero?.heading || (
@@ -176,7 +176,7 @@ export default function Blog() {
 
                     {/* Body */}
                     <div className="flex flex-col flex-1 p-8">
-                      <div className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-muted mb-4">
+                      <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-muted mb-4">
                         <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
                         <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
                       </div>

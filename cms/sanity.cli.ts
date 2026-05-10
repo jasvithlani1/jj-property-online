@@ -5,4 +5,5 @@ export default defineCliConfig({
     projectId: '7c1xj4wj',
     dataset: 'production',
   },
+  studioHost: 'jjpropertypartner',
 });

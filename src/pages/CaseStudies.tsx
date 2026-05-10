@@ -85,7 +85,7 @@ export default function CaseStudies() {
             <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
               {pageData?.hero?.badge || "Client Results"}
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
+            <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
               {pageData?.hero?.heading?.includes('Advantage') ? (
                 <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
               ) : pageData?.hero?.heading || (

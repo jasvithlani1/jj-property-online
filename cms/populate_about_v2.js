@@ -1,0 +1,86 @@
+const fs = require('fs');
+
+const aboutPageData = {
+  "_type": "aboutPage",
+  "_id": "aboutPage",
+  "title": "About Us Page",
+  "hero": {
+    "badge": "About JJ Property Partner",
+    "heading": "Buy Property With Absolute Confidence.",
+    "subheading": "We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own.",
+    "missionBadge": "\"To empower Australians with data-driven insights and professional representation that turns the property journey into a success story.\""
+  },
+  "profile": {
+    "badge": "Our Story",
+    "heading": "A Smarter Way to Buy, Built on Experience.",
+    "quote": "\"JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor.\"",
+    "description": "Alex brings more than 20 years of experience in technology and real estate to the table. As a licensed buyers agent and seasoned property investor, he bridges the gap between traditional market knowledge and modern data analytics. Based in Sydney and working with clients nationwide, he ensures that every acquisition is treated with the same precision as his own personal portfolio.\n\nThe name “JJ” reflects the family values at the heart of our firm. Named after Alex’s daughters, Jessica and Jennifer, the business is a testament to long-term legacy and genuine care. We don't just find houses; we secure the right foundations for your future.",
+    "stats": [
+      { "_key": "stat1", "label": "IT & Real Estate", "value": "20+ Years" },
+      { "_key": "stat2", "label": "Personal Portfolio", "value": "$5M+" },
+      { "_key": "stat3", "label": "Service Area", "value": "Nationwide" }
+    ]
+  },
+  "purpose": {
+    "heading": "A name with purpose. A promise with heart.",
+    "description": "The initials JJ carry deep personal meaning. They represent the two people who inspired Alex to build something lasting — his daughters Jessica and Jennifer.\n\nEvery property acquisition, every negotiation, every piece of advice is delivered with the same dedication he puts into building their future.",
+    "ctaText": "Start Your Journey"
+  },
+  "trackRecord": {
+    "title": "Alex's Personal Track Record",
+    "content": "Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy."
+  },
+  "techAdvantage": {
+    "title": "The Technology Advantage",
+    "content": "Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia."
+  },
+  "values": [
+    {
+      "_key": "val1",
+      "title": "Truly Independent, Always Buyer-Focused",
+      "description": "JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you."
+    },
+    {
+      "_key": "val2",
+      "title": "Clear Advice, Every Step",
+      "description": "We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence."
+    },
+    {
+      "_key": "val3",
+      "title": "Direct Access, Personal Guidance",
+      "description": "At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals."
+    },
+    {
+      "_key": "val4",
+      "title": "Building Wealth for the Long Run",
+      "description": "Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow."
+    }
+  ],
+  "pillarsSection": {
+    "heading": "Three Pillars of Our Service",
+    "subheading": "Our unyielding commitment to precision, anonymity, and market-beating results.",
+    "pillars": [
+      {
+        "_key": "p1",
+        "title": "Data-Driven Precision",
+        "text": "Backed by over 20 years of analytical experience, we use advanced suburb research and property assessment to guide every recommendation. Our approach is grounded in evidence, not emotion, helping identify true value and long-term growth potential."
+      },
+      {
+        "_key": "p2",
+        "title": "Off-Market Access",
+        "text": "Through strong relationships with selling agents and industry professionals across Australia, we help clients access quality off-market and pre-market opportunities, reducing competition and creating better conditions for smarter buying decisions."
+      },
+      {
+        "_key": "p3",
+        "title": "Executive Representation",
+        "text": "We act solely in your best interests, managing negotiations with discretion, protecting your privacy, and representing you throughout the purchase process with a strategic, data-led approach designed to secure the right terms."
+      }
+    ]
+  },
+  "seo": {
+    "metaTitle": "About Us - Trusted Buyers Agent Australia",
+    "metaDescription": "JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies."
+  }
+};
+
+fs.writeFileSync('about_update_v2.ndjson', JSON.stringify(aboutPageData) + '\n');

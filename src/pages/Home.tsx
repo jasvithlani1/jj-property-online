@@ -358,13 +358,13 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">Licence No.</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-2">Licence No.</span>
                     <span className="text-xl sm:text-2xl font-serif text-white">20543356</span>
                   </div>
                   <div className="hidden sm:block w-px h-10 bg-gold/20"></div>
                   <div className="w-full sm:hidden h-px bg-gold/20"></div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80 mb-1.5">ABN</span>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-2">ABN</span>
                     <span className="text-xl sm:text-2xl font-serif text-white">71 687 187 113</span>
                   </div>
                 </div>
@@ -445,7 +445,7 @@ export default function Home() {
                     </p>
 
                     <div className="mt-auto w-full flex items-center justify-between group/link">
-                      <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${index !== 1 
+                      <span className={`text-xs font-bold uppercase tracking-[0.25em] transition-all ${index !== 1 
                         ? 'text-gold group-hover:text-white' 
                         : 'text-gold group-hover:text-gold-hover'
                         }`}>
@@ -607,7 +607,7 @@ export default function Home() {
                     <h3 className="text-xl font-serif text-[#011122] mb-4 leading-tight font-medium">
                       {item.title}
                     </h3>
-                    <p className="text-[15px] text-muted leading-relaxed font-sans px-4">
+                    <p className="text-base text-muted leading-relaxed font-sans px-4">
                       {item.desc}
                     </p>
                   </motion.div>

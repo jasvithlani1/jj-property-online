@@ -92,7 +92,7 @@ export default function Contact() {
           <div className="inline-block px-7 py-3 rounded-full border border-black/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-black mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
             {pageData?.hero?.badge || "Contact Us"}
           </div>
-          <h1 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-6">
+          <h1 className="text-5xl md:text-8xl font-serif text-black leading-tight mb-6">
             {pageData?.hero?.heading?.includes('premium') ? (
               <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="font-semibold text-gold">premium</span> property market.</>
             ) : pageData?.hero?.heading || (
@@ -287,7 +287,7 @@ export default function Contact() {
                           Network error. Please try again or email us directly.
                         </p>
                       )}
-                      <p className="text-center text-[10px] text-muted uppercase tracking-widest mt-4">
+                      <p className="text-center text-xs text-muted uppercase tracking-widest mt-4">
                         Strictly confidential. No spam.
                       </p>
                     </div>

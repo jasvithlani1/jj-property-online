@@ -1,0 +1,131 @@
+const fs = require('fs');
+
+const homePageData = {
+  "_type": "homePage",
+  "_id": "homePage",
+  "title": "Home Page",
+  "hero": {
+    "heading": "Strategist. Insider. Your Dedicated Advocate.",
+    "subheading": "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition.",
+    "ctaText": "Book Session"
+  },
+  "servicesPreview": [
+    {
+      "_key": "sp1",
+      "title": "First Home Buyers",
+      "description": "Buying your first home is a major milestone, and having the right guidance makes all the difference. We help you clarify your budget, assess borrowing capacity, find the right property, and negotiate strongly so you can buy with confidence.",
+      "anchor": "first-home-buyers"
+    },
+    {
+      "_key": "sp2",
+      "title": "Property Investors",
+      "description": "Building a strong property portfolio takes strategy, not guesswork. At JJ Property Partner, we use data-led research to identify high-growth, high-yield opportunities across Australia, helping you secure smart investments that match your income goals and risk profile.",
+      "anchor": "property-investors"
+    },
+    {
+      "_key": "sp3",
+      "title": "SMSF Property",
+      "description": "Buying property through an SMSF comes with strict rules, and getting it right matters. We work closely with your specialists to secure compliant, investment-grade properties that align with your long-term retirement goals.",
+      "anchor": "smsf-property"
+    }
+  ],
+  "aboutPreview": {
+    "heading": "Property Strategist. Dedicated Buyer Advocate.",
+    "subheading": "Dedicated Buyer Advocate.",
+    "description": "Alex is a licensed buyer’s agent and the founder of JJ Property Partner. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.\n\nJJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a $5M+ portfolio, he offers firsthand knowledge of market cycles and wealth generation.",
+    "ctaText": "Read Full Profile"
+  },
+  "differenceSection": {
+    "heading": "The JJ Property",
+    "subheading": "Partner Difference.",
+    "points": [
+      "100% buyer's agent representation — no ties to developers",
+      "Built on real experience with a personal $5M+ portfolio",
+      "20+ years of IT expertise applied to research & data",
+      "Exclusive access to off-market and pre-market properties",
+      "Founder-led service managed personally by Alex",
+      "Transparent, fixed or percentage-based fee structures",
+      "Australia-wide support guided by performance data",
+      "5-star Google reviewed — verified results"
+    ]
+  },
+  "processSection": {
+    "heading": "Our Proven 5-Step Buying Approach",
+    "subheading": "A structured, data-led process designed to secure your ideal property with complete confidence.",
+    "steps": [
+      {
+        "_key": "step1",
+        "title": "Strategy Session",
+        "desc": "Free 30-minute mapping of your goals, budget, timeline and property criteria."
+      },
+      {
+        "_key": "step2",
+        "title": "Suburb Research",
+        "desc": "Data-driven analysis of growth potential, yield, vacancy rates and infrastructure pipelines."
+      },
+      {
+        "_key": "step3",
+        "title": "Due Diligence",
+        "desc": "Legal, structural and financial checks on every shortlisted property before you commit."
+      },
+      {
+        "_key": "step4",
+        "title": "Negotiation",
+        "desc": "Strategic representation at private treaty or auction based on market data and vendor motivation."
+      },
+      {
+        "_key": "step5",
+        "title": "Settlement",
+        "desc": "Full coordination with your solicitor, broker and advisers through to handover and beyond."
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "_key": "faq1",
+      "question": "Do you help clients buy property across Australia?",
+      "answer": "Yes. JJ Property Partner works with buyers across Australia. We take a strategy-first approach, identifying the right locations based on growth potential, rental returns, and your long-term property goals, rather than limiting your search to one city or state."
+    },
+    {
+      "_key": "faq2",
+      "question": "What does a buyer’s agent actually do?",
+      "answer": "A buyer’s agent works solely for you, not the seller. They handle the full buying process, including strategy, property research, shortlist creation, inspections, negotiations, and settlement support, while protecting your interests and helping you buy with greater confidence."
+    },
+    {
+      "_key": "faq3",
+      "question": "Who do you work with?",
+      "answer": "We work with first home buyers, owner-occupiers, property investors, and SMSF buyers across Australia. Whether you need guidance in a competitive market or a clear long-term buying strategy, our advice is tailored to your goals, budget, and risk profile."
+    },
+    {
+      "_key": "faq4",
+      "question": "How do you find the right property for me?",
+      "answer": "We combine local market insight with data-backed research to shortlist properties that match your goals. We assess suburb performance, rental demand, vacancy levels, future infrastructure, and comparable sales to help you buy with clarity and confidence."
+    },
+    {
+      "_key": "faq5",
+      "question": "Can you help us access off-market property opportunities?",
+      "answer": "Yes. We regularly source off-market and pre-market properties through our trusted industry network. This gives our clients early access to quality opportunities, less competition from other buyers, and a stronger position when it comes to negotiating with confidence."
+    },
+    {
+      "_key": "faq6",
+      "question": "How quickly can you help me secure the right property?",
+      "answer": "Most buyers secure a suitable property within 30 to 60 days of getting started. The timeframe depends on your brief, market conditions, and property type, but our focus is always on securing the right property, not rushing the process."
+    },
+    {
+      "_key": "faq7",
+      "question": "How are your buyer’s agent fees structured?",
+      "answer": "Our fees are straightforward and clearly explained from the start. Depending on the level of support you need, we offer fixed-fee or percentage-based options, with a focus on securing better property outcomes, stronger negotiations, and long-term value."
+    },
+    {
+      "_key": "faq8",
+      "question": "Why do buyers choose JJ Property Partner over other buyer’s agents?",
+      "answer": "JJ Property Partner offers a more personal, strategy-led service. You deal directly with Alex, who combines 20+ years of IT and property experience, a $5M+ personal portfolio, and specialised SMSF knowledge, with no handovers to junior staff."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Buyers Agent Parramatta AU",
+    "metaDescription": "JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition."
+  }
+};
+
+fs.writeFileSync('home_update_v2.ndjson', JSON.stringify(homePageData) + '\n');

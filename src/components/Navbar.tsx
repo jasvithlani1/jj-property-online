@@ -39,7 +39,7 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 inset-x-0 z-[100] w-full">
         {/* Top Banner */}
-        <div className="bg-[#011122] text-gold py-2 px-6 md:px-8 flex justify-between items-center text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] border-b border-white/5">
+        <div className="bg-[#011122] text-gold py-2 px-6 md:px-8 flex justify-between items-center text-xs font-bold uppercase tracking-[0.15em] border-b border-white/5">
           <div className="flex items-center gap-4 md:gap-8">
             <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-2 hover:text-[#C8A96A] transition-colors">
               <Mail className="w-3 md:w-3.5 h-3 md:h-3.5" />
@@ -83,7 +83,7 @@ export default function Navbar() {
               <div className="font-sans font-black text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl tracking-widest text-white leading-none uppercase truncate">
                 JJ PROPERTY PARTNER
               </div>
-              <div className="font-sans font-bold text-[6px] sm:text-[8px] md:text-[9px] lg:text-xs tracking-[0.2em] text-gold leading-none uppercase mt-1.5 truncate">
+              <div className="font-sans font-bold text-[8px] sm:text-[10px] md:text-xs tracking-[0.2em] text-gold leading-none uppercase mt-1.5 truncate">
                 YOUR PROPERTY, OUR PRIORITY
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function Navbar() {
                             key={s.name}
                             href={s.path}
                             onClick={() => setIsServicesDropdownOpen(false)}
-                            className="text-[11px] font-bold uppercase tracking-widest text-white/60 hover:text-gold hover:bg-white/5 p-3 rounded-xl transition-all"
+                            className="text-xs font-bold uppercase tracking-widest text-white/60 hover:text-gold hover:bg-white/5 p-3 rounded-xl transition-all"
                           >
                             {s.name}
                           </Link>

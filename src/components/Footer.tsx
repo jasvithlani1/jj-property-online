@@ -47,7 +47,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <div className="font-sans font-black text-2xl sm:text-3xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
-                <div className="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-gold leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
+                <div className="font-sans font-bold text-xs tracking-[0.25em] text-gold leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
             <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
+            <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
             <ul className="space-y-4 font-sans text-white/60 text-sm">
               {navLinks.map((link) => (
                 <li key={link.label}>
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Services */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
+            <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
             <ul className="space-y-4 font-sans text-white/60 text-sm">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left lg:col-span-1">
-            <h4 className="text-[13px] font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
+            <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
             <ul className="space-y-6 font-sans text-white/60">
               <li className="flex flex-col items-center md:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">

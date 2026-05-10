@@ -364,7 +364,7 @@ export default function Services() {
                 </p>
 
                 <div className="mt-auto w-full flex items-center justify-between group/link">
-                  <span className={`text-[11px] font-black uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-[#011122] opacity-40 group-hover:opacity-100'
+                  <span className={`text-xs font-bold uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-[#011122] opacity-40 group-hover:opacity-100'
                     }`}>
                     Learn More
                   </span>

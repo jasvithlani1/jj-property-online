@@ -286,7 +286,7 @@ export default function BlogDetail() {
                       </div>
                       <div className="flex flex-col">
                         {other.categories?.[0] && (
-                          <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5 w-fit ${other.categories[0].color || 'bg-gold/10 text-gold'}`}>{other.categories[0].title}</span>
+                          <span className={`text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5 w-fit ${other.categories[0].color || 'bg-gold/10 text-gold'}`}>{other.categories[0].title}</span>
                         )}
                         <p className="text-sm font-serif text-[#011122] leading-snug group-hover:text-gold transition-colors line-clamp-2">{other.title}</p>
                       </div>

@@ -107,7 +107,7 @@ export default function About() {
             {/* Mission Badge */}
             <div className="absolute bottom-10 right-10 hidden md:block">
               <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] max-w-sm">
-                <p className="text-gold font-sans text-xs font-black uppercase tracking-[0.2em] mb-4">{aboutData?.hero?.badge || "Our Vision"}</p>
+                <p className="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em] mb-4">{aboutData?.hero?.badge || "Our Vision"}</p>
                 <p className="text-white text-lg font-serif leading-relaxed">
                   {aboutData?.hero?.missionBadge || "\"To empower Australians with data-driven insights and professional representation that turns the property journey into a success story.\""}
                 </p>
@@ -153,7 +153,7 @@ export default function About() {
               className="lg:col-span-7 space-y-10"
             >
               <div className="space-y-4">
-                <span className="text-gold font-sans text-xs font-black uppercase tracking-[0.4em]">Our Story</span>
+                <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.4em]">Our Story</span>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#011122] leading-tight">
                   {aboutData?.profile?.heading ? (
                     <>
@@ -198,7 +198,7 @@ export default function About() {
                   <React.Fragment key={i}>
                     <div className="flex flex-col gap-1">
                       <span className="text-2xl font-serif text-[#011122]">{stat.value}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted">{stat.label}</span>
+                      <span className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</span>
                     </div>
                     {i < (aboutData?.profile?.stats?.length || 3) - 1 && <div className="w-px h-10 bg-gold/20" />}
                   </React.Fragment>
@@ -254,14 +254,14 @@ export default function About() {
             <div className="flex items-center justify-center gap-12 md:gap-24 relative">
               <div className="flex flex-col items-center">
                 <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jessica</span>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jessica</span>
               </div>
               
               <div className="text-3xl md:text-4xl font-serif text-gold">+</div>
               
               <div className="flex flex-col items-center">
                 <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jennifer</span>
+                <span className="text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jennifer</span>
               </div>
             </div>
           </motion.div>
