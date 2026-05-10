@@ -423,14 +423,7 @@ export default function Home() {
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
-                <div className="flex items-center gap-2 hidden md:flex">
-                  <button onClick={() => scrollServices('left')} className="p-4 rounded-full border-2 border-black/5 hover:bg-black hover:text-white transition-colors group">
-                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-                  </button>
-                  <button onClick={() => scrollServices('right')} className="p-4 rounded-full border-2 border-black/5 hover:bg-black hover:text-white transition-colors group">
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+                
                 <Link
                   href="/services"
                   className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
@@ -441,14 +434,21 @@ export default function Home() {
               </div>
             </div>
 
-            <div ref={servicesScrollRef} className="flex gap-10 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 pt-4 -mx-4 px-4 md:-mx-8 md:px-8">
+            <div className="relative group">
+              <button onClick={() => scrollServices('left')} className="absolute -left-4 md:-left-6 lg:-left-8 top-[40%] z-30 p-4 rounded-full bg-white border border-black/10 shadow-xl opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white flex shadow-gold/20">
+                <ArrowLeft className="w-6 h-6" />
+              </button>
+              <button onClick={() => scrollServices('right')} className="absolute -right-4 md:-right-6 lg:-right-8 top-[40%] z-30 p-4 rounded-full bg-white border border-black/10 shadow-xl opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white flex shadow-gold/20">
+                <ArrowRight className="w-6 h-6" />
+              </button>
+              <div ref={servicesScrollRef} className="flex gap-10 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 pt-4 -mx-4 px-4 md:-mx-8 md:px-8">
               {servicesPreview.map((localService: any, index: number) => {
                 const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
                 return (
                 <Link
                   key={service.title}
                   href={`/services#${service.anchor}`}
-                  className={`group shrink-0 snap-start w-[85vw] md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.66rem)] relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index !== 1
+                  className={`group shrink-0 snap-start w-[85vw] md:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-5rem)/3)] relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index !== 1
                     ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 md:z-20'
                     : 'bg-white border-black/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-gold/10'
                     }`}
@@ -494,6 +494,7 @@ export default function Home() {
                   <div className="absolute inset-0 rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
                 </Link>
               )})}
+            </div>
             </div>
           </div>
         </section>
