@@ -421,8 +421,10 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              {(homeData?.servicesPreview || servicesPreview).map((service: any, index: number) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+              {servicesPreview.map((localService: any, index: number) => {
+                const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
+                return (
                 <Link
                   key={service.title}
                   href={`/services#${service.anchor}`}
@@ -471,7 +473,7 @@ export default function Home() {
                   {/* Hover Glow Effect */}
                   <div className="absolute inset-0 rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
                 </Link>
-              ))}
+              )})}
             </div>
           </div>
         </section>
