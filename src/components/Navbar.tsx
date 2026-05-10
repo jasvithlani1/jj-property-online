@@ -69,9 +69,9 @@ export default function Navbar() {
           <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center">
               <img
-                src="/logo.png?v=3"
+                src="/logo.png?v=4"
                 alt="JJ Logo"
-                className="absolute w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 object-contain cursor-pointer max-w-none animate-slow-spin"
+                className="w-full h-full object-contain cursor-pointer animate-slow-spin"
                 style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
                 fetchPriority="high"
                 loading="eager"
