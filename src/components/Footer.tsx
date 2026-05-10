@@ -18,6 +18,7 @@ const serviceLinks = [
   { label: 'First Home Buyers', href: '/services/first-home-buyers' },
   { label: 'Property Investors', href: '/services/property-investors' },
   { label: 'SMSF Investment', href: '/services/smsf-property' },
+  { label: 'Commercial Property', href: '/services/commercial-property' },
 ];
 
 const socialLinks = [

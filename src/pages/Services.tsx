@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Plus, Gavel, Key, Building2, Landmark, Scale, TrendingUp } from 'lucide-react';
-import { FaKey, FaBuilding, FaLandmark } from 'react-icons/fa';
+import { ArrowRight, Plus, Gavel, Key, Building2, Landmark, Scale, TrendingUp, Briefcase } from 'lucide-react';
+import { FaKey, FaBuilding, FaLandmark, FaBriefcase } from 'react-icons/fa';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
@@ -109,6 +109,28 @@ const services = [
     accentClass: 'bg-gold/5 border-gold/20',
     iconClass: 'bg-gold/10 text-gold',
   },
+  {
+    id: 'commercial-property',
+    icon: <Briefcase className="w-8 h-8" />,
+    solidIcon: <FaBriefcase className="w-8 h-8" />,
+    tag: 'Commercial',
+    title: 'Commercial Property',
+    subtitle: 'Strategic Commercial Acquisitions for Higher Yields and Growth',
+    description: 'The commercial property market offers lucrative opportunities for strong yields and long-term capital growth, but it requires specialised knowledge to navigate successfully. We help you identify, evaluate, and secure high-performing commercial assets that align with your financial objectives.',
+    benefits: [
+      'In-depth market analysis to identify emerging commercial hubs and high-demand sectors',
+      'Evaluation of lease terms, tenant quality, and potential for rental growth',
+      'Risk assessment including zoning, compliance, and future development potential',
+      'Access to off-market commercial properties not listed publicly',
+      'Strategic negotiation to secure favourable purchase terms and maximise yield',
+      'Coordination with commercial finance brokers and legal experts',
+      'Guidance on portfolio diversification across retail, industrial, and office spaces'
+    ],
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    accent: 'gold',
+    accentClass: 'bg-gold/5 border-gold/20',
+    iconClass: 'bg-gold/10 text-gold',
+  }
 ];
 
 export default function Services() {

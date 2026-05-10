@@ -17,6 +17,7 @@ const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const FirstHomeBuyers = lazy(() => import('./pages/FirstHomeBuyers'));
 const PropertyInvestors = lazy(() => import('./pages/PropertyInvestors'));
 const SmsfProperty = lazy(() => import('./pages/SmsfProperty'));
+const CommercialProperty = lazy(() => import('./pages/CommercialProperty'));
 
 // Loading component for Suspense
 const PageLoader = () => (
@@ -39,6 +40,7 @@ function App() {
             <Route path="/services/first-home-buyers" element={<FirstHomeBuyers />} />
             <Route path="/services/property-investors" element={<PropertyInvestors />} />
             <Route path="/services/smsf-property" element={<SmsfProperty />} />
+            <Route path="/services/commercial-property" element={<CommercialProperty />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/blog" element={<Blog />} />

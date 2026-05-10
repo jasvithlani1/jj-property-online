@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Home as HomeIcon, TrendingUp, ArrowRight, Plus, Star, Quote } from 'lucide-react';
-import { FaHome, FaChartLine } from 'react-icons/fa';
+import { Home as HomeIcon, TrendingUp, ArrowRight, Plus, Star, Quote, Building2 } from 'lucide-react';
+import { FaHome, FaChartLine, FaBuilding } from 'react-icons/fa';
 import { TbHomeShield } from 'react-icons/tb';
 import { openCalendly, initInlineCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
@@ -35,6 +35,14 @@ const servicesPreview = [
     solidIcon: <TbHomeShield className="w-6 h-6" />,
     color: 'bg-gold/5',
     anchor: 'smsf-property',
+  },
+  {
+    title: 'Commercial Property',
+    description: "Navigate the commercial property market with expert guidance. We help you identify, negotiate, and secure high-performing commercial assets that offer strong yields and long-term capital growth, perfectly aligned with your investment strategy.",
+    icon: <Building2 className="w-6 h-6" />,
+    solidIcon: <FaBuilding className="w-6 h-6" />,
+    color: 'bg-gold/10',
+    anchor: 'commercial-property',
   },
 ];
 

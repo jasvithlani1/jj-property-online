@@ -17,6 +17,7 @@ const navLinks = [
       { name: 'First Home Buyers', path: '/services/first-home-buyers' },
       { name: 'Property Investors', path: '/services/property-investors' },
       { name: 'SMSF Property', path: '/services/smsf-property' },
+      { name: 'Commercial Property', path: '/services/commercial-property' },
     ]
   },
   { name: 'Case Studies', path: '/case-studies', isHash: false },
