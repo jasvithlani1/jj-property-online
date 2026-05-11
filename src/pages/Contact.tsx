@@ -82,17 +82,17 @@ export default function Contact() {
 
       <div className="w-full bg-white selection:bg-gold/20 pt-3 pb-8 md:pb-4">
       {/* Hero Section */}
-      <section className="relative px-8 pt-4 pb-8 md:pt-8 md:pb-3 overflow-hidden text-center z-10">
+      <section className="relative px-4 sm:px-8 pt-4 pb-8 md:pt-8 md:pb-3 overflow-hidden text-center z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-block px-8 py-3 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-black uppercase tracking-[0.3em] mb-10 shadow-sm">
+          <div className="inline-block px-4 sm:px-8 py-3 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-black uppercase tracking-[0.3em] mb-10 shadow-sm">
             {pageData?.hero?.badge || "Contact Us"}
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-sans font-black text-[#011122] leading-[1.1] mb-8 uppercase tracking-widest">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-black text-[#011122] leading-[1.1] mb-8 uppercase tracking-widest">
             {pageData?.hero?.heading?.includes('premium') ? (
               <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="text-gold font-black">premium</span> property market.</>
             ) : pageData?.hero?.heading || (
@@ -106,12 +106,12 @@ export default function Contact() {
       </section>
 
       {/* Main Content: Contact Cards & Form */}
-      <section className="relative px-8 pb-8 md:pb-4 z-10">
-        <div className="max-w-7xl mx-auto bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
+      <section className="relative px-4 sm:px-8 pb-8 md:pb-4 z-10">
+        <div className="max-w-7xl mx-auto bg-white rounded-[1.5rem] sm:rounded-[3rem] shadow-2xl p-6 sm:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
           {/* Subtle bg glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full opacity-60 -z-10" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative z-10">
             {/* Left Column: Details */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -131,7 +131,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-1">Direct Email</h3>
-                    <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+                    <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-lg sm:text-xl font-sans font-medium text-black hover:text-gold transition-colors">
                       {pageData?.details?.email || "info@jjpropertypartner.com.au"}
                     </Link>
                   </div>
@@ -183,7 +183,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-white/80 p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-xl shadow-gold/5 relative"
+              className="bg-white/80 p-6 sm:p-10 rounded-[1.5rem] sm:rounded-[2.5rem] border border-black/5 shadow-xl shadow-gold/5 relative"
             >
               {status === 'success' ? (
                 <div className="py-2 text-center animate-fade-in">
@@ -220,7 +220,7 @@ export default function Contact() {
                         placeholder="E.g. John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
+                        className="w-full px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
                       />
                     </div>
 
@@ -233,7 +233,7 @@ export default function Contact() {
                           placeholder="john@example.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
+                          className="w-full px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
                         />
                       </div>
                       <div className="space-y-2">
@@ -243,7 +243,7 @@ export default function Contact() {
                           placeholder="+61 481 334 458"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
+                          className="w-full px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans"
                         />
                       </div>
                     </div>
@@ -253,7 +253,7 @@ export default function Contact() {
                       <select
                         value={formData.goal}
                         onChange={(e) => setFormData({ ...formData, goal: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans appearance-none cursor-pointer"
+                        className="w-full px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans appearance-none cursor-pointer"
                       >
                         <option value="" disabled>Select an option...</option>
                         <option value="owner-occupier">Owner Occupier / First Home</option>
@@ -269,7 +269,7 @@ export default function Contact() {
                         placeholder="Tell us a bit about what you are looking to achieve..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans resize-none"
+                        className="w-full px-4 py-3.5 sm:px-5 sm:py-4 rounded-2xl bg-neutral-50/50 border border-black/5 focus:bg-white focus:border-gold focus:ring-4 focus:ring-gold/20 transition-all outline-none font-sans resize-none"
                       ></textarea>
                     </div>
 
