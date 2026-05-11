@@ -725,7 +725,7 @@ export default function Home() {
                       <div className="mb-4">
                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
                         <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
-                        <span className="text-sm font-bold text-gold bg-gold/10 inline-block px-3 py-1 rounded-full">{story.result}</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
                       </div>
                       <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
                       <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">

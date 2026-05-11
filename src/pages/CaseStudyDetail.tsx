@@ -6,6 +6,7 @@ import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
+import { caseStudies as localCaseStudies } from '../data/caseStudies';
 
 interface SanityCaseStudy {
   _id: string;
@@ -56,7 +57,31 @@ export default function CaseStudyDetail() {
           seo,
           gallery
         }`;
-        const data = await client.fetch(query, { slug: id });
+        
+        let data = await client.fetch(query, { slug: id });
+        
+        if (!data) {
+          // Check local data
+          const localStudy = localCaseStudies.find(s => s.id === id);
+          if (localStudy) {
+            data = {
+              _id: localStudy.id,
+              title: localStudy.title,
+              slug: { current: localStudy.id },
+              resultText: localStudy.result,
+              location: localStudy.location,
+              shortQuote: localStudy.shortQuote,
+              mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
+              tag: localStudy.tag,
+              tagColor: localStudy.tagColor,
+              client: localStudy.client,
+              challenge: localStudy.challenge,
+              strategy: localStudy.strategy,
+              outcome: localStudy.outcome,
+              stats: localStudy.stats
+            };
+          }
+        }
         setStudy(data);
 
         // Fetch other studies
@@ -129,10 +154,17 @@ export default function CaseStudyDetail() {
 
       {/* Hero Image */}
       <section className="relative mt-4 mx-4 md:mx-8 h-[50vh] md:h-[65vh] rounded-[3rem] overflow-hidden">
-        {study.mainImage ? (
+        {study.mainImage && !study.mainImage.isLocal ? (
           <img
             src={urlFor(study.mainImage).url()}
             alt={study.mainImage?.alt || study.title}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          study.mainImage && study.mainImage.isLocal ? (
+          <img
+            src={study.mainImage.asset._ref}
+            alt={study.title}
             className="w-full h-full object-cover"
           />
         ) : (
@@ -141,6 +173,7 @@ export default function CaseStudyDetail() {
             alt={study.title}
             className="w-full h-full object-cover"
           />
+        )
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
@@ -152,7 +185,7 @@ export default function CaseStudyDetail() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-gold/10 ${study.tagColor || 'bg-gold/10 text-gold'}`}>
+              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-gold/10 ${study.tagColor || 'bg-gold text-white shadow-lg shadow-gold/20 font-black border-none'}`}>
                 {study.tag || 'Acquisition'}
               </span>
               <span className="flex items-center gap-1.5 text-white/70 text-sm font-sans">
@@ -315,7 +348,7 @@ export default function CaseStudyDetail() {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block w-fit ${other.tagColor || 'bg-gold/10 text-gold'}`}>{other.tag || 'Acquisition'}</span>
+                  <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block w-fit ${other.tagColor || 'bg-gold text-white shadow-lg shadow-gold/20 font-black border-none'}`}>{other.tag || 'Acquisition'}</span>
                   <p className="text-lg font-serif text-[#011122] mb-1 group-hover:text-gold transition-colors">{other.title}</p>
                   <p className="text-sm text-muted font-sans">{other.resultText} · {other.location}</p>
                 </div>

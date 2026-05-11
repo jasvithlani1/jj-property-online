@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import Link from '../components/Link';
+import { caseStudies as localCaseStudies } from '../data/caseStudies';
 
 interface SanityCaseStudy {
   _id: string;
@@ -51,7 +52,22 @@ export default function CaseStudies() {
           client.fetch(pageQuery)
         ]);
 
-        setStudies(studiesData);
+        
+        // Map local case studies to match Sanity format
+        const formattedLocalStudies = localCaseStudies.map(local => ({
+          _id: local.id,
+          title: local.title,
+          slug: { current: local.id },
+          resultText: local.result,
+          location: local.location,
+          shortQuote: local.shortQuote,
+          mainImage: { asset: { _ref: local.image }, isLocal: true }, // Mark as local for conditional rendering
+          tag: local.tag,
+          tagColor: local.tagColor,
+          stats: local.stats
+        }));
+
+        setStudies([...studiesData, ...formattedLocalStudies]);
         if (pageData) setPageData(pageData);
       } catch (error) {
         console.error('Error fetching case studies:', error);
@@ -143,10 +159,17 @@ export default function CaseStudies() {
                   >
                     {/* Image */}
                     <div className="relative h-64 overflow-hidden">
-                      {study.mainImage ? (
+                      {study.mainImage && !study.mainImage.isLocal ? (
                         <img
                           src={urlFor(study.mainImage).width(800).height(600).url()}
                           alt={study.mainImage?.alt || study.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      ) : (
+                        study.mainImage && study.mainImage.isLocal ? (
+                        <img
+                          src={study.mainImage.asset._ref}
+                          alt={study.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       ) : (
@@ -155,12 +178,13 @@ export default function CaseStudies() {
                           alt={study.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />
+                      )
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
                       {/* Tag overlay */}
                       <div className="absolute top-4 left-4">
-                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-gold/10 text-gold'}`}>
+                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-gold text-white shadow-lg shadow-gold/20 font-black'}`}>
                           {study.tag || 'Acquisition'}
                         </span>
                       </div>
