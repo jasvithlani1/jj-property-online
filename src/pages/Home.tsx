@@ -342,12 +342,12 @@ export default function Home() {
                 {homeData?.aboutPreview?.heading ? (
                   <>
                     {homeData.aboutPreview.heading.split('.').slice(0, -1).join('.')} <br />
-                    <span className="text-muted">{homeData.aboutPreview.subheading}</span>
+                    <span className="text-gold">{homeData.aboutPreview.subheading}</span>
                   </>
                 ) : (
                   <>
                     Property Strategist. <br />
-                    <span className="text-muted">Dedicated Buyer Advocate.</span>
+                    <span className="text-gold">Dedicated Buyer Advocate.</span>
                   </>
                 )}
               </h2>
