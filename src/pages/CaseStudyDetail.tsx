@@ -135,8 +135,8 @@ export default function CaseStudyDetail() {
     <div className="w-full bg-white selection:bg-gold/20 pt-12">
       <SEO 
         title={study.seo?.metaTitle || study.title} 
-        description={study.seo?.metaDescription || study.outcome.substring(0, 160)}
-        image={study.seo?.ogImage || study.mainImage}
+        description={study.seo?.metaDescription || study.outcome?.substring(0, 160)}
+        image={study.seo?.ogImage || (study.mainImage?.isLocal ? study.mainImage.asset._ref : study.mainImage)}
       />
 
       {/* Back navigation */}
