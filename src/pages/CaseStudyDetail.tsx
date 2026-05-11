@@ -120,7 +120,7 @@ export default function CaseStudyDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
         <h1 className="text-5xl font-serif text-[#011122] mb-4">Case Study Not Found</h1>
-        <p className="text-muted font-sans mb-10 text-lg">We couldn't find the case study you were looking for.</p>
+        <p className="text-muted font-sans mb-2 text-lg">We couldn't find the case study you were looking for.</p>
         <Link
           href="/case-studies"
           className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
@@ -132,7 +132,7 @@ export default function CaseStudyDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-12">
+    <div className="w-full bg-white selection:bg-gold/20 pt-4">
       <SEO 
         title={study.seo?.metaTitle || study.title} 
         description={study.seo?.metaDescription || study.outcome?.substring(0, 160)}
@@ -140,7 +140,7 @@ export default function CaseStudyDetail() {
       />
 
       {/* Back navigation */}
-      <div className="px-8 pt-12 pb-0 relative z-10">
+      <div className="px-8 pt-4 pb-0 relative z-10">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/case-studies"
@@ -202,7 +202,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Stats Row */}
-      <section className="px-8 py-8 md:py-10">
+      <section className="px-8 py-2 md:py-3">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {study.stats?.map((stat, i) => (
@@ -222,7 +222,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* Main Body */}
-      <section className="px-8 py-8 md:py-10">
+      <section className="px-8 py-2 md:py-3">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Content Column */}
@@ -309,7 +309,7 @@ export default function CaseStudyDetail() {
 
       {/* Property Image Gallery */}
       {study.gallery && study.gallery.length > 0 && (
-        <section className="px-8 pb-10 md:pb-12">
+        <section className="px-8 pb-3 md:pb-4">
           <div className="max-w-7xl mx-auto">
             <h3 className="text-3xl font-serif text-[#011122] mb-8">Property Gallery</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -330,9 +330,9 @@ export default function CaseStudyDetail() {
       )}
 
       {/* Other Case Studies */}
-      <section className="px-8 py-8 md:py-10 bg-gold/5">
+      <section className="px-8 py-2 md:py-3 bg-gold/5">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-serif text-[#011122] mb-10">More Client Results</h2>
+          <h2 className="text-3xl font-serif text-[#011122] mb-2">More Client Results</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {otherStudies.map((other) => (
               <Link

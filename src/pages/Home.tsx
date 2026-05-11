@@ -286,7 +286,7 @@ export default function Home() {
         <motion.section
           id="home"
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-12 lg:pt-20"
+          className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-4 lg:pt-8"
         >
           <div className="absolute inset-0 -z-20">
             <video
@@ -314,7 +314,7 @@ export default function Home() {
             {homeData?.hero?.subheading || "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."}
           </p>
 
-          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-12">
+          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-4">
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
               {homeData?.hero?.ctaText || "Book Session"}
             </button>
@@ -325,7 +325,7 @@ export default function Home() {
         </motion.section>
 
         {/* ── About Alex Preview ───────────────────────────────────────────── */}
-        <section id="about" className="relative z-10 py-6 md:py-8 px-8 bg-gradient-to-b from-white to-neutral-50">
+        <section id="about" className="relative z-10 py-2 md:py-3 px-8 bg-gradient-to-b from-white to-neutral-50">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -333,7 +333,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-10 shadow-sm scale-110 origin-left">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-2 shadow-sm scale-110 origin-left">
                 <span className="block w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
                 Principal Advisor
               </div>
@@ -352,7 +352,7 @@ export default function Home() {
                 )}
               </h2>
 
-              <div className="space-y-6 text-lg text-muted leading-relaxed max-w-xl font-sans">
+              <div className="space-y-2 text-lg text-muted leading-relaxed max-w-xl font-sans">
                 {homeData?.aboutPreview?.description ? (
                   homeData.aboutPreview.description.split('\n\n').map((paragraph: string, i: number) => (
                     <p key={i}>{paragraph}</p>
@@ -372,7 +372,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-12 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
+              <div className="mt-4 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
@@ -410,13 +410,13 @@ export default function Home() {
         </section>
 
         {/* ── Services Preview ─────────────────────────────────────────────── */}
-        <section id="services" className="relative z-10 py-12 md:py-20 bg-white px-8 overflow-hidden border-t border-black/5">
+        <section id="services" className="relative z-10 py-4 md:py-6 bg-white px-8 overflow-hidden border-t border-black/5">
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gold/5 blur-[120px] rounded-full -z-10" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
 
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8 relative">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-8 relative">
               <div className="relative">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-gold/5 -z-10 pointer-events-none select-none">Services</div>
                 <h2 className="text-5xl md:text-7xl font-serif text-black mb-6 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
@@ -460,7 +460,7 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: index * 0.15 }}
                     className="w-full h-full flex flex-col items-start"
                   >
-                    <div className={`p-5 rounded-[2rem] mb-10 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index % 2 === 0 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
+                    <div className={`p-5 rounded-[2rem] mb-2 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index % 2 === 0 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
                       }`}>
                       <div className="w-8 h-8 flex items-center justify-center">
                         {service.icon || servicesPreview.find((s: any) => s.title === service.title)?.icon || servicesPreview[index]?.icon}
@@ -470,7 +470,7 @@ export default function Home() {
                     <h3 className={`text-3xl font-serif mb-6 leading-tight ${index % 2 === 0 ? 'text-white' : 'text-black font-semibold'}`}>
                       {service.title}
                     </h3>
-                    <p className={`leading-relaxed font-sans text-lg mb-12 flex-1 ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
+                    <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
                       {service.description}
                     </p>
 
@@ -500,7 +500,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="pt-10 pb-6 md:pt-12 md:pb-8 px-8 bg-white overflow-hidden">
+        <section className="pt-3 pb-2 md:pt-4 md:pb-3 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <motion.div
@@ -545,7 +545,7 @@ export default function Home() {
               </motion.div>
               <div className="relative">
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4 mt-12">
+                  <div className="space-y-4 mt-4">
                     <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
@@ -569,9 +569,9 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="pt-6 pb-12 md:pt-8 md:pb-16 px-8 bg-white text-[#011122] overflow-hidden">
+        <section className="pt-2 pb-4 md:pt-3 md:pb-6 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
+            <div className="text-center mb-3">
               <div className="inline-block px-7 py-3 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
                 How We Work
               </div>
@@ -649,7 +649,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="relative py-6 md:py-8 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+        <section className="relative py-2 md:py-3 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <video
               src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
@@ -678,9 +678,9 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative py-6 md:py-8 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
+        <section id="case-studies" className="relative py-2 md:py-3 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 gap-6">
               <div>
                 <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight mb-4">
                   Real world results. <br />
@@ -744,8 +744,8 @@ export default function Home() {
         </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
-        <section id="reviews" className="relative py-6 md:py-8 bg-white overflow-hidden flex flex-col items-center">
-          <div className="mb-10 md:mb-16 text-center">
+        <section id="reviews" className="relative py-2 md:py-3 bg-white overflow-hidden flex flex-col items-center">
+          <div className="mb-2 md:mb-4 text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="text-4xl font-serif text-black font-bold">5.0</span>
               <div className="flex gap-1">
@@ -793,7 +793,7 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-        <section className="relative py-6 md:py-8 bg-gradient-to-b from-white to-neutral-50 px-8">
+        <section className="relative py-2 md:py-3 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
@@ -845,8 +845,8 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section className="relative py-10 md:py-12 bg-neutral-50 px-8 overflow-hidden">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+        <section className="relative py-3 md:py-4 bg-neutral-50 px-8 overflow-hidden">
+          <div className="max-w-4xl mx-auto text-center mb-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

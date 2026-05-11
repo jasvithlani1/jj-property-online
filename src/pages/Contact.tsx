@@ -80,9 +80,9 @@ export default function Contact() {
         keywords={pageData?.seo?.keywords}
       />
 
-      <div className="w-full bg-white selection:bg-gold/20 pt-24 pb-8 md:pb-12">
+      <div className="w-full bg-white selection:bg-gold/20 pt-3 pb-8 md:pb-4">
       {/* Hero Section */}
-      <section className="relative px-8 pt-12 pb-8 md:pt-20 md:pb-10 overflow-hidden text-center z-10">
+      <section className="relative px-8 pt-4 pb-8 md:pt-8 md:pb-3 overflow-hidden text-center z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -106,7 +106,7 @@ export default function Contact() {
       </section>
 
       {/* Main Content: Contact Cards & Form */}
-      <section className="relative px-8 pb-8 md:pb-12 z-10">
+      <section className="relative px-8 pb-8 md:pb-4 z-10">
         <div className="max-w-7xl mx-auto bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
           {/* Subtle bg glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full opacity-60 -z-10" />
@@ -119,11 +119,11 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col justify-center"
             >
-              <h2 className="text-4xl font-serif text-black leading-tight mb-10">
+              <h2 className="text-4xl font-serif text-black leading-tight mb-2">
                 {pageData?.details?.heading || "Let's discuss your targets."}
               </h2>
 
-              <div className="space-y-8">
+              <div className="space-y-3">
                 {/* Email */}
                 <div className="flex items-start gap-5 group">
                   <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
@@ -186,7 +186,7 @@ export default function Contact() {
               className="bg-white/80 p-8 md:p-10 rounded-[2.5rem] border border-black/5 shadow-xl shadow-gold/5 relative"
             >
               {status === 'success' ? (
-                <div className="py-20 text-center animate-fade-in">
+                <div className="py-2 text-center animate-fade-in">
                   <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
@@ -211,7 +211,7 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-2">
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-widest text-muted ml-1">Full Name</label>
                       <input

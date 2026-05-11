@@ -76,7 +76,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-20">
+    <div className="w-full bg-white selection:bg-gold/20 pt-8">
       <SEO 
         title={pageData?.seo?.metaTitle || "Market Intelligence & Blog"} 
         description={pageData?.seo?.metaDescription || "Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market."} 
@@ -85,7 +85,7 @@ export default function Blog() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-12 pb-10 md:pt-16 md:pb-10 bg-[#011122] text-white overflow-hidden">
+      <section className="relative px-8 pt-4 pb-3 md:pt-6 md:pb-3 bg-[#011122] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gold rounded-full blur-[200px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold rounded-full blur-[150px]" />
@@ -128,10 +128,10 @@ export default function Blog() {
       </section>
 
       {/* Post Grid */}
-      <section className="px-8 pb-10 pt-4">
+      <section className="px-8 pb-3 pt-4">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
-            <div className="flex justify-center py-24">
+            <div className="flex justify-center py-2">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
             </div>
           ) : (
@@ -203,7 +203,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="px-8 py-8 md:py-10 bg-gold/5">
+      <section className="px-8 py-2 md:py-3 bg-gold/5">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -216,7 +216,7 @@ export default function Blog() {
                 <>Market intelligence, <br /> <span className="text-gold">direct to your inbox.</span></>
               )}
             </h2>
-            <p className="text-xl text-muted font-sans mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted font-sans mb-2 max-w-xl mx-auto leading-relaxed">
               {pageData?.newsletter?.description || "Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data."}
             </p>
             {isSubscribed ? (

@@ -24,7 +24,7 @@ interface SanityPost {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mt-16 mb-6 leading-tight">
+      <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mt-6 mb-6 leading-tight">
         {children}
       </h2>
     ),
@@ -119,7 +119,7 @@ export default function BlogDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
         <h1 className="text-5xl font-serif text-[#011122] mb-4">Article Not Found</h1>
-        <p className="text-muted font-sans mb-10 text-lg">We couldn't find the article you were looking for.</p>
+        <p className="text-muted font-sans mb-2 text-lg">We couldn't find the article you were looking for.</p>
         <Link
           href="/blog"
           className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
@@ -131,7 +131,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-12">
+    <div className="w-full bg-white selection:bg-gold/20 pt-4">
       <SEO 
         title={post.seo?.metaTitle || post.title} 
         description={post.seo?.metaDescription || post.excerpt}
@@ -140,7 +140,7 @@ export default function BlogDetail() {
       />
 
       {/* Back nav */}
-      <div className="px-8 pt-12 pb-0 relative z-10">
+      <div className="px-8 pt-4 pb-0 relative z-10">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blog"
@@ -153,7 +153,7 @@ export default function BlogDetail() {
       </div>
 
       {/* Article Header */}
-      <header className="px-8 pt-8 pb-10">
+      <header className="px-8 pt-8 pb-3">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -170,11 +170,11 @@ export default function BlogDetail() {
               {post.title}
             </h1>
 
-            <p className="text-xl md:text-2xl text-muted font-sans leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-muted font-sans leading-relaxed mb-2">
               {post.excerpt}
             </p>
 
-            <div className="flex flex-wrap items-center gap-6 pb-10 border-b border-[#011122]/10">
+            <div className="flex flex-wrap items-center gap-6 pb-3 border-b border-[#011122]/10">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-lg overflow-hidden">
                   {post.author?.image ? (
@@ -198,7 +198,7 @@ export default function BlogDetail() {
       </header>
 
       {/* Cover Image */}
-      <div className="px-4 md:px-8 mb-10">
+      <div className="px-4 md:px-8 mb-2">
         <div className="max-w-5xl mx-auto h-[45vh] md:h-[55vh] rounded-[2.5rem] overflow-hidden">
           {post.mainImage ? (
             <img
@@ -217,7 +217,7 @@ export default function BlogDetail() {
       </div>
 
       {/* Article Body + Sidebar */}
-      <div className="px-8 pb-16 md:pb-24">
+      <div className="px-8 pb-6 md:pb-3">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
           {/* Main Content */}

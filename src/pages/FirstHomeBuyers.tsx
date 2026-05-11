@@ -83,9 +83,9 @@ export default function FirstHomeBuyers() {
         keywords={pageData?.seo?.keywords}
       />
       
-      <div className="w-full bg-white selection:bg-gold/20 pt-20">
+      <div className="w-full bg-white selection:bg-gold/20 pt-8">
         {/* Hero Section */}
-        <section className="relative px-6 py-12 sm:px-8 sm:py-16 md:pt-24 md:pb-20 bg-[#011122] text-white overflow-hidden">
+        <section className="relative px-6 py-4 sm:px-8 sm:py-6 md:pt-3 md:pb-8 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -113,7 +113,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Introduction Section */}
-        <section className="py-12 md:py-20 px-8 bg-white overflow-hidden">
+        <section className="py-4 md:py-2 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -124,7 +124,7 @@ export default function FirstHomeBuyers() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
                 {pageData?.intro?.heading || "Stop Searching, Start Finding"}
               </h2>
-              <div className="space-y-6 text-lg text-muted font-sans leading-relaxed">
+              <div className="space-y-2 text-lg text-muted font-sans leading-relaxed">
                 <p>
                   {pageData?.intro?.content || "Most first home buyers spend months scrolling through real estate portals, only to be outbid at auction or find themselves discouraged by rising prices. At JJ Property Partner, we flip the script."}
                 </p>
@@ -165,7 +165,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-8 md:py-16 px-6 md:px-8 bg-neutral-50">
+        <section className="py-2 md:py-6 px-6 md:px-8 bg-neutral-50">
           <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
             {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
               <motion.div
@@ -212,7 +212,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Process Timeline Section */}
-        <section className="py-12 md:py-20 px-8 bg-[#011122] text-white overflow-hidden relative">
+        <section className="py-4 md:py-2 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
@@ -266,7 +266,7 @@ export default function FirstHomeBuyers() {
                       />
                     </div>
 
-                    <div className={`flex-1 ${i < arr.length - 1 ? 'pb-12' : ''}`}>
+                    <div className={`flex-1 ${i < arr.length - 1 ? 'pb-4' : ''}`}>
                       <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -302,9 +302,9 @@ export default function FirstHomeBuyers() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="py-6 md:py-2 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -373,14 +373,14 @@ export default function FirstHomeBuyers() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mt-32 max-w-3xl mx-auto"
+              className="mt-4 max-w-3xl mx-auto"
             >
               <div className="bg-[#011122] text-white rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group text-center">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-32 group-hover:bg-gold/20 transition-colors" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-32" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
                 
                 <h3 className="text-4xl font-serif text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "First Home Strategy Session"}</h3>
-                <p className="text-white/60 text-lg mb-10 leading-relaxed relative z-10 max-w-xl mx-auto">
+                <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
                   {pageData?.readiness?.cta?.description || "Unsure where to start? Our free discovery call will help you understand your budget, available grants, and the buying process from start to finish."}
                 </p>
                 <button
@@ -395,10 +395,10 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* Why JJ Property Partner Section */}
-        <section className="pt-16 md:pt-24 pb-8 md:pb-12 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="pt-6 md:pt-3 pb-8 md:pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
+            <div className="text-center mb-6">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -440,7 +440,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative pt-8 md:pt-12 pb-4 md:pb-6 bg-white px-8">
+        <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
@@ -495,7 +495,7 @@ export default function FirstHomeBuyers() {
         </section>
 
         {/* CTA Section */}
-        <section className="pt-4 md:pt-6 pb-20 md:pb-32 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="pt-4 md:pt-6 pb-8 md:pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.div
@@ -509,7 +509,7 @@ export default function FirstHomeBuyers() {
                   <>Secure your <span className="text-gold">first home</span> today.</>
                 )}
               </h2>
-              <p className="text-xl text-white/70 font-sans mb-12 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-xl text-white/70 font-sans mb-3 leading-relaxed max-w-2xl mx-auto">
                 {pageData?.finalCta?.description || "Ready to stop scrolling and start finding? Book your free, no-obligation strategy session to understand how we can help you get the keys faster."}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">

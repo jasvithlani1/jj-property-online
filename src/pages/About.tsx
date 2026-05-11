@@ -40,10 +40,10 @@ export default function About() {
         keywords={aboutData?.seo?.keywords}
       />
       
-      <div className="w-full bg-white selection:bg-gold/20 pt-20">
+      <div className="w-full bg-white selection:bg-gold/20 pt-8">
 
       {/* Hero Section */}
-      <section className="relative pt-16 md:pt-24 pb-10 md:pb-12 bg-[#011122] overflow-hidden">
+      <section className="relative pt-6 md:pt-3 pb-3 md:pb-4 bg-[#011122] overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/10 blur-[160px] rounded-full -mr-96 -mt-96 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[140px] rounded-full -ml-48 -mb-48 pointer-events-none" />
@@ -63,7 +63,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl sm:text-6xl md:text-8xl font-serif text-white leading-[1.05] mb-10"
+              className="text-5xl sm:text-6xl md:text-8xl font-serif text-white leading-[1.05] mb-2"
             >
               {aboutData?.hero?.heading ? (
                 <>
@@ -90,7 +90,7 @@ export default function About() {
         </div>
 
         {/* Floating Image Card */}
-        <div className="max-w-7xl mx-auto px-8 mt-20 relative z-20">
+        <div className="max-w-7xl mx-auto px-8 mt-8 relative z-20">
           <motion.div
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ export default function About() {
       </section>
 
       {/* Profile Section */}
-      <section className="pt-10 md:pt-16 pb-20 md:pb-32 px-8 bg-white">
+      <section className="pt-3 md:pt-6 pb-8 md:pb-4 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
             <motion.div
@@ -150,7 +150,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="lg:col-span-7 space-y-10"
+              className="lg:col-span-7 space-y-3"
             >
               <div className="space-y-4">
                 <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.4em]">Our Story</span>
@@ -169,7 +169,7 @@ export default function About() {
                 </h2>
               </div>
               
-              <div className="space-y-8 text-lg text-muted font-sans leading-relaxed">
+              <div className="space-y-3 text-lg text-muted font-sans leading-relaxed">
                 <p className="text-xl text-[#011122] font-medium leading-relaxed italic">
                   {aboutData?.profile?.quote || "\"JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor.\""}
                 </p>
@@ -210,7 +210,7 @@ export default function About() {
       </section>
 
       {/* Purpose Section */}
-      <section className="py-24 md:py-32 px-8 bg-[#FFFBF2] overflow-hidden">
+      <section className="py-2 md:py-4 px-8 bg-[#FFFBF2] overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -219,11 +219,11 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="text-8xl md:text-[10rem] font-serif text-gold/40 leading-none mb-4 select-none">JJ</div>
-            <h2 className="text-3xl md:text-5xl font-serif italic text-[#011122] mb-12">
+            <h2 className="text-3xl md:text-5xl font-serif italic text-[#011122] mb-3">
               {aboutData?.purpose?.heading || "A name with purpose. A promise with heart."}
             </h2>
             
-            <div className="space-y-8 text-lg md:text-xl text-muted font-sans leading-relaxed mb-16">
+            <div className="space-y-3 text-lg md:text-xl text-muted font-sans leading-relaxed mb-4">
               {aboutData?.purpose?.description ? (
                 aboutData.purpose.description.split('\n\n').map((para: string, i: number) => <p key={i}>{para}</p>)
               ) : (
@@ -238,7 +238,7 @@ export default function About() {
               )}
             </div>
 
-            <div className="mb-24">
+            <div className="mb-8">
               <Link 
                 href="/contact" 
                 className="relative inline-flex items-center gap-3 px-12 py-5 bg-gold text-[#011122] text-sm font-bold uppercase tracking-[0.3em] rounded-[2px] shadow-xl transition-all hover:scale-105 active:scale-95 group overflow-hidden"
@@ -269,7 +269,7 @@ export default function About() {
       </section>
 
       {/* Track Record & Tech Advantage */}
-      <section className="py-8 md:py-10 bg-white px-8 relative overflow-hidden">
+      <section className="py-2 md:py-3 bg-white px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -305,9 +305,9 @@ export default function About() {
       </section>
 
       {/* Core Values */}
-      <section className="py-8 md:py-10 px-8 bg-white">
+      <section className="py-2 md:py-3 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-6">
             <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Our Core Values</h2>
             <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
           </div>
@@ -339,13 +339,13 @@ export default function About() {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-8 md:py-10 px-8 bg-[#011122] text-white relative overflow-hidden">
+      <section className="py-2 md:py-3 px-8 bg-[#011122] text-white relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full opacity-20">
           <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10 text-center mb-20">
+        <div className="max-w-7xl mx-auto relative z-10 text-center mb-6">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-lg text-gold">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
           <p className="text-lg font-sans text-white/70 max-w-2xl mx-auto">
             {aboutData?.pillarsSection?.subheading || "Our unyielding commitment to precision, integrity, and market-beating results."}
@@ -388,9 +388,9 @@ export default function About() {
       </section>
 
       {/* Credentials */}
-      <section className="py-8 md:py-8 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+      <section className="py-2 md:py-2 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-3">
             <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>
           </div>
           
