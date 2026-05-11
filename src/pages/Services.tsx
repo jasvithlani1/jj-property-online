@@ -394,11 +394,11 @@ export default function Services() {
                 </p>
 
                 <div className="mt-auto w-full flex items-center justify-between group/link">
-                  <span className={`text-xs font-bold uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-[#011122] opacity-40 group-hover:opacity-100'
+                  <span className={`text-xs font-bold uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-gold group-hover:text-gold-hover'
                     }`}>
                     Learn More
                   </span>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.isFeatured ? 'bg-white/10 group-hover:bg-gold' : 'bg-[#011122]/5 group-hover:bg-[#011122] group-hover:text-white'
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${service.isFeatured ? 'bg-white/10 group-hover:bg-gold' : 'bg-gold/10 group-hover:bg-gold group-hover:text-white text-gold'
                     }`}>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </div>
