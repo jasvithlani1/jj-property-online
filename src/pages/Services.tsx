@@ -221,9 +221,17 @@ export default function Services() {
       </section>
 
       {/* Service Sections */}
-        <section className="py-4 md:py-2 px-8 bg-white relative overflow-hidden">
-          <div className="max-w-7xl mx-auto flex flex-col gap-24 md:gap-32">
-            {(pageData?.serviceList || services).map((service: any, index: number) => (
+        <section className="py-2 md:py-3 px-8 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto flex flex-col gap-8 md:gap-12">
+            {(() => {
+              const sanityServices = pageData?.serviceList || [];
+              // Merge: use Sanity data if available, otherwise use local data
+              const allServices = services.map(local => {
+                const sanity = sanityServices.find((s: any) => s.id === local.id || s._id === local.id);
+                return sanity ? { ...local, ...sanity } : local;
+              });
+              return allServices;
+            })().map((service: any, index: number) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 40 }}
@@ -257,7 +265,7 @@ export default function Services() {
                           hover: { opacity: 0, visibility: 'hidden' }
                         }}
                       >
-                        {service.icon || services.find(s => s.id === service.id)?.icon || (index === 0 ? <Key className="w-8 h-8" /> : index === 1 ? <Building2 className="w-8 h-8" /> : <Landmark className="w-8 h-8" />)}
+                        {service.icon || services.find(s => s.id === service.id)?.icon || services.find(s => s.id === service.id)?.icon || <Building2 className="w-8 h-8" />}
                       </motion.div>
                       <motion.div
                         className="absolute inset-0 h-full w-full flex items-center justify-center"
@@ -267,7 +275,7 @@ export default function Services() {
                           hover: { opacity: 1, visibility: 'visible' }
                         }}
                       >
-                        {service.solidIcon || services.find(s => s.id === service.id)?.solidIcon || (index === 0 ? <FaKey className="w-8 h-8" /> : index === 1 ? <FaBuilding className="w-8 h-8" /> : <FaLandmark className="w-8 h-8" />)}
+                        {service.solidIcon || services.find(s => s.id === service.id)?.solidIcon || services.find(s => s.id === service.id)?.solidIcon || <FaBuilding className="w-8 h-8" />}
                       </motion.div>
                     </motion.div>
                   </div>
