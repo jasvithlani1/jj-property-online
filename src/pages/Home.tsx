@@ -798,7 +798,7 @@ export default function Home() {
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
                 Frequently <br />
-                <span className="text-muted">asked questions.</span>
+                <span className="text-gold">asked questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
             </div>
@@ -857,7 +857,7 @@ export default function Home() {
                 Take the next step
               </div>
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-6">
-                Book your <span className="text-muted">strategy session.</span>
+                Book your <span className="text-gold">strategy session.</span>
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
                 Select a date and time that suits you for a confidential 30-minute consultation with Alex.
