@@ -513,12 +513,12 @@ export default function Home() {
                   {homeData?.differenceSection?.heading ? (
                     <>
                       {homeData.differenceSection.heading} <br />
-                      <span className="text-muted">{homeData.differenceSection.subheading}</span>
+                      <span className="text-gold">{homeData.differenceSection.subheading}</span>
                     </>
                   ) : (
                     <>
                       The JJ Property <br />
-                      <span className="text-muted">Partner Difference.</span>
+                      <span className="text-gold">Partner Difference.</span>
                     </>
                   )}
                 </h2>
