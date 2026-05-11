@@ -89,12 +89,12 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <div className="inline-block px-7 py-3 rounded-full border border-black/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-black mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+          <div className="inline-block px-8 py-3 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-black uppercase tracking-[0.3em] mb-10 shadow-sm">
             {pageData?.hero?.badge || "Contact Us"}
           </div>
-          <h1 className="text-5xl md:text-8xl font-serif text-black leading-tight mb-6">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-sans font-black text-black leading-[1.1] mb-8 uppercase tracking-[0.05em]">
             {pageData?.hero?.heading?.includes('premium') ? (
-              <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="font-semibold text-gold">premium</span> property market.</>
+              <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="text-gold">premium</span> property market.</>
             ) : pageData?.hero?.heading || (
               <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="font-semibold text-gold">premium</span> property market.</>
             )}
