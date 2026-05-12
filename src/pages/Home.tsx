@@ -108,6 +108,7 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const calendlySectionRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeftStart = useRef(0);
@@ -252,7 +253,21 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    initInlineCalendly('calendly-inline-widget');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          initInlineCalendly('calendly-inline-widget');
+          observer.disconnect(); // Only load once
+        }
+      },
+      { rootMargin: '800px' } // Start loading 800px before it enters the viewport
+    );
+
+    if (calendlySectionRef.current) {
+      observer.observe(calendlySectionRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   // Handle hash scroll on mount (e.g., coming from another page to #reviews)
@@ -844,7 +859,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section className="relative py-3 md:py-4 bg-neutral-50 px-8 overflow-hidden">
+        <section ref={calendlySectionRef} className="relative py-3 md:py-4 bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
