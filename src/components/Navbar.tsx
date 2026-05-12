@@ -39,29 +39,31 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-[100] w-full">
+        
         <div className="bg-[#011122] text-gold py-3 px-4 md:px-8 flex justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] border-b border-white/5">
-          <div className="flex items-center gap-3 sm:gap-6 md:gap-8">
-            <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 sm:bg-transparent sm:border-none hover:text-[#C8A96A] transition-colors">
-              <Mail className="w-4 h-4 md:w-3.5 md:h-3.5" />
-              <span className="inline">Email</span>
-              <span className="hidden lg:inline ml-1">- info@jjpropertypartner.com.au</span>
-            </Link>
-            <div className="h-4 w-px bg-white/10 hidden sm:block" />
-            <Link href="tel:+61481334458" className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 sm:bg-transparent sm:border-none hover:text-[#C8A96A] transition-colors">
-              <Phone className="w-4 h-4 md:w-3.5 md:h-3.5" />
-              <span className="inline">Call</span>
-              <span className="hidden lg:inline ml-1">- +61 481 334 458</span>
-            </Link>
+          {/* Group 1: Contact Methods */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center gap-2">
+              <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                <Mail className="w-4 h-4 text-gold" />
+                <span className="inline">Email</span>
+              </Link>
+              <Link href="tel:+61481334458" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+                <Phone className="w-4 h-4 text-gold" />
+                <span className="inline">Call</span>
+              </Link>
+            </div>
           </div>
 
-          <div className="flex items-center gap-3 md:gap-5">
-            <span className="hidden xl:inline text-gold mr-2 uppercase">Connect:</span>
+          {/* Group 2: Socials with a clear visual separator on mobile */}
+          <div className="flex items-center gap-3 md:gap-5 border-l border-white/10 pl-3 sm:border-none sm:pl-0">
+            <span className="hidden sm:inline text-gold/60 text-[9px] uppercase tracking-[0.2em] mr-1">Socials</span>
             <div className="flex items-center gap-3 sm:gap-4">
-              <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://www.youtube.com/@JJPropertyPartnerBuyersAgent" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaYoutube className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://x.com/jjbuyersagent" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.youtube.com/@JJPropertyPartnerBuyersAgent" className="hover:text-gold transition-all transform hover:scale-110"><FaYoutube className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://x.com/jjbuyersagent" className="hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/" className="hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
             </div>
           </div>
         </div>
@@ -70,10 +72,12 @@ export default function Navbar() {
         <nav className="w-full px-6 md:px-8 py-2 flex justify-between items-center bg-[#011122] shadow-xl border-b border-white/5 transition-colors duration-300 relative">
           <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center">
-              <img
+              <motion.img
                 src="/logo.png?v=4"
                 alt="JJ Logo"
-                className="w-full h-full object-contain cursor-pointer animate-slow-spin will-change-transform transform-gpu"
+                className="w-full h-full object-contain cursor-pointer"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                 style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
                 fetchPriority="high"
                 loading="eager"
