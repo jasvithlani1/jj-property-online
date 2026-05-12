@@ -63,7 +63,7 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-[4.2vw] xs:text-[4vw] sm:text-6xl md:text-8xl font-serif text-white leading-[1.05] mb-6 !whitespace-nowrap w-full"
+              className="text-[3.8vw] sm:text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.05] mb-6 !whitespace-nowrap w-full tracking-tighter sm:tracking-normal"
             >
               {aboutData?.hero?.heading ? (
                 <>
