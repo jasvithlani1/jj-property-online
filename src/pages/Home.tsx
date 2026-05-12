@@ -682,7 +682,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 gap-6">
               <div>
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-black leading-tight mb-4">
+                <h2 className="text-[1.35rem] sm:text-4xl md:text-6xl lg:text-7xl font-serif text-black leading-tight mb-4 whitespace-nowrap">
                   Real world results. <span className="text-gold">The JJ Advantage.</span>
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investments — curated results that define our standard.</p>
