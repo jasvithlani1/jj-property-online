@@ -374,10 +374,12 @@ export default function About() {
  transition={{ duration: 0.6, delay: i * 0.1 }}
  className="p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group"
  >
- <div className="mb-6 p-4 inline-flex bg-white/5 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500">
+ <div className="flex items-center gap-6 mb-8 w-full">
+ <div className="p-4 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
  {i === 0 ? <Target className="w-8 h-8 text-gold" /> : i === 1 ? <Search className="w-8 h-8 text-gold" /> : <Handshake className="w-8 h-8 text-gold" />}
  </div>
- <h3 className="text-2xl font-serif mb-4 text-gold">{val.title}</h3>
+ <h3 className="text-2xl md:text-3xl font-serif text-gold leading-tight">{val.title}</h3>
+ </div>
  <p className="text-white/60 font-sans leading-relaxed text-lg">
  {val.text}
  </p>
