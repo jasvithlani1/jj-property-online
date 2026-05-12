@@ -80,7 +80,7 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
+    <div className="w-full bg-white selection:bg-gold/20 ">
       <SEO 
         title={pageData?.seo?.metaTitle || "Client Success & Case Studies"} 
         description={pageData?.seo?.metaDescription || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."} 
@@ -89,7 +89,7 @@ export default function CaseStudies() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-4 pb-3 md:pt-6 md:pb-3 overflow-hidden bg-gold/5">
+      <section className="relative px-8 pt-28 md:pt-36 pb-3 overflow-hidden bg-gold/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div

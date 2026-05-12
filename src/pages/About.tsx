@@ -40,10 +40,10 @@ export default function About() {
         keywords={aboutData?.seo?.keywords}
       />
       
-      <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
+      <div className="w-full bg-white selection:bg-gold/20 ">
 
       {/* Hero Section */}
-      <section className="relative pt-6 md:pt-3 pb-3 md:pb-4 bg-[#011122] overflow-hidden">
+      <section className="relative pt-28 md:pt-36 pb-3 md:pb-4 bg-[#011122] overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/10 blur-[160px] rounded-full -mr-96 -mt-96 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[140px] rounded-full -ml-48 -mb-48 pointer-events-none" />

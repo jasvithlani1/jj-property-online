@@ -76,7 +76,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
+    <div className="w-full bg-white selection:bg-gold/20 ">
       <SEO 
         title={pageData?.seo?.metaTitle || "Market Intelligence & Blog"} 
         description={pageData?.seo?.metaDescription || "Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market."} 
@@ -85,7 +85,7 @@ export default function Blog() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-4 pb-3 md:pt-6 md:pb-3 bg-[#011122] text-white overflow-hidden">
+      <section className="pt-28 md:pt-36 relative px-8  pb-3 md: md:pb-3 bg-[#011122] text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gold rounded-full blur-[200px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold rounded-full blur-[150px]" />

@@ -83,9 +83,9 @@ export default function CommercialProperty() {
         keywords={pageData?.seo?.keywords}
       />
       
-      <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
+      <div className="w-full bg-white selection:bg-gold/20 ">
         {/* Hero Section */}
-        <section className="relative px-6 py-4 sm:px-8 sm:py-6 md:pt-3 md:pb-8 bg-[#011122] text-white overflow-hidden">
+        <section className="pt-28 md:pt-36 relative px-6 py-4 sm:px-8 sm:py-6 md: md:pb-8 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 

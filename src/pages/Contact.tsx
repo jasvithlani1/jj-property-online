@@ -80,9 +80,9 @@ export default function Contact() {
         keywords={pageData?.seo?.keywords}
       />
 
-      <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36 pb-8 md:pb-4">
+      <div className="w-full bg-white selection:bg-gold/20 pt-0 pb-8 md:pb-4">
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-8 pt-4 pb-8 md:pt-8 md:pb-3 overflow-hidden text-center z-10">
+      <section className="pt-28 md:pt-36 relative px-4 sm:px-8  pb-8 md: md:pb-3 overflow-hidden text-center z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
