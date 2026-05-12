@@ -184,7 +184,7 @@ export default function CaseStudies() {
 
                       {/* Tag overlay */}
                       <div className="absolute top-4 left-4">
-                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${study.tagColor || 'bg-gold text-white shadow-lg shadow-gold/20 font-black'}`}>
+                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-gold text-white shadow-lg shadow-gold/20 font-black`}>
                           {study.tag || 'Acquisition'}
                         </span>
                       </div>

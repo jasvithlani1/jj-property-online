@@ -185,7 +185,7 @@ export default function CaseStudyDetail() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-gold/10 ${study.tagColor || 'bg-gold text-white shadow-lg shadow-gold/20 font-black border-none'}`}>
+              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full shadow-sm border border-gold/10 bg-gold text-white shadow-lg shadow-gold/20 font-black border-none`}>
                 {study.tag || 'Acquisition'}
               </span>
               <span className="flex items-center gap-1.5 text-white/70 text-sm font-sans">
@@ -348,7 +348,7 @@ export default function CaseStudyDetail() {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block w-fit ${other.tagColor || 'bg-gold text-white shadow-lg shadow-gold/20 font-black border-none'}`}>{other.tag || 'Acquisition'}</span>
+                  <span className={`text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full mb-2 inline-block w-fit bg-gold text-white shadow-lg shadow-gold/20 font-black border-none`}>{other.tag || 'Acquisition'}</span>
                   <p className="text-lg font-serif text-[#011122] mb-1 group-hover:text-gold transition-colors">{other.title}</p>
                   <p className="text-sm text-muted font-sans">{other.resultText} · {other.location}</p>
                 </div>
