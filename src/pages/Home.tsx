@@ -346,26 +346,40 @@ export default function Home() {
 
  <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
- <div className="relative w-full max-w-7xl flex flex-col items-center min-h-[300px] justify-center">
- <AnimatePresence mode="wait">
- <motion.div
- key={currentSlide}
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- exit={{ opacity: 0, y: -20 }}
- transition={{ duration: 0.8, ease: "easeOut" }}
- className="flex flex-col items-center"
- >
- <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
- {heroSlides[currentSlide].heading}
- </h1>
+ <div className="relative w-full max-w-7xl flex flex-col items-center min-h-[400px] justify-center">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="flex flex-col items-center w-full"
+              >
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
+                  {heroSlides[currentSlide].heading}
+                </h1>
 
- <p className="text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
- {heroSlides[currentSlide].subheading}
- </p>
- </motion.div>
- </AnimatePresence>
- </div>
+                <p className="text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
+                  {heroSlides[currentSlide].subheading}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Carousel Dots */}
+            <div className="flex gap-3 mt-12">
+              {heroSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`w-2 h-2 rounded-full transition-all duration-500 ${
+                    currentSlide === idx ? 'w-8 bg-gold' : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
 
  <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-4">
  <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
