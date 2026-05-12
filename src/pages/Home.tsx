@@ -92,6 +92,27 @@ const faqs = [
  }
 ];
 
+const heroSlides = [
+  {
+    heading: (
+      <>Strategist. <span className="text-gold font-serif">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold font-serif">Dedicated</span> Advocate.</>
+    ),
+    subheading: "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."
+  },
+  {
+    heading: (
+      <>Buy with <span className="text-gold font-serif">Data.</span> <br className="hidden md:block" /> Negotiate with <span className="text-gold font-serif">Power.</span></>
+    ),
+    subheading: "We level the playing field by providing exclusive off-market access and deep analytical rigor to every acquisition."
+  },
+  {
+    heading: (
+      <>Your <span className="text-gold font-serif">Success</span> <br className="hidden md:block" /> is our only <span className="text-gold font-serif">Brief.</span></>
+    ),
+    subheading: "Independent, transparent, and results-driven. We represent you exclusively to secure the best possible terms in any market."
+  }
+];
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function Home() {
@@ -117,6 +138,14 @@ export default function Home() {
  const [isReviewPaused, setIsReviewPaused] = useState(false);
  const [reviews, setReviews] = useState<any[]>([]);
  const [homeData, setHomeData] = useState<any>(null);
+ const [currentSlide, setCurrentSlide] = useState(0);
+
+ useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
  useEffect(() => {
  const fetchHomeData = async () => {
@@ -317,17 +346,26 @@ export default function Home() {
 
  <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
- <h1 className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl max-w-7xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
- {homeData?.hero?.heading?.includes('Strategist') ? (
- <>Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold">Dedicated</span> Advocate.</>
- ) : homeData?.hero?.heading || (
- <>Strategist. <span className="text-gold">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold">Dedicated</span> Advocate.</>
- )}
+ <div className="relative w-full max-w-7xl flex flex-col items-center min-h-[300px] justify-center">
+ <AnimatePresence mode="wait">
+ <motion.div
+ key={currentSlide}
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ exit={{ opacity: 0, y: -20 }}
+ transition={{ duration: 0.8, ease: "easeOut" }}
+ className="flex flex-col items-center"
+ >
+ <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
+ {heroSlides[currentSlide].heading}
  </h1>
 
- <p className="animate-fade-rise-delay text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
- {homeData?.hero?.subheading || "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."}
+ <p className="text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
+ {heroSlides[currentSlide].subheading}
  </p>
+ </motion.div>
+ </AnimatePresence>
+ </div>
 
  <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-4">
  <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
