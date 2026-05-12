@@ -374,16 +374,15 @@ export default function Home() {
 
               <div className="mt-4 p-5 sm:p-6 sm:px-8 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-8 relative z-10">
+                <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-2">Licence No.</span>
-                    <span className="text-xl sm:text-2xl font-serif text-white">20543356</span>
+                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-1.5 sm:mb-2">Licence No.</span>
+                    <span className="text-lg sm:text-2xl font-serif text-white whitespace-nowrap">20543356</span>
                   </div>
-                  <div className="hidden sm:block w-px h-10 bg-gold/20"></div>
-                  <div className="w-full sm:hidden h-px bg-gold/20"></div>
+                  <div className="w-px h-10 bg-gold/20"></div>
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-2">ABN</span>
-                    <span className="text-xl sm:text-2xl font-serif text-white">71 687 187 113</span>
+                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-1.5 sm:mb-2">ABN</span>
+                    <span className="text-lg sm:text-2xl font-serif text-white whitespace-nowrap">71 687 187 113</span>
                   </div>
                 </div>
               </div>
