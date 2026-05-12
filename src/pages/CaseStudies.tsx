@@ -89,7 +89,7 @@ export default function CaseStudies() {
  />
 
  {/* Hero */}
- <section className="relative px-8 pt-28 md:pt-36 pb-3 overflow-hidden bg-gold/5">
+ <section className="relative px-8 pt-24 md:pt-28 pb-4 overflow-hidden bg-gold/5">
  <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
  <div className="max-w-7xl mx-auto relative z-10">
  <motion.div
@@ -101,7 +101,7 @@ export default function CaseStudies() {
  <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
  {pageData?.hero?.badge || "Client Results"}
  </div>
- <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
+ <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-6 max-w-5xl mx-auto">
  {pageData?.hero?.heading?.includes('Advantage') ? (
  <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
  ) : pageData?.hero?.heading || (
@@ -118,7 +118,7 @@ export default function CaseStudies() {
  initial={{ opacity: 0, y: 30 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, delay: 0.3 }}
- className="mt-6 flex flex-wrap justify-center gap-6"
+ className="mt-4 flex flex-wrap justify-center gap-4"
  >
  {(pageData?.hero?.stats || [
  { value: '5.0', label: 'Google Rating', iconName: 'Star' },
