@@ -70,7 +70,7 @@ export default function About() {
                   {aboutData.hero.heading.replace('<br />', '').replace('<br>', '')}
                 </>
               ) : (
-                <>Buy Property With <span className="text-gold italic">Absolute Confidence.</span></>
+                <>Buy Property With <span className="text-gold">Absolute Confidence.</span></>
               )}
             </motion.h1>
             
