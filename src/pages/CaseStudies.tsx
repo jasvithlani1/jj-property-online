@@ -89,7 +89,7 @@ export default function CaseStudies() {
  />
 
  {/* Hero */}
- <section className="relative px-8 pt-24 md:pt-28 pb-4 overflow-hidden bg-gold/5">
+ <section className="relative px-8 pt-32 md:pt-40 pb-4 overflow-hidden bg-gold/5">
  <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
  <div className="max-w-7xl mx-auto relative z-10">
  <motion.div
