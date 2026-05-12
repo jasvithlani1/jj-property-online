@@ -80,7 +80,7 @@ export default function CaseStudies() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-8">
+    <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
       <SEO 
         title={pageData?.seo?.metaTitle || "Client Success & Case Studies"} 
         description={pageData?.seo?.metaDescription || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."} 

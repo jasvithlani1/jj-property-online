@@ -76,7 +76,7 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-8">
+    <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
       <SEO 
         title={pageData?.seo?.metaTitle || "Market Intelligence & Blog"} 
         description={pageData?.seo?.metaDescription || "Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney's property market."} 

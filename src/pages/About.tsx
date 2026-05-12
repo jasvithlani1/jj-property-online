@@ -40,7 +40,7 @@ export default function About() {
         keywords={aboutData?.seo?.keywords}
       />
       
-      <div className="w-full bg-white selection:bg-gold/20 pt-8">
+      <div className="w-full bg-white selection:bg-gold/20 pt-28 md:pt-36">
 
       {/* Hero Section */}
       <section className="relative pt-6 md:pt-3 pb-3 md:pb-4 bg-[#011122] overflow-hidden">
