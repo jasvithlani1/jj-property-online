@@ -5,6 +5,7 @@ import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, writeClient } from '../lib/sanity';
 import SEO from '../components/SEO';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
  const [formData, setFormData] = useState({
@@ -63,7 +64,35 @@ export default function Contact() {
  status: 'new'
  });
  console.log('Submission successful:', response._id);
- setStatus('success');
+      
+      // Send Thank You Email via EmailJS
+      try {
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+        if (serviceId && templateId && publicKey) {
+          await emailjs.send(
+            serviceId,
+            templateId,
+            {
+              to_name: formData.name,
+              to_email: formData.email,
+              from_name: 'JJ Property Partner',
+              reply_to: 'info@jjpropertypartner.com.au',
+              message: 'Thank you for reaching out to JJ Property Partner. We have received your inquiry and Alex will be in touch with you shortly to discuss your property goals.'
+            },
+            publicKey
+          );
+          console.log('Thank you email sent successfully.');
+        } else {
+          console.warn('EmailJS credentials missing. Skipping automated email.');
+        }
+      } catch (emailError) {
+        console.error('Failed to send thank you email:', emailError);
+      }
+
+      setStatus('success');
  setFormData({ name: '', email: '', phone: '', goal: '', message: '' });
  } catch (error) {
  console.error('Sanity creation error:', error);
