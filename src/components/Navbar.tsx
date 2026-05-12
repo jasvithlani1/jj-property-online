@@ -40,15 +40,15 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 inset-x-0 z-[100] w-full">
         
-        <div className="bg-[#011122] text-gold py-3 px-4 md:px-8 flex justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] border-b border-white/5">
+        <div className="bg-[#011122] text-gold py-1.5 px-4 md:px-8 flex justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] border-b border-white/5">
           {/* Group 1: Contact Methods */}
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="flex items-center gap-2">
-              <a href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+              <a href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
                 <Mail className="w-4 h-4 text-gold" />
                 <span className="inline">Email</span>
               </a>
-              <a href="tel:+61481334458" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+              <a href="tel:+61481334458" className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
                 <Phone className="w-4 h-4 text-gold" />
                 <span className="inline">Call</span>
               </a>
