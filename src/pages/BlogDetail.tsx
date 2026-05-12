@@ -9,295 +9,295 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 
 interface SanityPost {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  excerpt: string;
-  mainImage: any;
-  publishedAt: string;
-  body: any[];
-  author: { name: string; image: any; bio: any };
-  categories: { title: string; color: string }[];
-  seo?: { metaTitle: string; metaDescription: string; ogImage: any };
+ _id: string;
+ title: string;
+ slug: { current: string };
+ excerpt: string;
+ mainImage: any;
+ publishedAt: string;
+ body: any[];
+ author: { name: string; image: any; bio: any };
+ categories: { title: string; color: string }[];
+ seo?: { metaTitle: string; metaDescription: string; ogImage: any };
 }
 
 const ptComponents = {
-  block: {
-    h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mt-6 mb-6 leading-tight">
-        {children}
-      </h2>
-    ),
-    h3: ({ children }: any) => (
-      <h3 className="text-2xl font-serif text-[#011122] mt-10 mb-4">
-        {children}
-      </h3>
-    ),
-    normal: ({ children }: any) => (
-      <p className="text-xl text-muted font-sans leading-relaxed mb-6">
-        {children}
-      </p>
-    ),
-    blockquote: ({ children }: any) => (
-      <blockquote className="my-12 pl-8 border-l-4 border-gold">
-        <p className="text-2xl md:text-3xl font-serif text-[#011122] leading-snug">
-          {children}
-        </p>
-      </blockquote>
-    ),
-  },
-  list: {
-    bullet: ({ children }: any) => <ul className="my-8 space-y-4">{children}</ul>,
-  },
-  listItem: {
-    bullet: ({ children }: any) => (
-      <li className="flex items-start gap-4 text-lg text-muted font-sans leading-relaxed">
-        <span className="mt-2 shrink-0 w-2 h-2 rounded-full bg-gold" />
-        {children}
-      </li>
-    ),
-  },
+ block: {
+ h2: ({ children }: any) => (
+ <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mt-6 mb-6 leading-tight">
+ {children}
+ </h2>
+ ),
+ h3: ({ children }: any) => (
+ <h3 className="text-2xl font-serif text-[#011122] mt-10 mb-4">
+ {children}
+ </h3>
+ ),
+ normal: ({ children }: any) => (
+ <p className="text-xl text-muted font-sans leading-relaxed mb-6">
+ {children}
+ </p>
+ ),
+ blockquote: ({ children }: any) => (
+ <blockquote className="my-12 pl-8 border-l-4 border-gold">
+ <p className="text-2xl md:text-3xl font-serif text-[#011122] leading-snug">
+ {children}
+ </p>
+ </blockquote>
+ ),
+ },
+ list: {
+ bullet: ({ children }: any) => <ul className="my-8 space-y-4">{children}</ul>,
+ },
+ listItem: {
+ bullet: ({ children }: any) => (
+ <li className="flex items-start gap-4 text-lg text-muted font-sans leading-relaxed">
+ <span className="mt-2 shrink-0 w-2 h-2 rounded-full bg-gold" />
+ {children}
+ </li>
+ ),
+ },
 };
 
 export default function BlogDetail() {
-  const { slug } = useParams<{ slug: string }>();
-  const [post, setPost] = useState<SanityPost | null>(null);
-  const [otherPosts, setOtherPosts] = useState<SanityPost[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+ const { slug } = useParams<{ slug: string }>();
+ const [post, setPost] = useState<SanityPost | null>(null);
+ const [otherPosts, setOtherPosts] = useState<SanityPost[]>([]);
+ const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const query = `*[_type == "post" && slug.current == $slug][0] {
-          _id,
-          title,
-          slug,
-          excerpt,
-          mainImage {
-            asset,
-            alt
-          },
-          publishedAt,
-          body,
-          author-> { name, image, bio },
-          "categories": categories[]->{ title, color },
-          seo
-        }`;
-        const data = await client.fetch(query, { slug });
-        setPost(data);
+ useEffect(() => {
+ const fetchPost = async () => {
+ try {
+ const query = `*[_type == "post" && slug.current == $slug][0] {
+ _id,
+ title,
+ slug,
+ excerpt,
+ mainImage {
+ asset,
+ alt
+ },
+ publishedAt,
+ body,
+ author-> { name, image, bio },
+ "categories": categories[]->{ title, color },
+ seo
+ }`;
+ const data = await client.fetch(query, { slug });
+ setPost(data);
 
-        // Fetch other posts
-        const otherQuery = `*[_type == "post" && slug.current != $slug][0...3] {
-          _id,
-          title,
-          slug,
-          mainImage,
-          "categories": categories[]->{ title, color }
-        }`;
-        const others = await client.fetch(otherQuery, { slug });
-        setOtherPosts(others);
+ // Fetch other posts
+ const otherQuery = `*[_type == "post" && slug.current != $slug][0...3] {
+ _id,
+ title,
+ slug,
+ mainImage,
+ "categories": categories[]->{ title, color }
+ }`;
+ const others = await client.fetch(otherQuery, { slug });
+ setOtherPosts(others);
 
-      } catch (error) {
-        console.error('Error fetching post:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+ } catch (error) {
+ console.error('Error fetching post:', error);
+ } finally {
+ setIsLoading(false);
+ }
+ };
 
-    fetchPost();
-  }, [slug]);
+ fetchPost();
+ }, [slug]);
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center py-40 bg-white">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
-      </div>
-    );
-  }
+ if (isLoading) {
+ return (
+ <div className="flex justify-center py-40 bg-white">
+ <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
+ </div>
+ );
+ }
 
-  if (!post) {
-    return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
-        <h1 className="text-5xl font-serif text-[#011122] mb-4">Article Not Found</h1>
-        <p className="text-muted font-sans mb-2 text-lg">We couldn't find the article you were looking for.</p>
-        <Link
-          href="/blog"
-          className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
-        >
-          Back to Blog
-        </Link>
-      </div>
-    );
-  }
+ if (!post) {
+ return (
+ <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
+ <h1 className="text-5xl font-serif text-[#011122] mb-4">Article Not Found</h1>
+ <p className="text-muted font-sans mb-2 text-lg">We couldn't find the article you were looking for.</p>
+ <Link
+ href="/blog"
+ className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
+ >
+ Back to Blog
+ </Link>
+ </div>
+ );
+ }
 
-  return (
-    <div className="w-full bg-white selection:bg-gold/20 pt-4">
-      <SEO 
-        title={post.seo?.metaTitle || post.title} 
-        description={post.seo?.metaDescription || post.excerpt}
-        image={post.seo?.ogImage || post.mainImage}
-        article={true}
-      />
+ return (
+ <div className="w-full bg-white selection:bg-gold/20 pt-4">
+ <SEO 
+ title={post.seo?.metaTitle || post.title} 
+ description={post.seo?.metaDescription || post.excerpt}
+ image={post.seo?.ogImage || post.mainImage}
+ article={true}
+ />
 
-      {/* Back nav */}
-      <div className="px-8 pt-4 pb-0 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <Link
-            href="/blog"
-            className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted hover:text-black transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            All Articles
-          </Link>
-        </div>
-      </div>
+ {/* Back nav */}
+ <div className="px-8 pt-4 pb-0 relative z-10">
+ <div className="max-w-4xl mx-auto">
+ <Link
+ href="/blog"
+ className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-muted hover:text-black transition-colors"
+ >
+ <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+ All Articles
+ </Link>
+ </div>
+ </div>
 
-      {/* Article Header */}
-      <header className="px-8 pt-8 pb-3">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {post.categories?.[0] && (
-              <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-6 shadow-sm border border-gold/10 ${post.categories[0].color || 'bg-gold/10 text-gold'}`}>
-                {post.categories[0].title}
-              </span>
-            )}
+ {/* Article Header */}
+ <header className="px-8 pt-8 pb-3">
+ <div className="max-w-4xl mx-auto">
+ <motion.div
+ initial={{ opacity: 0, y: 30 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.8 }}
+ >
+ {post.categories?.[0] && (
+ <span className={`text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full inline-block mb-6 shadow-sm border border-gold/10 ${post.categories[0].color || 'bg-gold/10 text-gold'}`}>
+ {post.categories[0].title}
+ </span>
+ )}
 
-            <h1 className="text-4xl md:text-6xl font-serif text-[#011122] leading-[1.05] mb-8">
-              {post.title}
-            </h1>
+ <h1 className="text-4xl md:text-6xl font-serif text-[#011122] leading-[1.05] mb-8">
+ {post.title}
+ </h1>
 
-            <p className="text-xl md:text-2xl text-muted font-sans leading-relaxed mb-2">
-              {post.excerpt}
-            </p>
+ <p className="text-xl md:text-2xl text-muted font-sans leading-relaxed mb-2">
+ {post.excerpt}
+ </p>
 
-            <div className="flex flex-wrap items-center gap-6 pb-3 border-b border-[#011122]/10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-lg overflow-hidden">
-                  {post.author?.image ? (
-                    <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
-                  ) : (
-                    post.author?.name?.charAt(0) || 'A'
-                  )}
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-[#011122]">{post.author?.name || 'Alex'}</p>
-                  <p className="text-xs text-muted">Principal Advisor, JJ Property Partner</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-5 text-xs font-bold uppercase tracking-widest text-muted ml-auto">
-                <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" />{new Date(post.publishedAt).toLocaleDateString()}</span>
-                <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" />6 min read</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </header>
+ <div className="flex flex-wrap items-center gap-6 pb-3 border-b border-[#011122]/10">
+ <div className="flex items-center gap-3">
+ <div className="w-10 h-10 rounded-full bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-lg overflow-hidden">
+ {post.author?.image ? (
+ <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
+ ) : (
+ post.author?.name?.charAt(0) || 'A'
+ )}
+ </div>
+ <div>
+ <p className="text-sm font-bold text-[#011122]">{post.author?.name || 'Alex'}</p>
+ <p className="text-xs text-muted">Principal Advisor, JJ Property Partner</p>
+ </div>
+ </div>
+ <div className="flex items-center gap-5 text-xs font-bold uppercase tracking-widest text-muted ml-auto">
+ <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" />{new Date(post.publishedAt).toLocaleDateString()}</span>
+ <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" />6 min read</span>
+ </div>
+ </div>
+ </motion.div>
+ </div>
+ </header>
 
-      {/* Cover Image */}
-      <div className="px-4 md:px-8 mb-2">
-        <div className="max-w-5xl mx-auto h-[45vh] md:h-[55vh] rounded-[2.5rem] overflow-hidden">
-          {post.mainImage ? (
-            <img
-              src={urlFor(post.mainImage).url()}
-              alt={post.mainImage?.alt || post.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={`https://images.unsplash.com/photo-${post.title.length % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=1200`}
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
-      </div>
+ {/* Cover Image */}
+ <div className="px-4 md:px-8 mb-2">
+ <div className="max-w-5xl mx-auto h-[45vh] md:h-[55vh] rounded-[2.5rem] overflow-hidden">
+ {post.mainImage ? (
+ <img
+ src={urlFor(post.mainImage).url()}
+ alt={post.mainImage?.alt || post.title}
+ className="w-full h-full object-cover"
+ />
+ ) : (
+ <img
+ src={`https://images.unsplash.com/photo-${post.title.length % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=1200`}
+ alt={post.title}
+ className="w-full h-full object-cover"
+ />
+ )}
+ </div>
+ </div>
 
-      {/* Article Body + Sidebar */}
-      <div className="px-8 pb-6 md:pb-3">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+ {/* Article Body + Sidebar */}
+ <div className="px-8 pb-6 md:pb-3">
+ <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
-          {/* Main Content */}
-          <article className="lg:col-span-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <PortableText value={post.body} components={ptComponents} />
-            </motion.div>
+ {/* Main Content */}
+ <article className="lg:col-span-8">
+ <motion.div
+ initial={{ opacity: 0 }}
+ animate={{ opacity: 1 }}
+ transition={{ duration: 0.6, delay: 0.3 }}
+ >
+ <PortableText value={post.body} components={ptComponents} />
+ </motion.div>
 
-            {/* Author Bio */}
-            <div className="mt-10 p-8 rounded-3xl bg-gold/5 border border-gold/10 flex items-center gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-2xl shrink-0 overflow-hidden">
-                {post.author?.image ? (
-                  <img src={urlFor(post.author.image).width(200).height(200).url()} alt={post.author.name} className="w-full h-full object-cover" />
-                ) : (
-                   post.author?.name?.charAt(0) || 'A'
-                )}
-              </div>
-              <div>
-                <p className="text-lg font-serif text-[#011122] mb-1">{post.author?.name || 'Alex'} — Principal Advisor</p>
-                <p className="text-muted font-sans text-sm leading-relaxed">
-                  20+ years operating in the Sydney property market. Specialist in off-market acquisition, SMSF strategy, and data-driven buyer representation.
-                </p>
-              </div>
-            </div>
-          </article>
+ {/* Author Bio */}
+ <div className="mt-10 p-8 rounded-3xl bg-gold/5 border border-gold/10 flex items-center gap-6">
+ <div className="w-16 h-16 rounded-2xl bg-[#011122] flex items-center justify-center text-white font-bold font-serif text-2xl shrink-0 overflow-hidden">
+ {post.author?.image ? (
+ <img src={urlFor(post.author.image).width(200).height(200).url()} alt={post.author.name} className="w-full h-full object-cover" />
+ ) : (
+ post.author?.name?.charAt(0) || 'A'
+ )}
+ </div>
+ <div>
+ <p className="text-lg font-serif text-[#011122] mb-1">{post.author?.name || 'Alex'} — Principal Advisor</p>
+ <p className="text-muted font-sans text-sm leading-relaxed">
+ 20+ years operating in the Sydney property market. Specialist in off-market acquisition, SMSF strategy, and data-driven buyer representation.
+ </p>
+ </div>
+ </div>
+ </article>
 
-          {/* Sidebar */}
-          <aside className="lg:col-span-4">
-            <div className="sticky top-32 flex flex-col gap-8">
-              {/* CTA Card */}
-              <div className="p-8 rounded-[2.5rem] bg-[#011122] text-white">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-4">Work With Us</p>
-                <h3 className="text-2xl font-serif mb-4 leading-snug">Ready to act on this intelligence?</h3>
-                <p className="text-white/60 font-sans text-sm leading-relaxed mb-8">
-                  Our active roster is strictly limited. Book a confidential strategy call to discuss your brief.
-                </p>
-                <button
-                  onClick={openCalendly}
-                  className="w-full rounded-2xl px-6 py-4 bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
-                >
-                  Book 30m Strategy Session
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+ {/* Sidebar */}
+ <aside className="lg:col-span-4">
+ <div className="sticky top-32 flex flex-col gap-8">
+ {/* CTA Card */}
+ <div className="p-8 rounded-[2.5rem] bg-[#011122] text-white">
+ <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-4">Work With Us</p>
+ <h3 className="text-2xl font-serif mb-4 leading-snug">Ready to act on this intelligence?</h3>
+ <p className="text-white/60 font-sans text-sm leading-relaxed mb-8">
+ Our active roster is strictly limited. Book a confidential strategy call to discuss your brief.
+ </p>
+ <button
+ onClick={openCalendly}
+ className="w-full rounded-2xl px-6 py-4 bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+ >
+ Book 30m Strategy Session
+ <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+ </button>
+ </div>
 
-              {/* More Articles */}
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6">More Articles</p>
-                <div className="flex flex-col gap-5">
-                  {otherPosts.map((other) => (
-                    <Link
-                      key={other._id}
-                      href={`/blog/${other.slug.current}`}
-                      className="group flex gap-4 items-center text-left hover:bg-gold/5 rounded-2xl p-3 -mx-3 transition-colors"
-                    >
-                      <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
-                        {other.mainImage ? (
-                          <img src={urlFor(other.mainImage).width(200).height(200).url()} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        ) : (
-                          <img src={`https://images.unsplash.com/photo-${other.title.length % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=200`} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                        )}
-                      </div>
-                      <div className="flex flex-col">
-                        {other.categories?.[0] && (
-                          <span className={`text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5 w-fit ${other.categories[0].color || 'bg-gold/10 text-gold'}`}>{other.categories[0].title}</span>
-                        )}
-                        <p className="text-sm font-serif text-[#011122] leading-snug group-hover:text-gold transition-colors line-clamp-2">{other.title}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </div>
-  );
+ {/* More Articles */}
+ <div>
+ <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted mb-6">More Articles</p>
+ <div className="flex flex-col gap-5">
+ {otherPosts.map((other) => (
+ <Link
+ key={other._id}
+ href={`/blog/${other.slug.current}`}
+ className="group flex gap-4 items-center text-left hover:bg-gold/5 rounded-2xl p-3 -mx-3 transition-colors"
+ >
+ <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
+ {other.mainImage ? (
+ <img src={urlFor(other.mainImage).width(200).height(200).url()} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+ ) : (
+ <img src={`https://images.unsplash.com/photo-${other.title.length % 2 === 0 ? '1560518883-ce09059eeffa' : '1486406146926-c627a92ad1ab'}?auto=format&fit=crop&q=80&w=200`} alt={other.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+ )}
+ </div>
+ <div className="flex flex-col">
+ {other.categories?.[0] && (
+ <span className={`text-xs font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1.5 w-fit ${other.categories[0].color || 'bg-gold/10 text-gold'}`}>{other.categories[0].title}</span>
+ )}
+ <p className="text-sm font-serif text-[#011122] leading-snug group-hover:text-gold transition-colors line-clamp-2">{other.title}</p>
+ </div>
+ </Link>
+ ))}
+ </div>
+ </div>
+ </div>
+ </aside>
+ </div>
+ </div>
+ </div>
+ );
 }

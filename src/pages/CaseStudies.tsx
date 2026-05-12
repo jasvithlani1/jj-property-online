@@ -7,371 +7,371 @@ import Link from '../components/Link';
 import { caseStudies as localCaseStudies } from '../data/caseStudies';
 
 interface SanityCaseStudy {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  resultText: string;
-  location: string;
-  shortQuote?: string;
-  mainImage: any;
-  tag?: string;
-  tagColor?: string;
-  stats: { label: string; value: string }[];
+ _id: string;
+ title: string;
+ slug: { current: string };
+ resultText: string;
+ location: string;
+ shortQuote?: string;
+ mainImage: any;
+ tag?: string;
+ tagColor?: string;
+ stats: { label: string; value: string }[];
 }
 
 export default function CaseStudies() {
-  const [studies, setStudies] = useState<SanityCaseStudy[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [pageData, setPageData] = useState<any>(null);
+ const [studies, setStudies] = useState<SanityCaseStudy[]>([]);
+ const [isLoading, setIsLoading] = useState(true);
+ const [pageData, setPageData] = useState<any>(null);
 
-  useEffect(() => {
-    const fetchStudies = async () => {
-      try {
-        const studiesQuery = `*[_type == "caseStudy"] | order(_createdAt desc) {
-          _id,
-          title,
-          slug,
-          resultText,
-          location,
-          shortQuote,
-          mainImage {
-            asset,
-            alt
-          },
-          tag,
-          tagColor,
-          stats
-        }`;
-        const pageQuery = `*[_type == "caseStudiesPage"][0] {
-          seo,
-          hero
-        }`;
+ useEffect(() => {
+ const fetchStudies = async () => {
+ try {
+ const studiesQuery = `*[_type == "caseStudy"] | order(_createdAt desc) {
+ _id,
+ title,
+ slug,
+ resultText,
+ location,
+ shortQuote,
+ mainImage {
+ asset,
+ alt
+ },
+ tag,
+ tagColor,
+ stats
+ }`;
+ const pageQuery = `*[_type == "caseStudiesPage"][0] {
+ seo,
+ hero
+ }`;
 
-        const [studiesData, pageData] = await Promise.all([
-          client.fetch(studiesQuery),
-          client.fetch(pageQuery)
-        ]);
+ const [studiesData, pageData] = await Promise.all([
+ client.fetch(studiesQuery),
+ client.fetch(pageQuery)
+ ]);
 
-        
-        // Map local case studies to match Sanity format
-        const formattedLocalStudies = localCaseStudies.map(local => ({
-          _id: local.id,
-          title: local.title,
-          slug: { current: local.id },
-          resultText: local.result,
-          location: local.location,
-          shortQuote: local.shortQuote,
-          mainImage: { asset: { _ref: local.image }, isLocal: true }, // Mark as local for conditional rendering
-          tag: local.tag,
-          tagColor: local.tagColor,
-          stats: local.stats
-        }));
+ 
+ // Map local case studies to match Sanity format
+ const formattedLocalStudies = localCaseStudies.map(local => ({
+ _id: local.id,
+ title: local.title,
+ slug: { current: local.id },
+ resultText: local.result,
+ location: local.location,
+ shortQuote: local.shortQuote,
+ mainImage: { asset: { _ref: local.image }, isLocal: true }, // Mark as local for conditional rendering
+ tag: local.tag,
+ tagColor: local.tagColor,
+ stats: local.stats
+ }));
 
-        setStudies([...studiesData, ...formattedLocalStudies]);
-        if (pageData) setPageData(pageData);
-      } catch (error) {
-        console.error('Error fetching case studies:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+ setStudies([...studiesData, ...formattedLocalStudies]);
+ if (pageData) setPageData(pageData);
+ } catch (error) {
+ console.error('Error fetching case studies:', error);
+ } finally {
+ setIsLoading(false);
+ }
+ };
 
-    fetchStudies();
-  }, []);
+ fetchStudies();
+ }, []);
 
-  return (
-    <div className="w-full bg-white selection:bg-gold/20 ">
-      <SEO 
-        title={pageData?.seo?.metaTitle || "Client Success & Case Studies"} 
-        description={pageData?.seo?.metaDescription || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."} 
-        image={pageData?.seo?.ogImage}
-        keywords={pageData?.seo?.keywords}
-      />
+ return (
+ <div className="w-full bg-white selection:bg-gold/20 ">
+ <SEO 
+ title={pageData?.seo?.metaTitle || "Client Success & Case Studies"} 
+ description={pageData?.seo?.metaDescription || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."} 
+ image={pageData?.seo?.ogImage}
+ keywords={pageData?.seo?.keywords}
+ />
 
-      {/* Hero */}
-      <section className="relative px-8 pt-28 md:pt-36 pb-3 overflow-hidden bg-gold/5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
-              {pageData?.hero?.badge || "Client Results"}
-            </div>
-            <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
-              {pageData?.hero?.heading?.includes('Advantage') ? (
-                <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
-              ) : pageData?.hero?.heading || (
-                <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
-              )}
-            </h1>
-            <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
-              {pageData?.hero?.subheading || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."}
-            </p>
-          </motion.div>
+ {/* Hero */}
+ <section className="relative px-8 pt-28 md:pt-36 pb-3 overflow-hidden bg-gold/5">
+ <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
+ <div className="max-w-7xl mx-auto relative z-10">
+ <motion.div
+ initial={{ opacity: 0, y: 40 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.8 }}
+ className="text-center"
+ >
+ <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+ {pageData?.hero?.badge || "Client Results"}
+ </div>
+ <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-8 max-w-5xl mx-auto">
+ {pageData?.hero?.heading?.includes('Advantage') ? (
+ <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
+ ) : pageData?.hero?.heading || (
+ <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
+ )}
+ </h1>
+ <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
+ {pageData?.hero?.subheading || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."}
+ </p>
+ </motion.div>
 
-          {/* Summary stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-6 flex flex-wrap justify-center gap-6"
-          >
-            {(pageData?.hero?.stats || [
-              { value: '5.0', label: 'Google Rating', iconName: 'Star' },
-              { value: '$6M+', label: 'Total Assets Managed' },
-              { value: '100%', label: 'Buyer-Side Only' },
-            ]).map((stat: any) => (
-              <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
-                {stat.iconName === 'Star' && <Star className="w-4 h-4 fill-amber-400 text-amber-400" />}
-                <span className="text-2xl font-serif text-white">{stat.value}</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+ {/* Summary stats */}
+ <motion.div
+ initial={{ opacity: 0, y: 30 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.8, delay: 0.3 }}
+ className="mt-6 flex flex-wrap justify-center gap-6"
+ >
+ {(pageData?.hero?.stats || [
+ { value: '5.0', label: 'Google Rating', iconName: 'Star' },
+ { value: '$6M+', label: 'Total Assets Managed' },
+ { value: '100%', label: 'Buyer-Side Only' },
+ ]).map((stat: any) => (
+ <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
+ {stat.iconName === 'Star' && <Star className="w-4 h-4 fill-amber-400 text-amber-400" />}
+ <span className="text-2xl font-serif text-white">{stat.value}</span>
+ <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
+ </div>
+ ))}
+ </motion.div>
+ </div>
+ </section>
 
-      {/* Case Studies Grid */}
-      <section className="py-2 md:py-3 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          {isLoading ? (
-            <div className="flex justify-center py-2">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {studies.map((study, index) => (
-                <Link
-                  key={study._id}
-                  href={`/case-studies/${study.slug.current}`}
-                  className="flex"
-                >
-                  <motion.article
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-80px' }}
-                    transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
-                    className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col w-full"
-                  >
-                    {/* Image */}
-                    <div className="relative h-64 overflow-hidden">
-                      {study.mainImage && !study.mainImage.isLocal ? (
-                        <img
-                          src={urlFor(study.mainImage).width(800).height(600).url()}
-                          alt={study.mainImage?.alt || study.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                      ) : (
-                        study.mainImage && study.mainImage.isLocal ? (
-                        <img
-                          src={study.mainImage.asset._ref}
-                          alt={study.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                      ) : (
-                        <img
-                          src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=800`}
-                          alt={study.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                      )
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+ {/* Case Studies Grid */}
+ <section className="py-2 md:py-3 px-8 bg-white">
+ <div className="max-w-7xl mx-auto">
+ {isLoading ? (
+ <div className="flex justify-center py-2">
+ <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
+ </div>
+ ) : (
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+ {studies.map((study, index) => (
+ <Link
+ key={study._id}
+ href={`/case-studies/${study.slug.current}`}
+ className="flex"
+ >
+ <motion.article
+ initial={{ opacity: 0, y: 60 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: '-80px' }}
+ transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
+ className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col w-full"
+ >
+ {/* Image */}
+ <div className="relative h-64 overflow-hidden">
+ {study.mainImage && !study.mainImage.isLocal ? (
+ <img
+ src={urlFor(study.mainImage).width(800).height(600).url()}
+ alt={study.mainImage?.alt || study.title}
+ className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+ />
+ ) : (
+ study.mainImage && study.mainImage.isLocal ? (
+ <img
+ src={study.mainImage.asset._ref}
+ alt={study.title}
+ className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+ />
+ ) : (
+ <img
+ src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=800`}
+ alt={study.title}
+ className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+ />
+ )
+ )}
+ <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                      {/* Tag overlay */}
-                      <div className="absolute top-4 left-4">
-                        <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-gold text-white shadow-lg shadow-gold/20 font-black`}>
-                          {study.tag || 'Acquisition'}
-                        </span>
-                      </div>
+ {/* Tag overlay */}
+ <div className="absolute top-4 left-4">
+ <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-gold text-white shadow-lg shadow-gold/20 font-black`}>
+ {study.tag || 'Acquisition'}
+ </span>
+ </div>
 
-                      {/* Result chip */}
-                      <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                        <div>
-                          <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
-                          <p className="text-white text-xl font-serif">{study.resultText}</p>
-                        </div>
-                      </div>
-                    </div>
+ {/* Result chip */}
+ <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+ <div>
+ <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
+ <p className="text-white text-xl font-serif">{study.resultText}</p>
+ </div>
+ </div>
+ </div>
 
-                    {/* Body */}
-                    <div className="flex flex-col flex-1 p-8">
-                      <h2 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300">
-                        {study.title}
-                      </h2>
-                      {study.shortQuote && (
-                        <p className="text-muted font-sans text-base leading-relaxed flex-1">
-                          "{study.shortQuote}"
-                        </p>
-                      )}
+ {/* Body */}
+ <div className="flex flex-col flex-1 p-8">
+ <h2 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300">
+ {study.title}
+ </h2>
+ {study.shortQuote && (
+ <p className="text-muted font-sans text-base leading-relaxed flex-1">
+ "{study.shortQuote}"
+ </p>
+ )}
 
-                      {/* Stats Pills */}
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {study.stats?.slice(0, 2).map((s) => (
-                          <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-gold/10 text-xs font-bold uppercase tracking-widest text-[#011122]">
-                            {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
-                          </div>
-                        ))}
-                      </div>
+ {/* Stats Pills */}
+ <div className="mt-6 flex flex-wrap gap-2">
+ {study.stats?.slice(0, 2).map((s) => (
+ <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-gold/10 text-xs font-bold uppercase tracking-widest text-[#011122]">
+ {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
+ </div>
+ ))}
+ </div>
 
-                      {/* Read More */}
-                      <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#011122] group/btn">
-                        <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </div>
-                    </div>
-                  </motion.article>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+ {/* Read More */}
+ <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#011122] group/btn">
+ <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
+ <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+ </div>
+ </div>
+ </motion.article>
+ </Link>
+ ))}
+ </div>
+ )}
+ </div>
+ </section>
 
-      {/* CTA */}
-      <section className="py-2 md:py-3 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold rounded-full blur-[200px]" />
-        </div>
-        <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
-              Ready to write your <br />
-              <span className="text-gold">own success story?</span>
-            </h2>
-            <p className="text-xl text-white/60 font-sans mb-3 max-w-xl mx-auto">
-              Speak directly with Alex about your brief. Our active roster is strictly limited — enquire now.
-            </p>
-            <Link
-              href="/contact"
-              className="group rounded-full px-14 py-5 bg-gold hover:bg-gold-hover text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-2xl shadow-gold/20 flex items-center gap-3 mx-auto w-fit"
-            >
-              Start Your Brief
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+ {/* CTA */}
+ <section className="py-2 md:py-3 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
+ <div className="absolute inset-0 opacity-10 pointer-events-none">
+ <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold rounded-full blur-[200px]" />
+ </div>
+ <div className="max-w-4xl mx-auto relative z-10">
+ <motion.div
+ initial={{ opacity: 0, y: 30 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true }}
+ transition={{ duration: 0.8 }}
+ >
+ <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
+ Ready to write your <br />
+ <span className="text-gold">own success story?</span>
+ </h2>
+ <p className="text-xl text-white/60 font-sans mb-3 max-w-xl mx-auto">
+ Speak directly with Alex about your brief. Our active roster is strictly limited — enquire now.
+ </p>
+ <Link
+ href="/contact"
+ className="group rounded-full px-14 py-5 bg-gold hover:bg-gold-hover text-white text-base font-bold uppercase tracking-widest hover:scale-[1.03] transition-all duration-300 shadow-2xl shadow-gold/20 flex items-center gap-3 mx-auto w-fit"
+ >
+ Start Your Brief
+ <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+ </Link>
+ </motion.div>
+ </div>
+ </section>
 
-      {/* Latest Acquisition Showcase */}
-      <section className="py-2 md:py-3 px-8 bg-neutral-50 border-t border-gold/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Explore our latest property acquisitions</h2>
-              <p className="text-lg text-muted font-sans max-w-3xl mx-auto leading-relaxed">
-                Strategically selected for high growth, strong rental yields, and long-term value. Every purchase is backed by thorough research and due diligence to ensure smart investments.
-              </p>
-            </motion.div>
-          </div>
+ {/* Latest Acquisition Showcase */}
+ <section className="py-2 md:py-3 px-8 bg-neutral-50 border-t border-gold/10">
+ <div className="max-w-6xl mx-auto">
+ <div className="text-center mb-4">
+ <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Explore our latest property acquisitions</h2>
+ <p className="text-lg text-muted font-sans max-w-3xl mx-auto leading-relaxed">
+ Strategically selected for high growth, strong rental yields, and long-term value. Every purchase is backed by thorough research and due diligence to ensure smart investments.
+ </p>
+ </motion.div>
+ </div>
 
-          <div className="space-y-4">
-            {[
-              {
-                price: "$675,100",
-                config: "4 / 2 / 2",
-                month: "Dec-24",
-                rental: "$750 PW",
-                value: "$695,000",
-                size: "600 sqm",
-                growth: "+$19,900",
-                yield: "5.80%",
-                image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
-              },
-              {
-                price: "$1,245,000",
-                config: "2 / 1 / 1",
-                month: "Jan-25",
-                rental: "$850 PW",
-                value: "$1,270,000",
-                size: "Terrace",
-                growth: "+$25,000",
-                yield: "3.60%",
-                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200"
-              },
-              {
-                price: "$890,000",
-                config: "3 / 2 / 2",
-                month: "Feb-25",
-                rental: "$780 PW",
-                value: "$915,000",
-                size: "450 sqm",
-                growth: "+$25,000",
-                yield: "4.55%",
-                image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200"
-              }
-            ].map((prop, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                viewport={{ once: true }} 
-                className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-gold/30 transition-colors duration-500"
-              >
-                {/* Stats Table */}
-                <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Price</span>
-                      <span className="text-2xl font-serif text-[#011122] font-bold">{prop.price}</span>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.config}</span>
-                    </div>
-                    
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Month</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
-                    </div>
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
-                    </div>
-                    
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Current Value</span>
-                      <span className="text-xl font-serif text-gold font-bold">{prop.value}</span>
-                    </div>
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Size</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
-                    </div>
+ <div className="space-y-4">
+ {[
+ {
+ price: "$675,100",
+ config: "4 / 2 / 2",
+ month: "Dec-24",
+ rental: "$750 PW",
+ value: "$695,000",
+ size: "600 sqm",
+ growth: "+$19,900",
+ yield: "5.80%",
+ image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200"
+ },
+ {
+ price: "$1,245,000",
+ config: "2 / 1 / 1",
+ month: "Jan-25",
+ rental: "$850 PW",
+ value: "$1,270,000",
+ size: "Terrace",
+ growth: "+$25,000",
+ yield: "3.60%",
+ image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200"
+ },
+ {
+ price: "$890,000",
+ config: "3 / 2 / 2",
+ month: "Feb-25",
+ rental: "$780 PW",
+ value: "$915,000",
+ size: "450 sqm",
+ growth: "+$25,000",
+ yield: "4.55%",
+ image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200"
+ }
+ ].map((prop, i) => (
+ <motion.div 
+ key={i}
+ initial={{ opacity: 0, y: 30 }} 
+ whileInView={{ opacity: 1, y: 0 }} 
+ viewport={{ once: true }} 
+ className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-gold/30 transition-colors duration-500"
+ >
+ {/* Stats Table */}
+ <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
+ <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+ <div className="flex flex-col">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Price</span>
+ <span className="text-2xl font-serif text-[#011122] font-bold">{prop.price}</span>
+ </div>
+ <div className="flex flex-col">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
+ <span className="text-xl font-sans text-[#011122] font-semibold">{prop.config}</span>
+ </div>
+ 
+ <div className="flex flex-col pt-4 border-t border-gold/10">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Month</span>
+ <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
+ </div>
+ <div className="flex flex-col pt-4 border-t border-gold/10">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
+ <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
+ </div>
+ 
+ <div className="flex flex-col pt-4 border-t border-gold/10">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Current Value</span>
+ <span className="text-xl font-serif text-gold font-bold">{prop.value}</span>
+ </div>
+ <div className="flex flex-col pt-4 border-t border-gold/10">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Size</span>
+ <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
+ </div>
 
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Capital Growth</span>
-                      <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
-                    </div>
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
-                      <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
-                    </div>
-                  </div>
-                </div>
+ <div className="flex flex-col pt-4 border-t border-gold/10">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Capital Growth</span>
+ <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
+ </div>
+ <div className="flex flex-col pt-4 border-t border-gold/10">
+ <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
+ <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
+ </div>
+ </div>
+ </div>
 
-                {/* Image */}
-                <div className="lg:w-[50%] relative min-h-[400px]">
-                  <img 
-                    src={prop.image} 
-                    alt="Latest acquisition property" 
-                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+ {/* Image */}
+ <div className="lg:w-[50%] relative min-h-[400px]">
+ <img 
+ src={prop.image} 
+ alt="Latest acquisition property" 
+ className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+ />
+ <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
+ </div>
+ </motion.div>
+ ))}
+ </div>
+ </div>
+ </section>
+ </div>
+ );
 }
