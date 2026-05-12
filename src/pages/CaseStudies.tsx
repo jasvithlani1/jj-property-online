@@ -151,77 +151,57 @@ export default function CaseStudies() {
  className="flex"
  >
  <motion.article
- initial={{ opacity: 0, y: 60 }}
+ initial={{ opacity: 0, y: 40 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true, margin: '-80px' }}
- transition={{ duration: 0.7, delay: index * 0.15, ease: 'easeOut' }}
- className="group relative rounded-[2.5rem] overflow-hidden bg-neutral-50 border border-gold/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-black/10 transition-all duration-500 cursor-pointer flex flex-col w-full"
+ transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
+ className="group relative rounded-[2.5rem] overflow-hidden bg-white border border-black/5 hover:border-gold/30 hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col w-full"
  >
- {/* Image */}
- <div className="relative h-64 overflow-hidden">
+ {/* Image Container */}
+ <div className="relative h-72 overflow-hidden">
  {study.mainImage && !study.mainImage.isLocal ? (
  <img
  src={urlFor(study.mainImage).width(800).height(600).url()}
  alt={study.mainImage?.alt || study.title}
- className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+ className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
  />
  ) : (
  study.mainImage && study.mainImage.isLocal ? (
  <img
  src={study.mainImage.asset._ref}
  alt={study.title}
- className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+ className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
  />
  ) : (
  <img
  src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=800`}
  alt={study.title}
- className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+ className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
  />
  )
  )}
- <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
- {/* Tag overlay */}
- <div className="absolute top-4 left-4">
- <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-gold text-white shadow-lg shadow-gold/20 font-black`}>
- {study.tag || 'Acquisition'}
- </span>
- </div>
-
- {/* Result chip */}
- <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
- <div>
- <p className="text-white/70 text-xs font-bold uppercase tracking-widest">{study.location}</p>
- <p className="text-white text-xl font-serif">{study.resultText}</p>
- </div>
+ <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+ 
+ {/* Overlay Result */}
+ <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+ <span className="text-white font-serif text-xl">{study.resultText}</span>
  </div>
  </div>
 
- {/* Body */}
- <div className="flex flex-col flex-1 p-8">
- <h2 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300">
+ {/* Minimalist Body */}
+ <div className="flex flex-col p-8 md:p-10">
+ <div className="flex items-center gap-3 mb-3">
+ <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">{study.location}</span>
+ <div className="h-px w-8 bg-gold/30" />
+ </div>
+ 
+ <h2 className="text-2xl md:text-3xl font-serif text-[#011122] mb-6 group-hover:text-gold transition-colors duration-300 leading-tight">
  {study.title}
  </h2>
- {study.shortQuote && (
- <p className="text-muted font-sans text-base leading-relaxed flex-1">
- "{study.shortQuote}"
- </p>
- )}
 
- {/* Stats Pills */}
- <div className="mt-6 flex flex-wrap gap-2">
- {study.stats?.slice(0, 2).map((s) => (
- <div key={s.label} className="px-4 py-2 rounded-full bg-white border border-gold/10 text-xs font-bold uppercase tracking-widest text-[#011122]">
- {s.value} <span className="font-normal text-muted normal-case tracking-normal">{s.label}</span>
- </div>
- ))}
- </div>
-
- {/* Read More */}
- <div className="mt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#011122] group/btn">
- <span className="group-hover:underline underline-offset-4 transition-all">Read Full Case Study</span>
- <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+ <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#011122] group-hover:gap-4 transition-all duration-300">
+ <span>View Case Study</span>
+ <ArrowRight className="w-3.5 h-3.5" />
  </div>
  </div>
  </motion.article>
