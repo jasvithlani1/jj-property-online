@@ -100,7 +100,7 @@ a {
 }
 
 .animate-slow-spin {
-  animation: slow-spin 20s linear infinite;
+  animation: slow-spin 12s linear infinite;
 }
 
 .animate-fade-rise {

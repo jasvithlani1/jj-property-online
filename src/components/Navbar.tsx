@@ -39,28 +39,29 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-[100] w-full">
-        {/* Top Banner */}
-        <div className="bg-[#011122] text-gold py-2 px-6 md:px-8 flex justify-between items-center text-xs font-bold uppercase tracking-[0.15em] border-b border-white/5">
-          <div className="flex items-center gap-4 md:gap-8">
-            <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-2 hover:text-[#C8A96A] transition-colors">
-              <Mail className="w-3 md:w-3.5 h-3 md:h-3.5" />
-              <span className="hidden sm:inline">info@jjpropertypartner.com.au</span>
+        <div className="bg-[#011122] text-gold py-3 px-4 md:px-8 flex justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] border-b border-white/5">
+          <div className="flex items-center gap-3 sm:gap-6 md:gap-8">
+            <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 sm:bg-transparent sm:border-none hover:text-[#C8A96A] transition-colors">
+              <Mail className="w-4 h-4 md:w-3.5 md:h-3.5" />
+              <span className="inline">Email</span>
+              <span className="hidden lg:inline ml-1">- info@jjpropertypartner.com.au</span>
             </Link>
-            <div className="h-3 w-px bg-white/10 hidden md:block" />
-            <Link href="tel:+61481334458" className="flex items-center gap-2 hover:text-[#C8A96A] transition-colors">
-              <Phone className="w-3 md:w-3.5 h-3 md:h-3.5" />
-              <span className="hidden sm:inline">+61 481 334 458</span>
+            <div className="h-4 w-px bg-white/10 hidden sm:block" />
+            <Link href="tel:+61481334458" className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 sm:bg-transparent sm:border-none hover:text-[#C8A96A] transition-colors">
+              <Phone className="w-4 h-4 md:w-3.5 md:h-3.5" />
+              <span className="inline">Call</span>
+              <span className="hidden lg:inline ml-1">- +61 481 334 458</span>
             </Link>
           </div>
 
           <div className="flex items-center gap-3 md:gap-5">
-            <span className="hidden xl:inline text-gold mr-2">Connect with us:</span>
-            <div className="flex items-center gap-4">
-              <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-3.5 h-3.5" /></Link>
-              <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-3.5 h-3.5" /></Link>
-              <Link href="https://www.youtube.com/@JJPropertyPartnerBuyersAgent" className="hover:text-gold transition-all transform hover:scale-110"><FaYoutube className="w-3.5 h-3.5" /></Link>
-              <Link href="https://x.com/jjbuyersagent" className="hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-3.5 h-3.5" /></Link>
-              <Link href="https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/" className="hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-3.5 h-3.5" /></Link>
+            <span className="hidden xl:inline text-gold mr-2 uppercase">Connect:</span>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.youtube.com/@JJPropertyPartnerBuyersAgent" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaYoutube className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://x.com/jjbuyersagent" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              <Link href="https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/" className="p-1 sm:p-0 hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
             </div>
           </div>
         </div>
@@ -72,7 +73,7 @@ export default function Navbar() {
               <img
                 src="/logo.png?v=4"
                 alt="JJ Logo"
-                className="w-full h-full object-contain cursor-pointer animate-slow-spin"
+                className="w-full h-full object-contain cursor-pointer animate-slow-spin will-change-transform transform-gpu"
                 style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
                 fetchPriority="high"
                 loading="eager"
