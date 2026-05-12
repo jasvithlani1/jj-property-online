@@ -44,14 +44,14 @@ export default function Navbar() {
           {/* Group 1: Contact Methods */}
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="flex items-center gap-2">
-              <Link href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+              <a href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
                 <Mail className="w-4 h-4 text-gold" />
                 <span className="inline">Email</span>
-              </Link>
-              <Link href="tel:+61481334458" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
+              </a>
+              <a href="tel:+61481334458" className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
                 <Phone className="w-4 h-4 text-gold" />
                 <span className="inline">Call</span>
-              </Link>
+              </a>
             </div>
           </div>
 
