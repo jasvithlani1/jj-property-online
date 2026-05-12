@@ -460,16 +460,17 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: index * 0.15 }}
                     className="w-full h-full flex flex-col items-start"
                   >
-                    <div className={`p-5 rounded-[2rem] mb-2 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index % 2 === 0 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
-                      }`}>
-                      <div className="w-8 h-8 flex items-center justify-center">
-                        {service.icon || servicesPreview.find((s: any) => s.title === service.title)?.icon || servicesPreview[index]?.icon}
+                    <div className="flex items-center gap-6 mb-8 w-full">
+                      <div className={`p-4 rounded-2xl shrink-0 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index % 2 === 0 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
+                        }`}>
+                        <div className="w-7 h-7 flex items-center justify-center">
+                          {service.icon || servicesPreview.find((s: any) => s.title === service.title)?.icon || servicesPreview[index]?.icon}
+                        </div>
                       </div>
+                      <h3 className={`text-2xl md:text-3xl font-serif leading-tight ${index % 2 === 0 ? 'text-white' : 'text-black font-semibold'}`}>
+                        {service.title}
+                      </h3>
                     </div>
-
-                    <h3 className={`text-3xl font-serif mb-6 leading-tight ${index % 2 === 0 ? 'text-white' : 'text-black font-semibold'}`}>
-                      {service.title}
-                    </h3>
                     <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
                       {service.description}
                     </p>

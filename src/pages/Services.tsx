@@ -247,46 +247,47 @@ export default function Services() {
               >
               {/* Text Side */}
               <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <div className="flex items-center gap-6 mb-6 relative">
-                  <div className={`absolute -left-2 top-0 w-20 h-20 blur-2xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity ${service.accentClass.replace('bg-','bg-').replace('-50','-400')}`} />
-                  <div className={`relative p-4 rounded-[1.25rem] bg-[#011122] border border-white/10 shadow-[0_0_25px_rgba(200,169,106,0.3)] drop-shadow-[0_0_12px_rgba(200,169,106,0.8)] group-hover:-translate-y-1 transition-all duration-500 z-10 text-gold`}>
-                    <motion.div
-                      variants={{
-                        initial: { rotateY: 0 },
-                        hover: { rotateY: 180 }
-                      }}
-                      transition={{ duration: 0.6 }}
-                      className="relative w-8 h-8"
-                    >
+                <div className="flex flex-col gap-4 mb-8">
+                  <div className="flex items-center gap-6 relative">
+                    <div className={`absolute -left-2 top-0 w-20 h-20 blur-2xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity ${service.accentClass.replace('bg-','bg-').replace('-50','-400')}`} />
+                    <div className={`relative p-4 rounded-[1.25rem] bg-[#011122] border border-white/10 shadow-[0_0_25px_rgba(200,169,106,0.3)] drop-shadow-[0_0_12px_rgba(200,169,106,0.8)] group-hover:-translate-y-1 transition-all duration-500 z-10 text-gold`}>
                       <motion.div
-                        className="absolute inset-0 h-full w-full flex items-center justify-center"
                         variants={{
-                          initial: { opacity: 1, visibility: 'visible' },
-                          hover: { opacity: 0, visibility: 'hidden' }
+                          initial: { rotateY: 0 },
+                          hover: { rotateY: 180 }
                         }}
+                        transition={{ duration: 0.6 }}
+                        className="relative w-8 h-8"
                       >
-                        {service.icon || services.find(s => s.id === service.id)?.icon || services.find(s => s.id === service.id)?.icon || <Building2 className="w-8 h-8" />}
+                        <motion.div
+                          className="absolute inset-0 h-full w-full flex items-center justify-center"
+                          variants={{
+                            initial: { opacity: 1, visibility: 'visible' },
+                            hover: { opacity: 0, visibility: 'hidden' }
+                          }}
+                        >
+                          {service.icon || services.find(s => s.id === service.id)?.icon || <Building2 className="w-8 h-8" />}
+                        </motion.div>
+                        <motion.div
+                          className="absolute inset-0 h-full w-full flex items-center justify-center"
+                          style={{ rotateY: 180 }}
+                          variants={{
+                            initial: { opacity: 0, visibility: 'hidden' },
+                            hover: { opacity: 1, visibility: 'visible' }
+                          }}
+                        >
+                          {service.solidIcon || services.find(s => s.id === service.id)?.solidIcon || <FaBuilding className="w-8 h-8" />}
+                        </motion.div>
                       </motion.div>
-                      <motion.div
-                        className="absolute inset-0 h-full w-full flex items-center justify-center"
-                        style={{ rotateY: 180 }}
-                        variants={{
-                          initial: { opacity: 0, visibility: 'hidden' },
-                          hover: { opacity: 1, visibility: 'visible' }
-                        }}
-                      >
-                        {service.solidIcon || services.find(s => s.id === service.id)?.solidIcon || services.find(s => s.id === service.id)?.solidIcon || <FaBuilding className="w-8 h-8" />}
-                      </motion.div>
-                    </motion.div>
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-serif text-[#011122] leading-tight">
+                      {service.title}
+                    </h2>
                   </div>
-                  <span className={`text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full ${service.accentClass || 'bg-gold/5 border-gold/20'} border shadow-sm`}>
+                  <span className={`w-fit text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full ${service.accentClass || 'bg-gold/5 border-gold/20'} border shadow-sm`}>
                     {service.tag}
                   </span>
                 </div>
-
-                 <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-tight">
-                  {service.title}
-                </h2>
                 <p className="text-lg text-muted font-serif mb-4">{service.subtitle}</p>
                 <p className="text-lg text-muted font-sans leading-relaxed mb-8">
                   {service.description}
