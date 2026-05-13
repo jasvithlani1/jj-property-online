@@ -126,27 +126,78 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    slug: 'smsf-property-rules-2025',
-    title: 'SMSF Property in 2026: What the ATO Actually Wants You to Know',
-    excerpt: 'Self-managed super fund property is one of the most powerful retirement tools available — and one of the most heavily scrutinised. A practical breakdown from acquisition specialists.',
-    category: 'SMSF Strategy',
+    slug: 'property-portfolio-buyers-agent-wealth',
+    title: 'How a Property Portfolio Buyer’s Agent Helps Australians Build Long-Term Wealth',
+    seo: {
+      metaTitle: 'Property Portfolio Buyer’s Agent Australia | JJ Property Partner',
+      metaDescription: 'Learn how a property portfolio buyer’s agent in Australia helps investors build wealth through data-led research, strategy, and smart property acquisition.'
+    },
+    excerpt: 'Building a strong property portfolio takes more than buying one good property. It requires clear planning, smart suburb selection, and a long-term strategy that supports your wealth goals.',
+    category: 'Property Investors',
     categoryColor: 'bg-gold/10 text-gold',
-    readTime: '8 min read',
-    date: 'March 14, 2026',
+    readTime: '9 min read',
+    date: 'May 13, 2026',
     author: 'Alex',
-    authorRole: 'Principal Advisor, JJ Property Partner',
+    authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
     coverImage: 'https://images.unsplash.com/photo-1454165833969-102a1b588367?auto=format&fit=crop&q=80&w=1400',
     content: [
-      { type: 'paragraph', text: 'The appeal of using your SMSF to buy property is understandable. Direct property ownership inside a concessionally-taxed structure, with full control over the asset class — it sounds like a perfect strategy. For the right client, it is. But the ATO\'s compliance framework around SMSF property is among the tightest in the financial system, and the consequences of a breach are severe.' },
-      { type: 'heading', text: 'The Sole Purpose Test — The Foundation of Everything' },
-      { type: 'paragraph', text: 'Every decision your SMSF makes must pass the sole purpose test: the fund exists solely to provide retirement benefits for its members. This means the property cannot be used personally by you, your family, or any related party — regardless of how temporary or minor the use seems.' },
-      { type: 'list', items: ['You cannot live in the property', 'Your children cannot live in the property (even if they pay market rent)', 'You cannot use it as a holiday home between tenants', 'Related parties cannot lease commercial property from your SMSF unless it meets very specific conditions'] },
-      { type: 'heading', text: 'Limited Recourse Borrowing Arrangements' },
-      { type: 'paragraph', text: 'If your SMSF doesn\'t have sufficient cash to purchase outright, you can borrow via a Limited Recourse Borrowing Arrangement (LRBA). This is a specific legal structure where a custodian/bare trust holds the property until the loan is repaid. The "limited recourse" component protects your other SMSF assets — the lender can only claim against the asset being purchased, not your broader super portfolio.' },
-      { type: 'quote', text: 'The most dangerous SMSF property purchase is the one made without a SMSF-specialist accountant, a SMSF-compliant solicitor, and an independent buyers agent in the room simultaneously.' },
-      { type: 'heading', text: 'What Makes a Good SMSF Property?' },
-      { type: 'paragraph', text: 'Not all properties are suitable for SMSF acquisition. The key criteria we apply when sourcing assets for SMSF clients are yield sustainability, capital growth driven by land content, minimal body corporate exposure, and tenant stability.' },
-      { type: 'list', items: ['Gross yield of 4.5%+ to cover loan servicing from rental income (LRBAs must be self-funding from rental income + member contributions)', 'Freehold land content — avoid leasehold, service apartments, and hotel rooms', 'Low-maintenance construction — SMSF trustee obligations make high-maintenance properties a liability', 'Tenant profile with longevity: government services, healthcare workers, universities'] },
+      { type: 'paragraph', text: 'Building a strong property portfolio in Australia takes more than buying one good property and hoping the market does the rest. It requires clear planning, smart suburb selection, careful finance management, and a long-term strategy that supports your lifestyle and wealth goals. For many Australians, property remains one of the most powerful ways to build financial security, but every purchase must be made with the next step in mind.' },
+      { type: 'paragraph', text: 'A property portfolio buyer’s agent Australia can help investors move from a single-property mindset to a structured portfolio strategy. Instead of chasing hot suburbs or emotional opportunities, the focus is on building a balanced portfolio that can support capital growth, rental income, equity creation, and future acquisitions.' },
+      { type: 'paragraph', text: 'That same disciplined approach can also be applied when building a broader Australian property portfolio.' },
+
+      { type: 'heading', text: 'Understanding the Basics of Property Portfolio Building' },
+      { type: 'paragraph', text: 'A property portfolio is a collection of investment properties owned with a clear purpose. The strongest portfolios are not built randomly. They are shaped around a clear acquisition plan. When building a property portfolio, investors need to consider:' },
+      { type: 'list', items: [
+        'Borrowing capacity and serviceability',
+        'Deposit and equity position',
+        'Rental yield and cash flow',
+        'Suburb growth drivers',
+        'Property type and tenant demand',
+        'Risk management and diversification',
+        'Tax planning with the right adviser',
+        'Future purchasing capacity'
+      ]},
+      { type: 'paragraph', text: 'Many investors make the mistake of buying a property that looks attractive today but limits their ability to buy again later. A strong portfolio strategy looks beyond the first or second purchase and considers how each property will support the next stage of growth.' },
+
+      { type: 'heading', text: 'Why Experience Matters in Portfolio Property Decisions' },
+      { type: 'paragraph', text: 'Property investment is easy to talk about but much harder to execute well over multiple market cycles. Alex brings practical experience from building a personal property portfolio worth more than $5 million across several Australian states. This experience comes from making real investment decisions through changing interest rates, competitive markets, lending shifts, and different economic conditions.' },
+      { type: 'paragraph', text: 'With more than 20 years of IT experience, Alex also applies a data-driven and analytical approach to property research, helping clients make informed decisions based on evidence rather than emotion.' },
+
+      { type: 'heading', text: 'The Strategic Advantage of Using a Property Portfolio Buyer’s Agent' },
+      
+      { type: 'subheading', text: 'Getting the Strategy Right Before Searching for Property' },
+      { type: 'paragraph', text: 'JJ Property Partner begins with understanding your financial position, borrowing capacity, current property holdings, investment goals, risk profile, and future plans. This ensures the property search is guided by a clear strategy rather than market noise.' },
+
+      { type: 'subheading', text: 'Property Selection Based on Portfolio Performance' },
+      { type: 'paragraph', text: 'JJ Property Partner assesses properties across Australia using a research-led approach. This includes reviewing suburb fundamentals, vacancy rates, rental demand, infrastructure, demographic trends, comparable sales, and long-term growth potential.' },
+
+      { type: 'subheading', text: 'Building a Portfolio with Future Purchases in Mind' },
+      { type: 'paragraph', text: 'Each purchase should strengthen your position for the next one. JJ Property Partner helps clients plan each purchase with the next one in mind, assessing how the property may perform over time and how it may support future equity release.' },
+
+      { type: 'subheading', text: 'Working Seamlessly with Your Professional Advisory Team' },
+      { type: 'paragraph', text: 'A property portfolio buyer’s agent Australia helps coordinate the property acquisition side of this process, keeping the purchase aligned with your wider financial and investment strategy.' },
+
+      { type: 'heading', text: 'Reducing Risk Through Smarter Property Research' },
+      { type: 'paragraph', text: 'JJ Property Partner uses a structured research process to help reduce investment risks. This includes looking beyond surface-level suburb rankings at factors such as population growth, employment access, infrastructure investment, and rental vacancy trends.' },
+
+      { type: 'heading', text: 'Growing Wealth with a Smarter Property Portfolio Strategy' },
+      { type: 'paragraph', text: 'The most successful property investors usually take a long-term view. Wealth is built through careful acquisition, patience, discipline, and ongoing review. JJ Property Partner supports clients with strategic multi-year property planning.' },
+
+      { type: 'heading', text: 'Is a Property Portfolio Strategy Right for You?' },
+      { type: 'list', items: [
+        'Want to create long-term wealth through real estate',
+        'Already own one property and want to buy again strategically',
+        'Have borrowing capacity or equity available',
+        'Want a clear plan instead of random property purchases',
+        'Prefer data-led guidance over emotional decision-making',
+        'Need help identifying strong investment locations across Australia',
+        'Want to build towards retirement income or future financial freedom'
+      ]},
+
+      { type: 'heading', text: 'Conclusion' },
+      { type: 'paragraph', text: 'Building a property portfolio in Australia requires more than buying in popular suburbs or following market trends. It takes strategy, research, discipline, and a clear understanding of how each purchase contributes to your long-term goals. JJ Property Partner supports Australian investors with data-led research and strategic acquisition planning.' },
+      
+      { type: 'quote', text: 'Free Strategy Session: Book your complimentary 30-minute property portfolio consultation with Alex today. Call / WhatsApp: 0481 33 44 58 | Email: info@jjpropertypartner.com.au' }
     ],
   },
   {
