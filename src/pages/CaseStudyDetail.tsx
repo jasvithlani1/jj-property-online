@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, MapPin, Quote, Target, TrendingUp, ShieldCheck } from 'lucide-react';
+import { ArrowRight, MapPin, Quote, Target, TrendingUp, ShieldCheck } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
@@ -139,7 +139,7 @@ export default function CaseStudyDetail() {
       />
 
       {/* ── Editorial Hero ─────────────────────────────────────────────── */}
-      <section className="relative w-full pt-32 pb-4 overflow-hidden bg-[#011122]">
+      <section className="relative w-full pt-32 pb-16 overflow-hidden bg-[#011122]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-8 relative z-10">
@@ -149,13 +149,7 @@ export default function CaseStudyDetail() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-start"
           >
-            <Link
-              href="/case-studies"
-              className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-gold mb-12 hover:text-white transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
-              Return to results
-            </Link>
+            
 
             <div className="flex flex-wrap items-center gap-4 mb-8">
               <span className="px-5 py-2 rounded-full bg-gold/20 border border-gold/30 text-gold text-xs font-black uppercase tracking-widest">
@@ -188,7 +182,7 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* ── Impact Gallery ─────────────────────────────────────────────── */}
-      <section className="relative px-4 md:px-8 -mt-12 mb-4">
+      <section className="relative px-4 md:px-8 -mt-8 mb-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -307,7 +301,7 @@ export default function CaseStudyDetail() {
               <div className="p-10 rounded-[3rem] bg-gold/5 border border-gold/10 relative group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[60px] rounded-full group-hover:bg-gold/20 transition-colors" />
                 <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6">The Final Outcome</h3>
-                <div className="prose prose-lg text-[#011122] font-serif leading-relaxed mb-8 italic">
+                <div className="prose prose-lg text-[#011122] font-serif leading-relaxed mb-8 ">
                   {study.outcome}
                 </div>
                 <div className="h-px bg-gold/10 mb-8" />
@@ -315,7 +309,7 @@ export default function CaseStudyDetail() {
                 {study.shortQuote && (
                   <div className="mb-10">
                     <Quote className="w-8 h-8 text-gold/30 mb-4" />
-                    <p className="text-lg font-sans text-muted italic leading-relaxed mb-4">"{study.shortQuote}"</p>
+                    <p className="text-lg font-sans text-muted  leading-relaxed mb-4">"{study.shortQuote}"</p>
                     <p className="text-xs font-bold uppercase tracking-widest text-black">— Verified Client Result</p>
                   </div>
                 )}
