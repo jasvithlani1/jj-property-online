@@ -251,64 +251,168 @@ export const blogPosts: BlogPost[] = [
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
     coverImage: 'https://images.unsplash.com/photo-1454165833969-102a1b588367?auto=format&fit=crop&q=80&w=1400',
     content: [
-      { type: 'paragraph', text: 'Building a strong property portfolio in Australia takes more than buying one good property and hoping the market does the rest. It requires clear planning, smart suburb selection, careful finance management, and a long-term strategy that supports your lifestyle and wealth goals. For many Australians, property remains one of the most powerful ways to build financial security, but every purchase must be made with the next step in mind.' },
-      { type: 'paragraph', text: 'A property portfolio buyer’s agent Australia can help investors move from a single-property mindset to a structured portfolio strategy. Instead of chasing hot suburbs or emotional opportunities, the focus is on building a balanced portfolio that can support capital growth, rental income, equity creation, and future acquisitions.' },
-      { type: 'paragraph', text: 'That same disciplined approach can also be applied when building a broader Australian property portfolio.' },
-
-      { type: 'heading', text: 'Understanding the Basics of Property Portfolio Building' },
-      { type: 'paragraph', text: 'A property portfolio is a collection of investment properties owned with a clear purpose. The strongest portfolios are not built randomly. They are shaped around a clear acquisition plan. When building a property portfolio, investors need to consider:' },
-      { type: 'list', items: [
-        'Borrowing capacity and serviceability',
-        'Deposit and equity position',
-        'Rental yield and cash flow',
-        'Suburb growth drivers',
-        'Property type and tenant demand',
-        'Risk management and diversification',
-        'Tax planning with the right adviser',
-        'Future purchasing capacity'
-      ]},
-      { type: 'paragraph', text: 'Many investors make the mistake of buying a property that looks attractive today but limits their ability to buy again later. A strong portfolio strategy looks beyond the first or second purchase and considers how each property will support the next stage of growth.' },
-
-      { type: 'heading', text: 'Why Experience Matters in Portfolio Property Decisions' },
-      { type: 'paragraph', text: 'Property investment is easy to talk about but much harder to execute well over multiple market cycles. Alex brings practical experience from building a personal property portfolio worth more than $5 million across several Australian states. This experience comes from making real investment decisions through changing interest rates, competitive markets, lending shifts, and different economic conditions.' },
-      { type: 'paragraph', text: 'With more than 20 years of IT experience, Alex also applies a data-driven and analytical approach to property research, helping clients make informed decisions based on evidence rather than emotion.' },
-
-      { type: 'heading', text: 'The Strategic Advantage of Using a Property Portfolio Buyer’s Agent' },
-      
-      { type: 'subheading', text: 'Getting the Strategy Right Before Searching for Property' },
-      { type: 'paragraph', text: 'JJ Property Partner begins with understanding your financial position, borrowing capacity, current property holdings, investment goals, risk profile, and future plans. This ensures the property search is guided by a clear strategy rather than market noise.' },
-
-      { type: 'subheading', text: 'Property Selection Based on Portfolio Performance' },
-      { type: 'paragraph', text: 'JJ Property Partner assesses properties across Australia using a research-led approach. This includes reviewing suburb fundamentals, vacancy rates, rental demand, infrastructure, demographic trends, comparable sales, and long-term growth potential.' },
-
-      { type: 'subheading', text: 'Building a Portfolio with Future Purchases in Mind' },
-      { type: 'paragraph', text: 'Each purchase should strengthen your position for the next one. JJ Property Partner helps clients plan each purchase with the next one in mind, assessing how the property may perform over time and how it may support future equity release.' },
-
-      { type: 'subheading', text: 'Working Seamlessly with Your Professional Advisory Team' },
-      { type: 'paragraph', text: 'A property portfolio buyer’s agent Australia helps coordinate the property acquisition side of this process, keeping the purchase aligned with your wider financial and investment strategy.' },
-
-      { type: 'heading', text: 'Reducing Risk Through Smarter Property Research' },
-      { type: 'paragraph', text: 'JJ Property Partner uses a structured research process to help reduce investment risks. This includes looking beyond surface-level suburb rankings at factors such as population growth, employment access, infrastructure investment, and rental vacancy trends.' },
-
-      { type: 'heading', text: 'Growing Wealth with a Smarter Property Portfolio Strategy' },
-      { type: 'paragraph', text: 'The most successful property investors usually take a long-term view. Wealth is built through careful acquisition, patience, discipline, and ongoing review. JJ Property Partner supports clients with strategic multi-year property planning.' },
-
-      { type: 'heading', text: 'Is a Property Portfolio Strategy Right for You?' },
-      { type: 'list', items: [
-        'Want to create long-term wealth through real estate',
-        'Already own one property and want to buy again strategically',
-        'Have borrowing capacity or equity available',
-        'Want a clear plan instead of random property purchases',
-        'Prefer data-led guidance over emotional decision-making',
-        'Need help identifying strong investment locations across Australia',
-        'Want to build towards retirement income or future financial freedom'
-      ]},
-
-      { type: 'heading', text: 'Conclusion' },
-      { type: 'paragraph', text: 'Building a property portfolio in Australia requires more than buying in popular suburbs or following market trends. It takes strategy, research, discipline, and a clear understanding of how each purchase contributes to your long-term goals. JJ Property Partner supports Australian investors with data-led research and strategic acquisition planning.' },
-      
-      { type: 'quote', text: 'Free Strategy Session: Book your complimentary 30-minute property portfolio consultation with Alex today. Call / WhatsApp: 0481 33 44 58 | Email: info@jjpropertypartner.com.au' }
-    ],
+  {
+    "type": "paragraph",
+    "text": "Building a strong property portfolio in Australia takes more than buying one good property and hoping the market does the rest. It requires clear planning, smart suburb selection, careful finance management, and a long-term strategy that supports your lifestyle and wealth goals. For many Australians, property remains one of the most powerful ways to build financial security, but every purchase must be made with the next step in mind."
+  },
+  {
+    "type": "paragraph",
+    "text": "A property portfolio buyer’s agent Australia can help investors move from a single-property mindset to a structured portfolio strategy. Instead of chasing hot suburbs or emotional opportunities, the focus is on building a balanced portfolio that can support capital growth, rental income, equity creation, and future acquisitions."
+  },
+  {
+    "type": "paragraph",
+    "text": "The attached SMSF buyer’s agent document highlights the importance of strategy, compliance, adviser coordination, and long-term property planning in specialised property investment decisions. That same disciplined approach can also be applied when building a broader Australian property portfolio."
+  },
+  {
+    "type": "heading",
+    "text": "Understanding the Basics of Property Portfolio Building"
+  },
+  {
+    "type": "paragraph",
+    "text": "A property portfolio is a collection of investment properties owned with a clear purpose. For some Australians, the goal is long-term capital growth. For others, it may be rental income, retirement planning, financial independence, or creating future options for their family. The strongest portfolios are not built randomly. They are shaped around a clear acquisition plan."
+  },
+  {
+    "type": "subheading",
+    "text": "When building a property portfolio, investors need to consider:"
+  },
+  {
+    "type": "list",
+    "items": [
+      "Borrowing capacity and serviceability",
+      "Deposit and equity position",
+      "Rental yield and cash flow",
+      "Suburb growth drivers",
+      "Property type and tenant demand",
+      "Risk management and diversification",
+      "Tax planning with the right adviser",
+      "Future purchasing capacity"
+    ]
+  },
+  {
+    "type": "paragraph",
+    "text": "Many investors make the mistake of buying a property that looks attractive today but limits their ability to buy again later. A strong portfolio strategy looks beyond the first or second purchase and considers how each property will support the next stage of growth."
+  },
+  {
+    "type": "paragraph",
+    "text": "This is where a specialist property portfolio buyer’s agent Australia can provide real value. The right buyer’s agent helps you understand what to buy, where to buy, when to buy, and how each purchase fits into your wider wealth-building plan."
+  },
+  {
+    "type": "heading",
+    "text": "Why Experience Matters in Portfolio Property Decisions"
+  },
+  {
+    "type": "paragraph",
+    "text": "Property investment is easy to talk about but much harder to execute well over multiple market cycles. Australia’s property markets vary significantly by state, city, suburb, price point, infrastructure, population growth, and rental demand. A strategy that works in one area may not suit another."
+  },
+  {
+    "type": "paragraph",
+    "text": "Alex brings practical experience from building a personal property portfolio worth more than $5 million across several Australian states. This experience is not based on theory alone. It comes from making real investment decisions through changing interest rates, competitive markets, lending shifts, and different economic conditions."
+  },
+  {
+    "type": "paragraph",
+    "text": "That experience helps investors avoid common mistakes such as overpaying, buying in low-demand areas, choosing properties with weak rental appeal, or purchasing assets that slow future borrowing capacity. With more than 20 years of IT experience, Alex also applies a data-driven and analytical approach to property research, helping clients make informed decisions based on evidence rather than emotion."
+  },
+  {
+    "type": "heading",
+    "text": "The Strategic Advantage of Using a Property Portfolio Buyer’s Agent"
+  },
+  {
+    "type": "subheading",
+    "text": "Getting the Strategy Right Before Searching for Property"
+  },
+  {
+    "type": "paragraph",
+    "text": "One of the most common mistakes investors make is starting the property search too early. Before looking at listings, attending inspections, or speaking with selling agents, the strategy needs to be clear."
+  },
+  {
+    "type": "paragraph",
+    "text": "JJ Property Partner begins with understanding your financial position, borrowing capacity, current property holdings, investment goals, risk profile, and future plans. This ensures the property search is guided by a clear strategy rather than market noise."
+  },
+  {
+    "type": "subheading",
+    "text": "A proper portfolio plan should answer key questions such as:"
+  },
+  {
+    "type": "list",
+    "items": [
+      "What is your long-term wealth goal?",
+      "How many properties do you want to build towards?",
+      "What level of debt are you comfortable with?",
+      "Do you need cash flow, growth, or a balance of both?",
+      "Which locations support your investment timeline?",
+      "How will this purchase affect your next purchase?"
+    ]
+  },
+  {
+    "type": "subheading",
+    "text": "Property Selection Based on Portfolio Performance"
+  },
+  {
+    "type": "paragraph",
+    "text": "Not every investment property is suitable for portfolio building. A property may have a beautiful design, a strong emotional appeal, or a low purchase price, but that does not automatically make it a smart portfolio asset."
+  },
+  {
+    "type": "paragraph",
+    "text": "JJ Property Partner assesses properties across Australia using a research-led approach. This includes reviewing suburb fundamentals, vacancy rates, rental demand, infrastructure, demographic trends, comparable sales, and long-term growth potential. The goal is to identify properties that support sustainable portfolio expansion, not just short-term excitement."
+  },
+  {
+    "type": "subheading",
+    "text": "Building a Portfolio with Future Purchases in Mind"
+  },
+  {
+    "type": "paragraph",
+    "text": "A strong property portfolio is built step by step. Each purchase should strengthen your position for the next one. That means considering equity growth, rental income, debt levels, lender requirements, and tax planning before committing to any acquisition."
+  },
+  {
+    "type": "paragraph",
+    "text": "JJ Property Partner helps clients plan each purchase with the next one in mind. This includes assessing how the property may perform over time, how it may support future equity release, and whether it fits your broader investment roadmap."
+  },
+  {
+    "type": "heading",
+    "text": "Working Seamlessly with Your Professional Advisory Team"
+  },
+  {
+    "type": "paragraph",
+    "text": "Building a property portfolio often involves more than just finding the right property. You may need input from a mortgage broker, accountant, financial adviser, solicitor, conveyancer, building inspector, property manager, and depreciation specialist."
+  },
+  {
+    "type": "paragraph",
+    "text": "A property portfolio buyer’s agent Australia helps coordinate the property acquisition side of this process, keeping the purchase aligned with your wider financial and investment strategy. JJ Property Partner works closely with your trusted advisers so that key decisions are made with the right information."
+  },
+  {
+    "type": "heading",
+    "text": "Reducing Risk Through Smarter Property Research"
+  },
+  {
+    "type": "paragraph",
+    "text": "Every property investment carries risk. The aim is not to remove risk completely, but to understand it and manage it properly. Poor suburb selection, weak rental demand, oversupply, high maintenance costs, low land value, and emotional buying can all reduce portfolio performance."
+  },
+  {
+    "type": "paragraph",
+    "text": "JJ Property Partner uses a structured research process to help reduce these risks. This includes looking beyond surface-level suburb rankings and reviewing the deeper factors that influence long-term performance."
+  },
+  {
+    "type": "list",
+    "items": [
+      "Population growth",
+      "Employment access",
+      "Infrastructure investment",
+      "School zones and lifestyle appeal",
+      "Rental vacancy trends",
+      "Owner-occupier demand",
+      "Supply and development pipeline",
+      "Comparable sales and fair market value"
+    ]
+  },
+  {
+    "type": "heading",
+    "text": "Conclusion"
+  },
+  {
+    "type": "paragraph",
+    "text": "Building a property portfolio in Australia requires more than buying in popular suburbs or following market trends. It takes strategy, research, discipline, and a clear understanding of how each purchase contributes to your long-term goals. JJ Property Partner supports Australian investors with data-led research and strategic acquisition planning."
+  }
+],
   },
   {
     id: '3',
