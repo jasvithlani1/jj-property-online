@@ -89,7 +89,7 @@ export default function CommercialProperty() {
       
       <div className="w-full bg-white selection:bg-gold/20 ">
         {/* Hero Section */}
-        <section className="pt-24 md:pt-28 relative px-6 py-2 sm:px-8 sm:py-4 md:pb-4 bg-[#011122] text-white overflow-hidden">
+        <section className="pt-32 md:pt-44 relative px-6 py-2 sm:px-8 sm:py-4 md:pb-4 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -100,7 +100,7 @@ export default function CommercialProperty() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-6 backdrop-blur-sm">
-                {pageData?.hero?.badge || "Commercial Property"}
+                {pageData?.hero?.badge === "Commercial Property Strategies with Investment Precision." ? "Commercial Property" : (pageData?.hero?.badge || "Commercial Property")}
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
                 {pageData?.hero?.heading || "Acquisition Strategies Engineered for Investment Precision."}
