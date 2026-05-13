@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
 import Link from '../components/Link';
+import { blogPosts as localBlogPosts } from '../data/blogs';
 
 interface SanityPost {
  _id: string;
@@ -63,7 +64,25 @@ export default function Blog() {
  client.fetch(pageQuery)
  ]);
 
- setPosts(postsData);
+ // Merge Sanity posts with local posts
+ // If a local post has the same slug as a sanity post, prioritize sanity
+ const sanitySlugs = new Set(postsData.map((p: any) => p.slug.current));
+ const formattedLocalPosts = localBlogPosts
+   .filter(p => !sanitySlugs.has(p.slug))
+   .map(p => ({
+     _id: p.id,
+     title: p.title,
+     slug: { current: p.slug },
+     excerpt: p.excerpt,
+     mainImage: { asset: { _ref: p.coverImage }, isLocal: true },
+     publishedAt: p.date,
+     categories: [{ title: p.category, color: p.categoryColor }],
+     featured: p.featured
+   }));
+
+ setPosts([...postsData, ...formattedLocalPosts].sort((a, b) => 
+   new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+ ));
  if (pageData) setPageData(pageData);
  } catch (error) {
  console.error('Error fetching posts:', error);
