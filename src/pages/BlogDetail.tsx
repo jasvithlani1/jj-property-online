@@ -26,12 +26,12 @@ interface SanityPost {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-16 mb-8 leading-tight first:mt-0">
+      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-8 leading-tight first:mt-0">
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-12 mb-6">
+      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-6">
         {children}
       </h3>
     ),
@@ -50,7 +50,7 @@ const ptComponents = {
     ),
   },
   list: {
-    bullet: ({ children }: any) => <ul className="my-10 space-y-6">{children}</ul>,
+    bullet: ({ children }: any) => <ul className="my-10 space-y-6 mb-12">{children}</ul>,
   },
   listItem: {
     bullet: ({ children }: any) => (
@@ -182,23 +182,17 @@ export default function BlogDetail() {
         article={true}
       />
 
-      {/* ── Progress Bar ─────────────────────────────────────────────── */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gold origin-left z-[100]"
-        style={{ scaleX: 0 }} // Will be updated by scroll
-      />
-
       {/* ── Editorial Header ─────────────────────────────────────────── */}
-      <header className="relative pt-32 pb-12 overflow-hidden bg-[#011122]">
+      <header className="relative pt-44 pb-20 overflow-hidden bg-[#011122]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
         
-        <div className="max-w-4xl mx-auto px-8 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center gap-4 mb-10">
+            <div className="flex flex-wrap items-center gap-6 mb-12">
               <Link
                 href="/blog"
                 className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-gold hover:text-white transition-colors"
@@ -212,30 +206,7 @@ export default function BlogDetail() {
                   {post.categories[0].title}
                 </span>
               )}
-            </div>
-
-            <h1 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] mb-12">
-              {post.title}
-            </h1>
-
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full border border-gold/30 p-1">
-                  <div className="w-full h-full rounded-full bg-gold/10 flex items-center justify-center text-gold font-serif text-xl overflow-hidden">
-                    {post.author?.image ? (
-                      <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
-                    ) : (
-                      post.author?.name?.charAt(0) || 'A'
-                    )}
-                  </div>
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-bold text-white uppercase tracking-widest">{post.author?.name || 'Alex'}</p>
-                  <p className="text-[10px] text-white/50 uppercase tracking-widest font-bold">Principal Advisor</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+              <div className="flex items-center gap-6 ml-auto text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5 text-gold" />
                   {new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
@@ -246,17 +217,37 @@ export default function BlogDetail() {
                 </div>
               </div>
             </div>
+
+            <h1 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] mb-12 max-w-5xl">
+              {post.title}
+            </h1>
+
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl border border-gold/30 p-1.5">
+                <div className="w-full h-full rounded-xl bg-gold/10 flex items-center justify-center text-gold font-serif text-2xl overflow-hidden">
+                  {post.author?.image ? (
+                    <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
+                  ) : (
+                    post.author?.name?.charAt(0) || 'A'
+                  )}
+                </div>
+              </div>
+              <div>
+                <p className="text-lg font-bold text-white uppercase tracking-widest">{post.author?.name || 'Alex'}</p>
+                <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-bold">Licensed Buyers Agent, JJ Property Partner</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </header>
 
       {/* ── Featured Image ──────────────────────────────────────────── */}
-      <section className="relative px-4 md:px-8 -mt-16 mb-20">
+      <section className="relative px-4 md:px-8 -mt-10 mb-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="max-w-6xl mx-auto h-[50vh] md:h-[75vh] rounded-[3.5rem] overflow-hidden shadow-2xl shadow-black/40 border-8 border-white"
+          className="max-w-7xl mx-auto h-[50vh] md:h-[80vh] rounded-[3.5rem] overflow-hidden shadow-2xl shadow-black/40 border-8 border-white"
         >
           {post.mainImage ? (
             <img
@@ -290,18 +281,21 @@ export default function BlogDetail() {
 
               {/* FAQ Section */}
               {post.faqs && post.faqs.length > 0 && (
-                <div className="mt-24 border-t border-gold/10 pt-20">
-                  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-12 flex items-center gap-4">
-                    <MessageSquare className="w-10 h-10 text-gold" />
-                    Common Questions
-                  </h2>
-                  <div className="space-y-12">
+                <div className="mt-24 border-t-2 border-gold/10 pt-20">
+                  <div className="mb-16">
+                    <span className="text-xs font-black uppercase tracking-[0.4em] text-gold mb-4 block">Information Resource</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-[#011122] flex items-center gap-4">
+                      <MessageSquare className="w-10 h-10 text-gold" />
+                      Frequently Asked Questions
+                    </h2>
+                  </div>
+                  <div className="space-y-16">
                     {post.faqs.map((faq, idx) => (
-                      <div key={idx} className="group">
-                        <h4 className="text-xl md:text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors">
+                      <div key={idx} className="group border-b border-[#011122]/5 pb-16 last:border-0">
+                        <h4 className="text-2xl md:text-3xl font-serif text-[#011122] mb-6 group-hover:text-gold transition-colors">
                           {faq.question}
                         </h4>
-                        <p className="text-lg text-muted font-sans leading-relaxed">
+                        <p className="text-xl text-muted font-sans leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -321,31 +315,31 @@ export default function BlogDetail() {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="p-10 rounded-[3rem] bg-gold/5 border border-gold/10 relative overflow-hidden group"
+                className="p-10 rounded-[3rem] bg-[#011122] text-white relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[60px] rounded-full group-hover:bg-gold/20 transition-colors" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/20 blur-[60px] rounded-full group-hover:bg-gold/30 transition-colors" />
                 <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-6">Take the next step</h3>
-                <h2 className="text-2xl md:text-3xl font-serif text-[#011122] mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-serif mb-6 leading-tight">
                   Ready to buy with confidence?
                 </h2>
-                <p className="text-muted font-sans leading-relaxed mb-10">
-                  Book a complimentary 30-minute strategy session with Alex to discuss your specific property goals.
+                <p className="text-white/60 font-sans leading-relaxed mb-10">
+                  Our active roster is strictly limited. Book a complimentary 30-minute session to discuss your brief.
                 </p>
                 
                 <button
                   onClick={openCalendly}
-                  className="w-full py-5 rounded-2xl bg-[#011122] text-white font-bold uppercase tracking-widest text-[10px] hover:bg-gold transition-all duration-500 shadow-xl shadow-gold/10 flex items-center justify-center gap-3 group/btn"
+                  className="w-full py-5 rounded-2xl bg-gold text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-[#011122] transition-all duration-500 shadow-xl shadow-gold/20 flex items-center justify-center gap-3 group/btn"
                 >
                   Book Strategy Session
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
 
-                <div className="mt-8 space-y-4">
-                  <div className="flex items-center gap-4 text-xs font-bold text-muted hover:text-[#011122] transition-colors cursor-pointer">
+                <div className="mt-8 pt-8 border-t border-white/10 space-y-4">
+                  <div className="flex items-center gap-4 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
                     <Phone className="w-4 h-4 text-gold" />
                     0481 33 44 58
                   </div>
-                  <div className="flex items-center gap-4 text-xs font-bold text-muted hover:text-[#011122] transition-colors cursor-pointer">
+                  <div className="flex items-center gap-4 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
                     <Mail className="w-4 h-4 text-gold" />
                     info@jjpropertypartner.com.au
                   </div>
