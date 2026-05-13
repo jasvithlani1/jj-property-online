@@ -12,6 +12,7 @@ export interface BlogPost {
   authorRole: string;
   coverImage: string;
   featured?: boolean;
+  seo?: { metaTitle: string; metaDescription: string; ogImage?: any };
 }
 
 export interface BlogSection {
@@ -25,6 +26,10 @@ export const blogPosts: BlogPost[] = [
     id: '1',
     slug: 'first-home-buyer-guide-confidence',
     title: 'How a First Home Buyer Buyers Agent Helps You Buy with Confidence',
+    seo: {
+      metaTitle: 'First Home Buyer Buyers Agent Australia | JJ Property Partner',
+      metaDescription: 'Learn how a first home buyer buyers agent helps Australians buy with confidence, avoid overpaying, and secure the right first home with expert support.'
+    },
     excerpt: 'Buying your first home is a major milestone. Professional guidance helps you navigate the complex Sydney market, avoid overpaying, and secure the right property with a clear strategy.',
     category: 'First Home',
     categoryColor: 'bg-gold/10 text-gold',

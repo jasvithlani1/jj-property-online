@@ -7,6 +7,7 @@ import { PortableText } from '@portabletext/react';
 import SEO from '../components/SEO';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
+import { blogPosts as localBlogPosts } from '../data/blogs';
 
 interface SanityPost {
  _id: string;
@@ -83,7 +84,46 @@ export default function BlogDetail() {
  "categories": categories[]->{ title, color },
  seo
  }`;
- const data = await client.fetch(query, { slug });
+ let data = await client.fetch(query, { slug });
+
+ if (!data) {
+   const localPost = localBlogPosts.find(p => p.slug === slug);
+   if (localPost) {
+     data = {
+       _id: localPost.id,
+       title: localPost.title,
+       slug: { current: localPost.slug },
+       excerpt: localPost.excerpt,
+       mainImage: { asset: { _ref: localPost.coverImage }, isLocal: true },
+       publishedAt: localPost.date,
+       body: localPost.content.map(section => {
+         if (section.type === 'list') {
+           return section.items?.map(item => ({
+             _type: 'block',
+             style: 'normal',
+             listItem: 'bullet',
+             children: [{ _type: 'span', text: item }]
+           }));
+         }
+         if (section.type === 'quote') {
+           return {
+             _type: 'block',
+             style: 'blockquote',
+             children: [{ _type: 'span', text: section.text }]
+           };
+         }
+         return {
+           _type: 'block',
+           style: section.type === 'heading' ? 'h2' : section.type === 'subheading' ? 'h3' : 'normal',
+           children: [{ _type: 'span', text: section.text }]
+         };
+       }).flat(),
+       author: { name: localPost.author, image: null, bio: localPost.authorRole },
+       categories: [{ title: localPost.category, color: localPost.categoryColor }],
+       seo: localPost.seo
+     };
+   }
+ }
  setPost(data);
 
  // Fetch other posts
