@@ -23,29 +23,100 @@ export interface BlogSection {
 export const blogPosts: BlogPost[] = [
   {
     id: '1',
-    slug: 'off-market-sydney-2025',
-    title: 'The Off-Market Advantage: Why the Best Sydney Properties Never Hit the Portals',
-    excerpt: 'In a city where public listings attract 30+ competing buyers within 48 hours, the real prize assets are traded quietly. Here\'s how to access them.',
-    category: 'Market Intelligence',
+    slug: 'first-home-buyer-guide-confidence',
+    title: 'How a First Home Buyer Buyers Agent Helps You Buy with Confidence',
+    excerpt: 'Buying your first home is a major milestone. Professional guidance helps you navigate the complex Sydney market, avoid overpaying, and secure the right property with a clear strategy.',
+    category: 'First Home',
     categoryColor: 'bg-gold/10 text-gold',
-    readTime: '6 min read',
-    date: 'March 28, 2026',
+    readTime: '8 min read',
+    date: 'May 13, 2026',
     author: 'Alex',
-    authorRole: 'Principal Advisor, JJ Property Partner',
-    coverImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1400',
+    authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
+    coverImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1400',
     featured: true,
     content: [
-      { type: 'paragraph', text: 'If you\'ve ever lost a Sydney auction to a buyer who "just knew" the vendor, you\'ve experienced the off-market gap firsthand. In premium Sydney suburbs, we estimate that between 25% and 40% of transactions in any given quarter never reach public portals. They are traded by phone, text, and trusted referral — within a tightly guarded network of agents, developers, and repeat clients.' },
-      { type: 'heading', text: 'What Is Off-Market Property?' },
-      { type: 'paragraph', text: 'An off-market property is one where the vendor has decided to sell without public advertising. This can happen for a range of reasons: they want privacy, they\'re testing price appetite, they have a personal connection to a particular buyer profile, or they simply trust their agent\'s judgment over a public campaign.' },
-      { type: 'paragraph', text: 'For vendors, the benefits are real: no styling costs, no open home disruption, no public price discovery that anchors their expectations too low. For most buyers — the ones scrolling Domain at 11pm — this entire market is invisible.' },
-      { type: 'heading', text: 'How Buyers Agents Access It' },
-      { type: 'paragraph', text: 'Access to off-market stock is built on professional relationships that take years to establish. Our network includes selling agents across all of Sydney\'s key markets — from Inner West terraces to Northern Beaches acreage — who will call us before a listing is formally prepared because they know we represent serious, pre-qualified buyers who will act decisively.' },
-      { type: 'list', items: ['Pre-market "whispers" from agents testing buyer appetite before committing to a campaign', 'Developer stock that hasn\'t been publicly launched, offered first to known buyer agent networks', 'Vendor-initiated private sales where an agent approaches one trusted counterpart', 'Post-auction negotiation on properties that were publicly passed in'] },
-      { type: 'quote', text: 'In 14 years of doing this, I\'ve never had a client overpay on an off-market deal. When emotional bidding is removed from the equation, price aligns with value.' },
-      { type: 'heading', text: 'The Price Advantage Is Real' },
-      { type: 'paragraph', text: 'Public auctions are deliberately designed to create competition, urgency, and emotional pricing. Off-market transactions remove all three. When you\'re the only buyer at the table — armed with independent valuation data — you negotiate from a position of complete information, not comparative fear.' },
-      { type: 'paragraph', text: 'Across our client acquisitions in 2025, off-market purchases averaged 8–14% below the equivalent publicly-campaigned comparable sale. On a $1.5M purchase, that\'s $120,000 to $210,000 in preserved capital — more than covering years of buyer\'s agent fees and leaving substantial equity in the asset from day one.' },
+      { type: 'paragraph', text: 'Buying your first home is one of the biggest financial and emotional decisions you will ever make. For many Australians, the process can feel exciting at first, but it quickly becomes overwhelming once you begin dealing with suburb research, borrowing limits, property inspections, contract reviews, auctions, negotiations, and fast-moving market competition.' },
+      { type: 'paragraph', text: 'A first home purchase is not just about finding a property you like. It is about buying the right home, in the right location, at the right price, with a clear strategy that protects your future. This is where a specialist first home buyer buyers agent can add real value. Instead of relying on guesswork, emotion, or pressure from selling agents, you gain professional guidance from someone who acts only in your best interests.' },
+      { type: 'paragraph', text: 'For first home buyers, having an experienced buyers agent on your side can help reduce stress, avoid costly mistakes, and create a more confident path into the property market.' },
+      
+      { type: 'heading', text: 'Understanding the First Home Buyer Journey' },
+      { type: 'paragraph', text: 'Buying your first home in Australia involves much more than browsing online listings and attending open homes. Before you make an offer, you need to understand your budget, borrowing capacity, deposit position, purchase costs, government support options, location priorities, and long-term lifestyle needs.' },
+      { type: 'paragraph', text: 'For many first home buyers, the early stages can be confusing because every decision affects the next one. Choosing the wrong suburb can limit growth potential. Overpaying for a property can place pressure on future finances. Missing key contract details can create settlement issues. Buying based only on emotion can lead to regret once the excitement fades.' },
+      { type: 'subheading', text: 'A well-planned first home buyer strategy should consider:' },
+      { type: 'list', items: [
+        'Your borrowing capacity and comfortable repayment range',
+        'Deposit size, stamp duty, lender fees, and other purchase costs',
+        'First home buyer grants, schemes, or concessions where applicable',
+        'Suburb performance, infrastructure, transport, schools, and amenities',
+        'Property condition, renovation risk, and future maintenance costs',
+        'Long-term lifestyle needs and potential resale appeal',
+        'Negotiation strategy before making an offer or bidding at auction'
+      ]},
+      { type: 'paragraph', text: 'For first home buyers, every step needs to be handled with care. A professional buyers agent helps you understand the process clearly, compare options properly, and make informed decisions instead of reacting under pressure.' },
+
+      { type: 'heading', text: 'Why Experience Matters for First Home Buyers' },
+      { type: 'paragraph', text: 'Many first home buyers enter the market with limited property experience, which can make it difficult to know whether a home is fairly priced, whether the suburb has strong long-term potential, or whether a property has hidden risks. Selling agents represent the vendor, not the buyer, so their role is to secure the best result for the seller.' },
+      { type: 'paragraph', text: 'That is why having an experienced first home buyer buyers agent matters. Alex brings practical property knowledge, strong research skills, and real-world investment experience to guide buyers through the purchase process. With a personal property portfolio worth more than $5 million across several Australian states, Alex understands what makes a property suitable not just for today, but for long-term value and financial security.' },
+      { type: 'paragraph', text: 'With more than 20 years of IT experience, Alex also applies a data-driven approach to property selection. This means first home buyers are not relying only on emotions or surface-level appeal. Each property is assessed through suburb data, market trends, comparable sales, rental demand, infrastructure, lifestyle factors, and future growth potential.' },
+      { type: 'paragraph', text: 'For first home buyers, this combination of personal experience, analytical research, and buyer-only representation provides a stronger foundation for making a confident purchase.' },
+
+      { type: 'heading', text: 'The Strategic Advantage of Using a First Home Buyer Buyers Agent' },
+      
+      { type: 'subheading', text: 'Getting Your Buying Strategy Right Before Searching' },
+      { type: 'paragraph', text: 'One of the most common mistakes first home buyers make is starting the property search before they have a clear buying strategy. They attend open homes, fall in love with properties, and then discover the home is outside their budget, unsuitable for lending, or not aligned with their long-term plans.' },
+      { type: 'paragraph', text: 'JJ Property Partner begins by helping you understand your goals, budget, lifestyle needs, borrowing position, and preferred locations. This gives you a clear buying framework before you start inspecting properties. Instead of searching randomly, you can focus on homes that genuinely suit your financial and personal situation.' },
+
+      { type: 'subheading', text: 'Property Selection Based on Lifestyle and Long-Term Value' },
+      { type: 'paragraph', text: 'Not every property that looks good online is a smart first home purchase. Some homes may have poor layouts, high maintenance issues, limited resale appeal, weak capital growth prospects, or location disadvantages that are not obvious during a short inspection.' },
+      { type: 'paragraph', text: 'A specialist buyers agent helps assess each property with a practical and strategic lens. JJ Property Partner looks at suburb fundamentals, comparable sales, local demand, future infrastructure, property condition, and long-term liveability. This helps first home buyers choose a property that supports both their lifestyle and future wealth position.' },
+
+      { type: 'subheading', text: 'Helping You Avoid Overpaying' },
+      { type: 'paragraph', text: 'In competitive markets, first home buyers can easily overpay due to emotion, fear of missing out, or uncertainty around true market value. A selling agent may guide price expectations in a way that benefits the vendor, but a buyers agent works to protect the buyer.' },
+      { type: 'paragraph', text: 'Alex reviews recent comparable sales, market conditions, property quality, and buyer demand before advising on a fair price range. Whether you are making a private treaty offer or bidding at auction, you receive a clear negotiation strategy designed to help you buy with discipline and confidence.' },
+
+      { type: 'subheading', text: 'Supporting Due Diligence Before You Commit' },
+      { type: 'paragraph', text: 'First home buyers often underestimate the importance of due diligence. A property may look suitable during an inspection, but contract terms, building issues, strata concerns, zoning restrictions, flood risks, or renovation defects can create expensive problems later.' },
+      { type: 'paragraph', text: 'JJ Property Partner helps coordinate the due diligence process by guiding buyers on the checks that should be completed before making a final commitment. This may include reviewing comparable sales, building and pest reports, strata information, contract considerations, and location risks with the right professionals.' },
+
+      { type: 'subheading', text: 'Negotiation and Auction Representation' },
+      { type: 'paragraph', text: 'Negotiating with experienced selling agents can be intimidating for first home buyers. Auctions can feel even more stressful, especially when emotions are high and bidding moves quickly.' },
+      { type: 'paragraph', text: 'A buyers agent gives you professional representation throughout this stage. Alex can handle negotiations, structure offers, communicate with agents, and represent you at auction where required. This helps remove emotion from the process and gives you a clearer, more controlled path to securing the right property.' },
+
+      { type: 'heading', text: 'Building Your First Home Buyer Strategy With Confidence' },
+      { type: 'paragraph', text: 'A strong first home buyer strategy is not only about purchasing a home. It is about setting yourself up for future stability. The right purchase can provide lifestyle comfort, financial security, and a strong base for future property decisions. JJ Property Partner supports first home buyers by helping them:' },
+      { type: 'list', items: [
+        'Understand what they can afford without overstretching',
+        'Identify suburbs that match lifestyle and long-term value goals',
+        'Compare properties using data, not guesswork',
+        'Avoid emotional buying and overpaying',
+        'Complete proper due diligence before committing',
+        'Negotiate with confidence',
+        'Move through settlement with greater clarity'
+      ]},
+      { type: 'paragraph', text: 'For first home buyers, the process becomes far easier when every step is guided by a clear plan and professional support.' },
+
+      { type: 'heading', text: 'Growing Future Wealth From Your First Property Purchase' },
+      { type: 'paragraph', text: 'Your first home can be more than a place to live. It can also become the foundation for future wealth. A well-selected first home may grow in value over time, create equity, and give you more options later, whether that means upgrading, renovating, refinancing, or building an investment portfolio.' },
+      { type: 'paragraph', text: 'Many buyers focus only on getting into the market, but the smarter approach is to buy with the future in mind. This means considering location strength, land value, property type, resale appeal, and future demand. JJ Property Partner helps first home buyers think beyond the immediate purchase and consider how today’s decision may support tomorrow’s opportunities.' },
+
+      { type: 'heading', text: 'Is a First Home Buyer Buyers Agent Right for You?' },
+      { type: 'paragraph', text: 'A first home buyer buyers agent may be the right fit if you:' },
+      { type: 'list', items: [
+        'Feel unsure about where or what to buy',
+        'Are worried about overpaying in a competitive market',
+        'Do not have time to research suburbs and inspect properties properly',
+        'Need help understanding market value and negotiation strategy',
+        'Want professional support at auction',
+        'Are buying in an unfamiliar location',
+        'Want to make a confident first purchase without unnecessary stress'
+      ]},
+      { type: 'paragraph', text: 'If you are unsure where to begin, a free strategy session can help you understand your next steps and decide whether professional support is right for your situation.' },
+
+      { type: 'heading', text: 'Conclusion' },
+      { type: 'paragraph', text: 'Buying your first home is a major milestone, but it does not need to feel confusing or stressful. With the right guidance, first home buyers can move through the market with greater clarity, avoid common mistakes, and make a purchase that supports both lifestyle and long-term financial goals.' },
+      { type: 'paragraph', text: 'JJ Property Partner helps first home buyers across Australia with data-led suburb research, property selection, due diligence, negotiation, auction support, and end-to-end buying guidance. With buyer-only representation and real-world property experience, Alex helps first home buyers make informed decisions with confidence.' },
+      
+      { type: 'quote', text: 'Free Strategy Session: Book your complimentary 30-minute first home buyer consultation with Alex today. Call / WhatsApp: 0481 33 44 58 | Email: info@jjpropertypartner.com.au' }
     ],
   },
   {
