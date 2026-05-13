@@ -267,7 +267,7 @@ export default function BlogDetail() {
  animate={{ opacity: 1 }}
  transition={{ duration: 0.6, delay: 0.3 }}
  >
- <PortableText value={post.body} components={ptComponents} />
+ {post.body ? <PortableText value={post.body} components={ptComponents} /> : <p className="text-muted">Content coming soon...</p>}
  </motion.div>
 
  {/* Author Bio */}
