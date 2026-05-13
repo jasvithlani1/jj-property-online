@@ -139,7 +139,7 @@ export default function CaseStudyDetail() {
       />
 
       {/* ── Editorial Hero ─────────────────────────────────────────────── */}
-      <section className="relative w-full pt-32 pb-16 overflow-hidden bg-[#011122]">
+      <section className="relative w-full pt-44 lg:pt-48 pb-16 overflow-hidden bg-[#011122]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-8 relative z-10">
