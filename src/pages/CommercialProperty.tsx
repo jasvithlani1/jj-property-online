@@ -89,7 +89,7 @@ export default function CommercialProperty() {
       
       <div className="w-full bg-white selection:bg-gold/20 ">
         {/* Hero Section */}
-        <section className="pt-28 md:pt-36 relative px-6 py-4 sm:px-8 sm:py-6 md: md:pb-8 bg-[#011122] text-white overflow-hidden">
+        <section className="pt-24 md:pt-28 relative px-6 py-2 sm:px-8 sm:py-4 md:pb-4 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -99,13 +99,11 @@ export default function CommercialProperty() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
-                {pageData?.hero?.badge || "Commercial Property Strategies with Investment Precision."}
+              <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-6 backdrop-blur-sm">
+                {pageData?.hero?.badge || "Commercial Property"}
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
-                {pageData?.hero?.heading || (
-                  <>Acquisition Strategies Engineered for <span className="text-gold">Investment Precision.</span></>
-                )}
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
+                {pageData?.hero?.heading || "Acquisition Strategies Engineered for Investment Precision."}
               </h1>
               <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
                 {pageData?.hero?.subheading || "Commercial property investment requires more than assumption. It needs structured market research, strategic acquisition planning, and expert execution to build long-term portfolio performance."}
@@ -115,8 +113,8 @@ export default function CommercialProperty() {
         </section>
 
         {/* Introduction Section */}
-        <section className="py-4 md:py-2 px-8 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="py-2 md:py-1 px-8 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -167,8 +165,8 @@ export default function CommercialProperty() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-2 md:py-6 px-6 md:px-8 bg-neutral-50">
-          <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
+        <section className="py-1 md:py-2 px-6 md:px-8 bg-neutral-50">
+          <div className="max-w-7xl mx-auto flex flex-col gap-8 md:gap-12">
             {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
               <motion.div
                 key={index}
@@ -214,7 +212,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* Strategic Portfolio Section */}
-        <section className="py-4 md:py-2 px-8 bg-[#011122] text-white overflow-hidden relative">
+        <section className="py-2 md:py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
@@ -301,18 +299,18 @@ export default function CommercialProperty() {
           </div>
         </section>
 
-        <section className="py-6 md:py-2 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="py-2 md:py-1 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-6">
+            <div className="text-center mb-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6"
+                className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4"
               >
                 {pageData?.readiness?.badge || "Commercial Investor Readiness"}
               </motion.div>
-              <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-8 leading-[1.1]">
+              <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-4 leading-[1.1]">
                 {pageData?.readiness?.heading || (
                   <>Is Commercial Property Investment <br /> <span className="text-gold ">Right for You?</span></>
                 )}
@@ -392,7 +390,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* Why JJ Property Partner Section */}
-        <section className="pt-6 md:pt-3 pb-8 md:pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="pt-2 pb-2 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-6">
@@ -437,7 +435,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
+        <section className="relative pt-2 pb-2 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
@@ -492,7 +490,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* CTA Section */}
-        <section className="pt-4 md:pt-6 pb-8 md:pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="pt-2 pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.div
