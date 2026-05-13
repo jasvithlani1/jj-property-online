@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
       metaTitle: 'First Home Buyer Buyers Agent Australia | JJ Property Partner',
       metaDescription: 'Learn how a first home buyer buyers agent helps Australians buy with confidence, avoid overpaying, and secure the right first home with expert support.'
     },
-    excerpt: 'Buying your first home is a major milestone. Professional guidance helps you navigate the complex Sydney market, avoid overpaying, and secure the right property with a clear strategy.',
+    excerpt: 'Learn how a specialist first home buyer buyers agent helps you navigate the market, avoid overpaying, and buy your first home with total confidence.',
     category: 'First Home',
     categoryColor: 'bg-gold/10 text-gold',
     readTime: '8 min read',
@@ -242,7 +242,7 @@ export const blogPosts: BlogPost[] = [
       metaTitle: 'Property Portfolio Buyer’s Agent Australia | JJ Property Partner',
       metaDescription: 'Learn how a property portfolio buyer’s agent in Australia helps investors build wealth through data-led research, strategy, and smart property acquisition.'
     },
-    excerpt: 'Building a strong property portfolio takes more than buying one good property. It requires clear planning, smart suburb selection, and a long-term strategy that supports your wealth goals.',
+    excerpt: 'Build a sustainable property portfolio with data-led research and strategic acquisition planning. Learn how a portfolio buyers agent helps Australians grow long-term wealth.',
     category: 'Property Investors',
     categoryColor: 'bg-gold/10 text-gold',
     readTime: '9 min read',
