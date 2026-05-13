@@ -172,7 +172,7 @@ export default function Blog() {
  <div className="relative h-56 overflow-hidden">
  {post.mainImage ? (
  <img
- src={urlFor(post.mainImage).width(800).height(600).url()}
+ src={post.mainImage.isLocal ? post.mainImage.asset._ref : urlFor(post.mainImage).width(800).height(600).url()}
  alt={post.mainImage?.alt || post.title}
  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
  />

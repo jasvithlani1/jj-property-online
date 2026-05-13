@@ -242,7 +242,7 @@ export default function BlogDetail() {
  <div className="max-w-5xl mx-auto h-[45vh] md:h-[55vh] rounded-[2.5rem] overflow-hidden">
  {post.mainImage ? (
  <img
- src={urlFor(post.mainImage).url()}
+ src={post.mainImage.isLocal ? post.mainImage.asset._ref : urlFor(post.mainImage).url()}
  alt={post.mainImage?.alt || post.title}
  className="w-full h-full object-cover"
  />
