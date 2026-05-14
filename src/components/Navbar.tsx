@@ -57,7 +57,6 @@ export default function Navbar() {
 
           {/* Group 2: Socials with a clear visual separator on mobile */}
           <div className="flex items-center gap-3 md:gap-5 border-l border-white/10 pl-3 sm:border-none sm:pl-0">
-            <span className="hidden sm:inline text-gold/60 text-[9px] uppercase tracking-[0.2em] mr-1">Socials</span>
             <div className="flex items-center gap-3 sm:gap-4">
               <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
               <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
