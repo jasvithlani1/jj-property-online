@@ -752,7 +752,7 @@ export default function Home() {
                 <h2 className="text-[5.5vw] xs:text-[5vw] sm:text-4xl md:text-6xl lg:text-7xl font-serif text-black leading-tight mb-1 !whitespace-nowrap">
                   Real world results. <span className="text-gold">The JJ Advantage.</span>
                 </h2>
-                <p className="text-muted text-lg font-sans max-w-lg">From first homes to elite investments — curated results that define our standard.</p>
+                <p className="text-muted text-lg font-sans max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
               </div>
               <Link
                 href="/case-studies"
