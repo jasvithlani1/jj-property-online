@@ -23,7 +23,7 @@ export const acquisitions: Acquisition[] = [
     "size": "760 sqm",
     "growth": "+136,000",
     "yield": "5.65%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/prop_1.png"
   },
   {
     "name": "Ragu and Devi",
@@ -35,7 +35,7 @@ export const acquisitions: Acquisition[] = [
     "size": "662 sqm",
     "growth": "+115,000",
     "yield": "5.34%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/prop_2.png"
   },
   {
     "name": "Kumar and Bharka",
@@ -47,7 +47,7 @@ export const acquisitions: Acquisition[] = [
     "size": "1,012 sqm",
     "growth": "+136,000",
     "yield": "6.1%",
-    "image": "/images/acquisitions/modern_duplex.png"
+    "image": "/images/acquisitions/prop_3.png"
   },
   {
     "name": "Priya and Rathan",
@@ -59,7 +59,7 @@ export const acquisitions: Acquisition[] = [
     "size": "715 sqm",
     "growth": "+107,000",
     "yield": "4.4%",
-    "image": "/images/acquisitions/modern_estate.png"
+    "image": "/images/acquisitions/prop_4.png"
   },
   {
     "name": "Shan and Janaki",
@@ -71,7 +71,7 @@ export const acquisitions: Acquisition[] = [
     "size": "602 sqm",
     "growth": "+188,000",
     "yield": "5.27%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/prop_5.png"
   },
   {
     "name": "Mamatha and Hari",
