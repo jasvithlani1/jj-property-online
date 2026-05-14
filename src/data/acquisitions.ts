@@ -107,7 +107,7 @@ export const acquisitions: Acquisition[] = [
     "size": "559 sqm",
     "growth": "+75,000",
     "yield": "5.43%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/modern_estate.png"
   },
   {
     "name": "Naveen & Jayasree",
@@ -143,7 +143,7 @@ export const acquisitions: Acquisition[] = [
     "size": "339 sqm",
     "growth": "+30,000",
     "yield": "4.77%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/modern_duplex.png"
   },
   {
     "name": "Amit",
