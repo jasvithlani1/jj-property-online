@@ -642,7 +642,7 @@ export default function Home() {
  <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3 shadow-sm">
  How We Work
  </div>
- <h2 className="text-5xl md:text-7xl font-serif mb-2 leading-tight text-[#011122]">
+ <h2 className="text-5xl md:text-7xl font-serif mb-2 leading-[1.0] text-[#011122]">
  {homeData?.processSection?.heading ? (
  <>
  {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-serif">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
@@ -871,12 +871,12 @@ export default function Home() {
 
  <div className="lg:col-span-8 flex flex-col gap-2">
  {(homeData?.faqs || faqs).map((faq: any, index: number) => (
- <div key={index} className="border-b border-black/10 pb-2">
+ <div key={index} className="border-b border-black/10">
  <button
  onClick={() => setOpenFaq(openFaq === index ? null : index)}
  aria-expanded={openFaq === index}
  aria-controls={`faq-answer-${index}`}
- className="w-full flex items-center justify-between py-3 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+ className="w-full flex items-center justify-between py-2 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
  >
  <span className={`text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
  {faq.question}
@@ -922,7 +922,7 @@ export default function Home() {
  <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3 shadow-sm">
  Take the next step
  </div>
- <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-2">
+ <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.0] mb-1">
  Book your <span className="text-gold">strategy session.</span>
  </h2>
  <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
