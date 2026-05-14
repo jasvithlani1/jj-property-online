@@ -37,11 +37,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-8">
 
           {/* Logo & Info Column */}
-          <div className="md:col-span-2 lg:col-span-2 flex flex-col items-start text-left">
+          <div className="md:col-span-2 lg:col-span-2 flex flex-col items-center text-center">
             <Link
               href="/"
               aria-label="JJ Property Partner – Home"
-              className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 md:mb-8"
+              className="group flex flex-col items-center justify-center text-center gap-4 sm:gap-6 mb-6 md:mb-8"
             >
               <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
                 <img src="/logo.png?v=4" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
@@ -51,13 +51,13 @@ export default function Footer() {
                 <div className="font-sans font-bold text-xs tracking-[0.25em] text-gold leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
-            <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mb-8 lg:mb-0">
+            <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mx-auto mb-8 lg:mb-0">
               Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col items-start text-left lg:col-span-1">
+          <div className="flex flex-col items-center text-center lg:col-span-1">
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 md:mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Navigation</h4>
             <ul className="space-y-4 font-sans text-white/60 text-sm">
               {navLinks.map((link) => (
@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="flex flex-col items-start text-left lg:col-span-1">
+          <div className="flex flex-col items-center text-center lg:col-span-1">
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 md:mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Services</h4>
             <ul className="space-y-4 font-sans text-white/60 text-sm">
               {serviceLinks.map((link) => (
@@ -93,31 +93,31 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col items-start text-left lg:col-span-1">
+          <div className="flex flex-col items-center text-center lg:col-span-1">
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 md:mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
             <ul className="space-y-6 font-sans text-white/60">
-              <li className="flex flex-col items-start gap-2">
+              <li className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Mail className="w-4 h-4 text-gold" />
                   <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Email</span>
                 </div>
                 <Link href="mailto:info@jjpropertypartner.com.au" className="hover:text-gold transition-colors text-sm break-all md:break-normal text-white/80">info@jjpropertypartner.com.au</Link>
               </li>
-              <li className="flex flex-col items-start gap-2">
+              <li className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Phone className="w-4 h-4 text-gold" />
                   <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Call</span>
                 </div>
                 <Link href="tel:+61481334458" className="text-sm hover:text-gold transition-colors text-white/80">+61 481 334 458</Link>
               </li>
-              <li className="flex flex-col items-start gap-2">
+              <li className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Hash className="w-4 h-4 text-gold" />
                   <span className="text-[11px] font-bold uppercase tracking-widest text-gold">ABN</span>
                 </div>
                 <span className="text-sm text-white/80">71 687 187 113</span>
               </li>
-              <li className="flex flex-col items-start gap-2">
+              <li className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Award className="w-4 h-4 text-gold" />
                   <span className="text-[11px] font-bold uppercase tracking-widest text-gold">License</span>
@@ -130,8 +130,8 @@ export default function Footer() {
         </div>
 
         {/* Socials */}
-        <div className="mt-4 border-t border-white/5 pt-6 md:pt-8 flex flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
-          <div className="flex flex-col items-start text-left">
+        <div className="mt-4 border-t border-white/5 pt-6 md:pt-8 flex flex-col items-center justify-center gap-6">
+          <div className="flex flex-col items-center text-center">
             <p className="text-[13px] font-bold uppercase tracking-[0.4em] text-gold mb-4">Follow Our Journey</p>
             <div className="flex items-center gap-4">
               {socialLinks.map((s) => (
@@ -151,7 +151,7 @@ export default function Footer() {
 
       {/* Copyright Bar */}
       <div className="border-t border-white/5 py-6 px-8 relative">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-white/40 font-sans gap-4 text-left">
+        <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-xs text-white/40 font-sans gap-4 text-center">
           <p>© Copyright 2026 JJ Property Partner. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-gold transition-colors">Privacy Policy</Link>
