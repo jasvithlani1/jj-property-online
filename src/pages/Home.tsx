@@ -95,19 +95,19 @@ const faqs = [
 const heroSlides = [
   {
     heading: (
-      <>Strategist. <span className="text-gold font-serif">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold font-serif">Dedicated</span> Advocate.</>
+      <>Strategist. <span className="text-gold font-sans font-black">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold font-sans font-black">Dedicated</span> Advocate.</>
     ),
     subheading: "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."
   },
   {
     heading: (
-      <>Buy with <span className="text-gold font-serif">Data.</span> <br className="hidden md:block" /> Negotiate with <span className="text-gold font-serif">Power.</span></>
+      <>Buy with <span className="text-gold font-sans font-black">Data.</span> <br className="hidden md:block" /> Negotiate with <span className="text-gold font-sans font-black">Power.</span></>
     ),
     subheading: "We level the playing field by providing exclusive off-market access and deep analytical rigor to every acquisition."
   },
   {
     heading: (
-      <>Your <span className="text-gold font-serif">Success</span> <br className="hidden md:block" /> is our only <span className="text-gold font-serif">Brief.</span></>
+      <>Your <span className="text-gold font-sans font-black">Success</span> <br className="hidden md:block" /> is our only <span className="text-gold font-sans font-black">Brief.</span></>
     ),
     subheading: "Independent, transparent, and results-driven. We represent you exclusively to secure the best possible terms in any market."
   }
@@ -356,7 +356,7 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-center w-full"
               >
-                <h1 className="text-4xl xs:text-[40px] sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
+                <h1 className="text-4xl xs:text-[40px] sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-sans font-black drop-shadow-lg px-4 sm:px-0">
                   {heroSlides[currentSlide].heading}
                 </h1>
 
@@ -404,7 +404,7 @@ export default function Home() {
                 Principal Advisor
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-serif text-black leading-[1.05] mb-3">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.05] mb-3">
                 {homeData?.aboutPreview?.heading ? (
                   <>
                     {homeData.aboutPreview.heading.replace(/Dedicated Buyer Advocate\.?/gi, '').trim().replace(/\.+$/, '')}. <br />
@@ -443,12 +443,12 @@ export default function Home() {
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-1.5 sm:mb-2">Licence No.</span>
-                    <span className="text-lg sm:text-2xl font-serif text-white whitespace-nowrap">20543356</span>
+                    <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">20543356</span>
                   </div>
                   <div className="w-px h-10 bg-gold/20"></div>
                   <div className="flex flex-col">
                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-1.5 sm:mb-2">ABN</span>
-                    <span className="text-lg sm:text-2xl font-serif text-white whitespace-nowrap">71 687 187 113</span>
+                    <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">71 687 187 113</span>
                   </div>
                 </div>
               </div>
@@ -483,8 +483,8 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-4 relative">
               <div className="relative">
-                <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-gold/5 -z-10 pointer-events-none select-none">Services</div>
-                <h2 className="text-4xl md:text-5xl font-serif text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
+                <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none">Services</div>
+                <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
@@ -532,7 +532,7 @@ export default function Home() {
                               {service.icon || servicesPreview.find((s: any) => s.title === service.title)?.icon || servicesPreview[index]?.icon}
                             </div>
                           </div>
-                          <h3 className={`text-2xl md:text-3xl font-serif leading-tight ${index % 2 === 0 ? 'text-white' : 'text-black font-semibold'}`}>
+                          <h3 className={`text-2xl md:text-3xl font-sans font-black leading-tight ${index % 2 === 0 ? 'text-white' : 'text-black font-semibold'}`}>
                             {service.title}
                           </h3>
                         </div>
@@ -576,7 +576,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight mb-3">
+                <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-3">
                   {homeData?.differenceSection?.heading ? (
                     <>
                       {homeData.differenceSection.heading} <br />
@@ -642,13 +642,13 @@ export default function Home() {
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3 shadow-sm">
                 How We Work
               </div>
-              <h2 className="text-4xl md:text-5xl font-serif mb-2 leading-[1.0] text-[#011122]">
+              <h2 className="text-4xl md:text-5xl font-sans font-black mb-2 leading-[1.0] text-[#011122]">
                 {homeData?.processSection?.heading ? (
                   <>
-                    {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-serif">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
+                    {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-sans font-black">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
                   </>
                 ) : (
-                  <>Our Proven <span className="text-gold font-serif">5-Step</span> Buying Approach</>
+                  <>Our Proven <span className="text-gold font-sans font-black">5-Step</span> Buying Approach</>
                 )}
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
@@ -697,12 +697,12 @@ export default function Home() {
                     className="flex flex-col items-center text-center group"
                   >
                     {/* Circle Marker */}
-                    <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center text-[#011122] text-2xl font-serif mb-4 shadow-[0_8px_30px_rgb(200,169,106,0.3)] group-hover:scale-110 transition-transform duration-500 relative">
+                    <div className="w-16 h-16 rounded-full bg-gold flex items-center justify-center text-[#011122] text-2xl font-sans font-black mb-4 shadow-[0_8px_30px_rgb(200,169,106,0.3)] group-hover:scale-110 transition-transform duration-500 relative">
                       {item.num || (i + 1)}
                       <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-20 pointer-events-none group-hover:block hidden" />
                     </div>
 
-                    <h3 className="text-lg font-serif text-[#011122] mb-1 leading-tight font-medium">
+                    <h3 className="text-lg font-sans font-black text-[#011122] mb-1 leading-tight font-medium">
                       {item.title}
                     </h3>
                     <p className="text-base text-muted leading-relaxed font-sans px-4">
@@ -735,7 +735,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="relative z-10"
           >
-            <h2 className="text-3xl md:text-5xl font-serif mb-4 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
+            <h2 className="text-3xl md:text-5xl font-sans font-black mb-4 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
               Start your Real Estate <br className="hidden md:block" />success story.
             </h2>
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
@@ -749,7 +749,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-3">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black leading-tight mb-1 !whitespace-nowrap">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1 !whitespace-nowrap">
                   Real world results. <span className="text-gold">The JJ Advantage.</span>
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
@@ -790,10 +790,10 @@ export default function Home() {
                     <div className="p-5 flex flex-col flex-1">
                       <div className="mb-2">
                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
-                        <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
+                        <h3 className="text-2xl font-sans font-black text-black mb-1">{story.title}</h3>
                         <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
                       </div>
-                      <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
+                      <p className="text-muted font-sans font-black text-base flex-1">"{story.shortQuote}"</p>
                       <div className="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
                         <Quote className="w-3.5 h-3.5" />
                         Read Story
@@ -813,12 +813,12 @@ export default function Home() {
         <section id="reviews" className="relative py-1 md:py-2 bg-white overflow-hidden flex flex-col items-center">
           <div className="mb-1 md:mb-2 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-4xl font-serif text-black font-bold">5.0</span>
+              <span className="text-4xl font-sans font-black text-black font-bold">5.0</span>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
               </div>
             </div>
-            <h2 className="text-2xl md:text-4xl font-serif text-black mb-1">Google Verified Results</h2>
+            <h2 className="text-2xl md:text-4xl font-sans font-black text-black mb-1">Google Verified Results</h2>
             <p className="text-muted font-sans text-sm tracking-widest uppercase">Trusted by Australia's premium buyers</p>
           </div>
 
@@ -839,7 +839,7 @@ export default function Home() {
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
-                <p className="text-black font-serif text-base leading-snug mb-3 line-clamp-4 md:line-clamp-5 overflow-hidden">
+                <p className="text-black font-sans font-black text-base leading-snug mb-3 line-clamp-4 md:line-clamp-5 overflow-hidden">
                   "{review.text}"
                 </p>
                 <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
@@ -862,7 +862,7 @@ export default function Home() {
         <section className="relative py-1 md:py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight mb-3">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-3">
                 Frequently <br />
                 <span className="text-gold">asked questions.</span>
               </h2>
@@ -922,7 +922,7 @@ export default function Home() {
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3 shadow-sm">
                 Take the next step
               </div>
-              <h2 className="text-4xl md:text-5xl font-serif text-black leading-[1.0] mb-1">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.0] mb-1">
                 Book your <span className="text-gold">strategy session.</span>
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
