@@ -392,14 +392,14 @@ export default function Home() {
 
         {/* ── About Alex Preview ───────────────────────────────────────────── */}
         <section id="about" className="relative z-10 py-1 md:py-2 px-8 bg-gradient-to-b from-white to-neutral-50">
-          <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-2 shadow-sm scale-110 origin-center mx-auto">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-2 shadow-sm scale-110 origin-left">
                 <span className="block w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
                 Principal Advisor
               </div>
@@ -418,7 +418,7 @@ export default function Home() {
                 )}
               </h2>
 
-              <div className="space-y-2 text-lg text-muted leading-relaxed max-w-xl font-sans mx-auto">
+              <div className="space-y-2 text-lg text-muted leading-relaxed max-w-xl font-sans">
                 {homeData?.aboutPreview?.description ? (
                   homeData.aboutPreview.description.split('\n\n').map((paragraph: string, i: number) => (
                     <p key={i}>{paragraph}</p>
@@ -431,14 +431,14 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="mt-3 flex items-center justify-center gap-4 w-full">
+              <div className="mt-3 flex items-center gap-4">
                 <Link href="/about" className="group text-sm font-bold uppercase tracking-widest text-black flex items-center gap-2">
                   {homeData?.aboutPreview?.ctaText || "Read Full Profile"}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 
-              <div className="mt-2 p-4 sm:p-5 sm:px-6 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit mx-auto">
+              <div className="mt-2 p-4 sm:p-5 sm:px-6 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl inline-flex items-center gap-6 relative overflow-hidden group/box w-fit">
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col">
@@ -459,7 +459,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: 'easeOut' }}
-              className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl w-full max-w-md mx-auto"
+              className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
             >
               <img
                 src="/advisor-parramatta.png"
@@ -481,11 +481,11 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
 
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center text-center justify-center mb-6 gap-4 relative">
-              <div className="relative w-full max-w-2xl mx-auto">
-                <div className="absolute left-1/2 -translate-x-1/2 -top-12 text-[10rem] md:text-[12rem] font-serif text-gold/5 -z-10 pointer-events-none select-none">Services</div>
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-4 relative">
+              <div className="relative">
+                <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-gold/5 -z-10 pointer-events-none select-none">Services</div>
                 <h2 className="text-5xl md:text-7xl font-serif text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
-                <p className="text-muted text-xl font-sans max-w-2xl mx-auto leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
+                <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
 
@@ -513,7 +513,7 @@ export default function Home() {
                     <Link
                       key={service.title}
                       href={`/services#${service.anchor}`}
-                      className={`group shrink-0 snap-start w-[85vw] md:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-5rem)/3)] relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-center text-center ${index % 2 === 0
+                      className={`group shrink-0 snap-start w-[85vw] md:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-5rem)/3)] relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index % 2 === 0
                         ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 md:z-20'
                         : 'bg-white border-black/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-gold/10'
                         }`}
@@ -523,9 +523,9 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.8, delay: index * 0.15 }}
-                        className="w-full h-full flex flex-col items-center"
+                        className="w-full h-full flex flex-col items-start"
                       >
-                        <div className="flex flex-col items-center gap-4 mb-4 w-full">
+                        <div className="flex items-center gap-4 mb-4 w-full">
                           <div className={`p-4 rounded-2xl shrink-0 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${index % 2 === 0 ? 'bg-gold text-white shadow-[0_0_30px_rgba(200,169,106,0.3)]' : `bg-gold/5 text-gold group-hover:bg-gold group-hover:text-white`
                             }`}>
                             <div className="w-7 h-7 flex items-center justify-center">
@@ -569,9 +569,9 @@ export default function Home() {
         {/* ── Difference Section ───────────────────────────────────────────── */}
         <section className="pt-1 pb-1 md:pt-2 md:pb-2 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center text-center gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
@@ -589,10 +589,10 @@ export default function Home() {
                     </>
                   )}
                 </h2>
-                <p className="text-base text-muted font-sans leading-relaxed mb-6 max-w-xl mx-auto">
+                <p className="text-base text-muted font-sans leading-relaxed mb-3 max-w-xl">
                   Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
                 </p>
-                <div className="space-y-4 flex flex-col items-center w-full max-w-xl mx-auto">
+                <div className="space-y-4">
                   {(homeData?.differenceSection?.points || [
                     "100% buyer's agent representation — no ties to developers",
                     "Built on real experience with a personal $6M+ portfolio",
@@ -603,7 +603,7 @@ export default function Home() {
                     "Australia-wide support guided by performance data",
                     "5-star Google reviewed — verified results"
                   ]).map((item: string, i: number) => (
-                    <div key={i} className="flex items-center justify-center gap-4 text-lg text-muted font-sans text-center">
+                    <div key={i} className="flex items-center gap-4 text-lg text-muted font-sans">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
                       {item}
                     </div>
@@ -747,12 +747,12 @@ export default function Home() {
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
         <section id="case-studies" className="relative py-1 md:py-2 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col items-center text-center justify-center mb-6 gap-4">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-3">
               <div>
                 <h2 className="text-[5.5vw] xs:text-[5vw] sm:text-4xl md:text-6xl lg:text-7xl font-serif text-black leading-tight mb-1 !whitespace-nowrap">
                   Real world results. <span className="text-gold">The JJ Advantage.</span>
                 </h2>
-                <p className="text-muted text-lg font-sans max-w-xl mx-auto md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
+                <p className="text-muted text-lg font-sans max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
               </div>
               <Link
                 href="/case-studies"
@@ -787,14 +787,14 @@ export default function Home() {
                         height={450}
                       />
                     </div>
-                    <div className="p-5 flex flex-col flex-1 items-center text-center">
+                    <div className="p-5 flex flex-col flex-1">
                       <div className="mb-2">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2 text-center">{story.location}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-2">{story.location}</span>
                         <h3 className="text-2xl font-serif text-black mb-1">{story.title}</h3>
                         <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
                       </div>
                       <p className="text-muted font-serif text-base flex-1">"{story.shortQuote}"</p>
-                      <div className="mt-3 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
+                      <div className="mt-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
                         <Quote className="w-3.5 h-3.5" />
                         Read Story
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -835,14 +835,14 @@ export default function Home() {
             onMouseUp={() => { setIsReviewPaused(false); isDragging.current = false; }}
           >
             {[...reviews, ...reviews, ...reviews, ...reviews].map((review, i) => (
-              <div key={`r-${i}`} className="w-80 md:w-96 p-5 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col items-center text-center h-[280px] md:h-[300px]">
+              <div key={`r-${i}`} className="w-80 md:w-96 p-5 rounded-3xl bg-neutral-50 border border-black/5 hover:border-black/10 transition-colors shrink-0 flex flex-col h-[280px] md:h-[300px]">
                 <div className="flex items-center gap-1 mb-2">
                   {[...Array(review.rating)].map((_, j) => <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
                 </div>
                 <p className="text-black font-serif text-base leading-snug mb-3 line-clamp-4 md:line-clamp-5 overflow-hidden">
                   "{review.text}"
                 </p>
-                <div className="mt-auto flex flex-col items-center gap-3 pt-4 border-t border-black/5 w-full">
+                <div className="mt-auto flex items-center gap-3 pt-4 border-t border-black/5">
                   {('authorImage' in review && review.authorImage) ? (
                     <img src={review.authorImage} alt={review.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
                   ) : (
@@ -860,8 +860,8 @@ export default function Home() {
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
         <section className="relative py-1 md:py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
-          <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
-            <div className="w-full flex flex-col items-center">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-4">
               <h2 className="text-5xl md:text-6xl font-serif text-black leading-tight mb-3">
                 Frequently <br />
                 <span className="text-gold">asked questions.</span>
@@ -869,14 +869,14 @@ export default function Home() {
               <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
             </div>
 
-            <div className="w-full flex flex-col gap-2">
+            <div className="lg:col-span-8 flex flex-col gap-2">
               {(homeData?.faqs || faqs).map((faq: any, index: number) => (
                 <div key={index} className="border-b border-black/10">
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     aria-expanded={openFaq === index}
                     aria-controls={`faq-answer-${index}`}
-                    className="w-full flex flex-col items-center justify-center py-4 text-center hover:bg-neutral-50 rounded-xl px-4 transition-colors group cursor-pointer gap-2"
+                    className="w-full flex items-center justify-between py-2 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
                     <span className={`text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
@@ -900,7 +900,7 @@ export default function Home() {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <p className="text-base text-muted font-sans leading-relaxed pb-4 px-4 text-center">{faq.answer}</p>
+                        <p className="text-base text-muted font-sans leading-relaxed pb-4 pl-2 pr-8">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
