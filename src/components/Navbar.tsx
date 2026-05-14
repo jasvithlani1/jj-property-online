@@ -107,7 +107,7 @@ export default function Navbar() {
                 <Link
                   href={link.path}
                   aria-label={link.name}
-                  className={`group relative text-[13px] 2xl:text-sm font-medium transition-colors hover:text-gold cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${isActive(link.path) ? 'text-gold' : 'text-white/60'}`}
+                  className={`group relative text-[11px] 2xl:text-xs font-bold uppercase tracking-widest transition-colors hover:text-gold cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${isActive(link.path) ? 'text-gold' : 'text-white/60'}`}
                 >
                   {link.name}
                   {link.name === 'Services' && (
