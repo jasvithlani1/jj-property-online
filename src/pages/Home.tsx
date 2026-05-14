@@ -404,7 +404,7 @@ export default function Home() {
                 Principal Advisor
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-serif text-black leading-[1.05] mb-3">
+              <h2 className="text-4xl md:text-5xl font-serif text-black leading-[1.05] mb-3">
                 {homeData?.aboutPreview?.heading ? (
                   <>
                     {homeData.aboutPreview.heading.replace(/Dedicated Buyer Advocate\.?/gi, '').trim().replace(/\.+$/, '')}. <br />
@@ -484,7 +484,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-4 relative">
               <div className="relative">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-serif text-gold/5 -z-10 pointer-events-none select-none">Services</div>
-                <h2 className="text-4xl md:text-7xl font-serif text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
+                <h2 className="text-4xl md:text-5xl font-serif text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
@@ -576,7 +576,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-6xl font-serif text-black leading-tight mb-3">
+                <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight mb-3">
                   {homeData?.differenceSection?.heading ? (
                     <>
                       {homeData.differenceSection.heading} <br />
@@ -642,7 +642,7 @@ export default function Home() {
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3 shadow-sm">
                 How We Work
               </div>
-              <h2 className="text-4xl md:text-7xl font-serif mb-2 leading-[1.0] text-[#011122]">
+              <h2 className="text-4xl md:text-5xl font-serif mb-2 leading-[1.0] text-[#011122]">
                 {homeData?.processSection?.heading ? (
                   <>
                     {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-serif">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
@@ -735,7 +735,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="relative z-10"
           >
-            <h2 className="text-3xl md:text-6xl font-serif mb-4 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
+            <h2 className="text-3xl md:text-5xl font-serif mb-4 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
               Start your Real Estate <br className="hidden md:block" />success story.
             </h2>
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
@@ -749,7 +749,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-3">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-black leading-tight mb-1 !whitespace-nowrap">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-black leading-tight mb-1 !whitespace-nowrap">
                   Real world results. <span className="text-gold">The JJ Advantage.</span>
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
@@ -818,7 +818,7 @@ export default function Home() {
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
               </div>
             </div>
-            <h2 className="text-2xl md:text-3xl font-serif text-black mb-1">Google Verified Results</h2>
+            <h2 className="text-2xl md:text-4xl font-serif text-black mb-1">Google Verified Results</h2>
             <p className="text-muted font-sans text-sm tracking-widest uppercase">Trusted by Australia's premium buyers</p>
           </div>
 
@@ -862,7 +862,7 @@ export default function Home() {
         <section className="relative py-1 md:py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl md:text-6xl font-serif text-black leading-tight mb-3">
+              <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight mb-3">
                 Frequently <br />
                 <span className="text-gold">asked questions.</span>
               </h2>
@@ -922,7 +922,7 @@ export default function Home() {
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3 shadow-sm">
                 Take the next step
               </div>
-              <h2 className="text-4xl md:text-6xl font-serif text-black leading-[1.0] mb-1">
+              <h2 className="text-4xl md:text-5xl font-serif text-black leading-[1.0] mb-1">
                 Book your <span className="text-gold">strategy session.</span>
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
