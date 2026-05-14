@@ -42,82 +42,8 @@ export default function About() {
  
  <div className="w-full bg-white selection:bg-gold/20 ">
 
- {/* Hero Section */}
- <section className="relative pt-28 md:pt-36 pb-3 md:pb-4 bg-[#011122] overflow-hidden">
- {/* Abstract Background Elements */}
- <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/10 blur-[160px] rounded-full -mr-96 -mt-96 pointer-events-none" />
- <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[140px] rounded-full -ml-48 -mb-48 pointer-events-none" />
- 
- <div className="max-w-7xl mx-auto px-8 relative z-10 text-center">
- <div className="max-w-5xl mx-auto flex flex-col items-center">
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.6 }}
- className="inline-block px-6 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-bold uppercase tracking-[0.3em] mb-8 backdrop-blur-sm"
- >
- {aboutData?.hero?.badge || "About JJ Property Partner"}
- </motion.div>
- 
- <motion.h1
- initial={{ opacity: 0, y: 30 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.8, delay: 0.1 }}
- className="text-[4.2vw] font-serif text-white leading-[1.05] mb-6 !whitespace-nowrap w-full tracking-tighter"
- >
- {aboutData?.hero?.heading ? (
- <>
- {aboutData.hero.heading.replace('<br />', '').replace('<br>', '')}
- </>
- ) : (
- <>Buy Property With <span className="text-gold">Absolute Confidence.</span></>
- )}
- </motion.h1>
- 
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.8, delay: 0.2 }}
- className="flex flex-col items-center text-center gap-6"
- >
- <div className="h-px w-24 bg-gold/40" />
- <p className="text-xl md:text-2xl text-white/60 font-sans max-w-2xl leading-relaxed">
- {aboutData?.hero?.subheading || "We bring analytical precision to the property market, treating every client’s acquisition with the same rigor as our own."}
- </p>
- </motion.div>
- </div>
- </div>
-
- {/* Floating Image Card */}
- <div className="max-w-7xl mx-auto px-8 mt-8 relative z-20">
- <motion.div
- initial={{ opacity: 0, y: 60 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 1, delay: 0.4 }}
- className="relative h-[400px] md:h-[550px] rounded-[3rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-white/10"
- >
- <img
- src={aboutData?.hero?.image ? urlFor(aboutData.hero.image).url() : "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"}
- alt="Premium Property Architecture"
- className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-[1.1]"
- />
- <div className="absolute inset-0 bg-gradient-to-t from-[#011122] via-transparent to-transparent opacity-60" />
- 
- {/* Mission Badge */}
- <div className="absolute bottom-10 right-10 hidden md:block">
- <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] max-w-sm">
- <p className="text-gold font-sans text-xs font-bold uppercase tracking-[0.2em] mb-4">{aboutData?.hero?.badge || "Our Vision"}</p>
- <p className="text-white text-lg font-serif leading-relaxed">
- {aboutData?.hero?.missionBadge || "\"To empower Australians with data-driven insights and professional representation that turns the property journey into a success story.\""}
- </p>
- </div>
- </div>
- </motion.div>
- </div>
- </section>
-
- {/* Profile Section */}
- <section className="pt-3 md:pt-6 pb-8 md:pb-4 px-8 bg-white">
+  {/* Profile Section (New Hero) */}
+  <section className="pt-28 md:pt-36 pb-8 md:pb-4 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
  <motion.div
@@ -153,7 +79,7 @@ export default function About() {
  >
  <div className="space-y-4">
  <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.4em]">Our Story</span>
- <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#011122] leading-tight">
+ <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif text-[#011122] leading-tight">
  {aboutData?.profile?.heading ? (
  <>
  {aboutData.profile.heading.split(',')[0]}, <br />
@@ -165,7 +91,7 @@ export default function About() {
  <span className="text-gold ">Built on Experience.</span>
  </>
  )}
- </h2>
+ </h1>
  </div>
  
  <div className="space-y-3 text-lg text-muted font-sans leading-relaxed">
