@@ -406,11 +406,11 @@ export default function Home() {
  </div>
 
  <h2 className="text-5xl md:text-6xl font-serif text-black leading-[1.05] mb-3">
- {homeData?.aboutPreview?.heading ? (
- <>
- {homeData.aboutPreview.heading.split('.').slice(0, -1).join('.')} <br />
- <span className="text-gold">{homeData.aboutPreview.subheading}</span>
- </>
+  {homeData?.aboutPreview?.heading ? (
+  <>
+  {homeData.aboutPreview.heading.replace(/Dedicated Buyer Advocate\.?/gi, '').replace(/\.$/, '').trim()}. <br />
+  <span className="text-gold">{homeData.aboutPreview.subheading}</span>
+  </>
  ) : (
  <>
  Property Strategist. <br />
