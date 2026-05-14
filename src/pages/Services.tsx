@@ -182,7 +182,7 @@ export default function Services() {
  <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
  {pageData?.hero?.badge || "Professional Services"}
  </div>
- <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading ? (
  <>
  {pageData.hero.heading.split(' ').slice(0, -2).join(' ')}{' '}
@@ -417,7 +417,7 @@ export default function Services() {
  <section className="relative py-6 md:py-2 bg-gradient-to-b from-white to-gold/5 px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-6">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-6">
  Frequently <br />
  <span className="text-gold">asked questions.</span>
  </h2>
@@ -470,7 +470,7 @@ export default function Services() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-[#011122] mb-8 leading-tight">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Not sure which service fits? <br /> <span className="text-gold">Let's find out together.</span></>
  )}

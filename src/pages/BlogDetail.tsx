@@ -377,7 +377,7 @@ export default function BlogDetail() {
       <section className="py-32 px-8 bg-[#011122] relative overflow-hidden text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-gold/5 blur-[180px] rounded-full pointer-events-none" />
         <div className="max-w-3xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif text-white mb-8">
+          <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">
             Market Intelligence, <span className="text-gold">directly to you.</span>
           </h2>
           <p className="text-xl text-white/60 font-sans mb-12 leading-relaxed">

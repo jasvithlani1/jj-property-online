@@ -225,7 +225,7 @@ export default function CaseStudies() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
               Ready to write your <br />
               <span className="text-gold">own success story?</span>
             </h2>

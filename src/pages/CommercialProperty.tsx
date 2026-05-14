@@ -102,7 +102,7 @@ export default function CommercialProperty() {
               <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-6 backdrop-blur-sm">
                 {pageData?.hero?.badge === "Commercial Property Strategies with Investment Precision." ? "Commercial Property" : (pageData?.hero?.badge || "Commercial Property")}
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
+              <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
                 {pageData?.hero?.heading || "Acquisition Strategies Engineered for Investment Precision."}
               </h1>
               <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
@@ -310,7 +310,7 @@ export default function CommercialProperty() {
               >
                 {pageData?.readiness?.badge || "Commercial Investor Readiness"}
               </motion.div>
-              <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-4 leading-[1.1]">
+              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-[1.1]">
                 {pageData?.readiness?.heading || (
                   <>Is Commercial Property Investment <br /> <span className="text-gold ">Right for You?</span></>
                 )}
@@ -438,7 +438,7 @@ export default function CommercialProperty() {
         <section className="relative pt-2 pb-2 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
+              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8">
                 Frequently <br />
                 <span className="text-gold">asked questions.</span>
               </h2>
@@ -499,7 +499,7 @@ export default function CommercialProperty() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
+              <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
                 {pageData?.finalCta?.heading || (
                   <>Strengthen Your Investment <br /> <span className="text-gold ">Advantage.</span></>
                 )}

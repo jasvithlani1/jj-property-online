@@ -98,7 +98,7 @@ export default function PropertyInvestors() {
  <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
  {pageData?.hero?.badge || "Property Investors"}
  </div>
- <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading?.includes('Precision') ? (
  <>Acquisition Strategies Engineered for <span className="text-gold">Investment Precision.</span></>
  ) : pageData?.hero?.heading || (
@@ -312,7 +312,7 @@ export default function PropertyInvestors() {
  >
  {pageData?.readiness?.badge || "Investor Readiness"}
  </motion.div>
- <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-8 leading-[1.1]">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-8 leading-[1.1]">
  {pageData?.readiness?.heading?.includes('Right') ? (
  <>Is Property Investment <br /> <span className="text-gold ">Right for You?</span></>
  ) : pageData?.readiness?.heading || (
@@ -442,7 +442,7 @@ export default function PropertyInvestors() {
  <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8">
  Frequently <br />
  <span className="text-gold">asked questions.</span>
  </h2>
@@ -503,7 +503,7 @@ export default function PropertyInvestors() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
+ <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Secure Your Investment <br /> <span className="text-gold ">Advantage.</span></>
  )}

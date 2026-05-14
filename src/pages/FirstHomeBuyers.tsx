@@ -98,7 +98,7 @@ export default function FirstHomeBuyers() {
  <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
  {pageData?.hero?.badge || "First Home Buyers"}
  </div>
- <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading?.includes('Ownership') ? (
  <>Your Journey to Home Ownership, <span className="text-gold">Simplified & Strategic.</span></>
  ) : pageData?.hero?.heading || (
@@ -313,7 +313,7 @@ export default function FirstHomeBuyers() {
  >
  {pageData?.readiness?.badge || "Eligibility Criteria"}
  </motion.div>
- <h2 className="text-5xl md:text-7xl font-serif text-[#011122] mb-8 leading-[1.1]">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-8 leading-[1.1]">
  {pageData?.readiness?.heading?.includes('Ready') ? (
  <>Are You Ready for <br /> <span className="text-gold ">Your First Home?</span></>
  ) : pageData?.readiness?.heading || (
@@ -443,7 +443,7 @@ export default function FirstHomeBuyers() {
  <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-5xl md:text-6xl font-serif text-[#011122] leading-tight mb-8">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8">
  Frequently <br />
  <span className="text-gold">asked questions.</span>
  </h2>
@@ -504,7 +504,7 @@ export default function FirstHomeBuyers() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif mb-8 leading-tight">
+ <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Secure your <span className="text-gold">first home</span> today.</>
  )}
