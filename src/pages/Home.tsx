@@ -330,7 +330,7 @@ export default function Home() {
  <motion.section
  id="home"
  style={{ scale: heroScale, opacity: heroOpacity }}
- className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-20 lg:pt-24"
+ className="relative h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-16 sm:pt-20 lg:pt-24"
  >
  <div className="absolute inset-0 -z-20">
  <video
@@ -346,7 +346,7 @@ export default function Home() {
 
  <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
- <div className="relative w-full max-w-7xl flex flex-col items-center min-h-[400px] justify-center">
+ <div className="relative w-full max-w-7xl flex flex-col items-center justify-center">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentSlide}
@@ -356,18 +356,18 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-center w-full"
               >
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
+                <h1 className="text-2xl xs:text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.1] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
                   {heroSlides[currentSlide].heading}
                 </h1>
 
-                <p className="text-base sm:text-lg max-w-2xl mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
+                <p className="text-sm sm:text-lg max-w-2xl mt-4 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
                   {heroSlides[currentSlide].subheading}
                 </p>
               </motion.div>
             </AnimatePresence>
 
             {/* Carousel Dots */}
-            <div className="flex gap-3 mt-12">
+            <div className="flex gap-3 mt-6 sm:mt-12">
               {heroSlides.map((_, idx) => (
                 <button
                   key={idx}
@@ -381,11 +381,11 @@ export default function Home() {
             </div>
           </div>
 
- <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-4 mt-4">
- <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
+ <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6 w-full px-4 sm:px-0 sm:w-auto">
+ <button onClick={openCalendly} className="rounded-full px-10 sm:px-14 py-4 sm:py-5 text-sm sm:text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer w-full sm:w-auto">
  {homeData?.hero?.ctaText || "Book Session"}
  </button>
- <Link href="/case-studies" className="rounded-full px-14 py-5 text-base border border-gold/30 bg-white/10 backdrop-blur-sm text-white hover:bg-gold hover:border-gold transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer">
+ <Link href="/case-studies" className="rounded-full px-10 sm:px-14 py-4 sm:py-5 text-sm sm:text-base border border-gold/30 bg-white/10 backdrop-blur-sm text-white hover:bg-gold hover:border-gold transition-all duration-300 uppercase tracking-widest font-medium flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto">
  Client Stories
  </Link>
  </div>
