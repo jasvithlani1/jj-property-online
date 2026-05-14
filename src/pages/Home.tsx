@@ -356,18 +356,18 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-center w-full"
               >
-                <h1 className="text-2xl xs:text-3xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.1] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
+                <h1 className="text-4xl xs:text-[40px] sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-serif drop-shadow-lg px-4 sm:px-0">
                   {heroSlides[currentSlide].heading}
                 </h1>
 
-                <p className="text-sm sm:text-lg max-w-2xl mt-4 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
+                <p className="text-sm sm:text-lg max-w-2xl mt-3 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
                   {heroSlides[currentSlide].subheading}
                 </p>
               </motion.div>
             </AnimatePresence>
 
             {/* Carousel Dots */}
-            <div className="flex gap-3 mt-6 sm:mt-12">
+            <div className="flex gap-3 mt-4 sm:mt-12">
               {heroSlides.map((_, idx) => (
                 <button
                   key={idx}
