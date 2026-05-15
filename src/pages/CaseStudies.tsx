@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, Bed, Bath, Car } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
@@ -17,6 +17,7 @@ interface SanityCaseStudy {
   mainImage: any;
   tag?: string;
   tagColor?: string;
+  dealDone?: boolean;
   stats: { label: string; value: string }[];
 }
 
@@ -41,6 +42,7 @@ export default function CaseStudies() {
           },
           tag,
           tagColor,
+          dealDone,
           stats
         }`;
         const pageQuery = `*[_type == "caseStudiesPage"][0] {
@@ -187,6 +189,14 @@ export default function CaseStudies() {
                       <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                         <span className="text-white font-serif text-xl">{study.resultText}</span>
                       </div>
+                      
+                      {/* Deal Done Badge */}
+                      {study.dealDone && (
+                        <div className="absolute top-4 right-4 bg-gold text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                          Deal Done
+                        </div>
+                      )}
                     </div>
 
                     {/* Minimalist Body */}
@@ -256,7 +266,9 @@ export default function CaseStudies() {
           </div>
 
           <div className="space-y-8">
-            {acquisitions.map((prop, i) => (
+            {acquisitions.map((prop, i) => {
+              const [beds, baths, cars] = prop.config.split(' / ');
+              return (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 30 }} 
@@ -267,7 +279,7 @@ export default function CaseStudies() {
                 {/* Stats Table */}
                 <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.name}</span>
+                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.city}</span>
                     <div className="h-px w-12 bg-gold/30" />
                   </div>
                   <div className="grid grid-cols-2 gap-x-8 gap-y-6">
@@ -277,7 +289,20 @@ export default function CaseStudies() {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.config}</span>
+                      <div className="flex items-center gap-4 mt-0.5">
+                        <div className="flex items-center gap-1.5" title="Bedrooms">
+                          <Bed className="w-5 h-5 text-gold" />
+                          <span className="text-xl font-sans text-[#011122] font-semibold">{beds}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5" title="Bathrooms">
+                          <Bath className="w-5 h-5 text-gold" />
+                          <span className="text-xl font-sans text-[#011122] font-semibold">{baths}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5" title="Car Spaces">
+                          <Car className="w-5 h-5 text-gold" />
+                          <span className="text-xl font-sans text-[#011122] font-semibold">{cars}</span>
+                        </div>
+                      </div>
                     </div>
                     
                     <div className="flex flex-col pt-4 border-t border-gold/10">
@@ -313,13 +338,21 @@ export default function CaseStudies() {
                 <div className="lg:w-[50%] relative min-h-[400px]">
                   <img 
                     src={prop.image} 
-                    alt={`${prop.name} property`} 
+                    alt={`${prop.city} property`} 
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
+                  
+                  {/* Deal Done Badge */}
+                  {prop.dealDone && (
+                    <div className="absolute top-8 right-8 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                      Deal Done
+                    </div>
+                  )}
                 </div>
               </motion.div>
-            ))}
+            )})}
           </div>
         </div>
       </section>

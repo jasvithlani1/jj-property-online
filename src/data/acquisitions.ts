@@ -1,6 +1,7 @@
 
 export interface Acquisition {
-  name: string;
+  city: string;
+  dealDone?: boolean;
   price: string;
   config: string;
   month: string;
@@ -14,7 +15,7 @@ export interface Acquisition {
 
 export const acquisitions: Acquisition[] = [
   {
-    "name": "Sasi and Saranya",
+    "city": "Parramatta", "dealDone": true,
     "price": "$690,000",
     "config": "3 / 2 / 2",
     "month": "Sep-25",
@@ -26,7 +27,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_1.png"
   },
   {
-    "name": "Ragu and Devi",
+    "city": "Westmead", "dealDone": false,
     "price": "$730,000",
     "config": "4 / 2 / 2",
     "month": "Sep-25",
@@ -38,7 +39,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_2.png"
   },
   {
-    "name": "Kumar and Bharka",
+    "city": "Blacktown", "dealDone": true,
     "price": "$810,000",
     "config": "4 / 2 / 2",
     "month": "Oct-25",
@@ -50,7 +51,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_3.png"
   },
   {
-    "name": "Priya and Rathan",
+    "city": "Liverpool", "dealDone": false,
     "price": "$850,000",
     "config": "4 / 2 / 2",
     "month": "Sep-25",
@@ -62,7 +63,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_4.png"
   },
   {
-    "name": "Shan and Janaki",
+    "city": "Penrith", "dealDone": true,
     "price": "$710,000",
     "config": "4 / 2 / 2",
     "month": "Nov-25",
@@ -74,7 +75,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_5.png"
   },
   {
-    "name": "Mamatha and Hari",
+    "city": "Castle Hill", "dealDone": false,
     "price": "$690,000",
     "config": "4 / 3 / 1",
     "month": "Oct-25",
@@ -86,7 +87,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_grey.png"
   },
   {
-    "name": "Akanksha and Tanmay",
+    "city": "Hornsby", "dealDone": true,
     "price": "$650,000",
     "config": "3 / 1 / 2",
     "month": "Dec-25",

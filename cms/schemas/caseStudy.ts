@@ -49,6 +49,13 @@ export default {
       ],
     },
     {
+      name: 'dealDone',
+      title: 'Show "DEAL DONE" Label',
+      type: 'boolean',
+      description: 'Toggle this to display the DEAL DONE label on the property card.',
+      initialValue: false,
+    },
+    {
       name: 'client',
       title: 'Client Profile',
       type: 'text',
