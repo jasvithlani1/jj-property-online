@@ -116,16 +116,7 @@ const heroSlides = [
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const servicesScrollRef = useRef<HTMLDivElement>(null);
-  const scrollServices = (direction: 'left' | 'right') => {
-    if (servicesScrollRef.current) {
-      const scrollAmount = servicesScrollRef.current.clientWidth / 1.5;
-      servicesScrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -519,22 +510,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative group">
-              <button onClick={() => scrollServices('left')} className="absolute -left-4 md:-left-6 lg:-left-8 top-[40%] z-30 p-4 rounded-full bg-white border border-black/10 shadow-xl opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white flex shadow-gold/20">
-                <ArrowLeft className="w-6 h-6" />
-              </button>
-              <button onClick={() => scrollServices('right')} className="absolute -right-4 md:-right-6 lg:-right-8 top-[40%] z-30 p-4 rounded-full bg-white border border-black/10 shadow-xl opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-black hover:text-white flex shadow-gold/20">
-                <ArrowRight className="w-6 h-6" />
-              </button>
-              <div ref={servicesScrollRef} className="flex gap-10 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 pt-4 -mx-4 px-4 md:-mx-8 md:px-8">
+            <div className="mt-8 lg:mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 pb-8">
                 {servicesPreview.map((localService: any, index: number) => {
                   const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
                   return (
                     <Link
                       key={service.title}
                       href={`/services#${service.anchor}`}
-                      className={`group shrink-0 snap-start w-[85vw] md:w-[calc((100%-2.5rem)/2)] lg:w-[calc((100%-5rem)/3)] relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${index % 2 === 0
-                        ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 md:z-20'
+                      className={`group relative p-8 md:p-10 lg:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start w-full ${index % 2 === 0
+                        ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 hover:shadow-gold/20'
                         : 'bg-white border-black/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-gold/10'
                         }`}
                     >
@@ -556,7 +541,7 @@ export default function Home() {
                             {service.title}
                           </h3>
                         </div>
-                        <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
+                        <p className={`leading-relaxed font-sans text-lg mb-8 flex-1 ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
                           {service.description}
                         </p>
 
@@ -568,7 +553,7 @@ export default function Home() {
                             Learn More
                           </span>
                           <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${index % 2 === 0
-                            ? 'bg-white/10 group-hover:bg-gold'
+                            ? 'bg-white/10 group-hover:bg-gold text-white'
                             : 'bg-gold/10 group-hover:bg-gold group-hover:text-white text-gold'
                             }`}>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -577,7 +562,7 @@ export default function Home() {
                       </motion.div>
 
                       {/* Hover Glow Effect */}
-                      <div className="absolute inset-0 rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
+                      <div className="absolute inset-0 rounded-[2.5rem] md:rounded-[3.5rem] border-2 border-gold/0 group-hover:border-gold/20 transition-colors pointer-events-none" />
                     </Link>
                   )
                 })}
