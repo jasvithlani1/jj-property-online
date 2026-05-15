@@ -595,6 +595,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                className="flex flex-col items-center text-center lg:items-start lg:text-left"
               >
                 <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-3">
                   {homeData?.differenceSection?.heading ? (
@@ -612,7 +613,7 @@ export default function Home() {
                 <p className="text-base text-muted font-sans leading-relaxed mb-3 max-w-xl">
                   Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
                 </p>
-                <div className="space-y-4">
+                <div className="space-y-4 w-full text-left">
                   {(homeData?.differenceSection?.points || [
                     "100% buyer's agent representation — no ties to developers",
                     "Built on real experience with a personal $6M+ portfolio",
@@ -630,22 +631,22 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
-              <div className="relative">
+              <div className="relative mt-8 lg:mt-0">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4 mt-4">
                     <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
-                    <div className="aspect-square rounded-[2rem] bg-white overflow-hidden shadow-2xl flex items-center justify-center">
-                      <img src="/case-study-1.png" className="w-full h-full object-contain hover:scale-105 transition-transform duration-700" alt="Property 2" />
+                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                      <img src="/case-study-1.png" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Property 2" />
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <div className="aspect-square rounded-[2rem] bg-white overflow-hidden shadow-2xl flex items-center justify-center">
-                      <img src="/case-study-2.png" className="w-full h-full object-contain hover:scale-105 transition-transform duration-700" alt="Property 3" />
+                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                      <img src="/case-study-2.png" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Property 3" />
                     </div>
-                    <div className="aspect-[4/5] rounded-[2rem] bg-white overflow-hidden shadow-2xl flex items-center justify-center">
-                      <img src="/case-study-3.png" className="w-full h-full object-contain hover:scale-105 transition-transform duration-700" alt="Property 4" />
+                    <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                      <img src="/case-study-3.png" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Property 4" />
                     </div>
                   </div>
                 </div>
@@ -767,16 +768,16 @@ export default function Home() {
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
         <section id="case-studies" className="relative py-1 md:py-2 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-3">
-              <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1 md:whitespace-nowrap">
-                  Real world results. <span className="text-gold">The JJ Advantage.</span>
+            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-8 gap-6">
+              <div className="flex flex-col items-center md:items-start w-full">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2 md:whitespace-nowrap">
+                  Real world results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
                 </h2>
-                <p className="text-muted text-lg font-sans max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
+                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
               </div>
               <Link
                 href="/case-studies"
-                className="group flex items-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-6 py-3 hover:bg-black hover:text-white transition-all duration-300"
+                className="group flex items-center justify-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-8 py-3.5 hover:bg-black hover:text-white transition-all duration-300 mx-auto md:mx-0"
               >
                 All Case Studies
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -881,9 +882,9 @@ export default function Home() {
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
         <section className="relative py-1 md:py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-6 lg:mb-0">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-3">
-                Frequently <br />
+                Frequently <br className="hidden lg:block" />
                 <span className="text-gold">asked questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
