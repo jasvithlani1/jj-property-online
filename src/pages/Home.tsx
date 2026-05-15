@@ -617,15 +617,15 @@ export default function Home() {
                       <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
                     <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
+                      <img src="/case-study-1.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
+                      <img src="/case-study-2.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
                     </div>
                     <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
+                      <img src="/case-study-3.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
                     </div>
                   </div>
                 </div>
