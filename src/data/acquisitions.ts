@@ -99,7 +99,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_beige.png"
   },
   {
-    "name": "Atul and Dr Stuti - SMSF",
+    "city": "Sydney", "dealDone": false,
     "price": "$670,000",
     "config": "4 / 1 / 2",
     "month": "Dec-25",
@@ -111,7 +111,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_estate.png"
   },
   {
-    "name": "Naveen & Jayasree",
+    "city": "Sydney", "dealDone": false,
     "price": "$600,000",
     "config": "3 / 1 / 1",
     "month": "Dec-25",
@@ -123,7 +123,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_beige.png"
   },
   {
-    "name": "Vijay & Arthi - SMSF",
+    "city": "Sydney", "dealDone": false,
     "price": "$750,000",
     "config": "4 / 2 / 2",
     "month": "Apr-26",
@@ -135,7 +135,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_grey.png"
   },
   {
-    "name": "Mitul & Laura",
+    "city": "Sydney", "dealDone": false,
     "price": "$665,000",
     "config": "4 / 2 / 2",
     "month": "May-26",
@@ -147,7 +147,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_duplex.png"
   },
   {
-    "name": "Amit",
+    "city": "Sydney", "dealDone": false,
     "price": "$770,000",
     "config": "7 / 5 / 2",
     "month": "May-26",
@@ -159,7 +159,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_estate.png"
   },
   {
-    "name": "Jeffrey",
+    "city": "Sydney", "dealDone": false,
     "price": "$655,000",
     "config": "3 / 2 / 2",
     "month": "Dec-25",
@@ -171,7 +171,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_beige.png"
   },
   {
-    "name": "Jeffrey",
+    "city": "Sydney", "dealDone": false,
     "price": "$680,000",
     "config": "4 / 2 / 2",
     "month": "Oct-25",
@@ -183,7 +183,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_grey.png"
   },
   {
-    "name": "ChandraSekar",
+    "city": "Sydney", "dealDone": false,
     "price": "$595,000",
     "config": "4 / 2 / 1",
     "month": "Apr-24",
@@ -195,7 +195,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_beige.png"
   },
   {
-    "name": "Sunil Marwal",
+    "city": "Sydney", "dealDone": false,
     "price": "$850,000",
     "config": "4 / 2 / 2",
     "month": "Feb-26",
@@ -207,7 +207,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_grey.png"
   },
   {
-    "name": "Akshay Nayak",
+    "city": "Sydney", "dealDone": false,
     "price": "$780,000",
     "config": "4 / 2 / 2",
     "month": "Mar-26",
@@ -219,7 +219,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_beige.png"
   },
   {
-    "name": "Bhoopathy",
+    "city": "Sydney", "dealDone": false,
     "price": "$820,000",
     "config": "4 / 2 / 2",
     "month": "Mar-26",
@@ -231,7 +231,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_grey.png"
   },
   {
-    "name": "Alex",
+    "city": "Sydney", "dealDone": false,
     "price": "$730,000",
     "config": "4 / 2 / 2",
     "month": "Mar-26",
@@ -243,7 +243,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_beige.png"
   },
   {
-    "name": "Alex",
+    "city": "Sydney", "dealDone": false,
     "price": "$730,000",
     "config": "4 / 2 / 2",
     "month": "Nov-25",
@@ -255,7 +255,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/modern_grey.png"
   },
   {
-    "name": "Praveen & Vineetha",
+    "city": "Sydney", "dealDone": false,
     "price": "$715,000",
     "config": "4 / 2 / 2",
     "month": "May-26",
