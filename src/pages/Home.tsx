@@ -398,8 +398,9 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="flex flex-col items-center text-center lg:items-start lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-2 shadow-sm scale-110 origin-left">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-2 shadow-sm scale-110 origin-center lg:origin-left">
                 <span className="block w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
                 Principal Advisor
               </div>
@@ -438,7 +439,8 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="mt-4 p-4 sm:p-5 sm:px-6 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl flex lg:inline-flex items-center gap-6 relative overflow-hidden group/box w-fit mx-auto lg:mx-0">
+              {/* Desktop License Box */}
+              <div className="hidden lg:inline-flex mt-4 p-4 sm:p-5 sm:px-6 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl items-center gap-6 relative overflow-hidden group/box w-fit mx-auto lg:mx-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
@@ -459,7 +461,7 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: 'easeOut' }}
-              className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl"
+              className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl flex flex-col"
             >
               <img
                 src="/advisor-parramatta.png"
@@ -471,6 +473,24 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
+
+            {/* Mobile License Box (Below Image) */}
+            <div className="flex lg:hidden w-full justify-center">
+              <div className="p-4 sm:p-5 sm:px-6 rounded-[1.25rem] border border-white/10 bg-[#011122] shadow-xl flex items-center gap-6 relative overflow-hidden group/box w-fit mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
+                <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
+                    <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">20543356</span>
+                  </div>
+                  <div className="w-px h-10 bg-gold/20"></div>
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">ABN</span>
+                    <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">71 687 187 113</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -482,8 +502,8 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-4 relative">
-              <div className="relative">
-                <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none">Services</div>
+              <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none hidden md:block">Services</div>
                 <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
