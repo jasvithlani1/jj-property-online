@@ -616,16 +616,16 @@ export default function Home() {
                     <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
                       <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
                     </div>
-                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="/case-study-1.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 2" />
+                    <div className="aspect-square rounded-[2rem] bg-white overflow-hidden shadow-2xl flex items-center justify-center">
+                      <img src="/case-study-1.png" className="w-full h-full object-contain hover:scale-105 transition-transform duration-700" alt="Property 2" />
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="/case-study-2.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 3" />
+                    <div className="aspect-square rounded-[2rem] bg-white overflow-hidden shadow-2xl flex items-center justify-center">
+                      <img src="/case-study-2.png" className="w-full h-full object-contain hover:scale-105 transition-transform duration-700" alt="Property 3" />
                     </div>
-                    <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="/case-study-3.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Property 4" />
+                    <div className="aspect-[4/5] rounded-[2rem] bg-white overflow-hidden shadow-2xl flex items-center justify-center">
+                      <img src="/case-study-3.png" className="w-full h-full object-contain hover:scale-105 transition-transform duration-700" alt="Property 4" />
                     </div>
                   </div>
                 </div>
