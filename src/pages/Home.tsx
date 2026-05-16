@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Home as HomeIcon, TrendingUp, ArrowLeft, ArrowRight, Plus, Star, Quote, Building2 } from 'lucide-react';
+import { Home as HomeIcon, TrendingUp, ArrowRight, Plus, Star, Quote, Building2 } from 'lucide-react';
 import { FaHome, FaChartLine, FaBuilding } from 'react-icons/fa';
 import { TbHomeShield } from 'react-icons/tb';
 import { openCalendly, initInlineCalendly } from '../utils/calendly';
