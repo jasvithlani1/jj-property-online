@@ -486,7 +486,7 @@ export default function Home() {
         </section>
 
         {/* ── Services Preview ─────────────────────────────────────────────── */}
-        <section id="services" className="relative z-10 py-2 md:py-3 bg-white px-8 overflow-hidden border-t border-black/5">
+        <section id="services" className="relative z-10 pt-2 md:pt-3 pb-0 bg-white px-8 overflow-hidden border-t border-black/5">
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gold/5 blur-[120px] rounded-full -z-10" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
@@ -511,7 +511,7 @@ export default function Home() {
             </div>
 
             <div className="mt-8 lg:mt-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 pb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 pb-0">
                 {servicesPreview.map((localService: any, index: number) => {
                   const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
                   return (
@@ -572,7 +572,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="pt-1 pb-1 md:pt-2 md:pb-2 px-8 bg-white overflow-hidden">
+        <section className="pt-0 pb-1 md:pb-2 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
               <motion.div
