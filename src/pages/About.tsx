@@ -321,29 +321,26 @@ export default function About() {
  <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>
  </div>
  
- <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+  <div className="bg-white p-5 rounded-2xl md:rounded-full shadow-sm border border-gold/10 flex flex-col md:flex-row md:flex-wrap justify-between gap-4 md:gap-6 items-center max-w-5xl mx-auto">
  {[
- { icon: <BadgeCheck className="w-6 h-6 text-gold" />, label: "Buyers Agent Licence", value: "20543356", sub: "" },
- { icon: <Briefcase className="w-6 h-6 text-gold" />, label: "ABN", value: "71 687 187 113", sub: "" },
- { icon: <Building2 className="w-6 h-6 text-gold" />, label: "Business", value: "JJ Property Partner", sub: "PTY LTD" },
- { icon: <MapPin className="w-6 h-6 text-gold" />, label: "Location", value: "Sydney, NSW", sub: "Australia-wide" },
- ].map((cred, i) => (
- <motion.div 
- key={i}
- initial={{ opacity: 0, scale: 0.9 }}
- whileInView={{ opacity: 1, scale: 1 }}
- viewport={{ once: true }}
- transition={{ duration: 0.4, delay: i * 0.1 }}
- className="bg-white p-6 rounded-2xl shadow-sm border border-gold/10 flex flex-col items-center text-center hover:shadow-md transition-shadow"
- >
- <div className="w-12 h-12 bg-gold/5 rounded-full flex items-center justify-center mb-4">
- {cred.icon}
- </div>
- <h4 className="text-xs font-bold text-muted uppercase tracking-widest mb-2">{cred.label}</h4>
- <p className="text-lg font-serif text-black mb-1">{cred.value}</p>
- {cred.sub && <p className="text-sm font-sans text-muted">{cred.sub}</p>}
- </motion.div>
- ))}
+  { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "Licence", value: "20543356" },
+  { icon: <Briefcase className="w-5 h-5 text-gold" />, label: "ABN", value: "71 687 187 113" },
+  { icon: <Building2 className="w-5 h-5 text-gold" />, label: "Business", value: "JJ Property Partner" },
+  { icon: <MapPin className="w-5 h-5 text-gold" />, label: "Location", value: "Sydney, NSW" },
+  ].map((cred, i) => (
+  <div key={i} className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start border-b md:border-b-0 border-black/5 pb-2 md:pb-0 last:border-b-0 last:pb-0">
+  <div className="flex items-center gap-3">
+  <div className="w-9 h-9 bg-gold/5 rounded-full flex items-center justify-center shrink-0">
+  {cred.icon}
+  </div>
+  <div className="flex flex-col md:flex-row md:items-baseline md:gap-1">
+  <span className="text-[10px] font-bold text-muted uppercase tracking-widest md:hidden">{cred.label}</span>
+  <span className="text-base font-serif font-black text-black">{cred.value}</span>
+  </div>
+  </div>
+  {i < 3 && <div className="hidden lg:block w-px h-6 bg-gold/20 ml-6"></div>}
+  </div>
+  ))}
  </div>
  </div>
  </section>
