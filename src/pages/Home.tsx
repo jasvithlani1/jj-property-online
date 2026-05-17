@@ -572,9 +572,9 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="pt-0 pb-1 md:pb-2 px-8 bg-white overflow-hidden">
+        <section className="pt-0 pb-1 md:pb-2 px-8 bg-white overflow-hidden -mt-8 lg:mt-0">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -616,7 +616,7 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
-              <div className="relative mt-3 lg:mt-0">
+              <div className="relative mt-1 lg:mt-0">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4 mt-4">
                     <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
