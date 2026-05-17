@@ -43,7 +43,7 @@ export default function About() {
  <div className="w-full bg-white selection:bg-gold/20 ">
 
   {/* Profile Section (New Hero) */}
-  <section className="pt-28 md:pt-36 pb-8 md:pb-4 px-8 bg-white">
+  <section className="pt-28 md:pt-36 pb-4 md:pb-2 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
  <motion.div
@@ -191,7 +191,7 @@ export default function About() {
  </section>
 
  {/* Track Record & Tech Advantage */}
- <section className="py-2 md:py-3 bg-white px-8 relative overflow-hidden">
+ <section className="py-1 md:py-2 bg-white px-8 relative overflow-hidden">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
@@ -200,7 +200,7 @@ export default function About() {
  transition={{ duration: 0.6 }}
  className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10"
  >
- <h3 className="text-3xl font-serif mb-6 text-[#011122]">{aboutData?.trackRecord?.title || "Alex's Personal Track Record"}</h3>
+ <h3 className="text-3xl font-serif mb-3 text-[#011122]">{aboutData?.trackRecord?.title || "Alex's Personal Track Record"}</h3>
  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
  <p>
  {aboutData?.trackRecord?.content || "Alex has personally built a property portfolio valued at more than $5 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy."}
@@ -216,7 +216,7 @@ export default function About() {
  className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
  >
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
- <h3 className="text-3xl font-serif mb-6 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
+ <h3 className="text-3xl font-serif mb-3 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
  <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
  <p>
  {aboutData?.techAdvantage?.content || "Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia."}
@@ -227,10 +227,10 @@ export default function About() {
  </section>
 
  {/* Core Values */}
- <section className="py-2 md:py-3 px-8 bg-white">
+ <section className="py-1 md:py-2 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
- <div className="text-center mb-6">
- <h2 className="text-4xl md:text-5xl font-serif text-black mb-6">Our Core Values</h2>
+ <div className="text-center mb-3">
+ <h2 className="text-4xl md:text-5xl font-serif text-black mb-3">Our Core Values</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
  
@@ -249,7 +249,7 @@ export default function About() {
  transition={{ duration: 0.6, delay: index * 0.1 }} 
  className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group"
  >
- <div className="flex items-center gap-4 mb-6">
+ <div className="flex items-center gap-4 mb-3">
  <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">{String(index + 1).padStart(2, '0')}</span>
  <h4 className="text-2xl font-serif text-gold">{value.title}</h4>
  </div>
@@ -261,14 +261,14 @@ export default function About() {
  </section>
 
  {/* Pillars Section */}
- <section className="py-2 md:py-3 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="py-1 md:py-2 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 w-full h-full opacity-20">
  <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
  <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
  </div>
 
- <div className="max-w-7xl mx-auto relative z-10 text-center mb-6">
- <h2 className="text-4xl md:text-5xl font-serif mb-6 drop-shadow-lg text-gold">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
+ <div className="max-w-7xl mx-auto relative z-10 text-center mb-3">
+ <h2 className="text-4xl md:text-5xl font-serif mb-3 drop-shadow-lg text-gold">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
  <p className="text-lg font-sans text-white/70 max-w-2xl mx-auto">
  {aboutData?.pillarsSection?.subheading || "Our unyielding commitment to precision, integrity, and market-beating results."}
  </p>
@@ -297,7 +297,7 @@ export default function About() {
  transition={{ duration: 0.6, delay: i * 0.1 }}
  className="p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group"
  >
- <div className="flex items-center gap-6 mb-8 w-full">
+ <div className="flex items-center gap-6 mb-4 w-full">
  <div className="p-4 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
  {i === 0 ? <Target className="w-8 h-8 text-gold" /> : i === 1 ? <Search className="w-8 h-8 text-gold" /> : <Handshake className="w-8 h-8 text-gold" />}
  </div>
@@ -312,7 +312,7 @@ export default function About() {
  </section>
 
  {/* Credentials */}
- <section className="py-2 md:py-2 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+ <section className="py-1 md:py-1 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-3">
  <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>
