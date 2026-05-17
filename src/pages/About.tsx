@@ -78,7 +78,7 @@ export default function About() {
  className="lg:col-span-7 space-y-3"
  >
  <div className="space-y-4">
- <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.4em]">Our Story</span>
+
  <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif text-[#011122] leading-tight">
  {aboutData?.profile?.heading ? (
  <>
