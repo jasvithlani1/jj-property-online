@@ -135,7 +135,7 @@ export default function About() {
  </section>
 
  {/* Purpose Section */}
- <section className="py-2 md:py-4 px-8 bg-[#FFFBF2] overflow-hidden">
+ <section className="py-1 md:py-2 px-8 bg-[#FFFBF2] overflow-hidden">
  <div className="max-w-4xl mx-auto text-center">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
@@ -143,12 +143,12 @@ export default function About() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <div className="text-8xl md:text-[10rem] font-serif text-gold/40 leading-none mb-4 select-none">JJ</div>
- <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mb-3">
+ <div className="text-7xl md:text-8xl font-serif text-gold/40 leading-none mb-2 select-none">JJ</div>
+ <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mb-1">
  {aboutData?.purpose?.heading || "A name with purpose. A promise with heart."}
  </h2>
  
- <div className="space-y-3 text-lg md:text-xl text-muted font-sans leading-relaxed mb-4">
+ <div className="space-y-2 text-lg md:text-xl text-muted font-sans leading-relaxed mb-2">
  {aboutData?.purpose?.description ? (
  aboutData.purpose.description.split('\n\n').map((para: string, i: number) => <p key={i}>{para}</p>)
  ) : (
@@ -163,7 +163,7 @@ export default function About() {
  )}
  </div>
 
- <div className="mb-8">
+ <div className="mb-4">
  <Link 
  href="/contact" 
  className="relative inline-flex items-center gap-3 px-12 py-5 bg-gold text-[#011122] text-sm font-bold uppercase tracking-[0.3em] rounded-[2px] shadow-xl transition-all hover:scale-105 active:scale-95 group overflow-hidden"
