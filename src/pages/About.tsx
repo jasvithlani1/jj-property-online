@@ -333,10 +333,10 @@ export default function About() {
   <div className="w-9 h-9 bg-gold/5 rounded-full flex items-center justify-center shrink-0">
   {cred.icon}
   </div>
-  <div className="flex flex-col md:flex-row md:items-baseline md:gap-1">
-  <span className="text-[10px] font-bold text-muted uppercase tracking-widest md:hidden">{cred.label}</span>
-  <span className="text-base font-serif font-black text-black">{cred.value}</span>
-  </div>
+   <div className="flex flex-col items-start justify-center">
+   <span className="text-[10px] font-bold text-muted uppercase tracking-widest hidden md:block">{cred.label}</span>
+   <span className="text-base font-serif font-black text-black">{cred.value}</span>
+   </div>
   </div>
   {i < 3 && <div className="hidden lg:block w-px h-6 bg-gold/20 ml-6"></div>}
   </div>
