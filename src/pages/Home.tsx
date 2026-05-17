@@ -518,7 +518,7 @@ export default function Home() {
                     <Link
                       key={service.title}
                       href={`/services#${service.anchor}`}
-                      className={`group relative p-8 md:p-10 lg:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start w-full ${index % 2 === 0
+                      className={`group relative p-6 md:p-10 lg:p-12 rounded-[2.5rem] md:rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start w-full ${index % 2 === 0
                         ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/10 hover:shadow-gold/20'
                         : 'bg-white border-black/5 hover:border-gold/20 hover:shadow-2xl hover:shadow-gold/10'
                         }`}
@@ -572,7 +572,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="pt-0 pb-1 md:pb-2 px-8 bg-white overflow-hidden -mt-8 lg:mt-0">
+        <section className="pt-0 pb-1 md:pb-2 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
