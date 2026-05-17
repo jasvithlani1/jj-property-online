@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { ArrowUpRight, BadgeCheck, Briefcase, Building2, MapPin, Target, Search, Handshake } from 'lucide-react';
 import Link from '../components/Link';
