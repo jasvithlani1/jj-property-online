@@ -192,7 +192,7 @@ export default function About() {
 
  {/* Track Record & Tech Advantage */}
  <section className="py-2 md:py-3 bg-white px-8 relative overflow-hidden">
- <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  whileInView={{ opacity: 1, y: 0 }}
