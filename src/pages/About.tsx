@@ -114,21 +114,18 @@ export default function About() {
  )}
  </div>
 
- <div className="pt-6 flex flex-wrap gap-8 items-center border-t border-gold/10">
- {(aboutData?.profile?.stats || [
- { label: 'IT & Real Estate', value: '20+ Years' },
- { label: 'Personal Portfolio', value: '$6M+' },
- { label: 'Service Area', value: 'Nationwide' }
- ]).map((stat: any, i: number) => (
- <React.Fragment key={i}>
- <div className="flex flex-col gap-1">
- <span className="text-2xl font-serif text-[#011122]">{stat.value}</span>
- <span className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</span>
- </div>
- {i < (aboutData?.profile?.stats?.length || 3) - 1 && <div className="w-px h-10 bg-gold/20" />}
- </React.Fragment>
- ))}
- </div>
+  <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 border-t border-gold/10">
+  {(aboutData?.profile?.stats || [
+  { label: 'IT & Real Estate', value: '20+ Years' },
+  { label: 'Personal Portfolio', value: '$6M+' },
+  { label: 'Service Area', value: 'Nationwide' }
+  ]).map((stat: any, i: number) => (
+  <div key={i} className={`flex flex-col gap-1 sm:border-r border-gold/20 sm:last:border-r-0 sm:px-6 first:pl-0 last:pr-0`}>
+  <span className="text-2xl font-serif text-[#011122]">{stat.value}</span>
+  <span className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</span>
+  </div>
+  ))}
+  </div>
  </motion.div>
  </div>
  </div>
