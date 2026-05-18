@@ -219,16 +219,16 @@ export default function CommercialProperty() {
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
               {/* Left — Sticky Panel */}
-              <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
+              <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start text-center">
                 <div className="mb-6">
-                  <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
+                  <div className="h-1 w-16 bg-gold mb-8 rounded-full mx-auto" />
                   <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
                     {pageData?.process?.heading || (
                       <>Commercial Portfolio <br /> <span className="text-gold">Strategy</span></>
                     )}
                   </h2>
                   <p className="text-white/60 font-sans text-lg leading-relaxed">
-                    {pageData?.process?.description || "Alex’s personal experience building a $5 million-plus property portfolio across multiple Australian states supports a strategic commercial investment approach focused on sustainable portfolio growth, not only single property acquisitions."}
+                    {pageData?.process?.description || "Alex’s personal experience building a $6 million-plus property portfolio across multiple Australian states supports a strategic commercial investment approach focused on sustainable portfolio growth, not only single property acquisitions."}
                   </p>
                 </div>
               </div>

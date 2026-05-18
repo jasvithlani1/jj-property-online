@@ -106,9 +106,9 @@ export default function CaseStudies() {
             </div>
             <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-6 max-w-5xl mx-auto">
               {pageData?.hero?.heading?.includes('Advantage') ? (
-                <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
+                <>The JJ Property Advantage <br /> <span className="text-gold">in Action.</span></>
               ) : pageData?.hero?.heading || (
-                <>The JJ Property Advantage <br /> <span className="text-gold">in action.</span></>
+                <>The JJ Property Advantage <br /> <span className="text-gold">in Action.</span></>
               )}
             </h1>
             <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
@@ -200,8 +200,8 @@ export default function CaseStudies() {
                     </div>
 
                     {/* Minimalist Body */}
-                    <div className="flex flex-col p-8 md:p-10">
-                      <div className="flex items-center gap-3 mb-3">
+                    <div className="flex flex-col p-8 md:p-10 items-center text-center">
+                      <div className="flex items-center justify-center gap-3 mb-3">
                         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">{study.location}</span>
                         <div className="h-px w-8 bg-gold/30" />
                       </div>
@@ -210,7 +210,7 @@ export default function CaseStudies() {
                         {study.title}
                       </h2>
 
-                      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#011122] group-hover:gap-4 transition-all duration-300">
+                      <div className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#011122] group-hover:gap-4 transition-all duration-300">
                         <span>View Case Study</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </div>
@@ -277,8 +277,8 @@ export default function CaseStudies() {
                 className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-gold/30 transition-colors duration-500"
               >
                 {/* Stats Table */}
-                <div className="flex-1 p-10 md:p-14 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-6">
+                <div className="flex-1 p-10 md:p-14 flex flex-col justify-center items-center text-center">
+                  <div className="flex items-center justify-center gap-3 mb-6">
                     <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.city}</span>
                     <div className="h-px w-12 bg-gold/30" />
                   </div>
@@ -289,7 +289,7 @@ export default function CaseStudies() {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
-                      <div className="flex items-center gap-4 mt-0.5">
+                      <div className="flex items-center justify-center gap-4 mt-0.5">
                         <div className="flex items-center gap-1.5" title="Bedrooms">
                           <Bed className="w-5 h-5 text-gold" />
                           <span className="text-xl font-sans text-[#011122] font-semibold">{beds}</span>
@@ -345,7 +345,7 @@ export default function CaseStudies() {
                   
                   {/* Deal Done Badge */}
                   {prop.dealDone && (
-                    <div className="absolute top-8 right-8 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
+                    <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                       Deal Done
                     </div>
