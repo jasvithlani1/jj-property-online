@@ -9,7 +9,7 @@ import SEO from '../components/SEO';
 const fhbFaqs = [
  {
  question: 'How does a buyer\'s agent help a first home buyer?',
- answer: 'We provide end-to-end support—from identifying the right suburbs and properties to handling inspections, due diligence, and skilled negotiation. Our goal is to save you time, reduce stress, and ensure you don\'t overpay for your first home.'
+ answer: 'We provide end-to-end support - from identifying the right suburbs and properties to handling inspections, due diligence, and skilled negotiation. Our goal is to save you time, reduce stress, and ensure you don\'t overpay for your first home.'
  },
  {
  question: 'Can you help with off-market properties?',
@@ -240,7 +240,7 @@ export default function FirstHomeBuyers() {
  {(pageData?.process?.steps || [
  { stepNumber: '01', title: 'Step 1 - Strategy & Financial Clarity', body: 'We start by getting a clear picture of where you stand financially, including borrowing capacity, deposit, and eligibility for first home buyer incentives and stamp duty savings.', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200' },
  { stepNumber: '02', title: 'Step 2 - Suburb Research & Targeting', body: 'Using data-led research, we assess price growth, market demand, and local infrastructure to identify the right locations across Australia that fit your lifestyle and budget.', image: 'https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1200' },
- { stepNumber: '03', title: 'Step 3 - Off-Market Property Sourcing', body: 'We tap into our industry network to find properties before they appear on Real Estate or Domain — giving you access to quality homes ahead of the public competition.', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200' },
+ { stepNumber: '03', title: 'Step 3 - Off-Market Property Sourcing', body: 'We tap into our industry network to find properties before they appear on Real Estate or Domain - giving you access to quality homes ahead of the public competition.', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200' },
  { stepNumber: '04', title: 'Step 4 - Due Diligence & Checks', body: 'Every shortlist property is carefully assessed through detailed research, coordination of building and pest inspections, and contract review with your solicitor.', image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200' },
  { stepNumber: '05', title: 'Step 5 - Negotiation & Securing the Deal', body: 'We represent you at auction or in private treaty negotiations, using market data and discipline to secure the property on the best possible terms.', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200' },
  { stepNumber: '06', title: 'Step 6 - Settlement & Keys', body: 'We work with your solicitor and mortgage broker through to final settlement, ensuring a smooth handover so you can celebrate your new home.', image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200' }
@@ -286,7 +286,7 @@ export default function FirstHomeBuyers() {
  Step {card.stepNumber || (i + 1)}
  </div>
  </div>
- <div className="p-8">
+ <div className="p-8 text-center">
  <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
  {card.title}
  </h3>
@@ -444,11 +444,11 @@ export default function FirstHomeBuyers() {
  <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
  Frequently <br />
- <span className="text-gold">asked questions.</span>
+ <span className="text-gold">Asked Questions.</span>
  </h2>
- <p className="text-muted text-lg font-sans leading-relaxed">Everything you need to know about buying your first home with expert representation.</p>
+ <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Everything you need to know about buying your first home with expert representation.</p>
  </div>
 
  <div className="lg:col-span-8 flex flex-col gap-6">
@@ -485,7 +485,7 @@ export default function FirstHomeBuyers() {
  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
  className="overflow-hidden"
  >
- <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
+ <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-center">{faq.answer.replace(/—/g, '-')}</p>
  </motion.div>
  )}
  </AnimatePresence>
