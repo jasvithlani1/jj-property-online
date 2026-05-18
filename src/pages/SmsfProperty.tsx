@@ -120,6 +120,7 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
+ className="text-center"
  >
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
  {pageData?.intro?.heading || "Secure Your Retirement with Smart SMSF Property Choices"}
@@ -139,7 +140,7 @@ export default function SmsfProperty() {
  "Coordination with your accountant, broker, and solicitor for a seamless purchase",
  "Expert negotiation to ensure you secure the best possible terms for your fund"
  ]).map((item: string, idx: number) => (
- <li key={idx} className="flex items-start gap-4">
+ <li key={idx} className="flex items-start justify-center gap-4 text-center">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item}</span>
  </li>
@@ -176,7 +177,7 @@ export default function SmsfProperty() {
  transition={{ duration: 0.9, ease: 'easeOut' }}
  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
- <div className={index % 2 === 0 ? 'lg:col-start-2' : ''}>
+ <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
  <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
  {pillar.title}
  </h2>
@@ -186,7 +187,7 @@ export default function SmsfProperty() {
  return (
  <div key={pIdx} className="space-y-3 mt-4">
  {paragraph.split('\n').map((item, iIdx) => (
- <div key={iIdx} className="flex items-start gap-4">
+ <div key={iIdx} className="flex items-start justify-center gap-4 text-center">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item.replace('• ', '')}</span>
  </div>
@@ -236,7 +237,7 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1 }}
- className="relative p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
+ className="relative p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-center"
  >
  <div className="text-gold font-serif text-5xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
  {card.stepNumber || `0${i + 1}`}
