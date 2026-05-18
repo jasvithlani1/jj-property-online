@@ -219,7 +219,7 @@ export default function About() {
  <h3 className="text-3xl font-serif mb-3 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
  <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10">
  <p>
- {aboutData?.techAdvantage?.content || "Alex’s background in IT is a core part of how JJ Property Partner approaches property acquisition. With more than 20 years of experience in information technology, he brings strong analytical thinking, data modelling skills, and a systems-based approach to researching property opportunities across Australia."}
+ {aboutData?.techAdvantage?.content || "Alex’s IT background shapes the way JJ Property Partner approaches every property purchase. With more than 20 years in information technology, he brings analytical thinking, data modelling, and a systems-led process to identifying opportunities across Australia. This helps buyers make informed decisions backed by research, market evidence, and a clear understanding of long-term property potential, rather than relying on guesswork or emotion."}
  </p>
  </div>
  </motion.div>
@@ -239,7 +239,7 @@ export default function About() {
  { title: 'Truly Independent, Always Buyer-Focused', description: 'JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.' },
  { title: 'Clear Advice, Every Step', description: 'We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.' },
  { title: 'Direct Access, Personal Guidance', description: 'At JJ Property Partner, every client works directly with Alex from the initial strategy session through to settlement. You are not passed between team members or treated like a number. This hands-on approach ensures clear communication, consistent guidance, and a personalized buying experience built on trust, accountability, and genuine attention to your goals.' },
- { title: 'Building Wealth for the Long Run', description: 'Every purchase is approached with a long-term strategy designed to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, which is why many clients return to us for their second, third, and even fourth property as their goals continue to grow.' }
+ { title: 'Building Wealth for the Long Run', description: 'Every purchase is guided by a long-term strategy built to support financial growth, portfolio strength, and lasting security. We work with buyers who want more than a quick transaction, helping them make confident decisions today while planning for tomorrow. That is why many clients return for their second, third, and even fourth property as their goals continue to grow.' }
  ]).map((value: any, index: number) => (
  <motion.div 
  key={index}
@@ -282,7 +282,7 @@ export default function About() {
  },
  {
  title: "Off-Market Access",
- text: "Through strong relationships with selling agents and industry professionals across Australia, we help clients access quality off-market and pre-market opportunities, reducing competition and creating better conditions for smarter buying decisions."
+ text: "Through strong relationships with selling agents and industry professionals across Australia, we help clients access off-market and pre-market opportunities, reducing competition and creating conditions for smarter buying decisions."
  },
  {
  title: "Executive Representation",
