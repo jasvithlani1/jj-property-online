@@ -285,8 +285,8 @@ export default function Services() {
  </h2>
  </div>
  </div>
- <h3 className="text-xl md:text-2xl font-serif text-muted mb-4">{service.subtitle}</h3>
- <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-center lg:text-left">
+ <h3 className="text-xl md:text-2xl font-serif text-[#011122] font-semibold mb-4 text-center w-full">{service.subtitle}</h3>
+ <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-center w-full">
  {service.description.replace(/—/g, '-')}
  </p>
 
@@ -294,13 +294,13 @@ export default function Services() {
  {(service.benefits || []).map((b: string, i: number) => (
  <motion.li
  key={i}
- initial={{ opacity: 0, x: -20 }}
- whileInView={{ opacity: 1, x: 0 }}
+ initial={{ opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1, duration: 0.5 }}
- className="flex items-start gap-3 text-base font-sans text-muted"
+ className="flex items-center justify-center gap-3 text-base font-sans text-muted text-center"
  >
- <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
+ <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
  {b}
  </motion.li>
  ))}
@@ -393,7 +393,7 @@ export default function Services() {
  {service.description}
  </p>
 
- <div className="mt-auto w-full flex items-center justify-between group/link">
+ <div className="mt-auto w-full flex items-center justify-center gap-6 group/link">
  <span className={`text-xs font-bold uppercase tracking-[0.25em] transition-all ${service.isFeatured ? 'text-gold group-hover:text-white' : 'text-gold group-hover:text-gold-hover'
  }`}>
  Learn More
@@ -428,7 +428,7 @@ export default function Services() {
  <div key={index} className="border-b border-[#011122]/10 pb-2">
  <button
  onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-6 text-center hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
+ className="w-full flex items-center justify-between py-3 text-center hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
  >
  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-center w-full ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
  {faq.question}
@@ -450,7 +450,7 @@ export default function Services() {
  transition={{ duration: 0.3, ease: 'easeInOut' }}
  className="overflow-hidden"
  >
- <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-2 text-center">{faq.answer.replace(/—/g, '-')}</p>
+ <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-2 pr-2 text-center">{faq.answer.replace(/—/g, '-')}</p>
  </motion.div>
  )}
  </AnimatePresence>
