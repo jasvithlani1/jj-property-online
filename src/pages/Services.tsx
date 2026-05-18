@@ -370,13 +370,14 @@ export default function Services() {
  <Link
  key={service.title}
  href="/contact"
- className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-start ${service.isFeatured
+ className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-center ${service.isFeatured
  ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/20 md:z-20'
  : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
  }`}
  >
  {/* Icon Box - Optimized for visibility on dark/light backgrounds */}
- <div className={`w-16 h-16 rounded-[1.25rem] border flex items-center justify-center mb-2 shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${
+ <div className="flex items-center justify-center gap-4 mb-6 w-full">
+ <div className={`w-16 h-16 rounded-[1.25rem] border flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${
  service.isFeatured 
  ? 'bg-white/10 border-gold/30 text-gold shadow-gold/10' 
  : 'bg-[#011122] border-white/10 text-gold'
@@ -384,10 +385,11 @@ export default function Services() {
  {service.icon === 'Scale' ? <Scale className="w-7 h-7" /> : service.icon === 'Gavel' ? <Gavel className="w-7 h-7" /> : <TrendingUp className="w-7 h-7" />}
  </div>
 
- <h3 className={`text-3xl font-serif mb-6 leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122] font-semibold'}`}>
+ <h3 className={`text-3xl font-serif leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122] font-semibold'}`}>
  {service.title}
  </h3>
- <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 ${service.isFeatured ? 'text-white/70' : 'text-muted'}`}>
+ </div>
+ <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 text-center ${service.isFeatured ? 'text-white/70' : 'text-muted'}`}>
  {service.description}
  </p>
 
@@ -414,11 +416,11 @@ export default function Services() {
  <section className="relative py-6 md:py-2 bg-gradient-to-b from-white to-gold/5 px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-6">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-6 text-center lg:text-left">
  Frequently <br />
- <span className="text-gold">asked questions.</span>
+ <span className="text-gold">Asked Questions.</span>
  </h2>
- <p className="text-muted text-lg font-sans">Everything you need to know about our specialized acquisition services.</p>
+ <p className="text-muted text-lg font-sans text-center lg:text-left">Everything you need to know about our specialized acquisition services.</p>
  </div>
 
  <div className="lg:col-span-8 flex flex-col gap-4">
@@ -426,9 +428,9 @@ export default function Services() {
  <div key={index} className="border-b border-[#011122]/10 pb-2">
  <button
  onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
+ className="w-full flex items-center justify-between py-6 text-center hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
  >
- <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+ <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-center w-full ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
  {faq.question}
  </span>
  <motion.div
@@ -448,7 +450,7 @@ export default function Services() {
  transition={{ duration: 0.3, ease: 'easeInOut' }}
  className="overflow-hidden"
  >
- <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-12">{faq.answer}</p>
+ <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-2 pr-2 text-center">{faq.answer.replace(/—/g, '-')}</p>
  </motion.div>
  )}
  </AnimatePresence>
