@@ -26,17 +26,17 @@ interface SanityPost {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-8 leading-tight first:mt-0">
+      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-8 leading-tight first:mt-0 text-center">
         {children}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-6">
+      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-6 text-center">
         {children}
       </h3>
     ),
     normal: ({ children }: any) => (
-      <p className="text-xl text-muted font-sans leading-relaxed mb-8">
+      <p className="text-xl text-muted font-sans leading-relaxed mb-8 text-center">
         {children}
       </p>
     ),
@@ -54,7 +54,7 @@ const ptComponents = {
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="flex items-start gap-5 text-lg md:text-xl text-muted font-sans leading-relaxed">
+      <li className="flex items-center justify-center gap-5 text-lg md:text-xl text-muted font-sans leading-relaxed">
         <CheckCircle2 className="mt-1.5 shrink-0 w-6 h-6 text-gold opacity-80" />
         <div>{children}</div>
       </li>
@@ -192,7 +192,7 @@ export default function BlogDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-wrap items-center gap-6 mb-12">
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
               <Link
                 href="/blog"
                 className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-gold hover:text-white transition-colors"
@@ -218,11 +218,11 @@ export default function BlogDetail() {
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] mb-12 max-w-5xl">
+            <h1 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] mb-12 max-w-5xl mx-auto text-center">
               {post.title}
             </h1>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center gap-6">
               <div className="w-16 h-16 rounded-2xl border border-gold/30 p-1.5">
                 <div className="w-full h-full rounded-xl bg-gold/10 flex items-center justify-center text-gold font-serif text-2xl overflow-hidden">
                   {post.author?.image ? (
