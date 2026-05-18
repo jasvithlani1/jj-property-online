@@ -541,11 +541,11 @@ export default function Home() {
                             {service.title}
                           </h3>
                         </div>
-                        <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
+                        <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 text-center ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
                           {service.description}
                         </p>
 
-                        <div className="mt-auto w-full flex items-center justify-between group/link">
+                        <div className="mt-auto w-full flex items-center justify-center gap-4 group/link">
                           <span className={`text-xs font-bold uppercase tracking-[0.25em] transition-all ${index % 2 === 0
                             ? 'text-gold group-hover:text-white'
                             : 'text-gold group-hover:text-gold-hover'
