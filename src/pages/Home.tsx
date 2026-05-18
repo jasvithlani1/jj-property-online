@@ -419,12 +419,12 @@ export default function Home() {
               <div className="space-y-1 text-lg text-muted leading-relaxed max-w-xl font-sans">
                 {homeData?.aboutPreview?.description ? (
                   homeData.aboutPreview.description.split('\n\n').map((paragraph: string, i: number) => (
-                    <p key={i}>{paragraph}</p>
+                    <p key={i}>{paragraph.replace(/—/g, '-').replace(/\$5M\+/g, '$6M+')}</p>
                   ))
                 ) : (
                   <>
                     <p>Alex is a licensed buyer’s agent and the founder of <span className="text-black font-semibold">JJ Property Partner</span>. With more than 20 years of experience bridging the gap between real estate and technology, Alex provides a sophisticated, data-backed approach to property acquisition.</p>
-                    <p>JJ stands for Jessica and Jennifer — Alex's two daughters — reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$6M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
+                    <p>JJ stands for Jessica and Jennifer - Alex's two daughters - reflecting a family-first philosophy built on honesty and genuine care. As an active investor with a <span className="text-black font-semibold">$6M+ portfolio</span>, he offers firsthand knowledge of market cycles and wealth generation.</p>
                   </>
                 )}
               </div>
