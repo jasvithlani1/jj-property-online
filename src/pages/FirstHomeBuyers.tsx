@@ -120,6 +120,7 @@ export default function FirstHomeBuyers() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
+ className="text-center"
  >
  <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
  {pageData?.intro?.heading || "Stop Searching, Start Finding"}
@@ -139,7 +140,7 @@ export default function FirstHomeBuyers() {
  "Expert guidance on grants, stamp duty, and borrowing capacity",
  "Complete peace of mind through managed due diligence"
  ]).map((item: string, idx: number) => (
- <li key={idx} className="flex items-start gap-4">
+ <li key={idx} className="flex items-start justify-center gap-4 text-center">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item}</span>
  </li>
@@ -176,7 +177,7 @@ export default function FirstHomeBuyers() {
  transition={{ duration: 0.9, ease: 'easeOut' }}
  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
- <div className={index % 2 === 0 ? 'lg:col-start-2' : ''}>
+ <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
  <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
  {pillar.title}
  </h2>
@@ -186,7 +187,7 @@ export default function FirstHomeBuyers() {
  return (
  <div key={pIdx} className="space-y-3 mt-4">
  {paragraph.split('\n').map((item, iIdx) => (
- <div key={iIdx} className="flex items-start gap-4">
+ <div key={iIdx} className="flex items-start justify-center gap-4 text-center">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item.replace('• ', '')}</span>
  </div>
@@ -219,8 +220,8 @@ export default function FirstHomeBuyers() {
 
  {/* Left — Sticky Panel */}
  <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
- <div className="mb-6">
- <div className="h-1 w-16 bg-gold mb-8 rounded-full" />
+ <div className="mb-6 text-center">
+ <div className="h-1 w-16 bg-gold mb-8 rounded-full mx-auto" />
  <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
  {pageData?.process?.heading?.includes('Journey') ? (
  <>The First Home <br /> <span className="text-gold">Journey</span></>
@@ -229,7 +230,7 @@ export default function FirstHomeBuyers() {
  )}
  </h2>
  <p className="text-white/60 font-sans text-lg leading-relaxed">
- {pageData?.process?.description || "From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase — so you can move forward with confidence, not guesswork."}
+ {pageData?.process?.description ? pageData.process.description.replace(/—/g, '-') : "From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase - so you can move forward with confidence, not guesswork."}
  </p>
  </div>
  </div>
