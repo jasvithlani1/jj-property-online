@@ -146,7 +146,7 @@ export default function Contact() {
  initial={{ opacity: 0, x: -30 }}
  animate={{ opacity: 1, x: 0 }}
  transition={{ duration: 0.8, delay: 0.2 }}
- className="flex flex-col justify-center"
+ className="flex flex-col justify-center items-center text-center"
  >
  <h2 className="text-4xl font-serif text-black leading-tight mb-2">
  {pageData?.details?.heading || "Let's discuss your targets."}
@@ -154,7 +154,7 @@ export default function Contact() {
 
  <div className="space-y-3">
  {/* Email */}
- <div className="flex items-start gap-5 group">
+ <div className="flex items-center justify-center gap-5 group">
  <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
  <Mail className="w-6 h-6" />
  </div>
@@ -167,7 +167,7 @@ export default function Contact() {
  </div>
 
  {/* Phone */}
- <div className="flex items-start gap-5 group">
+ <div className="flex items-center justify-center gap-5 group">
  <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
  <Phone className="w-6 h-6" />
  </div>
@@ -180,7 +180,7 @@ export default function Contact() {
  </div>
 
  {/* WhatsApp */}
- <div className="flex items-start gap-5 group">
+ <div className="flex items-center justify-center gap-5 group">
  <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm">
  <FaWhatsapp className="w-6 h-6" />
  </div>
@@ -193,7 +193,7 @@ export default function Contact() {
  </div>
 
  {/* Service Areas */}
- <div className="flex items-start gap-5 group pt-4">
+  <div className="flex items-center justify-center gap-5 group pt-4">
  <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 text-black shadow-sm">
  <MapPin className="w-6 h-6" />
  </div>

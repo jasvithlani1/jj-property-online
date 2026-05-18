@@ -111,6 +111,7 @@ export default function Blog() {
  </div>
  <div className="max-w-7xl mx-auto relative z-10">
  <motion.div
+ className="text-center flex flex-col items-center"
  initial={{ opacity: 0, y: 40 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
@@ -118,7 +119,7 @@ export default function Blog() {
  <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
  {pageData?.hero?.badge || "Market Intelligence"}
  </div>
- <h1 className="text-5xl md:text-8xl font-serif leading-[1.05] mb-6 max-w-4xl">
+ <h1 className="text-5xl md:text-8xl font-serif leading-[1.05] mb-6 max-w-4xl mx-auto">
  {pageData?.hero?.heading?.includes('informed') ? (
  <>Insights for Sydney's <span className="text-gold">informed buyers.</span></>
  ) : pageData?.hero?.heading || (
@@ -134,7 +135,7 @@ export default function Blog() {
 
  {/* Category Filter Strip */}
  <section className="px-8 py-4">
- <div className="max-w-7xl mx-auto flex flex-wrap gap-3">
+ <div className="max-w-7xl mx-auto flex flex-wrap gap-3 justify-center">
  {['All Articles', 'Market Intelligence', 'Market Analysis', 'SMSF Strategy', 'First Home', 'Strategy'].map((cat) => (
  <button
  key={cat}
@@ -194,8 +195,8 @@ export default function Blog() {
  </div>
 
  {/* Body */}
- <div className="flex flex-col flex-1 p-8">
- <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-muted mb-4">
+ <div className="flex flex-col flex-1 p-8 items-center text-center">
+ <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-widest text-muted mb-4">
  <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" />{new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
  <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
  </div>
@@ -208,7 +209,7 @@ export default function Blog() {
  {post.excerpt}
  </p>
 
- <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#011122]">
+ <div className="mt-auto flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-[#011122]">
  Read More
  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
  </div>
@@ -236,7 +237,7 @@ export default function Blog() {
  )}
  </h2>
  <p className="text-xl text-muted font-sans mb-2 max-w-xl mx-auto leading-relaxed">
- {pageData?.newsletter?.description || "Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam — just actionable data."}
+ {pageData?.newsletter?.description || "Join 1,200+ Sydney buyers who receive our monthly market briefing. No spam - just actionable data."}
  </p>
  {isSubscribed ? (
  <motion.div
