@@ -348,11 +348,11 @@ export default function SmsfProperty() {
  <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
  SMSF <br />
  <span className="text-gold">Questions.</span>
  </h2>
- <p className="text-muted text-lg font-sans leading-relaxed">Essential insights for buying residential property within super.</p>
+ <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Essential insights for buying residential property within super.</p>
  </div>
 
  <div className="lg:col-span-8 flex flex-col gap-6">
@@ -411,7 +411,7 @@ export default function SmsfProperty() {
  >
  <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
- <>Secure your <span className="text-gold">future</span> today.</>
+ <>Secure your <span className="text-gold">Future</span> today.</>
  )}
  </h2>
  <p className="text-xl text-white/70 font-sans mb-3 leading-relaxed max-w-2xl mx-auto">

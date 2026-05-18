@@ -120,6 +120,7 @@ export default function CommercialProperty() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
                 {pageData?.intro?.heading || "Commercial Acquisition Strategies for Smart Property Investors"}
@@ -139,7 +140,7 @@ export default function CommercialProperty() {
                     "A long-term portfolio strategy designed around 5-10-year wealth creation",
                     "Coordinated support with your broker, accountant, and financial adviser for informed decisions"
                   ]).map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-4">
+                    <li key={idx} className="flex items-start justify-center gap-4 text-center">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                       <span>{item}</span>
                     </li>
@@ -176,17 +177,17 @@ export default function CommercialProperty() {
                 transition={{ duration: 0.9, ease: 'easeOut' }}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
-                <div className={index % 2 === 0 ? 'lg:col-start-2' : ''}>
+                <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
-                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
+                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-center">
                     {(pillar.description || "").split('\n\n').map((paragraph: string, pIdx: number) => {
                       if (paragraph.startsWith('• ')) {
                         return (
                           <div key={pIdx} className="space-y-3 mt-4">
                             {paragraph.split('\n').map((item, iIdx) => (
-                              <div key={iIdx} className="flex items-start gap-4">
+                              <div key={iIdx} className="flex items-start justify-center gap-4 text-center">
                                 <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                                 <span>{item.replace('• ', '')}</span>
                               </div>
@@ -438,11 +439,11 @@ export default function CommercialProperty() {
         <section className="relative pt-2 pb-2 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8">
+              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
                 Frequently <br />
-                <span className="text-gold">asked questions.</span>
+                <span className="text-gold">Asked Questions.</span>
               </h2>
-              <p className="text-muted text-lg font-sans leading-relaxed">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
+              <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
@@ -479,7 +480,7 @@ export default function CommercialProperty() {
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-center">{faq.answer.replace(/—/g, '-')}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
