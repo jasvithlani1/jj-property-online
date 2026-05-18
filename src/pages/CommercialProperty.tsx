@@ -270,7 +270,7 @@ export default function CommercialProperty() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-80px' }}
                         transition={{ duration: 0.7, ease: 'easeOut' }}
-                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
+                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-center"
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
