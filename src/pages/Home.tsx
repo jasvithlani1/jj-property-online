@@ -596,24 +596,27 @@ export default function Home() {
                   )}
                 </h2>
                 <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl">
-                  Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you — with zero conflicts of interest and 100% dedication to your goals.
+                  Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and 100% dedication to your goals.
                 </p>
                 <div className="space-y-1 w-full text-left">
                   {(homeData?.differenceSection?.points || [
-                    "100% buyer's agent representation — no ties to developers",
+                    "100% buyer's agent representation - no ties to developers",
                     "Built on real experience with a personal $6M+ portfolio",
                     "20+ years of IT expertise applied to research & data",
                     "Exclusive access to off-market and pre-market properties",
                     "Founder-led service managed personally by Alex",
                     "Transparent, fixed or percentage-based fee structures",
                     "Australia-wide support guided by performance data",
-                    "5-star Google reviewed — verified results"
-                  ]).map((item: string, i: number) => (
-                    <div key={i} className="flex items-center gap-4 text-lg text-muted font-sans">
-                      <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
-                      {item}
-                    </div>
-                  ))}
+                    "5-star Google reviewed - verified results"
+                  ]).map((item: string, i: number) => {
+                    const displayItem = item.replace(/\$5M/g, '$6M+').replace(/—/g, '-');
+                    return (
+                      <div key={i} className="flex items-start gap-4 text-lg text-muted font-sans">
+                        <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+                        {displayItem}
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
               <div className="relative mt-1 lg:mt-0">
