@@ -414,7 +414,7 @@ export default function Services() {
 
  {/* FAQ Section */}
  <section className="relative py-6 md:py-2 bg-gradient-to-b from-white to-gold/5 px-8">
- <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+ <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
  <div className="lg:col-span-4">
  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-6 text-center lg:text-left">
  Frequently <br />
