@@ -745,7 +745,7 @@ export default function Home() {
             className="relative z-10"
           >
             <h2 className="text-3xl md:text-5xl font-sans font-black mb-2 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
-              Start your Real Estate <br className="hidden md:block" />success story.
+              Start your Real Estate <br className="hidden md:block" />Success Story.
             </h2>
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
               Book Free Session
@@ -759,7 +759,7 @@ export default function Home() {
             <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1 md:whitespace-nowrap">
-                  Real world results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
+                  Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
               </div>

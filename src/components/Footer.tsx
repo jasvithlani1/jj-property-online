@@ -41,14 +41,14 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="JJ Property Partner – Home"
-              className="group flex flex-col sm:flex-row items-center sm:items-start lg:items-center text-center sm:text-left gap-4 sm:gap-6 mb-6 md:mb-8"
+              className="group flex flex-row items-center text-left gap-4 mb-6 md:mb-8"
             >
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
+              <div className="relative w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
                 <img src="/logo.png?v=4" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="flex flex-col">
-                <div className="font-sans font-black text-2xl sm:text-3xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
-                <div className="font-sans font-bold text-xs tracking-[0.25em] text-gold leading-none uppercase mt-3">YOUR PROPERTY, OUR PRIORITY</div>
+                <div className="font-sans font-black text-sm sm:text-3xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
+                <div className="font-sans font-bold text-[8px] sm:text-xs tracking-[0.25em] text-gold leading-none uppercase mt-1.5">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
             <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mx-auto lg:mx-0 mb-8 lg:mb-0">
