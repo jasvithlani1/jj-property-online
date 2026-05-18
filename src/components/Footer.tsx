@@ -51,7 +51,7 @@ export default function Footer() {
                 <div className="font-sans font-bold text-[8px] sm:text-xs tracking-[0.25em] text-gold leading-none uppercase mt-1.5">YOUR PROPERTY, OUR PRIORITY</div>
               </div>
             </Link>
-            <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mx-auto lg:mx-0 mb-8 lg:mb-0">
+            <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mx-auto lg:mx-0">
               Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.
             </p>
           </div>

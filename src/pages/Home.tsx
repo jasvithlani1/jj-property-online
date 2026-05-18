@@ -435,12 +435,12 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
                     <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">20543356</span>
                   </div>
                   <div className="w-px h-10 bg-gold/20"></div>
                   <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">ABN</span>
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">ABN</span>
                     <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">71 687 187 113</span>
                   </div>
                 </div>
@@ -471,12 +471,12 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col items-center text-center">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
                     <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">20543356</span>
                   </div>
                   <div className="w-px h-10 bg-gold/20"></div>
                   <div className="flex flex-col items-center text-center">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">ABN</span>
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">ABN</span>
                     <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">71 687 187 113</span>
                   </div>
                 </div>
@@ -761,7 +761,7 @@ export default function Home() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1 md:whitespace-nowrap">
                   Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
                 </h2>
-                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments — curated results that define our standard.</p>
+                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments - curated results that define our standard.</p>
               </div>
               <Link
                 href="/case-studies"
