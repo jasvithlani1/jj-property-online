@@ -185,8 +185,8 @@ export default function Services() {
  <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading ? (
  <>
- {pageData.hero.heading.split(' ').slice(0, -2).join(' ')}{' '}
- <span className="text-gold">{pageData.hero.heading.split(' ').slice(-2).join(' ')}</span>
+ {pageData.hero.heading.replace('property acquisition', 'Property Acquisition').split(' ').slice(0, -2).join(' ')}{' '}
+ <span className="text-gold">{pageData.hero.heading.replace('property acquisition', 'Property Acquisition').split(' ').slice(-2).join(' ')}</span>
  </>
  ) : (
  <>The Modern Path to <span className="text-gold">Property Acquisition.</span></>
@@ -210,7 +210,7 @@ export default function Services() {
  { value: '97%', label: 'Client Satisfaction Rate' },
  { value: '100%', label: 'Buyers Representation' },
  ]).map((stat: any) => (
- <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500">
+ <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center">
  <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
  <p className="relative text-4xl md:text-5xl font-serif text-[#011122] mb-2 font-bold">{stat.value}</p>
  <p className="relative text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</p>
@@ -284,13 +284,10 @@ export default function Services() {
  {service.title}
  </h2>
  </div>
- <span className={`w-fit text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full ${service.accentClass || 'bg-gold/5 border-gold/20'} border shadow-sm`}>
- {service.tag}
- </span>
  </div>
- <p className="text-lg text-muted font-serif mb-4">{service.subtitle}</p>
- <p className="text-lg text-muted font-sans leading-relaxed mb-8">
- {service.description}
+ <h3 className="text-xl md:text-2xl font-serif text-muted mb-4">{service.subtitle}</h3>
+ <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-center lg:text-left">
+ {service.description.replace(/—/g, '-')}
  </p>
 
  <ul className="space-y-4 mb-8">
