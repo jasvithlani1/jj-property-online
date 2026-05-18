@@ -872,7 +872,7 @@ export default function Home() {
             <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-6 lg:mb-0">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1">
                 Frequently <br className="hidden lg:block" />
-                <span className="text-gold">asked questions.</span>
+                <span className="text-gold">Asked Questions.</span>
               </h2>
               <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
             </div>
@@ -884,9 +884,9 @@ export default function Home() {
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     aria-expanded={openFaq === index}
                     aria-controls={`faq-answer-${index}`}
-                    className="w-full flex items-center justify-between py-2 text-left hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+                    className="w-full flex items-center justify-between py-2 hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+                    <span className={`flex-1 text-center text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
@@ -908,7 +908,7 @@ export default function Home() {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <p className="text-base text-muted font-sans leading-relaxed pb-4 pl-2 pr-8">{faq.answer}</p>
+                        <p className="text-base text-muted font-sans leading-relaxed pb-4 text-center px-4">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -931,7 +931,7 @@ export default function Home() {
                 Take the next step
               </div>
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.0] mb-0.5">
-                Book your <span className="text-gold">strategy session.</span>
+                Book your <span className="text-gold">Strategy Session.</span>
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
                 Select a date and time that suits you for a confidential 30-minute consultation with Alex.
@@ -944,11 +944,11 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="max-w-5xl mx-auto bg-neutral-50 rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[700px] relative z-10"
+            className="max-w-5xl mx-auto bg-neutral-50 rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[900px] sm:min-h-[700px] relative z-10"
           >
             <div
               id="calendly-inline-widget"
-              className="w-full h-[700px]"
+              className="w-full h-[900px] sm:h-[700px]"
             />
           </motion.div>
 
