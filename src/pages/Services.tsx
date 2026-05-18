@@ -475,7 +475,7 @@ export default function Services() {
  )}
  </h2>
  <p className="text-lg sm:text-xl text-muted font-sans mb-3 max-w-2xl mx-auto">
- {pageData?.finalCta?.description || "Book a free 30-minute call. No pressure, no pitch — just a frank conversation about your property targets."}
+ {pageData?.finalCta?.description ? pageData.finalCta.description.replace(/—/g, '-') : "Book a free 30-minute call. No pressure, no pitch - just a frank conversation about your property targets."}
  </p>
  <button
  onClick={openCalendly}
