@@ -45,7 +45,7 @@ export default function About() {
   {/* Profile Section (New Hero) */}
   <section className="pt-28 md:pt-36 pb-4 md:pb-2 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
- <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
+ <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-24 items-center">
  <motion.div
  initial={{ opacity: 0, x: -40 }}
  whileInView={{ opacity: 1, x: 0 }}
@@ -234,7 +234,7 @@ export default function About() {
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
  
- <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8">
  {(aboutData?.values || [
  { title: 'Truly Independent, Always Buyer-Focused', description: 'JJ Property Partner is a dedicated buyers-only agency, acting solely in the interests of the buyer at every stage of the property journey. We do not represent sellers, developers, or third parties, so there is never a conflict of interest. Our advice remains completely independent, transparent, and focused on securing the right outcome for you.' },
  { title: 'Clear Advice, Every Step', description: 'We believe property decisions should be backed by clear communication and honest guidance. We are upfront about our fees, research process, market insights, and recommendations from day one. You will always know where you stand and what risks or opportunities exist, so you can move forward with complete confidence.' },
@@ -274,7 +274,7 @@ export default function About() {
  </p>
  </div>
 
- <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+ <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 relative z-10">
  {(aboutData?.pillarsSection?.pillars || [
  {
  title: "Data-Driven Precision",
