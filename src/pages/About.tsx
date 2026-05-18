@@ -75,7 +75,7 @@ export default function About() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 1, delay: 0.2 }}
- className="lg:col-span-7 space-y-3"
+ className="lg:col-span-7 space-y-3 text-center"
  >
  <div className="space-y-4">
 
@@ -120,7 +120,7 @@ export default function About() {
   { label: 'Personal Portfolio', value: '$6M+' },
   { label: 'Service Area', value: 'Nationwide' }
   ]).map((stat: any, i: number) => (
-  <div key={i} className={`flex flex-col gap-1 sm:border-r border-gold/20 sm:last:border-r-0 sm:px-6 first:pl-0 last:pr-0`}>
+  <div key={i} className={`flex flex-col items-center text-center gap-1 sm:border-r border-gold/20 sm:last:border-r-0 sm:px-6 first:pl-0 last:pr-0`}>
   <span className="text-2xl font-serif text-[#011122]">{stat.value}</span>
   <span className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</span>
   </div>
@@ -147,11 +147,11 @@ export default function About() {
  
  <div className="space-y-2 text-lg md:text-xl text-muted font-sans leading-relaxed mb-2">
  {aboutData?.purpose?.description ? (
- aboutData.purpose.description.split('\n\n').map((para: string, i: number) => <p key={i}>{para}</p>)
+ aboutData.purpose.description.split('\n\n').map((para: string, i: number) => <p key={i}>{para.replace(/—/g, '-')}</p>)
  ) : (
  <>
  <p>
- The initials <span className="text-[#011122] font-semibold">JJ</span> carry deep personal meaning. They represent the two people who inspired Alex to build something lasting — his daughters <span className="text-[#011122] font-medium">Jessica and Jennifer</span>.
+ The initials <span className="text-[#011122] font-semibold">JJ</span> carry deep personal meaning. They represent the two people who inspired Alex to build something lasting - his daughters <span className="text-[#011122] font-medium">Jessica and Jennifer</span>.
  </p>
  <p>
  Every property acquisition, every negotiation, every piece of advice is delivered with the same dedication he puts into building their future.
@@ -198,7 +198,7 @@ export default function About() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.6 }}
- className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10"
+ className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10 text-center"
  >
  <h3 className="text-3xl font-serif mb-3 text-[#011122]">{aboutData?.trackRecord?.title || "Alex's Personal Track Record"}</h3>
  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
@@ -213,7 +213,7 @@ export default function About() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.6, delay: 0.2 }}
- className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden"
+ className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden text-center"
  >
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
  <h3 className="text-3xl font-serif mb-3 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
@@ -249,11 +249,11 @@ export default function About() {
  transition={{ duration: 0.6, delay: index * 0.1 }} 
  className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group"
  >
- <div className="flex items-center gap-4 mb-3">
+ <div className="flex flex-col items-center gap-2 mb-3">
  <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">{String(index + 1).padStart(2, '0')}</span>
- <h4 className="text-2xl font-serif text-gold">{value.title}</h4>
+ <h4 className="text-2xl font-serif text-gold text-center">{value.title}</h4>
  </div>
- <p className="text-white/70 text-base md:text-lg leading-relaxed">{value.description}</p>
+ <p className="text-white/70 text-base md:text-lg leading-relaxed text-center">{value.description}</p>
  </motion.div>
  ))}
  </div>
