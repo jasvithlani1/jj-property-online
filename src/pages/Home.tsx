@@ -321,7 +321,7 @@ export default function Home() {
         <motion.section
           id="home"
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="relative h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-16 sm:pt-20 lg:pt-24 pb-24 sm:pb-0"
+          className="relative h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-16 sm:pt-20 lg:pt-36 pb-24 sm:pb-0"
         >
           <div className="absolute inset-0 -z-20">
             <video
@@ -371,7 +371,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-12 sm:mt-24 w-full px-4 sm:px-0 sm:w-auto">
+          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-16 sm:mt-12 w-full px-4 sm:px-0 sm:w-auto">
             <button onClick={openCalendly} className="rounded-full px-10 sm:px-14 py-4 sm:py-5 text-sm sm:text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer w-full sm:w-auto">
               {homeData?.hero?.ctaText || "Book Session"}
             </button>
