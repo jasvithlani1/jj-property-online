@@ -507,7 +507,7 @@ export default function FirstHomeBuyers() {
  >
  <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
- <>Secure your <span className="text-gold">first home</span> today.</>
+ <>Secure your <span className="text-gold">First Home</span> today.</>
  )}
  </h2>
  <p className="text-xl text-white/70 font-sans mb-3 leading-relaxed max-w-2xl mx-auto">
