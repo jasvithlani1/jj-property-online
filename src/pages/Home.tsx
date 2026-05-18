@@ -22,7 +22,7 @@ const servicesPreview = [
   },
   {
     title: 'Property Investors',
-    description: "Building a strong property portfolio takes strategy, not guesswork. At JJ Property Partner, we use data-led research to identify high-growth, high-yield opportunities across Australia, helping you secure smart investments that match your income goals and risk profile.",
+    description: "Building a strong property portfolio takes strategy, not guesswork. At JJ Property Partner, we use data-led research to identify high-growth, high-yield opportunities across Australia, helping you secure investments that match your income goals, plans, and risk profile.",
     icon: <TrendingUp className="w-6 h-6" />,
     solidIcon: <FaChartLine className="w-6 h-6" />,
     color: 'bg-gold/10',
@@ -30,7 +30,7 @@ const servicesPreview = [
   },
   {
     title: 'SMSF Property',
-    description: "Buying property through an SMSF comes with strict rules, and getting it right matters. We work closely with your specialists to secure compliant, investment-grade properties that align with your long-term retirement goals.",
+    description: "Buying property through an SMSF comes with strict Australian rules, and getting it right matters. We work closely with your adviser, accountant, and SMSF auditor to secure compliant, investment-grade properties that align with your clear long-term retirement goals and wealth strategy.",
     icon: <TbHomeShield className="w-6 h-6" />,
     solidIcon: <TbHomeShield className="w-6 h-6" />,
     color: 'bg-gold/5',
@@ -97,19 +97,25 @@ const heroSlides = [
     heading: (
       <>Strategist. <span className="text-gold font-sans font-black">Insider.</span> <br className="hidden md:block" /> Your <span className="text-gold font-sans font-black">Dedicated</span> Advocate.</>
     ),
-    subheading: "JJ Property Partner — Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."
+    subheading: "JJ Property Partner - Your Trusted Buyers Agent in Australia. Bridging the gap between real estate and technology with a data-backed approach to your next property acquisition."
   },
   {
     heading: (
-      <>Buy with <span className="text-gold font-sans font-black">Data.</span> <br className="hidden md:block" /> Negotiate with <span className="text-gold font-sans font-black">Power.</span></>
+      <>Independent <span className="text-gold font-sans font-black">Advice.</span> <br className="hidden md:block" /> Better Buying <span className="text-gold font-sans font-black">Outcomes.</span></>
     ),
-    subheading: "We level the playing field by providing exclusive off-market access and deep analytical rigor to every acquisition."
+    subheading: "We work only for buyers, giving you transparent guidance, data-backed research, and strong negotiation support to secure the right property on the right terms."
   },
   {
     heading: (
-      <>Your <span className="text-gold font-sans font-black">Success</span> <br className="hidden md:block" /> is our only <span className="text-gold font-sans font-black">Brief.</span></>
+      <>From <span className="text-gold font-sans font-black">Search</span> <br className="hidden md:block" /> to <span className="text-gold font-sans font-black">Settlement.</span></>
     ),
-    subheading: "Independent, transparent, and results-driven. We represent you exclusively to secure the best possible terms in any market."
+    subheading: "Your property journey deserves expert support at every step. We simplify the process with research, inspections, negotiation, due diligence, and settlement coordination."
+  },
+  {
+    heading: (
+      <>Property <span className="text-gold font-sans font-black">Strategy</span> <br className="hidden md:block" /> Built Around <span className="text-gold font-sans font-black">You.</span></>
+    ),
+    subheading: "Whether you are buying your first home, investing, or purchasing through an SMSF, we create a tailored strategy aligned with your goals, budget, and future plans."
   }
 ];
 
@@ -596,7 +602,7 @@ export default function Home() {
                   )}
                 </h2>
                 <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl">
-                  Most buyers enter the market without professional representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and 100% dedication to your goals.
+                  Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.
                 </p>
                 <div className="space-y-1 w-full text-left">
                   {(homeData?.differenceSection?.points || [
@@ -674,7 +680,7 @@ export default function Home() {
                   {
                     num: "1",
                     title: "Strategy Session",
-                    desc: "Free 30-minute mapping of your goals, budget, timeline and property criteria."
+                    desc: "Free 30-minute strategy mapping of your goals, budget, timeline and ideal property criteria."
                   },
                   {
                     num: "2",
