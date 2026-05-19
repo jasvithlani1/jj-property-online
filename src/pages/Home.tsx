@@ -604,25 +604,27 @@ export default function Home() {
                 <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl">
                   Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.
                 </p>
-                <div className="space-y-2 w-full flex flex-col items-center">
-                  {(homeData?.differenceSection?.points || [
-                    "100% buyer's agent representation - no ties to developers",
-                    "Built on real experience with a personal $6M+ portfolio",
-                    "20+ years of IT expertise applied to research & data",
-                    "Exclusive access to off-market and pre-market properties",
-                    "Founder-led service managed personally by Alex",
-                    "Transparent, fixed or percentage-based fee structures",
-                    "Australia-wide support guided by performance data",
-                    "5-star Google reviewed - verified results"
-                  ]).map((item: string, i: number) => {
-                    const displayItem = item.replace(/\$5M/g, '$6M+').replace(/—/g, '-');
-                    return (
-                      <div key={i} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-lg text-muted font-sans text-center max-w-xl">
-                        <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
-                        {displayItem}
-                      </div>
-                    );
-                  })}
+                <div className="w-full flex justify-center mt-2">
+                  <div className="space-y-2 flex flex-col items-start text-left max-w-xl">
+                    {(homeData?.differenceSection?.points || [
+                      "100% buyer's agent representation - no ties to developers",
+                      "Built on real experience with a personal $6M+ portfolio",
+                      "20+ years of IT expertise applied to research & data",
+                      "Exclusive access to off-market and pre-market properties",
+                      "Founder-led service managed personally by Alex",
+                      "Transparent, fixed or percentage-based fee structures",
+                      "Australia-wide support guided by performance data",
+                      "5-star Google reviewed - verified results"
+                    ]).map((item: string, i: number) => {
+                      const displayItem = item.replace(/\$5M/g, '$6M+').replace(/—/g, '-');
+                      return (
+                        <div key={i} className="flex items-start gap-4 text-lg text-muted font-sans text-left">
+                          <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+                          <span>{displayItem}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </motion.div>
               <div className="relative mt-1 lg:mt-0">
