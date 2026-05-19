@@ -517,7 +517,7 @@ export default function Home() {
             </div>
 
             <div className="mt-3 lg:mt-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 pb-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5 pb-0">
                 {servicesPreview.map((localService: any, index: number) => {
                   const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
                   return (
@@ -617,7 +617,7 @@ export default function Home() {
                   ]).map((item: string, i: number) => {
                     const displayItem = item.replace(/\$5M/g, '$6M+').replace(/—/g, '-');
                     return (
-                      <div key={i} className="flex items-start md:items-center justify-center gap-4 text-lg text-muted font-sans text-left md:text-center max-w-xl">
+                      <div key={i} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-lg text-muted font-sans text-center max-w-xl">
                         <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                         {displayItem}
                       </div>
@@ -874,7 +874,7 @@ export default function Home() {
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
         <section className="relative py-0.5 md:py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
             <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-0">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1">
                 Frequently <br className="hidden lg:block" />
