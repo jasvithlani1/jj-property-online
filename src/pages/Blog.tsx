@@ -104,7 +104,7 @@ export default function Blog() {
  />
 
  {/* Hero */}
- <section className="pt-28 md:pt-36 relative px-8 pb-3 md: md:pb-3 bg-[#011122] text-white overflow-hidden">
+ <section className="pt-24 pb-2 md:pt-36 md:pb-3 relative px-8 bg-[#011122] text-white overflow-hidden">
  <div className="absolute inset-0 opacity-10 pointer-events-none">
  <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-gold rounded-full blur-[200px]" />
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold rounded-full blur-[150px]" />
@@ -134,7 +134,7 @@ export default function Blog() {
  </section>
 
  {/* Category Filter Strip */}
- <section className="px-8 py-4">
+ <section className="px-8 py-2">
  <div className="max-w-7xl mx-auto flex flex-wrap gap-3 justify-center">
  {['All Articles', 'Market Intelligence', 'Market Analysis', 'SMSF Strategy', 'First Home', 'Strategy'].map((cat) => (
  <button
@@ -148,14 +148,14 @@ export default function Blog() {
  </section>
 
  {/* Post Grid */}
- <section className="px-8 pb-3 pt-4">
+ <section className="px-8 pb-2 pt-2">
  <div className="max-w-7xl mx-auto">
  {isLoading ? (
  <div className="flex justify-center py-2">
  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
  </div>
  ) : (
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
  {posts.map((post, i) => (
  <Link
  key={post._id}
@@ -223,7 +223,7 @@ export default function Blog() {
  </section>
 
  {/* Newsletter CTA */}
- <section className="px-8 py-2 md:py-3 bg-gold/5">
+ <section className="px-8 py-1 md:py-3 bg-gold/5">
  <div className="max-w-3xl mx-auto text-center">
  <motion.div
  initial={{ opacity: 0, y: 30 }}

@@ -43,7 +43,7 @@ export default function About() {
  <div className="w-full bg-white selection:bg-gold/20 ">
 
   {/* Profile Section (New Hero) */}
-  <section className="pt-28 md:pt-36 pb-4 md:pb-2 px-8 bg-white">
+  <section className="pt-24 pb-2 md:pt-36 md:pb-2 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-24 items-center">
  <motion.div

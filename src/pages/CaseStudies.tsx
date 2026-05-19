@@ -92,7 +92,7 @@ export default function CaseStudies() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-32 md:pt-40 pb-4 overflow-hidden bg-gold/5">
+      <section className="relative px-8 pt-24 md:pt-40 pb-2 overflow-hidden bg-gold/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -139,14 +139,14 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-2 md:py-3 px-8 bg-white">
+      <section className="py-1 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-2">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
               {studies.map((study, index) => (
                 <Link
                   key={study._id}
@@ -224,7 +224,7 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-2 md:py-3 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
+      <section className="py-1 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold rounded-full blur-[200px]" />
         </div>
@@ -254,7 +254,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Latest Acquisition Showcase */}
-      <section className="py-2 md:py-3 px-8 bg-neutral-50 border-t border-gold/10">
+      <section className="py-1 px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -265,7 +265,7 @@ export default function CaseStudies() {
             </motion.div>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-5">
             {acquisitions.map((prop, i) => {
               const [beds, baths, cars] = prop.config.split(' / ');
               return (

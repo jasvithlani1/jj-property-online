@@ -85,7 +85,7 @@ export default function SmsfProperty() {
  
  <div className="w-full bg-white selection:bg-gold/20 ">
  {/* Hero Section */}
- <section className="pt-28 md:pt-36 relative px-6 py-4 sm:px-8 sm:py-6 md: md:pb-8 bg-[#011122] text-white overflow-hidden">
+ <section className="pt-24 pb-2 md:pt-36 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
  <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -113,8 +113,8 @@ export default function SmsfProperty() {
  </section>
 
  {/* Introduction Section */}
- <section className="py-4 md:py-2 px-8 bg-white overflow-hidden">
- <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+ <section className="py-1 px-8 bg-white overflow-hidden">
+ <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
  <motion.div
  initial={{ opacity: 0, x: -40 }}
  whileInView={{ opacity: 1, x: 0 }}
@@ -166,8 +166,8 @@ export default function SmsfProperty() {
  </section>
 
  {/* Content Pillars */}
- <section className="py-2 md:py-6 px-6 md:px-8 bg-neutral-50">
- <div className="max-w-7xl mx-auto flex flex-col gap-16 md:gap-24">
+ <section className="py-1 md:py-3 px-6 md:px-8 bg-neutral-50">
+ <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
  {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
  <motion.div
  key={index}
@@ -175,7 +175,7 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true, margin: '-100px' }}
  transition={{ duration: 0.9, ease: 'easeOut' }}
- className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
+ className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
  <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
  <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
@@ -213,7 +213,7 @@ export default function SmsfProperty() {
  </section>
 
  {/* Core Services Section */}
- <section className="py-4 md:py-2 px-8 bg-[#011122] text-white overflow-hidden relative">
+ <section className="py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
  <div className="max-w-7xl mx-auto text-center mb-4">
  <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">
@@ -224,7 +224,7 @@ export default function SmsfProperty() {
  <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
  </div>
  <div className="max-w-7xl mx-auto">
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
  {(pageData?.process?.steps || [
  { stepNumber: '01', title: 'Strategy & Setup', body: 'We coordinate with your financial professionals to ensure your fund is structured correctly and your investment strategy is property-ready.' },
  { stepNumber: '02', title: 'Compliant Sourcing', body: 'We identify residential assets that meet SMSF lending requirements and offer the best long-term growth and yield potential.' },
@@ -237,12 +237,12 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1 }}
- className="relative p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-center"
+ className="relative p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-center"
  >
- <div className="text-gold font-serif text-5xl mb-6 opacity-30 group-hover:opacity-100 transition-opacity">
+ <div className="text-gold font-serif text-5xl mb-4 opacity-30 group-hover:opacity-100 transition-opacity">
  {card.stepNumber || `0${i + 1}`}
  </div>
- <h3 className="text-xl font-serif text-white mb-4">
+ <h3 className="text-xl font-serif text-white mb-3">
  {card.title}
  </h3>
  <p className="text-white/60 font-sans text-sm leading-relaxed">
@@ -254,7 +254,7 @@ export default function SmsfProperty() {
  </div>
  </section>
 
- <section className="pt-6 md:pt-3 pb-8 md:pb-4 px-8 bg-white overflow-hidden border-t border-gold/5">
+ <section className="pt-2 pb-2 px-8 bg-white overflow-hidden border-t border-gold/5">
  <div className="max-w-5xl mx-auto">
  <div className="text-center mb-6">
  <motion.div
@@ -279,7 +279,7 @@ export default function SmsfProperty() {
  {/* Vertical line connector */}
  <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
- <div className="flex flex-col gap-12 relative z-10">
+ <div className="flex flex-col gap-6 relative z-10">
  {(pageData?.readiness?.items || [
  { title: "Sole Purpose Test", description: "The investment must be for the sole purpose of providing retirement benefits to members." },
  { title: "No Personal Use", description: "You or your family cannot live in or use the residential property held by your fund." },
@@ -294,7 +294,7 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8, delay: idx * 0.1 }}
- className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-20`}
+ className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
  >
  <div className="flex-1 text-center md:text-left">
  <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
@@ -345,8 +345,8 @@ export default function SmsfProperty() {
  </section>
 
  {/* FAQ Section */}
- <section className="relative pt-8 md:pt-4 pb-4 md:pb-6 bg-white px-8">
- <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+ <section className="relative pt-2 pb-2 bg-white px-8">
+ <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
  <div className="lg:col-span-4">
  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
  SMSF <br />
@@ -400,7 +400,7 @@ export default function SmsfProperty() {
  </section>
 
  {/* CTA Section */}
- <section className="pt-4 md:pt-6 pb-8 md:pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="pt-2 pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554224155-11ee21264004?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
  <div className="max-w-4xl mx-auto text-center relative z-10">
  <motion.div

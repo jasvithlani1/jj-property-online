@@ -89,7 +89,7 @@ export default function CommercialProperty() {
       
       <div className="w-full bg-white selection:bg-gold/20 ">
         {/* Hero Section */}
-        <section className="pt-32 md:pt-44 relative px-6 py-2 sm:px-8 sm:py-4 md:pb-4 bg-[#011122] text-white overflow-hidden">
+        <section className="pt-24 pb-2 md:pt-44 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -113,8 +113,8 @@ export default function CommercialProperty() {
         </section>
 
         {/* Introduction Section */}
-        <section className="py-2 md:py-1 px-8 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <section className="py-1 px-8 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -166,8 +166,8 @@ export default function CommercialProperty() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-1 md:py-2 px-6 md:px-8 bg-neutral-50">
-          <div className="max-w-7xl mx-auto flex flex-col gap-8 md:gap-12">
+        <section className="py-1 px-6 md:px-8 bg-neutral-50">
+          <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
             {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
               <motion.div
                 key={index}
@@ -175,7 +175,7 @@ export default function CommercialProperty() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
                 <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
                   <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
@@ -213,10 +213,10 @@ export default function CommercialProperty() {
         </section>
 
         {/* Strategic Portfolio Section */}
-        <section className="py-2 md:py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
+        <section className="py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 items-start">
 
               {/* Left — Sticky Panel */}
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start text-center">
@@ -300,7 +300,7 @@ export default function CommercialProperty() {
           </div>
         </section>
 
-        <section className="py-2 md:py-1 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="py-1 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-2">
               <motion.div
@@ -325,7 +325,7 @@ export default function CommercialProperty() {
               {/* Vertical line connector */}
               <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
-              <div className="flex flex-col gap-12 relative z-10">
+              <div className="flex flex-col gap-6 relative z-10">
                 {(pageData?.readiness?.items || [
                   { title: "Capital Position", description: "You have usable equity in your home or a deposit of at least $100k-$150k." },
                   { title: "Commercial Outlook", description: "You see commercial property as a long-term wealth strategy, not a short-term gain." },
@@ -340,7 +340,7 @@ export default function CommercialProperty() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: idx * 0.1 }}
-                    className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-20`}
+                    className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
                   >
                     <div className="flex-1 text-center md:text-left">
                       <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
@@ -437,7 +437,7 @@ export default function CommercialProperty() {
 
         {/* FAQ Section */}
         <section className="relative pt-2 pb-2 bg-white px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
             <div className="lg:col-span-4">
               <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
                 Frequently <br />

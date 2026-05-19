@@ -111,7 +111,7 @@ export default function Contact() {
 
  <div className="w-full bg-white selection:bg-gold/20 pt-0 pb-8 md:pb-4">
  {/* Hero Section */}
- <section className="pt-28 md:pt-36 relative px-4 sm:px-8 pb-8 md: md:pb-3 overflow-hidden text-center z-10">
+ <section className="pt-24 pb-2 md:pt-36 md:pb-3 relative px-4 sm:px-8 overflow-hidden text-center z-10">
  <motion.div
  initial={{ opacity: 0, scale: 0.95 }}
  animate={{ opacity: 1, scale: 1 }}
@@ -135,12 +135,12 @@ export default function Contact() {
  </section>
 
  {/* Main Content: Contact Cards & Form */}
- <section className="relative px-4 sm:px-8 pb-8 md:pb-4 z-10">
- <div className="max-w-7xl mx-auto bg-white rounded-[1.5rem] sm:rounded-[3rem] shadow-2xl p-6 sm:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
+ <section className="relative px-4 sm:px-8 pb-4 md:pb-4 z-10">
+ <div className="max-w-7xl mx-auto bg-white rounded-[1.5rem] sm:rounded-[3rem] shadow-2xl p-5 sm:p-12 lg:p-16 border border-black/5 overflow-hidden relative">
  {/* Subtle bg glow */}
  <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 blur-[150px] rounded-full opacity-60 -z-10" />
 
- <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative z-10">
+ <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-24 relative z-10">
  {/* Left Column: Details */}
  <motion.div
  initial={{ opacity: 0, x: -30 }}

@@ -167,7 +167,7 @@ export default function Services() {
  <div className="w-full bg-white selection:bg-gold/20 pt-8">
 
  {/* Hero */}
- <section className="pt-28 md:pt-36 relative px-6 py-2 sm:px-8 sm:py-3 md: md:pb-3 bg-[#011122] text-white overflow-hidden">
+ <section className="pt-24 pb-2 md:pt-36 md:pb-3 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
  {/* bg glow blobs */}
  <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -221,8 +221,8 @@ export default function Services() {
  </section>
 
  {/* Service Sections */}
- <section className="py-2 md:py-3 px-8 bg-white relative overflow-hidden">
- <div className="max-w-7xl mx-auto flex flex-col gap-8 md:gap-12">
+ <section className="py-1 px-8 bg-white relative overflow-hidden">
+ <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
  {(() => {
  const sanityServices = pageData?.serviceList || [];
  // Merge: use Sanity data if available, otherwise use local data
@@ -243,7 +243,7 @@ export default function Services() {
  id={service.id}
  initial="initial"
  whileHover="hover"
- className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
+ className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
  >
  {/* Text Side */}
  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
@@ -340,7 +340,7 @@ export default function Services() {
  </section>
 
  {/* Additional Services */}
- <section className="py-2 md:py-3 px-8 bg-neutral-50 border-t border-gold/10">
+ <section className="py-1 md:py-3 px-8 bg-neutral-50 border-t border-gold/10">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-4">
  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Additional Services</h2>
@@ -413,7 +413,7 @@ export default function Services() {
  </section>
 
  {/* FAQ Section */}
- <section className="relative py-6 md:py-2 bg-gradient-to-b from-white to-gold/5 px-8">
+ <section className="relative py-1 bg-gradient-to-b from-white to-gold/5 px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
  <div className="lg:col-span-4">
  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-6 text-center lg:text-left">
