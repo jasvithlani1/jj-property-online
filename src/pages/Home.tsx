@@ -604,7 +604,7 @@ export default function Home() {
                 <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl">
                   Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.
                 </p>
-                <div className="space-y-1 w-full text-left">
+                <div className="space-y-2 w-full flex flex-col items-center">
                   {(homeData?.differenceSection?.points || [
                     "100% buyer's agent representation - no ties to developers",
                     "Built on real experience with a personal $6M+ portfolio",
@@ -617,7 +617,7 @@ export default function Home() {
                   ]).map((item: string, i: number) => {
                     const displayItem = item.replace(/\$5M/g, '$6M+').replace(/—/g, '-');
                     return (
-                      <div key={i} className="flex items-start gap-4 text-lg text-muted font-sans">
+                      <div key={i} className="flex items-start md:items-center justify-center gap-4 text-lg text-muted font-sans text-left md:text-center max-w-xl">
                         <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                         {displayItem}
                       </div>
@@ -875,7 +875,7 @@ export default function Home() {
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
         <section className="relative py-0.5 md:py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-6 lg:mb-0">
+            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-0">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1">
                 Frequently <br className="hidden lg:block" />
                 <span className="text-gold">Asked Questions.</span>
