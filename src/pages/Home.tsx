@@ -377,7 +377,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-12 w-full px-4 sm:px-0 sm:w-auto">
+          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-12 sm:mt-16 w-full px-4 sm:px-0 sm:w-auto">
             <button onClick={openCalendly} className="rounded-full px-10 sm:px-14 py-4 sm:py-5 text-sm sm:text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer w-full sm:w-auto">
               {homeData?.hero?.ctaText || "Book Session"}
             </button>
