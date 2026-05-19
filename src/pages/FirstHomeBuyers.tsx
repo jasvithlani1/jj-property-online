@@ -442,57 +442,57 @@ export default function FirstHomeBuyers() {
 
  {/* FAQ Section */}
  <section className="relative pt-2 pb-2 bg-white px-8">
- <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
- <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
- Frequently <br />
- <span className="text-gold">Asked Questions.</span>
- </h2>
- <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Everything you need to know about buying your first home with expert representation.</p>
- </div>
+  <div className="max-w-4xl mx-auto flex flex-col gap-4">
+  <div className="text-center mb-2">
+  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-4">
+  Frequently <br />
+  <span className="text-gold">Asked Questions.</span>
+  </h2>
+  <p className="text-muted text-lg font-sans leading-relaxed">Everything you need to know about buying your first home with expert representation.</p>
+  </div>
 
- <div className="lg:col-span-8 flex flex-col gap-6">
- {(pageData?.faqs || fhbFaqs).map((faq: any, index: number) => (
- <motion.div 
- key={index} 
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ delay: index * 0.1 }}
- className="border-b border-gold/20 pb-2"
- >
- <button
- onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
- >
- <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
- {faq.question}
- </span>
- <motion.div
- animate={{ rotate: openFaq === index ? 45 : 0 }}
- transition={{ type: 'spring', stiffness: 200, damping: 20 }}
- className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
- >
- <Plus className="w-6 h-6" />
- </motion.div>
- </button>
- <AnimatePresence>
- {openFaq === index && (
- <motion.div
- initial={{ height: 0, opacity: 0 }}
- animate={{ height: 'auto', opacity: 1 }}
- exit={{ height: 0, opacity: 0 }}
- transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
- className="overflow-hidden"
- >
- <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-center">{faq.answer.replace(/—/g, '-')}</p>
- </motion.div>
- )}
- </AnimatePresence>
- </motion.div>
- ))}
- </div>
- </div>
+  <div className="flex flex-col gap-2">
+  {(pageData?.faqs || fhbFaqs).map((faq: any, index: number) => (
+  <motion.div 
+  key={index} 
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: index * 0.1 }}
+  className="border-b border-gold/20 pb-2"
+  >
+  <button
+  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+  className="w-full flex flex-col items-center justify-center py-4 text-center hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer gap-3"
+  >
+  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-center ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+  {faq.question}
+  </span>
+  <motion.div
+  animate={{ rotate: openFaq === index ? 45 : 0 }}
+  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+  className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
+  >
+  <Plus className="w-5 h-5" />
+  </motion.div>
+  </button>
+  <AnimatePresence>
+  {openFaq === index && (
+  <motion.div
+  initial={{ height: 0, opacity: 0 }}
+  animate={{ height: 'auto', opacity: 1 }}
+  exit={{ height: 0, opacity: 0 }}
+  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+  className="overflow-hidden"
+  >
+  <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-center">{faq.answer.replace(/—/g, '-')}</p>
+  </motion.div>
+  )}
+  </AnimatePresence>
+  </motion.div>
+  ))}
+  </div>
+  </div>
  </section>
 
  {/* CTA Section */}
