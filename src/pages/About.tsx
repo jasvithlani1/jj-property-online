@@ -43,7 +43,7 @@ export default function About() {
  <div className="w-full bg-white selection:bg-gold/20 ">
 
   {/* Profile Section (New Hero) */}
-  <section className="pt-24 pb-2 md:pt-36 md:pb-2 px-8 bg-white">
+  <section className="pt-32 pb-2 md:pt-40 md:pb-2 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-24 items-center">
  <motion.div
@@ -295,7 +295,7 @@ export default function About() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.6, delay: i * 0.1 }}
- className="p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group text-center"
+ className="p-6 md:p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group text-center"
  >
  <div className="flex flex-col items-center gap-4 mb-4 w-full">
  <div className="p-4 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500">
