@@ -187,7 +187,7 @@ export default function CaseStudies() {
                       
                       {/* Overlay Result */}
                       <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <span className="text-white font-serif text-xl">{study.resultText}</span>
+                        <span className="text-white font-serif text-xl">{study.resultText?.replace(/—/g, '-')}</span>
                       </div>
                       
                       {/* Deal Done Badge */}

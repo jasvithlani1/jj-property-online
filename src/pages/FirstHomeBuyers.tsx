@@ -182,7 +182,7 @@ export default function FirstHomeBuyers() {
  {pillar.title}
  </h2>
  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
- {(pillar.description || "").replace(/\$5 million/g, '$6 million').split('\n\n').map((paragraph: string, pIdx: number) => {
+ {(pillar.description || "").replace(/\$5 million/g, '$6 million').replace(/—/g, '-').split('\n\n').map((paragraph: string, pIdx: number) => {
  if (paragraph.startsWith('• ')) {
  return (
  <div key={pIdx} className="space-y-3 mt-4">

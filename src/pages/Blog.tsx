@@ -206,7 +206,7 @@ export default function Blog() {
  </h2>
 
  <p className="text-muted font-sans text-sm leading-relaxed mb-8 line-clamp-3">
- {post.excerpt}
+ {post.excerpt?.replace(/—/g, '-')}
  </p>
 
  <div className="mt-auto flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-[#011122]">
