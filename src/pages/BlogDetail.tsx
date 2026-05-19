@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Clock, Calendar, CheckCircle2, MessageSquare, Phone, Mail } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
 import SEO from '../components/SEO';
@@ -23,28 +23,47 @@ interface SanityPost {
   faqs?: { question: string; answer: string }[];
 }
 
+const replaceEmDash = (node: any): any => {
+  if (typeof node === 'string') {
+    return node.replace(/—/g, '-');
+  }
+  if (Array.isArray(node)) {
+    return node.map(replaceEmDash);
+  }
+  if (React.isValidElement(node)) {
+    const element = node as React.ReactElement<any>;
+    if (element.props && element.props.children) {
+      return React.cloneElement(element, {
+        ...element.props,
+        children: replaceEmDash(element.props.children)
+      });
+    }
+  }
+  return node;
+};
+
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
       <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-8 leading-tight first:mt-0 text-center">
-        {children}
+        {replaceEmDash(children)}
       </h2>
     ),
     h3: ({ children }: any) => (
       <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-6 text-center">
-        {children}
+        {replaceEmDash(children)}
       </h3>
     ),
     normal: ({ children }: any) => (
       <p className="text-xl text-muted font-sans leading-relaxed mb-8 text-center">
-        {children}
+        {replaceEmDash(children)}
       </p>
     ),
     blockquote: ({ children }: any) => (
       <blockquote className="my-16 pl-10 border-l-4 border-gold relative">
         <div className="absolute -left-2 top-0 w-4 h-4 bg-gold rounded-full blur-md opacity-20" />
         <p className="text-2xl md:text-3xl font-serif text-[#011122] leading-snug italic">
-          {children}
+          {replaceEmDash(children)}
         </p>
       </blockquote>
     ),
@@ -56,7 +75,7 @@ const ptComponents = {
     bullet: ({ children }: any) => (
       <li className="flex items-center justify-center gap-5 text-lg md:text-xl text-muted font-sans leading-relaxed">
         <CheckCircle2 className="mt-1.5 shrink-0 w-6 h-6 text-gold opacity-80" />
-        <div>{children}</div>
+        <div>{replaceEmDash(children)}</div>
       </li>
     ),
   },
