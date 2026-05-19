@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* Navigation Bar */}
         <nav className="w-full px-6 md:px-8 py-2 flex justify-between items-center bg-[#011122] shadow-xl border-b border-white/5 transition-colors duration-300 relative">
           <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <div className="relative w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 flex items-center justify-center">
+            <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center">
               <motion.img
                 src="/logo.png?v=4"
                 alt="JJ Logo"
@@ -85,10 +85,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <div className="font-sans font-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl tracking-widest text-white leading-none uppercase truncate">
+              <div className="font-sans font-black text-sm sm:text-base md:text-lg lg:text-xl tracking-widest text-white leading-none uppercase truncate">
                 JJ PROPERTY PARTNER
               </div>
-              <div className="font-sans font-bold text-[9px] sm:text-[11px] md:text-xs lg:text-sm tracking-[0.2em] text-gold leading-none uppercase mt-1.5 truncate">
+              <div className="font-sans font-bold text-[9px] sm:text-[10px] md:text-xs lg:text-sm tracking-[0.2em] text-gold leading-none uppercase mt-1.5 truncate">
                 YOUR PROPERTY, OUR PRIORITY
               </div>
             </div>

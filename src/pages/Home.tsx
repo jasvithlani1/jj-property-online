@@ -327,7 +327,7 @@ export default function Home() {
         <motion.section
           id="home"
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="relative h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-16 sm:pt-20 lg:pt-36 pb-24 sm:pb-0"
+          className="relative min-h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-24 sm:pt-28 lg:pt-36 pb-24 sm:pb-12"
         >
           <div className="absolute inset-0 -z-20">
             <video
