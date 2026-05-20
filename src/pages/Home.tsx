@@ -357,7 +357,7 @@ export default function Home() {
                   {heroSlides[currentSlide].heading}
                 </h1>
 
-                <p className="text-sm sm:text-lg max-w-2xl mt-1 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
+                <p className="text-sm sm:text-lg max-w-2xl mt-1 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md text-left sm:text-center">
                   {heroSlides[currentSlide].subheading}
                 </p>
               </motion.div>
@@ -502,7 +502,7 @@ export default function Home() {
               <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none hidden md:block">Services</div>
                 <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-1 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
-                <p className="text-muted text-xl font-sans max-w-xl leading-relaxed">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
+                <p className="text-muted text-xl font-sans max-w-xl leading-relaxed text-left md:text-left">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
 
@@ -547,7 +547,7 @@ export default function Home() {
                             {service.title}
                           </h3>
                         </div>
-                        <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 text-center ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
+                        <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 text-left md:text-center ${index % 2 === 0 ? 'text-white/70' : 'text-muted'}`}>
                           {service.description}
                         </p>
 
@@ -601,7 +601,7 @@ export default function Home() {
                     </>
                   )}
                 </h2>
-                <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl">
+                <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl text-left lg:text-left">
                   Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.
                 </p>
                 <div className="w-full flex justify-center mt-2">
@@ -668,7 +668,7 @@ export default function Home() {
                   <>Our Proven <span className="text-gold font-sans font-black">5-Step</span> Buying Approach</>
                 )}
               </h2>
-              <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed text-left md:text-center">
                 {homeData?.processSection?.subheading || "A structured, data-led process designed to secure your ideal property with complete confidence."}
               </p>
             </div>
@@ -722,7 +722,7 @@ export default function Home() {
                     <h3 className="text-lg font-sans font-black text-[#011122] mb-1 leading-tight font-medium">
                       {item.title}
                     </h3>
-                    <p className="text-base text-muted leading-relaxed font-sans px-4">
+                    <p className="text-base text-muted leading-relaxed font-sans px-4 text-left md:text-center">
                       {item.desc}
                     </p>
                   </motion.div>
@@ -769,7 +769,7 @@ export default function Home() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1 md:whitespace-nowrap">
                   Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
                 </h2>
-                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments - curated results that define our standard.</p>
+                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap text-left md:text-left">From first homes to elite investments - curated results that define our standard.</p>
               </div>
               <Link
                 href="/case-studies"
@@ -810,7 +810,7 @@ export default function Home() {
                         <h3 className="text-2xl font-sans font-black text-black mb-0.5">{story.title}</h3>
                         <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
                       </div>
-                      <p className="text-muted font-sans font-black text-base flex-1">"{story.shortQuote}"</p>
+                      <p className="text-muted font-sans font-black text-base flex-1 text-left md:text-center">"{story.shortQuote}"</p>
                       <div className="mt-1 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
                         Read Story
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -835,7 +835,7 @@ export default function Home() {
               </div>
             </div>
             <h2 className="text-2xl md:text-4xl font-sans font-black text-black mb-0.5">Google Verified Results</h2>
-            <p className="text-muted font-sans text-sm tracking-widest uppercase">Trusted by Australia's premium buyers</p>
+            <p className="text-muted font-sans text-sm tracking-widest uppercase text-left md:text-center">Trusted by Australia's premium buyers</p>
           </div>
 
           <div
@@ -882,7 +882,7 @@ export default function Home() {
                 Frequently <br className="hidden lg:block" />
                 <span className="text-gold">Asked Questions.</span>
               </h2>
-              <p className="text-muted text-lg font-sans">Everything you need to know about the JJ Property Partner acquisition process.</p>
+              <p className="text-muted text-lg font-sans text-left lg:text-left">Everything you need to know about the JJ Property Partner acquisition process.</p>
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-1">
@@ -916,7 +916,7 @@ export default function Home() {
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <p className="text-base text-muted font-sans leading-relaxed pb-4 text-center px-4">{faq.answer}</p>
+                        <p className="text-base text-muted font-sans leading-relaxed pb-4 text-left md:text-center px-4">{faq.answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -941,7 +941,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.0] mb-0.5">
                 Book your <span className="text-gold">Strategy Session.</span>
               </h2>
-              <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed text-left md:text-center">
                 Select a date and time that suits you for a confidential 30-minute consultation with Alex.
               </p>
             </motion.div>
