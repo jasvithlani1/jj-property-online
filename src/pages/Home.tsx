@@ -388,7 +388,7 @@ export default function Home() {
         </motion.section>
 
         {/* ── About Alex Preview ───────────────────────────────────────────── */}
-        <section id="about" className="relative z-10 py-2 px-8 bg-gradient-to-b from-white to-neutral-50">
+        <section id="about" className="relative z-10 py-4 px-8 bg-gradient-to-b from-white to-neutral-50">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -492,7 +492,7 @@ export default function Home() {
         </section>
 
         {/* ── Services Preview ─────────────────────────────────────────────── */}
-        <section id="services" className="relative z-10 py-2 bg-white px-8 overflow-hidden border-t border-black/5">
+        <section id="services" className="relative z-10 py-4 bg-white px-8 overflow-hidden border-t border-black/5">
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gold/5 blur-[120px] rounded-full -z-10" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
@@ -578,7 +578,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="py-2 px-8 bg-white overflow-hidden">
+        <section className="py-4 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
@@ -653,7 +653,7 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="py-2 px-8 bg-white text-[#011122] overflow-hidden">
+        <section className="py-4 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-0.5">
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-1 shadow-sm">
@@ -733,7 +733,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="relative py-2 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+        <section className="relative py-4 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <video
               src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
@@ -762,7 +762,7 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative py-2 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
+        <section id="case-studies" className="relative py-4 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
@@ -826,7 +826,7 @@ export default function Home() {
         </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
-        <section id="reviews" className="relative py-2 bg-white overflow-hidden flex flex-col items-center">
+        <section id="reviews" className="relative py-4 bg-white overflow-hidden flex flex-col items-center">
           <div className="mb-0.5 md:mb-2 text-center">
             <div className="flex items-center justify-center gap-2 mb-0.5">
               <span className="text-4xl font-sans font-black text-black font-bold">5.0</span>
@@ -875,7 +875,7 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-        <section className="relative py-2 bg-gradient-to-b from-white to-neutral-50 px-8">
+        <section className="relative py-4 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
             <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-0">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1">
@@ -927,7 +927,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section ref={calendlySectionRef} className="relative py-2 bg-neutral-50 px-8 overflow-hidden">
+        <section ref={calendlySectionRef} className="relative py-4 bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-0.5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
