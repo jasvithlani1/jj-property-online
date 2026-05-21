@@ -285,6 +285,18 @@ export default function Services() {
  </h2>
  </div>
  </div>
+
+ {/* Mobile Image */}
+ <div className="relative h-[320px] sm:h-[520px] md:h-[650px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden mb-8 lg:hidden">
+ <img
+ src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : (services.find(s => s.id === service.id)?.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"))}
+ alt={service.title}
+ className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+ loading="lazy"
+ />
+ <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+ </div>
+
  <h3 className="text-xl md:text-2xl font-sans font-black text-[#011122] mb-4 text-left w-full">{service.subtitle}</h3>
  <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-left w-full">
  {service.description.replace(/—/g, '-')}
@@ -323,8 +335,8 @@ export default function Services() {
  </div>
  </div>
 
- {/* Image Side */}
- <div className={`relative h-[320px] sm:h-[520px] md:h-[650px] lg:h-[750px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+ {/* Image Side (Desktop) */}
+ <div className={`hidden lg:block relative lg:h-[750px] rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
  <img
  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : (services.find(s => s.id === service.id)?.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"))}
  alt={service.title}
