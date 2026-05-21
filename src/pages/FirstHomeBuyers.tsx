@@ -84,8 +84,8 @@ export default function FirstHomeBuyers() {
  />
  
  <div className="w-full bg-white selection:bg-gold/20 ">
- {/* Hero Section */}
- <section className="pt-24 pb-2 md:pt-36 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
+  {/* Hero Section */}
+  <section className="pt-32 pb-4 md:pt-40 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
  <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -98,7 +98,7 @@ export default function FirstHomeBuyers() {
  <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
  {pageData?.hero?.badge || "First Home Buyers"}
  </div>
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+  <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading?.includes('Ownership') ? (
  <>Your Journey to Home Ownership, <span className="text-gold">Simplified & Strategic.</span></>
  ) : pageData?.hero?.heading || (
@@ -112,8 +112,8 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
- {/* Introduction Section */}
- <section className="py-1 px-8 bg-white overflow-hidden">
+  {/* Introduction Section */}
+  <section className="py-4 px-8 bg-white overflow-hidden">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
  <motion.div
  initial={{ opacity: 0, x: -40 }}
@@ -122,9 +122,19 @@ export default function FirstHomeBuyers() {
  transition={{ duration: 0.8 }}
  className="text-center"
  >
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
- {pageData?.intro?.heading || "Stop Searching, Start Finding"}
- </h2>
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6 leading-tight">
+  {pageData?.intro?.heading || "Stop Searching, Start Finding"}
+  </h2>
+
+  {/* Mobile Image */}
+  <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-6 lg:hidden">
+  <img
+  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"}
+  alt="Happy Home Owners"
+  className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+  </div>
  <div className="space-y-2 text-lg text-muted font-sans leading-relaxed">
  <p>
  {pageData?.intro?.content || "Most first home buyers spend months scrolling through real estate portals, only to be outbid at auction or find themselves discouraged by rising prices. At JJ Property Partner, we flip the script."}
@@ -153,7 +163,7 @@ export default function FirstHomeBuyers() {
  whileInView={{ opacity: 1, scale: 1 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
- className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+  className="hidden lg:block relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
  >
  <img
  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"}
@@ -165,8 +175,8 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
- {/* Content Pillars */}
- <section className="py-1 md:py-3 px-6 md:px-8 bg-neutral-50">
+  {/* Content Pillars */}
+  <section className="py-4 px-6 md:px-8 bg-neutral-50">
  <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
  {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
  <motion.div
@@ -178,9 +188,18 @@ export default function FirstHomeBuyers() {
  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
  <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
- <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
- {pillar.title}
- </h2>
+  <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-6 leading-tight">
+  {pillar.title}
+  </h2>
+
+  {/* Mobile Image */}
+  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-6 lg:hidden">
+  <img
+  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
+  alt={pillar.title}
+  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+  />
+  </div>
  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
  {(pillar.description || "").replace(/\$5 million/g, '$6 million').replace(/—/g, '-').split('\n\n').map((paragraph: string, pIdx: number) => {
  if (paragraph.startsWith('• ')) {
@@ -200,7 +219,7 @@ export default function FirstHomeBuyers() {
  </div>
  </div>
 
- <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
+  <div className={`hidden lg:block relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
  alt={pillar.title}
@@ -212,8 +231,8 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
- {/* Process Timeline Section */}
- <section className="py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
+  {/* Process Timeline Section */}
+  <section className="py-4 px-8 bg-[#011122] text-white overflow-hidden relative">
  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
  <div className="max-w-7xl mx-auto">
  <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 items-start">
@@ -222,7 +241,7 @@ export default function FirstHomeBuyers() {
  <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
  <div className="mb-6 text-center">
  <div className="h-1 w-16 bg-gold mb-8 rounded-full mx-auto" />
- <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
+  <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-6">
  {pageData?.process?.heading?.includes('Journey') ? (
  <>The First Home <br /> <span className="text-gold">Journey</span></>
  ) : pageData?.process?.heading || (
@@ -287,7 +306,7 @@ export default function FirstHomeBuyers() {
  </div>
  </div>
  <div className="p-8 text-center">
- <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
+  <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-3 leading-snug">
  {card.title}
  </h3>
  <p className="text-white/60 font-sans text-base leading-relaxed">
@@ -303,7 +322,7 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
- <section className="py-1 px-8 bg-white overflow-hidden border-t border-gold/5">
+  <section className="py-4 px-8 bg-white overflow-hidden border-t border-gold/5">
  <div className="max-w-5xl mx-auto">
  <div className="text-center mb-6">
  <motion.div
@@ -314,7 +333,7 @@ export default function FirstHomeBuyers() {
  >
  {pageData?.readiness?.badge || "Eligibility Criteria"}
  </motion.div>
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-8 leading-[1.1]">
+  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-8 leading-[1.1]">
  {pageData?.readiness?.heading?.includes('Ready') ? (
  <>Are You Ready for <br /> <span className="text-gold ">Your First Home?</span></>
  ) : pageData?.readiness?.heading || (
@@ -350,7 +369,7 @@ export default function FirstHomeBuyers() {
  <div className="flex-1 text-center md:text-left">
  <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
  <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
- <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+  <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
  <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
  {item.description || item.desc}
  </p>
@@ -380,7 +399,7 @@ export default function FirstHomeBuyers() {
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
  <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
  
- <h3 className="text-4xl font-serif text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "First Home Strategy Session"}</h3>
+  <h3 className="text-4xl font-sans font-black text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "First Home Strategy Session"}</h3>
  <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
  {pageData?.readiness?.cta?.description || "Unsure where to start? Our free discovery call will help you understand your budget, available grants, and the buying process from start to finish."}
  </p>
@@ -395,8 +414,8 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
- {/* Why JJ Property Partner Section */}
- <section className="pt-2 pb-2 px-8 bg-[#011122] text-white relative overflow-hidden">
+  {/* Why JJ Property Partner Section */}
+  <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-6">
@@ -404,7 +423,7 @@ export default function FirstHomeBuyers() {
  initial={{ opacity: 0, y: 20 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
- className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
+  className="text-4xl md:text-5xl lg:text-6xl font-sans font-black mb-6"
  >
  {pageData?.whyJJ?.heading || (
  <>Why JJ Property Partner for <span className="text-gold">First Home Success</span></>
@@ -429,10 +448,10 @@ export default function FirstHomeBuyers() {
  transition={{ delay: idx * 0.1 }}
  className="flex flex-col items-center text-center p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
  >
- <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-serif text-2xl font-bold">
+  <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-sans font-black text-2xl">
  {idx + 1}
  </div>
- <h3 className="text-xl font-serif mb-4 text-white">{item.title}</h3>
+  <h3 className="text-xl font-sans font-black mb-4 text-white">{item.title}</h3>
  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.description || item.desc}</p>
  </motion.div>
  ))}
@@ -440,11 +459,11 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
- {/* FAQ Section */}
- <section className="relative pt-2 pb-2 bg-white px-8">
+  {/* FAQ Section */}
+  <section className="relative py-4 bg-white px-8">
   <div className="max-w-4xl mx-auto flex flex-col gap-4">
   <div className="text-center mb-2">
-  <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-4">
+  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-4">
   Frequently <br />
   <span className="text-gold">Asked Questions.</span>
   </h2>
@@ -495,8 +514,8 @@ export default function FirstHomeBuyers() {
   </div>
  </section>
 
- {/* CTA Section */}
- <section className="pt-2 pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+  {/* CTA Section */}
+  <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
  <div className="max-w-4xl mx-auto text-center relative z-10">
  <motion.div
@@ -505,7 +524,7 @@ export default function FirstHomeBuyers() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
+  <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Secure your <span className="text-gold">First Home</span> today.</>
  )}
