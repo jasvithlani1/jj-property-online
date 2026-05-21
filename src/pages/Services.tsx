@@ -167,7 +167,7 @@ export default function Services() {
  <div className="w-full bg-white selection:bg-gold/20 pt-8">
 
  {/* Hero */}
- <section className="pt-24 pb-2 md:pt-36 md:pb-3 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
+ <section className="pt-32 pb-4 md:pt-40 md:pb-4 px-8 relative bg-[#011122] text-white overflow-hidden">
  {/* bg glow blobs */}
  <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
@@ -182,7 +182,7 @@ export default function Services() {
  <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
  {pageData?.hero?.badge || "Professional Services"}
  </div>
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading ? (
  <>
  {pageData.hero.heading.replace('property acquisition', 'Property Acquisition').split(' ').slice(0, -2).join(' ')}{' '}
@@ -212,7 +212,7 @@ export default function Services() {
  ]).map((stat: any) => (
  <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center">
  <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
- <p className="relative text-4xl md:text-5xl font-serif text-[#011122] mb-2 font-bold">{stat.value}</p>
+ <p className="relative text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2">{stat.value}</p>
  <p className="relative text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</p>
  </div>
  ))}
@@ -221,7 +221,7 @@ export default function Services() {
  </section>
 
  {/* Service Sections */}
- <section className="py-1 px-8 bg-white relative overflow-hidden">
+ <section className="py-4 px-8 bg-white relative overflow-hidden">
  <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
  {(() => {
  const sanityServices = pageData?.serviceList || [];
@@ -280,12 +280,12 @@ export default function Services() {
  </motion.div>
  </motion.div>
  </div>
- <h2 className="text-3xl md:text-5xl font-serif text-[#011122] leading-tight">
+ <h2 className="text-3xl md:text-5xl font-sans font-black text-[#011122] leading-tight">
  {service.title}
  </h2>
  </div>
  </div>
- <h3 className="text-xl md:text-2xl font-serif text-[#011122] font-semibold mb-4 text-center w-full">{service.subtitle}</h3>
+ <h3 className="text-xl md:text-2xl font-sans font-black text-[#011122] mb-4 text-center w-full">{service.subtitle}</h3>
  <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-center w-full">
  {service.description.replace(/—/g, '-')}
  </p>
@@ -340,10 +340,10 @@ export default function Services() {
  </section>
 
  {/* Additional Services */}
- <section className="py-1 md:py-3 px-8 bg-neutral-50 border-t border-gold/10">
+ <section className="py-4 px-8 bg-neutral-50 border-t border-gold/10">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Additional Services</h2>
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6">Additional Services</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -385,7 +385,7 @@ export default function Services() {
  {service.icon === 'Scale' ? <Scale className="w-7 h-7" /> : service.icon === 'Gavel' ? <Gavel className="w-7 h-7" /> : <TrendingUp className="w-7 h-7" />}
  </div>
 
- <h3 className={`text-3xl font-serif leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122] font-semibold'}`}>
+ <h3 className={`text-3xl font-sans font-black leading-tight ${service.isFeatured ? 'text-white' : 'text-[#011122]'}`}>
  {service.title}
  </h3>
  </div>
@@ -413,10 +413,10 @@ export default function Services() {
  </section>
 
  {/* FAQ Section */}
- <section className="relative py-1 bg-gradient-to-b from-white to-gold/5 px-8">
+ <section className="relative py-4 bg-gradient-to-b from-white to-gold/5 px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-6 text-center lg:text-left">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-6 text-center lg:text-left">
  Frequently <br />
  <span className="text-gold">Asked Questions.</span>
  </h2>
@@ -461,7 +461,7 @@ export default function Services() {
  </section>
 
  {/* CTA Bar */}
- <section className="py-2 md:py-3 px-8 bg-gold/5">
+ <section className="py-4 px-8 bg-gold/5">
  <div className="max-w-5xl mx-auto text-center">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
@@ -469,7 +469,7 @@ export default function Services() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-8 leading-tight">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Not sure which service fits? <br /> <span className="text-gold">Let's find out together.</span></>
  )}
