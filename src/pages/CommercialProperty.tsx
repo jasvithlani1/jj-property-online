@@ -458,16 +458,17 @@ export default function CommercialProperty() {
 
         {/* FAQ Section */}
         <section className="relative py-4 bg-white px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
-            <div className="lg:col-span-4">
-              <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-8 text-left">
-                Frequently <br />
-                <span className="text-gold">Asked Questions.</span>
+          <div className="max-w-7xl mx-auto">
+            {/* Centered Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-4">
+                Frequently <span className="text-gold">Asked Questions.</span>
               </h2>
-              <p className="text-muted text-lg font-sans leading-relaxed text-left">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
+              <p className="text-muted text-lg font-sans leading-relaxed">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
             </div>
 
-            <div className="lg:col-span-8 flex flex-col gap-6">
+            {/* Left-aligned FAQ List */}
+            <div className="flex flex-col gap-1">
               {(pageData?.faqs || commercialFaqs).map((faq: any, index: number) => (
                 <motion.div 
                   key={index} 
@@ -475,11 +476,11 @@ export default function CommercialProperty() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="border-b border-gold/20 pb-2"
+                  className="border-b border-gold/20 pb-0"
                 >
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
+                    className="w-full flex items-center justify-between py-3 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
                   >
                     <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
