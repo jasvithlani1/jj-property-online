@@ -105,7 +105,7 @@ export default function FirstHomeBuyers() {
  <>Your Journey to Home Ownership, <span className="text-gold">Simplified & Strategic.</span></>
  )}
  </h1>
- <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
+ <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed text-left md:text-center">
  {pageData?.hero?.subheading || "Stop guessing and start moving. We provide the data, strategy, and negotiation power to help you secure your first home without the stress of overpaying."}
  </p>
  </motion.div>
@@ -135,7 +135,7 @@ export default function FirstHomeBuyers() {
   />
   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
   </div>
- <div className="space-y-2 text-lg text-muted font-sans leading-relaxed">
+ <div className="space-y-2 text-lg text-muted font-sans leading-relaxed text-left">
  <p>
  {pageData?.intro?.content || "Most first home buyers spend months scrolling through real estate portals, only to be outbid at auction or find themselves discouraged by rising prices. At JJ Property Partner, we flip the script."}
  </p>
@@ -150,7 +150,7 @@ export default function FirstHomeBuyers() {
  "Expert guidance on grants, stamp duty, and borrowing capacity",
  "Complete peace of mind through managed due diligence"
  ]).map((item: string, idx: number) => (
- <li key={idx} className="flex items-start justify-center gap-4 text-center">
+ <li key={idx} className="flex items-start justify-start gap-4 text-left">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item}</span>
  </li>
@@ -200,13 +200,13 @@ export default function FirstHomeBuyers() {
   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
   />
   </div>
- <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
+ <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
  {(pillar.description || "").replace(/\$5 million/g, '$6 million').replace(/—/g, '-').split('\n\n').map((paragraph: string, pIdx: number) => {
  if (paragraph.startsWith('• ')) {
  return (
  <div key={pIdx} className="space-y-3 mt-4">
  {paragraph.split('\n').map((item, iIdx) => (
- <div key={iIdx} className="flex items-start justify-center gap-4 text-center">
+ <div key={iIdx} className="flex items-start justify-start gap-4 text-left">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item.replace('• ', '')}</span>
  </div>
@@ -248,7 +248,7 @@ export default function FirstHomeBuyers() {
  <>The First Home <br /> <span className="text-gold">Journey</span></>
  )}
  </h2>
- <p className="text-white/60 font-sans text-lg leading-relaxed">
+ <p className="text-white/60 font-sans text-lg leading-relaxed text-left">
  {pageData?.process?.description ? pageData.process.description.replace(/—/g, '-') : "From financial clarity to final settlement, JJ Property Partner manages every step of your first home purchase - so you can move forward with confidence, not guesswork."}
  </p>
  </div>
@@ -305,7 +305,7 @@ export default function FirstHomeBuyers() {
  Step {card.stepNumber || (i + 1)}
  </div>
  </div>
- <div className="p-8 text-center">
+ <div className="p-8 text-left">
   <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-3 leading-snug">
  {card.title}
  </h3>
@@ -340,7 +340,7 @@ export default function FirstHomeBuyers() {
  <>Are You Ready for <br /> <span className="text-gold ">Your First Home?</span></>
  )}
  </h2>
- <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto">
+ <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-left md:text-center">
  {pageData?.readiness?.description || "Buying your first home is a huge milestone. We help you identify if you're ready to make the leap and what steps you need to take to get there."}
  </p>
  </div>
@@ -366,11 +366,11 @@ export default function FirstHomeBuyers() {
  transition={{ duration: 0.8, delay: idx * 0.1 }}
  className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
  >
- <div className="flex-1 text-center md:text-left">
+ <div className="flex-1 text-left md:text-left">
  <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
  <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
   <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
- <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
+ <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto text-left md:text-right' : 'md:text-left mr-auto text-left'}`}>
  {item.description || item.desc}
  </p>
  </div>
@@ -446,7 +446,7 @@ export default function FirstHomeBuyers() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: idx * 0.1 }}
- className="flex flex-col items-center text-center p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+ className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
  >
   <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-sans font-black text-2xl">
  {idx + 1}
@@ -467,7 +467,7 @@ export default function FirstHomeBuyers() {
   Frequently <br />
   <span className="text-gold">Asked Questions.</span>
   </h2>
-  <p className="text-muted text-lg font-sans leading-relaxed">Everything you need to know about buying your first home with expert representation.</p>
+  <p className="text-muted text-lg font-sans leading-relaxed text-left">Everything you need to know about buying your first home with expert representation.</p>
   </div>
 
   <div className="flex flex-col gap-2">
@@ -482,9 +482,9 @@ export default function FirstHomeBuyers() {
   >
   <button
   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-  className="w-full flex flex-col items-center justify-center py-4 text-center hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer gap-3"
+  className="w-full flex items-center justify-between py-4 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer gap-3"
   >
-  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-center ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-left ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
   {faq.question}
   </span>
   <motion.div
@@ -504,7 +504,7 @@ export default function FirstHomeBuyers() {
   transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
   className="overflow-hidden"
   >
-  <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-center">{faq.answer.replace(/—/g, '-')}</p>
+  <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-left">{faq.answer.replace(/—/g, '-')}</p>
   </motion.div>
   )}
   </AnimatePresence>
