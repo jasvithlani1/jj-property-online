@@ -367,16 +367,17 @@ export default function SmsfProperty() {
 
  {/* FAQ Section */}
  <section className="relative py-4 bg-white px-8">
- <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
- <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-8 text-left">
- SMSF <br />
- <span className="text-gold">Questions.</span>
+ <div className="max-w-7xl mx-auto">
+ {/* Centered Header */}
+ <div className="text-center mb-12">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-4">
+ SMSF <span className="text-gold">Questions.</span>
  </h2>
- <p className="text-muted text-lg font-sans leading-relaxed text-left">Essential insights for buying residential property within super.</p>
+ <p className="text-muted text-lg font-sans leading-relaxed">Essential insights for buying residential property within super.</p>
  </div>
 
- <div className="lg:col-span-8 flex flex-col gap-6">
+ {/* Left-aligned FAQ List */}
+ <div className="flex flex-col gap-6">
  {(pageData?.faqs || smsfFaqs).map((faq: any, index: number) => (
  <motion.div 
  key={index} 
