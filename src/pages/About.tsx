@@ -61,7 +61,7 @@ export default function About() {
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/60 via-transparent to-transparent" />
  <div className="absolute bottom-10 left-10 text-white">
- <p className="text-4xl font-serif mb-1">Alex</p>
+ <p className="text-4xl font-sans font-black mb-1">Alex</p>
  <p className="text-xs font-sans tracking-[0.3em] uppercase text-gold font-bold">Founder & Principal Advisor</p>
  </div>
  </div>
@@ -79,7 +79,7 @@ export default function About() {
  >
  <div className="space-y-4">
 
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif text-[#011122] leading-tight">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight">
  {aboutData?.profile?.heading ? (
  <>
  {aboutData.profile.heading.split(',')[0]}, <br />
@@ -121,7 +121,7 @@ export default function About() {
   { label: 'Service Area', value: 'Nationwide' }
   ]).map((stat: any, i: number) => (
   <div key={i} className={`flex flex-col items-center text-center gap-1 sm:border-r border-gold/20 sm:last:border-r-0 sm:px-6 first:pl-0 last:pr-0`}>
-  <span className="text-2xl font-serif text-[#011122]">{stat.value}</span>
+  <span className="text-2xl font-sans font-black text-[#011122]">{stat.value}</span>
   <span className="text-xs font-bold uppercase tracking-widest text-muted">{stat.label}</span>
   </div>
   ))}
@@ -140,8 +140,8 @@ export default function About() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <div className="text-7xl md:text-8xl font-serif text-gold/40 leading-none mb-2 select-none">JJ</div>
- <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mb-1">
+ <div className="text-7xl md:text-8xl font-sans font-black text-gold/40 leading-none mb-2 select-none">JJ</div>
+ <h2 className="text-3xl md:text-5xl font-sans font-black text-[#011122] mb-1">
  {aboutData?.purpose?.heading || "A name with purpose. A promise with heart."}
  </h2>
  
@@ -175,14 +175,14 @@ export default function About() {
 
  <div className="flex items-center justify-center gap-12 md:gap-24 relative">
  <div className="flex flex-col items-center">
- <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
+ <span className="text-7xl md:text-8xl font-sans font-black text-[#011122]">J</span>
  <span className="text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jessica</span>
  </div>
  
- <div className="text-3xl md:text-4xl font-serif text-gold">+</div>
+ <div className="text-3xl md:text-4xl font-sans font-black text-gold">+</div>
  
  <div className="flex flex-col items-center">
- <span className="text-7xl md:text-8xl font-serif text-[#011122]">J</span>
+ <span className="text-7xl md:text-8xl font-sans font-black text-[#011122]">J</span>
  <span className="text-xs font-bold uppercase tracking-[0.3em] text-muted mt-2">Jennifer</span>
  </div>
  </div>
@@ -200,7 +200,7 @@ export default function About() {
  transition={{ duration: 0.6 }}
  className="bg-white p-10 md:p-12 rounded-[2rem] shadow-sm border border-gold/10 text-center"
  >
- <h3 className="text-3xl font-serif mb-3 text-[#011122]">{aboutData?.trackRecord?.title || "Alex's Personal Track Record"}</h3>
+ <h3 className="text-3xl font-sans font-black mb-3 text-[#011122]">{aboutData?.trackRecord?.title || "Alex's Personal Track Record"}</h3>
  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
  <p>
  {aboutData?.trackRecord?.content ? aboutData.trackRecord.content.replace(/\$5 million/g, '$6 million') : "Alex has personally built a property portfolio valued at more than $6 million across multiple Australian states. That experience is grounded in real purchasing decisions made through changing market conditions, interest rate movements, and economic cycles. Every recommendation he gives clients is shaped by the same disciplined research, due diligence, and long-term thinking he applies to his own property strategy."}
@@ -216,7 +216,7 @@ export default function About() {
  className="bg-[#011122] text-white p-10 md:p-12 rounded-[2rem] shadow-xl relative overflow-hidden text-center"
  >
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[60px]" />
- <h3 className="text-3xl font-serif mb-3 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
+ <h3 className="text-3xl font-sans font-black mb-3 relative z-10">{aboutData?.techAdvantage?.title || "The Technology Advantage"}</h3>
  <div className="space-y-4 text-base md:text-lg text-white/70 font-sans leading-relaxed relative z-10 text-left">
  <p>
  {aboutData?.techAdvantage?.content || "Alex’s IT background shapes the way JJ Property Partner approaches every property purchase. With more than 20 years in information technology, he brings analytical thinking, data modelling, and a systems-led process to identifying opportunities across Australia. This helps buyers make informed decisions backed by research, market evidence, and a clear understanding of long-term property potential, rather than relying on guesswork or emotion."}
@@ -230,7 +230,7 @@ export default function About() {
  <section className="py-4 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-3">
- <h2 className="text-4xl md:text-5xl font-serif text-black mb-3">Our Core Values</h2>
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-3">Our Core Values</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
  
@@ -250,8 +250,8 @@ export default function About() {
  className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group"
  >
   <div className="flex flex-row items-center justify-center gap-3 mb-3">
-  <span className="text-2xl md:text-3xl font-serif text-gold shrink-0">{String(index + 1).padStart(2, '0')}</span>
-  <h4 className="text-2xl font-serif text-gold text-center">{value.title}</h4>
+  <span className="text-2xl md:text-3xl font-sans font-black text-gold shrink-0">{String(index + 1).padStart(2, '0')}</span>
+  <h4 className="text-2xl font-sans font-black text-gold text-center">{value.title}</h4>
   </div>
  <p className="text-white/70 text-base md:text-lg leading-relaxed text-left">{value.description}</p>
  </motion.div>
@@ -268,7 +268,7 @@ export default function About() {
  </div>
 
  <div className="max-w-7xl mx-auto relative z-10 text-center mb-3">
- <h2 className="text-4xl md:text-5xl font-serif mb-3 drop-shadow-lg text-gold">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
+ <h2 className="text-4xl md:text-5xl font-sans font-black mb-3 drop-shadow-lg text-gold">{aboutData?.pillarsSection?.heading || "Three Pillars of Our Service"}</h2>
  <p className="text-lg font-sans text-white/70 max-w-2xl mx-auto">
  {aboutData?.pillarsSection?.subheading || "Our unyielding commitment to precision, integrity, and market-beating results."}
  </p>
@@ -301,7 +301,7 @@ export default function About() {
   <div className="p-3 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
   {i === 0 ? <Target className="w-6 h-6 text-gold" /> : i === 1 ? <Search className="w-6 h-6 text-gold" /> : <Handshake className="w-6 h-6 text-gold" />}
   </div>
-  <h3 className="text-2xl md:text-3xl font-serif text-gold leading-tight text-center">{val.title}</h3>
+  <h3 className="text-2xl md:text-3xl font-sans font-black text-gold leading-tight text-center">{val.title}</h3>
   </div>
  <p className="text-white/60 font-sans leading-relaxed text-lg text-left">
  {val.text}
@@ -315,7 +315,7 @@ export default function About() {
  <section className="py-4 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-3">
- <h2 className="text-3xl md:text-4xl font-serif text-black">Credentials & Licencing</h2>
+ <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
  </div>
  
   <div className="bg-white p-5 rounded-2xl md:rounded-full shadow-sm border border-gold/10 flex flex-col md:flex-row md:flex-wrap justify-between gap-4 md:gap-6 items-center max-w-5xl mx-auto">
@@ -332,7 +332,7 @@ export default function About() {
   </div>
    <div className="flex flex-col items-start justify-center">
    <span className="text-[10px] font-bold text-muted uppercase tracking-widest hidden md:block">{cred.label}</span>
-   <span className="text-base font-serif font-black text-black">{cred.value}</span>
+   <span className="text-base font-sans font-black text-black">{cred.value}</span>
    </div>
   </div>
   {i < 3 && <div className="hidden lg:block w-px h-6 bg-gold/20 ml-6"></div>}
