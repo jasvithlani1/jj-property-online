@@ -89,7 +89,7 @@ export default function CommercialProperty() {
       
       <div className="w-full bg-white selection:bg-gold/20 ">
         {/* Hero Section */}
-        <section className="pt-24 pb-2 md:pt-44 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
+        <section className="pt-32 pb-4 md:pt-44 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -102,10 +102,10 @@ export default function CommercialProperty() {
               <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-6 backdrop-blur-sm">
                 {pageData?.hero?.badge === "Commercial Property Strategies with Investment Precision." ? "Commercial Property" : (pageData?.hero?.badge || "Commercial Property")}
               </div>
-              <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
+              <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
                 {pageData?.hero?.heading || "Acquisition Strategies Engineered for Investment Precision."}
               </h1>
-              <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed text-left md:text-center">
                 {pageData?.hero?.subheading || "Commercial property investment requires more than assumption. It needs structured market research, strategic acquisition planning, and expert execution to build long-term portfolio performance."}
               </p>
             </motion.div>
@@ -113,7 +113,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* Introduction Section */}
-        <section className="py-1 px-8 bg-white overflow-hidden">
+        <section className="py-4 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -122,10 +122,21 @@ export default function CommercialProperty() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6 leading-tight">
                 {pageData?.intro?.heading || "Commercial Acquisition Strategies for Smart Property Investors"}
               </h2>
-              <div className="space-y-2 text-lg text-muted font-sans leading-relaxed">
+
+              {/* Mobile Image */}
+              <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-6 lg:hidden">
+                <img
+                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
+                  alt="Modern Commercial Building"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
+
+              <div className="space-y-2 text-lg text-muted font-sans leading-relaxed text-left">
                 <p>
                   {pageData?.intro?.content || "Creating a strong commercial property portfolio requires market-led research, clear acquisition benchmarks, strategic timing, and expert execution throughout the process."}
                 </p>
@@ -140,7 +151,7 @@ export default function CommercialProperty() {
                     "A long-term portfolio strategy designed around 5-10-year wealth creation",
                     "Coordinated support with your broker, accountant, and financial adviser for informed decisions"
                   ]).map((item: string, idx: number) => (
-                    <li key={idx} className="flex items-start justify-center gap-4 text-center">
+                    <li key={idx} className="flex items-start justify-start gap-4 text-left">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                       <span>{item}</span>
                     </li>
@@ -153,7 +164,7 @@ export default function CommercialProperty() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+              className="hidden lg:block relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
                 src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
@@ -166,7 +177,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* Content Pillars */}
-        <section className="py-1 px-6 md:px-8 bg-neutral-50">
+        <section className="py-4 px-6 md:px-8 bg-neutral-50">
           <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
             {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
               <motion.div
@@ -178,16 +189,26 @@ export default function CommercialProperty() {
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
                 <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
-                  <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-6 leading-tight">
                     {pillar.title}
                   </h2>
-                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-center">
+
+                  {/* Mobile Image */}
+                  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-6 lg:hidden">
+                    <img
+                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
+                      alt={pillar.title}
+                      className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+
+                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
                     {(pillar.description || "").split('\n\n').map((paragraph: string, pIdx: number) => {
                       if (paragraph.startsWith('• ')) {
                         return (
                           <div key={pIdx} className="space-y-3 mt-4">
                             {paragraph.split('\n').map((item, iIdx) => (
-                              <div key={iIdx} className="flex items-start justify-center gap-4 text-center">
+                              <div key={iIdx} className="flex items-start justify-start gap-4 text-left">
                                 <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
                                 <span>{item.replace('• ', '')}</span>
                               </div>
@@ -200,7 +221,7 @@ export default function CommercialProperty() {
                   </div>
                 </div>
 
-                <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
+                <div className={`hidden lg:block relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
                     alt={pillar.title}
@@ -213,7 +234,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* Strategic Portfolio Section */}
-        <section className="py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
+        <section className="py-4 px-8 bg-[#011122] text-white overflow-hidden relative">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 items-start">
@@ -222,12 +243,12 @@ export default function CommercialProperty() {
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start text-center">
                 <div className="mb-6">
                   <div className="h-1 w-16 bg-gold mb-8 rounded-full mx-auto" />
-                  <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
+                  <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-6">
                     {pageData?.process?.heading || (
                       <>Commercial Portfolio <br /> <span className="text-gold">Strategy</span></>
                     )}
                   </h2>
-                  <p className="text-white/60 font-sans text-lg leading-relaxed">
+                  <p className="text-white/60 font-sans text-lg leading-relaxed text-left">
                     {pageData?.process?.description || "Alex’s personal experience building a $6 million-plus property portfolio across multiple Australian states supports a strategic commercial investment approach focused on sustainable portfolio growth, not only single property acquisitions."}
                   </p>
                 </div>
@@ -283,8 +304,8 @@ export default function CommercialProperty() {
                             Step {card.stepNumber || (i + 1)}
                           </div>
                         </div>
-                        <div className="p-8">
-                          <h3 className="text-xl md:text-2xl font-serif text-white mb-3 leading-snug">
+                        <div className="p-8 text-left">
+                          <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-3 leading-snug">
                             {card.title}
                           </h3>
                           <p className="text-white/60 font-sans text-base leading-relaxed">
@@ -300,7 +321,7 @@ export default function CommercialProperty() {
           </div>
         </section>
 
-        <section className="py-1 px-8 bg-white overflow-hidden border-t border-gold/5">
+        <section className="py-4 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-2">
               <motion.div
@@ -311,12 +332,12 @@ export default function CommercialProperty() {
               >
                 {pageData?.readiness?.badge || "Commercial Investor Readiness"}
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-[1.1]">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 leading-[1.1]">
                 {pageData?.readiness?.heading || (
                   <>Is Commercial Property Investment <br /> <span className="text-gold ">Right for You?</span></>
                 )}
               </h2>
-              <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto">
+              <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-left md:text-center">
                 {pageData?.readiness?.description || "Strategic commercial property investment is a long-term commitment to wealth creation. We help determine whether your current position aligns with a successful commercial acquisition strategy."}
               </p>
             </div>
@@ -342,11 +363,11 @@ export default function CommercialProperty() {
                     transition={{ duration: 0.8, delay: idx * 0.1 }}
                     className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
                   >
-                    <div className="flex-1 text-center md:text-left">
+                    <div className="flex-1 text-left">
                       <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
                         <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
-                        <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
-                        <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
+                        <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+                        <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto text-left md:text-right' : 'md:text-left mr-auto text-left'}`}>
                           {item.description || item.desc}
                         </p>
                       </div>
@@ -375,7 +396,7 @@ export default function CommercialProperty() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
                 
-                <h3 className="text-4xl font-serif text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Commercial Property Strategy Session"}</h3>
+                <h3 className="text-4xl font-sans font-black text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Commercial Property Strategy Session"}</h3>
                 <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
                   {pageData?.readiness?.cta?.description || "Ready to build a stronger national portfolio? Our free session reviews your available equity, borrowing capacity, and investment goals to help map a clear, practical path forward."}
                 </p>
@@ -391,7 +412,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* Why JJ Property Partner Section */}
-        <section className="pt-2 pb-2 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-6">
@@ -399,7 +420,7 @@ export default function CommercialProperty() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-sans font-black mb-6"
               >
                 {pageData?.whyJJ?.heading || (
                   <>Why JJ Property Partner Drives <span className="text-gold">Investor Success</span></>
@@ -422,12 +443,12 @@ export default function CommercialProperty() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex flex-col items-center text-center p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+                  className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-serif text-2xl font-bold">
+                  <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-sans font-black text-2xl">
                     {idx + 1}
                   </div>
-                  <h3 className="text-xl font-serif mb-4 text-white">{item.title}</h3>
+                  <h3 className="text-xl font-sans font-black mb-4 text-white">{item.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed font-sans">{item.description || item.desc}</p>
                 </motion.div>
               ))}
@@ -436,14 +457,14 @@ export default function CommercialProperty() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative pt-2 pb-2 bg-white px-8">
+        <section className="relative py-4 bg-white px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-8 text-left">
                 Frequently <br />
                 <span className="text-gold">Asked Questions.</span>
               </h2>
-              <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
+              <p className="text-muted text-lg font-sans leading-relaxed text-left">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
             </div>
 
             <div className="lg:col-span-8 flex flex-col gap-6">
@@ -480,7 +501,7 @@ export default function CommercialProperty() {
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-center">{faq.answer.replace(/—/g, '-')}</p>
+                        <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-left">{faq.answer.replace(/—/g, '-')}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -491,7 +512,7 @@ export default function CommercialProperty() {
         </section>
 
         {/* CTA Section */}
-        <section className="pt-2 pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+        <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <motion.div
@@ -500,7 +521,7 @@ export default function CommercialProperty() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
+              <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-8 leading-tight">
                 {pageData?.finalCta?.heading || (
                   <>Strengthen Your Investment <br /> <span className="text-gold ">Advantage.</span></>
                 )}

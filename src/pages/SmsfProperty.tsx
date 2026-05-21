@@ -85,7 +85,7 @@ export default function SmsfProperty() {
  
  <div className="w-full bg-white selection:bg-gold/20 ">
  {/* Hero Section */}
- <section className="pt-24 pb-2 md:pt-36 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
+ <section className="pt-32 pb-4 md:pt-40 md:pb-4 relative px-6 sm:px-8 bg-[#011122] text-white overflow-hidden">
  <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/10 blur-[160px] rounded-full -z-0 pointer-events-none" />
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
@@ -98,14 +98,14 @@ export default function SmsfProperty() {
  <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
  {pageData?.hero?.badge || "SMSF Property"}
  </div>
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-serif leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading?.includes('Fund') ? (
  <>Strategic Acquisitions for your <span className="text-gold">Self-Managed Super Fund.</span></>
  ) : pageData?.hero?.heading || (
  <>Strategic Acquisitions for your <span className="text-gold">Self-Managed Super Fund.</span></>
  )}
  </h1>
- <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed">
+ <p className="text-xl md:text-2xl text-white/80 font-sans max-w-3xl mx-auto leading-relaxed text-left md:text-center">
  {pageData?.hero?.subheading || "Unlock the power of your super with residential property. We help you identify and secure high-performing, compliant assets nationwide."}
  </p>
  </motion.div>
@@ -113,7 +113,7 @@ export default function SmsfProperty() {
  </section>
 
  {/* Introduction Section */}
- <section className="py-1 px-8 bg-white overflow-hidden">
+ <section className="py-4 px-8 bg-white overflow-hidden">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center">
  <motion.div
  initial={{ opacity: 0, x: -40 }}
@@ -122,10 +122,21 @@ export default function SmsfProperty() {
  transition={{ duration: 0.8 }}
  className="text-center"
  >
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6 leading-tight">
  {pageData?.intro?.heading || "Secure Your Retirement with Smart SMSF Property Choices"}
  </h2>
- <div className="space-y-2 text-lg text-muted font-sans leading-relaxed">
+ 
+ {/* Mobile Image */}
+ <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-6 lg:hidden">
+ <img
+ src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1200"}
+ alt="Modern Residential Property"
+ className="absolute inset-0 w-full h-full object-cover"
+ />
+ <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+ </div>
+
+ <div className="space-y-2 text-lg text-muted font-sans leading-relaxed text-left">
  <p>
  {pageData?.intro?.content || "Investing in residential property through an SMSF is a powerful way to build retirement wealth, but it requires a specialized approach that prioritizes compliance and long-term stability."}
  </p>
@@ -140,7 +151,7 @@ export default function SmsfProperty() {
  "Coordination with your accountant, broker, and solicitor for a seamless purchase",
  "Expert negotiation to ensure you secure the best possible terms for your fund"
  ]).map((item: string, idx: number) => (
- <li key={idx} className="flex items-start justify-center gap-4 text-center">
+ <li key={idx} className="flex items-start justify-start gap-4 text-left">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item}</span>
  </li>
@@ -153,7 +164,7 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, scale: 1 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
- className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+ className="hidden lg:block relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
  >
  <img
  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1200"}
@@ -166,7 +177,7 @@ export default function SmsfProperty() {
  </section>
 
  {/* Content Pillars */}
- <section className="py-1 md:py-3 px-6 md:px-8 bg-neutral-50">
+ <section className="py-4 px-6 md:px-8 bg-neutral-50">
  <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
  {(pageData?.pillars || pillars).map((pillar: any, index: number) => (
  <motion.div
@@ -178,16 +189,26 @@ export default function SmsfProperty() {
  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
  <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
- <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-6 leading-tight">
+ <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-6 leading-tight">
  {pillar.title}
  </h2>
- <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed">
+
+ {/* Mobile Image */}
+ <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-6 lg:hidden">
+ <img
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
+ alt={pillar.title}
+ className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+ />
+ </div>
+
+ <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
  {(pillar.description || "").replace(/—/g, '-').split('\n\n').map((paragraph: string, pIdx: number) => {
  if (paragraph.startsWith('• ')) {
  return (
  <div key={pIdx} className="space-y-3 mt-4">
  {paragraph.split('\n').map((item, iIdx) => (
- <div key={iIdx} className="flex items-start justify-center gap-4 text-center">
+ <div key={iIdx} className="flex items-start justify-start gap-4 text-left">
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
  <span>{item.replace('• ', '')}</span>
  </div>
@@ -200,7 +221,7 @@ export default function SmsfProperty() {
  </div>
  </div>
 
- <div className={`relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
+ <div className={`hidden lg:block relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
  alt={pillar.title}
@@ -213,10 +234,10 @@ export default function SmsfProperty() {
  </section>
 
  {/* Core Services Section */}
- <section className="py-1 px-8 bg-[#011122] text-white overflow-hidden relative">
+ <section className="py-4 px-8 bg-[#011122] text-white overflow-hidden relative">
  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
  <div className="max-w-7xl mx-auto text-center mb-4">
- <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white">
+ <h2 className="text-4xl md:text-5xl font-sans font-black mb-6 text-white">
  {pageData?.process?.heading || (
  <>Your SMSF Acquisition <span className="text-gold">Journey</span></>
  )}
@@ -237,12 +258,12 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1 }}
- className="relative p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-center"
+ className="relative p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-left"
  >
- <div className="text-gold font-serif text-5xl mb-4 opacity-30 group-hover:opacity-100 transition-opacity">
+ <div className="text-gold font-sans font-black text-5xl mb-4 opacity-30 group-hover:opacity-100 transition-opacity">
  {card.stepNumber || `0${i + 1}`}
  </div>
- <h3 className="text-xl font-serif text-white mb-3">
+ <h3 className="text-xl font-sans font-black text-white mb-3">
  {card.title}
  </h3>
  <p className="text-white/60 font-sans text-sm leading-relaxed">
@@ -254,7 +275,7 @@ export default function SmsfProperty() {
  </div>
  </section>
 
- <section className="pt-2 pb-2 px-8 bg-white overflow-hidden border-t border-gold/5">
+ <section className="py-4 px-8 bg-white overflow-hidden border-t border-gold/5">
  <div className="max-w-5xl mx-auto">
  <div className="text-center mb-6">
  <motion.div
@@ -265,12 +286,12 @@ export default function SmsfProperty() {
  >
  {pageData?.readiness?.badge || "SMSF Compliance"}
  </motion.div>
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-8 leading-[1.1]">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-8 leading-[1.1]">
  {pageData?.readiness?.heading || (
  <>SMSF Property <br /> <span className="text-gold ">Requirements.</span></>
  )}
  </h2>
- <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto">
+ <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-left md:text-center">
  {pageData?.readiness?.description || "Investing within super involves specific rules and lending criteria. We help you navigate these requirements to ensure your purchase is both compliant and successful."}
  </p>
  </div>
@@ -296,11 +317,11 @@ export default function SmsfProperty() {
  transition={{ duration: 0.8, delay: idx * 0.1 }}
  className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
  >
- <div className="flex-1 text-center md:text-left">
+ <div className="flex-1 text-left md:text-left">
  <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
  <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
- <h4 className={`text-3xl font-serif text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
- <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto' : 'md:text-left mr-auto'}`}>
+ <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+ <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto text-left md:text-right' : 'md:text-left mr-auto text-left'}`}>
  {item.description || item.desc}
  </p>
  </div>
@@ -329,7 +350,7 @@ export default function SmsfProperty() {
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
  <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
  
- <h3 className="text-4xl font-serif text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Discuss Your SMSF Strategy"}</h3>
+ <h3 className="text-4xl font-sans font-black text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Discuss Your SMSF Strategy"}</h3>
  <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
  {pageData?.readiness?.cta?.description || "Ready to build your retirement wealth? Our free discovery call will review your fund's goals and map out a compliant property acquisition path."}
  </p>
@@ -345,14 +366,14 @@ export default function SmsfProperty() {
  </section>
 
  {/* FAQ Section */}
- <section className="relative pt-2 pb-2 bg-white px-8">
+ <section className="relative py-4 bg-white px-8">
  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
  <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] leading-tight mb-8 text-center lg:text-left">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-8 text-left">
  SMSF <br />
  <span className="text-gold">Questions.</span>
  </h2>
- <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Essential insights for buying residential property within super.</p>
+ <p className="text-muted text-lg font-sans leading-relaxed text-left">Essential insights for buying residential property within super.</p>
  </div>
 
  <div className="lg:col-span-8 flex flex-col gap-6">
@@ -389,7 +410,7 @@ export default function SmsfProperty() {
  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
  className="overflow-hidden"
  >
- <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-4 pr-12">{faq.answer}</p>
+ <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-4 pr-12 text-left">{faq.answer}</p>
  </motion.div>
  )}
  </AnimatePresence>
@@ -400,7 +421,7 @@ export default function SmsfProperty() {
  </section>
 
  {/* CTA Section */}
- <section className="pt-2 pb-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554224155-11ee21264004?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
  <div className="max-w-4xl mx-auto text-center relative z-10">
  <motion.div
@@ -409,7 +430,7 @@ export default function SmsfProperty() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-4xl sm:text-4xl md:text-5xl font-serif mb-8 leading-tight">
+ <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-8 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Secure your <span className="text-gold">Future</span> today.</>
  )}
