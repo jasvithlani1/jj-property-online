@@ -377,7 +377,7 @@ export default function SmsfProperty() {
  </div>
 
  {/* Left-aligned FAQ List */}
- <div className="flex flex-col gap-6">
+ <div className="flex flex-col gap-1">
  {(pageData?.faqs || smsfFaqs).map((faq: any, index: number) => (
  <motion.div 
  key={index} 
@@ -385,11 +385,11 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: index * 0.1 }}
- className="border-b border-gold/20 pb-2"
+ className="border-b border-gold/20 pb-0"
  >
  <button
  onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
+ className="w-full flex items-center justify-between py-3 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
  >
  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
  {faq.question}
