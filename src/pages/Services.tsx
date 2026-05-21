@@ -285,8 +285,8 @@ export default function Services() {
  </h2>
  </div>
  </div>
- <h3 className="text-xl md:text-2xl font-sans font-black text-[#011122] mb-4 text-center w-full">{service.subtitle}</h3>
- <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-center w-full">
+ <h3 className="text-xl md:text-2xl font-sans font-black text-[#011122] mb-4 text-left w-full">{service.subtitle}</h3>
+ <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-left w-full">
  {service.description.replace(/—/g, '-')}
  </p>
 
@@ -298,7 +298,7 @@ export default function Services() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1, duration: 0.5 }}
- className="flex items-start justify-center gap-3 text-base font-sans text-muted text-center"
+ className="flex items-start justify-start gap-3 text-base font-sans text-muted text-left"
  >
  <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
  {b}
@@ -389,7 +389,7 @@ export default function Services() {
  {service.title}
  </h3>
  </div>
- <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 text-center ${service.isFeatured ? 'text-white/70' : 'text-muted'}`}>
+ <p className={`leading-relaxed font-sans text-lg mb-3 flex-1 text-left ${service.isFeatured ? 'text-white/70' : 'text-muted'}`}>
  {service.description}
  </p>
 
@@ -420,7 +420,7 @@ export default function Services() {
  Frequently <br />
  <span className="text-gold">Asked Questions.</span>
  </h2>
- <p className="text-muted text-lg font-sans text-center lg:text-left">Everything you need to know about our specialized acquisition services.</p>
+ <p className="text-muted text-lg font-sans text-left">Everything you need to know about our specialized acquisition services.</p>
  </div>
 
  <div className="lg:col-span-8 flex flex-col gap-4">
@@ -428,9 +428,9 @@ export default function Services() {
  <div key={index} className="border-b border-[#011122]/10 pb-2">
  <button
  onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-1 text-center hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
+ className="w-full flex items-center justify-between py-1 text-left hover:bg-gold/5 rounded-xl px-2 transition-colors group cursor-pointer"
  >
- <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-center w-full ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+ <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-left w-full ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
  {faq.question}
  </span>
  <motion.div
@@ -450,7 +450,7 @@ export default function Services() {
  transition={{ duration: 0.3, ease: 'easeInOut' }}
  className="overflow-hidden"
  >
- <p className="text-lg text-muted font-sans leading-relaxed pb-1 pl-2 pr-2 text-center">{faq.answer.replace(/—/g, '-')}</p>
+ <p className="text-lg text-muted font-sans leading-relaxed pb-1 pl-2 pr-2 text-left">{faq.answer.replace(/—/g, '-')}</p>
  </motion.div>
  )}
  </AnimatePresence>
