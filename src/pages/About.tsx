@@ -249,10 +249,10 @@ export default function About() {
  transition={{ duration: 0.6, delay: index * 0.1 }} 
  className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group"
  >
- <div className="flex flex-col items-center gap-2 mb-3">
- <span className="text-4xl font-serif text-gold/30 group-hover:text-gold transition-colors">{String(index + 1).padStart(2, '0')}</span>
- <h4 className="text-2xl font-serif text-gold text-center">{value.title}</h4>
- </div>
+  <div className="flex flex-row items-center justify-center gap-3 mb-3">
+  <span className="text-2xl md:text-3xl font-serif text-gold shrink-0">{String(index + 1).padStart(2, '0')}</span>
+  <h4 className="text-2xl font-serif text-gold text-center">{value.title}</h4>
+  </div>
  <p className="text-white/70 text-base md:text-lg leading-relaxed text-left">{value.description}</p>
  </motion.div>
  ))}
@@ -297,12 +297,12 @@ export default function About() {
  transition={{ duration: 0.6, delay: i * 0.1 }}
  className="p-6 md:p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group text-center"
  >
- <div className="flex flex-col items-center gap-4 mb-4 w-full">
- <div className="p-4 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500">
- {i === 0 ? <Target className="w-8 h-8 text-gold" /> : i === 1 ? <Search className="w-8 h-8 text-gold" /> : <Handshake className="w-8 h-8 text-gold" />}
- </div>
- <h3 className="text-2xl md:text-3xl font-serif text-gold leading-tight text-center">{val.title}</h3>
- </div>
+  <div className="flex flex-row items-center justify-center gap-4 mb-4 w-full">
+  <div className="p-3 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
+  {i === 0 ? <Target className="w-6 h-6 text-gold" /> : i === 1 ? <Search className="w-6 h-6 text-gold" /> : <Handshake className="w-6 h-6 text-gold" />}
+  </div>
+  <h3 className="text-2xl md:text-3xl font-serif text-gold leading-tight text-center">{val.title}</h3>
+  </div>
  <p className="text-white/60 font-sans leading-relaxed text-lg text-left">
  {val.text}
  </p>
