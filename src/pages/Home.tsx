@@ -935,7 +935,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-1 shadow-sm">
+              <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 shadow-sm">
                 Take the next step
               </div>
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.0] mb-0.5">
