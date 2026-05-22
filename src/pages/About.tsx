@@ -45,13 +45,34 @@ export default function About() {
   {/* Profile Section (New Hero) */}
   <section className="pt-32 pb-4 md:pt-40 md:pb-4 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
+  <motion.div
+   initial={{ opacity: 0, y: 30 }}
+   whileInView={{ opacity: 1, y: 0 }}
+   viewport={{ once: true }}
+   transition={{ duration: 1 }}
+   className="text-center mb-8 md:mb-12"
+  >
+   <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight">
+   {aboutData?.profile?.heading ? (
+   <>
+   {aboutData.profile.heading.split(',')[0]}, <br />
+   <span className="text-gold ">{aboutData.profile.heading.split(',').slice(1).join(',').trim()}</span>
+   </>
+   ) : (
+   <>
+   A Smarter Way to Buy, <br />
+   <span className="text-gold ">Built on Experience.</span>
+   </>
+   )}
+   </h1>
+  </motion.div>
  <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-24 items-center">
  <motion.div
  initial={{ opacity: 0, x: -40 }}
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 1 }}
- className="lg:col-span-5 relative order-last lg:order-last"
+ className="lg:col-span-5 relative"
  >
  <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
  <img
@@ -75,25 +96,8 @@ export default function About() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 1, delay: 0.2 }}
- className="lg:col-span-7 space-y-3 text-center order-first lg:order-first"
+ className="lg:col-span-7 space-y-3 text-center"
  >
- <div className="space-y-4">
-
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight">
- {aboutData?.profile?.heading ? (
- <>
- {aboutData.profile.heading.split(',')[0]}, <br />
- <span className="text-gold ">{aboutData.profile.heading.split(',').slice(1).join(',').trim()}</span>
- </>
- ) : (
- <>
- A Smarter Way to Buy, <br />
- <span className="text-gold ">Built on Experience.</span>
- </>
- )}
- </h1>
- </div>
- 
  <div className="space-y-3 text-lg text-muted font-sans leading-relaxed text-left">
  <p className="text-xl text-[#011122] font-medium leading-relaxed text-left">
  {aboutData?.profile?.quote || "\"JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor.\""}
