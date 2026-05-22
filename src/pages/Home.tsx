@@ -364,7 +364,7 @@ export default function Home() {
             </AnimatePresence>
 
             {/* Carousel Dots */}
-            <div className="flex gap-3 mt-2 sm:mt-12">
+            <div className="flex gap-3 mt-8 sm:mt-12">
               {heroSlides.map((_, idx) => (
                 <button
                   key={idx}
@@ -397,7 +397,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="flex flex-col items-center text-center lg:items-start lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-1 shadow-sm scale-110 origin-center lg:origin-left">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-bold uppercase tracking-widest mb-4 shadow-sm scale-110 origin-center lg:origin-left">
                 <span className="block w-2.5 h-2.5 rounded-full bg-gold animate-pulse" />
                 Principal Advisor
               </div>
@@ -656,7 +656,7 @@ export default function Home() {
         <section className="py-4 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-0.5">
-              <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-1 shadow-sm">
+              <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 shadow-sm">
                 How We Work
               </div>
               <h2 className="text-4xl md:text-5xl font-sans font-black mb-1 leading-[1.0] text-[#011122]">
