@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, Bed, Bath, Car } from 'lucide-react';
+import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Percent } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
@@ -320,16 +320,25 @@ export default function CaseStudies() {
                     </div>
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Size</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
+                      <div className="flex items-center justify-center gap-2">
+                        <Maximize className="w-4 h-4 text-gold" />
+                        <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
+                      </div>
                     </div>
 
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Capital Growth</span>
-                      <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
+                      <div className="flex items-center justify-center gap-2">
+                        <TrendingUp className="w-5 h-5 text-emerald-600" />
+                        <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
+                      </div>
                     </div>
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
-                      <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
+                      <div className="flex items-center justify-center gap-2">
+                        <Percent className="w-5 h-5 text-gold" />
+                        <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
