@@ -894,7 +894,7 @@ export default function Home() {
                     aria-controls={`faq-answer-${index}`}
                     className="w-full flex items-center justify-between py-2 hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`flex-1 text-center text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+                    <span className={`flex-1 text-left text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
