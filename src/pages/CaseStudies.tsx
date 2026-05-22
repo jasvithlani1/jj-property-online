@@ -92,7 +92,7 @@ export default function CaseStudies() {
       />
 
       {/* Hero */}
-      <section className="relative px-8 pt-24 md:pt-40 pb-2 overflow-hidden bg-gold/5">
+      <section className="relative px-8 pt-36 md:pt-40 pb-2 overflow-hidden bg-gold/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-70 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -101,10 +101,10 @@ export default function CaseStudies() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+            <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm">
               {pageData?.hero?.badge || "Client Results"}
             </div>
-            <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-[1.05] mb-6 max-w-5xl mx-auto">
+            <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-none mb-6 max-w-5xl mx-auto">
               {pageData?.hero?.heading?.includes('Advantage') ? (
                 <>The JJ Property Advantage <br /> <span className="text-gold">in Action.</span></>
               ) : pageData?.hero?.heading || (
@@ -139,7 +139,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-1 px-8 bg-white">
+      <section className="py-4 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {isLoading ? (
             <div className="flex justify-center py-2">
@@ -224,7 +224,7 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-1 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
+      <section className="py-4 px-8 bg-[#011122] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold rounded-full blur-[200px]" />
         </div>
@@ -254,12 +254,12 @@ export default function CaseStudies() {
       </section>
 
       {/* Latest Acquisition Showcase */}
-      <section className="py-1 px-8 bg-neutral-50 border-t border-gold/10">
+      <section className="py-4 px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Explore our latest property acquisitions</h2>
-              <p className="text-lg text-muted font-sans max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted font-sans leading-relaxed text-left">
                 Strategically selected for high growth, strong rental yields, and long-term value. Every purchase is backed by thorough research and due diligence to ensure smart investments.
               </p>
             </motion.div>
