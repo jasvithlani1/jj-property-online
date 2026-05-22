@@ -51,7 +51,7 @@ export default function About() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 1 }}
- className="lg:col-span-5 relative"
+ className="lg:col-span-5 relative order-last lg:order-last"
  >
  <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
  <img
@@ -75,7 +75,7 @@ export default function About() {
  whileInView={{ opacity: 1, x: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 1, delay: 0.2 }}
- className="lg:col-span-7 space-y-3 text-center"
+ className="lg:col-span-7 space-y-3 text-center order-first lg:order-first"
  >
  <div className="space-y-4">
 
@@ -297,11 +297,11 @@ export default function About() {
  transition={{ duration: 0.6, delay: i * 0.1 }}
  className="p-6 md:p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group text-center"
  >
-  <div className="flex flex-row items-center justify-center gap-4 mb-4 w-full">
+  <div className="flex flex-row items-center justify-start gap-4 mb-4 w-full">
   <div className="p-3 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
   {i === 0 ? <Target className="w-6 h-6 text-gold" /> : i === 1 ? <Search className="w-6 h-6 text-gold" /> : <Handshake className="w-6 h-6 text-gold" />}
   </div>
-  <h3 className="text-2xl md:text-3xl font-sans font-black text-gold leading-tight text-center">{val.title}</h3>
+  <h3 className="text-2xl md:text-3xl font-sans font-black text-gold leading-tight text-left">{val.title}</h3>
   </div>
  <p className="text-white/60 font-sans leading-relaxed text-lg text-left">
  {val.text}
