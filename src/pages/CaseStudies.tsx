@@ -101,7 +101,7 @@ export default function CaseStudies() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-8 shadow-sm">
+            <div className="inline-block px-7 py-3 rounded-full border border-[#011122]/10 bg-white text-sm font-bold uppercase tracking-[0.2em] text-[#011122] mb-4 shadow-sm">
               {pageData?.hero?.badge || "Client Results"}
             </div>
             <h1 className="text-5xl md:text-8xl font-serif text-[#011122] leading-none mb-6 max-w-5xl mx-auto">
@@ -206,7 +206,7 @@ export default function CaseStudies() {
                         <div className="h-px w-8 bg-gold/30" />
                       </div>
                       
-                      <h2 className="text-2xl md:text-3xl font-serif text-[#011122] mb-6 group-hover:text-gold transition-colors duration-300 leading-tight">
+                      <h2 className="text-2xl md:text-3xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors duration-300 leading-tight">
                         {study.title}
                       </h2>
 
@@ -235,7 +235,7 @@ export default function CaseStudies() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 leading-tight">
               Ready to write your <br />
               <span className="text-gold">own success story?</span>
             </h2>
@@ -256,9 +256,9 @@ export default function CaseStudies() {
       {/* Latest Acquisition Showcase */}
       <section className="py-4 px-8 bg-neutral-50 border-t border-gold/10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-4">
+          <div className="text-center mb-8">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6">Explore our latest property acquisitions</h2>
+              <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4">Explore our latest property acquisitions</h2>
               <p className="text-lg text-muted font-sans leading-relaxed text-left">
                 Strategically selected for high growth, strong rental yields, and long-term value. Every purchase is backed by thorough research and due diligence to ensure smart investments.
               </p>

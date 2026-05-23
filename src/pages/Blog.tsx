@@ -116,7 +116,7 @@ export default function Blog() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
  >
- <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 shadow-sm scale-110 origin-center translate-y-[-4px]">
+ <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-4 shadow-sm scale-110 origin-center translate-y-[-4px]">
  {pageData?.hero?.badge || "Market Intelligence"}
  </div>
  <h1 className="text-5xl md:text-8xl font-serif leading-[1.05] mb-6 max-w-4xl mx-auto">
@@ -134,7 +134,7 @@ export default function Blog() {
  </section>
 
  {/* Category Filter Strip */}
- <section className="px-8 py-2">
+ <section className="px-8 py-4">
  <div className="max-w-7xl mx-auto flex flex-wrap gap-3 justify-center">
  {['All Articles', 'Market Intelligence', 'Market Analysis', 'SMSF Strategy', 'First Home', 'Strategy'].map((cat) => (
  <button
@@ -223,7 +223,7 @@ export default function Blog() {
  </section>
 
  {/* Newsletter CTA */}
- <section className="px-8 py-1 md:py-3 bg-gold/5">
+ <section className="px-8 py-1  bg-gold/5">
  <div className="max-w-3xl mx-auto text-center">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
@@ -231,7 +231,7 @@ export default function Blog() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-6 leading-tight">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-tight">
  {pageData?.newsletter?.heading || (
  <>Market intelligence, <br /> <span className="text-gold">direct to your inbox.</span></>
  )}

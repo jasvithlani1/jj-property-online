@@ -402,7 +402,7 @@ export default function Home() {
                 Principal Advisor
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.05] mb-1">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.05] mb-4">
                 {homeData?.aboutPreview?.heading ? (
                   <>
                     {homeData.aboutPreview.heading.replace(/Dedicated Buyer Advocate\.?/gi, '').trim().replace(/\.+$/, '')}. <br />
@@ -501,7 +501,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-1 gap-4 relative">
               <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none hidden md:block">Services</div>
-                <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-1 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
+                <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-4 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
                 <p className="text-muted text-xl font-sans max-w-xl leading-relaxed text-left md:text-left">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
@@ -588,7 +588,7 @@ export default function Home() {
                 transition={{ duration: 0.8 }}
                 className="flex flex-col items-center text-center lg:items-start lg:text-left"
               >
-                <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1">
+                <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-4">
                   {homeData?.differenceSection?.heading ? (
                     <>
                       {homeData.differenceSection.heading} <br />
@@ -655,11 +655,11 @@ export default function Home() {
         {/* ── Process Section ──────────────────────────────────────────────── */}
         <section className="py-4 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-0.5">
+            <div className="text-center mb-8">
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 shadow-sm">
                 How We Work
               </div>
-              <h2 className="text-4xl md:text-5xl font-sans font-black mb-1 leading-[1.0] text-[#011122]">
+              <h2 className="text-4xl md:text-5xl font-sans font-black mb-4 leading-[1.0] text-[#011122]">
                 {homeData?.processSection?.heading ? (
                   <>
                     {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-sans font-black">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
@@ -719,7 +719,7 @@ export default function Home() {
                       <div className="absolute inset-0 rounded-full bg-gold animate-ping opacity-20 pointer-events-none group-hover:block hidden" />
                     </div>
 
-                    <h3 className="text-lg font-sans font-black text-[#011122] mb-1 leading-tight font-medium">
+                    <h3 className="text-lg font-sans font-black text-[#011122] mb-4 leading-tight font-medium">
                       {item.title}
                     </h3>
                     <p className="text-base text-muted leading-relaxed font-sans px-4">
@@ -752,7 +752,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="relative z-10"
           >
-            <h2 className="text-3xl md:text-5xl font-sans font-black mb-2 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
+            <h2 className="text-3xl md:text-5xl font-sans font-black mb-4 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
               Start your Real Estate <br className="hidden md:block" />Success Story.
             </h2>
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
@@ -764,9 +764,9 @@ export default function Home() {
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
         <section id="case-studies" className="relative py-4 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
+            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-8 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1 md:whitespace-nowrap">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-4 md:whitespace-nowrap">
                   Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
                 </h2>
                 <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments - curated results that define our standard.</p>
@@ -807,7 +807,7 @@ export default function Home() {
                     <div className="p-3 flex flex-col flex-1 items-center text-center">
                       <div className="mb-0.5">
                         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-0.5">{story.location}</span>
-                        <h3 className="text-2xl font-sans font-black text-black mb-0.5">{story.title}</h3>
+                        <h3 className="text-2xl font-sans font-black text-black mb-4">{story.title}</h3>
                         <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
                       </div>
                       <p className="text-muted font-sans font-black text-base flex-1">"{story.shortQuote}"</p>
@@ -827,14 +827,14 @@ export default function Home() {
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
         <section id="reviews" className="relative py-4 bg-white overflow-hidden flex flex-col items-center">
-          <div className="mb-0.5 md:mb-2 text-center">
+          <div className="mb-0.5 md:mb-8 text-center">
             <div className="flex items-center justify-center gap-2 mb-0.5">
               <span className="text-4xl font-sans font-black text-black font-bold">5.0</span>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
               </div>
             </div>
-            <h2 className="text-2xl md:text-4xl font-sans font-black text-black mb-0.5">Google Verified Results</h2>
+            <h2 className="text-2xl md:text-4xl font-sans font-black text-black mb-4">Google Verified Results</h2>
             <p className="text-muted font-sans text-sm tracking-widest uppercase">Trusted by Australia's premium buyers</p>
           </div>
 
@@ -877,8 +877,8 @@ export default function Home() {
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
         <section className="relative py-4 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
-            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-0">
-              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-1">
+            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-8">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-4">
                 Frequently <br className="hidden lg:block" />
                 <span className="text-gold">Asked Questions.</span>
               </h2>
@@ -928,7 +928,7 @@ export default function Home() {
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
         <section ref={calendlySectionRef} className="relative py-4 bg-neutral-50 px-8 overflow-hidden">
-          <div className="max-w-4xl mx-auto text-center mb-0.5">
+          <div className="max-w-4xl mx-auto text-center mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -938,7 +938,7 @@ export default function Home() {
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 shadow-sm">
                 Take the next step
               </div>
-              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.0] mb-0.5">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-[1.0] mb-4">
                 Book your <span className="text-gold">Strategy Session.</span>
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">

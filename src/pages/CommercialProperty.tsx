@@ -99,7 +99,7 @@ export default function CommercialProperty() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-6 backdrop-blur-sm">
+              <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-4 backdrop-blur-sm">
                 {pageData?.hero?.badge === "Commercial Property Strategies with Investment Precision." ? "Commercial Property" : (pageData?.hero?.badge || "Commercial Property")}
               </div>
               <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-6 max-w-5xl mx-auto px-4 text-gold">
@@ -122,7 +122,7 @@ export default function CommercialProperty() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 leading-tight">
                 {pageData?.intro?.heading || "Commercial Acquisition Strategies for Smart Property Investors"}
               </h2>
 
@@ -189,7 +189,7 @@ export default function CommercialProperty() {
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
                 <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
-                  <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-6 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-4 leading-tight">
                     {pillar.title}
                   </h2>
 
@@ -243,7 +243,7 @@ export default function CommercialProperty() {
               <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start text-center">
                 <div className="mb-6">
                   <div className="h-1 w-16 bg-gold mb-8 rounded-full mx-auto" />
-                  <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-6">
+                  <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-4">
                     {pageData?.process?.heading || (
                       <>Commercial Portfolio <br /> <span className="text-gold">Strategy</span></>
                     )}
@@ -305,7 +305,7 @@ export default function CommercialProperty() {
                           </div>
                         </div>
                         <div className="p-8 text-left">
-                          <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-3 leading-snug">
+                          <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-4 leading-snug">
                             {card.title}
                           </h3>
                           <p className="text-white/60 font-sans text-base leading-relaxed">
@@ -323,7 +323,7 @@ export default function CommercialProperty() {
 
         <section className="py-4 px-8 bg-white overflow-hidden border-t border-gold/5">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-2">
+            <div className="text-center mb-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -396,7 +396,7 @@ export default function CommercialProperty() {
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
                 
-                <h3 className="text-4xl font-sans font-black text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Commercial Property Strategy Session"}</h3>
+                <h3 className="text-4xl font-sans font-black text-white mb-4 relative z-10">{pageData?.readiness?.cta?.title || "Commercial Property Strategy Session"}</h3>
                 <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
                   {pageData?.readiness?.cta?.description || "Ready to build a stronger national portfolio? Our free session reviews your available equity, borrowing capacity, and investment goals to help map a clear, practical path forward."}
                 </p>
@@ -415,7 +415,7 @@ export default function CommercialProperty() {
         <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-6">
+            <div className="text-center mb-8">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -460,7 +460,7 @@ export default function CommercialProperty() {
         <section className="relative py-4 bg-white px-8">
           <div className="max-w-7xl mx-auto">
             {/* Centered Header */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-4">
                 Frequently <span className="text-gold">Asked Questions.</span>
               </h2>
@@ -522,7 +522,7 @@ export default function CommercialProperty() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-8 leading-tight">
+              <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-4 leading-tight">
                 {pageData?.finalCta?.heading || (
                   <>Strengthen Your Investment <br /> <span className="text-gold ">Advantage.</span></>
                 )}
