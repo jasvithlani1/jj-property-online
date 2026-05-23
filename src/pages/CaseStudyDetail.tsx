@@ -210,7 +210,7 @@ export default function CaseStudyDetail() {
                 transition={{ delay: i * 0.1 }}
                 className="p-10 rounded-[2.5rem] bg-neutral-50 border border-black/5 hover:border-gold/30 transition-all duration-500 group"
               >
-                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted mb-4 group-hover:text-gold transition-colors">{stat.label}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted mb-2 group-hover:text-gold transition-colors">{stat.label}</p>
                 <p className="text-3xl md:text-4xl font-serif text-[#011122]">{stat.value}</p>
               </motion.div>
             ))}
@@ -233,7 +233,7 @@ export default function CaseStudyDetail() {
               className="relative"
             >
               <div className="absolute -left-12 top-0 text-[10rem] font-serif text-gold/5 leading-none pointer-events-none select-none">01</div>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-4 flex items-center gap-4">
+              <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-2 flex items-center gap-4">
                 <Target className="w-8 h-8 text-gold" />
                 The Brief & Challenge
               </h2>
@@ -250,7 +250,7 @@ export default function CaseStudyDetail() {
               className="relative"
             >
               <div className="absolute -left-12 top-0 text-[10rem] font-serif text-gold/5 leading-none pointer-events-none select-none">02</div>
-              <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-4 flex items-center gap-4">
+              <h2 className="text-3xl md:text-4xl font-serif text-[#011122] mb-2 flex items-center gap-4">
                 <TrendingUp className="w-8 h-8 text-gold" />
                 The Strategic Approach
               </h2>
@@ -267,7 +267,7 @@ export default function CaseStudyDetail() {
               className="p-10 md:p-14 rounded-[3.5rem] bg-[#011122] text-white relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] rounded-full" />
-              <h2 className="text-3xl md:text-4xl font-serif mb-4 flex items-center gap-4">
+              <h2 className="text-3xl md:text-4xl font-serif mb-2 flex items-center gap-4">
                 <ShieldCheck className="w-8 h-8 text-gold" />
                 Key Benefits Delivered
               </h2>
@@ -300,7 +300,7 @@ export default function CaseStudyDetail() {
             >
               <div className="p-10 rounded-[3rem] bg-gold/5 border border-gold/10 relative group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[60px] rounded-full group-hover:bg-gold/20 transition-colors" />
-                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-4">The Final Outcome</h3>
+                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-2">The Final Outcome</h3>
                 <div className="prose prose-lg text-[#011122] font-serif leading-relaxed mb-8 ">
                   {study.outcome}
                 </div>
@@ -309,7 +309,7 @@ export default function CaseStudyDetail() {
                 {study.shortQuote && (
                   <div className="mb-10">
                     <Quote className="w-8 h-8 text-gold/30 mb-4" />
-                    <p className="text-lg font-sans text-muted  leading-relaxed mb-4">"{study.shortQuote}"</p>
+                    <p className="text-lg font-sans text-muted  leading-relaxed mb-2">"{study.shortQuote}"</p>
                     <p className="text-xs font-bold uppercase tracking-widest text-black">— Verified Client Result</p>
                   </div>
                 )}
@@ -357,7 +357,7 @@ export default function CaseStudyDetail() {
       {/* ── Next Stories ────────────────────────────────────────────────── */}
       <section className="py-4  px-8 bg-white border-t border-black/5">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-xs font-black uppercase tracking-[0.4em] text-gold mb-4 text-center">Continue Exploring</h2>
+          <h2 className="text-xs font-black uppercase tracking-[0.4em] text-gold mb-2 text-center">Continue Exploring</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {otherStudies.map((other) => (
               <Link
@@ -370,7 +370,7 @@ export default function CaseStudyDetail() {
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-[10px] font-black uppercase tracking-widest text-gold mb-3">{other.tag || 'Acquisition'}</span>
-                  <h3 className="text-2xl font-serif text-[#011122] mb-4 group-hover:text-gold transition-colors">{other.title}</h3>
+                  <h3 className="text-2xl font-serif text-[#011122] mb-2 group-hover:text-gold transition-colors">{other.title}</h3>
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted">
                     Learn more <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>

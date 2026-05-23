@@ -116,7 +116,7 @@ export default function Blog() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
  >
- <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-4 shadow-sm scale-110 origin-center translate-y-[-4px]">
+ <div className="inline-block px-7 py-3 rounded-full border border-white/20 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-2 shadow-sm scale-110 origin-center translate-y-[-4px]">
  {pageData?.hero?.badge || "Market Intelligence"}
  </div>
  <h1 className="text-5xl md:text-8xl font-serif leading-[1.05] mb-6 max-w-4xl mx-auto">
@@ -201,7 +201,7 @@ export default function Blog() {
  <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" />6 min read</span>
  </div>
 
- <h2 className="text-xl font-serif text-[#011122] leading-snug mb-4 group-hover:text-gold transition-colors duration-300 flex-1">
+ <h2 className="text-xl font-serif text-[#011122] leading-snug mb-2 group-hover:text-gold transition-colors duration-300 flex-1">
  {post.title}
  </h2>
 
@@ -231,7 +231,7 @@ export default function Blog() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-4 leading-tight">
+ <h2 className="text-4xl md:text-5xl font-serif text-[#011122] mb-2 leading-tight">
  {pageData?.newsletter?.heading || (
  <>Market intelligence, <br /> <span className="text-gold">direct to your inbox.</span></>
  )}

@@ -118,7 +118,7 @@ export default function Contact() {
  transition={{ duration: 0.8 }}
  className="max-w-4xl mx-auto"
  >
- <div className="inline-block px-4 sm:px-8 py-3 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-black uppercase tracking-[0.3em] mb-4 shadow-sm">
+ <div className="inline-block px-4 sm:px-8 py-3 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-black uppercase tracking-[0.3em] mb-2 shadow-sm">
  {pageData?.hero?.badge || "Contact Us"}
  </div>
  <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-[1.1] mb-8 uppercase tracking-widest">
@@ -148,7 +148,7 @@ export default function Contact() {
  transition={{ duration: 0.8, delay: 0.2 }}
  className="flex flex-col justify-center items-center text-center"
  >
- <h2 className="text-4xl font-serif text-black leading-tight mb-4">
+ <h2 className="text-4xl font-serif text-black leading-tight mb-2">
  {pageData?.details?.heading || "Let's discuss your targets."}
  </h2>
 
@@ -159,7 +159,7 @@ export default function Contact() {
  <Mail className="w-6 h-6" />
  </div>
  <div>
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-4">Direct Email</h3>
+ <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">Direct Email</h3>
  <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-lg sm:text-xl font-sans font-medium text-black hover:text-gold transition-colors">
  {pageData?.details?.email || "info@jjpropertypartner.com.au"}
  </Link>
@@ -172,7 +172,7 @@ export default function Contact() {
  <Phone className="w-6 h-6" />
  </div>
  <div>
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-4">Executive Line</h3>
+ <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">Executive Line</h3>
  <Link href={`tel:${pageData?.details?.phone?.replace(/\s/g, '') || "+61481334458"}`} className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
  {pageData?.details?.phone || "+61 481 334 458"}
  </Link>
@@ -185,7 +185,7 @@ export default function Contact() {
  <FaWhatsapp className="w-6 h-6" />
  </div>
  <div>
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-4">WhatsApp</h3>
+ <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">WhatsApp</h3>
  <Link href={pageData?.details?.whatsapp || "https://wa.me/61481334458"} className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
  Message us instantly
  </Link>
@@ -198,7 +198,7 @@ export default function Contact() {
  <MapPin className="w-6 h-6" />
  </div>
  <div className="flex flex-col justify-center">
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-4">Our Office</h3>
+ <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">Our Office</h3>
  <p className="text-lg font-sans font-medium text-black leading-relaxed">
  {pageData?.details?.address || "Sydney, Australia"}
  </p>
@@ -219,7 +219,7 @@ export default function Contact() {
  <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6 text-gold">
  <CheckCircle2 className="w-10 h-10" />
  </div>
- <h3 className="text-3xl font-serif text-black mb-4">Inquiry Received</h3>
+ <h3 className="text-3xl font-serif text-black mb-2">Inquiry Received</h3>
  <p className="text-muted text-lg mb-8 max-w-sm mx-auto">
  Thank you. We have received your details and will reach out for a confidential discussion shortly.
  </p>
@@ -232,7 +232,7 @@ export default function Contact() {
  </div>
  ) : (
  <>
- <h3 className="text-2xl font-serif text-black mb-4">Request a Call</h3>
+ <h3 className="text-2xl font-serif text-black mb-2">Request a Call</h3>
 
  {!import.meta.env.VITE_SANITY_WRITE_TOKEN && (
  <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs font-sans leading-relaxed">

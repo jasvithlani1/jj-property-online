@@ -45,17 +45,17 @@ const replaceEmDash = (node: any): any => {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-4 leading-tight first:mt-0 text-center">
+      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-2 leading-tight first:mt-0 text-center">
         {replaceEmDash(children)}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-4 text-center">
+      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-2 text-center">
         {replaceEmDash(children)}
       </h3>
     ),
     normal: ({ children }: any) => (
-      <p className="text-xl text-muted font-sans leading-relaxed mb-8 text-center">
+      <p className="text-xl text-muted font-sans leading-relaxed mb-6 text-center">
         {replaceEmDash(children)}
       </p>
     ),
@@ -337,8 +337,8 @@ export default function BlogDetail() {
                 className="p-10 rounded-[3rem] bg-[#011122] text-white relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/20 blur-[60px] rounded-full group-hover:bg-gold/30 transition-colors" />
-                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-4">Take the next step</h3>
-                <h2 className="text-2xl md:text-3xl font-serif mb-4 leading-tight">
+                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-2">Take the next step</h3>
+                <h2 className="text-2xl md:text-3xl font-serif mb-2 leading-tight">
                   Ready to buy with confidence?
                 </h2>
                 <p className="text-white/60 font-sans leading-relaxed mb-10">
@@ -368,7 +368,7 @@ export default function BlogDetail() {
               {/* Related Reading */}
               {otherPosts.length > 0 && (
                 <div className="p-10 rounded-[3rem] border border-[#011122]/5">
-                  <h3 className="text-xs font-black uppercase tracking-[0.3em] text-muted mb-4">Related Intelligence</h3>
+                  <h3 className="text-xs font-black uppercase tracking-[0.3em] text-muted mb-2">Related Intelligence</h3>
                   <div className="space-y-8">
                     {otherPosts.map((other) => (
                       <Link
@@ -396,7 +396,7 @@ export default function BlogDetail() {
       <section className="py-4 px-8 bg-[#011122] relative overflow-hidden text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-gold/5 blur-[180px] rounded-full pointer-events-none" />
         <div className="max-w-3xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-serif text-white mb-2">
             Market Intelligence, <span className="text-gold">directly to you.</span>
           </h2>
           <p className="text-xl text-white/60 font-sans mb-12 leading-relaxed">
