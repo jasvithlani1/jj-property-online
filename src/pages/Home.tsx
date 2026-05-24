@@ -388,7 +388,7 @@ export default function Home() {
         </motion.section>
 
         {/* ── About Alex Preview ───────────────────────────────────────────── */}
-        <section id="about" className="relative z-10 py-4 px-8 bg-gradient-to-b from-white to-neutral-50">
+        <section id="about" className="relative z-10 pt-4 pb-14 px-8 bg-gradient-to-b from-white to-neutral-50">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -429,7 +429,7 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="mt-4 flex items-center justify-center lg:justify-start gap-4">
+              <div className="mt-2 flex items-center justify-center lg:justify-start gap-4">
                 <Link href="/about" className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm">
                   {homeData?.aboutPreview?.ctaText || "Read Full Profile"}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -492,13 +492,13 @@ export default function Home() {
         </section>
 
         {/* ── Services Preview ─────────────────────────────────────────────── */}
-        <section id="services" className="relative z-10 py-4 bg-white px-8 overflow-hidden border-t border-black/5">
+        <section id="services" className="relative z-10 py-14 bg-white px-8 overflow-hidden border-t border-black/5">
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gold/5 blur-[120px] rounded-full -z-10" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
 
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-1 gap-4 relative">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-4 relative">
               <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none hidden md:block">Services</div>
                 <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
@@ -516,7 +516,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-3 lg:mt-12">
+            <div className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5 pb-0">
                 {servicesPreview.map((localService: any, index: number) => {
                   const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
@@ -578,7 +578,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="py-4 px-8 bg-white overflow-hidden">
+        <section className="py-14 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
@@ -601,10 +601,10 @@ export default function Home() {
                     </>
                   )}
                 </h2>
-                <p className="text-base text-muted font-sans leading-relaxed mb-1 max-w-xl text-left lg:text-left">
+                <p className="text-base text-muted font-sans leading-relaxed mb-2 max-w-xl text-left lg:text-left">
                   Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.
                 </p>
-                <div className="w-full flex justify-center mt-2">
+                <div className="w-full flex justify-center mt-0">
                   <div className="space-y-2 flex flex-col items-start text-left max-w-xl">
                     {(homeData?.differenceSection?.points || [
                       "100% buyer's agent representation - no ties to developers",
@@ -653,9 +653,9 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="py-4 px-8 bg-white text-[#011122] overflow-hidden">
+        <section className="py-14 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-6">
+            <div className="text-center mb-2">
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-2 shadow-sm">
                 How We Work
               </div>
@@ -733,7 +733,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="relative py-4 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+        <section className="relative py-14 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <video
               src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
@@ -762,9 +762,9 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative py-4 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
+        <section id="case-studies" className="relative py-14 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-8 gap-6">
+            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-2 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2 md:whitespace-nowrap">
                   Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
@@ -826,8 +826,8 @@ export default function Home() {
         </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
-        <section id="reviews" className="relative py-4 bg-white overflow-hidden flex flex-col items-center">
-          <div className="mb-0.5 md:mb-6 text-center">
+        <section id="reviews" className="relative py-14 bg-white overflow-hidden flex flex-col items-center">
+          <div className="mb-2 text-center">
             <div className="flex items-center justify-center gap-2 mb-0.5">
               <span className="text-4xl font-sans font-black text-black font-bold">5.0</span>
               <div className="flex gap-1">
@@ -875,9 +875,9 @@ export default function Home() {
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-        <section className="relative py-4 bg-gradient-to-b from-white to-neutral-50 px-8">
+        <section className="relative py-14 bg-gradient-to-b from-white to-neutral-50 px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
-            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-6">
+            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-2">
               <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2">
                 Frequently <br className="hidden lg:block" />
                 <span className="text-gold">Asked Questions.</span>
@@ -927,8 +927,8 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section ref={calendlySectionRef} className="relative py-4 bg-neutral-50 px-8 overflow-hidden">
-          <div className="max-w-4xl mx-auto text-center mb-6">
+        <section ref={calendlySectionRef} className="relative py-14 bg-neutral-50 px-8 overflow-hidden">
+          <div className="max-w-4xl mx-auto text-center mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
