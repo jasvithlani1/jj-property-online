@@ -338,7 +338,7 @@ export default function About() {
       </div>
       <div className="flex flex-col items-start justify-center">
         <span className="text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
-        <span className="text-sm sm:text-base font-sans font-black text-black leading-tight md:whitespace-nowrap">{cred.value}</span>
+        <span className={`text-sm sm:text-base font-sans font-black text-black leading-tight ${cred.label === 'Business' ? 'md:whitespace-nowrap' : 'whitespace-nowrap'}`}>{cred.value}</span>
       </div>
     </div>
   ))}
