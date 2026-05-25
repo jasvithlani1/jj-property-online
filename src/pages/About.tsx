@@ -50,7 +50,7 @@ export default function About() {
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 1 }}
-    className="text-center mb-6 md:mb-8 mt-2 md:mt-0"
+    className="text-center mb-4 md:mb-8 mt-2 md:mt-0"
    >
    <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight">
    {aboutData?.profile?.heading ? (
@@ -231,9 +231,9 @@ export default function About() {
  </section>
 
   {/* Core Values */}
-  <section className="pt-2 pb-4 md:py-4 mt-2 md:mt-3.5 px-8 bg-white">
+  <section className="pt-1 pb-3 md:py-4 mt-1.5 md:mt-3.5 px-8 bg-white">
   <div className="max-w-7xl mx-auto">
-  <div className="text-center mb-6 mt-2 md:mt-0">
+  <div className="text-center mb-4 mt-1 md:mt-0">
  <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2">Our Core Values</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
@@ -265,7 +265,7 @@ export default function About() {
  </section>
 
  {/* Pillars Section */}
- <section className="py-4 mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="py-3 mt-2.5 md:py-4 md:mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 w-full h-full opacity-20">
  <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
  <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
@@ -316,9 +316,9 @@ export default function About() {
  </section>
 
   {/* Credentials */}
-  <section className="pt-2 pb-4 md:pt-[30px] md:pb-4 mt-2 md:mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+  <section className="pt-1.5 pb-4 md:pt-[30px] md:pb-4 mt-1.5 md:mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
    <div className="max-w-7xl mx-auto">
-   <div className="text-center mb-6 mt-2 md:mt-0">
+   <div className="text-center mb-4 md:mb-6 mt-1.5 md:mt-0">
   <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
   </div>
   
