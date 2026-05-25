@@ -43,7 +43,7 @@ export default function About() {
  <div className="w-full bg-white selection:bg-gold/20 ">
 
   {/* Profile Section (New Hero) */}
-  <section className="pt-32 pb-4 md:pt-40 md:pb-4 px-8 bg-white">
+  <section className="pt-[90px] pb-4 md:pt-40 md:pb-4 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
   <motion.div
    initial={{ opacity: 0, y: 30 }}
@@ -231,7 +231,7 @@ export default function About() {
  </section>
 
  {/* Core Values */}
- <section className="py-4 mt-3.5 px-8 bg-white">
+ <section className="pt-[21px] pb-4 md:py-4 mt-0 md:mt-3.5 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-6">
  <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2">Our Core Values</h2>
@@ -316,7 +316,7 @@ export default function About() {
  </section>
 
  {/* Credentials */}
- <section className="py-4 mt-3.5 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+ <section className="pt-[21px] pb-4 md:pt-[30px] md:pb-4 mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
   <div className="max-w-7xl mx-auto">
   <div className="text-center mb-6">
   <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
@@ -338,7 +338,7 @@ export default function About() {
       </div>
       <div className="flex flex-col items-start justify-center">
         <span className="text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
-        <span className="text-sm sm:text-base font-sans font-black text-black leading-tight break-all sm:break-normal">{cred.value}</span>
+        <span className="text-sm sm:text-base font-sans font-black text-black leading-tight whitespace-nowrap">{cred.value}</span>
       </div>
     </div>
   ))}
