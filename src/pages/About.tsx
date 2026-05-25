@@ -136,7 +136,7 @@ export default function About() {
  </section>
 
  {/* Purpose Section */}
- <section className="py-4 px-8 bg-[#FFFBF2] overflow-hidden">
+ <section className="py-4 mt-3.5 px-8 bg-[#FFFBF2] overflow-hidden">
  <div className="max-w-4xl mx-auto text-center">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
@@ -195,7 +195,7 @@ export default function About() {
  </section>
 
  {/* Track Record & Tech Advantage */}
- <section className="py-4 bg-white px-8 relative overflow-hidden">
+ <section className="py-4 mt-3.5 bg-white px-8 relative overflow-hidden">
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
@@ -231,7 +231,7 @@ export default function About() {
  </section>
 
  {/* Core Values */}
- <section className="py-4 px-8 bg-white">
+ <section className="py-4 mt-3.5 px-8 bg-white">
  <div className="max-w-7xl mx-auto">
  <div className="text-center mb-6">
  <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2">Our Core Values</h2>
@@ -265,7 +265,7 @@ export default function About() {
  </section>
 
  {/* Pillars Section */}
- <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="py-4 mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 w-full h-full opacity-20">
  <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
  <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
@@ -316,35 +316,35 @@ export default function About() {
  </section>
 
  {/* Credentials */}
- <section className="py-4 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
- <div className="max-w-7xl mx-auto">
- <div className="text-center mb-6">
- <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
- </div>
- 
-  <div className="bg-white p-5 rounded-2xl md:rounded-full shadow-sm border border-gold/10 flex flex-col md:flex-row md:flex-wrap justify-between gap-4 md:gap-6 items-center max-w-5xl mx-auto">
- {[
-  { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "Licence", value: "20543356" },
-  { icon: <Briefcase className="w-5 h-5 text-gold" />, label: "ABN", value: "71 687 187 113" },
-  { icon: <Building2 className="w-5 h-5 text-gold" />, label: "Business", value: "JJ Property Partner" },
-  { icon: <MapPin className="w-5 h-5 text-gold" />, label: "Location", value: "Sydney, NSW" },
+ <section className="py-4 mt-3.5 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+  <div className="max-w-7xl mx-auto">
+  <div className="text-center mb-6">
+  <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
+  </div>
+  
+  <div className="bg-white p-4 sm:p-5 rounded-3xl md:rounded-full shadow-sm border border-gold/10 grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-between gap-4 md:gap-6 items-center max-w-5xl mx-auto">
+  {[
+    { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "Licence", value: "20543356" },
+    { icon: <Briefcase className="w-5 h-5 text-gold" />, label: "ABN", value: "71 687 187 113" },
+    { icon: <Building2 className="w-5 h-5 text-gold" />, label: "Business", value: "JJ Property Partner" },
+    { icon: <MapPin className="w-5 h-5 text-gold" />, label: "Location", value: "Sydney, NSW" },
   ].map((cred, i) => (
-  <div key={i} className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-start border-b md:border-b-0 border-black/5 pb-2 md:pb-0 last:border-b-0 last:pb-0">
-  <div className="flex items-center gap-3">
-  <div className="w-9 h-9 bg-gold/5 rounded-full flex items-center justify-center shrink-0">
-  {cred.icon}
-  </div>
-   <div className="flex flex-col items-start justify-center">
-   <span className="text-[10px] font-bold text-muted uppercase tracking-widest hidden md:block">{cred.label}</span>
-   <span className="text-base font-sans font-black text-black">{cred.value}</span>
-   </div>
-  </div>
-  {i < 3 && <div className="hidden lg:block w-px h-6 bg-gold/20 ml-6"></div>}
-  </div>
+    <div 
+      key={i} 
+      className="flex items-center gap-3 w-full md:w-auto justify-start p-3 md:p-0 rounded-2xl md:rounded-none bg-neutral-50/50 md:bg-transparent border border-black/5 md:border-none md:border-r md:border-gold/20 md:pr-6 md:last:border-r-0"
+    >
+      <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+        {cred.icon}
+      </div>
+      <div className="flex flex-col items-start justify-center">
+        <span className="text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
+        <span className="text-sm sm:text-base font-sans font-black text-black leading-tight break-all sm:break-normal">{cred.value}</span>
+      </div>
+    </div>
   ))}
- </div>
- </div>
- </section>
+  </div>
+  </div>
+  </section>
  </div>
  </>
  );
