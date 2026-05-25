@@ -43,15 +43,15 @@ export default function About() {
  <div className="w-full bg-white selection:bg-gold/20 ">
 
   {/* Profile Section (New Hero) */}
-  <section className="pt-[90px] pb-4 md:pt-40 md:pb-4 px-8 bg-white">
- <div className="max-w-7xl mx-auto">
-  <motion.div
-   initial={{ opacity: 0, y: 30 }}
-   whileInView={{ opacity: 1, y: 0 }}
-   viewport={{ once: true }}
-   transition={{ duration: 1 }}
-   className="text-center mb-6 md:mb-8"
-  >
+  <section className="pt-[110px] pb-4 md:pt-40 md:pb-4 px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+   <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+    className="text-center mb-6 md:mb-8 mt-2 md:mt-0"
+   >
    <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight">
    {aboutData?.profile?.heading ? (
    <>
@@ -230,10 +230,10 @@ export default function About() {
  </div>
  </section>
 
- {/* Core Values */}
- <section className="pt-[21px] pb-4 md:py-4 mt-0 md:mt-3.5 px-8 bg-white">
- <div className="max-w-7xl mx-auto">
- <div className="text-center mb-6">
+  {/* Core Values */}
+  <section className="pt-2 pb-4 md:py-4 mt-2 md:mt-3.5 px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+  <div className="text-center mb-6 mt-2 md:mt-0">
  <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2">Our Core Values</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
@@ -315,10 +315,10 @@ export default function About() {
  </div>
  </section>
 
- {/* Credentials */}
- <section className="pt-[21px] pb-4 md:pt-[30px] md:pb-4 mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
-  <div className="max-w-7xl mx-auto">
-  <div className="text-center mb-6">
+  {/* Credentials */}
+  <section className="pt-2 pb-4 md:pt-[30px] md:pb-4 mt-2 md:mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+   <div className="max-w-7xl mx-auto">
+   <div className="text-center mb-6 mt-2 md:mt-0">
   <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
   </div>
   
@@ -338,7 +338,7 @@ export default function About() {
       </div>
       <div className="flex flex-col items-start justify-center">
         <span className="text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
-        <span className="text-sm sm:text-base font-sans font-black text-black leading-tight whitespace-nowrap">{cred.value}</span>
+        <span className="text-sm sm:text-base font-sans font-black text-black leading-tight md:whitespace-nowrap">{cred.value}</span>
       </div>
     </div>
   ))}
