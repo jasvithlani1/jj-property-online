@@ -114,7 +114,7 @@ export default function CommercialProperty() {
 
         {/* Introduction Section */}
         <section className="py-4 px-8 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -164,7 +164,7 @@ export default function CommercialProperty() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="hidden lg:block relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl"
+              className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
                 src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
@@ -186,7 +186,7 @@ export default function CommercialProperty() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ duration: 0.9, ease: 'easeOut' }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-center ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-stretch ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
               >
                 <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
                   <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-2 leading-tight">
@@ -221,7 +221,7 @@ export default function CommercialProperty() {
                   </div>
                 </div>
 
-                <div className={`hidden lg:block relative h-[400px] md:h-[500px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
+                <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
                     alt={pillar.title}

@@ -121,7 +121,7 @@ export default function Contact() {
  <div className="inline-block px-4 sm:px-8 py-3 rounded-full border border-gold/30 bg-gold/5 text-gold text-xs font-black uppercase tracking-[0.3em] mb-2 shadow-sm">
  {pageData?.hero?.badge || "Contact Us"}
  </div>
- <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-[1.1] mb-8 uppercase tracking-widest">
+ <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] leading-[1.1] mb-8 uppercase tracking-tight">
  {pageData?.hero?.heading?.includes('premium') ? (
  <>Exclusive access to Australia’s <br className="hidden md:block" /> <span className="text-gold font-black">premium</span> property market.</>
  ) : pageData?.hero?.heading || (
