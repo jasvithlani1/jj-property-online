@@ -492,7 +492,7 @@ export default function Home() {
         </section>
 
         {/* ── Services Preview ─────────────────────────────────────────────── */}
-        <section id="services" className="relative z-10 py-[1px] bg-white px-8 overflow-hidden border-t border-black/5">
+        <section id="services" className="relative z-10 py-[1px] mt-1.5 bg-white px-8 overflow-hidden border-t border-black/5">
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gold/5 blur-[120px] rounded-full -z-10" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
@@ -733,7 +733,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA Section ──────────────────────────────────────────────────── */}
-        <section className="relative py-[1px] px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
+        <section className="relative py-[1px] mt-3.5 px-8 bg-gradient-to-b from-[#011122] to-[#011122] text-white text-center overflow-hidden flex flex-col items-center justify-center">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <video
               src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
@@ -750,7 +750,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10"
+            className="relative z-10 py-1.5"
           >
             <h2 className="text-3xl md:text-5xl font-sans font-black mb-2 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
               Start your Real Estate <br className="hidden md:block" />Success Story.
@@ -927,7 +927,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section ref={calendlySectionRef} className="relative py-[1px] mt-3.5 bg-neutral-50 px-8 overflow-hidden">
+        <section ref={calendlySectionRef} className="relative pt-3.5 pb-[1px] bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
