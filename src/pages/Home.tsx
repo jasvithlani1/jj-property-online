@@ -653,7 +653,7 @@ export default function Home() {
         </section>
 
         {/* ── Process Section ──────────────────────────────────────────────── */}
-        <section className="py-[1px] mt-[2px] px-8 bg-white text-[#011122] overflow-hidden">
+        <section className="py-[1px] mt-12 px-8 bg-white text-[#011122] overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-2">
               <div className="inline-block px-5 py-2 rounded-full border border-gold/20 bg-gold/5 text-sm font-bold uppercase tracking-[0.2em] text-gold mb-2 shadow-sm">
@@ -762,7 +762,7 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative py-[1px] mt-[2px] bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
+        <section id="case-studies" className="relative py-[1px] mt-12 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-2 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
@@ -826,7 +826,7 @@ export default function Home() {
         </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
-        <section id="reviews" className="relative py-[1px] mt-[2px] bg-white overflow-hidden flex flex-col items-center">
+        <section id="reviews" className="relative py-[1px] mt-12 bg-white overflow-hidden flex flex-col items-center">
           <div className="mb-2 text-center">
             <div className="flex items-center justify-center gap-2 mb-0.5">
               <span className="text-4xl font-sans font-black text-black font-bold">5.0</span>
@@ -927,7 +927,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section ref={calendlySectionRef} className="relative py-[1px] mt-[2px] bg-neutral-50 px-8 overflow-hidden">
+        <section ref={calendlySectionRef} className="relative py-[1px] mt-12 bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
