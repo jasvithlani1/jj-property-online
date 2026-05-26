@@ -107,6 +107,12 @@ const heroSlides = [
   },
   {
     heading: (
+      <>Smart <span className="text-gold font-sans font-black">Investments</span> <br className="hidden md:block" /> Stronger <span className="text-gold font-sans font-black">Returns.</span></>
+    ),
+    subheading: "Maximize your wealth with data-driven property strategies and high-performing real estate acquisitions tailored to your long-term goals."
+  },
+  {
+    heading: (
       <>From <span className="text-gold font-sans font-black">Search</span> <br className="hidden md:block" /> to <span className="text-gold font-sans font-black">Settlement.</span></>
     ),
     subheading: "Your property journey deserves expert support at every step. We simplify the process with research, inspections, negotiation, due diligence, and settlement coordination."
@@ -578,7 +584,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="py-[1px] px-8 bg-white overflow-hidden">
+        <section className="py-[1px] mt-1 md:mt-0 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
@@ -764,7 +770,7 @@ export default function Home() {
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
         <section id="case-studies" className="relative py-[1px] mt-3.5 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-2 gap-6">
+            <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2 md:whitespace-nowrap">
                   Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
