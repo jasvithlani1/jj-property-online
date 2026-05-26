@@ -116,12 +116,6 @@ const heroSlides = [
       <>From <span className="text-gold font-sans font-black">Search</span> <br className="hidden md:block" /> to <span className="text-gold font-sans font-black">Settlement.</span></>
     ),
     subheading: "Your property journey deserves expert support at every step. We simplify the process with research, inspections, negotiation, due diligence, and settlement coordination."
-  },
-  {
-    heading: (
-      <>Property <span className="text-gold font-sans font-black">Strategy</span> <br className="hidden md:block" /> Built Around <span className="text-gold font-sans font-black">You.</span></>
-    ),
-    subheading: "Whether you are buying your first home, investing, or purchasing through an SMSF, we create a tailored strategy aligned with your goals, budget, and future plans."
   }
 ];
 
@@ -504,7 +498,7 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 blur-[100px] rounded-full -z-10" />
 
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-2 gap-4 relative">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-6 relative">
               <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none hidden md:block">Services</div>
                 <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
@@ -958,7 +952,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="max-w-5xl mx-auto bg-neutral-50 rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[900px] sm:min-h-[700px] relative z-10"
+            className="max-w-5xl mx-auto bg-neutral-50 rounded-[2rem] shadow-2xl border border-black/5 overflow-hidden min-h-[900px] sm:min-h-[700px] relative z-10 mb-3 md:mb-0"
           >
             <div
               id="calendly-inline-widget"
