@@ -118,7 +118,7 @@ export default function About() {
  )}
  </div>
 
-  <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 border-t border-gold/10">
+  <div className="pt-4 md:pt-6 pb-2 md:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 border-t border-gold/10">
   {(aboutData?.profile?.stats || [
   { label: 'IT & Real Estate', value: '20+ Years' },
   { label: 'Personal Portfolio', value: '$6M+' },
@@ -146,7 +146,11 @@ export default function About() {
  >
  <div className="text-7xl md:text-8xl font-sans font-black text-gold/40 leading-none mb-2 select-none">JJ</div>
  <h2 className="text-3xl md:text-5xl font-sans font-black text-[#011122] mb-2">
- {aboutData?.purpose?.heading || "A name with purpose. A promise with heart."}
+ {aboutData?.purpose?.heading ? (
+   <span dangerouslySetInnerHTML={{ __html: aboutData.purpose.heading.replace('. ', '. <br class="block md:hidden" /> ') }} />
+ ) : (
+   <>A name with purpose. <br className="block md:hidden" /> A promise with heart.</>
+ )}
  </h2>
  
  <div className="space-y-2 text-lg md:text-xl text-muted font-sans leading-relaxed mb-2 text-left">
@@ -164,10 +168,10 @@ export default function About() {
  )}
  </div>
 
- <div className="mb-4">
+ <div className="my-6 md:my-8">
  <Link 
  href="/contact" 
- className="relative inline-flex items-center gap-3 px-12 py-5 bg-gold text-[#011122] text-sm font-bold uppercase tracking-[0.3em] rounded-[2px] shadow-xl transition-all hover:scale-105 active:scale-95 group overflow-hidden"
+ className="relative inline-flex items-center gap-3 px-12 py-3 md:py-5 bg-gold text-[#011122] text-sm font-bold uppercase tracking-[0.3em] rounded-[2px] shadow-xl transition-all hover:scale-105 active:scale-95 group overflow-hidden"
  >
  {/* Shine Effect */}
  <div className="absolute inset-0 w-1/2 h-full bg-white/20 -skew-x-[25deg] -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-in-out" />
@@ -195,8 +199,8 @@ export default function About() {
  </section>
 
  {/* Track Record & Tech Advantage */}
- <section className="pt-1 pb-4 mt-1 md:mt-3.5 md:py-4 bg-white px-8 relative overflow-hidden">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 relative z-10">
+ <section className="py-8 md:py-4 mt-2 md:mt-3.5 bg-white px-8 relative overflow-hidden">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  whileInView={{ opacity: 1, y: 0 }}
@@ -231,10 +235,10 @@ export default function About() {
  </section>
 
   {/* Core Values */}
-  <section className="pt-0 pb-1 md:py-4 mt-0.5 md:mt-3.5 px-8 bg-white">
+  <section className="pt-6 pb-6 md:py-4 mt-2 md:mt-3.5 px-8 bg-white">
   <div className="max-w-7xl mx-auto">
-  <div className="text-center mb-2 mt-0 md:mt-0">
- <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2">Our Core Values</h2>
+  <div className="text-center mb-6 md:mb-8">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-4 md:mb-2">Our Core Values</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
  
@@ -253,8 +257,7 @@ export default function About() {
  transition={{ duration: 0.6, delay: index * 0.1 }} 
  className="p-8 md:p-10 rounded-[2rem] bg-[#011122] border border-white/5 shadow-2xl hover:bg-[#011830] hover:border-gold/30 transition-all duration-500 group"
  >
-  <div className="flex flex-row items-center justify-center gap-3 mb-3">
-  <span className="text-2xl md:text-3xl font-sans font-black text-gold shrink-0">{String(index + 1).padStart(2, '0')}</span>
+  <div className="flex flex-row items-center justify-center mb-4">
   <h4 className="text-2xl font-sans font-black text-gold text-center">{value.title}</h4>
   </div>
  <p className="text-white/70 text-base md:text-lg leading-relaxed text-left">{value.description}</p>
@@ -265,7 +268,7 @@ export default function About() {
  </section>
 
  {/* Pillars Section */}
- <section className="py-1.5 mt-1 md:py-4 md:mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="py-12 md:py-16 mt-2 md:mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 w-full h-full opacity-20">
  <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
  <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
