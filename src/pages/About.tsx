@@ -118,7 +118,7 @@ export default function About() {
  )}
  </div>
 
-  <div className="pt-4 md:pt-6 pb-2 md:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-0 border-t border-gold/10">
+  <div className="pt-2 md:pt-6 pb-1 md:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 border-t border-gold/10">
   {(aboutData?.profile?.stats || [
   { label: 'IT & Real Estate', value: '20+ Years' },
   { label: 'Personal Portfolio', value: '$6M+' },
@@ -199,8 +199,8 @@ export default function About() {
  </section>
 
  {/* Track Record & Tech Advantage */}
- <section className="py-8 md:py-4 mt-2 md:mt-3.5 bg-white px-8 relative overflow-hidden">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 relative z-10">
+ <section className="py-4 md:py-4 mt-2 md:mt-3.5 bg-white px-8 relative overflow-hidden">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  whileInView={{ opacity: 1, y: 0 }}
@@ -235,7 +235,7 @@ export default function About() {
  </section>
 
   {/* Core Values */}
-  <section className="pt-6 pb-6 md:py-4 mt-2 md:mt-3.5 px-8 bg-white">
+  <section className="pt-0 pb-6 md:py-4 mt-2 md:mt-3.5 px-8 bg-white">
   <div className="max-w-7xl mx-auto">
   <div className="text-center mb-6 md:mb-8">
  <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-4 md:mb-2">Our Core Values</h2>
@@ -268,7 +268,7 @@ export default function About() {
  </section>
 
  {/* Pillars Section */}
- <section className="py-12 md:py-16 mt-2 md:mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <section className="py-6 md:py-16 mt-2 md:mt-3.5 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute inset-0 w-full h-full opacity-20">
  <div className="absolute top-10 left-10 w-72 h-72 bg-gold rounded-full blur-[120px]" />
  <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/80 rounded-full blur-[140px]" />
