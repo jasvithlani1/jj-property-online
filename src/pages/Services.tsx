@@ -60,7 +60,7 @@ const services = [
  'First Home Owner Grant guidance and eligibility assessment',
  'Full coordination through due diligence, legal review, and settlement'
  ],
- image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_12.jpg',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
@@ -82,7 +82,7 @@ const services = [
  '5 to 10 year portfolio roadmap helping plan your next acquisition systematically',
  'Coordination with your financial adviser, mortgage broker, and accountant'
  ],
- image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_13.jpg',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
@@ -104,7 +104,7 @@ const services = [
  'Full suburb and property due diligence meeting strict SMSF investment criteria',
  'End-to-end execution coordinated with your advisory team'
  ],
- image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_14.jpg',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
@@ -126,7 +126,7 @@ const services = [
  'Coordination with commercial finance brokers and legal experts',
  'Guidance on portfolio diversification across retail, industrial, and office spaces'
  ],
- image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_15.png',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
