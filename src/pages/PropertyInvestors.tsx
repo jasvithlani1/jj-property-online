@@ -33,17 +33,17 @@ const pillars = [
  {
  title: 'Data-Led Research & Selection',
  description: 'We use professional analysis tools to identify high-performing suburbs nationwide. Our research focuses on areas with confirmed infrastructure projects, low vacancy rates, and strong population growth.\n\n• National market exposure\n• Suburb-specific growth drivers\n• Detailed yield & vacancy analysis\n• Infrastructure & development tracking',
- image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_13.jpg',
  },
  {
  title: 'Off-Market Property Sourcing',
  description: 'Access properties that never reach the public portals. We use our deep industry network to uncover high-quality investment opportunities with less competition and better buying terms.\n\n• Early access to pre-market deals\n• Exclusive off-market opportunities\n• Direct relationships with sales agents\n• Reduced competition on quality assets',
- image: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_17.png',
  },
  {
  title: 'Strategic Portfolio Execution',
  description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction representation\n• Settlement coordination & support',
- image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_18.png',
  }
 ];
 
@@ -95,10 +95,10 @@ export default function PropertyInvestors() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
  >
- <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-8 backdrop-blur-sm">
+ <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-4 md:mb-6 backdrop-blur-sm">
  {pageData?.hero?.badge || "Property Investors"}
  </div>
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-4 md:mb-6 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading?.includes('Precision') ? (
  <>Acquisition Strategies Engineered for <span className="text-gold">Investment Precision.</span></>
  ) : pageData?.hero?.heading || (
@@ -121,16 +121,17 @@ export default function PropertyInvestors() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6 leading-tight">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 leading-tight">
  {pageData?.intro?.heading || "Precise Acquisition Strategies for Property Investors"}
  </h2>
 
  {/* Mobile Image */}
- <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-6 lg:hidden">
+ <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
  <img
- src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
+ src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_2.png"}
  alt="Modern Residential Building"
  className="absolute inset-0 w-full h-full object-cover"
+ border-transparent
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
  </div>
@@ -142,7 +143,7 @@ export default function PropertyInvestors() {
  <p className="font-semibold text-[#011122]">
  {pageData?.intro?.heading ? "What we offer:" : "JJ Property Partner gives investors a clear strategic edge:"}
  </p>
- <ul className="space-y-4 pt-2">
+ <ul className="space-y-2 pt-2">
  {(pageData?.intro?.benefits || [
  "Access to data-led research and suburb analysis to identify growth opportunities early",
  "Off-market and pre-market access with less competition and stronger buying positions",
@@ -151,7 +152,7 @@ export default function PropertyInvestors() {
  "Close collaboration with your broker, accountant, and financial adviser"
  ]).map((item: string, idx: number) => (
  <li key={idx} className="flex items-start justify-start gap-4 text-left">
- <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+ <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
  <span>{item}</span>
  </li>
  ))}
@@ -166,7 +167,7 @@ export default function PropertyInvestors() {
  className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
  >
  <img
- src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
+ src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_2.png"}
  alt="Modern Residential Building"
  className="absolute inset-0 w-full h-full object-cover"
  />
@@ -188,27 +189,27 @@ export default function PropertyInvestors() {
  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-stretch ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
  <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
- <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-6 leading-tight">
+ <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-3 md:mb-4 leading-tight">
  {pillar.title}
  </h2>
 
  {/* Mobile Image */}
- <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-6 lg:hidden">
+ <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
  <img
- src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_13.jpg" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_prop_18.png"))}
  alt={pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
  </div>
 
- <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
+ <div className="space-y-3 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
  {(pillar.description || "").split('\n\n').map((paragraph: string, pIdx: number) => {
  if (paragraph.startsWith('• ')) {
  return (
- <div key={pIdx} className="space-y-3 mt-4">
+ <div key={pIdx} className="space-y-1.5 mt-2">
  {paragraph.split('\n').map((item, iIdx) => (
  <div key={iIdx} className="flex items-start justify-start gap-4 text-left">
- <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+ <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
  <span>{item.replace('• ', '')}</span>
  </div>
  ))}
@@ -222,7 +223,7 @@ export default function PropertyInvestors() {
 
  <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
- src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_13.jpg" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_prop_18.png"))}
  alt={pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
@@ -234,15 +235,14 @@ export default function PropertyInvestors() {
 
  {/* Strategic Portfolio Section */}
  <section className="py-4 px-8 bg-[#011122] text-white overflow-hidden relative">
- <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
  <div className="max-w-7xl mx-auto">
  <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 items-start">
 
  {/* Left — Sticky Panel */}
  <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
- <div className="mb-6 text-center">
- <div className="h-1 w-16 bg-gold mb-8 rounded-full mx-auto" />
- <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-6">
+ <div className="mb-4 text-center">
+ <div className="h-1 w-16 bg-gold mb-4 rounded-full mx-auto" />
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-4">
  {pageData?.process?.heading?.includes('Strategic') ? (
  <>Strategic Portfolio <br /> <span className="text-gold">Execution</span></>
  ) : pageData?.process?.heading || (
@@ -258,11 +258,11 @@ export default function PropertyInvestors() {
  {/* Right — Scrollable Cards with Timeline */}
  <div className="lg:w-[62%] flex flex-col">
  {(pageData?.process?.steps || [
- { stepNumber: '01', title: 'Step 1 - Investment Thesis & Strategy', body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' },
- { stepNumber: '02', title: 'Step 2 - Long-Term Acquisition Roadmap', body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200' },
- { stepNumber: '03', title: 'Step 3 - Geographic Diversification', body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.', image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1200' },
- { stepNumber: '04', title: 'Step 4 - Growth & Cash Flow Balance', body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.', image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200' },
- { stepNumber: '05', title: 'Step 5 - Future Acquisition Planning', body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.', image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200' }
+ { stepNumber: '01', title: 'Step 1 - Investment Thesis & Strategy', body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.', image: '/images/acquisitions/user_prop_19.png' },
+ { stepNumber: '02', title: 'Step 2 - Long-Term Acquisition Roadmap', body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.', image: '/images/acquisitions/user_prop_20.png' },
+ { stepNumber: '03', title: 'Step 3 - Geographic Diversification', body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.', image: '/images/acquisitions/user_prop_21.png' },
+ { stepNumber: '04', title: 'Step 4 - Growth & Cash Flow Balance', body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.', image: '/images/acquisitions/modern_beige.png' },
+ { stepNumber: '05', title: 'Step 5 - Future Acquisition Planning', body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.', image: '/images/acquisitions/modern_grey.png' }
  ]).map((card: any, i: number, arr: any[]) => (
  <div key={card.stepNumber || i} className="flex items-stretch gap-4 md:gap-6 relative">
  <div className="relative w-4 shrink-0">
@@ -296,7 +296,7 @@ export default function PropertyInvestors() {
  >
  <div className="relative h-56 overflow-hidden">
  <img
- src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200")}
+ src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? "/images/acquisitions/user_prop_19.png" : i === 1 ? "/images/acquisitions/user_prop_20.png" : i === 2 ? "/images/acquisitions/user_prop_21.png" : i === 3 ? "/images/acquisitions/modern_beige.png" : "/images/acquisitions/modern_grey.png"))}
  alt={card.title}
  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
  />
@@ -305,8 +305,8 @@ export default function PropertyInvestors() {
  Step {card.stepNumber || (i + 1)}
  </div>
  </div>
- <div className="p-8 text-left">
- <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-3 leading-snug">
+ <div className="p-5 md:p-8 text-left">
+ <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-2 leading-snug">
  {card.title}
  </h3>
  <p className="text-white/60 font-sans text-base leading-relaxed">
@@ -324,23 +324,23 @@ export default function PropertyInvestors() {
 
  <section className="py-4 px-8 bg-white overflow-hidden border-t border-gold/5">
  <div className="max-w-5xl mx-auto">
- <div className="text-center mb-6">
+ <div className="text-center mb-4">
  <motion.div
  initial={{ opacity: 0, y: 20 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
- className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-6"
+ className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4"
  >
  {pageData?.readiness?.badge || "Investor Readiness"}
  </motion.div>
- <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-8 leading-[1.1]">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 md:mb-6 leading-[1.1]">
  {pageData?.readiness?.heading?.includes('Right') ? (
  <>Is Property Investment <br /> <span className="text-gold ">Right for You?</span></>
  ) : pageData?.readiness?.heading || (
  <>Is Property Investment <br /> <span className="text-gold ">Right for You?</span></>
  )}
  </h2>
- <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-left md:text-center">
+ <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-center">
  {pageData?.readiness?.description || "Strategic property investment is a long-term commitment to wealth creation. We help you determine if your current position aligns with a successful acquisition strategy."}
  </p>
  </div>
@@ -349,7 +349,7 @@ export default function PropertyInvestors() {
  {/* Vertical line connector */}
  <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
- <div className="flex flex-col gap-6 relative z-10">
+ <div className="flex flex-col gap-4 md:gap-6 relative z-10">
  {(pageData?.readiness?.items || [
  { title: "Minimum Equity", description: "You have available equity in your home or a deposit of at least $100k-$150k." },
  { title: "Long-Term Mindset", description: "You view property as a 10-20 year wealth creation vehicle, not a quick win." },
@@ -366,11 +366,11 @@ export default function PropertyInvestors() {
  transition={{ duration: 0.8, delay: idx * 0.1 }}
  className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
  >
- <div className="flex-1 text-left md:text-left">
- <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
- <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
- <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
- <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto text-left md:text-right' : 'md:text-left mr-auto text-left'}`}>
+ <div className="flex-1 w-full">
+ <div className={`flex flex-col items-center gap-2 md:gap-4 ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
+ <span className="text-gold font-sans text-2xl md:text-sm font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
+ <h4 className={`text-2xl md:text-3xl font-sans font-black text-[#011122] text-center ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+ <p className={`text-base text-muted leading-relaxed font-sans max-w-sm text-center ${idx % 2 === 0 ? 'md:text-right md:ml-auto' : 'md:text-left md:mr-auto'}`}>
  {item.description || item.desc}
  </p>
  </div>
@@ -395,17 +395,17 @@ export default function PropertyInvestors() {
  viewport={{ once: true }}
  className="mt-4 max-w-3xl mx-auto"
  >
- <div className="bg-[#011122] text-white rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group text-center">
+ <div className="bg-[#011122] text-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group text-center">
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
  <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
  
- <h3 className="text-4xl font-sans font-black text-white mb-6 relative z-10">{pageData?.readiness?.cta?.title || "Investor Strategy Session"}</h3>
- <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
+ <h3 className="text-3xl sm:text-4xl font-sans font-black text-white mb-4 relative z-10">{pageData?.readiness?.cta?.title || "Investor Strategy Session"}</h3>
+ <p className="text-white/60 text-base sm:text-lg mb-6 leading-relaxed relative z-10 max-w-xl mx-auto">
  {pageData?.readiness?.cta?.description || "Ready to build a nationwide portfolio? Our free session will review your current equity, borrowing power, and investment objectives to map out a clear path forward."}
  </p>
  <button
  onClick={openCalendly}
- className="rounded-full px-16 py-5 bg-gold text-white text-base font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
+ className="rounded-full px-10 py-3.5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
  >
  {pageData?.readiness?.cta?.buttonText || "Discuss My Strategy"}
  </button>
@@ -418,12 +418,12 @@ export default function PropertyInvestors() {
  <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
  <div className="max-w-7xl mx-auto">
- <div className="text-center mb-6">
+ <div className="text-center mb-4">
  <motion.h2 
  initial={{ opacity: 0, y: 20 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
- className="text-4xl md:text-5xl lg:text-6xl font-sans font-black mb-6"
+ className="text-4xl md:text-5xl lg:text-6xl font-sans font-black mb-4"
  >
  {pageData?.whyJJ?.heading || (
  <>Why JJ Property Partner for <span className="text-gold">Investor Success</span></>
@@ -432,7 +432,7 @@ export default function PropertyInvestors() {
  <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
  </div>
 
- <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+ <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
  {(pageData?.whyJJ?.reasons || [
  { title: "IT-Powered Research", desc: "Alex's background in data analysis gives you an unfair advantage in selection." },
  { title: "Proven Experience", desc: "Built from Alex's personal $6M+ portfolio across multiple Australian states." },
@@ -448,10 +448,12 @@ export default function PropertyInvestors() {
  transition={{ delay: idx * 0.1 }}
  className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
  >
- <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-sans font-black text-2xl">
+ <div className="flex items-center gap-4 mb-4">
+ <div className="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center font-sans font-black text-xl shrink-0">
  {idx + 1}
  </div>
- <h3 className="text-xl font-sans font-black mb-4 text-white">{item.title}</h3>
+ <h3 className="text-xl font-sans font-black text-white leading-tight">{item.title}</h3>
+ </div>
  <p className="text-sm text-white/60 leading-relaxed font-sans">{item.description || item.desc}</p>
  </motion.div>
  ))}
@@ -461,16 +463,16 @@ export default function PropertyInvestors() {
 
  {/* FAQ Section */}
  <section className="relative py-4 bg-white px-8">
- <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
- <div className="lg:col-span-4">
- <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-8 text-left">
- Frequently <br />
- <span className="text-gold">Asked Questions.</span>
- </h2>
- <p className="text-muted text-lg font-sans leading-relaxed text-left">Strategic insights for property investors building nationwide portfolios.</p>
- </div>
+  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
+  <div className="lg:col-span-4">
+  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2 text-left">
+  Frequently <br />
+  <span className="text-gold">Asked Questions.</span>
+  </h2>
+  <p className="text-muted text-lg font-sans leading-relaxed text-left">Strategic insights for property investors building nationwide portfolios.</p>
+  </div>
 
- <div className="lg:col-span-8 flex flex-col gap-6">
+  <div className="lg:col-span-8 flex flex-col gap-2">
  {(pageData?.faqs || investorFaqs).map((faq: any, index: number) => (
  <motion.div 
  key={index} 
@@ -478,21 +480,21 @@ export default function PropertyInvestors() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: index * 0.1 }}
- className="border-b border-gold/20 pb-2"
+ className="border-b border-gold/20 pb-1"
  >
  <button
  onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-6 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
+ className="w-full flex items-center justify-between py-3 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer gap-3"
  >
- <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+ <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-left ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
  {faq.question}
  </span>
  <motion.div
  animate={{ rotate: openFaq === index ? 45 : 0 }}
  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
- className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
+ className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
  >
- <Plus className="w-6 h-6" />
+ <Plus className="w-5 h-5" />
  </motion.div>
  </button>
  <AnimatePresence>
@@ -515,33 +517,40 @@ export default function PropertyInvestors() {
  </section>
 
  {/* CTA Section */}
- <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
- <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
- <div className="max-w-4xl mx-auto text-center relative z-10">
+ <section className="py-12 md:py-20 px-6 sm:px-8 bg-[#011122] text-white relative overflow-hidden">
+ {/* Ambient Glows */}
+ <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
+ 
+ <div className="max-w-4xl mx-auto relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
+ className="relative p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-2xl overflow-hidden group text-center"
  >
- <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-8 leading-tight">
+ {/* Glow corner */}
+ <div className="absolute top-0 right-0 w-80 h-80 bg-gold/10 blur-[100px] -mr-40 -mt-40 group-hover:bg-gold/20 transition-colors pointer-events-none" />
+ <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 blur-[80px] -ml-40 -mb-40 pointer-events-none" />
+
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black mb-6 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Secure Your Investment <br /> <span className="text-gold ">Advantage.</span></>
  )}
  </h2>
- <p className="text-xl text-white/70 font-sans mb-3 leading-relaxed max-w-2xl mx-auto">
+ <p className="text-base sm:text-lg text-white/70 font-sans mb-8 leading-relaxed max-w-2xl mx-auto">
  {pageData?.finalCta?.description || "Ready to take your property investment strategy to the next level? Book your free, no-obligation strategy session with Alex today."}
  </p>
- <div className="flex flex-col sm:flex-row justify-center gap-6">
+ <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
  <button
  onClick={openCalendly}
- className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
+ className="w-full sm:w-auto rounded-full px-10 py-4 bg-gold hover:bg-gold-hover text-white text-sm font-bold uppercase tracking-widest hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-gold/20 cursor-pointer"
  >
  {pageData?.finalCta?.primaryButtonText || "Book Free Session"}
  </button>
  <Link
  href="/contact"
- className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
+ className="w-full sm:w-auto rounded-full px-10 py-4 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
  >
  {pageData?.finalCta?.secondaryButtonText || "Message Alex"}
  </Link>

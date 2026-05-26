@@ -33,17 +33,17 @@ const pillars = [
  {
  title: 'SMSF-Compliant Selection',
  description: 'Investing within super requires a specific lens. We focus on low-maintenance, high-demand residential assets that align with the long-term wealth preservation goals of a self-managed fund.\n\n• Focus on structural integrity\n• High-yield residential assets\n• Low maintenance requirements\n• Long-term growth focus',
- image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/user_prop_16.png',
  },
  {
  title: 'Off-Market Sourcing Strategy',
  description: 'We use our nationwide network to find properties that meet the strict criteria for SMSF lending and compliance, often securing deals before they ever reach the public market.\n\n• National network of agents\n• Pre-market opportunities\n• Less competition for quality assets\n• Direct negotiation on your behalf',
- image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/aus_house_4.png',
  },
  {
  title: 'End-to-End Coordination',
  description: 'SMSF purchases involve more "moving parts" than standard buys. We coordinate with your accountant, mortgage broker, and solicitor to ensure the acquisition meets all regulatory requirements.\n\n• Liaison with SMSF specialists\n• Managed due diligence\n• Compliance-focused reporting\n• Settlement support & coordination',
- image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200',
+ image: '/images/acquisitions/prop_1.png',
  }
 ];
 
@@ -95,10 +95,10 @@ export default function SmsfProperty() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
  >
- <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-2 backdrop-blur-sm">
+ <div className="inline-block px-7 py-3 rounded-full border border-gold/40 bg-white/10 text-sm font-bold uppercase tracking-[0.2em] text-white mb-4 md:mb-6 backdrop-blur-sm">
  {pageData?.hero?.badge || "SMSF Property"}
  </div>
- <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-8 max-w-5xl mx-auto px-4">
+ <h1 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black leading-[1.1] mb-4 md:mb-6 max-w-5xl mx-auto px-4">
  {pageData?.hero?.heading?.includes('Fund') ? (
  <>Strategic Acquisitions for your <span className="text-gold">Self-Managed Super Fund.</span></>
  ) : pageData?.hero?.heading || (
@@ -122,14 +122,14 @@ export default function SmsfProperty() {
  transition={{ duration: 0.8 }}
  className="text-center"
  >
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2 leading-tight">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 leading-tight">
  {pageData?.intro?.heading || "Secure Your Retirement with Smart SMSF Property Choices"}
  </h2>
  
  {/* Mobile Image */}
- <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-6 lg:hidden">
+ <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
  <img
- src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1200"}
+ src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
  alt="Modern Residential Property"
  className="absolute inset-0 w-full h-full object-cover"
  />
@@ -143,7 +143,7 @@ export default function SmsfProperty() {
  <p className="font-semibold text-[#011122]">
  {pageData?.intro?.heading ? "What we offer:" : "How JJ Property Partner supports SMSF investors:"}
  </p>
- <ul className="space-y-4 pt-2">
+ <ul className="space-y-2 pt-2">
  {(pageData?.intro?.benefits || [
  "Selection of properties that meet strict SMSF lending and compliance criteria",
  "Nationwide research to find the best growth and yield opportunities for your fund",
@@ -152,7 +152,7 @@ export default function SmsfProperty() {
  "Expert negotiation to ensure you secure the best possible terms for your fund"
  ]).map((item: string, idx: number) => (
  <li key={idx} className="flex items-start justify-start gap-4 text-left">
- <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+ <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
  <span>{item}</span>
  </li>
  ))}
@@ -167,7 +167,7 @@ export default function SmsfProperty() {
  className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
  >
  <img
- src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=1200"}
+ src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
  alt="Modern Residential Property"
  className="absolute inset-0 w-full h-full object-cover"
  />
@@ -189,27 +189,27 @@ export default function SmsfProperty() {
  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20 items-stretch ${index % 2 === 0 ? 'lg:grid-flow-col-dense' : ''}`}
  >
  <div className={`text-center ${index % 2 === 0 ? 'lg:col-start-2' : ''}`}>
- <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-2 leading-tight">
+ <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] mb-3 md:mb-4 leading-tight">
  {pillar.title}
  </h2>
 
  {/* Mobile Image */}
- <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-6 lg:hidden">
+ <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
  <img
- src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_16.png" : index === 1 ? "/images/acquisitions/aus_house_4.png" : "/images/acquisitions/prop_1.png"))}
  alt={pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
  </div>
 
- <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
+ <div className="space-y-3 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
  {(pillar.description || "").replace(/—/g, '-').split('\n\n').map((paragraph: string, pIdx: number) => {
  if (paragraph.startsWith('• ')) {
  return (
- <div key={pIdx} className="space-y-3 mt-4">
+ <div key={pIdx} className="space-y-1.5 mt-2">
  {paragraph.split('\n').map((item, iIdx) => (
  <div key={iIdx} className="flex items-start justify-start gap-4 text-left">
- <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+ <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
  <span>{item.replace('• ', '')}</span>
  </div>
  ))}
@@ -223,7 +223,7 @@ export default function SmsfProperty() {
 
  <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
- src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200")}
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_16.png" : index === 1 ? "/images/acquisitions/aus_house_4.png" : "/images/acquisitions/prop_1.png"))}
  alt={pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
@@ -233,11 +233,10 @@ export default function SmsfProperty() {
  </div>
  </section>
 
- {/* Core Services Section */}
+ {/* Your SMSF Acquisition Journey */}
  <section className="py-4 px-8 bg-[#011122] text-white overflow-hidden relative">
- <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
- <div className="max-w-7xl mx-auto text-center mb-6">
- <h2 className="text-4xl md:text-5xl font-sans font-black mb-2 text-white">
+ <div className="max-w-7xl mx-auto text-center mb-4">
+ <h2 className="text-4xl md:text-5xl font-sans font-black mb-4 text-white">
  {pageData?.process?.heading || (
  <>Your SMSF Acquisition <span className="text-gold">Journey</span></>
  )}
@@ -245,7 +244,7 @@ export default function SmsfProperty() {
  <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
  </div>
  <div className="max-w-7xl mx-auto">
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
  {(pageData?.process?.steps || [
  { stepNumber: '01', title: 'Strategy & Setup', body: 'We coordinate with your financial professionals to ensure your fund is structured correctly and your investment strategy is property-ready.' },
  { stepNumber: '02', title: 'Compliant Sourcing', body: 'We identify residential assets that meet SMSF lending requirements and offer the best long-term growth and yield potential.' },
@@ -258,17 +257,15 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1 }}
- className="relative p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-left"
+ className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
  >
- <div className="text-gold font-sans font-black text-5xl mb-4 opacity-30 group-hover:opacity-100 transition-opacity">
+ <div className="flex items-center gap-4 mb-4">
+ <div className="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center font-sans font-black text-xl shrink-0">
  {card.stepNumber || `0${i + 1}`}
  </div>
- <h3 className="text-xl font-sans font-black text-white mb-2">
- {card.title}
- </h3>
- <p className="text-white/60 font-sans text-sm leading-relaxed">
- {card.body}
- </p>
+ <h3 className="text-xl font-sans font-black text-white leading-tight">{card.title}</h3>
+ </div>
+ <p className="text-sm text-white/60 leading-relaxed font-sans">{card.body}</p>
  </motion.div>
  ))}
  </div>
@@ -277,21 +274,21 @@ export default function SmsfProperty() {
 
  <section className="py-4 px-8 bg-white overflow-hidden border-t border-gold/5">
  <div className="max-w-5xl mx-auto">
- <div className="text-center mb-6">
+ <div className="text-center mb-4">
  <motion.div
  initial={{ opacity: 0, y: 20 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
- className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-2"
+ className="inline-block px-6 py-2 rounded-full bg-gold/5 border border-gold/10 text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4"
  >
  {pageData?.readiness?.badge || "SMSF Compliance"}
  </motion.div>
- <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2 leading-[1.1]">
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 md:mb-6 leading-[1.1]">
  {pageData?.readiness?.heading || (
  <>SMSF Property <br /> <span className="text-gold ">Requirements.</span></>
  )}
  </h2>
- <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-left md:text-center">
+ <p className="text-xl text-muted font-sans leading-relaxed max-w-2xl mx-auto text-center">
  {pageData?.readiness?.description || "Investing within super involves specific rules and lending criteria. We help you navigate these requirements to ensure your purchase is both compliant and successful."}
  </p>
  </div>
@@ -300,7 +297,7 @@ export default function SmsfProperty() {
  {/* Vertical line connector */}
  <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
- <div className="flex flex-col gap-6 relative z-10">
+ <div className="flex flex-col gap-4 md:gap-6 relative z-10">
  {(pageData?.readiness?.items || [
  { title: "Sole Purpose Test", description: "The investment must be for the sole purpose of providing retirement benefits to members." },
  { title: "No Personal Use", description: "You or your family cannot live in or use the residential property held by your fund." },
@@ -317,11 +314,11 @@ export default function SmsfProperty() {
  transition={{ duration: 0.8, delay: idx * 0.1 }}
  className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
  >
- <div className="flex-1 text-left md:text-left">
- <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
- <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
- <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
- <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto text-left md:text-right' : 'md:text-left mr-auto text-left'}`}>
+ <div className="flex-1 w-full">
+ <div className={`flex flex-col items-center gap-2 md:gap-4 ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
+ <span className="text-gold font-sans text-2xl md:text-sm font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
+ <h4 className={`text-2xl md:text-3xl font-sans font-black text-[#011122] text-center ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+ <p className={`text-base text-muted leading-relaxed font-sans max-w-sm text-center ${idx % 2 === 0 ? 'md:text-right md:ml-auto' : 'md:text-left md:mr-auto'}`}>
  {item.description || item.desc}
  </p>
  </div>
@@ -346,17 +343,17 @@ export default function SmsfProperty() {
  viewport={{ once: true }}
  className="mt-4 max-w-3xl mx-auto"
  >
- <div className="bg-[#011122] text-white rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group text-center">
+ <div className="bg-[#011122] text-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group text-center">
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
  <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
  
- <h3 className="text-4xl font-sans font-black text-white mb-2 relative z-10">{pageData?.readiness?.cta?.title || "Discuss Your SMSF Strategy"}</h3>
- <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
+ <h3 className="text-3xl sm:text-4xl font-sans font-black text-white mb-4 relative z-10">{pageData?.readiness?.cta?.title || "Discuss Your SMSF Strategy"}</h3>
+ <p className="text-white/60 text-base sm:text-lg mb-6 leading-relaxed relative z-10 max-w-xl mx-auto">
  {pageData?.readiness?.cta?.description || "Ready to build your retirement wealth? Our free discovery call will review your fund's goals and map out a compliant property acquisition path."}
  </p>
  <button
  onClick={openCalendly}
- className="rounded-full px-16 py-5 bg-gold text-white text-base font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
+ className="rounded-full px-10 py-3.5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
  >
  {pageData?.readiness?.cta?.buttonText || "Book Discovery Call"}
  </button>
@@ -411,7 +408,7 @@ export default function SmsfProperty() {
  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
  className="overflow-hidden"
  >
- <p className="text-lg text-muted font-sans leading-relaxed pb-8 pl-4 pr-12 text-left">{faq.answer}</p>
+ <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-left">{faq.answer}</p>
  </motion.div>
  )}
  </AnimatePresence>
@@ -422,33 +419,40 @@ export default function SmsfProperty() {
  </section>
 
  {/* CTA Section */}
- <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
- <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1554224155-11ee21264004?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
- <div className="max-w-4xl mx-auto text-center relative z-10">
+ <section className="py-12 md:py-20 px-6 sm:px-8 bg-[#011122] text-white relative overflow-hidden">
+ {/* Ambient Glows */}
+ <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
+ 
+ <div className="max-w-4xl mx-auto relative z-10">
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
+ className="relative p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-2xl overflow-hidden group text-center"
  >
- <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-2 leading-tight">
+ {/* Glow corner */}
+ <div className="absolute top-0 right-0 w-80 h-80 bg-gold/10 blur-[100px] -mr-40 -mt-40 group-hover:bg-gold/20 transition-colors pointer-events-none" />
+ <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 blur-[80px] -ml-40 -mb-40 pointer-events-none" />
+
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black mb-6 leading-tight">
  {pageData?.finalCta?.heading || (
  <>Secure your <span className="text-gold">Future</span> today.</>
  )}
  </h2>
- <p className="text-xl text-white/70 font-sans mb-3 leading-relaxed max-w-2xl mx-auto">
+ <p className="text-base sm:text-lg text-white/70 font-sans mb-8 leading-relaxed max-w-2xl mx-auto">
  {pageData?.finalCta?.description || "Ready to explore how residential property can grow your super? Book your free discovery call with Alex today."}
  </p>
- <div className="flex flex-col sm:flex-row justify-center gap-6">
+ <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
  <button
  onClick={openCalendly}
- className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
+ className="w-full sm:w-auto rounded-full px-10 py-4 bg-gold hover:bg-gold-hover text-white text-sm font-bold uppercase tracking-widest hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-gold/20 cursor-pointer"
  >
  {pageData?.finalCta?.primaryButtonText || "Book Discovery Call"}
  </button>
  <Link
  href="/contact"
- className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
+ className="w-full sm:w-auto rounded-full px-10 py-4 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
  >
  {pageData?.finalCta?.secondaryButtonText || "Message Alex"}
  </Link>
