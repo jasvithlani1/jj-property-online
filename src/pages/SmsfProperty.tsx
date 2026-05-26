@@ -368,7 +368,7 @@ export default function SmsfProperty() {
  {/* Centered Header */}
  <div className="text-center mb-6">
  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2">
- SMSF <span className="text-gold">Questions.</span>
+ Frequently <span className="text-gold">Asked Questions</span>
  </h2>
  <p className="text-muted text-lg font-sans leading-relaxed">Essential insights for buying residential property within super.</p>
  </div>

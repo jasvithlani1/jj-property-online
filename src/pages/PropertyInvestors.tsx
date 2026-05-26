@@ -464,12 +464,12 @@ export default function PropertyInvestors() {
  {/* FAQ Section */}
  <section className="relative py-4 bg-white px-8">
   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16">
-  <div className="lg:col-span-4">
-  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2 text-left">
+  <div className="lg:col-span-4 text-center lg:text-left">
+  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2 text-center lg:text-left">
   Frequently <br />
   <span className="text-gold">Asked Questions.</span>
   </h2>
-  <p className="text-muted text-lg font-sans leading-relaxed text-left">Strategic insights for property investors building nationwide portfolios.</p>
+  <p className="text-muted text-lg font-sans leading-relaxed text-center lg:text-left">Strategic insights for property investors building nationwide portfolios.</p>
   </div>
 
   <div className="lg:col-span-8 flex flex-col gap-2">
