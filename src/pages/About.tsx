@@ -118,7 +118,7 @@ export default function About() {
  )}
  </div>
 
-  <div className="pt-2 md:pt-6 pb-1 md:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 border-t border-gold/10">
+  <div className="py-2 md:pt-6 md:pb-0 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 border-t border-gold/10">
   {(aboutData?.profile?.stats || [
   { label: 'IT & Real Estate', value: '20+ Years' },
   { label: 'Personal Portfolio', value: '$6M+' },
