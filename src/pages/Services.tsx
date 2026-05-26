@@ -247,7 +247,7 @@ export default function Services() {
  >
  {/* Text Side */}
  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
- <div className="flex flex-col gap-4 mb-8">
+ <div className="flex flex-col gap-4 mb-4 md:mb-6">
  <div className="flex items-center gap-6 relative">
  <div className={`absolute -left-2 top-0 w-20 h-20 blur-2xl rounded-full opacity-30 group-hover:opacity-50 transition-opacity ${service.accentClass.replace('bg-','bg-').replace('-50','-400')}`} />
  <div className={`relative p-4 rounded-[1.25rem] bg-[#011122] border border-white/10 shadow-[0_0_25px_rgba(200,169,106,0.3)] drop-shadow-[0_0_12px_rgba(200,169,106,0.8)] group-hover:-translate-y-1 transition-all duration-500 z-10 text-gold`}>
@@ -286,8 +286,13 @@ export default function Services() {
  </div>
  </div>
 
+ <h3 className="text-xl md:text-2xl font-sans font-black text-[#011122] mb-2 md:mb-3 text-left w-full">{service.subtitle}</h3>
+ <p className="text-lg text-muted font-sans leading-relaxed mb-4 md:mb-6 text-left w-full">
+ {service.description.replace(/—/g, '-')}
+ </p>
+
  {/* Mobile Image */}
- <div className="relative h-[320px] sm:h-[520px] md:h-[650px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden mb-8 lg:hidden">
+ <div className="relative h-[320px] sm:h-[520px] md:h-[650px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden mb-4 sm:mb-6 lg:hidden">
  <img
  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : (services.find(s => s.id === service.id)?.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"))}
  alt={service.title}
@@ -297,12 +302,7 @@ export default function Services() {
  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
  </div>
 
- <h3 className="text-xl md:text-2xl font-sans font-black text-[#011122] mb-4 text-left w-full">{service.subtitle}</h3>
- <p className="text-lg text-muted font-sans leading-relaxed mb-8 text-left w-full">
- {service.description.replace(/—/g, '-')}
- </p>
-
- <ul className="space-y-4 mb-8">
+ <ul className="space-y-2 mb-4 md:mb-6">
  {(service.benefits || []).map((b: string, i: number) => (
  <motion.li
  key={i}
@@ -358,7 +358,7 @@ export default function Services() {
  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6">Additional Services</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
- <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
  {(pageData?.additionalServices || [
  {
  title: 'Negotiation Only',
@@ -382,13 +382,13 @@ export default function Services() {
  <Link
  key={service.title}
  href="/contact"
- className={`group relative p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-center ${service.isFeatured
+ className={`group relative p-6 sm:p-8 md:p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-center ${service.isFeatured
  ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/20 md:z-20'
  : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
  }`}
  >
  {/* Icon Box - Optimized for visibility on dark/light backgrounds */}
- <div className="flex items-center justify-center gap-4 mb-6 w-full">
+ <div className="flex items-center justify-center gap-4 mb-4 md:mb-6 w-full">
  <div className={`w-16 h-16 rounded-[1.25rem] border flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ${
  service.isFeatured 
  ? 'bg-white/10 border-gold/30 text-gold shadow-gold/10' 
