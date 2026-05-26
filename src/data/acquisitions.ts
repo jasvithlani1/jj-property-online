@@ -156,7 +156,7 @@ export const acquisitions: Acquisition[] = [
     "size": "1,012 sqm",
     "growth": "+40,000",
     "yield": "6.75%",
-    "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_12.jpg"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -168,7 +168,7 @@ export const acquisitions: Acquisition[] = [
     "size": "510 sqm",
     "growth": "+63,000",
     "yield": "4.21%",
-    "image": "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_13.jpg"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -180,7 +180,7 @@ export const acquisitions: Acquisition[] = [
     "size": "495 sqm",
     "growth": "+124,000",
     "yield": "5.51%",
-    "image": "https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_14.jpg"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -192,7 +192,7 @@ export const acquisitions: Acquisition[] = [
     "size": "520 sqm",
     "growth": "+285,000",
     "yield": "6.99%",
-    "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_15.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -204,7 +204,7 @@ export const acquisitions: Acquisition[] = [
     "size": "723 sqm",
     "growth": "+71,000",
     "yield": "5.51%",
-    "image": "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_16.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -216,7 +216,7 @@ export const acquisitions: Acquisition[] = [
     "size": "703 sqm",
     "growth": "+71,000",
     "yield": "5.4%",
-    "image": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_17.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -228,7 +228,7 @@ export const acquisitions: Acquisition[] = [
     "size": "608 sqm",
     "growth": "+60,000",
     "yield": "5.2%",
-    "image": "https://images.unsplash.com/photo-1625602812206-5ec545ca1231?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_18.png"
   },
   {
     "city": "Sydney", "dealDone": false,
