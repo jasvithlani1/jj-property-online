@@ -84,7 +84,7 @@ export const acquisitions: Acquisition[] = [
     "size": "450 sqm",
     "growth": "+119,000",
     "yield": "6.18%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/aus_house_1.png"
   },
   {
     "city": "Hornsby", "dealDone": true,
@@ -96,7 +96,7 @@ export const acquisitions: Acquisition[] = [
     "size": "632 sqm",
     "growth": "+50,000",
     "yield": "4.96%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -108,7 +108,7 @@ export const acquisitions: Acquisition[] = [
     "size": "559 sqm",
     "growth": "+75,000",
     "yield": "5.43%",
-    "image": "/images/acquisitions/modern_estate.png"
+    "image": "/images/acquisitions/aus_house_3.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -120,7 +120,7 @@ export const acquisitions: Acquisition[] = [
     "size": "671 sqm",
     "growth": "+100,000",
     "yield": "5.89%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -132,7 +132,7 @@ export const acquisitions: Acquisition[] = [
     "size": "577 sqm",
     "growth": "+30,000",
     "yield": "5.2%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/aus_house_1.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -144,7 +144,7 @@ export const acquisitions: Acquisition[] = [
     "size": "339 sqm",
     "growth": "+30,000",
     "yield": "4.77%",
-    "image": "/images/acquisitions/modern_duplex.png"
+    "image": "/images/acquisitions/aus_house_4.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -156,7 +156,7 @@ export const acquisitions: Acquisition[] = [
     "size": "1,012 sqm",
     "growth": "+40,000",
     "yield": "6.75%",
-    "image": "/images/acquisitions/modern_estate.png"
+    "image": "/images/acquisitions/aus_house_3.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -168,7 +168,7 @@ export const acquisitions: Acquisition[] = [
     "size": "510 sqm",
     "growth": "+63,000",
     "yield": "4.21%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -180,7 +180,7 @@ export const acquisitions: Acquisition[] = [
     "size": "495 sqm",
     "growth": "+124,000",
     "yield": "5.51%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/aus_house_1.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -192,7 +192,7 @@ export const acquisitions: Acquisition[] = [
     "size": "520 sqm",
     "growth": "+285,000",
     "yield": "6.99%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -204,7 +204,7 @@ export const acquisitions: Acquisition[] = [
     "size": "723 sqm",
     "growth": "+71,000",
     "yield": "5.51%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/aus_house_1.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -216,7 +216,7 @@ export const acquisitions: Acquisition[] = [
     "size": "703 sqm",
     "growth": "+71,000",
     "yield": "5.4%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -228,7 +228,7 @@ export const acquisitions: Acquisition[] = [
     "size": "608 sqm",
     "growth": "+60,000",
     "yield": "5.2%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/aus_house_1.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -240,7 +240,7 @@ export const acquisitions: Acquisition[] = [
     "size": "N/A",
     "growth": "+70,000",
     "yield": "5.34%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -252,7 +252,7 @@ export const acquisitions: Acquisition[] = [
     "size": "571 sqm",
     "growth": "+128,000",
     "yield": "5.56%",
-    "image": "/images/acquisitions/modern_grey.png"
+    "image": "/images/acquisitions/aus_house_1.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -264,6 +264,6 @@ export const acquisitions: Acquisition[] = [
     "size": "400 sqm",
     "growth": "+49,000",
     "yield": "4.65%",
-    "image": "/images/acquisitions/modern_beige.png"
+    "image": "/images/acquisitions/aus_house_2.png"
   }
 ];
