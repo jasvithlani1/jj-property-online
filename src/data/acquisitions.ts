@@ -120,7 +120,7 @@ export const acquisitions: Acquisition[] = [
     "size": "671 sqm",
     "growth": "+100,000",
     "yield": "5.89%",
-    "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_9.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -132,7 +132,7 @@ export const acquisitions: Acquisition[] = [
     "size": "577 sqm",
     "growth": "+30,000",
     "yield": "5.2%",
-    "image": "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_10.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -144,7 +144,7 @@ export const acquisitions: Acquisition[] = [
     "size": "339 sqm",
     "growth": "+30,000",
     "yield": "4.77%",
-    "image": "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_11.png"
   },
   {
     "city": "Sydney", "dealDone": false,
