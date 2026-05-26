@@ -60,7 +60,7 @@ export const acquisitions: Acquisition[] = [
     "size": "715 sqm",
     "growth": "+107,000",
     "yield": "4.4%",
-    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_4.png"
   },
   {
     "city": "Penrith", "dealDone": true,
@@ -72,7 +72,7 @@ export const acquisitions: Acquisition[] = [
     "size": "602 sqm",
     "growth": "+188,000",
     "yield": "5.27%",
-    "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_5.png"
   },
   {
     "city": "Castle Hill", "dealDone": false,
@@ -84,7 +84,7 @@ export const acquisitions: Acquisition[] = [
     "size": "450 sqm",
     "growth": "+119,000",
     "yield": "6.18%",
-    "image": "/images/acquisitions/aus_house_1.png"
+    "image": "/images/acquisitions/user_prop_6.png"
   },
   {
     "city": "Hornsby", "dealDone": true,
@@ -96,7 +96,7 @@ export const acquisitions: Acquisition[] = [
     "size": "632 sqm",
     "growth": "+50,000",
     "yield": "4.96%",
-    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_7.png"
   },
   {
     "city": "Sydney", "dealDone": false,
@@ -108,7 +108,7 @@ export const acquisitions: Acquisition[] = [
     "size": "559 sqm",
     "growth": "+75,000",
     "yield": "5.43%",
-    "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=900"
+    "image": "/images/acquisitions/user_prop_8.png"
   },
   {
     "city": "Sydney", "dealDone": false,
