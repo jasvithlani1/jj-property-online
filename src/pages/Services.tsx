@@ -104,7 +104,7 @@ const services = [
  'Full suburb and property due diligence meeting strict SMSF investment criteria',
  'End-to-end execution coordinated with your advisory team'
  ],
- image: '/images/acquisitions/user_prop_14.jpg',
+ image: '/images/acquisitions/user_prop_16.png',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
