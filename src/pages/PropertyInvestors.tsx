@@ -121,7 +121,7 @@ export default function PropertyInvestors() {
  viewport={{ once: true }}
  transition={{ duration: 0.8 }}
  >
- <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 leading-tight">
+ <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-4 leading-tight text-center lg:text-left">
  {pageData?.intro?.heading || "Precise Acquisition Strategies for Property Investors"}
  </h2>
 

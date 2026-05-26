@@ -37,17 +37,17 @@ const pillars = [
   {
     title: 'Data-Driven Research & Property Selection',
     description: 'We use professional market research to identify strong commercial property opportunities across Australia. Our analysis focuses on suburbs with planned infrastructure, low vacancy levels, population growth, and long-term investment potential.\n\n• National commercial market insight\n• Suburb-based growth indicators\n• Yield and vacancy performance review\n• Infrastructure and development monitoring',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/acquisitions/user_prop_4.png',
   },
   {
     title: 'Off-Market Commercial Property Access',
     description: 'Access commercial assets before they appear on public listing portals. Through strong agent relationships and market connections, we help investors uncover quality opportunities with less buyer competition and stronger negotiation potential.\n\n• Early access to pre-market commercial deals\n• Exclusive off-market investment opportunities\n• Direct relationships with commercial sales agents\n• Reduced competition on high-quality assets',
-    image: 'https://images.unsplash.com/photo-1582408921715-18e7806365c1?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/acquisitions/user_prop_5.png',
   },
   {
     title: 'Commercial Portfolio Planning',
-    description: 'We don’t just secure a commercial property; we plan a portfolio move. Every acquisition is assessed for its place in your 5-10-year investment strategy, income potential, equity growth, and future lending capacity.\n\n• Professional negotiation representation\n• Managed due diligence and property inspections\n• Strategic auction and offer representation\n• Settlement coordination and ongoing support',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
+    description: 'We don\'t just secure a commercial property; we plan a portfolio move. Every acquisition is assessed for its place in your 5-10-year investment strategy, income potential, equity growth, and future lending capacity.\n\n• Professional negotiation representation\n• Managed due diligence and property inspections\n• Strategic auction and offer representation\n• Settlement coordination and ongoing support',
+    image: '/images/acquisitions/user_prop_6.png',
   }
 ];
 
@@ -122,14 +122,14 @@ export default function CommercialProperty() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2 leading-tight text-center lg:text-left">
                 {pageData?.intro?.heading || "Commercial Acquisition Strategies for Smart Property Investors"}
               </h2>
 
               {/* Mobile Image */}
-              <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-6 lg:hidden">
+              <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
                 <img
-                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
+                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
                   alt="Modern Commercial Building"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -143,7 +143,7 @@ export default function CommercialProperty() {
                 <p className="font-semibold text-[#011122]">
                   {pageData?.intro?.benefitTitle || "JJ Property Partner gives investors a sharper strategic advantage"}
                 </p>
-                <ul className="space-y-4 pt-2">
+                <ul className="space-y-2 pt-2">
                   {(pageData?.intro?.benefits || [
                     "Data-backed research and suburb analysis to uncover commercial growth opportunities sooner",
                     "Off-market and pre-market property access with reduced competition and stronger buying leverage",
@@ -152,7 +152,7 @@ export default function CommercialProperty() {
                     "Coordinated support with your broker, accountant, and financial adviser for informed decisions"
                   ]).map((item: string, idx: number) => (
                     <li key={idx} className="flex items-start justify-start gap-4 text-left">
-                      <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+                      <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -167,7 +167,7 @@ export default function CommercialProperty() {
               className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"}
+                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
                 alt="Modern Commercial Building"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -194,22 +194,22 @@ export default function CommercialProperty() {
                   </h2>
 
                   {/* Mobile Image */}
-                  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-6 lg:hidden">
+                  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
                     <img
-                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
+                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/user_prop_4.png' : index === 1 ? '/images/acquisitions/user_prop_5.png' : '/images/acquisitions/user_prop_6.png'))}
                       alt={pillar.title}
                       className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
 
-                  <div className="space-y-4 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
+                  <div className="space-y-2 text-base md:text-lg text-muted font-sans leading-relaxed text-left">
                     {(pillar.description || "").split('\n\n').map((paragraph: string, pIdx: number) => {
                       if (paragraph.startsWith('• ')) {
                         return (
-                          <div key={pIdx} className="space-y-3 mt-4">
+                          <div key={pIdx} className="space-y-1.5 mt-2">
                             {paragraph.split('\n').map((item, iIdx) => (
                               <div key={iIdx} className="flex items-start justify-start gap-4 text-left">
-                                <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
+                                <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2" />
                                 <span>{item.replace('• ', '')}</span>
                               </div>
                             ))}
@@ -223,7 +223,7 @@ export default function CommercialProperty() {
 
                 <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
-                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200")}
+                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/user_prop_4.png' : index === 1 ? '/images/acquisitions/user_prop_5.png' : '/images/acquisitions/user_prop_6.png'))}
                     alt={pillar.title}
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
@@ -257,11 +257,11 @@ export default function CommercialProperty() {
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">
                 {(pageData?.process?.steps || [
-                  { stepNumber: '01', title: 'Step 1 - Investment Strategy & Acquisition Thesis', body: 'Build a clear commercial acquisition thesis aligned with your investment goals, whether targeting capital growth, strong rental yield, or a balanced strategy that supports long-term wealth creation.', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200' },
-                  { stepNumber: '02', title: 'Step 2 - Strategic Long-Term Property Acquisition Plan', body: 'Develop a 5-to-10-year commercial acquisition plan aligned with your income, borrowing capacity, and risk appetite, creating a clear roadmap for sustainable portfolio growth.', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200' },
-                  { stepNumber: '03', title: 'Step 3 - Strategic Location Diversification', body: 'Diversify your commercial property investments across key Australian locations to reduce concentration risk and capture growth opportunities across different market cycles.', image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1200' },
-                  { stepNumber: '04', title: 'Step 4 - Balancing Growth Potential with Cash Flow', body: 'Balance future capital growth with reliable rental income by choosing commercial assets that keep your portfolio stable, manageable, and positioned for long-term returns.', image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200' },
-                  { stepNumber: '05', title: 'Step 5 - Plan Future Property Acquisitions', body: 'Plan every purchase with future growth in mind, reviewing equity, borrowing capacity, and tax considerations to support steady progress toward your next commercial property acquisition.', image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200' }
+                  { stepNumber: '01', title: 'Step 1 - Investment Strategy & Acquisition Thesis', body: 'Build a clear commercial acquisition thesis aligned with your investment goals, whether targeting capital growth, strong rental yield, or a balanced strategy that supports long-term wealth creation.', image: '/images/acquisitions/user_prop_7.png' },
+                  { stepNumber: '02', title: 'Step 2 - Strategic Long-Term Property Acquisition Plan', body: 'Develop a 5-to-10-year commercial acquisition plan aligned with your income, borrowing capacity, and risk appetite, creating a clear roadmap for sustainable portfolio growth.', image: '/images/acquisitions/user_prop_8.png' },
+                  { stepNumber: '03', title: 'Step 3 - Strategic Location Diversification', body: 'Diversify your commercial property investments across key Australian locations to reduce concentration risk and capture growth opportunities across different market cycles.', image: '/images/acquisitions/user_prop_9.png' },
+                  { stepNumber: '04', title: 'Step 4 - Balancing Growth Potential with Cash Flow', body: 'Balance future capital growth with reliable rental income by choosing commercial assets that keep your portfolio stable, manageable, and positioned for long-term returns.', image: '/images/acquisitions/user_prop_10.png' },
+                  { stepNumber: '05', title: 'Step 5 - Plan Future Property Acquisitions', body: 'Plan every purchase with future growth in mind, reviewing equity, borrowing capacity, and tax considerations to support steady progress toward your next commercial property acquisition.', image: '/images/acquisitions/user_prop_11.png' }
                 ]).map((card: any, i: number, arr: any[]) => (
                   <div key={card.stepNumber || i} className="flex items-stretch gap-4 md:gap-6 relative">
                     <div className="relative w-4 shrink-0">
@@ -291,11 +291,11 @@ export default function CommercialProperty() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-80px' }}
                         transition={{ duration: 0.7, ease: 'easeOut' }}
-                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group text-center"
+                        className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
-                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200")}
+                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? '/images/acquisitions/user_prop_7.png' : i === 1 ? '/images/acquisitions/user_prop_8.png' : i === 2 ? '/images/acquisitions/user_prop_9.png' : i === 3 ? '/images/acquisitions/user_prop_10.png' : '/images/acquisitions/user_prop_11.png'))}
                             alt={card.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
@@ -304,7 +304,7 @@ export default function CommercialProperty() {
                             Step {card.stepNumber || (i + 1)}
                           </div>
                         </div>
-                        <div className="p-8 text-left">
+                        <div className="p-5 md:p-8 text-left">
                           <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-2 leading-snug">
                             {card.title}
                           </h3>
@@ -346,7 +346,7 @@ export default function CommercialProperty() {
               {/* Vertical line connector */}
               <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/40 via-gold/10 to-transparent transform md:-translate-x-1/2 hidden sm:block" />
 
-              <div className="flex flex-col gap-6 relative z-10">
+              <div className="flex flex-col gap-4 md:gap-6 relative z-10">
                 {(pageData?.readiness?.items || [
                   { title: "Capital Position", description: "You have usable equity in your home or a deposit of at least $100k-$150k." },
                   { title: "Commercial Outlook", description: "You see commercial property as a long-term wealth strategy, not a short-term gain." },
@@ -363,11 +363,11 @@ export default function CommercialProperty() {
                     transition={{ duration: 0.8, delay: idx * 0.1 }}
                     className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-4 md:gap-20`}
                   >
-                    <div className="flex-1 text-left">
-                      <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-4`}>
-                        <span className="text-gold font-sans text-xs font-bold uppercase tracking-[0.3em]">0{idx + 1}</span>
-                        <h4 className={`text-3xl font-sans font-black text-[#011122] ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
-                        <p className={`text-base text-muted leading-relaxed font-sans max-w-sm ${idx % 2 === 0 ? 'md:text-right ml-auto text-left md:text-right' : 'md:text-left mr-auto text-left'}`}>
+                    <div className="flex-1 w-full">
+                      <div className={`flex flex-col items-center gap-2 md:gap-4 ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
+                        <span className="text-gold font-sans text-2xl md:text-sm font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
+                        <h4 className={`text-2xl md:text-3xl font-sans font-black text-[#011122] text-center ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+                        <p className={`text-base text-muted leading-relaxed font-sans max-w-sm text-center ${idx % 2 === 0 ? 'md:text-right md:ml-auto' : 'md:text-left md:mr-auto'}`}>
                           {item.description || item.desc}
                         </p>
                       </div>
@@ -392,17 +392,17 @@ export default function CommercialProperty() {
               viewport={{ once: true }}
               className="mt-4 max-w-3xl mx-auto"
             >
-              <div className="bg-[#011122] text-white rounded-[3rem] p-12 md:p-16 shadow-2xl relative overflow-hidden group text-center">
+              <div className="bg-[#011122] text-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group text-center">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
                 
-                <h3 className="text-4xl font-sans font-black text-white mb-2 relative z-10">{pageData?.readiness?.cta?.title || "Commercial Property Strategy Session"}</h3>
-                <p className="text-white/60 text-lg mb-2 leading-relaxed relative z-10 max-w-xl mx-auto">
+                <h3 className="text-3xl sm:text-4xl font-sans font-black text-white mb-4 relative z-10">{pageData?.readiness?.cta?.title || "Commercial Property Strategy Session"}</h3>
+                <p className="text-white/60 text-base sm:text-lg mb-6 leading-relaxed relative z-10 max-w-xl mx-auto">
                   {pageData?.readiness?.cta?.description || "Ready to build a stronger national portfolio? Our free session reviews your available equity, borrowing capacity, and investment goals to help map a clear, practical path forward."}
                 </p>
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-16 py-5 bg-gold text-white text-base font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
+                  className="rounded-full px-10 py-3.5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer relative z-10 shadow-2xl shadow-gold/20"
                 >
                   {pageData?.readiness?.cta?.buttonText || "Discuss My Strategy"}
                 </button>
@@ -429,10 +429,10 @@ export default function CommercialProperty() {
               <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
               {(pageData?.whyJJ?.reasons || [
-                { title: "IT-Powered Research", desc: "Alex’s IT and data analysis background gives you a sharper edge when assessing commercial property opportunities." },
-                { title: "Proven Portfolio", desc: "Built on Alex’s personal $6M+ property portfolio across multiple Australian states." },
+                { title: "IT-Powered Research", desc: "Alex's IT and data analysis background gives you a sharper edge when assessing commercial property opportunities." },
+                { title: "Proven Portfolio", desc: "Built on Alex's personal $6M+ property portfolio across multiple Australian states." },
                 { title: "Off-Market Access", desc: "Gain access to commercial properties before they reach the open market, helping reduce buyer competition." },
                 { title: "Portfolio Planning", desc: "We do not focus on one purchase only. We help shape a strategic 5-10 year acquisition plan." },
                 { title: "Buyer-Only Advice", desc: "100% buyer representation with no developer ties, project affiliations, or selling-side conflicts." }
@@ -445,10 +445,12 @@ export default function CommercialProperty() {
                   transition={{ delay: idx * 0.1 }}
                   className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-gold/20 text-gold flex items-center justify-center mb-6 font-sans font-black text-2xl">
-                    {idx + 1}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center font-sans font-black text-xl shrink-0">
+                      {idx + 1}
+                    </div>
+                    <h3 className="text-xl font-sans font-black text-white leading-tight">{item.title}</h3>
                   </div>
-                  <h3 className="text-xl font-sans font-black mb-2 text-white">{item.title}</h3>
                   <p className="text-sm text-white/60 leading-relaxed font-sans">{item.description || item.desc}</p>
                 </motion.div>
               ))}
@@ -513,33 +515,40 @@ export default function CommercialProperty() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-10" />
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+        <section className="py-12 md:py-20 px-6 sm:px-8 bg-[#011122] text-white relative overflow-hidden">
+          {/* Ambient Glows */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
+          
+          <div className="max-w-4xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
+              className="relative p-8 md:p-16 rounded-[2.5rem] md:rounded-[4rem] bg-white/[0.03] border border-white/10 backdrop-blur-md shadow-2xl overflow-hidden group text-center"
             >
-              <h2 className="text-4xl sm:text-4xl md:text-5xl font-sans font-black mb-2 leading-tight">
+              {/* Glow corners */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-gold/10 blur-[100px] -mr-40 -mt-40 group-hover:bg-gold/20 transition-colors pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 blur-[80px] -ml-40 -mb-40 pointer-events-none" />
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black mb-6 leading-tight">
                 {pageData?.finalCta?.heading || (
-                  <>Strengthen Your Investment <br /> <span className="text-gold ">Advantage.</span></>
+                  <>Strengthen Your Investment <br /> <span className="text-gold">Advantage.</span></>
                 )}
               </h2>
-              <p className="text-xl text-white/70 font-sans mb-3 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-white/70 font-sans mb-8 leading-relaxed max-w-2xl mx-auto">
                 {pageData?.finalCta?.description || "Ready to move your commercial property investment strategy forward? Book your free, no-obligation strategy session with Alex today."}
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <button
                   onClick={openCalendly}
-                  className="rounded-full px-12 py-5 bg-gold text-white text-sm font-bold uppercase tracking-widest hover:bg-gold-hover hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-gold/40 cursor-pointer"
+                  className="w-full sm:w-auto rounded-full px-10 py-4 bg-gold hover:bg-gold-hover text-white text-sm font-bold uppercase tracking-widest hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 shadow-xl shadow-gold/20 cursor-pointer"
                 >
                   {pageData?.finalCta?.primaryButtonText || "Book Free Session"}
                 </button>
                 <Link
                   href="/contact"
-                  className="rounded-full px-12 py-5 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
+                  className="w-full sm:w-auto rounded-full px-10 py-4 border border-white/20 bg-white/5 text-white text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-[#011122] transition-all duration-300"
                 >
                   {pageData?.finalCta?.secondaryButtonText || "Message Alex"}
                 </Link>
