@@ -111,7 +111,7 @@ export default function Contact() {
 
  <div className="w-full bg-white selection:bg-gold/20 pt-0 pb-8 md:pb-4">
  {/* Hero Section */}
- <section className="pt-24 pb-2 md:pt-36 md:pb-3 relative px-4 sm:px-8 overflow-hidden text-center z-10">
+ <section className="pt-32 pb-2 md:pt-36 md:pb-3 relative px-4 sm:px-8 overflow-hidden text-center z-10">
  <motion.div
  initial={{ opacity: 0, scale: 0.95 }}
  animate={{ opacity: 1, scale: 1 }}

@@ -201,7 +201,7 @@ export default function BlogDetail() {
       />
 
       {/* ── Editorial Header ─────────────────────────────────────────── */}
-      <header className="relative pt-28 md:pt-32 pb-10 overflow-hidden bg-[#011122]">
+      <header className="relative pt-32 md:pt-40 pb-10 overflow-hidden bg-[#011122]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
         
         <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
