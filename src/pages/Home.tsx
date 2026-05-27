@@ -419,7 +419,7 @@ export default function Home() {
               <div className="space-y-1 text-lg text-muted leading-relaxed max-w-xl font-sans text-left">
                 {homeData?.aboutPreview?.description ? (
                   homeData.aboutPreview.description.split('\n\n').map((paragraph: string, i: number) => (
-                    <p key={i}>{paragraph.replace(/—/g, '-').replace(/\$5M\+/g, '$6M+')}</p>
+                    <p key={i}>{paragraph.replace(/—/g, '-').replace(/\$5M\+/g, '$6M+').replace(/\$6M\+\+/g, '$6M+')}</p>
                   ))
                 ) : (
                   <>
@@ -578,7 +578,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="py-[1px] mt-1 md:mt-0 px-8 bg-white overflow-hidden">
+        <section className="py-8 md:py-16 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
@@ -616,7 +616,7 @@ export default function Home() {
                       "Australia-wide support guided by performance data",
                       "5-star Google reviewed - verified results"
                     ]).map((item: string, i: number) => {
-                      const displayItem = item.replace(/\$5M/g, '$6M+').replace(/—/g, '-');
+                      const displayItem = item.replace(/\$5M/g, '$6M+').replace(/\$6M\+\+/g, '$6M+').replace(/—/g, '-');
                       return (
                         <div key={i} className="flex items-start gap-4 text-lg text-muted font-sans text-left">
                           <div className="w-2 h-2 rounded-full bg-gold shrink-0 mt-2.5" />
@@ -762,7 +762,7 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative py-[1px] mt-3.5 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
+        <section id="case-studies" className="relative pt-8 pb-16 md:pt-12 md:pb-20 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
@@ -927,7 +927,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section ref={calendlySectionRef} className="relative pt-3.5 pb-[1px] bg-neutral-50 px-8 overflow-hidden">
+        <section ref={calendlySectionRef} className="relative pt-6 pb-12 md:pt-10 md:pb-20 bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
