@@ -55,12 +55,12 @@ const ptComponents = {
       </h3>
     ),
     normal: ({ children }: any) => (
-      <p className="text-xs md:text-sm text-muted font-sans leading-relaxed mb-3 text-center">
+      <p className="text-xs md:text-sm text-muted font-sans leading-relaxed mb-3 text-left">
         {replaceEmDash(children)}
       </p>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="my-6 py-2 px-6 border-l-2 border-gold bg-gold/5 rounded-r-xl relative text-center">
+      <blockquote className="my-4 py-2 px-6 border-l-2 border-gold bg-gold/5 rounded-r-xl relative text-left">
         <p className="text-sm md:text-base font-sans font-black text-[#011122] leading-snug italic">
           {replaceEmDash(children)}
         </p>
@@ -68,13 +68,13 @@ const ptComponents = {
     ),
   },
   list: {
-    bullet: ({ children }: any) => <ul className="my-4 space-y-2 mb-4 max-w-lg mx-auto">{children}</ul>,
+    bullet: ({ children }: any) => <ul className="my-3 space-y-1.5 mb-3 max-w-none">{children}</ul>,
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="flex items-center justify-center gap-3 text-xs md:text-sm text-muted font-sans leading-relaxed">
-        <CheckCircle2 className="shrink-0 w-4 h-4 text-gold opacity-80" />
-        <div>{replaceEmDash(children)}</div>
+      <li className="flex items-start gap-3 text-xs md:text-sm text-muted font-sans leading-relaxed">
+        <CheckCircle2 className="shrink-0 w-4 h-4 text-gold opacity-80 mt-0.5" />
+        <div className="text-left">{replaceEmDash(children)}</div>
       </li>
     ),
   },
@@ -210,7 +210,7 @@ export default function BlogDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
+            <div className="flex flex-wrap items-center gap-4 mb-6">
               <Link
                 href="/blog"
                 className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-gold hover:text-white transition-colors animate-none"
@@ -218,21 +218,21 @@ export default function BlogDetail() {
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
                 Back to Blog
               </Link>
-              <div className="w-px h-3 bg-white/20" />
+              <div className="w-px h-3 bg-white/20 hidden sm:block" />
               {post.categories?.[0] && (
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hidden sm:inline">
                   {post.categories[0].title}
                 </span>
               )}
-              <div className="flex items-center gap-4 ml-auto text-[9px] font-bold uppercase tracking-[0.15em] text-white/40">
-                <div className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-gold" />
-                  {new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-gold" />
-                  8 Min Read
-                </div>
+            </div>
+            <div className="flex items-center justify-center gap-4 mb-4 text-[9px] font-bold uppercase tracking-[0.15em] text-white/40">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-gold" />
+                {new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-gold" />
+                8 Min Read
               </div>
             </div>
 
@@ -299,21 +299,21 @@ export default function BlogDetail() {
 
               {/* FAQ Section */}
               {post.faqs && post.faqs.length > 0 && (
-                <div className="mt-10 border-t border-gold/10 pt-8">
-                  <div className="mb-6">
-                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-gold mb-2 block">Information Resource</span>
-                    <h2 className="text-2xl md:text-3xl font-sans font-black text-[#011122] flex items-center gap-3">
-                      <MessageSquare className="w-6 h-6 text-gold animate-none" />
+                <div className="mt-6 border-t border-gold/10 pt-5">
+                  <div className="mb-4">
+                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-gold mb-1 block">Information Resource</span>
+                    <h2 className="text-xl md:text-2xl font-sans font-black text-[#011122] flex items-center gap-3">
+                      <MessageSquare className="w-5 h-5 text-gold animate-none" />
                       Frequently Asked Questions
                     </h2>
                   </div>
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     {post.faqs.map((faq, idx) => (
-                      <div key={idx} className="group border-b border-[#011122]/5 pb-6 pt-4 last:border-0">
-                        <h4 className="text-base md:text-lg font-sans font-black text-[#011122] mb-2 group-hover:text-gold transition-colors">
+                      <div key={idx} className="group border-b border-[#011122]/5 pb-3 pt-2 last:border-0">
+                        <h4 className="text-sm md:text-base font-sans font-black text-[#011122] mb-1 group-hover:text-gold transition-colors">
                           {faq.question}
                         </h4>
-                        <p className="text-sm text-muted font-sans leading-relaxed">
+                        <p className="text-xs md:text-sm text-muted font-sans leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

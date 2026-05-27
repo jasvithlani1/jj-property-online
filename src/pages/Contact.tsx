@@ -146,60 +146,63 @@ export default function Contact() {
  initial={{ opacity: 0, x: -30 }}
  animate={{ opacity: 1, x: 0 }}
  transition={{ duration: 0.8, delay: 0.2 }}
- className="flex flex-col justify-center items-center text-center"
+ className="flex flex-col justify-center items-start text-left"
  >
- <h2 className="text-4xl font-serif text-black leading-tight mb-2">
+ <h2 className="text-3xl md:text-4xl font-sans font-black text-[#011122] leading-tight mb-6 tracking-tight">
  {pageData?.details?.heading || "Let's discuss your targets."}
  </h2>
+ <p className="text-sm text-muted font-sans leading-relaxed mb-6 max-w-md">
+   We're ready to help you make your next property move with confidence. Reach out through any of the channels below.
+ </p>
 
- <div className="space-y-3">
+ <div className="space-y-5 w-full">
  {/* Email */}
- <div className="flex items-center justify-center gap-5 group">
- <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
- <Mail className="w-6 h-6" />
+ <div className="flex items-center gap-5 group">
+ <div className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
+ <Mail className="w-5 h-5" />
  </div>
  <div>
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">Direct Email</h3>
- <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-lg sm:text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+ <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Direct Email</h3>
+ <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-base md:text-lg font-sans font-semibold text-[#011122] hover:text-gold transition-colors">
  {pageData?.details?.email || "info@jjpropertypartner.com.au"}
  </Link>
  </div>
  </div>
 
  {/* Phone */}
- <div className="flex items-center justify-center gap-5 group">
- <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
- <Phone className="w-6 h-6" />
+ <div className="flex items-center gap-5 group">
+ <div className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
+ <Phone className="w-5 h-5" />
  </div>
  <div>
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">Executive Line</h3>
- <Link href={`tel:${pageData?.details?.phone?.replace(/\s/g, '') || "+61481334458"}`} className="text-xl font-sans font-medium text-black hover:text-gold transition-colors">
+ <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Executive Line</h3>
+ <Link href={`tel:${pageData?.details?.phone?.replace(/\s/g, '') || "+61481334458"}`} className="text-base md:text-lg font-sans font-semibold text-[#011122] hover:text-gold transition-colors">
  {pageData?.details?.phone || "+61 481 334 458"}
  </Link>
  </div>
  </div>
 
  {/* WhatsApp */}
- <div className="flex items-center justify-center gap-5 group">
- <div className="p-4 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm">
- <FaWhatsapp className="w-6 h-6" />
+ <div className="flex items-center gap-5 group">
+ <div className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm">
+ <FaWhatsapp className="w-5 h-5" />
  </div>
  <div>
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">WhatsApp</h3>
- <Link href={pageData?.details?.whatsapp || "https://wa.me/61481334458"} className="text-xl font-sans font-medium text-black hover:text-[#25D366] transition-colors">
+ <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
+ <Link href={pageData?.details?.whatsapp || "https://wa.me/61481334458"} className="text-base md:text-lg font-sans font-semibold text-[#011122] hover:text-[#25D366] transition-colors">
  Message us instantly
  </Link>
  </div>
  </div>
 
  {/* Service Areas */}
-  <div className="flex items-center justify-center gap-5 group pt-4">
- <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-100 text-black shadow-sm">
- <MapPin className="w-6 h-6" />
+ <div className="flex items-center gap-5 group pt-2">
+ <div className="p-3.5 rounded-2xl bg-neutral-50 border border-neutral-100 text-[#011122] shadow-sm">
+ <MapPin className="w-5 h-5" />
  </div>
- <div className="flex flex-col justify-center">
- <h3 className="text-sm font-bold uppercase tracking-widest text-muted mb-2">Our Office</h3>
- <p className="text-lg font-sans font-medium text-black leading-relaxed">
+ <div>
+ <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Our Office</h3>
+ <p className="text-base md:text-lg font-sans font-semibold text-[#011122] leading-relaxed">
  {pageData?.details?.address || "Sydney, Australia"}
  </p>
  </div>
