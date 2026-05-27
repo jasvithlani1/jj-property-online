@@ -578,7 +578,7 @@ export default function Home() {
         </section>
 
         {/* ── Difference Section ───────────────────────────────────────────── */}
-        <section className="py-8 md:py-16 px-8 bg-white overflow-hidden">
+        <section className="py-2 md:py-4 px-8 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-10 items-center">
               <motion.div
@@ -762,7 +762,7 @@ export default function Home() {
         </section>
 
         {/* ── Case Studies Preview ─────────────────────────────────────────── */}
-        <section id="case-studies" className="relative pt-8 pb-16 md:pt-12 md:pb-20 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
+        <section id="case-studies" className="relative pt-2 pb-4 md:pt-3 md:pb-5 bg-gradient-to-b from-gold/5 to-gold/10 px-8 overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
@@ -927,7 +927,7 @@ export default function Home() {
         </section>
 
         {/* ── Calendly Booking ────────────────────────────────────────────────── */}
-        <section ref={calendlySectionRef} className="relative pt-6 pb-12 md:pt-10 md:pb-20 bg-neutral-50 px-8 overflow-hidden">
+        <section ref={calendlySectionRef} className="relative pt-2 pb-3 md:pt-3 md:pb-5 bg-neutral-50 px-8 overflow-hidden">
           <div className="max-w-4xl mx-auto text-center mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
