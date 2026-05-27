@@ -178,7 +178,7 @@ export default function CaseStudyDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center text-center"
+            className="flex flex-col items-center text-center pt-2 md:pt-4"
           >
             <div className="flex items-center gap-2.5 mb-2">
               <span className="px-3 py-1 rounded-full border border-gold/30 bg-gold/5 text-gold text-[9px] font-black uppercase tracking-widest">
@@ -230,7 +230,7 @@ export default function CaseStudyDetail() {
                 viewport={{ once: true }}
                 className="space-y-1.5"
               >
-                <h2 className="text-[11px] font-sans font-black uppercase tracking-wider text-gold">01 . Background</h2>
+                <h2 className="text-sm md:text-base font-sans font-black uppercase tracking-wider text-gold">1. Background</h2>
                 <div className="text-sm text-muted/95 font-sans leading-relaxed space-y-3 max-w-none">
                   {study.client.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
                 </div>
@@ -245,7 +245,7 @@ export default function CaseStudyDetail() {
                 viewport={{ once: true }}
                 className="space-y-1.5 pt-1"
               >
-                <h2 className="text-[11px] font-sans font-black uppercase tracking-wider text-gold">02 . The Property Brief</h2>
+                <h2 className="text-sm md:text-base font-sans font-black uppercase tracking-wider text-gold">2. The Property Brief</h2>
                 <div className="text-sm text-muted/95 font-sans leading-relaxed space-y-3 max-w-none">
                   {study.challenge.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
                 </div>
@@ -260,7 +260,7 @@ export default function CaseStudyDetail() {
                 viewport={{ once: true }}
                 className="space-y-1.5 pt-1"
               >
-                <h2 className="text-[11px] font-sans font-black uppercase tracking-wider text-gold">03 . Why This Property Made Sense</h2>
+                <h2 className="text-sm md:text-base font-sans font-black uppercase tracking-wider text-gold">3. Why This Property Made Sense</h2>
                 <div className="text-sm text-muted/95 font-sans leading-relaxed space-y-3 max-w-none">
                   {study.strategy.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
                 </div>

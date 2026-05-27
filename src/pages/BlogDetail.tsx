@@ -45,36 +45,35 @@ const replaceEmDash = (node: any): any => {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-3xl md:text-5xl font-serif text-[#011122] mt-20 mb-2 leading-tight first:mt-0 text-center">
+      <h2 className="text-lg md:text-xl font-sans font-black text-[#011122] mt-6 mb-2 leading-tight first:mt-0 text-center uppercase tracking-wide">
         {replaceEmDash(children)}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-2xl md:text-3xl font-serif text-[#011122] mt-14 mb-2 text-center">
+      <h3 className="text-base md:text-lg font-sans font-black text-[#011122] mt-4 mb-2 text-center uppercase tracking-wide">
         {replaceEmDash(children)}
       </h3>
     ),
     normal: ({ children }: any) => (
-      <p className="text-xl text-muted font-sans leading-relaxed mb-6 text-center">
+      <p className="text-xs md:text-sm text-muted font-sans leading-relaxed mb-3 text-center">
         {replaceEmDash(children)}
       </p>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="my-16 pl-10 border-l-4 border-gold relative">
-        <div className="absolute -left-2 top-0 w-4 h-4 bg-gold rounded-full blur-md opacity-20" />
-        <p className="text-2xl md:text-3xl font-serif text-[#011122] leading-snug italic">
+      <blockquote className="my-6 py-2 px-6 border-l-2 border-gold bg-gold/5 rounded-r-xl relative text-center">
+        <p className="text-sm md:text-base font-sans font-black text-[#011122] leading-snug italic">
           {replaceEmDash(children)}
         </p>
       </blockquote>
     ),
   },
   list: {
-    bullet: ({ children }: any) => <ul className="my-10 space-y-6 mb-12">{children}</ul>,
+    bullet: ({ children }: any) => <ul className="my-4 space-y-2 mb-4 max-w-lg mx-auto">{children}</ul>,
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="flex items-center justify-center gap-5 text-lg md:text-xl text-muted font-sans leading-relaxed">
-        <CheckCircle2 className="mt-1.5 shrink-0 w-6 h-6 text-gold opacity-80" />
+      <li className="flex items-center justify-center gap-3 text-xs md:text-sm text-muted font-sans leading-relaxed">
+        <CheckCircle2 className="shrink-0 w-4 h-4 text-gold opacity-80" />
         <div>{replaceEmDash(children)}</div>
       </li>
     ),
@@ -171,20 +170,20 @@ export default function BlogDetail() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center py-40 bg-white">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
+      <div className="flex justify-center py-32 bg-white">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-gold" />
       </div>
     );
   }
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-40 text-center px-8">
-        <h1 className="text-5xl font-serif text-[#011122] mb-4">Article Not Found</h1>
-        <p className="text-muted font-sans mb-2 text-lg">We couldn't find the article you were looking for.</p>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gold/5 pt-32 text-center px-8">
+        <h1 className="text-4xl font-sans font-black text-[#011122] mb-4">Article Not Found</h1>
+        <p className="text-muted font-sans mb-2 text-base">We couldn't find the article you were looking for.</p>
         <Link
           href="/blog"
-          className="rounded-full px-8 py-4 bg-[#011122] text-white font-bold uppercase tracking-widest text-sm hover:scale-105 transition-transform"
+          className="rounded-full px-8 py-3.5 bg-[#011122] text-white font-bold uppercase tracking-widest text-xs hover:scale-105 transition-transform"
         >
           Back to Blog
         </Link>
@@ -193,7 +192,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="w-full bg-white selection:bg-gold/20 ">
+    <div className="w-full bg-white selection:bg-gold/20">
       <SEO 
         title={post.seo?.metaTitle || post.title} 
         description={post.seo?.metaDescription || post.excerpt}
@@ -202,48 +201,48 @@ export default function BlogDetail() {
       />
 
       {/* ── Editorial Header ─────────────────────────────────────────── */}
-      <header className="relative pt-44 pb-20 overflow-hidden bg-[#011122]">
+      <header className="relative pt-28 md:pt-32 pb-10 overflow-hidden bg-[#011122]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto px-8 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-12">
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
               <Link
                 href="/blog"
-                className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-gold hover:text-white transition-colors"
+                className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-gold hover:text-white transition-colors animate-none"
               >
                 <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
                 Back to Blog
               </Link>
-              <div className="w-px h-4 bg-white/20" />
+              <div className="w-px h-3 bg-white/20" />
               {post.categories?.[0] && (
-                <span className="text-xs font-bold uppercase tracking-[0.3em] text-white/60">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
                   {post.categories[0].title}
                 </span>
               )}
-              <div className="flex items-center gap-6 ml-auto text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                <div className="flex items-center gap-2">
+              <div className="flex items-center gap-4 ml-auto text-[9px] font-bold uppercase tracking-[0.15em] text-white/40">
+                <div className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5 text-gold" />
                   {new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-gold" />
                   8 Min Read
                 </div>
               </div>
             </div>
 
-            <h1 className="text-4xl md:text-7xl font-serif text-white leading-[1.1] mb-8 max-w-5xl mx-auto text-center">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-sans font-black text-white leading-tight mb-6 max-w-4xl mx-auto text-center tracking-tight">
               {post.title}
             </h1>
 
-            <div className="flex items-center justify-center gap-6">
-              <div className="w-16 h-16 rounded-2xl border border-gold/30 p-1.5">
-                <div className="w-full h-full rounded-xl bg-gold/10 flex items-center justify-center text-gold font-serif text-2xl overflow-hidden">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 rounded-xl border border-gold/30 p-1">
+                <div className="w-full h-full rounded-lg bg-gold/10 flex items-center justify-center text-gold font-sans font-black text-lg overflow-hidden">
                   {post.author?.image ? (
                     <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
                   ) : (
@@ -252,21 +251,21 @@ export default function BlogDetail() {
                 </div>
               </div>
               <div>
-                <p className="text-lg font-bold text-white uppercase tracking-widest">{post.author?.name || 'Alex'}</p>
-                <p className="text-xs text-white/50 uppercase tracking-[0.2em] font-bold">Licensed Buyers Agent, JJ Property Partner</p>
+                <p className="text-sm font-bold text-white uppercase tracking-widest leading-none mb-1">{post.author?.name || 'Alex'}</p>
+                <p className="text-[10px] text-white/50 uppercase tracking-[0.15em] font-bold">Licensed Buyers Agent, JJ Property Partner</p>
               </div>
             </div>
           </motion.div>
         </div>
       </header>
 
-      {/* ── Featured Image ──────────────────────────────────────────── */}
-      <section className="relative px-4 md:px-8 -mt-10 mb-24">
+      {/* ── Featured Image (Simple & Bulletproof, No Overlapping or Border Breakages) ── */}
+      <section className="relative px-4 md:px-8 -mt-6 md:-mt-8 mb-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="max-w-7xl mx-auto h-[50vh] md:h-[80vh] rounded-[3.5rem] overflow-hidden shadow-2xl shadow-black/40 border-8 border-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto h-[30vh] md:h-[45vh] rounded-[1.5rem] overflow-hidden border border-black/5 shadow-md bg-neutral-100"
         >
           {post.mainImage ? (
             <img
@@ -280,12 +279,12 @@ export default function BlogDetail() {
         </motion.div>
       </section>
 
-      {/* ── Article Content ─────────────────────────────────────────── */}
-      <section className="px-8 pb-32 relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
+      {/* ── Article Content (Vertically Tightened post image) ─────────── */}
+      <section className="px-4 md:px-8 pb-12 relative">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 animate-none">
           
           {/* Main Content Body */}
-          <article className="lg:col-span-8 lg:pr-12">
+          <article className="lg:col-span-8 lg:pr-6">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -295,26 +294,26 @@ export default function BlogDetail() {
               {post.body ? (
                 <PortableText value={post.body} components={ptComponents} />
               ) : (
-                <p className="text-muted italic">Content loading...</p>
+                <p className="text-muted text-xs italic">Content loading...</p>
               )}
 
               {/* FAQ Section */}
               {post.faqs && post.faqs.length > 0 && (
-                <div className="mt-24 border-t-2 border-gold/10 pt-20">
-                  <div className="mb-16">
-                    <span className="text-xs font-black uppercase tracking-[0.4em] text-gold mb-4 block">Information Resource</span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-[#011122] flex items-center gap-4">
-                      <MessageSquare className="w-10 h-10 text-gold" />
+                <div className="mt-10 border-t border-gold/10 pt-8">
+                  <div className="mb-6">
+                    <span className="text-[10px] font-black uppercase tracking-[0.25em] text-gold mb-2 block">Information Resource</span>
+                    <h2 className="text-2xl md:text-3xl font-sans font-black text-[#011122] flex items-center gap-3">
+                      <MessageSquare className="w-6 h-6 text-gold animate-none" />
                       Frequently Asked Questions
                     </h2>
                   </div>
-                  <div className="space-y-16">
+                  <div className="space-y-6">
                     {post.faqs.map((faq, idx) => (
-                      <div key={idx} className="group border-b border-[#011122]/5 pb-16 last:border-0">
-                        <h4 className="text-2xl md:text-3xl font-serif text-[#011122] mb-6 group-hover:text-gold transition-colors">
+                      <div key={idx} className="group border-b border-[#011122]/5 pb-6 pt-4 last:border-0">
+                        <h4 className="text-base md:text-lg font-sans font-black text-[#011122] mb-2 group-hover:text-gold transition-colors">
                           {faq.question}
                         </h4>
-                        <p className="text-xl text-muted font-sans leading-relaxed">
+                        <p className="text-sm text-muted font-sans leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -327,39 +326,39 @@ export default function BlogDetail() {
 
           {/* Sidebar */}
           <aside className="lg:col-span-4">
-            <div className="sticky top-32 space-y-10">
+            <div className="sticky top-24 space-y-6">
               
               {/* Strategy Session Card */}
               <motion.div
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="p-10 rounded-[3rem] bg-[#011122] text-white relative overflow-hidden group"
+                className="p-6 rounded-[1.75rem] bg-[#011122] text-white relative overflow-hidden group shadow-md"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/20 blur-[60px] rounded-full group-hover:bg-gold/30 transition-colors" />
-                <h3 className="text-xs font-black uppercase tracking-[0.3em] text-gold mb-2">Take the next step</h3>
-                <h2 className="text-2xl md:text-3xl font-serif mb-2 leading-tight">
+                <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-gold mb-1">Take the next step</h3>
+                <h2 className="text-xl md:text-2xl font-sans font-black mb-2 leading-tight">
                   Ready to buy with confidence?
                 </h2>
-                <p className="text-white/60 font-sans leading-relaxed mb-10">
+                <p className="text-xs text-white/60 font-sans leading-relaxed mb-6">
                   Our active roster is strictly limited. Book a complimentary 30-minute session to discuss your brief.
                 </p>
                 
                 <button
                   onClick={openCalendly}
-                  className="w-full py-5 rounded-2xl bg-gold text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-[#011122] transition-all duration-500 shadow-xl shadow-gold/20 flex items-center justify-center gap-3 group/btn"
+                  className="w-full py-3.5 rounded-xl bg-gold text-white font-bold uppercase tracking-widest text-[9px] hover:bg-white hover:text-[#011122] transition-all duration-300 shadow-md flex items-center justify-center gap-2 group/btn"
                 >
                   Book Strategy Session
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
 
-                <div className="mt-8 pt-8 border-t border-white/10 space-y-4">
-                  <div className="flex items-center gap-4 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
-                    <Phone className="w-4 h-4 text-gold" />
+                <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
+                  <div className="flex items-center gap-3 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
+                    <Phone className="w-4 h-4 text-gold shrink-0" />
                     0481 33 44 58
                   </div>
-                  <div className="flex items-center gap-4 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
-                    <Mail className="w-4 h-4 text-gold" />
+                  <div className="flex items-center gap-3 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
+                    <Mail className="w-4 h-4 text-gold shrink-0" />
                     info@jjpropertypartner.com.au
                   </div>
                 </div>
@@ -367,19 +366,19 @@ export default function BlogDetail() {
 
               {/* Related Reading */}
               {otherPosts.length > 0 && (
-                <div className="p-10 rounded-[3rem] border border-[#011122]/5">
-                  <h3 className="text-xs font-black uppercase tracking-[0.3em] text-muted mb-2">Related Intelligence</h3>
-                  <div className="space-y-8">
+                <div className="p-6 rounded-[1.75rem] border border-[#011122]/5 bg-white shadow-sm">
+                  <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-4">Related Intelligence</h3>
+                  <div className="space-y-4">
                     {otherPosts.map((other) => (
                       <Link
                         key={other._id}
                         href={`/blog/${other.slug.current}`}
-                        className="group flex flex-col gap-2"
+                        className="group flex flex-col gap-1"
                       >
-                        <p className="text-lg font-serif text-[#011122] group-hover:text-gold transition-colors leading-snug">
+                        <p className="text-sm font-sans font-black text-[#011122] group-hover:text-gold transition-colors leading-snug">
                           {other.title}
                         </p>
-                        <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted">
+                        <div className="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-muted">
                           Read Full Article <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                         </div>
                       </Link>
@@ -393,22 +392,22 @@ export default function BlogDetail() {
       </section>
 
       {/* ── Newsletter Section ────────────────────────────────────────── */}
-      <section className="py-4 px-8 bg-[#011122] relative overflow-hidden text-center">
+      <section className="py-8 px-6 bg-[#011122] relative overflow-hidden text-center">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-gold/5 blur-[180px] rounded-full pointer-events-none" />
         <div className="max-w-3xl mx-auto relative z-10">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-2">
+          <h2 className="text-2xl md:text-4xl font-sans font-black text-white mb-2 leading-tight">
             Market Intelligence, <span className="text-gold">directly to you.</span>
           </h2>
-          <p className="text-xl text-white/60 font-sans mb-12 leading-relaxed">
+          <p className="text-sm md:text-base text-white/60 font-sans mb-6 leading-relaxed">
             Join Sydney's most informed buyers. Receive data-led market analysis and off-market opportunities every month.
           </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-8 py-5 rounded-2xl bg-white/10 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-gold transition-all"
+              className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-gold text-xs transition-all"
             />
-            <button className="px-10 py-5 rounded-2xl bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-sm transition-transform hover:scale-105 active:scale-95">
+            <button className="px-6 py-3 rounded-xl bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-xs transition-transform hover:scale-105 active:scale-95">
               Join
             </button>
           </form>
@@ -417,4 +416,3 @@ export default function BlogDetail() {
     </div>
   );
 }
-// Trigger rebuild
