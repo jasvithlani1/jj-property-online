@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Percent } from 'lucide-react';
+import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Percent, Coins } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
@@ -279,7 +279,7 @@ export default function CaseStudies() {
                 {/* Stats Table */}
                 <div className="flex-1 p-10 md:p-14 flex flex-col justify-center items-center text-center">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.city}</span>
+                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.state}</span>
                     <div className="h-px w-12 bg-gold/30" />
                   </div>
                   <div className="grid grid-cols-2 gap-x-8 gap-y-6">
@@ -311,7 +311,10 @@ export default function CaseStudies() {
                     </div>
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
+                      <div className="flex items-center justify-center gap-2">
+                        <Coins className="w-5 h-5 text-gold" />
+                        <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
+                      </div>
                     </div>
                     
                     <div className="flex flex-col pt-4 border-t border-gold/10">

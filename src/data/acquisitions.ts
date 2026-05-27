@@ -1,6 +1,6 @@
-
 export interface Acquisition {
   city: string;
+  state: string;
   dealDone?: boolean;
   price: string;
   config: string;
@@ -15,7 +15,7 @@ export interface Acquisition {
 
 export const acquisitions: Acquisition[] = [
   {
-    "city": "Parramatta", "dealDone": true,
+    "city": "Parramatta", "state": "NSW", "dealDone": true,
     "price": "$690,000",
     "config": "3 / 2 / 2",
     "month": "Sep-25",
@@ -27,7 +27,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_1.png"
   },
   {
-    "city": "Westmead", "dealDone": false,
+    "city": "Westmead", "state": "NSW", "dealDone": false,
     "price": "$730,000",
     "config": "4 / 2 / 2",
     "month": "Sep-25",
@@ -39,7 +39,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_2.png"
   },
   {
-    "city": "Blacktown", "dealDone": true,
+    "city": "Blacktown", "state": "NSW", "dealDone": true,
     "price": "$810,000",
     "config": "4 / 2 / 2",
     "month": "Oct-25",
@@ -51,7 +51,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/prop_3.png"
   },
   {
-    "city": "Liverpool", "dealDone": false,
+    "city": "Liverpool", "state": "NSW", "dealDone": false,
     "price": "$850,000",
     "config": "4 / 2 / 2",
     "month": "Sep-25",
@@ -63,7 +63,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_4.png"
   },
   {
-    "city": "Penrith", "dealDone": true,
+    "city": "Penrith", "state": "NSW", "dealDone": true,
     "price": "$710,000",
     "config": "4 / 2 / 2",
     "month": "Nov-25",
@@ -75,7 +75,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_5.png"
   },
   {
-    "city": "Castle Hill", "dealDone": false,
+    "city": "Castle Hill", "state": "NSW", "dealDone": false,
     "price": "$690,000",
     "config": "4 / 3 / 1",
     "month": "Oct-25",
@@ -87,7 +87,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_6.png"
   },
   {
-    "city": "Hornsby", "dealDone": true,
+    "city": "Hornsby", "state": "NSW", "dealDone": true,
     "price": "$650,000",
     "config": "3 / 1 / 2",
     "month": "Dec-25",
@@ -99,7 +99,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_7.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$670,000",
     "config": "4 / 1 / 2",
     "month": "Dec-25",
@@ -111,7 +111,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_8.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$600,000",
     "config": "3 / 1 / 1",
     "month": "Dec-25",
@@ -123,7 +123,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_9.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$750,000",
     "config": "4 / 2 / 2",
     "month": "Apr-26",
@@ -135,7 +135,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_10.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$665,000",
     "config": "4 / 2 / 2",
     "month": "May-26",
@@ -147,7 +147,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_11.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$770,000",
     "config": "7 / 5 / 2",
     "month": "May-26",
@@ -159,7 +159,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_12.jpg"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$655,000",
     "config": "3 / 2 / 2",
     "month": "Dec-25",
@@ -171,7 +171,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_13.jpg"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$680,000",
     "config": "4 / 2 / 2",
     "month": "Oct-25",
@@ -183,7 +183,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_14.jpg"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$595,000",
     "config": "4 / 2 / 1",
     "month": "Apr-24",
@@ -195,7 +195,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_15.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$850,000",
     "config": "4 / 2 / 2",
     "month": "Feb-26",
@@ -207,7 +207,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_16.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$780,000",
     "config": "4 / 2 / 2",
     "month": "Mar-26",
@@ -219,7 +219,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_17.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$820,000",
     "config": "4 / 2 / 2",
     "month": "Mar-26",
@@ -231,7 +231,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_18.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$730,000",
     "config": "4 / 2 / 2",
     "month": "Mar-26",
@@ -243,7 +243,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_19.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$730,000",
     "config": "4 / 2 / 2",
     "month": "Nov-25",
@@ -255,7 +255,7 @@ export const acquisitions: Acquisition[] = [
     "image": "/images/acquisitions/user_prop_20.png"
   },
   {
-    "city": "Sydney", "dealDone": false,
+    "city": "Sydney", "state": "NSW", "dealDone": false,
     "price": "$715,000",
     "config": "4 / 2 / 2",
     "month": "May-26",
