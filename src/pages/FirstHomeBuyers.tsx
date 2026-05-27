@@ -259,7 +259,7 @@ export default function FirstHomeBuyers() {
  {(pageData?.process?.steps || [
  { stepNumber: '01', title: 'Step 1 - Strategy & Financial Clarity', body: 'We start by getting a clear picture of where you stand financially, including borrowing capacity, deposit, and eligibility for first home buyer incentives and stamp duty savings.', image: '/images/acquisitions/user_prop_7.png' },
  { stepNumber: '02', title: 'Step 2 - Suburb Research & Targeting', body: 'Using data-led research, we assess price growth, market demand, and local infrastructure to identify the right locations across Australia that fit your lifestyle and budget.', image: '/images/acquisitions/user_prop_8.png' },
- { stepNumber: '03', title: 'Step 3 - Off-Market Property Sourcing', body: 'We tap into our industry network to find properties before they appear on Real Estate or Domain - giving you access to quality homes ahead of the public competition.', image: '/images/acquisitions/user_prop_9.png' },
+ { stepNumber: '03', title: 'Step 3 - Off-Market Property Sourcing', body: 'We tap into our industry network to find properties before they appear on Real Estate or Domain - giving you access to quality homes ahead of the public competition.', image: '/images/acquisitions/off_market_house.png' },
  { stepNumber: '04', title: 'Step 4 - Due Diligence & Checks', body: 'Every shortlist property is carefully assessed through detailed research, coordination of building and pest inspections, and contract review with your solicitor.', image: '/images/acquisitions/user_prop_10.png' },
  { stepNumber: '05', title: 'Step 5 - Negotiation & Securing the Deal', body: 'We represent you at auction or in private treaty negotiations, using market data and discipline to secure the property on the best possible terms.', image: '/images/acquisitions/user_prop_11.png' },
  { stepNumber: '06', title: 'Step 6 - Settlement & Keys', body: 'We work with your solicitor and mortgage broker through to final settlement, ensuring a smooth handover so you can celebrate your new home.', image: '/images/acquisitions/user_prop_14.jpg' }
@@ -461,60 +461,56 @@ export default function FirstHomeBuyers() {
  </div>
  </section>
 
-  {/* FAQ Section */}
-  <section className="relative py-4 bg-white px-8">
-  <div className="max-w-4xl mx-auto flex flex-col gap-4">
-  <div className="text-center mb-1">
-  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2">
-  Frequently <br />
-  <span className="text-gold">Asked Questions.</span>
-  </h2>
-  <p className="text-muted text-lg font-sans leading-relaxed text-left">Everything you need to know about buying your first home with expert representation.</p>
-  </div>
+  <section className="relative py-[1px] bg-gradient-to-b from-white to-neutral-50 px-8">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
+      <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-2">
+        <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2">
+          Frequently <br className="hidden lg:block" />
+          <span className="text-gold">Asked Questions.</span>
+        </h2>
+        <p className="text-muted text-lg font-sans text-left lg:text-left">Everything you need to know about buying your first home with expert representation.</p>
+      </div>
 
-  <div className="flex flex-col gap-2">
-  {(pageData?.faqs || fhbFaqs).map((faq: any, index: number) => (
-  <motion.div 
-  key={index} 
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: index * 0.1 }}
-  className="border-b border-gold/20 pb-1"
-  >
-  <button
-  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-  className="w-full flex items-center justify-between py-3 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer gap-3"
-  >
-  <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 text-left ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
-  {faq.question}
-  </span>
-  <motion.div
-  animate={{ rotate: openFaq === index ? 45 : 0 }}
-  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-  className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
-  >
-  <Plus className="w-5 h-5" />
-  </motion.div>
-  </button>
-  <AnimatePresence>
-  {openFaq === index && (
-  <motion.div
-  initial={{ height: 0, opacity: 0 }}
-  animate={{ height: 'auto', opacity: 1 }}
-  exit={{ height: 0, opacity: 0 }}
-  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-  className="overflow-hidden"
-  >
-  <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-left">{faq.answer.replace(/—/g, '-')}</p>
-  </motion.div>
-  )}
-  </AnimatePresence>
-  </motion.div>
-  ))}
-  </div>
-  </div>
- </section>
+      <div className="lg:col-span-8 flex flex-col gap-1">
+        {(pageData?.faqs || fhbFaqs).map((faq: any, index: number) => (
+          <div key={index} className="border-b border-black/10">
+            <button
+              onClick={() => setOpenFaq(openFaq === index ? null : index)}
+              aria-expanded={openFaq === index}
+              aria-controls={`faq-answer-${index}`}
+              className="w-full flex items-center justify-between py-2 hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+            >
+              <span className={`flex-1 text-left text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+                {faq.question}
+              </span>
+              <motion.div
+                animate={{ rotate: openFaq === index ? 45 : 0 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-black/10 text-black group-hover:border-gold group-hover:text-gold'}`}
+                aria-hidden="true"
+              >
+                <Plus className="w-5 h-5" />
+              </motion.div>
+            </button>
+            <AnimatePresence>
+              {openFaq === index && (
+                <motion.div
+                  id={`faq-answer-${index}`}
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-base text-muted font-sans leading-relaxed pb-4 text-left px-4">{faq.answer.replace(/—/g, '-')}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   {/* CTA Section */}
   <section className="py-12 md:py-20 px-6 sm:px-8 bg-[#011122] text-white relative overflow-hidden">

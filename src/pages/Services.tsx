@@ -60,7 +60,7 @@ const services = [
  'First Home Owner Grant guidance and eligibility assessment',
  'Full coordination through due diligence, legal review, and settlement'
  ],
- image: '/images/acquisitions/user_prop_12.jpg',
+ image: '/images/acquisitions/first_home_buyers_acquisitions.jpg',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
@@ -126,7 +126,7 @@ const services = [
  'Coordination with commercial finance brokers and legal experts',
  'Guidance on portfolio diversification across retail, industrial, and office spaces'
  ],
- image: '/images/acquisitions/user_prop_15.png',
+ image: '/images/acquisitions/commercial_property_aus.png',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
@@ -209,13 +209,17 @@ export default function Services() {
  { value: '$6M+', label: 'Portfolio Target' },
  { value: '97%', label: 'Client Satisfaction Rate' },
  { value: '100%', label: 'Buyers Representation' },
- ]).map((stat: any) => (
- <div key={stat.label} className="p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center">
- <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
- <p className="relative text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2">{stat.value}</p>
- <p className="relative text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</p>
- </div>
- ))}
+ ]).map((stat: any) => {
+    const displayValue = (stat.value === '20+' || stat.value === '20+ Years') ? '20+ Years' : stat.value;
+    const displayLabel = (stat.label === 'Years of Experience' || stat.label === 'Property Experience') ? 'Property Experience' : stat.label;
+    return (
+      <div key={stat.label} className="p-6 md:p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center flex flex-col justify-center min-h-[150px] sm:min-h-[160px]">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
+        <p className="relative text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2 whitespace-nowrap">{displayValue}</p>
+        <p className="relative text-[10px] sm:text-xs font-bold uppercase tracking-widest text-gold leading-tight">{displayLabel}</p>
+      </div>
+    );
+  })}
  </motion.div>
  </div>
  </section>
@@ -358,7 +362,7 @@ export default function Services() {
  <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] mb-6">Additional Services</h2>
  <div className="h-1 w-20 bg-gold mx-auto rounded-full" />
  </div>
- <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-stretch">
  {(pageData?.additionalServices || [
  {
  title: 'Negotiation Only',
@@ -382,7 +386,7 @@ export default function Services() {
  <Link
  key={service.title}
  href="/contact"
- className={`group relative p-6 sm:p-8 md:p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-center ${service.isFeatured
+ className={`group relative p-6 sm:p-8 md:p-12 rounded-[3.5rem] border transition-all duration-700 cursor-pointer flex flex-col items-center h-full ${service.isFeatured
  ? 'bg-[#011122] border-white/10 shadow-2xl shadow-gold/20 md:z-20'
  : 'bg-white border-gold/5 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10'
  }`}

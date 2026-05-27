@@ -66,20 +66,20 @@ export default function About() {
    )}
    </h1>
   </motion.div>
- <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-24 items-center">
- <motion.div
- initial={{ opacity: 0, x: -40 }}
- whileInView={{ opacity: 1, x: 0 }}
- viewport={{ once: true }}
- transition={{ duration: 1 }}
- className="lg:col-span-5 relative"
- >
- <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
- <img
- src={aboutData?.profile?.image ? urlFor(aboutData.profile.image).url() : "/buyers-agent-showing.png"}
- alt="Alex - Founder of JJ Property Partner"
- className="w-full aspect-[4/5] object-cover hover:scale-105 transition-all duration-700 brightness-[0.95]"
- />
+ <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-16 items-start">
+  <motion.div
+  initial={{ opacity: 0, x: -40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1 }}
+  className="lg:col-span-5 relative"
+  >
+  <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
+  <img
+  src={aboutData?.profile?.image ? urlFor(aboutData.profile.image).url() : "/buyers-agent-showing.png"}
+  alt="Alex - Founder of JJ Property Partner"
+  className="w-full aspect-[3/4] max-h-[460px] object-cover hover:scale-105 transition-all duration-700 brightness-[0.95]"
+  />
  <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/60 via-transparent to-transparent" />
  <div className="absolute bottom-10 left-10 text-white">
  <p className="text-4xl font-sans font-black mb-1">Alex</p>
@@ -91,13 +91,13 @@ export default function About() {
  <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gold/10 rounded-full blur-3xl -z-10" />
  </motion.div>
 
- <motion.div
- initial={{ opacity: 0, x: 40 }}
- whileInView={{ opacity: 1, x: 0 }}
- viewport={{ once: true }}
- transition={{ duration: 1, delay: 0.2 }}
- className="lg:col-span-7 space-y-3 text-center"
- >
+  <motion.div
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 1, delay: 0.2 }}
+  className="lg:col-span-7 space-y-3 text-center"
+  >
  <div className="space-y-3 text-lg text-muted font-sans leading-relaxed text-left">
  <p className="text-xl text-[#011122] font-medium leading-relaxed text-left">
  {aboutData?.profile?.quote || "\"JJ Property Partner was founded on a simple belief: every buyer deserves professional representation backed by deep analytical rigor.\""}
@@ -281,7 +281,7 @@ export default function About() {
  </p>
  </div>
 
- <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 relative z-10">
+ <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 relative z-10 items-stretch">
  {(aboutData?.pillarsSection?.pillars || [
  {
  title: "Data-Driven Precision",
@@ -296,24 +296,24 @@ export default function About() {
  text: "We act solely in your best interests, managing negotiations with discretion, protecting your privacy, and representing you throughout the purchase process with a strategic, data-led approach designed to secure the right terms."
  }
  ]).map((val: any, i: number) => (
- <motion.div
- key={i}
- initial={{ opacity: 0, y: 30 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ duration: 0.6, delay: i * 0.1 }}
- className="p-6 md:p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group text-center"
- >
-  <div className="flex flex-row items-center justify-start gap-4 mb-4 w-full">
-  <div className="p-3 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
-  {i === 0 ? <Target className="w-6 h-6 text-gold" /> : i === 1 ? <Search className="w-6 h-6 text-gold" /> : <Handshake className="w-6 h-6 text-gold" />}
-  </div>
-  <h3 className="text-2xl md:text-3xl font-sans font-black text-gold leading-tight text-left">{val.title}</h3>
-  </div>
- <p className="text-white/60 font-sans leading-relaxed text-lg text-left">
- {val.text}
- </p>
- </motion.div>
+  <motion.div
+  key={i}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: i * 0.1 }}
+  className="p-6 md:p-10 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/30 transition-all duration-300 backdrop-blur-sm group text-center flex flex-col h-full"
+  >
+   <div className="flex flex-row items-center justify-start gap-4 mb-4 w-full min-h-[72px]">
+   <div className="p-3 rounded-2xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-500 shrink-0">
+   {i === 0 ? <Target className="w-6 h-6 text-gold" /> : i === 1 ? <Search className="w-6 h-6 text-gold" /> : <Handshake className="w-6 h-6 text-gold" />}
+   </div>
+   <h3 className="text-xl md:text-2xl font-sans font-black text-gold leading-tight text-left">{val.title}</h3>
+   </div>
+  <p className="text-white/60 font-sans leading-relaxed text-base md:text-lg text-left flex-1">
+  {val.text}
+  </p>
+  </motion.div>
  ))}
  </div>
  </section>
