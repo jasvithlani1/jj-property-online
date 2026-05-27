@@ -70,7 +70,9 @@ export default function CaseStudies() {
           stats: local.stats
         }));
 
-        setStudies([...studiesData, ...formattedLocalStudies]);
+        const localSlugs = localCaseStudies.map(l => l.id);
+        const filteredSanityStudies = (studiesData || []).filter((s: any) => s.slug?.current && !localSlugs.includes(s.slug.current));
+        setStudies([...filteredSanityStudies, ...formattedLocalStudies]);
         if (pageData) setPageData(pageData);
       } catch (error) {
         console.error('Error fetching case studies:', error);

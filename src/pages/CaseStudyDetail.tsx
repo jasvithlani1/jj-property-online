@@ -59,29 +59,29 @@ export default function CaseStudyDetail() {
           gallery
         }`;
         
-        let data = await client.fetch(query, { slug: id });
+        const localStudy = localCaseStudies.find(s => s.id === id);
+        let data = null;
         
-        if (!data) {
-          const localStudy = localCaseStudies.find(s => s.id === id);
-          if (localStudy) {
-            data = {
-              _id: localStudy.id,
-              title: localStudy.title,
-              slug: { current: localStudy.id },
-              resultText: localStudy.result,
-              location: localStudy.location,
-              shortQuote: localStudy.shortQuote,
-              mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
-              tag: localStudy.tag,
-              tagColor: localStudy.tagColor,
-              client: localStudy.client,
-              challenge: localStudy.challenge,
-              strategy: localStudy.strategy,
-              outcome: localStudy.outcome,
-              stats: localStudy.stats,
-              propertyDetails: localStudy.propertyDetails
-            };
-          }
+        if (localStudy) {
+          data = {
+            _id: localStudy.id,
+            title: localStudy.title,
+            slug: { current: localStudy.id },
+            resultText: localStudy.result,
+            location: localStudy.location,
+            shortQuote: localStudy.shortQuote,
+            mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
+            tag: localStudy.tag,
+            tagColor: localStudy.tagColor,
+            client: localStudy.client,
+            challenge: localStudy.challenge,
+            strategy: localStudy.strategy,
+            outcome: localStudy.outcome,
+            stats: localStudy.stats,
+            propertyDetails: localStudy.propertyDetails
+          };
+        } else {
+          data = await client.fetch(query, { slug: id });
         }
         setStudy(data);
 
@@ -267,6 +267,20 @@ export default function CaseStudyDetail() {
               </motion.div>
             )}
 
+            {/* The Final Outcome & Value (Highly Highlighted) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 md:p-10 rounded-[2.5rem] bg-[#011122] text-white space-y-4 relative overflow-hidden shadow-xl"
+            >
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gold/10 blur-[60px] rounded-full pointer-events-none" />
+              <h2 className="text-xs font-black uppercase tracking-[0.25em] text-gold">04 . The Final Outcome & Value Created</h2>
+              <p className="text-base md:text-lg font-serif text-white/95 leading-relaxed">
+                {study.outcome}
+              </p>
+            </motion.div>
+
             {/* Minimalist Delivered Value Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -330,15 +344,14 @@ export default function CaseStudyDetail() {
                 </div>
               </div>
 
-              {/* Outcome summary card */}
-              <div className="p-8 rounded-[2.5rem] bg-[#011122] text-white space-y-4 relative overflow-hidden shadow-xl">
+              {/* Consultation Booking card */}
+              <div className="p-8 rounded-[2.5rem] bg-gold/5 border border-gold/15 flex flex-col items-center text-center space-y-4 shadow-sm relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 blur-[50px] rounded-full pointer-events-none" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-gold">The Final Outcome</span>
-                <p className="text-sm font-serif text-white/95 leading-relaxed">{study.outcome}</p>
-                
+                <h4 className="text-base font-serif text-[#011122] font-semibold">Ready to achieve a similar result?</h4>
+                <p className="text-xs text-muted leading-relaxed">Speak directly with Alex about your brief. Our active client capacity is strictly limited.</p>
                 <button
                   onClick={openCalendly}
-                  className="w-full py-4 mt-2 rounded-xl bg-gold hover:bg-gold-hover text-white font-bold uppercase tracking-widest text-[10px] transition-all duration-300 shadow-lg shadow-gold/10 flex items-center justify-center gap-2 group/btn"
+                  className="w-full py-4 rounded-xl bg-[#011122] hover:bg-gold text-white font-bold uppercase tracking-widest text-[10px] transition-all duration-300 shadow-md flex items-center justify-center gap-2 group/btn"
                 >
                   Start Your Success Story
                   <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
