@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Coins, Calendar } from 'lucide-react';
+import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Coins, Calendar, LineChart } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
@@ -131,8 +131,10 @@ export default function CaseStudies() {
               { value: '100%', label: 'Buyer-Side Only' },
             ]).map((stat: any) => (
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
-                {stat.iconName === 'Star' && <Star className="w-4 h-4 fill-amber-400 text-amber-400" />}
-                <span className="text-2xl font-serif text-white">{stat.value === '$5M+' ? '$6M+' : stat.value}</span>
+                <span className="text-2xl font-serif text-white flex items-center gap-2">
+                  {stat.value === '5.0' ? '5' : (stat.value === '$5M+' ? '$6M+' : stat.value)}
+                  {stat.iconName === 'Star' && <Star className="w-5 h-5 fill-amber-400 text-amber-400" />}
+                </span>
                 <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
               </div>
             ))}
@@ -288,6 +290,7 @@ export default function CaseStudies() {
                 {/* Stats Table */}
                 <div className="flex-1 p-10 md:p-14 flex flex-col justify-center items-center text-center">
                   <div className="flex items-center justify-center gap-3 mb-6">
+                    <div className="h-px w-12 bg-gold/30" />
                     <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.state}</span>
                     <div className="h-px w-12 bg-gold/30" />
                   </div>
@@ -351,7 +354,7 @@ export default function CaseStudies() {
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
                       <div className="flex items-center justify-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-gold" />
+                        <LineChart className="w-5 h-5 text-gold" />
                         <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
                       </div>
                     </div>
