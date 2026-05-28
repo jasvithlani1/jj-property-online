@@ -215,7 +215,7 @@ export default function Services() {
     return (
       <div key={stat.label} className="p-6 md:p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center flex flex-col justify-center min-h-[150px] sm:min-h-[160px]">
         <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
-        <p className="relative text-3xl sm:text-4xl md:text-5xl font-sans font-black text-[#011122] mb-2 whitespace-nowrap">{displayValue}</p>
+        <p className={`relative font-sans font-black text-[#011122] mb-2 whitespace-nowrap ${displayValue === '20+ Years' ? 'text-[1.35rem] xs:text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem]' : 'text-3xl sm:text-4xl md:text-5xl'}`}>{displayValue}</p>
         <p className="relative text-[10px] sm:text-xs font-bold uppercase tracking-widest text-gold leading-tight">{displayLabel}</p>
       </div>
     );
