@@ -211,7 +211,7 @@ export default function Services() {
  { value: '100%', label: 'Buyers Representation' },
  ]).map((stat: any) => {
     const displayValue = (stat.value === '20+' || stat.value === '20+ Years') ? '20+ Years' : stat.value;
-    const displayLabel = (stat.label === 'Years of Experience' || stat.label === 'Property Experience') ? 'Property Experience' : stat.label;
+    const displayLabel = displayValue === '20+ Years' ? 'Property Experience' : stat.label;
     return (
       <div key={stat.label} className="p-6 md:p-8 rounded-[2rem] bg-white text-black shadow-[0_0_50px_-12px_rgba(255,255,255,0.4)] relative overflow-hidden group hover:-translate-y-2 transition-transform duration-500 text-center flex flex-col justify-center min-h-[150px] sm:min-h-[160px]">
         <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-gold/5 pointer-events-none" />
