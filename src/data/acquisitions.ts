@@ -298,7 +298,7 @@ export const acquisitions: Acquisition[] = [
     size: '360 sqm',
     growth: '+190,000',
     yield: '3.89%',
-    image: '/images/acquisitions/user_prop_22.png'
+    image: '/images/acquisitions/aus_house_1.png'
   },
   {
     city: 'Melonba',
@@ -311,7 +311,7 @@ export const acquisitions: Acquisition[] = [
     size: '461 sqm',
     growth: '+660,000',
     yield: '7.43%',
-    image: '/images/acquisitions/user_prop_23.png'
+    image: '/images/acquisitions/aus_house_2.png'
   },
   {
     city: 'Marsden Park',
@@ -324,7 +324,7 @@ export const acquisitions: Acquisition[] = [
     size: '656 sqm',
     growth: '+250,000',
     yield: '6.12%',
-    image: '/images/acquisitions/user_prop_24.png'
+    image: '/images/acquisitions/aus_house_3.png'
   },
   {
     city: 'Marsden Park',
@@ -337,7 +337,7 @@ export const acquisitions: Acquisition[] = [
     size: '270 sqm',
     growth: '+150,000',
     yield: '5.55%',
-    image: '/images/acquisitions/user_prop_25.png'
+    image: '/images/acquisitions/aus_house_4.png'
   },
   {
     city: 'Marsden Park',
@@ -350,7 +350,7 @@ export const acquisitions: Acquisition[] = [
     size: '377 sqm',
     growth: '+260,000',
     yield: '3.94%',
-    image: '/images/acquisitions/user_prop_26.png'
+    image: '/images/acquisitions/modern_estate.png'
   },
   {
     city: 'Parramatta',
@@ -363,7 +363,7 @@ export const acquisitions: Acquisition[] = [
     size: '119 sqm',
     growth: '+55,000',
     yield: '7.6%',
-    image: '/images/acquisitions/user_prop_27.png'
+    image: '/images/acquisitions/modern_grey.png'
   },
   {
     city: 'Marsden Park',
@@ -376,7 +376,7 @@ export const acquisitions: Acquisition[] = [
     size: '350 sqm',
     growth: '+555,000',
     yield: '4.96%',
-    image: '/images/acquisitions/user_prop_28.png'
+    image: '/images/acquisitions/modern_beige.png'
   },
   {
     city: 'Ermington',
@@ -389,7 +389,7 @@ export const acquisitions: Acquisition[] = [
     size: '524 sqm',
     growth: '+950,000',
     yield: '6.93%',
-    image: '/images/acquisitions/user_prop_29.png'
+    image: '/images/acquisitions/modern_duplex.png'
   },
   {
     city: 'Parramatta',
@@ -398,11 +398,11 @@ export const acquisitions: Acquisition[] = [
     config: '3 / 2 / 1',
     month: 'Nov-21',
     rental: '$1000 PW',
-    value: '$751,000.00',
+    value: '$751,000',
     size: '117 sqm',
     growth: '+71,000',
     yield: '7.65%',
-    image: '/images/acquisitions/user_prop_30.png'
+    image: '/images/acquisitions/prop_4.png'
   },
   {
     city: 'Parramatta',
@@ -411,11 +411,11 @@ export const acquisitions: Acquisition[] = [
     config: '2 / 2 / 1',
     month: 'Jun-22',
     rental: '$950 PW',
-    value: '$721,000.00',
+    value: '$721,000',
     size: '102 sqm',
     growth: '+81,000',
     yield: '7.72%',
-    image: '/images/acquisitions/user_prop_31.png'
+    image: '/images/acquisitions/prop_5.png'
   },
   {
     city: 'Parramatta',
@@ -428,7 +428,7 @@ export const acquisitions: Acquisition[] = [
     size: '112 sqm',
     growth: '+70,000',
     yield: '6.37%',
-    image: '/images/acquisitions/user_prop_32.png'
+    image: '/images/acquisitions/prop_1.png'
   },
   {
     city: 'Parramatta',
@@ -441,6 +441,6 @@ export const acquisitions: Acquisition[] = [
     size: '86 sqm',
     growth: '+30,000',
     yield: '6.35%',
-    image: '/images/acquisitions/user_prop_33.png'
+    image: '/images/acquisitions/prop_2.png'
   }
 ];

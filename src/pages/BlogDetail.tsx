@@ -45,12 +45,12 @@ const replaceEmDash = (node: any): any => {
 const ptComponents = {
   block: {
     h2: ({ children }: any) => (
-      <h2 className="text-lg md:text-xl font-sans font-black text-[#011122] mt-6 mb-2 leading-tight first:mt-0 text-center uppercase tracking-wide">
+      <h2 className="text-lg md:text-xl font-sans font-black text-gold mt-6 mb-2 leading-tight first:mt-0 text-center uppercase tracking-wide">
         {replaceEmDash(children)}
       </h2>
     ),
     h3: ({ children }: any) => (
-      <h3 className="text-base md:text-lg font-sans font-black text-[#011122] mt-4 mb-2 text-center uppercase tracking-wide">
+      <h3 className="text-base md:text-lg font-sans font-black text-gold mt-4 mb-2 text-center uppercase tracking-wide">
         {replaceEmDash(children)}
       </h3>
     ),
@@ -225,13 +225,13 @@ export default function BlogDetail() {
                 </span>
               )}
             </div>
-            <div className="flex items-center justify-center gap-4 mb-4 text-[9px] font-bold uppercase tracking-[0.15em] text-white/40">
+            <div className="flex items-center justify-center gap-4 mb-4 text-xs font-bold uppercase tracking-[0.15em] text-white/60">
               <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-gold" />
+                <Calendar className="w-4 h-4 text-gold" />
                 {new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}
               </div>
               <div className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-gold" />
+                <Clock className="w-4 h-4 text-gold" />
                 8 Min Read
               </div>
             </div>
@@ -241,14 +241,12 @@ export default function BlogDetail() {
             </h1>
 
             <div className="flex items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-xl border border-gold/30 p-1">
-                <div className="w-full h-full rounded-lg bg-gold/10 flex items-center justify-center text-gold font-sans font-black text-lg overflow-hidden">
-                  {post.author?.image ? (
-                    <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
-                  ) : (
-                    post.author?.name?.charAt(0) || 'A'
-                  )}
-                </div>
+              <div className="w-14 h-14 rounded-xl border border-gold/30 overflow-hidden">
+                {post.author?.image ? (
+                  <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
+                ) : (
+                  <img src="/author-profile.png" alt={post.author?.name || 'Alex'} className="w-full h-full object-cover" />
+                )}
               </div>
               <div>
                 <p className="text-sm font-bold text-white uppercase tracking-widest leading-none mb-1">{post.author?.name || 'Alex'}</p>
@@ -259,11 +257,11 @@ export default function BlogDetail() {
         </div>
       </header>
 
-      {/* ── Featured Image (Simple & Bulletproof, No Overlapping or Border Breakages) ── */}
-      <section className="relative px-4 md:px-8 -mt-6 md:-mt-8 mb-8">
+      {/* ── Featured Image — sits in white section, below the navy header ── */}
+      <section className="relative px-4 md:px-8 pt-8 mb-8 bg-white">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto h-[30vh] md:h-[45vh] rounded-[1.5rem] overflow-hidden border border-black/5 shadow-md bg-neutral-100"
         >
@@ -300,20 +298,20 @@ export default function BlogDetail() {
               {/* FAQ Section */}
               {post.faqs && post.faqs.length > 0 && (
                 <div className="mt-6 border-t border-gold/10 pt-5">
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <span className="text-[10px] font-black uppercase tracking-[0.25em] text-gold mb-1 block">Information Resource</span>
                     <h2 className="text-xl md:text-2xl font-sans font-black text-[#011122] flex items-center gap-3">
                       <MessageSquare className="w-5 h-5 text-gold animate-none" />
                       Frequently Asked Questions
                     </h2>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {post.faqs.map((faq, idx) => (
-                      <div key={idx} className="group border-b border-[#011122]/5 pb-3 pt-2 last:border-0">
-                        <h4 className="text-sm md:text-base font-sans font-black text-[#011122] mb-1 group-hover:text-gold transition-colors">
+                      <div key={idx} className="group border-b border-[#011122]/5 pb-2 pt-1.5 last:border-0">
+                        <h4 className="text-sm md:text-base font-sans font-black text-[#011122] mb-0.5 group-hover:text-gold transition-colors">
                           {faq.question}
                         </h4>
-                        <p className="text-xs md:text-sm text-muted font-sans leading-relaxed">
+                        <p className="text-xs md:text-sm text-muted font-sans leading-snug">
                           {faq.answer}
                         </p>
                       </div>
