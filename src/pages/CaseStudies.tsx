@@ -133,7 +133,7 @@ export default function CaseStudies() {
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
                 <span className="text-2xl font-serif text-white flex items-center gap-2">
                   {stat.value === '5.0' ? '5' : (stat.value === '$5M+' ? '$6M+' : stat.value)}
-                  {stat.iconName === 'Star' && <Star className="w-5 h-5 fill-amber-400 text-amber-400" />}
+                  {(stat.iconName === 'Star' || stat.label.toLowerCase().includes('google rating') || stat.label.toLowerCase().includes('google reviews')) && <Star className="w-5 h-5 fill-amber-400 text-amber-400" />}
                 </span>
                 <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
               </div>
