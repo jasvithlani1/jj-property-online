@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Percent, Coins } from 'lucide-react';
+import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Coins, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import SEO from '../components/SEO';
@@ -132,7 +132,7 @@ export default function CaseStudies() {
             ]).map((stat: any) => (
               <div key={stat.label} className="flex items-center gap-3 px-6 py-4 rounded-[1.25rem] bg-[#011122] shadow-xl border border-gold/20 hover:-translate-y-1 transition-transform duration-300">
                 {stat.iconName === 'Star' && <Star className="w-4 h-4 fill-amber-400 text-amber-400" />}
-                <span className="text-2xl font-serif text-white">{stat.value}</span>
+                <span className="text-2xl font-serif text-white">{stat.value === '$5M+' ? '$6M+' : stat.value}</span>
                 <span className="text-xs font-bold uppercase tracking-widest text-gold">{stat.label}</span>
               </div>
             ))}
@@ -268,7 +268,14 @@ export default function CaseStudies() {
           </div>
 
           <div className="space-y-5">
-            {acquisitions.map((prop, i) => {
+            {[...acquisitions].sort((a, b) => {
+              const parseDate = (mStr: string) => {
+                const [mon, yr] = mStr.split('-');
+                const monthIndex = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].indexOf(mon);
+                return new Date(2000 + parseInt(yr), monthIndex).getTime();
+              };
+              return parseDate(b.month) - parseDate(a.month);
+            }).map((prop, i) => {
               const [beds, baths, cars] = prop.config.split(' / ');
               return (
               <motion.div 
@@ -309,7 +316,10 @@ export default function CaseStudies() {
                     
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Month</span>
-                      <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
+                      <div className="flex items-center justify-center gap-2">
+                        <Calendar className="w-5 h-5 text-gold" />
+                        <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
+                      </div>
                     </div>
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
@@ -341,7 +351,7 @@ export default function CaseStudies() {
                     <div className="flex flex-col pt-4 border-t border-gold/10">
                       <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
                       <div className="flex items-center justify-center gap-2">
-                        <Percent className="w-5 h-5 text-gold" />
+                        <TrendingUp className="w-5 h-5 text-gold" />
                         <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
                       </div>
                     </div>
@@ -358,12 +368,10 @@ export default function CaseStudies() {
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
                   
                   {/* Deal Done Badge */}
-                  {prop.dealDone && (
-                    <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                      Deal Done
-                    </div>
-                  )}
+                  <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                    Deal Done
+                  </div>
                 </div>
               </motion.div>
             )})}
