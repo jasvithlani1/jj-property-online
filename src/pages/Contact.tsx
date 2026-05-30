@@ -318,6 +318,7 @@ export default function Contact() {
  <p className="text-center text-xs text-red-500 mt-4 font-bold uppercase tracking-widest">
  Network error. Please try again or email us directly.
  </p>
+ )}
  </div>
  </form>
  </>
