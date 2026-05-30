@@ -129,7 +129,7 @@ export default function CommercialProperty() {
               {/* Mobile Image */}
               <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
                 <img
-                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/comm_1.png"}
+                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-YiWa_o-8-rs?auto=format&fit=crop&q=80&w=800"}
                   alt="Modern Commercial Building"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -167,7 +167,7 @@ export default function CommercialProperty() {
               className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/comm_1.png"}
+                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-YiWa_o-8-rs?auto=format&fit=crop&q=80&w=800"}
                 alt="Modern Commercial Building"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -196,7 +196,7 @@ export default function CommercialProperty() {
                   {/* Mobile Image */}
                   <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
                     <img
-                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/comm_2.png' : index === 1 ? '/images/acquisitions/comm_3.png' : '/images/acquisitions/comm_4.png'))}
+                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? 'https://images.unsplash.com/photo-nN28PjFOOLI?auto=format&fit=crop&q=80&w=800' : index === 1 ? 'https://images.unsplash.com/photo-y5UqZUZpYUs?auto=format&fit=crop&q=80&w=800' : 'https://images.unsplash.com/photo-181vbfHMT0c?auto=format&fit=crop&q=80&w=800'))}
                       alt={pillar.title}
                       className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
@@ -223,7 +223,7 @@ export default function CommercialProperty() {
 
                 <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
-                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/comm_2.png' : index === 1 ? '/images/acquisitions/comm_3.png' : '/images/acquisitions/comm_4.png'))}
+                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? 'https://images.unsplash.com/photo-nN28PjFOOLI?auto=format&fit=crop&q=80&w=800' : index === 1 ? 'https://images.unsplash.com/photo-y5UqZUZpYUs?auto=format&fit=crop&q=80&w=800' : 'https://images.unsplash.com/photo-181vbfHMT0c?auto=format&fit=crop&q=80&w=800'))}
                     alt={pillar.title}
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
@@ -257,11 +257,11 @@ export default function CommercialProperty() {
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">
                 {(pageData?.process?.steps || [
-                  { stepNumber: '01', title: 'Step 1 - Investment Strategy & Acquisition Thesis', body: 'Build a clear commercial acquisition thesis aligned with your investment goals, whether targeting capital growth, strong rental yield, or a balanced strategy that supports long-term wealth creation.', image: '/images/acquisitions/comm_5.png' },
-                  { stepNumber: '02', title: 'Step 2 - Strategic Long-Term Property Acquisition Plan', body: 'Develop a 5-to-10-year commercial acquisition plan aligned with your income, borrowing capacity, and risk appetite, creating a clear roadmap for sustainable portfolio growth.', image: '/images/acquisitions/comm_6.png' },
-                  { stepNumber: '03', title: 'Step 3 - Strategic Location Diversification', body: 'Diversify your commercial property investments across key Australian locations to reduce concentration risk and capture growth opportunities across different market cycles.', image: '/images/acquisitions/comm_7.png' },
-                  { stepNumber: '04', title: 'Step 4 - Balancing Growth Potential with Cash Flow', body: 'Balance future capital growth with reliable rental income by choosing commercial assets that keep your portfolio stable, manageable, and positioned for long-term returns.', image: '/images/acquisitions/comm_8.png' },
-                  { stepNumber: '05', title: 'Step 5 - Plan Future Property Acquisitions', body: 'Plan every purchase with future growth in mind, reviewing equity, borrowing capacity, and tax considerations to support steady progress toward your next commercial property acquisition.', image: '/images/acquisitions/comm_9.png' }
+                  { stepNumber: '01', title: 'Step 1 - Investment Strategy & Acquisition Thesis', body: 'Build a clear commercial acquisition thesis aligned with your investment goals, whether targeting capital growth, strong rental yield, or a balanced strategy that supports long-term wealth creation.', image: 'https://images.unsplash.com/photo-hjtkZbM9zcI?auto=format&fit=crop&q=80&w=800' },
+                  { stepNumber: '02', title: 'Step 2 - Strategic Long-Term Property Acquisition Plan', body: 'Develop a 5-to-10-year commercial acquisition plan aligned with your income, borrowing capacity, and risk appetite, creating a clear roadmap for sustainable portfolio growth.', image: 'https://images.unsplash.com/photo-Qu72vs_lXE0?auto=format&fit=crop&q=80&w=800' },
+                  { stepNumber: '03', title: 'Step 3 - Strategic Location Diversification', body: 'Diversify your commercial property investments across key Australian locations to reduce concentration risk and capture growth opportunities across different market cycles.', image: 'https://images.unsplash.com/photo-suzM2u2HsUA?auto=format&fit=crop&q=80&w=800' },
+                  { stepNumber: '04', title: 'Step 4 - Balancing Growth Potential with Cash Flow', body: 'Balance future capital growth with reliable rental income by choosing commercial assets that keep your portfolio stable, manageable, and positioned for long-term returns.', image: 'https://images.unsplash.com/photo-GEVH1dQ8Trc?auto=format&fit=crop&q=80&w=800' },
+                  { stepNumber: '05', title: 'Step 5 - Plan Future Property Acquisitions', body: 'Plan every purchase with future growth in mind, reviewing equity, borrowing capacity, and tax considerations to support steady progress toward your next commercial property acquisition.', image: 'https://images.unsplash.com/photo-OStnKDR3hhY?auto=format&fit=crop&q=80&w=800' }
                 ]).map((card: any, i: number, arr: any[]) => (
                   <div key={card.stepNumber || i} className="flex items-stretch gap-4 md:gap-6 relative">
                     <div className="relative w-4 shrink-0">
@@ -295,7 +295,7 @@ export default function CommercialProperty() {
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
-                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? '/images/acquisitions/comm_5.png' : i === 1 ? '/images/acquisitions/comm_6.png' : i === 2 ? '/images/acquisitions/comm_7.png' : i === 3 ? '/images/acquisitions/comm_8.png' : '/images/acquisitions/comm_9.png'))}
+                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? 'https://images.unsplash.com/photo-hjtkZbM9zcI?auto=format&fit=crop&q=80&w=800' : i === 1 ? 'https://images.unsplash.com/photo-Qu72vs_lXE0?auto=format&fit=crop&q=80&w=800' : i === 2 ? 'https://images.unsplash.com/photo-suzM2u2HsUA?auto=format&fit=crop&q=80&w=800' : i === 3 ? 'https://images.unsplash.com/photo-GEVH1dQ8Trc?auto=format&fit=crop&q=80&w=800' : 'https://images.unsplash.com/photo-OStnKDR3hhY?auto=format&fit=crop&q=80&w=800'))}
                             alt={card.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
