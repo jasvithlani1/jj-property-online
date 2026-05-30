@@ -240,17 +240,17 @@ export default function BlogDetail() {
               {post.title}
             </h1>
 
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-14 h-14 rounded-xl border border-gold/30 overflow-hidden">
+            <div className="flex items-center justify-center gap-3 sm:gap-4 max-w-full overflow-hidden px-2">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl border border-gold/30 overflow-hidden shrink-0">
                 {post.author?.image ? (
                   <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
                 ) : (
                   <img src="/author-profile.png" alt={post.author?.name || 'Alex'} className="w-full h-full object-cover" />
                 )}
               </div>
-              <div>
-                <p className="text-sm font-bold text-white uppercase tracking-widest leading-none mb-1">{post.author?.name || 'Alex'}</p>
-                <p className="text-[10px] text-white/50 uppercase tracking-[0.15em] font-bold">Licensed Buyers Agent, JJ Property Partner</p>
+              <div className="text-left min-w-0">
+                <p className="text-[11px] sm:text-sm font-bold text-white uppercase tracking-widest leading-none mb-1 whitespace-nowrap">{post.author?.name || 'Alex'}</p>
+                <p className="text-[7.5px] sm:text-[10px] text-white/50 uppercase tracking-[0.15em] font-bold whitespace-nowrap overflow-hidden text-ellipsis">Licensed Buyers Agent, JJ Property Partner</p>
               </div>
             </div>
           </motion.div>

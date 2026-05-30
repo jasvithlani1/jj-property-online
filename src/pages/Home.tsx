@@ -662,7 +662,9 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-sans font-black mb-2 leading-[1.0] text-[#011122]">
                 {homeData?.processSection?.heading ? (
                   <>
-                    {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-sans font-black">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
+                    {homeData.processSection.heading.split('5-Step')[0]?.trim()} <br />
+                    <span className="text-gold font-sans font-black">5-Step</span> <br />
+                    {homeData.processSection.heading.split('5-Step')[1]?.trim()}
                   </>
                 ) : (
                   <>Our Proven <br />
