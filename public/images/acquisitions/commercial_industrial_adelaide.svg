@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E88E5"/>
+      <stop offset="60%" stop-color="#64B5F6"/>
+      <stop offset="100%" stop-color="#BBDEFB"/>
+    </linearGradient>
+    <linearGradient id="wall1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eceff1"/>
+      <stop offset="100%" stop-color="#cfd8dc"/>
+    </linearGradient>
+    <linearGradient id="wall2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#e0e0e0"/>
+    </linearGradient>
+    <linearGradient id="metalPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#78909C"/>
+      <stop offset="100%" stop-color="#607D8B"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#80cce8"/>
+      <stop offset="100%" stop-color="#50a8cc"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <!-- Clouds -->
+  <ellipse cx="500" cy="70" rx="100" ry="30" fill="white" opacity="0.7"/>
+  <ellipse cx="540" cy="65" rx="65" ry="24" fill="white" opacity="0.8"/>
+  <ellipse cx="150" cy="100" rx="80" ry="25" fill="white" opacity="0.5"/>
+  <!-- Main industrial building -->
+  <rect x="80" y="230" width="450" height="250" fill="url(#wall1)" rx="2"/>
+  <!-- Metal cladding panels -->
+  <g stroke="#90A4AE" stroke-width="1" opacity="0.4">
+    <line x1="80" y1="260" x2="530" y2="260"/>
+    <line x1="80" y1="290" x2="530" y2="290"/>
+    <line x1="80" y1="320" x2="530" y2="320"/>
+    <line x1="80" y1="350" x2="530" y2="350"/>
+    <line x1="80" y1="380" x2="530" y2="380"/>
+    <line x1="80" y1="410" x2="530" y2="410"/>
+    <line x1="80" y1="440" x2="530" y2="440"/>
+  </g>
+  <!-- Roof parapet -->
+  <rect x="75" y="222" width="460" height="12" fill="url(#metalPanel)"/>
+  <!-- Office wing -->
+  <rect x="530" y="200" width="200" height="280" fill="url(#wall2)" rx="2"/>
+  <rect x="525" y="192" width="210" height="12" fill="url(#metalPanel)"/>
+  <!-- Office windows -->
+  <g fill="url(#glass)" stroke="#5a8a9a" stroke-width="1.5">
+    <rect x="550" y="220" width="70" height="50" rx="2"/>
+    <rect x="640" y="220" width="70" height="50" rx="2"/>
+    <rect x="550" y="285" width="70" height="50" rx="2"/>
+    <rect x="640" y="285" width="70" height="50" rx="2"/>
+    <rect x="550" y="350" width="70" height="50" rx="2"/>
+    <rect x="640" y="350" width="70" height="50" rx="2"/>
+  </g>
+  <!-- Office entrance -->
+  <rect x="590" y="420" width="60" height="60" fill="#5aaccc" rx="2"/>
+  <rect x="590" y="420" width="60" height="60" fill="none" stroke="#4a8aaa" stroke-width="2" rx="2"/>
+  <line x1="620" y1="420" x2="620" y2="480" stroke="#4a8aaa" stroke-width="1.5"/>
+  <!-- Loading dock on main building -->
+  <rect x="120" y="350" width="140" height="130" fill="#5a5a5a" rx="2"/>
+  <rect x="130" y="360" width="120" height="80" fill="#424242"/>
+  <!-- Roller door -->
+  <g stroke="#555" stroke-width="1" opacity="0.6">
+    <line x1="130" y1="375" x2="250" y2="375"/>
+    <line x1="130" y1="390" x2="250" y2="390"/>
+    <line x1="130" y1="405" x2="250" y2="405"/>
+    <line x1="130" y1="420" x2="250" y2="420"/>
+    <line x1="130" y1="435" x2="250" y2="435"/>
+  </g>
+  <!-- Second loading dock -->
+  <rect x="310" y="350" width="140" height="130" fill="#5a5a5a" rx="2"/>
+  <rect x="320" y="360" width="120" height="80" fill="#424242"/>
+  <g stroke="#555" stroke-width="1" opacity="0.6">
+    <line x1="320" y1="375" x2="440" y2="375"/>
+    <line x1="320" y1="390" x2="440" y2="390"/>
+    <line x1="320" y1="405" x2="440" y2="405"/>
+    <line x1="320" y1="420" x2="440" y2="420"/>
+    <line x1="320" y1="435" x2="440" y2="435"/>
+  </g>
+  <!-- Company sign -->
+  <rect x="150" y="245" width="280" height="35" fill="#1565C0" rx="3"/>
+  <text x="290" y="270" text-anchor="middle" fill="white" font-family="Arial" font-size="18" font-weight="bold">INDUSTRIAL PARK</text>
+  <!-- Ground / Concrete -->
+  <rect x="0" y="480" width="800" height="120" fill="#a0a098"/>
+  <!-- Fencing -->
+  <g stroke="#888" stroke-width="2">
+    <line x1="30" y1="460" x2="30" y2="500"/>
+    <line x1="60" y1="460" x2="60" y2="500"/>
+    <line x1="30" y1="470" x2="60" y2="470"/>
+    <line x1="30" y1="490" x2="60" y2="490"/>
+  </g>
+  <!-- Landscaping strip -->
+  <rect x="530" y="475" width="200" height="10" fill="#4a8a3a"/>
+  <ellipse cx="560" cy="470" rx="15" ry="12" fill="#3d9545"/>
+  <ellipse cx="600" cy="468" rx="18" ry="14" fill="#45a055"/>
+  <ellipse cx="650" cy="470" rx="15" ry="12" fill="#3d9545"/>
+  <ellipse cx="700" cy="468" rx="18" ry="14" fill="#45a055"/>
+  <!-- Parking area markings -->
+  <g stroke="white" stroke-width="2" opacity="0.6">
+    <line x1="100" y1="510" x2="100" y2="560"/>
+    <line x1="160" y1="510" x2="160" y2="560"/>
+    <line x1="220" y1="510" x2="220" y2="560"/>
+    <line x1="280" y1="510" x2="280" y2="560"/>
+    <line x1="340" y1="510" x2="340" y2="560"/>
+  </g>
+  <!-- Utility pole -->
+  <rect x="755" y="300" width="6" height="200" fill="#6a5a4a"/>
+  <line x1="740" y1="320" x2="780" y2="320" stroke="#6a5a4a" stroke-width="3"/>
+  <!-- Text overlay -->
+  <rect x="0" y="530" width="800" height="70" fill="rgba(0,30,60,0.7)"/>
+  <text x="400" y="565" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Light Industrial — Adelaide</text>
+  <text x="400" y="590" text-anchor="middle" fill="#BBDEFB" font-family="Arial, sans-serif" font-size="14">Modern Commercial Industrial Property</text>
+</svg>

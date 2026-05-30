@@ -225,7 +225,7 @@ export default function BlogDetail() {
                 </span>
               )}
             </div>
-            <div className="flex items-center justify-center gap-4 mb-4 text-xs font-bold uppercase tracking-[0.15em] text-white/60">
+            <div className="flex items-center justify-center gap-4 mb-4 text-xs font-bold uppercase tracking-[0.15em] text-gold">
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4 text-gold" />
                 {new Date(post.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}

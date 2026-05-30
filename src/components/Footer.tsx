@@ -1,4 +1,4 @@
-import { ArrowUp, Mail, Phone, Award, Hash } from 'lucide-react';
+import { ArrowUp, Mail, Phone, Award, Hash, MapPin } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import Link from './Link';
 
@@ -44,7 +44,7 @@ export default function Footer() {
               className="group flex flex-row items-center text-left gap-4 mb-6 md:mb-8"
             >
               <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
-                <img src="/logo.png?v=4" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
+                <img src="/logo.png?v=5" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="flex flex-col">
                 <div className="font-sans font-black text-base sm:text-4xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
@@ -96,6 +96,13 @@ export default function Footer() {
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:col-span-1">
             <h4 className="text-sm font-bold uppercase tracking-[0.2em] text-gold mb-4 md:mb-8 border-b border-gold/20 pb-2 inline-block font-sans">Connect</h4>
             <ul className="space-y-6 font-sans text-white/60">
+              <li className="flex flex-col items-center lg:items-start gap-2">
+                <div className="flex items-center gap-3 text-white">
+                  <MapPin className="w-4 h-4 text-gold" />
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">Address</span>
+                </div>
+                <span className="text-sm text-white/80">6-10 Charles Street, Parramatta, NSW 2150</span>
+              </li>
               <li className="flex flex-col items-center lg:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Mail className="w-4 h-4 text-gold" />

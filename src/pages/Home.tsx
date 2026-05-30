@@ -357,7 +357,7 @@ export default function Home() {
                   {heroSlides[currentSlide].heading}
                 </h1>
 
-                <p className="text-sm sm:text-lg max-w-2xl mt-1 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
+                <p className="text-base sm:text-2xl font-semibold max-w-2xl mt-1 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
                   {heroSlides[currentSlide].subheading}
                 </p>
               </motion.div>
@@ -665,7 +665,9 @@ export default function Home() {
                     {homeData.processSection.heading.replace('5-Step', '')} <span className="text-gold font-sans font-black">5-Step</span> {homeData.processSection.heading.split('5-Step')[1]}
                   </>
                 ) : (
-                  <>Our Proven <span className="text-gold font-sans font-black">5-Step</span> Buying Approach</>
+                  <>Our Proven <br />
+                  <span className="text-gold font-sans font-black">5-Step</span> <br />
+                  Buying Approach</>
                 )}
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
@@ -829,7 +831,7 @@ export default function Home() {
         <section id="reviews" className="relative py-[1px] mt-3.5 bg-white overflow-hidden flex flex-col items-center">
           <div className="mb-2 text-center">
             <div className="flex items-center justify-center gap-2 mb-0.5">
-              <span className="text-4xl font-sans font-black text-black font-bold">5.0</span>
+              <span className="text-4xl font-sans font-black text-black font-bold">5</span>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />)}
               </div>

@@ -203,7 +203,7 @@ export default function Contact() {
  <div>
  <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Our Office</h3>
  <p className="text-base md:text-lg font-sans font-semibold text-[#011122] leading-relaxed">
- {pageData?.details?.address || "Sydney, Australia"}
+ {pageData?.details?.address || "6-10 Charles Street, Parramatta, NSW 2150"}
  </p>
  </div>
  </div>
@@ -317,10 +317,6 @@ export default function Contact() {
  {status === 'error' && (
  <p className="text-center text-xs text-red-500 mt-4 font-bold uppercase tracking-widest">
  Network error. Please try again or email us directly.
- </p>
- )}
- <p className="text-center text-xs text-muted uppercase tracking-widest mt-4">
- Strictly confidential. No spam.
  </p>
  </div>
  </form>
