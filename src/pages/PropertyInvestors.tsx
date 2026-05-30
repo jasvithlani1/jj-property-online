@@ -258,9 +258,9 @@ export default function PropertyInvestors() {
  {/* Right — Scrollable Cards with Timeline */}
  <div className="lg:w-[62%] flex flex-col">
  {(pageData?.process?.steps || [
- { stepNumber: '01', title: 'Step 1 - Investment Thesis & Strategy', body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.', image: '/images/acquisitions/user_prop_19.png' },
+ { stepNumber: '01', title: 'Step 1 - Investment Thesis & Strategy', body: 'Define a clear investment strategy tailored to your goals, focusing on capital growth, rental yield, or a balanced approach that supports your wealth creation objectives.', image: '/images/acquisitions/aus_house_3.png' },
  { stepNumber: '02', title: 'Step 2 - Long-Term Acquisition Roadmap', body: 'Build a 5 to 10 year acquisition plan aligned with your current income, borrowing power, and risk profile to map out a clear path for sustainable growth.', image: '/images/acquisitions/user_prop_20.png' },
- { stepNumber: '03', title: 'Step 3 - Geographic Diversification', body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.', image: '/images/acquisitions/user_prop_21.png' },
+ { stepNumber: '03', title: 'Step 3 - Geographic Diversification', body: 'Spread your property investments across different states and locations to minimise concentration risk and take advantage of varied market cycles across Australia.', image: '/images/acquisitions/aus_house_4.png' },
  { stepNumber: '04', title: 'Step 4 - Growth & Cash Flow Balance', body: 'Identify the right balance between high-growth properties and assets that support stronger cash flow to ensure your portfolio remains healthy and manageable.', image: '/images/acquisitions/modern_beige.png' },
  { stepNumber: '05', title: 'Step 5 - Future Acquisition Planning', body: 'Plan each purchase with the next one in mind, carefully considering your equity position, finance capacity, and tax planning to keep your momentum going.', image: '/images/acquisitions/modern_grey.png' }
  ]).map((card: any, i: number, arr: any[]) => (
@@ -296,7 +296,7 @@ export default function PropertyInvestors() {
  >
  <div className="relative h-56 overflow-hidden">
  <img
- src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? "/images/acquisitions/user_prop_19.png" : i === 1 ? "/images/acquisitions/user_prop_20.png" : i === 2 ? "/images/acquisitions/user_prop_21.png" : i === 3 ? "/images/acquisitions/modern_beige.png" : "/images/acquisitions/modern_grey.png"))}
+ src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? "/images/acquisitions/aus_house_3.png" : i === 1 ? "/images/acquisitions/user_prop_20.png" : i === 2 ? "/images/acquisitions/aus_house_4.png" : i === 3 ? "/images/acquisitions/modern_beige.png" : "/images/acquisitions/modern_grey.png"))}
  alt={card.title}
  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
  />

@@ -129,7 +129,7 @@ export default function CommercialProperty() {
               {/* Mobile Image */}
               <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
                 <img
-                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
+                  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/comm_1.png"}
                   alt="Modern Commercial Building"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -167,7 +167,7 @@ export default function CommercialProperty() {
               className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
             >
               <img
-                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
+                src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/comm_1.png"}
                 alt="Modern Commercial Building"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -196,7 +196,7 @@ export default function CommercialProperty() {
                   {/* Mobile Image */}
                   <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
                     <img
-                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/user_prop_4.png' : index === 1 ? '/images/acquisitions/user_prop_5.png' : '/images/acquisitions/user_prop_6.png'))}
+                      src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/comm_2.png' : index === 1 ? '/images/acquisitions/comm_3.png' : '/images/acquisitions/comm_4.png'))}
                       alt={pillar.title}
                       className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
@@ -223,7 +223,7 @@ export default function CommercialProperty() {
 
                 <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
-                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/user_prop_4.png' : index === 1 ? '/images/acquisitions/user_prop_5.png' : '/images/acquisitions/user_prop_6.png'))}
+                    src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? '/images/acquisitions/comm_2.png' : index === 1 ? '/images/acquisitions/comm_3.png' : '/images/acquisitions/comm_4.png'))}
                     alt={pillar.title}
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
@@ -257,11 +257,11 @@ export default function CommercialProperty() {
               {/* Right — Scrollable Cards with Timeline */}
               <div className="lg:w-[62%] flex flex-col">
                 {(pageData?.process?.steps || [
-                  { stepNumber: '01', title: 'Step 1 - Investment Strategy & Acquisition Thesis', body: 'Build a clear commercial acquisition thesis aligned with your investment goals, whether targeting capital growth, strong rental yield, or a balanced strategy that supports long-term wealth creation.', image: '/images/acquisitions/user_prop_7.png' },
-                  { stepNumber: '02', title: 'Step 2 - Strategic Long-Term Property Acquisition Plan', body: 'Develop a 5-to-10-year commercial acquisition plan aligned with your income, borrowing capacity, and risk appetite, creating a clear roadmap for sustainable portfolio growth.', image: '/images/acquisitions/user_prop_8.png' },
-                  { stepNumber: '03', title: 'Step 3 - Strategic Location Diversification', body: 'Diversify your commercial property investments across key Australian locations to reduce concentration risk and capture growth opportunities across different market cycles.', image: '/images/acquisitions/user_prop_9.png' },
-                  { stepNumber: '04', title: 'Step 4 - Balancing Growth Potential with Cash Flow', body: 'Balance future capital growth with reliable rental income by choosing commercial assets that keep your portfolio stable, manageable, and positioned for long-term returns.', image: '/images/acquisitions/user_prop_10.png' },
-                  { stepNumber: '05', title: 'Step 5 - Plan Future Property Acquisitions', body: 'Plan every purchase with future growth in mind, reviewing equity, borrowing capacity, and tax considerations to support steady progress toward your next commercial property acquisition.', image: '/images/acquisitions/user_prop_11.png' }
+                  { stepNumber: '01', title: 'Step 1 - Investment Strategy & Acquisition Thesis', body: 'Build a clear commercial acquisition thesis aligned with your investment goals, whether targeting capital growth, strong rental yield, or a balanced strategy that supports long-term wealth creation.', image: '/images/acquisitions/comm_5.png' },
+                  { stepNumber: '02', title: 'Step 2 - Strategic Long-Term Property Acquisition Plan', body: 'Develop a 5-to-10-year commercial acquisition plan aligned with your income, borrowing capacity, and risk appetite, creating a clear roadmap for sustainable portfolio growth.', image: '/images/acquisitions/comm_6.png' },
+                  { stepNumber: '03', title: 'Step 3 - Strategic Location Diversification', body: 'Diversify your commercial property investments across key Australian locations to reduce concentration risk and capture growth opportunities across different market cycles.', image: '/images/acquisitions/comm_7.png' },
+                  { stepNumber: '04', title: 'Step 4 - Balancing Growth Potential with Cash Flow', body: 'Balance future capital growth with reliable rental income by choosing commercial assets that keep your portfolio stable, manageable, and positioned for long-term returns.', image: '/images/acquisitions/comm_8.png' },
+                  { stepNumber: '05', title: 'Step 5 - Plan Future Property Acquisitions', body: 'Plan every purchase with future growth in mind, reviewing equity, borrowing capacity, and tax considerations to support steady progress toward your next commercial property acquisition.', image: '/images/acquisitions/comm_9.png' }
                 ]).map((card: any, i: number, arr: any[]) => (
                   <div key={card.stepNumber || i} className="flex items-stretch gap-4 md:gap-6 relative">
                     <div className="relative w-4 shrink-0">
@@ -295,7 +295,7 @@ export default function CommercialProperty() {
                       >
                         <div className="relative h-56 overflow-hidden">
                           <img
-                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? '/images/acquisitions/user_prop_7.png' : i === 1 ? '/images/acquisitions/user_prop_8.png' : i === 2 ? '/images/acquisitions/user_prop_9.png' : i === 3 ? '/images/acquisitions/user_prop_10.png' : '/images/acquisitions/user_prop_11.png'))}
+                            src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? '/images/acquisitions/comm_5.png' : i === 1 ? '/images/acquisitions/comm_6.png' : i === 2 ? '/images/acquisitions/comm_7.png' : i === 3 ? '/images/acquisitions/comm_8.png' : '/images/acquisitions/comm_9.png'))}
                             alt={card.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
@@ -459,56 +459,52 @@ export default function CommercialProperty() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative py-4 bg-white px-8">
-          <div className="max-w-7xl mx-auto">
-            {/* Centered Header */}
-            <div className="text-center mb-6">
-              <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2">
-                Frequently <span className="text-gold">Asked Questions.</span>
+        <section className="relative py-[1px] bg-gradient-to-b from-white to-neutral-50 px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
+            <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-2">
+              <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2">
+                Frequently <br className="hidden lg:block" />
+                <span className="text-gold">Asked Questions.</span>
               </h2>
-              <p className="text-muted text-lg font-sans leading-relaxed">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
+              <p className="text-muted text-lg font-sans text-left lg:text-left">Strategic insights for property businesses and commercial investors building nationwide portfolios.</p>
             </div>
 
-            {/* Left-aligned FAQ List */}
-            <div className="flex flex-col gap-1">
+            <div className="lg:col-span-8 flex flex-col gap-1">
               {(pageData?.faqs || commercialFaqs).map((faq: any, index: number) => (
-                <motion.div 
-                  key={index} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="border-b border-gold/20 pb-0"
-                >
+                <div key={index} className="border-b border-black/10">
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full flex items-center justify-between py-3 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full flex items-center justify-between py-2 hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
                   >
-                    <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+                    <span className={`flex-1 text-left text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
                       {faq.question}
                     </span>
                     <motion.div
                       animate={{ rotate: openFaq === index ? 45 : 0 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                      className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
+                      className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-black/10 text-black group-hover:border-gold group-hover:text-gold'}`}
+                      aria-hidden="true"
                     >
-                      <Plus className="w-6 h-6" />
+                      <Plus className="w-5 h-5" />
                     </motion.div>
                   </button>
                   <AnimatePresence>
                     {openFaq === index && (
                       <motion.div
+                        id={`faq-answer-${index}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden"
                       >
-                        <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-left">{faq.answer.replace(/—/g, '-')}</p>
+                        <p className="text-base text-muted font-sans leading-relaxed pb-4 text-left px-4">{faq.answer.replace(/—/g, '-')}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

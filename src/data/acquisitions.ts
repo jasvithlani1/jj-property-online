@@ -428,7 +428,7 @@ export const acquisitions: Acquisition[] = [
     size: '112 sqm',
     growth: '+70,000',
     yield: '6.37%',
-    image: '/images/acquisitions/prop_1.png'
+    image: '/images/acquisitions/off_market_house.png'
   },
   {
     city: 'Parramatta',
@@ -441,6 +441,6 @@ export const acquisitions: Acquisition[] = [
     size: '86 sqm',
     growth: '+30,000',
     yield: '6.35%',
-    image: '/images/acquisitions/prop_2.png'
+    image: '/images/acquisitions/first_home_buyers_acquisitions.jpg'
   }
 ];

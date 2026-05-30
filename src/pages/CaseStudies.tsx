@@ -204,17 +204,17 @@ export default function CaseStudies() {
                     </div>
 
                     {/* Minimalist Body */}
-                    <div className="flex flex-col p-8 md:p-10 items-center text-center">
+                    <div className="flex flex-col flex-1 p-8 md:p-10 items-center text-center">
                       <div className="flex items-center justify-center gap-3 mb-3">
                         <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">{study.location}</span>
                         <div className="h-px w-8 bg-gold/30" />
                       </div>
                       
-                      <h2 className="text-2xl md:text-3xl font-serif text-[#011122] mb-2 group-hover:text-gold transition-colors duration-300 leading-tight">
+                      <h2 className="text-2xl md:text-3xl font-serif text-[#011122] mb-2 group-hover:text-gold transition-colors duration-300 leading-tight flex-1">
                         {study.title}
                       </h2>
 
-                      <div className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#011122] group-hover:gap-4 transition-all duration-300">
+                      <div className="mt-auto flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#011122] group-hover:gap-4 transition-all duration-300">
                         <span>View Case Study</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </div>
