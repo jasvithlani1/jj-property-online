@@ -26,6 +26,8 @@ interface SanityCaseStudy {
   seo?: { metaTitle: string; metaDescription: string; ogImage: any };
   gallery?: any[];
   propertyDetails?: { label: string; value: string }[];
+  strategicAdvantages?: { title: string; desc: string }[];
+  caseNumber?: string;
 }
 
 export default function CaseStudyDetail() {
@@ -78,7 +80,9 @@ export default function CaseStudyDetail() {
             strategy: localStudy.strategy,
             outcome: localStudy.outcome,
             stats: localStudy.stats,
-            propertyDetails: localStudy.propertyDetails
+            propertyDetails: localStudy.propertyDetails,
+            strategicAdvantages: localStudy.strategicAdvantages,
+            caseNumber: localStudy.caseNumber
           };
         } else {
           data = await client.fetch(query, { slug: id });
@@ -182,7 +186,7 @@ export default function CaseStudyDetail() {
           >
             <div className="flex items-center gap-2.5 mb-2">
               <span className="px-3 py-1 rounded-full border border-gold/30 bg-gold/5 text-gold text-[9px] font-black uppercase tracking-widest">
-                {study.tag || 'Case Study'}
+                {study.caseNumber ? `CASE STUDY ${study.caseNumber}` : (study.tag || 'Case Study')}
               </span>
               <span className="text-muted/60 text-xs font-sans uppercase tracking-[0.15em] flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-gold" />
@@ -282,27 +286,24 @@ export default function CaseStudyDetail() {
             </motion.div>
 
             {/* Minimalist Delivered Value Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-6 md:p-8 rounded-[1.75rem] border border-gold/15 bg-gold/5 relative overflow-hidden"
-            >
-              <h3 className="text-xs font-sans font-black text-[#011122] mb-3 uppercase tracking-wider">Strategic Advantages Delivered</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                {[
-                  { title: "Off-Market Advantage", desc: "Secured ahead of public listing, eliminating competition." },
-                  { title: "Value Optimization", desc: "Acquired below independent valuation threshold." },
-                  { title: "Risk Mitigation", desc: "Comprehensive due diligence uncovered zero hidden issues." },
-                  { title: "Strategic Terms", desc: "Flexible settlement periods tailored to the client brief." }
-                ].map((item, i) => (
-                  <div key={i} className="space-y-0.5">
-                    <h4 className="font-sans font-black text-[#011122] text-xs">{item.title}</h4>
-                    <p className="text-muted text-[11px] leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            {study.strategicAdvantages && study.strategicAdvantages.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="p-6 md:p-8 rounded-[1.75rem] border border-gold/15 bg-gold/5 relative overflow-hidden"
+              >
+                <h3 className="text-xs font-sans font-black text-[#011122] mb-3 uppercase tracking-wider">Strategic Advantages Delivered</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  {study.strategicAdvantages.map((item, i) => (
+                    <div key={i} className="space-y-0.5">
+                      <h4 className="font-sans font-black text-[#011122] text-xs">{item.title}</h4>
+                      <p className="text-muted text-[11px] leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </div>
 
           {/* Editorial Sidebar */}
