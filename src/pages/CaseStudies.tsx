@@ -206,7 +206,10 @@ export default function CaseStudies() {
                     {/* Minimalist Body */}
                     <div className="flex flex-col flex-1 p-8 md:p-10 items-center text-center">
                       <div className="flex items-center justify-center gap-3 mb-3">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">{study.location}</span>
+                        <div className="h-px w-8 bg-gold/30" />
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+                          {study.location ? study.location.split(',').pop()?.trim() : ''}
+                        </span>
                         <div className="h-px w-8 bg-gold/30" />
                       </div>
                       
