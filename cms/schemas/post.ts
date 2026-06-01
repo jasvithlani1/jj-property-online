@@ -94,6 +94,20 @@ export default {
       description: 'Highlight this post at the top of the blog page.',
     },
     {
+      name: 'faqs',
+      title: 'FAQs',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'question', title: 'Question', type: 'string' },
+            { name: 'answer', title: 'Answer', type: 'text' },
+          ],
+        },
+      ],
+    },
+    {
       name: 'seo',
       title: 'SEO Settings',
       type: 'seo',

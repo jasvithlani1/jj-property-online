@@ -144,7 +144,9 @@ export default function Services() {
  seo,
  hero,
  serviceList,
- faqs
+ additionalServices,
+ faqs,
+ finalCta
  }`;
  const data = await client.fetch(query);
  if (data) setPageData(data);

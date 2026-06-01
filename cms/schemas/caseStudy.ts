@@ -34,6 +34,52 @@ export default {
       description: 'Example: "Parramatta, NSW"',
     },
     {
+      name: 'caseNumber',
+      title: 'Case Number',
+      type: 'string',
+      description: 'Example: "01 of 22"',
+    },
+    {
+      name: 'tag',
+      title: 'Tag / Label',
+      type: 'string',
+      description: 'Example: "Owner Occupied — Home Buyer"',
+    },
+    {
+      name: 'tagColor',
+      title: 'Tag Color Class',
+      type: 'string',
+      description: 'CSS class for tag. Example: "bg-gold text-white shadow-lg shadow-gold/20 font-black"',
+    },
+    {
+      name: 'propertyDetails',
+      title: 'Property Details',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'label', type: 'string', title: 'Label' },
+            { name: 'value', type: 'string', title: 'Value' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'strategicAdvantages',
+      title: 'Strategic Advantages Delivered',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'title', type: 'string', title: 'Title' },
+            { name: 'desc', type: 'text', title: 'Description' },
+          ],
+        },
+      ],
+    },
+    {
       name: 'mainImage',
       title: 'Main Image',
       type: 'image',

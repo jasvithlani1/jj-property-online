@@ -23,22 +23,15 @@ export default {
       ],
     },
     {
-      name: 'contactInfo',
-      title: 'Contact Information',
+      name: 'details',
+      title: 'Contact Details',
       type: 'object',
       fields: [
+        { name: 'heading', title: 'Heading', type: 'string' },
         { name: 'email', title: 'Email Address', type: 'string' },
         { name: 'phone', title: 'Phone Number', type: 'string' },
+        { name: 'whatsapp', title: 'WhatsApp Link', type: 'string' },
         { name: 'address', title: 'Office Address', type: 'string' },
-        { name: 'socialLinks', title: 'Social Media Links', type: 'array', of: [
-          {
-            type: 'object',
-            fields: [
-              { name: 'platform', title: 'Platform', type: 'string' },
-              { name: 'url', title: 'URL', type: 'url' },
-            ]
-          }
-        ]},
       ],
     },
   ],
