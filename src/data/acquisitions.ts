@@ -129,7 +129,7 @@ export const acquisitions: Acquisition[] = [
     size: '671 sqm',
     growth: '+100,000',
     yield: '5.89%',
-    image: '/images/acquisitions/user_prop_9.png'
+    image: '/images/acquisitions/aus_house_lawn_3.png'
   },
   {
     city: 'blacks beach',
@@ -402,7 +402,7 @@ export const acquisitions: Acquisition[] = [
     size: '117 sqm',
     growth: '+71,000',
     yield: '7.65%',
-    image: '/images/acquisitions/prop_4.png'
+    image: '/images/acquisitions/aus_house_lawn_2.png'
   },
   {
     city: 'Parramatta',
@@ -415,7 +415,7 @@ export const acquisitions: Acquisition[] = [
     size: '102 sqm',
     growth: '+81,000',
     yield: '7.72%',
-    image: '/images/acquisitions/prop_5.png'
+    image: '/images/acquisitions/aus_house_lawn_1.png'
   },
   {
     city: 'Parramatta',
