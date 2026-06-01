@@ -346,7 +346,6 @@ export default function SmsfProperty() {
  <div className="bg-[#011122] text-white rounded-[3rem] p-8 md:p-16 shadow-2xl relative overflow-hidden group text-center">
  <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 blur-[100px] -mr-32 -mt-4 group-hover:bg-gold/20 transition-colors" />
  <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 blur-[80px] -ml-32 -mb-3" />
- 
  <h3 className="text-3xl sm:text-4xl font-sans font-black text-white mb-4 relative z-10">{pageData?.readiness?.cta?.title || "Discuss Your SMSF Strategy"}</h3>
  <p className="text-white/60 text-base sm:text-lg mb-6 leading-relaxed relative z-10 max-w-xl mx-auto">
  {pageData?.readiness?.cta?.description || "Ready to build your retirement wealth? Our free discovery call will review your fund's goals and map out a compliant property acquisition path."}
@@ -363,59 +362,55 @@ export default function SmsfProperty() {
  </section>
 
  {/* FAQ Section */}
- <section className="relative py-4 bg-white px-8">
- <div className="max-w-7xl mx-auto">
- {/* Centered Header */}
- <div className="text-center mb-6">
- <h2 className="text-4xl md:text-5xl font-sans font-black text-[#011122] leading-tight mb-2">
- Frequently <span className="text-gold">Asked Questions</span>
- </h2>
- <p className="text-muted text-lg font-sans leading-relaxed">Essential insights for buying residential property within super.</p>
- </div>
+ <section className="relative py-[1px] bg-gradient-to-b from-white to-neutral-50 px-8">
+   <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
+     <div className="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left mb-2">
+       <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2">
+         Frequently <br className="hidden lg:block" />
+         <span className="text-gold">Asked Questions.</span>
+       </h2>
+       <p className="text-muted text-lg font-sans text-left lg:text-left">Essential insights for buying residential property within super.</p>
+     </div>
 
- {/* Left-aligned FAQ List */}
- <div className="flex flex-col gap-1">
- {(pageData?.faqs || smsfFaqs).map((faq: any, index: number) => (
- <motion.div 
- key={index} 
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ delay: index * 0.1 }}
- className="border-b border-gold/20 pb-0"
- >
- <button
- onClick={() => setOpenFaq(openFaq === index ? null : index)}
- className="w-full flex items-center justify-between py-3 text-left hover:bg-gold/5 rounded-2xl px-4 transition-all duration-300 group cursor-pointer"
- >
- <span className={`text-xl sm:text-2xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
- {faq.question}
- </span>
- <motion.div
- animate={{ rotate: openFaq === index ? 45 : 0 }}
- transition={{ type: 'spring', stiffness: 200, damping: 20 }}
- className={`w-12 h-12 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-gold/20 text-muted/60 group-hover:border-gold group-hover:text-gold'}`}
- >
- <Plus className="w-6 h-6" />
- </motion.div>
- </button>
- <AnimatePresence>
- {openFaq === index && (
- <motion.div
- initial={{ height: 0, opacity: 0 }}
- animate={{ height: 'auto', opacity: 1 }}
- exit={{ height: 0, opacity: 0 }}
- transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
- className="overflow-hidden"
- >
- <p className="text-lg text-muted font-sans leading-relaxed pb-4 pl-4 pr-4 text-left">{faq.answer}</p>
- </motion.div>
- )}
- </AnimatePresence>
- </motion.div>
- ))}
- </div>
- </div>
+     <div className="lg:col-span-8 flex flex-col gap-1">
+       {(pageData?.faqs || smsfFaqs).map((faq: any, index: number) => (
+         <div key={index} className="border-b border-black/10">
+           <button
+             onClick={() => setOpenFaq(openFaq === index ? null : index)}
+             aria-expanded={openFaq === index}
+             aria-controls={`faq-answer-${index}`}
+             className="w-full flex items-center justify-between py-2 hover:bg-neutral-50 rounded-xl px-2 transition-colors group cursor-pointer"
+           >
+             <span className={`flex-1 text-left text-lg sm:text-xl font-sans font-semibold transition-colors duration-300 ${openFaq === index ? 'text-gold' : 'text-muted group-hover:text-gold'}`}>
+               {faq.question}
+             </span>
+             <motion.div
+               animate={{ rotate: openFaq === index ? 45 : 0 }}
+               transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+               className={`w-10 h-10 rounded-full border flex items-center justify-center shrink-0 transition-colors duration-300 ${openFaq === index ? 'border-gold bg-gold text-white shadow-lg' : 'border-black/10 text-black group-hover:border-gold group-hover:text-gold'}`}
+               aria-hidden="true"
+             >
+               <Plus className="w-5 h-5" />
+             </motion.div>
+           </button>
+           <AnimatePresence>
+             {openFaq === index && (
+               <motion.div
+                 id={`faq-answer-${index}`}
+                 initial={{ height: 0, opacity: 0 }}
+                 animate={{ height: 'auto', opacity: 1 }}
+                 exit={{ height: 0, opacity: 0 }}
+                 transition={{ duration: 0.3, ease: 'easeInOut' }}
+                 className="overflow-hidden"
+               >
+                 <p className="text-base text-muted font-sans leading-relaxed pb-4 text-left px-4">{faq.answer}</p>
+               </motion.div>
+             )}
+           </AnimatePresence>
+         </div>
+       ))}
+     </div>
+   </div>
  </section>
 
  {/* CTA Section */}
