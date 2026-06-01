@@ -288,74 +288,74 @@ export default function CaseStudies() {
                 className="flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-black/5 hover:border-gold/30 transition-colors duration-500"
               >
                 {/* Stats Table */}
-                <div className="flex-1 p-10 md:p-14 flex flex-col justify-center items-center text-center">
-                  <div className="flex items-center justify-center gap-3 mb-6">
+                <div className="flex-1 p-5 min-[380px]:p-8 md:p-14 flex flex-col justify-center items-center text-center">
+                  <div className="flex items-center justify-center gap-3 mb-4 md:mb-6">
                     <div className="h-px w-12 bg-gold/30" />
                     <span className="text-sm font-bold uppercase tracking-[0.3em] text-gold">{prop.state}</span>
                     <div className="h-px w-12 bg-gold/30" />
                   </div>
-                  <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                  <div className="grid grid-cols-2 gap-x-4 min-[380px]:gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-6 w-full">
                     <div className="flex flex-col">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Price</span>
-                      <span className="text-2xl font-serif text-[#011122] font-bold">{prop.price}</span>
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Price</span>
+                      <span className="text-lg min-[380px]:text-xl sm:text-2xl font-serif text-[#011122] font-bold">{prop.price}</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
-                      <div className="flex items-center justify-center gap-4 mt-0.5">
-                        <div className="flex items-center gap-1.5" title="Bedrooms">
-                          <Bed className="w-5 h-5 text-gold" />
-                          <span className="text-xl font-sans text-[#011122] font-semibold">{beds}</span>
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Configuration</span>
+                      <div className="flex items-center justify-center gap-1.5 min-[380px]:gap-2 sm:gap-3 mt-0.5 flex-wrap">
+                        <div className="flex items-center gap-1 min-[380px]:gap-1.5" title="Bedrooms">
+                          <Bed className="w-3.5 h-3.5 min-[380px]:w-4 min-[380px]:h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
+                          <span className="text-sm min-[380px]:text-base sm:text-xl font-sans text-[#011122] font-semibold">{beds}</span>
                         </div>
-                        <div className="flex items-center gap-1.5" title="Bathrooms">
-                          <Bath className="w-5 h-5 text-gold" />
-                          <span className="text-xl font-sans text-[#011122] font-semibold">{baths}</span>
+                        <div className="flex items-center gap-1 min-[380px]:gap-1.5" title="Bathrooms">
+                          <Bath className="w-3.5 h-3.5 min-[380px]:w-4 min-[380px]:h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
+                          <span className="text-sm min-[380px]:text-base sm:text-xl font-sans text-[#011122] font-semibold">{baths}</span>
                         </div>
-                        <div className="flex items-center gap-1.5" title="Car Spaces">
-                          <Car className="w-5 h-5 text-gold" />
-                          <span className="text-xl font-sans text-[#011122] font-semibold">{cars}</span>
+                        <div className="flex items-center gap-1 min-[380px]:gap-1.5" title="Car Spaces">
+                          <Car className="w-3.5 h-3.5 min-[380px]:w-4 min-[380px]:h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
+                          <span className="text-sm min-[380px]:text-base sm:text-xl font-sans text-[#011122] font-semibold">{cars}</span>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Month</span>
-                      <div className="flex items-center justify-center gap-2">
-                        <Calendar className="w-5 h-5 text-gold" />
-                        <span className="text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
+                    <div className="flex flex-col pt-3 sm:pt-4 border-t border-gold/10">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Purchase Month</span>
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                        <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
+                        <span className="text-base sm:text-xl font-sans text-[#011122] font-semibold">{prop.month}</span>
                       </div>
                     </div>
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
-                      <div className="flex items-center justify-center gap-2">
-                        <Coins className="w-5 h-5 text-gold" />
-                        <span className="text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
+                    <div className="flex flex-col pt-3 sm:pt-4 border-t border-gold/10">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Market Rent</span>
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                        <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
+                        <span className="text-base sm:text-xl font-sans text-[#011122] font-semibold">{prop.rental}</span>
                       </div>
                     </div>
                     
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Current Value</span>
-                      <span className="text-xl font-serif text-gold font-bold">{prop.value}</span>
+                    <div className="flex flex-col pt-3 sm:pt-4 border-t border-gold/10">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Current Value</span>
+                      <span className="text-base sm:text-xl font-serif text-gold font-bold">{prop.value}</span>
                     </div>
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Size</span>
-                      <div className="flex items-center justify-center gap-2">
-                        <Maximize className="w-4 h-4 text-gold" />
-                        <span className="text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
+                    <div className="flex flex-col pt-3 sm:pt-4 border-t border-gold/10">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Land Size</span>
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                        <Maximize className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold shrink-0" />
+                        <span className="text-base sm:text-xl font-sans text-[#011122] font-semibold">{prop.size}</span>
                       </div>
                     </div>
 
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Capital Growth</span>
-                      <div className="flex items-center justify-center gap-2">
-                        <TrendingUp className="w-5 h-5 text-emerald-600" />
-                        <span className="text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
+                    <div className="flex flex-col pt-3 sm:pt-4 border-t border-gold/10">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Capital Growth</span>
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                        <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
+                        <span className="text-lg min-[380px]:text-xl sm:text-2xl font-serif text-emerald-600 font-bold">{prop.growth}</span>
                       </div>
                     </div>
-                    <div className="flex flex-col pt-4 border-t border-gold/10">
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
-                      <div className="flex items-center justify-center gap-2">
-                        <LineChart className="w-5 h-5 text-gold" />
-                        <span className="text-2xl font-serif text-gold font-bold">{prop.yield}</span>
+                    <div className="flex flex-col pt-3 sm:pt-4 border-t border-gold/10">
+                      <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#011122] opacity-60 mb-1">Rental Yield</span>
+                      <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+                        <LineChart className="w-4 h-4 sm:w-5 sm:h-5 text-gold shrink-0" />
+                        <span className="text-lg min-[380px]:text-xl sm:text-2xl font-serif text-gold font-bold">{prop.yield}</span>
                       </div>
                     </div>
                   </div>

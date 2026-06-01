@@ -327,7 +327,7 @@ export default function Home() {
         <motion.section
           id="home"
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="relative min-h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-24 sm:pt-28 lg:pt-36 pb-24 sm:pb-12"
+          className="relative min-h-[100dvh] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-[#011122] pt-28 sm:pt-28 lg:pt-36 pb-12 sm:pb-12"
         >
           <div className="absolute inset-0 -z-20">
             <video
@@ -364,7 +364,7 @@ export default function Home() {
             </AnimatePresence>
 
             {/* Carousel Dots */}
-            <div className="flex gap-3 mt-8 sm:mt-12">
+            <div className="flex gap-3 mt-4 sm:mt-8">
               {heroSlides.map((_, idx) => (
                 <button
                   key={idx}
@@ -377,7 +377,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-24 sm:mt-16 w-full px-4 sm:px-0 sm:w-auto">
+          <div className="animate-fade-rise-delay-2 flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-16 w-full px-4 sm:px-0 sm:w-auto">
             <button onClick={openCalendly} className="rounded-full px-10 sm:px-14 py-4 sm:py-5 text-sm sm:text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer w-full sm:w-auto">
               {homeData?.hero?.ctaText || "Book Session"}
             </button>
@@ -830,7 +830,7 @@ export default function Home() {
         </section>
 
         {/* ── Google Reviews ───────────────────────────────────────────────── */}
-        <section id="reviews" className="relative py-[1px] mt-3.5 bg-white overflow-hidden flex flex-col items-center">
+        <section id="reviews" className="relative py-[1px] mt-3.5 bg-white overflow-hidden flex flex-col items-center scroll-mt-32">
           <div className="mb-2 text-center">
             <div className="flex items-center justify-center gap-2 mb-0.5">
               <span className="text-4xl font-sans font-black text-black font-bold">5</span>

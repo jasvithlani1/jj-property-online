@@ -325,7 +325,7 @@ export default function About() {
   <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
   </div>
   
-  <div className="bg-white p-4 sm:p-5 rounded-3xl md:rounded-full shadow-sm border border-gold/10 grid grid-cols-2 md:flex md:flex-row md:flex-wrap justify-between gap-4 md:gap-6 items-center max-w-5xl mx-auto">
+  <div className="bg-white p-3 sm:p-4 md:p-5 rounded-3xl md:rounded-full shadow-sm border border-gold/10 grid grid-cols-1 min-[360px]:grid-cols-2 md:flex md:flex-row md:flex-wrap justify-between gap-2.5 sm:gap-4 md:gap-6 items-center max-w-5xl mx-auto">
   {[
     { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "Licence", value: "20543356" },
     { icon: <Briefcase className="w-5 h-5 text-gold" />, label: "ABN", value: "71 687 187 113" },
@@ -334,14 +334,14 @@ export default function About() {
   ].map((cred, i) => (
     <div 
       key={i} 
-      className="flex items-center gap-3 w-full md:w-auto justify-start p-3 md:p-0 rounded-2xl md:rounded-none bg-neutral-50/50 md:bg-transparent border border-black/5 md:border-none md:border-r md:border-gold/20 md:pr-6 md:last:border-r-0"
+      className="flex items-center gap-2 sm:gap-3 w-full md:w-auto justify-start p-2.5 sm:p-3 md:p-0 rounded-2xl md:rounded-none bg-neutral-50/50 md:bg-transparent border border-black/5 md:border-none md:border-r md:border-gold/20 md:pr-6 md:last:border-r-0 min-w-0"
     >
-      <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gold/10 rounded-full flex items-center justify-center shrink-0 shadow-sm">
         {cred.icon}
       </div>
-      <div className="flex flex-col items-start justify-center">
-        <span className="text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
-        <span className={`text-sm sm:text-base font-sans font-black text-black leading-tight ${cred.label === 'Business' ? 'md:whitespace-nowrap' : 'whitespace-nowrap'}`}>{cred.value}</span>
+      <div className="flex flex-col items-start justify-center min-w-0">
+        <span className="text-[9px] sm:text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
+        <span className={`text-xs min-[400px]:text-sm sm:text-base font-sans font-black text-black leading-tight break-words min-w-0 ${cred.label === 'ABN' ? 'min-[400px]:whitespace-nowrap' : cred.label === 'Business' ? 'md:whitespace-nowrap' : 'whitespace-nowrap'}`}>{cred.value}</span>
       </div>
     </div>
   ))}

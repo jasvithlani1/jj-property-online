@@ -9,6 +9,22 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { blogPosts as localBlogPosts } from '../data/blogs';
 
+// Must mirror the array in Blog.tsx exactly so detail page image = list page image
+const blogCoverImages = [
+  '/images/acquisitions/prop_1.png',
+  '/images/acquisitions/prop_2.png',
+  '/images/acquisitions/prop_3.png',
+  '/images/acquisitions/user_prop_4.png',
+  '/images/acquisitions/user_prop_5.png',
+  '/images/acquisitions/user_prop_6.png',
+  '/images/acquisitions/user_prop_7.png',
+  '/images/acquisitions/user_prop_8.png',
+  '/images/acquisitions/user_prop_9.png',
+  '/images/acquisitions/user_prop_10.png',
+  '/images/acquisitions/user_prop_11.png',
+  '/images/acquisitions/aus_house_1.png',
+];
+
 interface SanityPost {
   _id: string;
   title: string;
@@ -110,12 +126,26 @@ export default function BlogDetail() {
         if (!data) {
           const localPost = localBlogPosts.find(p => p.slug === slug);
           if (localPost) {
+            // Fetch Sanity slugs so we compute the same index as Blog.tsx
+            let matchedCover = localPost.coverImage;
+            try {
+              const sanitySlugsData: string[] = await client.fetch(`*[_type == "post"].slug.current`);
+              const sanitySlugs = new Set(sanitySlugsData || []);
+              const filteredLocalPosts = localBlogPosts.filter(p => !sanitySlugs.has(p.slug));
+              const localIdx = filteredLocalPosts.findIndex(p => p.slug === slug);
+              if (localIdx !== -1) {
+                matchedCover = blogCoverImages[localIdx % blogCoverImages.length];
+              }
+            } catch {
+              // fallback to coverImage from data file
+            }
+
             data = {
               _id: localPost.id,
               title: localPost.title,
               slug: { current: localPost.slug },
               excerpt: localPost.excerpt,
-              mainImage: { asset: { _ref: localPost.coverImage }, isLocal: true },
+              mainImage: { asset: { _ref: matchedCover }, isLocal: true },
               publishedAt: localPost.date,
               body: localPost.content.map(section => {
                 if (section.type === 'list') {
