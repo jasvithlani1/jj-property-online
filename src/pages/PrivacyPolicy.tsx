@@ -119,36 +119,53 @@ export default function PrivacyPolicy() {
             {/* Document Content */}
             <article className="lg:col-span-8 bg-white rounded-[2.5rem] p-8 md:p-12 border border-black/5 shadow-xl shadow-black/[0.01]">
               
-              {/* Business Overview Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 p-6 rounded-2xl bg-neutral-50/80 border border-black/5">
-                <div className="flex gap-3">
-                  <Award className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-muted uppercase tracking-wider">Company</h4>
-                    <p className="text-sm font-bold text-[#011122]">JJ Property Partner PTY LTD</p>
-                    <p className="text-xs text-muted">ABN: 71 687 187 113</p>
+              {/* Business Overview Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                {/* Registry & Licence Card */}
+                <div className="p-6 rounded-2xl bg-neutral-50/80 border border-black/5 flex flex-col gap-4">
+                  <h4 className="text-xs font-black text-[#011122] uppercase tracking-wider border-b border-black/5 pb-2 flex items-center gap-1.5">
+                    <Shield className="w-4 h-4 text-gold" /> Registry & Licence
+                  </h4>
+                  <div className="space-y-4">
+                    <div className="flex gap-3">
+                      <Award className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-[10px] font-bold text-muted uppercase tracking-wider block">Company</span>
+                        <p className="text-sm font-bold text-[#011122]">JJ Property Partner PTY LTD</p>
+                        <p className="text-xs text-muted">ABN: 71 687 187 113</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <Shield className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-[10px] font-bold text-muted uppercase tracking-wider block">REA Licence</span>
+                        <p className="text-sm font-bold text-[#011122]">REA Licence No. 20543356</p>
+                        <p className="text-xs text-muted">NSW Fair Trading</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="flex gap-3">
-                  <Shield className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-muted uppercase tracking-wider">REA Licence</h4>
-                    <p className="text-sm font-bold text-[#011122]">REA Licence No. 20543356</p>
-                    <p className="text-xs text-muted">NSW Fair Trading</p>
-                  </div>
-                </div>
-                <div className="flex gap-3 pt-3 sm:pt-0 border-t sm:border-t-0 sm:border-l border-black/5 sm:pl-4">
-                  <Mail className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-muted uppercase tracking-wider">Email Address</h4>
-                    <a href="mailto:info@jjpropertypartner.com.au" className="text-sm font-bold text-[#011122] hover:text-gold transition-colors">info@jjpropertypartner.com.au</a>
-                  </div>
-                </div>
-                <div className="flex gap-3 pt-3 sm:pt-0 border-t border-black/5 sm:border-l sm:pl-4">
-                  <Phone className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-muted uppercase tracking-wider">Phone / WhatsApp</h4>
-                    <a href="tel:+61481334458" className="text-sm font-bold text-[#011122] hover:text-gold transition-colors">0481 33 44 58</a>
+
+                {/* Contact Information Card */}
+                <div className="p-6 rounded-2xl bg-neutral-50/80 border border-black/5 flex flex-col gap-4">
+                  <h4 className="text-xs font-black text-[#011122] uppercase tracking-wider border-b border-black/5 pb-2 flex items-center gap-1.5">
+                    <Mail className="w-4 h-4 text-gold" /> Contact Channels
+                  </h4>
+                  <div className="space-y-4">
+                    <div className="flex gap-3">
+                      <Mail className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-[10px] font-bold text-muted uppercase tracking-wider block">Email Address</span>
+                        <a href="mailto:info@jjpropertypartner.com.au" className="text-sm font-bold text-[#011122] hover:text-gold transition-colors">info@jjpropertypartner.com.au</a>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <Phone className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-[10px] font-bold text-muted uppercase tracking-wider block">Phone / WhatsApp</span>
+                        <a href="tel:+61481334458" className="text-sm font-bold text-[#011122] hover:text-gold transition-colors">0481 33 44 58</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
