@@ -18,6 +18,8 @@ const FirstHomeBuyers = lazy(() => import('./pages/FirstHomeBuyers'));
 const PropertyInvestors = lazy(() => import('./pages/PropertyInvestors'));
 const SmsfProperty = lazy(() => import('./pages/SmsfProperty'));
 const CommercialProperty = lazy(() => import('./pages/CommercialProperty'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 
 // Loading component for Suspense
 const PageLoader = () => (
@@ -45,6 +47,8 @@ function App() {
             <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           </Routes>
         </Suspense>
       </main>

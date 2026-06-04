@@ -161,9 +161,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-white/40 font-sans gap-4 text-center md:text-left">
           <p>© Copyright 2026 JJ Property Partner. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-gold transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
             <span className="opacity-30">|</span>
-            <Link href="#" className="hover:text-gold transition-colors">Terms</Link>
+            <Link href="/terms-and-conditions" className="hover:text-gold transition-colors">Terms</Link>
           </div>
         </div>
 
