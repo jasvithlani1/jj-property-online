@@ -64,7 +64,7 @@ export const acquisitions: Acquisition[] = [
     size: '715 sqm',
     growth: '+107,000',
     yield: '4.4%',
-    image: '/images/acquisitions/user_prop_4.png'
+    image: '/images/acquisitions/aus_prop_blackstone.png'
   },
   {
     city: 'Port Kennedy',
@@ -103,7 +103,7 @@ export const acquisitions: Acquisition[] = [
     size: '632 sqm',
     growth: '+50,000',
     yield: '4.96%',
-    image: '/images/acquisitions/user_prop_7.png'
+    image: '/images/acquisitions/aus_prop_kawana.png'
   },
   {
     city: 'Craigmore',
@@ -116,7 +116,7 @@ export const acquisitions: Acquisition[] = [
     size: '559 sqm',
     growth: '+75,000',
     yield: '5.43%',
-    image: '/images/acquisitions/user_prop_8.png'
+    image: '/images/acquisitions/aus_prop_craigmore.png'
   },
   {
     city: 'Condon',
@@ -142,7 +142,7 @@ export const acquisitions: Acquisition[] = [
     size: '577 sqm',
     growth: '+30,000',
     yield: '5.2%',
-    image: '/images/acquisitions/user_prop_10.png'
+    image: '/images/acquisitions/aus_prop_blacks_beach.png'
   },
   {
     city: 'Tarneit',
@@ -168,7 +168,7 @@ export const acquisitions: Acquisition[] = [
     size: '1,012 sqm',
     growth: '+40,000',
     yield: '6.75%',
-    image: '/images/acquisitions/user_prop_12.jpg'
+    image: '/images/acquisitions/aus_prop_manilla.png'
   },
   {
     city: 'Brookfield',
