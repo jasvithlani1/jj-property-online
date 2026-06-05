@@ -129,7 +129,7 @@ export default function FirstHomeBuyers() {
   {/* Mobile Image */}
   <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
   <img
-  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_1.png"}
+  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/first_home_hero.jpg"}
   alt="Happy Home Owners"
   className="absolute inset-0 w-full h-full object-cover"
   />
@@ -166,9 +166,9 @@ export default function FirstHomeBuyers() {
   className="hidden lg:flex relative min-h-[400px] h-full rounded-[3rem] overflow-hidden shadow-2xl"
  >
  <img
-  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_1.png"}
- alt="Happy Home Owners"
- className="absolute inset-0 w-full h-full object-cover"
+  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/first_home_hero.jpg"}
+  alt="Happy Home Owners"
+  className="absolute inset-0 w-full h-full object-cover"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
  </motion.div>
