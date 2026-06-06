@@ -38,7 +38,7 @@ const pillars = [
  {
  title: 'Suburb Research & Strategy',
  description: 'We don\'t just look at houses; we look at markets. Using data-driven research, we identify suburbs across Australia that offer the best value, growth potential, and lifestyle fit for your specific budget.\n\n• Suburb performance data\n• Infrastructure & growth analysis\n• Market demand tracking\n• Location-specific risk assessment',
- image: '/images/acquisitions/user_prop_5.png',
+ image: '/images/acquisitions/fhb_pillar_2.png',
  },
  {
  title: 'Due Diligence & Expert Negotiation',
@@ -195,7 +195,7 @@ export default function FirstHomeBuyers() {
   {/* Mobile Image */}
   <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
   <img
-  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_4.png" : index === 1 ? "/images/acquisitions/user_prop_5.png" : "/images/acquisitions/user_prop_6.png"))}
+  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_4.png" : index === 1 ? "/images/acquisitions/fhb_pillar_2.png" : "/images/acquisitions/user_prop_6.png"))}
   alt={pillar.title}
   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
   />
@@ -221,7 +221,7 @@ export default function FirstHomeBuyers() {
 
    <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
   <img
-  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_4.png" : index === 1 ? "/images/acquisitions/user_prop_5.png" : "/images/acquisitions/user_prop_6.png"))}
+  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_4.png" : index === 1 ? "/images/acquisitions/fhb_pillar_2.png" : "/images/acquisitions/user_prop_6.png"))}
   alt={pillar.title}
   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
   />
