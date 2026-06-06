@@ -381,14 +381,14 @@ export default function BlogDetail() {
                 </button>
 
                 <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
-                  <div className="flex items-center gap-3 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
+                  <a href="tel:+61481334458" className="flex items-center gap-3 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
                     <Phone className="w-4 h-4 text-gold shrink-0" />
                     0481 33 44 58
-                  </div>
-                  <div className="flex items-center gap-3 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
+                  </a>
+                  <a href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-3 text-xs font-bold text-white/60 hover:text-white transition-colors cursor-pointer">
                     <Mail className="w-4 h-4 text-gold shrink-0" />
                     info@jjpropertypartner.com.au
-                  </div>
+                  </a>
                 </div>
               </motion.div>
 

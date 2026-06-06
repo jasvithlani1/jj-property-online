@@ -607,7 +607,7 @@ export default function PrivacyPolicy() {
                       <Award className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                       <div>
                         <h4 className="text-xs font-bold text-muted uppercase">Privacy Officer</h4>
-                        <p className="text-base font-bold text-[#011122]">Alex Selvenraja</p>
+                        <p className="text-base font-bold text-[#011122]">Alex</p>
                         <p className="text-xs text-muted">Founder & Principal Buyers Agent</p>
                       </div>
                     </div>
