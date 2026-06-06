@@ -127,7 +127,7 @@ export default function Footer() {
               <li className="flex flex-col items-center lg:items-start gap-2">
                 <div className="flex items-center gap-3 text-white">
                   <Award className="w-4 h-4 text-gold" />
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">License</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-gold">REA Licence</span>
                 </div>
                 <span className="text-sm text-white/80">No. 20543356</span>
               </li>

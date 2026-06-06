@@ -327,7 +327,7 @@ export default function About() {
   
   <div className="bg-white p-3 sm:p-4 md:p-5 rounded-3xl md:rounded-full shadow-sm border border-gold/10 grid grid-cols-1 min-[360px]:grid-cols-2 md:flex md:flex-row md:flex-wrap justify-between gap-2.5 sm:gap-4 md:gap-6 items-center max-w-5xl mx-auto">
   {[
-    { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "Licence", value: "20543356" },
+    { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "REA Licence", value: "20543356" },
     { icon: <Briefcase className="w-5 h-5 text-gold" />, label: "ABN", value: "71 687 187 113" },
     { icon: <Building2 className="w-5 h-5 text-gold" />, label: "Business", value: "JJ Property Partner" },
     { icon: <MapPin className="w-5 h-5 text-gold" />, label: "Location", value: "Sydney, NSW" },

@@ -441,7 +441,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">REA Licence</span>
                     <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">20543356</span>
                   </div>
                   <div className="w-px h-10 bg-gold/20"></div>
@@ -477,7 +477,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover/box:opacity-100 transition-opacity duration-700" />
                 <div className="flex flex-row items-center gap-6 sm:gap-8 relative z-10">
                   <div className="flex flex-col items-center text-center">
-                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">Licence No.</span>
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-muted block mb-0.5 sm:mb-1">REA Licence</span>
                     <span className="text-lg sm:text-2xl font-sans font-black text-white whitespace-nowrap">20543356</span>
                   </div>
                   <div className="w-px h-10 bg-gold/20"></div>
@@ -754,9 +754,9 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 py-1.5"
+            className="relative z-10 py-8 md:py-12"
           >
-            <h2 className="text-3xl md:text-5xl font-sans font-black mb-2 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
+            <h2 className="text-3xl md:text-5xl font-sans font-black mb-8 max-w-4xl mx-auto leading-tight text-white drop-shadow-2xl">
               Start your Real Estate <br className="hidden md:block" />Success Story.
             </h2>
             <button onClick={openCalendly} className="rounded-full px-14 py-5 text-base bg-gold text-white hover:bg-gold-hover hover:scale-[1.03] transition-all duration-300 uppercase tracking-widest font-medium shadow-2xl shadow-gold/30 cursor-pointer">
@@ -784,8 +784,13 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-              {caseStudies.map((story, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              {caseStudies.filter(s => [
+                'forever-home-northwest-sydney',
+                'mackay-coastal-beachside',
+                'melbourne-western-corridor',
+                'perth-eastern-corridor'
+              ].includes(s.id)).map((story, index) => (
                 <Link
                   key={story.id}
                   href={`/case-studies/${story.id}`}
