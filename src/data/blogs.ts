@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 13, 2026',
     author: 'Alex',
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
-    coverImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1400',
+    coverImage: '/images/blog/blog_1.png',
     featured: true,
     content: [
       { type: 'paragraph', text: 'Buying your first home is one of the biggest financial and emotional decisions you will ever make. For many Australians, the process can feel exciting at first, but it quickly becomes overwhelming once you begin dealing with suburb research, borrowing limits, property inspections, contract reviews, auctions, negotiations, and fast-moving market competition.' },
@@ -70,7 +70,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 12, 2026',
     author: 'Alex',
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
-    coverImage: 'https://images.unsplash.com/photo-1460472178825-e5240623abe5?auto=format&fit=crop&q=80&w=1400',
+    coverImage: '/images/blog/blog_2.png',
     content: [
       { type: 'paragraph', text: 'Building a strong property portfolio in Australia takes more than buying one good property and hoping the market does the rest. It requires clear planning, smart suburb selection, careful finance management, and a long-term strategy that supports your lifestyle and wealth goals.' },
       { type: 'paragraph', text: 'A property portfolio buyer’s agent Australia can help investors move from a single-property mindset to a structured portfolio strategy. Instead of chasing hot suburbs or emotional opportunities, the focus is on building a balanced portfolio.' },
@@ -100,7 +100,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 11, 2026',
     author: 'Alex',
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
-    coverImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1400',
+    coverImage: '/images/blog/blog_3.png',
     content: [
       { type: 'paragraph', text: 'Investing in commercial property can be one of the most powerful ways for Australians to build long-term wealth, diversify beyond residential property, and create a stronger income-focused portfolio.' },
       { type: 'paragraph', text: 'However, commercial property is very different from buying a standard residential investment. Lease structures, zoning, tenant quality, outgoings, vacancy risk, finance conditions, and future redevelopment potential all need to be assessed carefully.' },
@@ -130,7 +130,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 10, 2026',
     author: 'Alex',
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
-    coverImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1400',
+    coverImage: '/images/blog/blog_4.png',
     content: [
       { type: 'paragraph', text: 'Buying property in Australia can be exciting, but it can also feel overwhelming when you are trying to compare suburbs, understand market value, and negotiate with selling agents.' },
       { type: 'paragraph', text: 'In a competitive market, many buyers are at a disadvantage because the selling agent works for the vendor. This is where an independent buyers agent Australia service adds real value.' },
@@ -156,7 +156,7 @@ export const blogPosts: BlogPost[] = [
     date: 'February 15, 2026',
     author: 'Alex',
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
-    coverImage: 'https://images.unsplash.com/photo-1624353364964-676100569766?auto=format&fit=crop&q=80&w=1400',
+    coverImage: '/images/blog/blog_5.png',
     content: [
       { type: 'paragraph', text: 'Parramatta is no longer just a suburban hub; it is Sydney\'s second CBD. With massive investment in infrastructure and business, the growth potential is significant for savvy buyers.' }
     ]

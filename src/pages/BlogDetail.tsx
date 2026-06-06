@@ -11,18 +11,18 @@ import { blogPosts as localBlogPosts } from '../data/blogs';
 
 // Must mirror the array in Blog.tsx exactly so detail page image = list page image
 const blogCoverImages = [
+  '/images/blog/blog_1.png',
+  '/images/blog/blog_2.png',
+  '/images/blog/blog_3.png',
+  '/images/blog/blog_4.png',
+  '/images/blog/blog_5.png',
+  '/images/acquisitions/aus_house_1.png',
   '/images/acquisitions/prop_1.png',
   '/images/acquisitions/prop_2.png',
   '/images/acquisitions/prop_3.png',
-  '/images/acquisitions/user_prop_4.png',
-  '/images/acquisitions/user_prop_5.png',
-  '/images/acquisitions/user_prop_6.png',
-  '/images/acquisitions/user_prop_7.png',
-  '/images/acquisitions/user_prop_8.png',
-  '/images/acquisitions/user_prop_9.png',
   '/images/acquisitions/user_prop_10.png',
   '/images/acquisitions/user_prop_11.png',
-  '/images/acquisitions/aus_house_1.png',
+  '/images/acquisitions/aus_house_2.png',
 ];
 
 interface SanityPost {
