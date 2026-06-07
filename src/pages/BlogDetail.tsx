@@ -11,7 +11,7 @@ import { blogPosts as localBlogPosts } from '../data/blogs';
 
 // Must mirror the array in Blog.tsx exactly so detail page image = list page image
 const blogCoverImages = [
-  '/images/blog/blog_1.png',
+  '/images/acquisitions/user_img_blog_2.png',
   '/images/blog/blog_2.png',
   '/images/blog/blog_3.png',
   '/images/blog/blog_4.png',

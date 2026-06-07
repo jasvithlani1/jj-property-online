@@ -8,7 +8,7 @@ import { blogPosts as localBlogPosts } from '../data/blogs';
 
 // Map blog index to local acquisition images so the blog always shows real property photos
 const blogCoverImages = [
-  '/images/blog/blog_1.png',
+  '/images/acquisitions/user_img_blog_2.png',
   '/images/blog/blog_2.png',
   '/images/blog/blog_3.png',
   '/images/blog/blog_4.png',

@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 13, 2026',
     author: 'Alex',
     authorRole: 'Licensed Buyers Agent | Licence No. 20543356',
-    coverImage: '/images/blog/blog_1.png',
+    coverImage: '/images/acquisitions/user_img_blog_2.png',
     featured: true,
     content: [
       { type: 'paragraph', text: 'Buying your first home is one of the biggest financial and emotional decisions you will ever make. For many Australians, the process can feel exciting at first, but it quickly becomes overwhelming once you begin dealing with suburb research, borrowing limits, property inspections, contract reviews, auctions, negotiations, and fast-moving market competition.' },

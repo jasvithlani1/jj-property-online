@@ -158,9 +158,9 @@ export default function Contact() {
  <div className="space-y-5 w-full">
  {/* Email */}
  <div className="flex items-center gap-5 group">
- <div className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
+ <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm block">
  <Mail className="w-5 h-5" />
- </div>
+ </Link>
  <div>
  <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Direct Email</h3>
  <Link href={`mailto:${pageData?.details?.email || "info@jjpropertypartner.com.au"}`} className="text-base md:text-lg font-sans font-semibold text-[#011122] hover:text-gold transition-colors">
@@ -171,9 +171,9 @@ export default function Contact() {
 
  {/* Phone */}
  <div className="flex items-center gap-5 group">
- <div className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm">
+ <Link href={`tel:${pageData?.details?.phone?.replace(/\s/g, '') || "+61481334458"}`} className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-gold group-hover:text-white transition-colors duration-300 shadow-sm block">
  <Phone className="w-5 h-5" />
- </div>
+ </Link>
  <div>
  <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Executive Line</h3>
  <Link href={`tel:${pageData?.details?.phone?.replace(/\s/g, '') || "+61481334458"}`} className="text-base md:text-lg font-sans font-semibold text-[#011122] hover:text-gold transition-colors">
@@ -184,9 +184,9 @@ export default function Contact() {
 
  {/* WhatsApp */}
  <div className="flex items-center gap-5 group">
- <div className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm">
+ <Link href={pageData?.details?.whatsapp || "https://wa.me/61481334458"} className="p-3.5 rounded-2xl bg-gold/10 border border-gold/20 text-gold group-hover:bg-[#25D366] group-hover:text-white transition-colors duration-300 shadow-sm block">
  <FaWhatsapp className="w-5 h-5" />
- </div>
+ </Link>
  <div>
  <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">WhatsApp</h3>
  <Link href={pageData?.details?.whatsapp || "https://wa.me/61481334458"} className="text-base md:text-lg font-sans font-semibold text-[#011122] hover:text-[#25D366] transition-colors">
@@ -197,14 +197,14 @@ export default function Contact() {
 
  {/* Service Areas */}
  <div className="flex items-center gap-5 group pt-2">
- <div className="p-3.5 rounded-2xl bg-neutral-50 border border-neutral-100 text-[#011122] shadow-sm">
+ <Link href={`https://maps.google.com/?q=${encodeURIComponent(pageData?.details?.address || "6-10 Charles Street, Parramatta, NSW 2150")}`} target="_blank" rel="noopener noreferrer" className="p-3.5 rounded-2xl bg-neutral-50 border border-neutral-100 text-[#011122] shadow-sm block hover:bg-neutral-100 transition-colors">
  <MapPin className="w-5 h-5" />
- </div>
+ </Link>
  <div>
  <h3 className="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Our Office</h3>
- <p className="text-base md:text-lg font-sans font-semibold text-[#011122] leading-relaxed">
+ <Link href={`https://maps.google.com/?q=${encodeURIComponent(pageData?.details?.address || "6-10 Charles Street, Parramatta, NSW 2150")}`} target="_blank" rel="noopener noreferrer" className="text-base md:text-lg font-sans font-semibold text-[#011122] leading-relaxed hover:text-gold transition-colors block">
  {pageData?.details?.address || "6-10 Charles Street, Parramatta, NSW 2150"}
- </p>
+ </Link>
  </div>
  </div>
  </div>
