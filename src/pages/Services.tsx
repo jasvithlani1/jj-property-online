@@ -82,7 +82,7 @@ const services = [
  '5 to 10 year portfolio roadmap helping plan your next acquisition systematically',
  'Coordination with your financial adviser, mortgage broker, and accountant'
  ],
- image: '/images/acquisitions/user_prop_13.jpg',
+ image: '/images/acquisitions/user_img_2.png',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',
@@ -104,7 +104,7 @@ const services = [
  'Full suburb and property due diligence meeting strict SMSF investment criteria',
  'End-to-end execution coordinated with your advisory team'
  ],
- image: '/images/acquisitions/user_prop_16.png',
+ image: '/images/acquisitions/user_img_3.png',
  accent: 'gold',
  accentClass: 'bg-gold/5 border-gold/20',
  iconClass: 'bg-gold/10 text-gold',

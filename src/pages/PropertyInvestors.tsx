@@ -33,7 +33,7 @@ const pillars = [
  {
  title: 'Data-Led Research & Selection',
  description: 'We use professional analysis tools to identify high-performing suburbs nationwide. Our research focuses on areas with confirmed infrastructure projects, low vacancy rates, and strong population growth.\n\n• National market exposure\n• Suburb-specific growth drivers\n• Detailed yield & vacancy analysis\n• Infrastructure & development tracking',
- image: '/images/acquisitions/user_prop_13.jpg',
+ image: '/images/acquisitions/user_img_5.png',
  },
  {
  title: 'Off-Market Property Sourcing',
@@ -43,7 +43,7 @@ const pillars = [
  {
  title: 'Strategic Portfolio Execution',
  description: 'We don\'t just buy a house; we execute an acquisition strategy. Every purchase is carefully assessed for its role in your 5-10 year wealth creation plan, equity growth, and future borrowing capacity.\n\n• Professional negotiation representation\n• Managed due diligence & inspections\n• Strategic auction representation\n• Settlement coordination & support',
- image: '/images/acquisitions/user_prop_18.png',
+ image: '/images/acquisitions/user_img_6.png',
  }
 ];
 
@@ -196,7 +196,7 @@ export default function PropertyInvestors() {
  {/* Mobile Image */}
  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
  <img
- src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_13.jpg" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_prop_18.png"))}
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_img_5.png" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_img_6.png"))}
  alt={pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
@@ -223,7 +223,7 @@ export default function PropertyInvestors() {
 
  <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
- src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_13.jpg" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_prop_18.png"))}
+ src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_img_5.png" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_img_6.png"))}
  alt={pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
