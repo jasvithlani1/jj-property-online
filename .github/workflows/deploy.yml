@@ -27,9 +27,6 @@ jobs:
           VITE_SANITY_DATASET: ${{ secrets.VITE_SANITY_DATASET }}
           VITE_SANITY_WRITE_TOKEN: ${{ secrets.VITE_SANITY_WRITE_TOKEN }}
 
-      - name: Inject Brevo API Key
-        run: sed -i "s/YOUR_BREVO_API_KEY/${{ secrets.BREVO_API_KEY }}/g" dist/send-email.php
-
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
