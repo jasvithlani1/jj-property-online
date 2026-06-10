@@ -369,9 +369,8 @@ export default function Home() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Carousel Dots */}
             <div className="flex gap-3 mt-4 sm:mt-8">
-              {activeSlides.map((_, idx) => (
+              {activeSlides.map((_: any, idx: number) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentSlide(idx)}
