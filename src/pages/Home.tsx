@@ -137,12 +137,14 @@ export default function Home() {
   const [homeData, setHomeData] = useState<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const activeSlides = homeData?.hero?.slides?.length > 0 ? homeData.hero.slides : heroSlides;
+
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      setCurrentSlide((prev) => (prev + 1) % activeSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [activeSlides.length]);
 
   useEffect(() => {
     const fetchHomeData = async () => {
@@ -354,18 +356,22 @@ export default function Home() {
                 className="flex flex-col items-center w-full"
               >
                 <h1 className="text-4xl xs:text-[40px] sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[1.05] sm:leading-[0.95] tracking-tight sm:tracking-[-2.46px] text-white font-sans font-black drop-shadow-lg px-4 sm:px-0">
-                  {heroSlides[currentSlide].heading}
+                  {typeof activeSlides[currentSlide].heading === 'string' ? (
+                    <span dangerouslySetInnerHTML={{ __html: activeSlides[currentSlide].heading }} />
+                  ) : (
+                    activeSlides[currentSlide].heading
+                  )}
                 </h1>
 
                 <p className="text-base sm:text-2xl font-semibold max-w-2xl mt-1 sm:mt-8 leading-relaxed text-white/70 font-sans drop-shadow-md">
-                  {heroSlides[currentSlide].subheading}
+                  {activeSlides[currentSlide].subheading}
                 </p>
               </motion.div>
             </AnimatePresence>
 
             {/* Carousel Dots */}
             <div className="flex gap-3 mt-4 sm:mt-8">
-              {heroSlides.map((_, idx) => (
+              {activeSlides.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentSlide(idx)}

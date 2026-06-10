@@ -19,8 +19,20 @@ export default {
       title: 'Hero Section',
       type: 'object',
       fields: [
-        { name: 'heading', title: 'Heading', type: 'string' },
-        { name: 'subheading', title: 'Subheading', type: 'text' },
+        {
+          name: 'slides',
+          title: 'Carousel Slides',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'heading', title: 'Heading (HTML allowed)', type: 'text' },
+                { name: 'subheading', title: 'Subheading', type: 'text' }
+              ]
+            }
+          ]
+        },
         { name: 'ctaText', title: 'CTA Button Text', type: 'string' },
       ],
     },
