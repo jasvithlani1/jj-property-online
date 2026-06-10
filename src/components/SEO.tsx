@@ -14,7 +14,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({ title, description, image, article, keywords, canonical }) => {
   const siteName = 'JJ Property Partner';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
-  const imageUrl = image ? (image.asset ? urlFor(image).width(1200).height(630).url() : image) : '/logo.png?v=5';
+  const imageUrl = image ? (image.asset ? urlFor(image).width(1200).height(630).url() : image) : '/logo.png?v=6';
   const defaultDesc = 'Sydney\'s leading independent buyers agent. Data-driven property acquisition across Australia.';
 
   return (
