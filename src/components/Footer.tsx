@@ -44,7 +44,7 @@ export default function Footer() {
               className="group flex flex-row items-center text-left gap-4 mb-6 md:mb-8"
             >
               <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
-                <img src="/logo.png?v=6" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
+                <img src="/logo.png?v=7" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="flex flex-col">
                 <div className="font-sans font-black text-base sm:text-4xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>

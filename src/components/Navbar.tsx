@@ -72,7 +72,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center">
               <motion.img
-                src="/logo.png?v=6"
+                src="/logo.png?v=7"
                 alt="JJ Logo"
                 className="w-full h-full object-contain cursor-pointer"
                 animate={{ rotate: 360 }}
