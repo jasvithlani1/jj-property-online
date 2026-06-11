@@ -69,7 +69,7 @@ async function generate() {
     client.fetch(`*[_type == "servicePage" && defined(slug.current)] { "slug": slug.current, _updatedAt }`),
     client.fetch(`*[_type == "post" && defined(slug.current)] { "slug": slug.current, _updatedAt }`),
     client.fetch(`*[_type == "caseStudy" && defined(slug.current)] { "slug": slug.current, _updatedAt }`),
-    client.fetch(`*[_type == "siteSettings" && _id == "siteSettings"][0] { llmsTxtContent }`),
+    client.fetch(`*[_type == "siteSettings" && _id == "siteSettings"][0] { llmsTxtContent, robotsDisallow }`),
   ]);
 
   const today = new Date().toISOString().split('T')[0];
@@ -134,6 +134,9 @@ ${entries.map(e => `  <url>
 
   // ── robots.txt ────────────────────────────────────────────────────────────
 
+  const robotsDisallowList = siteSettings?.robotsDisallow || ['/privacy-policy', '/terms-and-conditions', '/thank-you'];
+  const disallowDirectives = robotsDisallowList.map(path => `Disallow: ${path}`).join('\n');
+
   const robots = `# robots.txt — JJ Property Partner
 # Generated: ${today}
 
@@ -141,9 +144,7 @@ User-agent: *
 Allow: /
 
 # Disallow private / utility pages
-Disallow: /privacy-policy
-Disallow: /terms-and-conditions
-Disallow: /thank-you
+${disallowDirectives}
 
 # Crawl delay for well-behaved bots
 Crawl-delay: 10

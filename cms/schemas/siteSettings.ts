@@ -134,6 +134,15 @@ export default {
           ],
         },
         {
+          name: 'geo',
+          title: 'Geographic Coordinates',
+          type: 'object',
+          fields: [
+            { name: 'latitude', title: 'Latitude', type: 'string', description: 'e.g. -33.8688' },
+            { name: 'longitude', title: 'Longitude', type: 'string', description: 'e.g. 151.2093' },
+          ],
+        },
+        {
           name: 'sameAs',
           title: 'Social Profiles (sameAs)',
           type: 'array',
@@ -176,6 +185,27 @@ export default {
           of: [{ type: 'url' }],
         },
       ],
+    },
+
+    // ─── Crawl Manager (Robots.txt) ───────────────────────────────────────────
+    {
+      name: 'robotsDisallow',
+      title: 'Crawl Manager (Robots.txt Disallow Rules)',
+      description: 'Add paths you want to hide from search engines (e.g. /private, /drafts). Must start with a forward slash (/).',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+          validation: (Rule: any) =>
+            Rule.required().custom((val: string) => {
+              if (!val) return true;
+              if (!val.startsWith('/')) return 'Path must start with a forward slash (/)';
+              if (/\\s/.test(val)) return 'Path cannot contain spaces';
+              return true;
+            }),
+        },
+      ],
+      initialValue: ['/privacy-policy', '/terms-and-conditions', '/thank-you'],
     },
 
     // ─── Custom Script Injection ───────────────────────────────────────────────
