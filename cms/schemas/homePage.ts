@@ -10,9 +10,9 @@ export default {
       description: 'Used for internal identification in Sanity.',
     },
     {
-      name: 'seo',
+      name: 'seoModule',
       title: 'SEO Settings',
-      type: 'seo',
+      type: 'seoModule',
     },
     {
       name: 'hero',

@@ -4,7 +4,7 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 const smsfFaqs = [
  {
@@ -55,7 +55,20 @@ export default function SmsfProperty() {
  const fetchPageData = async () => {
  try {
  const query = `*[_type == "servicePage" && slug.current == "smsf-property"][0] {
- seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
  hero,
  intro,
  pillars,
@@ -76,12 +89,13 @@ export default function SmsfProperty() {
 
  return (
  <>
- <SEO 
- title={pageData?.seo?.metaTitle || "SMSF Property Buyers Agent AU"}
- description={pageData?.seo?.metaDescription || "Specialist property acquisition for Self-Managed Super Funds. We find high-performing, compliant residential assets to help grow your retirement wealth."}
- image={pageData?.seo?.ogImage}
- keywords={pageData?.seo?.keywords}
- />
+ <PageSEO
+        title={"SMSF Property Buyers Agent AU"}
+        description={"Specialist property acquisition for Self-Managed Super Funds. We find high-performing, compliant residential assets to help grow your retirement wealth."}
+        seoModule={pageData?.seoModule}
+        path="/services/smsf-property"
+        breadcrumbs={[{ name: 'Services', url: '/services' }, { name: 'SMSF Property', url: '/services/smsf-property' }]}
+      />
  
  <div className="w-full bg-white selection:bg-gold/20 ">
  {/* Hero Section */}

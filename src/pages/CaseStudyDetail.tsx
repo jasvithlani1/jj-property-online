@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ArrowRight, MapPin, Quote } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { caseStudies as localCaseStudies } from '../data/caseStudies';
@@ -23,11 +23,12 @@ interface SanityCaseStudy {
   strategy: string;
   outcome: string;
   stats: { label: string; value: string }[];
-  seo?: { metaTitle: string; metaDescription: string; ogImage: any };
   gallery?: any[];
   propertyDetails?: { label: string; value: string }[];
   strategicAdvantages?: { title: string; desc: string }[];
   caseNumber?: string;
+  seoModule?: import('../types/seo').SeoModule;
+  seo?: any; // keeping for backward compatibility
 }
 
 export default function CaseStudyDetail() {
@@ -40,6 +41,20 @@ export default function CaseStudyDetail() {
     const fetchStudy = async () => {
       try {
         const query = `*[_type == "caseStudy" && slug.current == $slug][0] {
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
           _id,
           title,
           slug,
@@ -57,36 +72,36 @@ export default function CaseStudyDetail() {
           strategy,
           outcome,
           stats,
-          seo,
           gallery
         }`;
         
-        const localStudy = localCaseStudies.find(s => s.id === id);
-        let data = null;
+        let data = await client.fetch(query, { slug: id });
         
-        if (localStudy) {
-          data = {
-            _id: localStudy.id,
-            title: localStudy.title,
-            slug: { current: localStudy.id },
-            resultText: localStudy.result,
-            location: localStudy.location,
-            shortQuote: localStudy.shortQuote,
-            mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
-            tag: localStudy.tag,
-            tagColor: localStudy.tagColor,
-            client: localStudy.client,
-            challenge: localStudy.challenge,
-            strategy: localStudy.strategy,
-            outcome: localStudy.outcome,
-            stats: localStudy.stats,
-            propertyDetails: localStudy.propertyDetails,
-            strategicAdvantages: localStudy.strategicAdvantages,
-            caseNumber: localStudy.caseNumber
-          };
-        } else {
-          data = await client.fetch(query, { slug: id });
+        if (!data) {
+          const localStudy = localCaseStudies.find(s => s.id === id);
+          if (localStudy) {
+            data = {
+              _id: localStudy.id,
+              title: localStudy.title,
+              slug: { current: localStudy.id },
+              resultText: localStudy.result,
+              location: localStudy.location,
+              shortQuote: localStudy.shortQuote,
+              mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
+              tag: localStudy.tag,
+              tagColor: localStudy.tagColor,
+              client: localStudy.client,
+              challenge: localStudy.challenge,
+              strategy: localStudy.strategy,
+              outcome: localStudy.outcome,
+              stats: localStudy.stats,
+              propertyDetails: localStudy.propertyDetails,
+              strategicAdvantages: localStudy.strategicAdvantages,
+              caseNumber: localStudy.caseNumber
+            };
+          }
         }
+        
         setStudy(data);
 
         const othersQuery = `*[_type == "caseStudy" && slug.current != $slug][0...2] {
@@ -167,10 +182,12 @@ export default function CaseStudyDetail() {
 
   return (
     <div className="w-full bg-white selection:bg-gold/20">
-      <SEO 
-        title={study.seo?.metaTitle || study.title} 
-        description={study.seo?.metaDescription || study.outcome?.substring(0, 160)}
-        image={study.seo?.ogImage || (study.mainImage?.isLocal ? study.mainImage.asset._ref : study.mainImage)}
+      <PageSEO
+        title={study.seoModule?.metaTitle || study.seo?.metaTitle || study.title}
+        description={study.seoModule?.metaDescription || study.seo?.metaDescription || study.outcome?.substring(0, 160)}
+        seoModule={study.seoModule}
+        path="/case-studies/:id"
+        breadcrumbs={[{ name: 'Case Studies', url: '/case-studies' }, { name: study?.title || 'Case Study', url: `/case-studies/${id}` }]}
       />
 
       {/* ── Editorial Hero ─────────────────────────────────────────────── */}
@@ -204,20 +221,22 @@ export default function CaseStudyDetail() {
       </section>
 
       {/* ── Featured Image ─────────────────────────────────────────────── */}
-      <section className="relative px-4 md:px-8 -mt-4 mb-4">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="max-w-6xl mx-auto h-[30vh] md:h-[42vh] rounded-[1.5rem] overflow-hidden shadow-lg border border-black/5"
-        >
-          {study.mainImage && !study.mainImage.isLocal ? (
-            <img src={urlFor(study.mainImage).url()} alt={study.title} className="w-full h-full object-cover" />
-          ) : (
-            <img src={study.mainImage?.asset?._ref || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"} alt={study.title} className="w-full h-full object-cover" />
-          )}
-        </motion.div>
-      </section>
+      {study.mainImage && (study.mainImage.isLocal || study.mainImage.asset) && (
+        <section className="relative px-4 md:px-8 -mt-4 mb-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="max-w-6xl mx-auto h-[30vh] md:h-[42vh] rounded-[1.5rem] overflow-hidden shadow-lg border border-black/5"
+          >
+            {!study.mainImage.isLocal ? (
+              <img src={urlFor(study.mainImage).url()} alt={study.title} className="w-full h-full object-cover" />
+            ) : (
+              <img src={study.mainImage?.asset?._ref} alt={study.title} className="w-full h-full object-cover" />
+            )}
+          </motion.div>
+        </section>
+      )}
 
       {/* ── Editorial Narrative & Sidebar ──────────────────────────────── */}
       <section className="py-2 px-4 md:px-8 bg-white">
@@ -407,12 +426,16 @@ export default function CaseStudyDetail() {
                 href={`/case-studies/${other.slug.current}`}
                 className="group flex flex-col md:flex-row gap-5 p-6 rounded-[1.75rem] bg-neutral-50 border border-transparent hover:border-gold/20 hover:bg-white hover:shadow-lg transition-all duration-500"
               >
-                <div className="w-full md:w-28 h-28 rounded-xl overflow-hidden shrink-0 shadow-sm">
-                  <img 
-                    src={other.mainImage?.isLocal ? other.mainImage.asset._ref : (other.mainImage ? urlFor(other.mainImage).width(300).height(300).url() : "https://images.unsplash.com/photo-1512917774080-9991f1c4c750")} 
-                    alt={other.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  />
+                <div className="w-full md:w-28 h-28 rounded-xl overflow-hidden shrink-0 shadow-sm bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border border-black/5">
+                  {other.mainImage && (other.mainImage.isLocal || other.mainImage.asset) ? (
+                    <img 
+                      src={other.mainImage.isLocal ? other.mainImage.asset._ref : urlFor(other.mainImage).width(300).height(300).url()} 
+                      alt={other.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                    />
+                  ) : (
+                    <div className="text-gold font-serif text-[10px] tracking-wider uppercase opacity-45">JJ</div>
+                  )}
                 </div>
                 <div className="flex flex-col justify-center">
                   <span className="text-[9px] font-sans font-black uppercase tracking-wider text-gold mb-1">{other.tag || 'Acquisition'}</span>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 import Link from '../components/Link';
 import { blogPosts as localBlogPosts } from '../data/blogs';
 
@@ -85,7 +85,20 @@ export default function Blog() {
          "categories": categories[]->{ title, color }
        }`;
        const pageQuery = `*[_type == "blogPage"][0] {
-         seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
          hero,
          newsletter
        }`;
@@ -128,12 +141,13 @@ export default function Blog() {
 
  return (
    <div className="w-full bg-white selection:bg-gold/20">
-     <SEO 
-       title={pageData?.seo?.metaTitle || 'Market Intelligence & Blog'} 
-       description={pageData?.seo?.metaDescription || 'Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney\'s property market.'} 
-       image={pageData?.seo?.ogImage}
-       keywords={pageData?.seo?.keywords}
-     />
+     <PageSEO
+        title={'Market Intelligence & Blog'}
+        description={pageData?.seo?.metaDescription || 'Data-driven analysis and on-the-ground market intelligence from 20+ years inside Sydney\'s property market.'}
+        seoModule={pageData?.seoModule}
+        path="/blog"
+        breadcrumbs={[{ name: 'Blog', url: '/blog' }]}
+      />
 
      {/* Hero */}
      <section className="pt-28 pb-2 md:pt-36 md:pb-3 relative px-8 bg-[#011122] text-white overflow-hidden">

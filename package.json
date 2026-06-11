@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "node generate-sitemap.cjs",
+    "generate:seo": "node generate-sitemap.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

@@ -1,4 +1,4 @@
-import seo from './seo';
+
 
 export default {
   name: 'post',
@@ -108,10 +108,10 @@ export default {
       ],
     },
     {
-      name: 'seo',
+      name: 'seoModule',
       title: 'SEO Settings',
-      type: 'seo',
-      description: 'Customize how this post appears in search engines.',
+      type: 'seoModule',
+      description: 'Customize how this post appears in search engines and configure structured data.',
     },
   ],
   preview: {

@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, writeClient } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 export default function Contact() {
  const [formData, setFormData] = useState({
@@ -21,7 +21,20 @@ export default function Contact() {
  const fetchPageData = async () => {
  try {
  const query = `*[_type == "contactPage"][0] {
- seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
  hero,
  details
  }`;
@@ -100,12 +113,13 @@ export default function Contact() {
 
  return (
  <>
- <SEO 
- title={pageData?.seo?.metaTitle || "Contact JJ Property Partner | Australia Buyers Agent"}
- description={pageData?.seo?.metaDescription || "Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today."}
- image={pageData?.seo?.ogImage}
- keywords={pageData?.seo?.keywords}
- />
+ <PageSEO
+        title={"Contact JJ Property Partner | Australia Buyers Agent"}
+        description={"Contact JJ Property Partner for expert property buying support across Australia. Get tailored strategies, market insights, and professional negotiation today."}
+        seoModule={pageData?.seoModule}
+        path="/contact"
+        breadcrumbs={[{ name: 'Contact', url: '/contact' }]}
+      />
 
  <div className="w-full bg-white selection:bg-gold/20 pt-0 pb-8 md:pb-4">
  {/* Hero Section */}

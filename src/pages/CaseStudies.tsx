@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star, Bed, Bath, Car, Maximize, TrendingUp, Coins, Calendar, LineChart } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 import Link from '../components/Link';
 import { caseStudies as localCaseStudies } from '../data/caseStudies';
-import { acquisitions } from '../data/acquisitions';
+import { acquisitions as localAcquisitions } from '../data/acquisitions';
 
 interface SanityCaseStudy {
   _id: string;
@@ -23,6 +23,7 @@ interface SanityCaseStudy {
 
 export default function CaseStudies() {
   const [studies, setStudies] = useState<SanityCaseStudy[]>([]);
+  const [acquisitionsList, setAcquisitionsList] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [pageData, setPageData] = useState<any>(null);
 
@@ -46,13 +47,46 @@ export default function CaseStudies() {
           stats
         }`;
         const pageQuery = `*[_type == "caseStudiesPage"][0] {
-          seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
           hero
         }`;
 
-        const [studiesData, pageData] = await Promise.all([
+        const acquisitionsQuery = `*[_type == "acquisition"] {
+          _id,
+          city,
+          state,
+          dealDone,
+          price,
+          config,
+          month,
+          rental,
+          value,
+          size,
+          growth,
+          yield,
+          image {
+            asset,
+            alt
+          }
+        }`;
+
+        const [studiesData, pageData, acquisitionsData] = await Promise.all([
           client.fetch(studiesQuery),
-          client.fetch(pageQuery)
+          client.fetch(pageQuery),
+          client.fetch(acquisitionsQuery)
         ]);
 
         
@@ -70,10 +104,15 @@ export default function CaseStudies() {
           stats: local.stats
         }));
 
-        const localSlugs = localCaseStudies.map(l => l.id);
-        const filteredSanityStudies = (studiesData || []).filter((s: any) => s.slug?.current && !localSlugs.includes(s.slug.current));
-        setStudies([...filteredSanityStudies, ...formattedLocalStudies]);
+        const sanitySlugs = (studiesData || []).map((s: any) => s.slug?.current).filter(Boolean);
+        const filteredLocalStudies = formattedLocalStudies.filter((s: any) => !sanitySlugs.includes(s.slug.current));
+        setStudies([...(studiesData || []), ...filteredLocalStudies]);
         if (pageData) setPageData(pageData);
+        if (acquisitionsData && acquisitionsData.length > 0) {
+          setAcquisitionsList(acquisitionsData);
+        } else {
+          setAcquisitionsList(localAcquisitions);
+        }
       } catch (error) {
         console.error('Error fetching case studies:', error);
       } finally {
@@ -86,11 +125,12 @@ export default function CaseStudies() {
 
   return (
     <div className="w-full bg-white selection:bg-gold/20 ">
-      <SEO 
-        title={pageData?.seo?.metaTitle || "Client Success & Case Studies"} 
-        description={pageData?.seo?.metaDescription || "Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."} 
-        image={pageData?.seo?.ogImage}
-        keywords={pageData?.seo?.keywords}
+      <PageSEO
+        title={"Client Success & Case Studies"}
+        description={"Real briefs. Real markets. Real results. A curated selection of acquisitions that demonstrate the precision of our approach."}
+        seoModule={pageData?.seoModule}
+        path="/case-studies"
+        breadcrumbs={[{ name: 'Case Studies', url: '/case-studies' }]}
       />
 
       {/* Hero */}
@@ -165,27 +205,23 @@ export default function CaseStudies() {
                     className="group relative rounded-[2.5rem] overflow-hidden bg-white border border-black/5 hover:border-gold/30 hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col w-full"
                   >
                     {/* Image Container */}
-                    <div className="relative h-72 overflow-hidden">
-                      {study.mainImage && !study.mainImage.isLocal ? (
-                        <img
-                          src={urlFor(study.mainImage).width(800).height(600).url()}
-                          alt={study.mainImage?.alt || study.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                        />
-                      ) : (
-                        study.mainImage && study.mainImage.isLocal ? (
+                    <div className="relative h-72 overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border-b border-black/5">
+                      {study.mainImage && (study.mainImage.isLocal || study.mainImage.asset) ? (
+                        !study.mainImage.isLocal ? (
                           <img
-                            src={study.mainImage.asset._ref}
-                            alt={study.title}
+                            src={urlFor(study.mainImage).width(800).height(600).url()}
+                            alt={study.mainImage?.alt || study.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                           />
                         ) : (
                           <img
-                            src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1512917774080-9991f1c4c750' : '1600585154340-be6161a56a0c'}?auto=format&fit=crop&q=80&w=800`}
+                            src={study.mainImage.asset?._ref}
                             alt={study.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                           />
                         )
+                      ) : (
+                        <div className="text-gold font-serif text-sm tracking-wider uppercase opacity-45 font-semibold">JJ Property</div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                       
@@ -273,7 +309,7 @@ export default function CaseStudies() {
           </div>
 
           <div className="space-y-5">
-            {[...acquisitions].sort((a, b) => {
+            {[...acquisitionsList].sort((a, b) => {
               const parseDate = (mStr: string) => {
                 const [mon, yr] = mStr.split('-');
                 const monthIndex = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].indexOf(mon);
@@ -365,19 +401,25 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Image */}
-                <div className="lg:w-[50%] relative min-h-[400px]">
-                  <img 
-                    src={prop.image} 
-                    alt={`${prop.city} property`} 
-                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
-                  />
+                <div className="lg:w-[50%] relative min-h-[400px] bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border-l border-black/5">
+                  {prop.image ? (
+                    <img 
+                      src={prop.image.asset ? urlFor(prop.image).width(800).height(600).url() : (typeof prop.image === 'string' ? prop.image : '')} 
+                      alt={`${prop.city} property`} 
+                      className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+                    />
+                  ) : (
+                    <div className="text-gold font-serif text-sm tracking-wider uppercase opacity-40">JJ Property</div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent opacity-10 lg:opacity-100" />
                   
                   {/* Deal Done Badge */}
-                  <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                    Deal Done
-                  </div>
+                  {prop.dealDone !== false && (
+                    <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-gold text-white text-xs font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg border border-white/20 backdrop-blur-sm z-10 flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                      Deal Done
+                    </div>
+                  )}
                 </div>
               </motion.div>
             )})}

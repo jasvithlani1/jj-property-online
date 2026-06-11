@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import FloatingContactButton from './components/FloatingContactButton';
+import GlobalSEO from './components/GlobalSEO';
 import './App.css';
 
 // Lazy load secondary pages
@@ -31,6 +32,8 @@ const PageLoader = () => (
 function App() {
   return (
     <div className="min-h-screen font-sans selection:bg-gold/20 selection:text-black bg-white flex flex-col">
+      {/* Injects GTM, GA4, GSC verification, global JSON-LD and CMS scripts */}
+      <GlobalSEO />
       <Navbar />
       <main className="flex-1">
         <Suspense fallback={<PageLoader />}>

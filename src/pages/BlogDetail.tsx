@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Clock, Calendar, CheckCircle2, MessageSquare, Phone, Mail } from 'lucide-react';
 import { client, urlFor } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { blogPosts as localBlogPosts } from '../data/blogs';
@@ -35,8 +35,9 @@ interface SanityPost {
   body: any[];
   author: { name: string; image: any; bio: any };
   categories: { title: string; color: string }[];
-  seo?: { metaTitle: string; metaDescription: string; ogImage: any };
   faqs?: { question: string; answer: string }[];
+  seoModule?: import('../types/seo').SeoModule;
+  seo?: any; // keeping for backward compatibility
 }
 
 const replaceEmDash = (node: any): any => {
@@ -106,6 +107,20 @@ export default function BlogDetail() {
     const fetchPost = async () => {
       try {
         const query = `*[_type == "post" && slug.current == $slug][0] {
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
           _id,
           title,
           slug,
@@ -118,7 +133,6 @@ export default function BlogDetail() {
           body,
           author-> { name, image, bio },
           "categories": categories[]->{ title, color },
-          seo,
           faqs
         }`;
         let data = await client.fetch(query, { slug });
@@ -223,11 +237,12 @@ export default function BlogDetail() {
 
   return (
     <div className="w-full bg-white selection:bg-gold/20">
-      <SEO 
-        title={post.seo?.metaTitle || post.title} 
-        description={post.seo?.metaDescription || post.excerpt}
-        image={post.seo?.ogImage || post.mainImage}
-        article={true}
+      <PageSEO
+        title={post?.seoModule?.metaTitle || post?.seo?.metaTitle || post?.title}
+        description={post?.seoModule?.metaDescription || post?.seo?.metaDescription || post?.excerpt}
+        seoModule={post?.seoModule}
+        path={`/blog/${slug}`}
+        breadcrumbs={[{ name: 'Blog', url: '/blog' }, { name: post?.title || 'Article', url: `/blog/${slug}` }]}
       />
 
       {/* ── Editorial Header ─────────────────────────────────────────── */}

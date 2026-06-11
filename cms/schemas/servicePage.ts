@@ -20,9 +20,9 @@ export default {
       validation: (Rule: any) => Rule.required(),
     },
     {
-      name: 'seo',
+      name: 'seoModule',
       title: 'SEO Settings',
-      type: 'seo',
+      type: 'seoModule',
     },
     {
       name: 'hero',

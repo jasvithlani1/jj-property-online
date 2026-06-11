@@ -4,7 +4,7 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 const investorFaqs = [
  {
@@ -55,7 +55,20 @@ export default function PropertyInvestors() {
  const fetchPageData = async () => {
  try {
  const query = `*[_type == "servicePage" && slug.current == "property-investors"][0] {
- seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
  hero,
  intro,
  pillars,
@@ -76,12 +89,13 @@ export default function PropertyInvestors() {
 
  return (
  <>
- <SEO 
- title={pageData?.seo?.metaTitle || "Property Investment Buyers Agent AU"}
- description={pageData?.seo?.metaDescription || "Strategic property acquisition for serious investors. Use data-driven research and off-market access to build a high-performing property portfolio."}
- image={pageData?.seo?.ogImage}
- keywords={pageData?.seo?.keywords}
- />
+ <PageSEO
+        title={"Property Investment Buyers Agent AU"}
+        description={"Strategic property acquisition for serious investors. Use data-driven research and off-market access to build a high-performing property portfolio."}
+        seoModule={pageData?.seoModule}
+        path="/services/property-investors"
+        breadcrumbs={[{ name: 'Services', url: '/services' }, { name: 'Property Investors', url: '/services/property-investors' }]}
+      />
  
  <div className="w-full bg-white selection:bg-gold/20 ">
  {/* Hero Section */}

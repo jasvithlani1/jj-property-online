@@ -4,7 +4,7 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 const commercialFaqs = [
   {
@@ -59,7 +59,20 @@ export default function CommercialProperty() {
     const fetchPageData = async () => {
       try {
         const query = `*[_type == "servicePage" && slug.current == "commercial-property"][0] {
-          seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
           hero,
           intro,
           pillars,
@@ -80,11 +93,12 @@ export default function CommercialProperty() {
 
   return (
     <>
-      <SEO 
-        title={pageData?.seo?.metaTitle || "Commercial Property Investment Buyers Agent AU"}
-        description={pageData?.seo?.metaDescription || "Strategic property acquisition for serious businesses and commercial investors. Use data-driven research and off-market access to build a high-performing property portfolio."}
-        image={pageData?.seo?.ogImage}
-        keywords={pageData?.seo?.keywords}
+      <PageSEO
+        title={"Commercial Property Investment Buyers Agent AU"}
+        description={"Strategic property acquisition for serious businesses and commercial investors. Use data-driven research and off-market access to build a high-performing property portfolio."}
+        seoModule={pageData?.seoModule}
+        path="/services/commercial-property"
+        breadcrumbs={[{ name: 'Services', url: '/services' }, { name: 'Commercial Property', url: '/services/commercial-property' }]}
       />
       
       <div className="w-full bg-white selection:bg-gold/20 ">

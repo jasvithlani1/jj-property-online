@@ -4,7 +4,7 @@ import { ArrowUpRight, BadgeCheck, Briefcase, Building2, MapPin, Target, Search,
 import Link from '../components/Link';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 export default function About() {
  const [aboutData, setAboutData] = useState<any>(null);
@@ -13,15 +13,27 @@ export default function About() {
  const fetchAboutData = async () => {
  try {
  const query = `*[_type == "aboutPage"][0] {
- seo,
- hero,
- profile,
- purpose,
- trackRecord,
- techAdvantage,
- values,
- pillarsSection
- }`;
+  seoModule {
+   metaTitle,
+   metaDescription,
+   ogImage { asset, hotspot },
+   canonicalUrl,
+   noIndex,
+   schemaModules[] {
+     _type, enabled,
+     _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+     _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+     _type == "serviceSchema" => { serviceName, serviceDescription, areaServed }
+   }
+  },
+  hero,
+  profile,
+  purpose,
+  trackRecord,
+  techAdvantage,
+  values,
+  pillarsSection
+  }`;
  const data = await client.fetch(query);
  if (data) setAboutData(data);
  } catch (err) {
@@ -33,12 +45,13 @@ export default function About() {
 
  return (
  <>
- <SEO 
- title={aboutData?.seo?.metaTitle || "About Us - Trusted Buyers Agent Australia"}
- description={aboutData?.seo?.metaDescription || "JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies."}
- image={aboutData?.seo?.ogImage}
- keywords={aboutData?.seo?.keywords}
- />
+ <PageSEO
+        title={"About Us - Trusted Buyers Agent Australia"}
+        description={"JJ Property Partner offers expert, data-driven property buying across Australia with off-market access, smart negotiation, and personalized investment strategies."}
+        seoModule={aboutData?.seoModule}
+        path="/about"
+        breadcrumbs={[{ name: 'About', url: '/about' }]}
+      />
  
  <div className="w-full bg-white selection:bg-gold/20 ">
 

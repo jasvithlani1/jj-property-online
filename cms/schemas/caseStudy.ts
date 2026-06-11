@@ -1,4 +1,3 @@
-import seo from './seo';
 
 export default {
   name: 'caseStudy',
@@ -145,9 +144,9 @@ export default {
       ],
     },
     {
-      name: 'seo',
+      name: 'seoModule',
       title: 'SEO Settings',
-      type: 'seo',
+      type: 'seoModule',
     },
   ],
 };

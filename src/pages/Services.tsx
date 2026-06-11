@@ -5,7 +5,7 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 const servicesFaqs = [
  {
@@ -141,7 +141,20 @@ export default function Services() {
  const fetchPageData = async () => {
  try {
  const query = `*[_type == "servicesPage"][0] {
- seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
  hero,
  serviceList,
  additionalServices,
@@ -159,12 +172,13 @@ export default function Services() {
 
  return (
  <>
- <SEO 
- title={pageData?.seo?.metaTitle || "Property Buying Services Australia | JJ Property Partner"}
- description={pageData?.seo?.metaDescription || "Expert buyers agent services for first home buyers, property investors, and SMSF property acquisition across Australia. Data-led research and off-market access."}
- image={pageData?.seo?.ogImage}
- keywords={pageData?.seo?.keywords}
- />
+ <PageSEO
+        title={"Property Buying Services Australia | JJ Property Partner"}
+        description={"Expert buyers agent services for first home buyers, property investors, and SMSF property acquisition across Australia. Data-led research and off-market access."}
+        seoModule={pageData?.seoModule}
+        path="/services"
+        breadcrumbs={[{ name: 'Services', url: '/services' }]}
+      />
 
  <div className="w-full bg-white selection:bg-gold/20 pt-8">
 

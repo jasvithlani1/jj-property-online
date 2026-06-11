@@ -4,7 +4,7 @@ import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 const fhbFaqs = [
  {
@@ -55,7 +55,20 @@ export default function FirstHomeBuyers() {
  const fetchPageData = async () => {
  try {
  const query = `*[_type == "servicePage" && slug.current == "first-home-buyers"][0] {
- seo,
+  seoModule {
+    metaTitle,
+    metaDescription,
+    ogImage { asset, hotspot },
+    canonicalUrl,
+    noIndex,
+    schemaModules[] {
+      _type, enabled,
+      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+    }
+  },
  hero,
  intro,
  pillars,
@@ -76,12 +89,13 @@ export default function FirstHomeBuyers() {
 
  return (
  <>
- <SEO 
- title={pageData?.seo?.metaTitle || "First Home Buyer Specialist"}
- description={pageData?.seo?.metaDescription || "Expert guidance for first home buyers in Australia. From deposit strategy to final settlement, we help you secure your first home with confidence."}
- image={pageData?.seo?.ogImage}
- keywords={pageData?.seo?.keywords}
- />
+ <PageSEO
+        title={"First Home Buyer Specialist"}
+        description={"Expert guidance for first home buyers in Australia. From deposit strategy to final settlement, we help you secure your first home with confidence."}
+        seoModule={pageData?.seoModule}
+        path="/services/first-home-buyers"
+        breadcrumbs={[{ name: 'Services', url: '/services' }, { name: 'First Home Buyers', url: '/services/first-home-buyers' }]}
+      />
  
  <div className="w-full bg-white selection:bg-gold/20 ">
   {/* Hero Section */}

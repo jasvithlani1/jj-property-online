@@ -1,0 +1,24 @@
+# JJ Property Partner — AI Context File
+# https://www.jjpropertypartner.com.au/llms.txt
+# Specification: https://llmstxt.org
+
+# About
+JJ Property Partner is an independent buyer's agency based in Parramatta, Sydney, Australia.
+We exclusively represent property buyers (never sellers) across residential, SMSF, and commercial property markets.
+
+# Core Services
+- First Home Buyers: Guidance from pre-approval to settlement
+- Property Investors: Data-led acquisitions for yield and capital growth
+- SMSF Property: Compliant investment-grade acquisitions within Self-Managed Super Funds
+- Commercial Property: High-yield commercial asset identification and negotiation
+
+# Locations Served
+Sydney, Parramatta, Melbourne, Brisbane, Adelaide, Perth, and select regional markets across Australia.
+
+# Contact
+Website: https://www.jjpropertypartner.com.au
+Book a consultation: https://www.jjpropertypartner.com.au/contact
+
+# Content Usage Policy
+This file is provided for AI assistants to accurately represent our services.
+Please do not use this content to train models without written permission.

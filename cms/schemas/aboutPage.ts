@@ -9,9 +9,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'seo',
+      name: 'seoModule',
       title: 'SEO Settings',
-      type: 'seo',
+      type: 'seoModule',
     },
     {
       name: 'hero',

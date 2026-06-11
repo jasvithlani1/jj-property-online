@@ -5,9 +5,9 @@ import { FaHome, FaChartLine, FaBuilding } from 'react-icons/fa';
 import { TbHomeShield } from 'react-icons/tb';
 import { openCalendly, initInlineCalendly } from '../utils/calendly';
 import { caseStudies } from '../data/caseStudies';
-import { client } from '../lib/sanity';
+import { client, urlFor } from '../lib/sanity';
 import Link from '../components/Link';
-import SEO from '../components/SEO';
+import PageSEO from '../components/PageSEO';
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -135,6 +135,7 @@ export default function Home() {
   const [isReviewPaused, setIsReviewPaused] = useState(false);
   const [reviews, setReviews] = useState<any[]>([]);
   const [homeData, setHomeData] = useState<any>(null);
+  const [featuredStudies, setFeaturedStudies] = useState<any[]>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const activeSlides = homeData?.hero?.slides?.length > 0 ? homeData.hero.slides : heroSlides;
@@ -150,7 +151,21 @@ export default function Home() {
     const fetchHomeData = async () => {
       try {
         const query = `*[_type == "homePage"][0] {
- seo,
+ seoModule {
+   metaTitle,
+   metaDescription,
+   ogImage { asset, hotspot },
+   canonicalUrl,
+   noIndex,
+   schemaModules[] {
+     _type,
+     enabled,
+     _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+     _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+     _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate },
+     _type == "serviceSchema" => { serviceName, serviceDescription, areaServed }
+   }
+ },
  hero,
  servicesPreview,
  faqs,
@@ -160,6 +175,20 @@ export default function Home() {
  }`;
         const data = await client.fetch(query);
         if (data) setHomeData(data);
+
+        // Fetch featured case studies
+        const studiesQuery = `*[_type == "caseStudy" && slug.current in ["forever-home-northwest-sydney", "mackay-coastal-beachside", "melbourne-western-corridor", "perth-eastern-corridor"]] {
+          _id,
+          title,
+          "id": slug.current,
+          "result": resultText,
+          location,
+          shortQuote,
+          mainImage { asset, alt }
+        }`;
+        const sanityStudiesData = await client.fetch(studiesQuery);
+        setFeaturedStudies(sanityStudiesData || []);
+
       } catch (err) {
         console.error('Error fetching home page data:', err);
       }
@@ -316,11 +345,11 @@ export default function Home() {
 
   return (
     <>
-      <SEO
-        title={homeData?.seo?.metaTitle || "Buyers Agent Parramatta AU"}
-        description={homeData?.seo?.metaDescription || "JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition."}
-        image={homeData?.seo?.ogImage}
-        keywords={homeData?.seo?.keywords}
+      <PageSEO
+        title="Buyers Agent Parramatta AU"
+        description="JJ Property Partner Parramatta offers expert buyers agent services across Australia with data-driven strategies, off-market access, and wealth-focused property acquisition."
+        seoModule={homeData?.seoModule}
+        path="/"
       />
 
       <div ref={containerRef} className="relative w-full bg-white selection:bg-gold/20">
@@ -799,44 +828,56 @@ export default function Home() {
                 'mackay-coastal-beachside',
                 'melbourne-western-corridor',
                 'perth-eastern-corridor'
-              ].includes(s.id)).map((story, index) => (
-                <Link
-                  key={story.id}
-                  href={`/case-studies/${story.id}`}
-                  className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-gold/10 overflow-hidden hover:shadow-gold/20 transition-all duration-500 cursor-pointer flex flex-col"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
-                    className="w-full h-full flex flex-col"
+              ].includes(s.id)).map((localStory, index) => {
+                const sanityStory = featuredStudies.find(fs => fs.id === localStory.id);
+                const story = sanityStory || localStory;
+                const imageUrl = sanityStory
+                  ? (sanityStory.mainImage && sanityStory.mainImage.asset ? urlFor(sanityStory.mainImage).width(800).height(450).url() : null)
+                  : localStory.image;
+
+                return (
+                  <Link
+                    key={story.id}
+                    href={`/case-studies/${story.id}`}
+                    className="group relative rounded-[2.5rem] bg-white/60 backdrop-blur-xl border border-white shadow-2xl shadow-gold/10 overflow-hidden hover:shadow-gold/20 transition-all duration-500 cursor-pointer flex flex-col"
                   >
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={story.image}
-                        alt={story.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        loading="lazy"
-                        width={800}
-                        height={450}
-                      />
-                    </div>
-                    <div className="p-3 flex flex-col flex-1 items-center text-center">
-                      <div className="mb-0.5">
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-0.5">{story.location}</span>
-                        <h3 className="text-2xl font-sans font-black text-black mb-2">{story.title}</h3>
-                        <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
+                    <motion.div
+                      initial={{ opacity: 0, y: 60 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ type: 'spring', stiffness: 70, damping: 20, delay: index * 0.15 }}
+                      className="w-full h-full flex flex-col"
+                    >
+                      <div className="h-48 overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border-b border-black/5">
+                        {imageUrl ? (
+                          <img
+                            src={imageUrl}
+                            alt={story.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy"
+                            width={800}
+                            height={450}
+                          />
+                        ) : (
+                          <div className="text-gold font-serif text-sm tracking-wider uppercase opacity-40">JJ Property</div>
+                        )}
                       </div>
-                      <p className="text-muted font-sans font-black text-base flex-1">"{story.shortQuote}"</p>
-                      <div className="mt-1 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
-                        Read Story
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <div className="p-3 flex flex-col flex-1 items-center text-center">
+                        <div className="mb-0.5">
+                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted block mb-0.5">{story.location}</span>
+                          <h3 className="text-2xl font-sans font-black text-black mb-2">{story.title}</h3>
+                          <span className="text-[10px] font-black uppercase tracking-widest text-white bg-gold inline-block px-4 py-2 rounded-full shadow-lg shadow-gold/20">{story.result}</span>
+                        </div>
+                        <p className="text-muted font-sans font-black text-base flex-1">"{story.shortQuote}"</p>
+                        <div className="mt-1 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-black">
+                          Read Story
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
-                </Link>
-              ))}
+                    </motion.div>
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className="absolute top-1/4 -left-20 w-80 h-80 bg-gold/5 blur-[120px] rounded-full opacity-30 animate-pulse" />
