@@ -596,8 +596,8 @@ export default function Home() {
                 <h2 className="text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2">
                   {homeData?.differenceSection?.heading ? (
                     <>
-                      {homeData.differenceSection.heading} <br />
-                      <span className="text-gold">{homeData.differenceSection.subheading}</span>
+                      {homeData.differenceSection.heading.split(' ').slice(0, -2).join(' ')} <br />
+                      <span className="text-gold">{homeData.differenceSection.heading.split(' ').slice(-2).join(' ')}</span>
                     </>
                   ) : (
                     <>
@@ -607,7 +607,11 @@ export default function Home() {
                   )}
                 </h2>
                 <p className="text-base text-muted font-sans leading-relaxed mb-2 max-w-xl text-left lg:text-left">
-                  Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.
+                  {homeData?.differenceSection?.subheading ? (
+                    <>{homeData.differenceSection.subheading}</>
+                  ) : (
+                    <>Most buyers enter the market without representation, negotiating against agents who act only for the vendor. At <span className="text-black font-semibold">JJ Property Partner</span>, we level the playing field by working exclusively for you - with zero conflicts of interest and dedication to your goals.</>
+                  )}
                 </p>
                 <div className="w-full flex justify-center mt-0">
                   <div className="space-y-2 flex flex-col items-start text-left max-w-xl">
@@ -686,7 +690,7 @@ export default function Home() {
               {/* Desktop Connecting Line */}
               <div className="hidden md:block absolute top-10 left-[10%] right-[10%] h-[1px] bg-gold/20 z-0" />
 
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-3 relative z-10">
+              <div className={`grid grid-cols-1 ${homeData?.processSection?.steps?.length === 6 ? 'md:grid-cols-6' : 'md:grid-cols-5'} gap-3 relative z-10`}>
                 {(homeData?.processSection?.steps || [
                   {
                     num: "1",
