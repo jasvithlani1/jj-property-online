@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
+import seofields from 'sanity-plugin-seofields';
 import post from './schemas/post';
 import author from './schemas/author';
 import category from './schemas/category';
@@ -23,7 +24,7 @@ export default defineConfig({
   projectId: '7c1xj4wj',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [deskTool(), visionTool(), seofields()],
 
   schema: {
     types: [
