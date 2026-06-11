@@ -26,6 +26,8 @@ export default {
           of: [
             {
               type: 'object',
+              name: 'heroSlide',
+              title: 'Slide',
               fields: [
                 { name: 'heading', title: 'Heading (HTML allowed)', type: 'text' },
                 { name: 'subheading', title: 'Subheading', type: 'text' }
@@ -34,15 +36,6 @@ export default {
                 select: {
                   title: 'heading',
                   subtitle: 'subheading'
-                },
-                prepare(selection) {
-                  const { title, subtitle } = selection;
-                  // Strip HTML tags from heading for a cleaner preview
-                  const cleanTitle = title ? title.replace(/<[^>]*>?/gm, '') : 'No heading';
-                  return {
-                    title: cleanTitle,
-                    subtitle: subtitle
-                  };
                 }
               }
             }
