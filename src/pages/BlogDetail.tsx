@@ -60,6 +60,21 @@ const replaceEmDash = (node: any): any => {
 };
 
 const ptComponents = {
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) return null;
+      return (
+        <div className="my-8 rounded-[1rem] overflow-hidden border border-black/5 shadow-sm">
+          <img
+            src={urlFor(value).url()}
+            alt={value.alt || 'Blog Image'}
+            loading="lazy"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      );
+    },
+  },
   block: {
     h2: ({ children }: any) => (
       <h2 className="text-lg md:text-xl font-sans font-black text-gold mt-6 mb-2 leading-tight first:mt-0 text-center uppercase tracking-wide">

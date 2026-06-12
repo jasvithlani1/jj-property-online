@@ -56,7 +56,7 @@ export default defineConfig({
             S.listItem().title('🔧 Service Pages').child(S.documentTypeList('servicePage').title('Service Pages')),
             S.listItem().title('📋 Services Overview').child(S.documentTypeList('servicesPage').title('Services Overview')),
             S.listItem().title('📞 Contact Page').child(S.documentTypeList('contactPage').title('Contact Page')),
-            S.listItem().title('💼 Case Studies').child(S.documentTypeList('caseStudy').title('Case Studies')),
+            S.listItem().title('💼 Case Studies').child(S.documentTypeList('caseStudy').title('Case Studies').defaultOrdering([{ field: 'caseNumber', direction: 'asc' }])),
             S.listItem().title('📈 Property Acquisitions').child(S.documentTypeList('acquisition').title('Property Acquisitions')),
             S.listItem().title('📁 Case Studies Page').child(S.documentTypeList('caseStudiesPage').title('Case Studies Page')),
             S.listItem().title('✍️ Blog Posts').child(S.documentTypeList('post').title('Blog Posts')),

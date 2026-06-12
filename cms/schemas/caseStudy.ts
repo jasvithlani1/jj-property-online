@@ -3,6 +3,28 @@ export default {
   name: 'caseStudy',
   title: 'Case Study',
   type: 'document',
+  orderings: [
+    {
+      title: 'Case Number',
+      name: 'caseNumberAsc',
+      by: [{ field: 'caseNumber', direction: 'asc' }],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'caseNumber',
+      media: 'mainImage',
+    },
+    prepare(selection: any) {
+      const { title, subtitle, media } = selection;
+      return {
+        title: title,
+        subtitle: subtitle ? `Case Number: ${subtitle}` : 'No Case Number',
+        media: media,
+      };
+    },
+  },
   fields: [
     {
       name: 'title',

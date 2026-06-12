@@ -2,12 +2,34 @@ export default {
   name: 'acquisition',
   title: 'Acquisition',
   type: 'document',
+  preview: {
+    select: {
+      title: 'city',
+      subtitle: 'linkedCaseStudy.caseNumber',
+      media: 'image',
+    },
+    prepare(selection: any) {
+      const { title, subtitle, media } = selection;
+      return {
+        title: title,
+        subtitle: subtitle ? `Linked to Case Study: ${subtitle}` : 'Not linked to a case study',
+        media: media,
+      };
+    },
+  },
   fields: [
     {
       name: 'city',
       title: 'City',
       type: 'string',
       validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'linkedCaseStudy',
+      title: 'Linked Case Study',
+      type: 'reference',
+      to: [{ type: 'caseStudy' }],
+      description: 'Optional: Link this acquisition to a specific case study.',
     },
     {
       name: 'state',
