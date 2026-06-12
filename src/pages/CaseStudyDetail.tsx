@@ -227,12 +227,12 @@ export default function CaseStudyDetail() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="max-w-6xl mx-auto h-[30vh] md:h-[42vh] rounded-[1.5rem] overflow-hidden shadow-lg border border-black/5"
+            className="max-w-6xl mx-auto rounded-[1.5rem] overflow-hidden shadow-lg border border-black/5 bg-[#011122]/5 flex justify-center items-center"
           >
             {!study.mainImage.isLocal ? (
-              <img src={urlFor(study.mainImage).url()} alt={study.title} className="w-full h-full object-cover" />
+              <img src={urlFor(study.mainImage).url()} alt={study.title} className="w-full h-auto max-h-[60vh] object-contain" />
             ) : (
-              <img src={study.mainImage?.asset?._ref} alt={study.title} className="w-full h-full object-cover" />
+              <img src={study.mainImage?.asset?._ref} alt={study.title} className="w-full h-auto max-h-[60vh] object-contain" />
             )}
           </motion.div>
         </section>

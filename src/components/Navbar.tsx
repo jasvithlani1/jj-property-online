@@ -21,7 +21,7 @@ const navLinks = [
     ]
   },
   { name: 'Case Studies', path: '/case-studies', isHash: false },
-  { name: 'Reviews', path: '/#reviews', isHash: true },
+  { name: 'Reviews', path: '/reviews', isHash: false },
   { name: 'Blog', path: '/blog', isHash: false },
   { name: 'Contact us', path: '/contact', isHash: false },
 ];
