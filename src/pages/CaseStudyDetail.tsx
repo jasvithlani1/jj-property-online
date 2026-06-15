@@ -272,13 +272,43 @@ export default function CaseStudyDetail() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="max-w-6xl mx-auto rounded-[1.5rem] overflow-hidden shadow-lg border border-black/5 bg-[#011122]/5 flex justify-center items-center"
+            className="max-w-6xl mx-auto rounded-[1.5rem] overflow-hidden shadow-lg border border-black/5"
           >
-            {!study.mainImage.isLocal ? (
-              <img src={urlFor(study.mainImage).url()} alt={study.title} className="w-full h-auto max-h-[60vh] object-contain" />
-            ) : (
-              <img src={study.mainImage?.asset?._ref} alt={study.title} className="w-full h-auto max-h-[60vh] object-contain" />
-            )}
+            {/* Blurred backdrop fill — same image scaled+blurred to fill side gaps */}
+            <div className="relative w-full" style={{ aspectRatio: '16/7' }}>
+              {/* Background blur layer — fills empty sides */}
+              {!study.mainImage.isLocal ? (
+                <img
+                  src={urlFor(study.mainImage).width(1200).url()}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl brightness-75 saturate-150"
+                />
+              ) : (
+                <img
+                  src={study.mainImage?.asset?._ref}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl brightness-75 saturate-150"
+                />
+              )}
+              {/* Dark overlay — keeps blur subtle */}
+              <div className="absolute inset-0 bg-black/20" />
+              {/* Foreground: full image, contained, centred — never cropped */}
+              {!study.mainImage.isLocal ? (
+                <img
+                  src={urlFor(study.mainImage).url()}
+                  alt={study.title}
+                  className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
+                />
+              ) : (
+                <img
+                  src={study.mainImage?.asset?._ref}
+                  alt={study.title}
+                  className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
+                />
+              )}
+            </div>
           </motion.div>
         </section>
       )}
