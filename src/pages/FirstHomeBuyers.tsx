@@ -310,7 +310,7 @@ export default function FirstHomeBuyers() {
  >
  <div className="relative h-56 overflow-hidden">
  <img
- src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : ("/images/acquisitions/user_prop_" + (7 + i) + ".png"))}
+ src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (['/images/acquisitions/user_prop_7.png','/images/acquisitions/user_prop_8.png','/images/acquisitions/off_market_house.png','/images/acquisitions/user_prop_10.png','/images/acquisitions/user_img_4.png','/images/acquisitions/user_prop_14.jpg'][i] || '/images/acquisitions/user_prop_7.png'))}
  alt={card.title}
  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
  />
