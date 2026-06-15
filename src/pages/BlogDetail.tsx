@@ -323,13 +323,13 @@ export default function BlogDetail() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto h-[30vh] md:h-[45vh] rounded-[1.5rem] overflow-hidden border border-black/5 shadow-md bg-neutral-100"
+          className="max-w-4xl mx-auto rounded-[1.5rem] overflow-hidden border border-black/5 shadow-md bg-neutral-100"
         >
           {post.mainImage ? (
             <img
               src={post.mainImage.isLocal ? post.mainImage.asset._ref : urlFor(post.mainImage).url()}
               alt={post.mainImage?.alt || post.title}
-              className="w-full h-full object-cover"
+              className="w-full h-auto block"
             />
           ) : (
             <div className="w-full h-full bg-[#011122]" />
