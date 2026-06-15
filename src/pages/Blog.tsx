@@ -69,80 +69,90 @@ export default function Blog() {
 
  useEffect(() => {
    const fetchPosts = async () => {
+     // Always start with local posts so the page is never empty
+     const baseLocalPosts = localBlogPosts.map((p, idx) => ({
+       _id: p.id,
+       title: p.title,
+       slug: { current: p.slug },
+       excerpt: p.excerpt,
+       mainImage: { asset: { _ref: blogCoverImages[idx % blogCoverImages.length] }, isLocal: true },
+       publishedAt: p.date,
+       categories: [{ title: p.category, color: p.categoryColor }],
+       featured: p.featured,
+     }));
+
+     const applyPosts = (merged: SanityPost[]) => {
+       const sorted = [...merged].sort((a, b) => {
+         const aTime = new Date(a.publishedAt).getTime();
+         const bTime = new Date(b.publishedAt).getTime();
+         if (isNaN(aTime) && isNaN(bTime)) return 0;
+         if (isNaN(aTime)) return 1;
+         if (isNaN(bTime)) return -1;
+         return bTime - aTime;
+       });
+       setAllPosts(sorted);
+       setPosts(sorted);
+       const uniqueCats = Array.from(
+         new Set(
+           sorted.flatMap(p =>
+             (p.categories || [])
+               .map((c: { title: string; color: string }) => c.title?.trim())
+               .filter((t: string | undefined): t is string =>
+                 !!t && t.toLowerCase() !== 'all article' && t.toLowerCase() !== 'all articles'
+               )
+           )
+         )
+       ).sort();
+       setCategories(['All Articles', ...uniqueCats]);
+     };
+
+     // Show local posts immediately while Sanity loads
+     applyPosts(baseLocalPosts);
+     setIsLoading(false);
+
+     // Fetch Sanity posts and merge in the background
      try {
        const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
          _id,
          title,
          slug,
          excerpt,
-         mainImage {
-           asset,
-           alt
-         },
+         mainImage { asset, alt },
          publishedAt,
          featured,
          "categories": categories[]->{ title, color }
        }`;
        const pageQuery = `*[_type == "blogPage"][0] {
-  seoModule {
-    metaTitle,
-    metaDescription,
-    ogImage { asset, hotspot },
-    canonicalUrl,
-    noIndex,
-    schemaModules[] {
-      _type, enabled,
-      _type == "faqSchema" => { faqs[]{ _key, question, answer } },
-      _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
-      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
-      _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
-    }
-  },
-         hero,
-         newsletter
+         seoModule {
+           metaTitle, metaDescription,
+           ogImage { asset, hotspot },
+           canonicalUrl, noIndex,
+           schemaModules[] {
+             _type, enabled,
+             _type == "faqSchema" => { faqs[]{ _key, question, answer } },
+             _type == "reviewSchema" => { ratingValue, ratingCount, bestRating, worstRating },
+             _type == "serviceSchema" => { serviceName, serviceDescription, areaServed },
+             _type == "articleSchema" => { articleType, authorName, publishedDate, modifiedDate }
+           }
+         },
+         hero, newsletter
        }`;
 
        const [postsData, pageData] = await Promise.all([
          client.fetch(postsQuery),
-         client.fetch(pageQuery)
+         client.fetch(pageQuery),
        ]);
 
-       const sanitySlugs = new Set(postsData.map((p: any) => p.slug.current));
-       const formattedLocalPosts = localBlogPosts
-         .filter(p => !sanitySlugs.has(p.slug))
-         .map((p, idx) => ({
-           _id: p.id,
-           title: p.title,
-           slug: { current: p.slug },
-           excerpt: p.excerpt,
-           mainImage: { asset: { _ref: blogCoverImages[idx % blogCoverImages.length] }, isLocal: true },
-           publishedAt: p.date,
-           categories: [{ title: p.category, color: p.categoryColor }],
-           featured: p.featured
-         }));
+       if (Array.isArray(postsData) && postsData.length > 0) {
+         const sanitySlugs = new Set(postsData.map((p: any) => p.slug?.current));
+         const dedupedLocal = baseLocalPosts.filter(p => !sanitySlugs.has(p.slug.current));
+         applyPosts([...postsData, ...dedupedLocal]);
+       }
 
-       const merged = [...postsData, ...formattedLocalPosts].sort((a, b) =>
-         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-       );
-
-       setAllPosts(merged);
-       setPosts(merged);
        if (pageData) setPageData(pageData);
-
-       const uniqueCats = Array.from(
-         new Set(
-           merged.flatMap(p =>
-             (p.categories || [])
-               .map((c: { title: string; color: string }) => c.title?.trim())
-               .filter((t: string | undefined): t is string => !!t && t.toLowerCase() !== 'all article' && t.toLowerCase() !== 'all articles')
-           )
-         )
-       ).sort();
-       setCategories(['All Articles', ...uniqueCats]);
      } catch (error) {
-       console.error('Error fetching posts:', error);
-     } finally {
-       setIsLoading(false);
+       console.error('Error fetching Sanity posts:', error);
+       // Local posts are already displayed — nothing more to do
      }
    };
 
