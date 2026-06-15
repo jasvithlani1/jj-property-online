@@ -24,6 +24,8 @@ export default function Blog() {
   const [pageData, setPageData] = useState<any>(null);
   const [categories, setCategories] = useState<string[]>(['All Articles']);
 
+  const [fetchError, setFetchError] = useState(false);
+
   const [email, setEmail] = useState('');
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -122,6 +124,7 @@ export default function Blog() {
         if (pageData) setPageData(pageData);
       } catch (error) {
         console.error('Error fetching posts from Sanity:', error);
+        setFetchError(true);
       } finally {
         setIsLoading(false);
       }
@@ -201,6 +204,10 @@ export default function Blog() {
           {isLoading ? (
             <div className="flex justify-center py-12">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold" />
+            </div>
+          ) : fetchError ? (
+            <div className="text-center py-16">
+              <p className="text-muted font-sans text-lg">Unable to load articles. Please try refreshing the page.</p>
             </div>
           ) : posts.length === 0 ? (
             <div className="text-center py-16">
