@@ -143,6 +143,28 @@ const homePage = {
       { _key: 'ps6', title: 'Settlement', desc: 'We coordinate with your solicitor and broker to ensure a smooth, stress-free settlement.' },
     ],
   },
+  serviceBannerSection: {
+    eyebrow: 'HOW WE CAN SERVE YOU?',
+    heading: 'Tailored Solutions For Every Buyer.',
+    subheading: 'Whether you\'re a first home buyer, a seasoned investor, or purchasing through your SMSF, we have a proven strategy to suit your goals.',
+    items: [
+      { _key: 'sbs1', title: 'First Home Buyers', description: 'Buying your first home is a major milestone, and having the right guidance makes all the difference. We help you clarify your budget, assess borrowing capacity, find the right property, and negotiate strongly so you can buy with confidence.', anchor: 'first-home-buyers' },
+      { _key: 'sbs2', title: 'Property Investors', description: 'Building a strong property portfolio takes strategy, not guesswork. At JJ Property Partner, we use data-led research to identify high-growth, high-yield opportunities across Australia, helping you secure investments that match your income goals, plans, and risk profile.', anchor: 'property-investors' },
+      { _key: 'sbs3', title: 'SMSF Property', description: 'Buying property through an SMSF comes with strict Australian rules, and getting it right matters. We work closely with your adviser, accountant, and SMSF auditor to secure compliant, investment-grade properties that align with your clear long-term retirement goals and wealth strategy.', anchor: 'smsf-property' },
+      { _key: 'sbs4', title: 'Commercial Property', description: 'Navigate the commercial property market with expert guidance. We help you identify, negotiate, and secure high-performing commercial assets that offer strong yields and long-term capital growth, perfectly aligned with your investment strategy.', anchor: 'commercial-property' },
+    ],
+  },
+  workHighlightsSection: {
+    eyebrow: 'WORK HIGHLIGHTS',
+    heading: 'Standout Projects, Real Results.',
+    subheading: 'Explore a selection of standout projects delivered by our team, showcasing strategic thinking, creative excellence, and results-driven execution.',
+    items: [
+      { _key: 'wh1', title: 'The Forever Home — Sydney\'s North-West', description: 'A growing family secured their dream home in Sydney\'s north-west corridor, with walkability to the Metro Northwest station and quality schools — exactly as briefed.', result: '$190,000 Capital Growth', location: 'Sydney Metro North-West, NSW', tag: 'Owner Occupied — Home Buyer' },
+      { _key: 'wh2', title: 'The Mackay Coastal Acquisition', description: 'Premium beachside investment in Mackay\'s most sought-after coastal suburb, secured for a resources sector investor targeting high-yield returns.', result: '$119,000 Capital Growth · 6.18% Yield', location: 'Mackay Coastal Precinct, QLD', tag: 'Property Investor' },
+      { _key: 'wh3', title: 'The Melbourne Growth Corridor Entry', description: 'Affordable Victorian investment in a high-growth western suburb, providing geographic diversification and consistent rental income.', result: '$63,000 Capital Growth · 4.21% Yield', location: 'Melbourne Western Corridor, VIC', tag: 'Property Investor' },
+      { _key: 'wh4', title: 'The Perth Growth Story', description: 'Exceptional total return from Perth\'s eastern corridor — a rare combination of near-7% yield and extraordinary capital growth in under two years.', result: '$285,000 Capital Growth · 6.99% Yield', location: 'Perth Eastern Corridor, WA', tag: 'Property Investor' },
+    ],
+  },
   faqs: [
     { _key: 'faq1', question: 'Do you help clients buy property across Australia?', answer: 'Yes. JJ Property Partner works with buyers across Australia. We take a strategy-first approach, identifying the right locations based on growth potential, rental returns, and your long-term property goals, rather than limiting your search to one city or state.' },
     { _key: 'faq2', question: 'What does a buyer\'s agent actually do?', answer: 'A buyer\'s agent works solely for you, not the seller. They handle the full buying process, including strategy, property research, shortlist creation, inspections, negotiations, and settlement support, while protecting your interests and helping you buy with greater confidence.' },

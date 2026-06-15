@@ -18,6 +18,7 @@ interface SanityCaseStudy {
   tag?: string;
   tagColor?: string;
   dealDone?: boolean;
+  isLocal?: boolean;
   stats: { label: string; value: string }[];
 }
 
@@ -30,7 +31,7 @@ export default function CaseStudies() {
   useEffect(() => {
     const fetchStudies = async () => {
       try {
-        const studiesQuery = `*[_type == "caseStudy"] | order(_createdAt desc) {
+        const studiesQuery = `*[_type == "caseStudy"] | order(caseNumber asc, _createdAt desc) {
           _id,
           title,
           slug,
@@ -191,10 +192,10 @@ export default function CaseStudies() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-              {studies.map((study, index) => (
+              {studies.filter(s => s.slug?.current || s.isLocal).map((study, index) => (
                 <Link
                   key={study._id}
-                  href={`/case-studies/${study.slug.current}`}
+                  href={`/case-studies/${study.slug?.current}`}
                   className="flex"
                 >
                   <motion.article

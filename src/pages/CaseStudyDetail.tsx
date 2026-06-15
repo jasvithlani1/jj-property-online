@@ -104,7 +104,7 @@ export default function CaseStudyDetail() {
         
         setStudy(data);
 
-        const othersQuery = `*[_type == "caseStudy" && slug.current != $slug][0...2] {
+        const othersQuery = `*[_type == "caseStudy" && slug.current != $slug] | order(caseNumber asc, _createdAt desc)[0...2] {
           _id,
           title,
           slug,
@@ -420,10 +420,10 @@ export default function CaseStudyDetail() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-[10px] font-sans font-black uppercase tracking-wider text-gold mb-6 text-center">Continue Exploring</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {otherStudies.map((other) => (
+            {otherStudies.filter(o => o.slug?.current).map((other) => (
               <Link
                 key={other._id}
-                href={`/case-studies/${other.slug.current}`}
+                href={`/case-studies/${other.slug?.current}`}
                 className="group flex flex-col md:flex-row gap-5 p-6 rounded-[1.75rem] bg-neutral-50 border border-transparent hover:border-gold/20 hover:bg-white hover:shadow-lg transition-all duration-500"
               >
                 <div className="w-full md:w-28 h-28 rounded-xl overflow-hidden shrink-0 shadow-sm bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border border-black/5">

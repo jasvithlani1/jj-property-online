@@ -60,20 +60,6 @@ export default {
       ],
     },
     {
-      name: 'faqs',
-      title: 'FAQs',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            { name: 'question', title: 'Question', type: 'string' },
-            { name: 'answer', title: 'Answer', type: 'text' },
-          ],
-        },
-      ],
-    },
-    {
       name: 'aboutPreview',
       title: 'About Preview Section',
       type: 'object',
@@ -121,6 +107,84 @@ export default {
           ]
         }
       ]
-    }
+    },
+    {
+      name: 'serviceBannerSection',
+      title: 'HOW WE CAN SERVE YOU? Section',
+      type: 'object',
+      description: 'The "HOW WE CAN SERVE YOU?" section shown on the home page.',
+      fields: [
+        { name: 'eyebrow', title: 'Eyebrow Label', type: 'string', description: 'e.g. "HOW WE CAN SERVE YOU?"' },
+        { name: 'heading', title: 'Section Heading', type: 'string' },
+        { name: 'subheading', title: 'Section Subheading', type: 'text' },
+        {
+          name: 'items',
+          title: 'Service Items',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              name: 'serviceBannerItem',
+              title: 'Service Item',
+              fields: [
+                { name: 'title', title: 'Title', type: 'string' },
+                { name: 'description', title: 'Description', type: 'text' },
+                { name: 'anchor', title: 'Anchor / Link', type: 'string', description: 'e.g. first-home-buyers' },
+              ],
+              preview: {
+                select: { title: 'title', subtitle: 'description' }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'workHighlightsSection',
+      title: 'WORK HIGHLIGHTS Section',
+      type: 'object',
+      description: 'The "WORK HIGHLIGHTS" section shown between the Trusted By section and reviews.',
+      fields: [
+        { name: 'eyebrow', title: 'Eyebrow Label', type: 'string', description: 'e.g. "WORK HIGHLIGHTS"' },
+        { name: 'heading', title: 'Section Heading', type: 'string' },
+        { name: 'subheading', title: 'Section Subheading', type: 'text' },
+        {
+          name: 'items',
+          title: 'Work Highlight Items',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              name: 'workHighlightItem',
+              title: 'Highlight Item',
+              fields: [
+                { name: 'title', title: 'Project Title', type: 'string' },
+                { name: 'description', title: 'Description', type: 'text' },
+                { name: 'result', title: 'Result / Outcome', type: 'string', description: 'e.g. "Secured 12% Under Asking"' },
+                { name: 'location', title: 'Location', type: 'string' },
+                { name: 'tag', title: 'Category Tag', type: 'string', description: 'e.g. "First Home Buyer"' },
+              ],
+              preview: {
+                select: { title: 'title', subtitle: 'result' }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'faqs',
+      title: 'FAQs',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'question', title: 'Question', type: 'string' },
+            { name: 'answer', title: 'Answer', type: 'text' },
+          ],
+        },
+      ],
+    },
   ],
 };

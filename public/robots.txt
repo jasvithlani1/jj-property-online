@@ -1,5 +1,5 @@
 # robots.txt — JJ Property Partner
-# Generated: 2026-06-11
+# Generated: 2026-06-15
 
 User-agent: *
 Allow: /
