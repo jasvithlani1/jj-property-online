@@ -61,6 +61,7 @@ export default function CaseStudyDetail() {
           resultText,
           location,
           shortQuote,
+          caseNumber,
           mainImage {
             asset,
             alt
@@ -72,7 +73,9 @@ export default function CaseStudyDetail() {
           strategy,
           outcome,
           stats,
-          gallery
+          gallery,
+          propertyDetails[] { label, value },
+          strategicAdvantages[] { title, desc }
         }`;
         
         let data = await client.fetch(query, { slug: id });
@@ -148,6 +151,48 @@ export default function CaseStudyDetail() {
 
       } catch (error) {
         console.error('Error fetching case study:', error);
+        // Fallback to local data if Sanity is unavailable
+        const localStudy = localCaseStudies.find(s => s.id === id);
+        if (localStudy) {
+          setStudy({
+            _id: localStudy.id,
+            title: localStudy.title,
+            slug: { current: localStudy.id },
+            resultText: localStudy.result,
+            location: localStudy.location,
+            shortQuote: localStudy.shortQuote,
+            mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
+            tag: localStudy.tag,
+            tagColor: localStudy.tagColor,
+            client: localStudy.client,
+            challenge: localStudy.challenge,
+            strategy: localStudy.strategy,
+            outcome: localStudy.outcome,
+            stats: localStudy.stats,
+            propertyDetails: localStudy.propertyDetails,
+            strategicAdvantages: localStudy.strategicAdvantages,
+            caseNumber: localStudy.caseNumber
+          });
+        }
+        const fallbackOthers = localCaseStudies
+          .filter(s => s.id !== id)
+          .slice(0, 2)
+          .map(local => ({
+            _id: local.id,
+            title: local.title,
+            slug: { current: local.id },
+            resultText: local.result,
+            location: local.location,
+            mainImage: { asset: { _ref: local.image }, isLocal: true },
+            tag: local.tag,
+            tagColor: local.tagColor,
+            client: local.client,
+            challenge: local.challenge,
+            strategy: local.strategy,
+            outcome: local.outcome,
+            stats: local.stats
+          }));
+        setOtherStudies(fallbackOthers);
       } finally {
         setIsLoading(false);
       }
