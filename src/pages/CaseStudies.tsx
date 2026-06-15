@@ -312,13 +312,16 @@ export default function CaseStudies() {
           <div className="space-y-5">
             {[...acquisitionsList].sort((a, b) => {
               const parseDate = (mStr: string) => {
-                const [mon, yr] = mStr.split('-');
+                if (!mStr) return 0;
+                const parts = mStr.split('-');
+                if (parts.length < 2) return 0;
+                const [mon, yr] = parts;
                 const monthIndex = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].indexOf(mon);
                 return new Date(2000 + parseInt(yr), monthIndex).getTime();
               };
               return parseDate(b.month) - parseDate(a.month);
             }).map((prop, i) => {
-              const [beds, baths, cars] = prop.config.split(' / ');
+              const [beds, baths, cars] = (prop.config || '0 / 0 / 0').split(' / ');
               return (
               <motion.div 
                 key={i}

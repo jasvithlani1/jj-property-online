@@ -270,7 +270,7 @@ export default function CaseStudyDetail() {
               >
                 <h2 className="text-sm md:text-base font-sans font-black uppercase tracking-wider text-gold">2. The Property Brief</h2>
                 <div className="text-sm text-muted/95 font-sans leading-relaxed space-y-3 max-w-none">
-                  {study.challenge.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
+                  {(study.challenge || '').split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
                 </div>
               </motion.div>
             )}
@@ -285,7 +285,7 @@ export default function CaseStudyDetail() {
               >
                 <h2 className="text-sm md:text-base font-sans font-black uppercase tracking-wider text-gold">3. Why This Property Made Sense</h2>
                 <div className="text-sm text-muted/95 font-sans leading-relaxed space-y-3 max-w-none">
-                  {study.strategy.split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
+                  {(study.strategy || '').split('\n\n').map((p, i) => <p key={i}>{p}</p>)}
                 </div>
               </motion.div>
             )}
@@ -438,7 +438,9 @@ export default function CaseStudyDetail() {
                   )}
                 </div>
                 <div className="flex flex-col justify-center">
-                  <span className="text-[9px] font-sans font-black uppercase tracking-wider text-gold mb-1">{other.tag || 'Acquisition'}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gold">
+                    {other.location ? other.location.split(',').pop()?.trim() : ''}
+                  </span>
                   <h3 className="text-base font-sans font-black text-[#011122] mb-1 group-hover:text-gold transition-colors line-clamp-2">{other.title}</h3>
                   <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-muted">
                     Learn more <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
