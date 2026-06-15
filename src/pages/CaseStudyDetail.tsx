@@ -299,13 +299,13 @@ export default function CaseStudyDetail() {
                 <img
                   src={urlFor(study.mainImage).url()}
                   alt={study.title}
-                  className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
+                  className="absolute inset-0 z-10 w-full h-full object-contain drop-shadow-2xl"
                 />
               ) : (
                 <img
                   src={study.mainImage?.asset?._ref}
                   alt={study.title}
-                  className="relative z-10 w-full h-full object-contain drop-shadow-2xl"
+                  className="absolute inset-0 z-10 w-full h-full object-contain drop-shadow-2xl"
                 />
               )}
             </div>
