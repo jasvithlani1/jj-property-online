@@ -39,12 +39,11 @@ export default function Blog() {
  const [activeFilter, setActiveFilter] = useState('All Articles');
  const [isLoading, setIsLoading] = useState(true);
  const [pageData, setPageData] = useState<any>(null);
- 
+ const [categories, setCategories] = useState<string[]>(['All Articles']);
+
  const [email, setEmail] = useState('');
  const [isSubscribing, setIsSubscribing] = useState(false);
  const [isSubscribed, setIsSubscribed] = useState(false);
-
- const categories = ['All Articles', 'Market Intelligence', 'Market Analysis', 'SMSF Strategy', 'First Home', 'Strategy', 'Investment', 'Commercial'];
 
  const handleSubscribe = (e: React.FormEvent) => {
    e.preventDefault();
@@ -63,7 +62,7 @@ export default function Blog() {
      setPosts(allPosts);
    } else {
      setPosts(allPosts.filter(p =>
-       p.categories?.some(c => c.title.toLowerCase() === cat.toLowerCase())
+       p.categories?.some(c => c.title?.trim().toLowerCase() === cat.trim().toLowerCase())
      ));
    }
  };
@@ -129,6 +128,17 @@ export default function Blog() {
        setAllPosts(merged);
        setPosts(merged);
        if (pageData) setPageData(pageData);
+
+       const uniqueCats = Array.from(
+         new Set(
+           merged.flatMap(p =>
+             (p.categories || [])
+               .map(c => c.title?.trim())
+               .filter((t): t is string => !!t && t.toLowerCase() !== 'all article' && t.toLowerCase() !== 'all articles')
+           )
+         )
+       ).sort();
+       setCategories(['All Articles', ...uniqueCats]);
      } catch (error) {
        console.error('Error fetching posts:', error);
      } finally {
@@ -242,7 +252,7 @@ export default function Blog() {
                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                      <div className="absolute top-4 left-4">
                        {post.categories?.[0] && (
-                         <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${post.categories[0].color || 'bg-gold/10 text-gold'}`}>
+                         <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full ${post.categories[0].color || 'bg-gold/80 text-white'}`}>
                            {post.categories[0].title}
                          </span>
                        )}
