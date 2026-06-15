@@ -35,9 +35,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./
-          # Hostinger-specific fixes:
           protocol: ftp
           port: 21
           security: loose
-          timeout: 600000 
-          state-name: .ftp-deploy-sync-state.json 
+          timeout: 600000
+          dangerous-clean-slate: true
