@@ -133,8 +133,8 @@ export default function Blog() {
          new Set(
            merged.flatMap(p =>
              (p.categories || [])
-               .map(c => c.title?.trim())
-               .filter((t): t is string => !!t && t.toLowerCase() !== 'all article' && t.toLowerCase() !== 'all articles')
+               .map((c: { title: string; color: string }) => c.title?.trim())
+               .filter((t: string | undefined): t is string => !!t && t.toLowerCase() !== 'all article' && t.toLowerCase() !== 'all articles')
            )
          )
        ).sort();
