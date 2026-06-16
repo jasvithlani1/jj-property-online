@@ -453,7 +453,7 @@ export default function Home() {
               <div className="space-y-1 text-lg text-muted leading-relaxed max-w-xl font-sans text-left">
                 {homeData?.aboutPreview?.description ? (
                   homeData.aboutPreview.description.split('\n\n').map((paragraph: string, i: number) => (
-                    <p key={i}>{paragraph.replace(/—/g, '-').replace(/\$5M\+/g, '$6M+').replace(/\$6M\+\+/g, '$6M+')}</p>
+                    <p key={i}>{paragraph}</p>
                   ))
                 ) : (
                   <>
