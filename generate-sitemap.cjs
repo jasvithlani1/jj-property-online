@@ -134,37 +134,17 @@ ${entries.map(e => `  <url>
 
   // ── robots.txt ────────────────────────────────────────────────────────────
 
-  const robotsDisallowList = siteSettings?.robotsDisallow || ['/privacy-policy', '/terms-and-conditions', '/thank-you'];
-  const disallowDirectives = robotsDisallowList.map(path => `Disallow: ${path}`).join('\n');
+  const robotsDisallowList = siteSettings?.robotsDisallow || [];
+  const disallowBlock = robotsDisallowList.length > 0
+    ? '\n# Disallow rules (managed via Sanity Crawl Manager)\n' +
+      robotsDisallowList.map(p => `Disallow: ${p}`).join('\n') + '\n'
+    : '';
 
   const robots = `# robots.txt — JJ Property Partner
 # Generated: ${today}
 
 User-agent: *
-Allow: /
-
-# Disallow private / utility pages
-${disallowDirectives}
-
-# Crawl delay for well-behaved bots
-Crawl-delay: 10
-
-# AI / LLM training opt-out
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
+Allow: /${disallowBlock}
 # Sitemap location
 Sitemap: ${SITE_URL}/sitemap.xml
 
