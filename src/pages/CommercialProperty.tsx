@@ -144,7 +144,7 @@ export default function CommercialProperty() {
               <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
                 <img
                   src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1524026986132-000404263b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"}
-                  alt="Modern Commercial Building"
+                  alt={pageData?.intro?.image?.alt || "Modern Commercial Building"}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -182,7 +182,7 @@ export default function CommercialProperty() {
             >
               <img
                 src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "https://images.unsplash.com/photo-1524026986132-000404263b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"}
-                alt="Modern Commercial Building"
+                alt={pageData?.intro?.image?.alt || "Modern Commercial Building"}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -211,7 +211,7 @@ export default function CommercialProperty() {
                   <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
                     <img
                       src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? 'https://images.unsplash.com/photo-1766804626935-93b641ebf57e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : index === 1 ? 'https://images.unsplash.com/photo-1764676003540-39eb53b74f86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : 'https://images.unsplash.com/photo-1769427920602-6f3ab77464e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'))}
-                      alt={pillar.title}
+                      alt={pillar.image?.alt || pillar.title}
                       className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   </div>
@@ -238,7 +238,7 @@ export default function CommercialProperty() {
                 <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
                   <img
                     src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? 'https://images.unsplash.com/photo-1766804626935-93b641ebf57e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : index === 1 ? 'https://images.unsplash.com/photo-1764676003540-39eb53b74f86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : 'https://images.unsplash.com/photo-1769427920602-6f3ab77464e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'))}
-                    alt={pillar.title}
+                    alt={pillar.image?.alt || pillar.title}
                     className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -310,7 +310,7 @@ export default function CommercialProperty() {
                         <div className="relative h-56 overflow-hidden">
                           <img
                             src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? 'https://images.unsplash.com/photo-1766323106404-acf83acd8a95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : i === 1 ? 'https://images.unsplash.com/photo-1777632495227-3b3ea1bd46f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : i === 2 ? 'https://images.unsplash.com/photo-1759871291279-b9b01f89e5d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : i === 3 ? 'https://images.unsplash.com/photo-1760782444083-0f2665436e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080' : 'https://images.unsplash.com/photo-1778218499974-a286da5c97fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'))}
-                            alt={card.title}
+                            alt={card.image?.alt || card.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/90 via-[#011122]/20 to-transparent" />

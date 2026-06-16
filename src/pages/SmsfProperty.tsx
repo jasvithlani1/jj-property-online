@@ -153,7 +153,7 @@ export default function SmsfProperty() {
  <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
  <img
  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
- alt="Modern Residential Property"
+ alt={pageData?.intro?.image?.alt || "Modern Residential Property"}
  className="absolute inset-0 w-full h-full object-cover"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -191,7 +191,7 @@ export default function SmsfProperty() {
  >
  <img
  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_3.png"}
- alt="Modern Residential Property"
+ alt={pageData?.intro?.image?.alt || "Modern Residential Property"}
  className="absolute inset-0 w-full h-full object-cover"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -220,7 +220,7 @@ export default function SmsfProperty() {
  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
  <img
  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_16.png" : index === 1 ? "/images/acquisitions/aus_house_4.png" : "/images/acquisitions/prop_1.png"))}
- alt={pillar.title}
+ alt={pillar.image?.alt || pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
  </div>
@@ -247,7 +247,7 @@ export default function SmsfProperty() {
  <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_16.png" : index === 1 ? "/images/acquisitions/aus_house_4.png" : "/images/acquisitions/prop_1.png"))}
- alt={pillar.title}
+ alt={pillar.image?.alt || pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
  </div>
@@ -285,7 +285,7 @@ export default function SmsfProperty() {
  <div className="relative h-48 overflow-hidden shrink-0">
    <img
      src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (smsfStepImages[i] || smsfStepImages[0]))}
-     alt={card.title}
+     alt={card.image?.alt || card.title}
      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
    />
    <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/80 to-transparent" />

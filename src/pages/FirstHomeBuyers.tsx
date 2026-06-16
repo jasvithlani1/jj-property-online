@@ -144,7 +144,7 @@ export default function FirstHomeBuyers() {
   <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
   <img
   src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/first_home_hero.jpg"}
-  alt="Happy Home Owners"
+  alt={pageData?.intro?.image?.alt || "Happy Home Owners"}
   className="absolute inset-0 w-full h-full object-cover"
   />
   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -181,7 +181,7 @@ export default function FirstHomeBuyers() {
  >
  <img
   src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/first_home_hero.jpg"}
-  alt="Happy Home Owners"
+  alt={pageData?.intro?.image?.alt || "Happy Home Owners"}
   className="absolute inset-0 w-full h-full object-cover"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -210,7 +210,7 @@ export default function FirstHomeBuyers() {
   <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
   <img
   src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_4.png" : index === 1 ? "/images/acquisitions/fhb_pillar_2.png" : "/images/acquisitions/user_prop_6.png"))}
-  alt={pillar.title}
+  alt={pillar.image?.alt || pillar.title}
   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
   />
   </div>
@@ -236,7 +236,7 @@ export default function FirstHomeBuyers() {
    <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
   <img
   src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_prop_4.png" : index === 1 ? "/images/acquisitions/fhb_pillar_2.png" : "/images/acquisitions/user_prop_6.png"))}
-  alt={pillar.title}
+  alt={pillar.image?.alt || pillar.title}
   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
   />
   </div>
@@ -311,7 +311,7 @@ export default function FirstHomeBuyers() {
  <div className="relative h-56 overflow-hidden">
  <img
  src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (['/images/acquisitions/user_prop_7.png','/images/acquisitions/user_prop_8.png','/images/acquisitions/off_market_house.png','/images/acquisitions/user_prop_10.png','/images/acquisitions/user_img_4.png','/images/acquisitions/user_prop_14.jpg'][i] || '/images/acquisitions/user_prop_7.png'))}
- alt={card.title}
+ alt={card.image?.alt || card.title}
  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/90 via-[#011122]/20 to-transparent" />

@@ -47,7 +47,20 @@ export default {
           type: 'array',
           of: [{ type: 'string' }],
         },
-        { name: 'image', title: 'Side Image', type: 'image', options: { hotspot: true } },
+        {
+          name: 'image',
+          title: 'Side Image',
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Describe the image for screen readers and SEO (e.g. "First home buyers reviewing property documents").',
+            },
+          ],
+        },
       ],
     },
     {
@@ -60,7 +73,20 @@ export default {
           fields: [
             { name: 'title', title: 'Title', type: 'string' },
             { name: 'description', title: 'Description', type: 'text' },
-            { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+            {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alt Text',
+                  type: 'string',
+                  description: 'Describe the image for screen readers and SEO.',
+                },
+              ],
+            },
           ],
         },
       ],
@@ -83,7 +109,20 @@ export default {
                 { name: 'stepNumber', title: 'Step Number', type: 'string' },
                 { name: 'title', title: 'Title', type: 'string' },
                 { name: 'body', title: 'Body Text', type: 'text' },
-                { name: 'image', title: 'Image', type: 'image', options: { hotspot: true } },
+                {
+                  name: 'image',
+                  title: 'Image',
+                  type: 'image',
+                  options: { hotspot: true },
+                  fields: [
+                    {
+                      name: 'alt',
+                      title: 'Alt Text',
+                      type: 'string',
+                      description: 'Describe the image for screen readers and SEO.',
+                    },
+                  ],
+                },
               ],
             },
           ],

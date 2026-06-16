@@ -143,9 +143,8 @@ export default function PropertyInvestors() {
  <div className="relative h-[320px] rounded-[2rem] overflow-hidden shadow-2xl mb-4 lg:hidden">
  <img
  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_2.png"}
- alt="Modern Residential Building"
+ alt={pageData?.intro?.image?.alt || "Modern Residential Building"}
  className="absolute inset-0 w-full h-full object-cover"
- border-transparent
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
  </div>
@@ -182,7 +181,7 @@ export default function PropertyInvestors() {
  >
  <img
  src={pageData?.intro?.image ? urlFor(pageData.intro.image).url() : "/images/acquisitions/aus_house_2.png"}
- alt="Modern Residential Building"
+ alt={pageData?.intro?.image?.alt || "Modern Residential Building"}
  className="absolute inset-0 w-full h-full object-cover"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -211,7 +210,7 @@ export default function PropertyInvestors() {
  <div className="relative h-[320px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 mb-4 lg:hidden">
  <img
  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_img_5.png" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_img_6.png"))}
- alt={pillar.title}
+ alt={pillar.image?.alt || pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
  </div>
@@ -238,7 +237,7 @@ export default function PropertyInvestors() {
  <div className={`hidden lg:flex relative min-h-[400px] h-full rounded-[2rem] overflow-hidden shadow-2xl shadow-gold/5 ${index % 2 === 0 ? 'lg:col-start-1' : ''}`}>
  <img
  src={pillar.image?.asset ? urlFor(pillar.image).url() : (typeof pillar.image === 'string' ? pillar.image : (index === 0 ? "/images/acquisitions/user_img_5.png" : index === 1 ? "/images/acquisitions/user_prop_17.png" : "/images/acquisitions/user_img_6.png"))}
- alt={pillar.title}
+ alt={pillar.image?.alt || pillar.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  />
  </div>
@@ -311,7 +310,7 @@ export default function PropertyInvestors() {
  <div className="relative h-56 overflow-hidden">
  <img
  src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (i === 0 ? "/images/acquisitions/aus_house_3.png" : i === 1 ? "/images/acquisitions/user_prop_20.png" : i === 2 ? "/images/acquisitions/aus_house_4.png" : i === 3 ? "/images/acquisitions/modern_beige.png" : "/images/acquisitions/modern_grey.png"))}
- alt={card.title}
+ alt={card.image?.alt || card.title}
  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
  />
  <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/90 via-[#011122]/20 to-transparent" />
