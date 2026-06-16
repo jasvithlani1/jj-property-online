@@ -6,6 +6,15 @@ import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
 
+const smsfStepImages = [
+ '/images/acquisitions/user_prop_19.png',
+ '/images/acquisitions/user_prop_20.png',
+ '/images/acquisitions/user_prop_21.png',
+ '/images/acquisitions/prop_4.png',
+ '/images/acquisitions/prop_5.png',
+ '/images/acquisitions/aus_prop_kawana.png',
+];
+
 const smsfFaqs = [
  {
  question: 'Why buy property within an SMSF?',
@@ -271,15 +280,23 @@ export default function SmsfProperty() {
  whileInView={{ opacity: 1, y: 0 }}
  viewport={{ once: true }}
  transition={{ delay: i * 0.1 }}
- className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+ className="flex flex-col rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-500 group"
  >
- <div className="flex items-center gap-4 mb-4">
- <div className="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center font-sans font-black text-xl shrink-0">
- {card.stepNumber || `0${i + 1}`}
+ <div className="relative h-48 overflow-hidden shrink-0">
+   <img
+     src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (smsfStepImages[i] || smsfStepImages[0]))}
+     alt={card.title}
+     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+   />
+   <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/80 to-transparent" />
+   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+     Step {card.stepNumber || `0${i + 1}`}
+   </div>
  </div>
- <h3 className="text-xl font-sans font-black text-white leading-tight">{card.title}</h3>
+ <div className="flex flex-col items-start text-left p-6">
+   <h3 className="text-xl font-sans font-black text-white leading-tight mb-3">{card.title}</h3>
+   <p className="text-sm text-white/60 leading-relaxed font-sans">{card.body}</p>
  </div>
- <p className="text-sm text-white/60 leading-relaxed font-sans">{card.body}</p>
  </motion.div>
  ))}
  </div>
