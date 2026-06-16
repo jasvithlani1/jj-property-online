@@ -18,6 +18,7 @@ export default {
       title: 'Hero Section',
       type: 'object',
       fields: [
+        { name: 'badge', title: 'Badge Label', type: 'string' },
         { name: 'heading', title: 'Heading', type: 'string' },
         { name: 'subheading', title: 'Subheading', type: 'text' },
       ],

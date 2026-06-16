@@ -303,6 +303,7 @@ export default function Contact() {
  <option value="owner-occupier">Owner Occupier / First Home</option>
  <option value="investment">Investment Property</option>
  <option value="smsf">SMSF Acquisition</option>
+ <option value="commercial">Commercial Property</option>
  </select>
  </div>
 
