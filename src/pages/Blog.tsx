@@ -240,13 +240,6 @@ export default function Blog() {
                         <div className="w-full h-full bg-[#011122]/10" />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                      {post.categories?.[0] && (
-                        <div className="absolute top-4 left-4">
-                          <span className="text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-gold/80 text-white">
-                            {post.categories[0].title}
-                          </span>
-                        </div>
-                      )}
                     </div>
 
                     {/* Body */}
