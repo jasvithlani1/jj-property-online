@@ -116,5 +116,45 @@ export default {
         },
       ],
     },
+    {
+      name: 'credentials',
+      title: 'Credentials & Licensing',
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Section Heading',
+          type: 'string',
+        },
+        {
+          name: 'items',
+          title: 'Credential Items',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'label', title: 'Label', type: 'string' },
+                { name: 'value', title: 'Value', type: 'string' },
+                {
+                  name: 'icon',
+                  title: 'Icon',
+                  type: 'string',
+                  description: 'Choose the icon to display alongside this credential.',
+                  options: {
+                    list: [
+                      { title: 'Badge / Licence', value: 'BadgeCheck' },
+                      { title: 'Briefcase / ABN', value: 'Briefcase' },
+                      { title: 'Building / Business', value: 'Building2' },
+                      { title: 'Map Pin / Location', value: 'MapPin' },
+                    ],
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

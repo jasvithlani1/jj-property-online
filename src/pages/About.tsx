@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, BadgeCheck, Briefcase, Building2, MapPin, Target, Search, Handshake } from 'lucide-react';
 import Link from '../components/Link';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
 
@@ -32,7 +32,8 @@ export default function About() {
   trackRecord,
   techAdvantage,
   values,
-  pillarsSection
+  pillarsSection,
+  credentials
   }`;
  const data = await client.fetch(query);
  if (data) setAboutData(data);
@@ -332,35 +333,47 @@ export default function About() {
  </section>
 
   {/* Credentials */}
-  <section className="pt-0.5 pb-4 md:pt-[30px] md:pb-4 mt-0.5 md:mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
-   <div className="max-w-7xl mx-auto">
-   <div className="text-center mb-2 md:mb-6 mt-1 md:mt-0">
-  <h2 className="text-3xl md:text-4xl font-sans font-black text-black">Credentials & Licencing</h2>
-  </div>
-  
-  <div className="bg-white p-3 sm:p-4 md:p-5 rounded-3xl md:rounded-full shadow-sm border border-gold/10 grid grid-cols-1 min-[360px]:grid-cols-2 md:flex md:flex-row md:flex-wrap justify-between gap-2.5 sm:gap-4 md:gap-6 items-center max-w-5xl mx-auto">
-  {[
-    { icon: <BadgeCheck className="w-5 h-5 text-gold" />, label: "REA Licence", value: "20543356" },
-    { icon: <Briefcase className="w-5 h-5 text-gold" />, label: "ABN", value: "71 687 187 113" },
-    { icon: <Building2 className="w-5 h-5 text-gold" />, label: "Business", value: "JJ Property Partner" },
-    { icon: <MapPin className="w-5 h-5 text-gold" />, label: "Location", value: "Sydney, NSW" },
-  ].map((cred, i) => (
-    <div 
-      key={i} 
-      className="flex items-center gap-2 sm:gap-3 w-full md:w-auto justify-start p-2.5 sm:p-3 md:p-0 rounded-2xl md:rounded-none bg-neutral-50/50 md:bg-transparent border border-black/5 md:border-none md:border-r md:border-gold/20 md:pr-6 md:last:border-r-0 min-w-0"
-    >
-      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gold/10 rounded-full flex items-center justify-center shrink-0 shadow-sm">
-        {cred.icon}
-      </div>
-      <div className="flex flex-col items-start justify-center min-w-0">
-        <span className="text-[9px] sm:text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
-        <span className={`text-xs min-[400px]:text-sm sm:text-base font-sans font-black text-black leading-tight break-words min-w-0 ${cred.label === 'ABN' ? 'min-[400px]:whitespace-nowrap' : cred.label === 'Business' ? 'md:whitespace-nowrap' : 'whitespace-nowrap'}`}>{cred.value}</span>
-      </div>
-    </div>
-  ))}
-  </div>
-  </div>
-  </section>
+  {(() => {
+    const iconMap: Record<string, React.ReactNode> = {
+      BadgeCheck: <BadgeCheck className="w-5 h-5 text-gold" />,
+      Briefcase:  <Briefcase  className="w-5 h-5 text-gold" />,
+      Building2:  <Building2  className="w-5 h-5 text-gold" />,
+      MapPin:     <MapPin     className="w-5 h-5 text-gold" />,
+    };
+    const fallbackItems = [
+      { icon: 'BadgeCheck', label: 'REA Licence', value: '20543356' },
+      { icon: 'Briefcase',  label: 'ABN',         value: '71 687 187 113' },
+      { icon: 'Building2',  label: 'Business',    value: 'JJ Property Partner' },
+      { icon: 'MapPin',     label: 'Location',    value: 'Sydney, NSW' },
+    ];
+    const heading = aboutData?.credentials?.heading || 'Credentials & Licencing';
+    const items   = aboutData?.credentials?.items   || fallbackItems;
+    return (
+      <section className="pt-0.5 pb-4 md:pt-[30px] md:pb-4 mt-0.5 md:mt-0 px-4 sm:px-8 bg-neutral-50 border-t border-gold/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-2 md:mb-6 mt-1 md:mt-0">
+            <h2 className="text-3xl md:text-4xl font-sans font-black text-black">{heading}</h2>
+          </div>
+          <div className="bg-white p-3 sm:p-4 md:p-5 rounded-3xl md:rounded-full shadow-sm border border-gold/10 grid grid-cols-1 min-[360px]:grid-cols-2 md:flex md:flex-row md:flex-wrap justify-between gap-2.5 sm:gap-4 md:gap-6 items-center max-w-5xl mx-auto">
+            {items.map((cred: any, i: number) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 sm:gap-3 w-full md:w-auto justify-start p-2.5 sm:p-3 md:p-0 rounded-2xl md:rounded-none bg-neutral-50/50 md:bg-transparent border border-black/5 md:border-none md:border-r md:border-gold/20 md:pr-6 md:last:border-r-0 min-w-0"
+              >
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gold/10 rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                  {iconMap[cred.icon] ?? <BadgeCheck className="w-5 h-5 text-gold" />}
+                </div>
+                <div className="flex flex-col items-start justify-center min-w-0">
+                  <span className="text-[9px] sm:text-[10px] font-bold text-muted uppercase tracking-widest">{cred.label}</span>
+                  <span className={`text-xs min-[400px]:text-sm sm:text-base font-sans font-black text-black leading-tight break-words min-w-0 ${cred.label === 'ABN' ? 'min-[400px]:whitespace-nowrap' : cred.label === 'Business' ? 'md:whitespace-nowrap' : 'whitespace-nowrap'}`}>{cred.value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })()}
  </div>
  </>
  );
