@@ -258,47 +258,88 @@ export default function SmsfProperty() {
 
  {/* Your SMSF Acquisition Journey */}
  <section className="py-4 px-8 bg-[#011122] text-white overflow-hidden relative">
- <div className="max-w-7xl mx-auto text-center mb-4">
- <h2 className="text-4xl md:text-5xl font-sans font-black mb-4 text-white">
+ <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-5 mix-blend-overlay" />
+ <div className="max-w-7xl mx-auto">
+ <div className="flex flex-col lg:flex-row gap-6 lg:gap-20 items-start">
+
+ {/* Left — Sticky Panel */}
+ <div className="lg:w-[38%] lg:sticky lg:top-[30vh] lg:self-start">
+ <div className="mb-4 text-center">
+ <div className="h-1 w-16 bg-gold mb-4 rounded-full mx-auto" />
+ <h2 className="text-4xl md:text-5xl font-sans font-black text-white mb-4">
  {pageData?.process?.heading || (
  <>Your SMSF Acquisition <span className="text-gold">Journey</span></>
  )}
  </h2>
- <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
+ <p className="text-white/60 font-sans text-lg leading-relaxed text-left">
+ {pageData?.process?.description || "From fund readiness to final settlement, JJ Property Partner manages every step of your SMSF property acquisition - ensuring compliance, strategy, and execution are perfectly aligned."}
+ </p>
  </div>
- <div className="max-w-7xl mx-auto">
- <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+ </div>
+
+ {/* Right — Scrollable Cards with Timeline */}
+ <div className="lg:w-[62%] flex flex-col">
  {(pageData?.process?.steps || [
- { stepNumber: '01', title: 'Strategy & Setup', body: 'We coordinate with your financial professionals to ensure your fund is structured correctly and your investment strategy is property-ready.' },
- { stepNumber: '02', title: 'Compliant Sourcing', body: 'We identify residential assets that meet SMSF lending requirements and offer the best long-term growth and yield potential.' },
- { stepNumber: '03', title: 'Managed Due Diligence', body: 'Thorough inspections and professional contract reviews ensure the asset is sound and all SMSF regulatory requirements are met.' },
- { stepNumber: '04', title: 'Strategic Settlement', body: 'We manage the entire process through to settlement, ensuring a seamless transition and property management setup.' }
- ]).map((card: any, i: number) => (
+ { stepNumber: '01', title: 'Step 1 - SMSF Readiness Assessment', body: 'We coordinate with your financial professionals to ensure your fund is structured correctly and your investment strategy is property-ready.' },
+ { stepNumber: '02', title: 'Step 2 - Compliance Framework Setup', body: 'We identify residential assets that meet SMSF lending requirements and offer the best long-term growth and yield potential.' },
+ { stepNumber: '03', title: 'Step 3 - Property Research & Sourcing', body: 'Thorough inspections and professional contract reviews ensure the asset is sound and all SMSF regulatory requirements are met.' },
+ { stepNumber: '04', title: 'Step 4 - Due Diligence & Compliance Check', body: 'We manage the entire process through to settlement, ensuring a seamless transition and property management setup.' }
+ ]).map((card: any, i: number, arr: any[]) => (
+ <div key={card.stepNumber || i} className="flex items-stretch gap-4 md:gap-6 relative">
+ <div className="relative w-4 shrink-0">
+ {i < arr.length - 1 && (
+ <div className="absolute top-[32px] bottom-[-24px] left-1/2 -translate-x-1/2 w-px bg-white/10 overflow-hidden z-0">
  <motion.div
- key={card.stepNumber || i}
- initial={{ opacity: 0, y: 30 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true }}
- transition={{ delay: i * 0.1 }}
- className="flex flex-col rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-500 group"
- >
- <div className="relative h-48 overflow-hidden shrink-0">
-   <img
-     src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (smsfStepImages[i] || smsfStepImages[0]))}
-     alt={card.image?.alt || card.title}
-     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
-   />
-   <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/80 to-transparent" />
-   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-     Step {card.stepNumber || `0${i + 1}`}
-   </div>
+ initial={{ height: '0%' }}
+ whileInView={{ height: '100%' }}
+ viewport={{ once: false, margin: '-25% 0px -25% 0px' }}
+ transition={{ duration: 1.2, ease: 'easeInOut' }}
+ className="absolute top-0 left-0 w-full bg-gradient-to-b from-gold to-gold/20"
+ />
  </div>
- <div className="flex flex-col items-start text-left p-6">
-   <h3 className="text-xl font-sans font-black text-white leading-tight mb-3">{card.title}</h3>
-   <p className="text-sm text-white/60 leading-relaxed font-sans">{card.body}</p>
+ )}
+ <motion.div
+ initial={{ scale: 0, opacity: 0 }}
+ whileInView={{ scale: 1, opacity: 1 }}
+ viewport={{ once: true, margin: '-15%' }}
+ transition={{ duration: 0.5, ease: 'backOut' }}
+ className="w-4 h-4 rounded-full bg-gold ring-4 ring-gold/20 absolute left-0 top-[24px] z-10"
+ />
+ </div>
+
+ <div className={`flex-1 ${i < arr.length - 1 ? 'pb-4' : ''}`}>
+ <motion.div
+ initial={{ opacity: 0, y: 40 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: '-80px' }}
+ transition={{ duration: 0.7, ease: 'easeOut' }}
+ className="rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 hover:border-gold/30 transition-all duration-300 group"
+ >
+ <div className="relative h-56 overflow-hidden">
+ <img
+ src={card.image?.asset ? urlFor(card.image).url() : (typeof card.image === 'string' ? card.image : (smsfStepImages[i] || smsfStepImages[0]))}
+ alt={card.image?.alt || card.title}
+ className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75"
+ />
+ <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/90 via-[#011122]/20 to-transparent" />
+ <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold/90 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
+ Step {card.stepNumber || (i + 1)}
+ </div>
+ </div>
+ <div className="p-5 md:p-8 text-left">
+ <h3 className="text-xl md:text-2xl font-sans font-black text-white mb-2 leading-snug">
+ {card.title}
+ </h3>
+ <p className="text-white/60 font-sans text-base leading-relaxed">
+ {card.body}
+ </p>
  </div>
  </motion.div>
+ </div>
+ </div>
  ))}
+ </div>
+
  </div>
  </div>
  </section>
