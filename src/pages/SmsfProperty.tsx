@@ -433,6 +433,53 @@ export default function SmsfProperty() {
  </div>
  </section>
 
+ {/* Why JJ Property Partner Section */}
+ <section className="py-4 px-8 bg-[#011122] text-white relative overflow-hidden">
+ <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+ <div className="max-w-7xl mx-auto">
+   <div className="text-center mb-4">
+     <motion.h2
+       initial={{ opacity: 0, y: 20 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true }}
+       className="text-4xl md:text-5xl lg:text-6xl font-sans font-black mb-4"
+     >
+       {pageData?.whyJJ?.heading || (
+         <>Why JJ Property Partner for <span className="text-gold">SMSF Success</span></>
+       )}
+     </motion.h2>
+     <div className="h-1.5 w-24 bg-gold mx-auto rounded-full" />
+   </div>
+
+   <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8">
+     {(pageData?.whyJJ?.reasons || [
+       { title: 'SMSF Specialists', desc: 'Deep expertise in SMSF-compliant property acquisition from strategy to settlement.' },
+       { title: 'Compliance First', desc: 'Every property is assessed against the sole purpose test and LRBA lending rules.' },
+       { title: 'Off-Market Access', desc: 'Access to quality residential assets before they reach the public portals.' },
+       { title: 'Team Coordination', desc: 'We liaise directly with your accountant, broker, and solicitor throughout.' },
+       { title: 'Zero Conflict', desc: 'We work exclusively for you — no developer ties or hidden commissions.' },
+     ]).map((item: any, idx: number) => (
+       <motion.div
+         key={idx}
+         initial={{ opacity: 0, y: 30 }}
+         whileInView={{ opacity: 1, y: 0 }}
+         viewport={{ once: true }}
+         transition={{ delay: idx * 0.1 }}
+         className="flex flex-col items-start text-left p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500"
+       >
+         <div className="flex items-center gap-4 mb-4">
+           <div className="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center font-sans font-black text-xl shrink-0">
+             {idx + 1}
+           </div>
+           <h3 className="text-xl font-sans font-black text-white leading-tight">{item.title}</h3>
+         </div>
+         <p className="text-sm text-white/60 leading-relaxed font-sans">{item.description || item.desc}</p>
+       </motion.div>
+     ))}
+   </div>
+ </div>
+ </section>
+
  {/* FAQ Section */}
  <section className="relative py-[1px] bg-gradient-to-b from-white to-neutral-50 px-8">
    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 lg:gap-8">
