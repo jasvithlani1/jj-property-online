@@ -14,18 +14,6 @@ export default {
       type: 'seoModule',
     },
     {
-      name: 'hero',
-      title: 'Hero Section',
-      type: 'object',
-      fields: [
-        { name: 'badge', title: 'Top Badge', type: 'string' },
-        { name: 'heading', title: 'Heading', type: 'string' },
-        { name: 'subheading', title: 'Subheading', type: 'text' },
-        { name: 'image', title: 'Main Image', type: 'image', options: { hotspot: true } },
-        { name: 'missionBadge', title: 'Mission Badge Text', type: 'text' },
-      ],
-    },
-    {
       name: 'profile',
       title: 'Founder Profile Section',
       type: 'object',

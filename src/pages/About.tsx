@@ -26,7 +26,6 @@ export default function About() {
      _type == "serviceSchema" => { serviceName, serviceDescription, areaServed }
    }
   },
-  hero,
   profile,
   purpose,
   trackRecord,
