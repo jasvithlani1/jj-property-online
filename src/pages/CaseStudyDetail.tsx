@@ -78,33 +78,8 @@ export default function CaseStudyDetail() {
           strategicAdvantages[] { title, desc }
         }`;
         
-        let data = await client.fetch(query, { slug: id });
-        
-        if (!data) {
-          const localStudy = localCaseStudies.find(s => s.id === id);
-          if (localStudy) {
-            data = {
-              _id: localStudy.id,
-              title: localStudy.title,
-              slug: { current: localStudy.id },
-              resultText: localStudy.result,
-              location: localStudy.location,
-              shortQuote: localStudy.shortQuote,
-              mainImage: { asset: { _ref: localStudy.image }, isLocal: true },
-              tag: localStudy.tag,
-              tagColor: localStudy.tagColor,
-              client: localStudy.client,
-              challenge: localStudy.challenge,
-              strategy: localStudy.strategy,
-              outcome: localStudy.outcome,
-              stats: localStudy.stats,
-              propertyDetails: localStudy.propertyDetails,
-              strategicAdvantages: localStudy.strategicAdvantages,
-              caseNumber: localStudy.caseNumber
-            };
-          }
-        }
-        
+        // Sanity is the sole source of truth — if not found there, it doesn't exist
+        const data = await client.fetch(query, { slug: id });
         setStudy(data);
 
         const othersQuery = `*[_type == "caseStudy" && slug.current != $slug] | order(caseNumber asc, _createdAt desc)[0...2] {
@@ -117,37 +92,8 @@ export default function CaseStudyDetail() {
           tag,
           tagColor
         }`;
-        
-        let others = [];
-        try {
-          others = await client.fetch(othersQuery, { slug: id });
-        } catch (e) {
-          console.error("Sanity others query failed, using fallback");
-        }
-        
-        if (!others || others.length === 0) {
-          const fallbackOthers = localCaseStudies
-            .filter(s => s.id !== id)
-            .slice(0, 2)
-            .map(local => ({
-              _id: local.id,
-              title: local.title,
-              slug: { current: local.id },
-              resultText: local.result,
-              location: local.location,
-              mainImage: { asset: { _ref: local.image }, isLocal: true },
-              tag: local.tag,
-              tagColor: local.tagColor,
-              client: local.client,
-              challenge: local.challenge,
-              strategy: local.strategy,
-              outcome: local.outcome,
-              stats: local.stats
-            }));
-          setOtherStudies(fallbackOthers);
-        } else {
-          setOtherStudies(others);
-        }
+        const others = await client.fetch(othersQuery, { slug: id });
+        setOtherStudies(others || []);
 
       } catch (error) {
         console.error('Error fetching case study:', error);

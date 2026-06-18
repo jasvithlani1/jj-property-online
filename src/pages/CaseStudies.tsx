@@ -91,24 +91,8 @@ export default function CaseStudies() {
           client.fetch(acquisitionsQuery)
         ]);
 
-        
-        // Map local case studies to match Sanity format
-        const formattedLocalStudies = localCaseStudies.map(local => ({
-          _id: local.id,
-          title: local.title,
-          slug: { current: local.id },
-          resultText: local.result,
-          location: local.location,
-          shortQuote: local.shortQuote,
-          mainImage: { asset: { _ref: local.image }, isLocal: true }, // Mark as local for conditional rendering
-          tag: local.tag,
-          tagColor: local.tagColor,
-          stats: local.stats
-        }));
-
-        const sanitySlugs = (studiesData || []).map((s: any) => s.slug?.current).filter(Boolean);
-        const filteredLocalStudies = formattedLocalStudies.filter((s: any) => !sanitySlugs.includes(s.slug.current));
-        setStudies([...(studiesData || []), ...filteredLocalStudies]);
+        // Sanity is the sole source of truth — never merge with local data
+        setStudies(studiesData || []);
         if (pageData) setPageData(pageData);
         if (acquisitionsData && acquisitionsData.length > 0) {
           setAcquisitionsList(acquisitionsData);
