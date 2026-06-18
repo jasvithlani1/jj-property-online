@@ -46,15 +46,28 @@ export default {
     },
     {
       name: 'servicesPreview',
-      title: 'Services Preview',
-      type: 'array',
-      of: [
+      title: 'Services Preview Section',
+      type: 'object',
+      fields: [
+        { name: 'eyebrow', title: 'Eyebrow Label', type: 'string', description: 'e.g. "HOW WE CAN SERVE YOU?"' },
+        { name: 'heading', title: 'Section Heading', type: 'string' },
+        { name: 'subheading', title: 'Section Subheading', type: 'text' },
+        { name: 'ctaText', title: 'CTA Button Text', type: 'string' },
+        { name: 'ctaLink', title: 'CTA Button Link', type: 'string', description: 'e.g. /services' },
         {
-          type: 'object',
-          fields: [
-            { name: 'title', title: 'Title', type: 'string' },
-            { name: 'description', title: 'Description', type: 'text' },
-            { name: 'anchor', title: 'Anchor Link', type: 'string' },
+          name: 'items',
+          title: 'Service Cards',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                { name: 'title', title: 'Title', type: 'string' },
+                { name: 'description', title: 'Description', type: 'text' },
+                { name: 'anchor', title: 'Anchor Link', type: 'string', description: 'e.g. first-home-buyers' },
+              ],
+              preview: { select: { title: 'title', subtitle: 'anchor' } },
+            },
           ],
         },
       ],
@@ -125,37 +138,6 @@ export default {
                 { name: 'title', title: 'Step Title', type: 'string' },
                 { name: 'desc', title: 'Description', type: 'text' },
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'serviceBannerSection',
-      title: 'HOW WE CAN SERVE YOU? Section',
-      type: 'object',
-      description: 'The "HOW WE CAN SERVE YOU?" section shown on the home page.',
-      fields: [
-        { name: 'eyebrow', title: 'Eyebrow Label', type: 'string', description: 'e.g. "HOW WE CAN SERVE YOU?"' },
-        { name: 'heading', title: 'Section Heading', type: 'string' },
-        { name: 'subheading', title: 'Section Subheading', type: 'text' },
-        {
-          name: 'items',
-          title: 'Service Items',
-          type: 'array',
-          of: [
-            {
-              type: 'object',
-              name: 'serviceBannerItem',
-              title: 'Service Item',
-              fields: [
-                { name: 'title', title: 'Title', type: 'string' },
-                { name: 'description', title: 'Description', type: 'text' },
-                { name: 'anchor', title: 'Anchor / Link', type: 'string', description: 'e.g. first-home-buyers' },
-              ],
-              preview: {
-                select: { title: 'title', subtitle: 'description' }
-              }
             }
           ]
         }

@@ -167,7 +167,7 @@ export default function Home() {
    }
  },
  hero,
- servicesPreview,
+ servicesPreview { eyebrow, heading, subheading, ctaText, ctaLink, items[] { _key, title, description, anchor } },
  faqs,
  aboutPreview { heading, subheading, description, ctaText, image { asset, hotspot, alt } },
  differenceSection { heading, subheading, points, collageImages[] { asset, hotspot, alt } },
@@ -535,16 +535,25 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-3 gap-6 relative">
               <div className="relative flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="absolute -left-12 -top-12 text-[12rem] font-sans font-black text-gold/5 -z-10 pointer-events-none select-none hidden md:block">Services</div>
-                <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2 leading-tight">Our Core <span className="text-gold">Services.</span></h2>
-                <p className="text-muted text-xl font-sans max-w-xl leading-relaxed text-left md:text-left">From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.</p>
+                <h2 className="text-4xl md:text-5xl font-sans font-black text-black mb-2 leading-tight">
+                  {homeData?.servicesPreview?.heading ? (
+                    <>
+                      {homeData.servicesPreview.heading.split(' ').slice(0, -1).join(' ')} <span className="text-gold">{homeData.servicesPreview.heading.split(' ').slice(-1)[0]}</span>
+                    </>
+                  ) : (
+                    <>Our Core <span className="text-gold">Services.</span></>
+                  )}
+                </h2>
+                <p className="text-muted text-xl font-sans max-w-xl leading-relaxed text-left md:text-left">
+                  {homeData?.servicesPreview?.subheading || 'From elite residential acquisitions to high-yield investment portfolios, we provide the precision and insight you need to move with total confidence.'}
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 z-20">
-
                 <Link
-                  href="/services"
+                  href={homeData?.servicesPreview?.ctaLink || '/services'}
                   className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-black border-2 border-black/5 rounded-full px-8 py-4 hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
                 >
-                  View Full Spectrum
+                  {homeData?.servicesPreview?.ctaText || 'View Full Spectrum'}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
@@ -552,8 +561,7 @@ export default function Home() {
 
             <div className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-5 pb-0">
-                {servicesPreview.map((localService: any, index: number) => {
-                  const service = homeData?.servicesPreview?.find((s: any) => s.title === localService.title) || localService;
+                {(homeData?.servicesPreview?.items || servicesPreview).map((service: any, index: number) => {
                   return (
                     <Link
                       key={service.title}
