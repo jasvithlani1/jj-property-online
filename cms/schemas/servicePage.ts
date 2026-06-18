@@ -2,6 +2,13 @@ export default {
   name: 'servicePage',
   title: 'Service Pages',
   type: 'document',
+  orderings: [
+    {
+      title: 'Display Order (Navbar)',
+      name: 'displayOrder',
+      by: [{ field: 'order', direction: 'asc' }],
+    },
+  ],
   fields: [
     {
       name: 'title',
@@ -18,6 +25,12 @@ export default {
         maxLength: 96,
       },
       validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Controls the order in the Studio list. Matches the navbar dropdown: 1 = First Home Buyers, 2 = Property Investors, 3 = SMSF Property, 4 = Commercial Property.',
     },
     {
       name: 'seoModule',
