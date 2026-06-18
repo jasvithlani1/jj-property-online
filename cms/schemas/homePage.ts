@@ -68,6 +68,14 @@ export default {
         { name: 'subheading', title: 'Subheading', type: 'string' },
         { name: 'description', title: 'Description', type: 'text' },
         { name: 'ctaText', title: 'CTA Button Text', type: 'string' },
+        {
+          name: 'image',
+          title: 'Profile Image',
+          type: 'image',
+          description: 'Profile photo shown beside the About preview text.',
+          options: { hotspot: true },
+          fields: [{ name: 'alt', title: 'Alt Text', type: 'string' }],
+        },
       ],
     },
     {
@@ -77,11 +85,25 @@ export default {
       fields: [
         { name: 'heading', title: 'Heading', type: 'string' },
         { name: 'subheading', title: 'Subheading', type: 'text' },
-        { 
-          name: 'points', 
-          title: 'Bullet Points', 
-          type: 'array', 
-          of: [{ type: 'string' }] 
+        {
+          name: 'points',
+          title: 'Bullet Points',
+          type: 'array',
+          of: [{ type: 'string' }]
+        },
+        {
+          name: 'collageImages',
+          title: 'Photo Collage (4 images)',
+          description: 'Exactly 4 images shown in the 2×2 collage grid. Order: top-left (tall), bottom-left (square), top-right (square), bottom-right (tall).',
+          type: 'array',
+          validation: (Rule: any) => Rule.max(4),
+          of: [
+            {
+              type: 'image',
+              options: { hotspot: true },
+              fields: [{ name: 'alt', title: 'Alt Text', type: 'string' }],
+            },
+          ],
         },
       ],
     },

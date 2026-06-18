@@ -169,8 +169,8 @@ export default function Home() {
  hero,
  servicesPreview,
  faqs,
- aboutPreview,
- differenceSection,
+ aboutPreview { heading, subheading, description, ctaText, image { asset, hotspot, alt } },
+ differenceSection { heading, subheading, points, collageImages[] { asset, hotspot, alt } },
  processSection
  }`;
         const data = await client.fetch(query);
@@ -495,8 +495,8 @@ export default function Home() {
               className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl flex flex-col"
             >
               <img
-                src="/advisor-parramatta.png"
-                alt="Alex - Principal Property Strategist"
+                src={homeData?.aboutPreview?.image?.asset ? urlFor(homeData.aboutPreview.image).width(600).height(600).url() : "/advisor-parramatta.png"}
+                alt={homeData?.aboutPreview?.image?.alt || "Alex - Principal Property Strategist"}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 loading="lazy"
                 width="600"
@@ -665,27 +665,35 @@ export default function Home() {
                   </div>
                 </div>
               </motion.div>
-              <div className="relative mt-1 lg:mt-0">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-4 mt-4">
-                    <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                      <img src="/broker-handing-keys.png" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Broker handing over keys" />
+              {(() => {
+                const ci = homeData?.differenceSection?.collageImages || [];
+                const imgSrc = (idx: number, fallback: string) =>
+                  ci[idx]?.asset ? urlFor(ci[idx]).url() : fallback;
+                const imgAlt = (idx: number, fallback: string) => ci[idx]?.alt || fallback;
+                return (
+                  <div className="relative mt-1 lg:mt-0">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-4 mt-4">
+                        <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
+                          <img src={imgSrc(0, '/broker-handing-keys.png')} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt={imgAlt(0, 'Broker handing over keys')} />
+                        </div>
+                        <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                          <img src={imgSrc(1, '/case-study-1.png')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(1, 'Property')} />
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                          <img src={imgSrc(2, '/case-study-2.png')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(2, 'Property')} />
+                        </div>
+                        <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
+                          <img src={imgSrc(3, '/case-study-3.png')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(3, 'Property')} />
+                        </div>
+                      </div>
                     </div>
-                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
-                      <img src="/case-study-1.png" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Property 2" />
-                    </div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gold rounded-full blur-[100px] opacity-20 -z-10" />
                   </div>
-                  <div className="space-y-4">
-                    <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
-                      <img src="/case-study-2.png" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Property 3" />
-                    </div>
-                    <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
-                      <img src="/case-study-3.png" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt="Property 4" />
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gold rounded-full blur-[100px] opacity-20 -z-10" />
-              </div>
+                );
+              })()}
             </div>
           </div>
         </section>
