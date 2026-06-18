@@ -9,6 +9,27 @@ import { client, urlFor } from '../lib/sanity';
 import Link from '../components/Link';
 import PageSEO from '../components/PageSEO';
 
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+function formatRelativeDate(date: string): string {
+  if (!date) return '';
+  // If not an ISO date (YYYY-MM-DD), return as-is (handles legacy string fallbacks)
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+  const then = new Date(date);
+  const now = new Date();
+  const days = Math.floor((now.getTime() - then.getTime()) / (1000 * 60 * 60 * 24));
+  if (days < 7) return days <= 1 ? '1 day ago' : `${days} days ago`;
+  const weeks = Math.floor(days / 7);
+  if (weeks < 5) return weeks === 1 ? '1 week ago' : `${weeks} weeks ago`;
+  // Calendar-accurate month diff
+  const months = (now.getFullYear() - then.getFullYear()) * 12 + (now.getMonth() - then.getMonth());
+  if (months < 12) return months === 1 ? '1 month ago' : `${months} months ago`;
+  const years = Math.floor(months / 12);
+  const remMonths = months % 12;
+  if (remMonths >= 6) return `${years}.5 years ago`;
+  return years === 1 ? '1 year ago' : `${years} years ago`;
+}
+
 // ── Data ──────────────────────────────────────────────────────────────────────
 
 const servicesPreview = [
@@ -941,7 +962,7 @@ export default function Home() {
                   )}
                   <div>
                     <h3 className="text-sm font-bold text-black font-sans">{review.name}</h3>
-                    <span className="text-xs text-muted font-sans">{review.date}</span>
+                    <span className="text-xs text-muted font-sans">{formatRelativeDate(review.date)}</span>
                   </div>
                 </div>
               </div>

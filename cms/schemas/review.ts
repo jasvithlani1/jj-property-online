@@ -21,8 +21,10 @@ export default {
     },
     {
       name: 'date',
-      title: 'Review Date (Relative, e.g., "2 weeks ago")',
-      type: 'string',
+      title: 'Review Date',
+      type: 'date',
+      description: 'Select the actual date of the review. The website will automatically display it as "X weeks ago", "X months ago", etc.',
+      options: { dateFormat: 'YYYY-MM-DD' },
     },
     {
       name: 'authorImage',
