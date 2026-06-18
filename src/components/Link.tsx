@@ -41,6 +41,9 @@ export const Link: React.FC<LinkProps> = ({
   const isInternal = !isExternal && !isFunctional && !isHash && path.length > 0;
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Let the browser handle modifier+click and middle-click natively (new tab/window)
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
+
     if (isFunctional) {
       // Let the browser open the mail client / phone dialer natively.
       if (onClick) onClick(e);
