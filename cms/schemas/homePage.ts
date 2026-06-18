@@ -49,7 +49,6 @@ export default {
       title: 'Services Preview Section',
       type: 'object',
       fields: [
-        { name: 'eyebrow', title: 'Eyebrow Label', type: 'string', description: 'e.g. "HOW WE CAN SERVE YOU?"' },
         { name: 'heading', title: 'Section Heading', type: 'string' },
         { name: 'subheading', title: 'Section Subheading', type: 'text' },
         { name: 'ctaText', title: 'CTA Button Text', type: 'string' },

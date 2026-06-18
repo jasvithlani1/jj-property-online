@@ -167,7 +167,7 @@ export default function Home() {
    }
  },
  hero,
- servicesPreview { eyebrow, heading, subheading, ctaText, ctaLink, items[] { _key, title, description, anchor } },
+ servicesPreview { heading, subheading, ctaText, ctaLink, items[] { _key, title, description, anchor } },
  faqs,
  aboutPreview { heading, subheading, description, ctaText, image { asset, hotspot, alt } },
  differenceSection { heading, subheading, points, collageImages[] { asset, hotspot, alt } },
