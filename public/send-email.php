@@ -74,6 +74,7 @@ $customer_html = "
                     <!-- Header -->
                     <tr>
                         <td align='center' style='background-color:#011122; padding:30px 20px;'>
+                            <img src='https://www.jjpropertypartner.com.au/logo.png' alt='JJ Property Partner' width='120' style='display:block; margin:0 auto 12px auto; height:auto;'>
                             <h1 style='margin:0; color:#d4af37; font-size:24px; text-transform:uppercase; letter-spacing:3px; font-weight:700;'>JJ Property Partner</h1>
                         </td>
                     </tr>
@@ -144,7 +145,8 @@ $owner_html = "
                 <table width='100%' max-width='600' style='max-width:600px; background-color:#ffffff; border:1px solid #e0e0e0; border-radius:8px; overflow:hidden; border-collapse:collapse;'>
                     <!-- Header -->
                     <tr>
-                        <td style='background-color:#011122; padding:25px 30px;'>
+                        <td align='center' style='background-color:#011122; padding:25px 30px;'>
+                            <img src='https://www.jjpropertypartner.com.au/logo.png' alt='JJ Property Partner' width='100' style='display:block; margin:0 auto 10px auto; height:auto;'>
                             <h2 style='margin:0; color:#ffffff; font-size:20px; font-weight:bold;'>New Lead Notification</h2>
                             <p style='margin:5px 0 0 0; color:#d4af37; font-size:12px; text-transform:uppercase; letter-spacing:1px;'>JJ Property Partner Website</p>
                         </td>
