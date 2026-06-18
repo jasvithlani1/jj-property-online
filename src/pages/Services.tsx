@@ -244,13 +244,15 @@ export default function Services() {
  <section className="py-4 px-8 bg-white relative overflow-hidden">
  <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
  {(() => {
- const sanityServices = pageData?.serviceList || [];
- // Merge: use Sanity data if available, otherwise use local data
- const allServices = services.map(local => {
- const sanity = sanityServices.find((s: any) => s.id === local.id || s._id === local.id);
- return sanity ? { ...local, ...sanity } : local;
- });
- return allServices;
+ // Sanity is the source of truth for content; local provides icons/React props only
+ if (pageData?.serviceList?.length > 0) {
+   return pageData.serviceList.map((sanity: any) => {
+     const local = services.find(s => s.id === sanity.id) || {};
+     return { ...local, ...sanity };
+   });
+ }
+ // Fall back to local data only when Sanity is unavailable (network failure)
+ return services;
  })().map((service: any, index: number) => (
  <motion.div
  key={service.id}
