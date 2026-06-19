@@ -317,7 +317,7 @@ export default function Services() {
  <div className="relative h-[320px] sm:h-[520px] md:h-[650px] rounded-[2rem] sm:rounded-[3rem] overflow-hidden mb-4 sm:mb-6 lg:hidden">
  <img
  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : (services.find(s => s.id === service.id)?.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"))}
- alt={service.title}
+ alt={service.image?.alt || service.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  loading="lazy"
  />
@@ -361,7 +361,7 @@ export default function Services() {
  <div className={`hidden lg:block relative lg:h-[750px] rounded-[3rem] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
  <img
  src={service.image?.asset ? urlFor(service.image).url() : (typeof service.image === 'string' ? service.image : (services.find(s => s.id === service.id)?.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200"))}
- alt={service.title}
+ alt={service.image?.alt || service.title}
  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
  loading="lazy"
  />
