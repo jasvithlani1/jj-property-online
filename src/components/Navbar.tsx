@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Menu, X, ChevronDown } from 'lucide-react';
-import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { openCalendly } from '../utils/calendly';
 import Link from './Link';
+import { client } from '../lib/sanity';
+
+const ICON_MAP: Record<string, JSX.Element> = {
+  instagram: <FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+  facebook:  <FaFacebookF  className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+  youtube:   <FaYoutube    className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+  twitter:   <FaTwitter    className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+  linkedin:  <FaLinkedinIn className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+  tiktok:    <FaTiktok     className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+  whatsapp:  <FaWhatsapp   className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
+};
+
+const fallbackSocialLinks = [
+  { _key: 'instagram', platform: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/jjpropertypartnerbuyersagent/' },
+  { _key: 'facebook',  platform: 'Facebook',  icon: 'facebook',  url: 'https://www.facebook.com/jjpropertypartnerbuyersagent/' },
+  { _key: 'youtube',   platform: 'YouTube',   icon: 'youtube',   url: 'https://www.youtube.com/@JJPropertyPartnerBuyersAgent' },
+  { _key: 'twitter',   platform: 'X / Twitter', icon: 'twitter', url: 'https://x.com/jjbuyersagent' },
+  { _key: 'linkedin',  platform: 'LinkedIn',  icon: 'linkedin',  url: 'https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/' },
+];
 
 const navLinks = [
   { name: 'Home', path: '/', isHash: false },
@@ -29,7 +48,19 @@ const navLinks = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [socialLinks, setSocialLinks] = useState(fallbackSocialLinks);
   const location = useLocation();
+
+  useEffect(() => {
+    client
+      .fetch<{ socialLinks: typeof fallbackSocialLinks }>(
+        `*[_type == "siteHeader" && _id == "siteHeader"][0]{ socialLinks }`
+      )
+      .then((data) => {
+        if (data?.socialLinks?.length) setSocialLinks(data.socialLinks);
+      })
+      .catch(() => {});
+  }, []);
 
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
@@ -58,11 +89,11 @@ export default function Navbar() {
           {/* Group 2: Socials with a clear visual separator on mobile */}
           <div className="flex items-center gap-3 md:gap-5 border-l border-white/10 pl-3 sm:border-none sm:pl-0">
             <div className="flex items-center gap-3 sm:gap-4">
-              <Link href="https://www.instagram.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://www.facebook.com/jjpropertypartnerbuyersagent/" className="hover:text-gold transition-all transform hover:scale-110"><FaFacebookF className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://www.youtube.com/@JJPropertyPartnerBuyersAgent" className="hover:text-gold transition-all transform hover:scale-110"><FaYoutube className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://x.com/jjbuyersagent" className="hover:text-gold transition-all transform hover:scale-110"><FaTwitter className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
-              <Link href="https://www.linkedin.com/in/jj-property-partner-buyers-agent-930139403/" className="hover:text-gold transition-all transform hover:scale-110"><FaLinkedinIn className="w-4 h-4 sm:w-3.5 sm:h-3.5" /></Link>
+              {socialLinks.map((s) => (
+                <Link key={s._key} href={s.url} aria-label={s.platform} className="hover:text-gold transition-all transform hover:scale-110">
+                  {ICON_MAP[s.icon] ?? null}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

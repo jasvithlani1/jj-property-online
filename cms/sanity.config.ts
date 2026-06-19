@@ -22,10 +22,12 @@ import servicesPage from './schemas/servicesPage';
 import caseStudiesPage from './schemas/caseStudiesPage';
 import blogPage from './schemas/blogPage';
 import acquisition from './schemas/acquisition';
+import siteHeader from './schemas/siteHeader';
+import siteFooter from './schemas/siteFooter';
 
-// Singleton helper — ensures only one siteSettings document can exist
+// Singleton helper — ensures only one document of each type can exist
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
-const singletonTypes = new Set(['siteSettings']);
+const singletonTypes = new Set(['siteSettings', 'siteHeader', 'siteFooter']);
 
 export default defineConfig({
   name: 'default',
@@ -68,6 +70,24 @@ export default defineConfig({
             S.listItem().title('🏷️ Categories').child(S.documentTypeList('category').title('Categories')),
             S.listItem().title('⭐ Reviews').child(S.documentTypeList('review').title('Reviews')),
             S.listItem().title('📩 Inquiries').child(S.documentTypeList('inquiry').title('Inquiries')),
+            S.divider(),
+            // ── Singletons: Header & Footer ───────────────────────────────────
+            S.listItem()
+              .title('🔗 Header')
+              .id('siteHeader')
+              .child(
+                S.document()
+                  .schemaType('siteHeader')
+                  .documentId('siteHeader')
+              ),
+            S.listItem()
+              .title('🦶 Footer')
+              .id('siteFooter')
+              .child(
+                S.document()
+                  .schemaType('siteFooter')
+                  .documentId('siteFooter')
+              ),
           ]),
     }),
     visionTool(),
@@ -113,6 +133,8 @@ export default defineConfig({
       blogPage,
       privacyPolicyPage,
       termsAndConditionsPage,
+      siteHeader,
+      siteFooter,
     ],
   },
 });
