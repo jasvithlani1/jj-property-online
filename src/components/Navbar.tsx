@@ -17,6 +17,9 @@ const ICON_MAP: Record<string, JSX.Element> = {
   whatsapp:  <FaWhatsapp   className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
 };
 
+const FALLBACK_EMAIL = 'info@jjpropertypartner.com.au';
+const FALLBACK_PHONE = '+61 481 334 458';
+
 const fallbackSocialLinks = [
   { _key: 'instagram', platform: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/jjpropertypartnerbuyersagent/' },
   { _key: 'facebook',  platform: 'Facebook',  icon: 'facebook',  url: 'https://www.facebook.com/jjpropertypartnerbuyersagent/' },
@@ -49,14 +52,18 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [socialLinks, setSocialLinks] = useState(fallbackSocialLinks);
+  const [email, setEmail] = useState(FALLBACK_EMAIL);
+  const [phone, setPhone] = useState(FALLBACK_PHONE);
   const location = useLocation();
 
   useEffect(() => {
     client
-      .fetch<{ socialLinks: typeof fallbackSocialLinks }>(
-        `*[_type == "siteHeader" && _id == "siteHeader"][0]{ socialLinks }`
+      .fetch<{ email?: string; phone?: string; socialLinks?: typeof fallbackSocialLinks }>(
+        `*[_type == "siteHeader" && _id == "siteHeader"][0]{ email, phone, socialLinks }`
       )
       .then((data) => {
+        if (data?.email) setEmail(data.email);
+        if (data?.phone) setPhone(data.phone);
         if (data?.socialLinks?.length) setSocialLinks(data.socialLinks);
       })
       .catch(() => {});
@@ -75,11 +82,11 @@ export default function Navbar() {
           {/* Group 1: Contact Methods */}
           <div className="flex items-center gap-2 sm:gap-4">
             <div className="flex items-center gap-2">
-              <a href="mailto:info@jjpropertypartner.com.au" className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+              <a href={`mailto:${email}`} className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
                 <Mail className="w-4 h-4 text-gold" />
                 <span className="inline">Email</span>
               </a>
-              <a href="tel:+61481334458" className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+              <a href={`tel:${phone.replace(/\s/g, '')}`} className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
                 <Phone className="w-4 h-4 text-gold" />
                 <span className="inline">Call</span>
               </a>

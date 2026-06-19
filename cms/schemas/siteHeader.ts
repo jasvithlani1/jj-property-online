@@ -6,6 +6,18 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'email',
+      title: 'Contact Email',
+      type: 'string',
+      description: 'Email address shown in the top header bar (links to mailto:).',
+    }),
+    defineField({
+      name: 'phone',
+      title: 'Phone / Call Number',
+      type: 'string',
+      description: 'Phone number shown in the top header bar (links to tel:). Include country code, e.g. +61 481 334 458.',
+    }),
+    defineField({
       name: 'socialLinks',
       title: 'Social Media Links',
       type: 'array',
