@@ -735,17 +735,18 @@ export default function Home() {
                 How We Work
               </div>
               <h2 className="text-4xl md:text-5xl font-sans font-black mb-2 leading-[1.0] text-[#011122]">
-                {homeData?.processSection?.heading ? (
-                  <>
-                    {homeData.processSection.heading.split('5-Step')[0]?.trim()} <br className="md:hidden" />
-                    <span className="text-gold font-sans font-black md:ml-2">5-Step</span> <br />
-                    {homeData.processSection.heading.split('5-Step')[1]?.trim()}
-                  </>
-                ) : (
-                  <>Our Proven <br className="md:hidden" />
-                  <span className="text-gold font-sans font-black md:ml-2">5-Step</span> <br />
-                  Buying Approach</>
-                )}
+                {(() => {
+                  const heading = homeData?.processSection?.heading || 'Our Proven 5-Step Buying Approach';
+                  const match = heading.match(/^(.*?)(\d+-Step)(.*)/i);
+                  if (!match) return <>{heading}</>;
+                  return (
+                    <>
+                      {match[1].trim()} <br className="md:hidden" />
+                      <span className="text-gold font-sans font-black md:ml-2">{match[2]}</span> <br />
+                      {match[3].trim()}
+                    </>
+                  );
+                })()}
               </h2>
               <p className="text-xl text-muted font-sans max-w-2xl mx-auto leading-relaxed">
                 {homeData?.processSection?.subheading || "A structured, data-led process designed to secure your ideal property with complete confidence."}
