@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactElement } from 'react';
 import { ArrowUp, Mail, Phone, Award, Hash, MapPin } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import Link from './Link';
 import { client } from '../lib/sanity';
 
-const ICON_MAP: Record<string, JSX.Element> = {
+const ICON_MAP: Record<string, ReactElement> = {
   instagram: <FaInstagram className="w-4 h-4" />,
   facebook:  <FaFacebookF  className="w-4 h-4" />,
   youtube:   <FaYoutube    className="w-4 h-4" />,

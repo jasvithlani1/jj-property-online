@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactElement } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from 'react-icons/fa';
@@ -7,7 +7,7 @@ import { openCalendly } from '../utils/calendly';
 import Link from './Link';
 import { client } from '../lib/sanity';
 
-const ICON_MAP: Record<string, JSX.Element> = {
+const ICON_MAP: Record<string, ReactElement> = {
   instagram: <FaInstagram className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
   facebook:  <FaFacebookF  className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
   youtube:   <FaYoutube    className="w-4 h-4 sm:w-3.5 sm:h-3.5" />,
