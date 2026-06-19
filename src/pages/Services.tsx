@@ -156,7 +156,10 @@ export default function Services() {
     }
   },
  hero,
- serviceList,
+ serviceList[] {
+   ...,
+   image { asset, hotspot, alt }
+ },
  additionalServices,
  faqs,
  finalCta
