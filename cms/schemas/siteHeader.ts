@@ -25,7 +25,7 @@ export default defineType({
       of: [
         {
           type: 'object',
-          name: 'socialLink',
+          name: 'headerSocialLink',
           fields: [
             defineField({
               name: 'platform',
