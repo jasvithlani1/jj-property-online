@@ -90,7 +90,7 @@ export default function About() {
   <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
   <img
   src={aboutData?.profile?.image ? urlFor(aboutData.profile.image).url() : "/buyers-agent-showing.png"}
-  alt="Alex - Founder of JJ Property Partner"
+  alt={aboutData?.profile?.image?.alt || "Alex - Founder of JJ Property Partner"}
   className="w-full aspect-[3/4] max-h-[460px] object-cover hover:scale-105 transition-all duration-700 brightness-[0.95]"
   />
  <div className="absolute inset-0 bg-gradient-to-t from-[#011122]/60 via-transparent to-transparent" />

@@ -22,7 +22,13 @@ export default {
         { name: 'heading', title: 'Heading', type: 'string' },
         { name: 'quote', title: 'Quote', type: 'text' },
         { name: 'description', title: 'Description', type: 'text' },
-        { name: 'image', title: 'Profile Image', type: 'image', options: { hotspot: true } },
+        {
+          name: 'image',
+          title: 'Profile Image',
+          type: 'image',
+          options: { hotspot: true },
+          fields: [{ name: 'alt', title: 'Alt Text', type: 'string', description: 'Describe the image for accessibility and SEO.' }],
+        },
         {
           name: 'stats',
           title: 'Stats',
