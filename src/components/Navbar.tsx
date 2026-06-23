@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
-import { openCalendly } from '../utils/calendly';
+import { openCalendly, setCalendlyUrl } from '../utils/calendly';
 import Link from './Link';
 import { client } from '../lib/sanity';
 
@@ -58,13 +58,14 @@ export default function Navbar() {
 
   useEffect(() => {
     client
-      .fetch<{ email?: string; phone?: string; socialLinks?: typeof fallbackSocialLinks }>(
-        `*[_type == "siteHeader" && _id == "siteHeader"][0]{ email, phone, socialLinks }`
+      .fetch<{ email?: string; phone?: string; socialLinks?: typeof fallbackSocialLinks; calendlyUrl?: string }>(
+        `*[_type == "siteHeader" && _id == "siteHeader"][0]{ email, phone, socialLinks, calendlyUrl }`
       )
       .then((data) => {
         if (data?.email) setEmail(data.email);
         if (data?.phone) setPhone(data.phone);
         if (data?.socialLinks?.length) setSocialLinks(data.socialLinks);
+        if (data?.calendlyUrl) setCalendlyUrl(data.calendlyUrl);
       })
       .catch(() => {});
   }, []);

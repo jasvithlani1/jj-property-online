@@ -166,8 +166,7 @@ export default function Services() {
  }`;
  const data = await client.fetch(query);
  if (data) setPageData(data);
- } catch (err) {
- console.error('Error fetching services page data:', err);
+ } catch {
  }
  };
  fetchPageData();

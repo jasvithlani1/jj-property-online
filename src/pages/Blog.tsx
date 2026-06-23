@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
 import Link from '../components/Link';
+import type { SanityImage, SanityImageSource } from '../types/sanity';
 
 interface SanityPost {
   _id: string;
   title: string;
   slug: { current: string };
   excerpt: string;
-  mainImage: any;
+  mainImage: SanityImage;
   publishedAt: string;
   categories: { title: string; color: string }[];
   featured?: boolean;
@@ -122,8 +123,7 @@ export default function Blog() {
         setCategories(['All Articles', ...uniqueCats]);
 
         if (pageData) setPageData(pageData);
-      } catch (error) {
-        console.error('Error fetching posts from Sanity:', error);
+      } catch {
         setFetchError(true);
       } finally {
         setIsLoading(false);
@@ -232,7 +232,7 @@ export default function Blog() {
                     <div className="relative h-56 overflow-hidden">
                       {post.mainImage?.asset ? (
                         <img
-                          src={urlFor(post.mainImage).width(800).height(600).url()}
+                          src={urlFor(post.mainImage as SanityImageSource).width(800).height(600).url()}
                           alt={post.mainImage?.alt || post.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />

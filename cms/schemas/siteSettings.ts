@@ -151,6 +151,27 @@ export default {
             'Links to your official social media pages (LinkedIn, Facebook, etc.)',
         },
         {
+          name: 'openingHours',
+          title: 'Opening Hours',
+          type: 'array',
+          of: [{ type: 'string' }],
+          description: 'ISO 8601 format, e.g. "Mo-Fr 09:00-17:00", "Sa 10:00-14:00". Used in LocalBusiness schema.',
+        },
+        {
+          name: 'priceRange',
+          title: 'Price Range',
+          type: 'string',
+          description: 'Dollar signs indicating price tier, e.g. "$$$". Used in LocalBusiness schema.',
+          options: {
+            list: [
+              { title: '$   — Budget', value: '$' },
+              { title: '$$  — Moderate', value: '$$' },
+              { title: '$$$ — Premium', value: '$$$' },
+              { title: '$$$$ — Luxury', value: '$$$$' },
+            ],
+          },
+        },
+        {
           name: 'areaServed',
           title: 'Areas Served',
           type: 'array',

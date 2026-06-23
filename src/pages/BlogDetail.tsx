@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Clock, Calendar, CheckCircle2, MessageSquare, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Clock, Calendar, CheckCircle2, MessageSquare, Phone, Mail } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { client, urlFor } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
+import type { PortableTextBlock, PortableTextComponents } from '@portabletext/react';
+import type { SanityImageSource } from '@sanity/image-url';
 import PageSEO from '../components/PageSEO';
+import Breadcrumb from '../components/Breadcrumb';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { blogPosts as localBlogPosts } from '../data/blogs';
@@ -25,22 +29,28 @@ const blogCoverImages = [
   '/images/acquisitions/aus_house_2.png',
 ];
 
+interface PostImage {
+  asset?: { _ref?: string };
+  alt?: string;
+  isLocal?: boolean;
+}
+
 interface SanityPost {
   _id: string;
   title: string;
   slug: { current: string };
   excerpt: string;
-  mainImage: any;
+  mainImage: PostImage;
   publishedAt: string;
-  body: any[];
-  author: { name: string; image: any; bio: any };
+  body: PortableTextBlock[];
+  author: { name: string; image: SanityImageSource; bio: PortableTextBlock[] };
   categories: { title: string; color: string }[];
   faqs?: { question: string; answer: string }[];
   seoModule?: import('../types/seo').SeoModule;
-  seo?: any; // keeping for backward compatibility
+  seo?: { metaTitle?: string; metaDescription?: string };
 }
 
-const replaceEmDash = (node: any): any => {
+const replaceEmDash = (node: React.ReactNode): React.ReactNode => {
   if (typeof node === 'string') {
     return node.replace(/—/g, '-');
   }
@@ -48,8 +58,8 @@ const replaceEmDash = (node: any): any => {
     return node.map(replaceEmDash);
   }
   if (React.isValidElement(node)) {
-    const element = node as React.ReactElement<any>;
-    if (element.props && element.props.children) {
+    const element = node as React.ReactElement<{ children?: React.ReactNode }>;
+    if (element.props?.children) {
       return React.cloneElement(element, {
         ...element.props,
         children: replaceEmDash(element.props.children)
@@ -59,15 +69,16 @@ const replaceEmDash = (node: any): any => {
   return node;
 };
 
-const ptComponents = {
+const ptComponents: PortableTextComponents = {
   types: {
-    image: ({ value }: any) => {
-      if (!value?.asset?._ref) return null;
+    image: ({ value }) => {
+      const img = value as { asset?: { _ref?: string }; alt?: string };
+      if (!img?.asset?._ref) return null;
       return (
         <div className="my-8 rounded-[1rem] overflow-hidden border border-black/5 shadow-sm">
           <img
-            src={urlFor(value).url()}
-            alt={value.alt || 'Blog Image'}
+            src={urlFor(img as SanityImageSource).url()}
+            alt={img.alt || 'Blog Image'}
             loading="lazy"
             className="w-full h-auto object-cover"
           />
@@ -76,22 +87,22 @@ const ptComponents = {
     },
   },
   block: {
-    h2: ({ children }: any) => (
+    h2: ({ children }) => (
       <h2 className="text-lg md:text-xl font-sans font-black text-gold mt-6 mb-2 leading-tight first:mt-0 text-center uppercase tracking-wide">
         {replaceEmDash(children)}
       </h2>
     ),
-    h3: ({ children }: any) => (
+    h3: ({ children }) => (
       <h3 className="text-base md:text-lg font-sans font-black text-gold mt-4 mb-2 text-center uppercase tracking-wide">
         {replaceEmDash(children)}
       </h3>
     ),
-    normal: ({ children }: any) => (
+    normal: ({ children }) => (
       <p className="text-xs md:text-sm text-muted font-sans leading-relaxed mb-3 text-left">
         {replaceEmDash(children)}
       </p>
     ),
-    blockquote: ({ children }: any) => (
+    blockquote: ({ children }) => (
       <blockquote className="my-4 py-2 px-6 border-l-2 border-gold bg-gold/5 rounded-r-xl relative text-left">
         <p className="text-sm md:text-base font-sans font-black text-[#011122] leading-snug italic">
           {replaceEmDash(children)}
@@ -100,10 +111,10 @@ const ptComponents = {
     ),
   },
   list: {
-    bullet: ({ children }: any) => <ul className="my-3 space-y-1.5 mb-3 max-w-none">{children}</ul>,
+    bullet: ({ children }) => <ul className="my-3 space-y-1.5 mb-3 max-w-none">{children}</ul>,
   },
   listItem: {
-    bullet: ({ children }: any) => (
+    bullet: ({ children }) => (
       <li className="flex items-start gap-3 text-xs md:text-sm text-muted font-sans leading-relaxed">
         <CheckCircle2 className="shrink-0 w-4 h-4 text-gold opacity-80 mt-0.5" />
         <div className="text-left">{replaceEmDash(children)}</div>
@@ -216,8 +227,8 @@ export default function BlogDetail() {
         const others = await client.fetch(otherQuery, { slug });
         setOtherPosts(others);
 
-      } catch (error) {
-        console.error('Error fetching post:', error);
+      } catch {
+        // silently fall back
       } finally {
         setIsLoading(false);
       }
@@ -258,7 +269,22 @@ export default function BlogDetail() {
         seoModule={post?.seoModule}
         path={`/blog/${slug}`}
         breadcrumbs={[{ name: 'Blog', url: '/blog' }, { name: post?.title || 'Article', url: `/blog/${slug}` }]}
+        type="article"
       />
+
+      {/* ── Author JSON-LD ─────────────────────────────────────────── */}
+      {post?.author?.name && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: post.author.name,
+              ...(post.author.image ? { image: urlFor(post.author.image).width(200).url() } : {}),
+            }, null, 0)}
+          </script>
+        </Helmet>
+      )}
 
       {/* ── Editorial Header ─────────────────────────────────────────── */}
       <header className="relative pt-32 md:pt-40 pb-10 overflow-hidden bg-[#011122]">
@@ -270,17 +296,16 @@ export default function BlogDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <Link
-                href="/blog"
-                className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-gold hover:text-white transition-colors animate-none"
-              >
-                <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform" />
-                Back to Blog
-              </Link>
-              <div className="w-px h-3 bg-white/20 hidden sm:block" />
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <Breadcrumb
+                items={[
+                  { name: 'Blog', url: '/blog' },
+                  { name: post.title || 'Article' },
+                ]}
+                variant="dark"
+              />
               {post.categories?.[0] && (
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hidden sm:inline">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
                   {post.categories[0].title}
                 </span>
               )}
@@ -305,7 +330,7 @@ export default function BlogDetail() {
                 {post.author?.image ? (
                   <img src={urlFor(post.author.image).url()} alt={post.author.name} className="w-full h-full object-cover" />
                 ) : (
-                  <img src="/author-profile.png" alt={post.author?.name || 'Alex'} className="w-full h-full object-cover" />
+                  <img src="/author-profile.jpg" alt={post.author?.name || 'Alex'} className="w-full h-full object-cover" />
                 )}
               </div>
               <div className="text-left min-w-0">
@@ -323,16 +348,16 @@ export default function BlogDetail() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto rounded-[1.5rem] overflow-hidden border border-black/5 shadow-md bg-neutral-100"
+          className="max-w-4xl mx-auto rounded-[1.5rem] overflow-hidden border border-black/5 shadow-md bg-neutral-100 aspect-[16/9] relative"
         >
           {post.mainImage ? (
             <img
-              src={post.mainImage.isLocal ? post.mainImage.asset._ref : urlFor(post.mainImage).url()}
+              src={post.mainImage.isLocal ? post.mainImage.asset?._ref ?? '' : urlFor(post.mainImage as SanityImageSource).url()}
               alt={post.mainImage?.alt || post.title}
-              className="w-full h-auto block"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full bg-[#011122]" />
+            <div className="absolute inset-0 w-full h-full bg-[#011122]" />
           )}
         </motion.div>
       </section>
@@ -368,9 +393,9 @@ export default function BlogDetail() {
                   <div className="space-y-2">
                     {post.faqs.map((faq, idx) => (
                       <div key={idx} className="group border-b border-[#011122]/5 pb-2 pt-1.5 last:border-0">
-                        <h4 className="text-sm md:text-base font-sans font-black text-[#011122] mb-0.5 group-hover:text-gold transition-colors">
+                        <h3 className="text-sm md:text-base font-sans font-black text-[#011122] mb-0.5 group-hover:text-gold transition-colors">
                           {faq.question}
-                        </h4>
+                        </h3>
                         <p className="text-xs md:text-sm text-muted font-sans leading-snug">
                           {faq.answer}
                         </p>
@@ -394,7 +419,7 @@ export default function BlogDetail() {
                 className="p-6 rounded-[1.75rem] bg-[#011122] text-white relative overflow-hidden group shadow-md"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/20 blur-[60px] rounded-full group-hover:bg-gold/30 transition-colors" />
-                <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-gold mb-1">Take the next step</h3>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gold mb-1">Take the next step</p>
                 <h2 className="text-xl md:text-2xl font-sans font-black mb-2 leading-tight">
                   Ready to buy with confidence?
                 </h2>

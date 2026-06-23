@@ -50,6 +50,8 @@ interface PageSEOProps {
   publishedAt?: string;
   /** Manually override noIndex */
   noIndex?: boolean;
+  /** og:type value — defaults to "website". Pass "article" for blog posts. */
+  type?: string;
 }
 
 // ── JSON-LD Builders ──────────────────────────────────────────────────────────
@@ -180,6 +182,7 @@ export default function PageSEO({
   path = '/',
   breadcrumbs = [],
   noIndex: manualNoIndex,
+  type = 'website',
 }: PageSEOProps) {
   const { settings } = useSiteSettings();
 
@@ -261,14 +264,17 @@ export default function PageSEO({
       <link rel="canonical" href={canonicalUrl} />
 
       {/* ── Open Graph ─────────────────────────────────────────────────── */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={type} />
+      <meta property="og:locale" content="en_AU" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={metaDesc} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteTitle} />
       {ogImageSrc && <meta property="og:image" content={ogImageSrc} />}
+      {ogImageSrc && <meta property="og:image:secure_url" content={ogImageSrc} />}
       {ogImageSrc && <meta property="og:image:width" content="1200" />}
       {ogImageSrc && <meta property="og:image:height" content="630" />}
+      {ogImageSrc && <meta property="og:image:alt" content={fullTitle} />}
 
       {/* ── Twitter Card ───────────────────────────────────────────────── */}
       <meta name="twitter:card" content="summary_large_image" />

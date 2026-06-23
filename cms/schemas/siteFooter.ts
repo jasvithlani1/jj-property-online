@@ -5,6 +5,34 @@ export default defineType({
   title: 'Footer',
   type: 'document',
   fields: [
+    // ── Logo & Brand column ───────────────────────────────────────────────────
+    defineField({
+      name: 'logo',
+      title: 'Footer Logo',
+      type: 'image',
+      description: 'Logo displayed in the top-left column of the footer. Leave blank to use the default logo.',
+      options: { hotspot: false },
+    }),
+    defineField({
+      name: 'brandName',
+      title: 'Business Name',
+      type: 'string',
+      description: 'Large text displayed beside the logo, e.g. "JJ PROPERTY PARTNER".',
+    }),
+    defineField({
+      name: 'tagline',
+      title: 'Tagline',
+      type: 'string',
+      description: 'Small text shown below the business name, e.g. "YOUR PROPERTY, OUR PRIORITY".',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Brand Description',
+      type: 'text',
+      rows: 3,
+      description: 'Short paragraph shown under the logo block in the footer.',
+    }),
+    // ── Connect column ────────────────────────────────────────────────────────
     defineField({
       name: 'address',
       title: 'Office Address',

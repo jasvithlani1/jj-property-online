@@ -5,6 +5,7 @@ import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
+import Breadcrumb from '../components/Breadcrumb';
 
 const fhbFaqs = [
  {
@@ -80,8 +81,7 @@ export default function FirstHomeBuyers() {
  }`;
  const data = await client.fetch(query);
  if (data) setPageData(data);
- } catch (err) {
- console.error('Error fetching First Home Buyers page data:', err);
+ } catch {
  }
  };
  fetchPageData();
@@ -104,6 +104,11 @@ export default function FirstHomeBuyers() {
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
  <div className="max-w-7xl mx-auto relative z-10 text-center">
+            <Breadcrumb
+              items={[{ name: 'Services', url: '/services' }, { name: 'First Home Buyers' }]}
+              variant="dark"
+              className="mb-6"
+            />
  <motion.div
  initial={{ opacity: 0, y: 40 }}
  animate={{ opacity: 1, y: 0 }}
@@ -383,7 +388,7 @@ export default function FirstHomeBuyers() {
   <div className="flex-1 w-full">
   <div className={`flex flex-col items-center gap-2 md:gap-4 ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
   <span className="text-gold font-sans text-2xl md:text-sm font-black uppercase tracking-[0.3em]">0{idx + 1}</span>
-   <h4 className={`text-2xl md:text-3xl font-sans font-black text-[#011122] text-center ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h4>
+   <h3 className={`text-2xl md:text-3xl font-sans font-black text-[#011122] text-center ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>{item.title}</h3>
   <p className={`text-base text-muted leading-relaxed font-sans max-w-sm text-center ${idx % 2 === 0 ? 'md:text-right md:ml-auto' : 'md:text-left md:mr-auto'}`}>
   {item.description || item.desc}
   </p>

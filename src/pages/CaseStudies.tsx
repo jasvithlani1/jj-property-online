@@ -6,6 +6,7 @@ import PageSEO from '../components/PageSEO';
 import Link from '../components/Link';
 import { caseStudies as localCaseStudies } from '../data/caseStudies';
 import { acquisitions as localAcquisitions } from '../data/acquisitions';
+import type { SanityImage, SanityImageSource } from '../types/sanity';
 
 interface SanityCaseStudy {
   _id: string;
@@ -14,7 +15,7 @@ interface SanityCaseStudy {
   resultText: string;
   location: string;
   shortQuote?: string;
-  mainImage: any;
+  mainImage: SanityImage;
   tag?: string;
   tagColor?: string;
   dealDone?: boolean;
@@ -99,8 +100,7 @@ export default function CaseStudies() {
         } else {
           setAcquisitionsList(localAcquisitions);
         }
-      } catch (error) {
-        console.error('Error fetching case studies:', error);
+      } catch {
         // Fallback to local data if Sanity is unavailable
         setStudies(localCaseStudies.map(local => ({
           _id: local.id,
@@ -211,7 +211,7 @@ export default function CaseStudies() {
                       {study.mainImage && (study.mainImage.isLocal || study.mainImage.asset) ? (
                         !study.mainImage.isLocal ? (
                           <img
-                            src={urlFor(study.mainImage).width(800).height(600).url()}
+                            src={urlFor(study.mainImage as SanityImageSource).width(800).height(600).url()}
                             alt={study.mainImage?.alt || study.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                           />
@@ -409,7 +409,7 @@ export default function CaseStudies() {
                 <div className="lg:w-[50%] relative min-h-[400px] bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border-l border-black/5">
                   {prop.image ? (
                     <img 
-                      src={prop.image.asset ? urlFor(prop.image).width(800).height(600).url() : (typeof prop.image === 'string' ? prop.image : '')} 
+                      src={prop.image.asset ? urlFor(prop.image as SanityImageSource).width(800).height(600).url() : (typeof prop.image === 'string' ? prop.image : '')} 
                       alt={`${prop.city} property`} 
                       className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                     />

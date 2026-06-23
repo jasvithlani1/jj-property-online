@@ -25,7 +25,6 @@ jobs:
         env:
           VITE_SANITY_PROJECT_ID: ${{ secrets.VITE_SANITY_PROJECT_ID }}
           VITE_SANITY_DATASET: ${{ secrets.VITE_SANITY_DATASET }}
-          VITE_SANITY_WRITE_TOKEN: ${{ secrets.VITE_SANITY_WRITE_TOKEN }}
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -40,3 +39,5 @@ jobs:
           security: loose
           timeout: 600000
           dangerous-clean-slate: true
+          exclude: |
+            **/config.php

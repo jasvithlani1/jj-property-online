@@ -6,6 +6,12 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'calendlyUrl',
+      title: 'Calendly Booking URL',
+      type: 'url',
+      description: 'The Calendly event URL used by the "Book Session" button across the site. e.g. https://calendly.com/yourname/meeting-name',
+    }),
+    defineField({
       name: 'email',
       title: 'Contact Email',
       type: 'string',

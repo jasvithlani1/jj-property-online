@@ -1,3 +1,12 @@
+# Server-side secrets (never commit)
+public/config.php
+
+# Python virtual environment
+venv/
+
+# Old build artefacts
+dist-upload.zip
+
 # Logs
 logs
 *.log

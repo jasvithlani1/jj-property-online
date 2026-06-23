@@ -1,10 +1,30 @@
+const FALLBACK_URL = 'https://calendly.com/jjpropertyseo/new-meeting';
+
+// Module-level URL — updated once at app boot from Sanity via setCalendlyUrl()
+let calendlyUrl = FALLBACK_URL;
+
+interface CalendlyInstance {
+  initPopupWidget: (opts: { url: string }) => void;
+  initInlineWidget: (opts: { url: string; parentElement: Element | null; prefill?: object; utm?: object }) => void;
+}
+
+declare global {
+  interface Window {
+    Calendly?: CalendlyInstance;
+  }
+}
+
+export const setCalendlyUrl = (url: string) => {
+  if (url) calendlyUrl = url;
+};
+
 /**
  * Dynamically loads the Calendly scripts and styles.
  * This prevents the heavy Calendly assets from blocking the initial page load.
  */
 const loadCalendlyAssets = (): Promise<void> => {
   return new Promise((resolve) => {
-    if ((window as any).Calendly) {
+    if (window.Calendly) {
       resolve();
       return;
     }
@@ -30,12 +50,7 @@ const loadCalendlyAssets = (): Promise<void> => {
  */
 export const openCalendly = async () => {
   await loadCalendlyAssets();
-  
-  if ((window as any).Calendly) {
-    (window as any).Calendly.initPopupWidget({
-      url: 'https://calendly.com/jjpropertyseo/new-meeting'
-    });
-  }
+  window.Calendly?.initPopupWidget({ url: calendlyUrl });
 };
 
 /**
@@ -43,12 +58,12 @@ export const openCalendly = async () => {
  */
 export const initInlineCalendly = async (elementId: string) => {
   await loadCalendlyAssets();
-  
+
   const element = document.getElementById(elementId);
-  if (element && (window as any).Calendly) {
+  if (element && window.Calendly) {
     element.innerHTML = ''; // Prevent duplicate iFrames on Strict Mode
-    (window as any).Calendly.initInlineWidget({
-      url: 'https://calendly.com/jjpropertyseo/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1',
+    window.Calendly.initInlineWidget({
+      url: `${calendlyUrl}?hide_landing_page_details=1&hide_gdpr_banner=1`,
       parentElement: element,
       prefill: {},
       utm: {}

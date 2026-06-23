@@ -12,7 +12,7 @@ export interface BlogPost {
   coverImage: string;
   content: BlogSection[];
   featured?: boolean;
-  seo?: { metaTitle: string; metaDescription: string; ogImage?: any };
+  seo?: { metaTitle: string; metaDescription: string; ogImage?: string };
 }
 
 export interface BlogSection {

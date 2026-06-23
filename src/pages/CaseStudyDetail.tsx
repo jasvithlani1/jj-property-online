@@ -4,9 +4,11 @@ import { ArrowRight, MapPin, Quote } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
+import Breadcrumb from '../components/Breadcrumb';
 import { openCalendly } from '../utils/calendly';
 import Link from '../components/Link';
 import { caseStudies as localCaseStudies } from '../data/caseStudies';
+import type { SanityImage, SanityImageSource } from '../types/sanity';
 
 interface SanityCaseStudy {
   _id: string;
@@ -15,7 +17,7 @@ interface SanityCaseStudy {
   resultText: string;
   location: string;
   shortQuote?: string;
-  mainImage: any;
+  mainImage: SanityImage;
   tag?: string;
   tagColor?: string;
   client: string;
@@ -23,12 +25,12 @@ interface SanityCaseStudy {
   strategy: string;
   outcome: string;
   stats: { label: string; value: string }[];
-  gallery?: any[];
+  gallery?: SanityImage[];
   propertyDetails?: { label: string; value: string }[];
   strategicAdvantages?: { title: string; desc: string }[];
   caseNumber?: string;
   seoModule?: import('../types/seo').SeoModule;
-  seo?: any; // keeping for backward compatibility
+  seo?: { metaTitle?: string; metaDescription?: string };
 }
 
 export default function CaseStudyDetail() {
@@ -95,8 +97,7 @@ export default function CaseStudyDetail() {
         const others = await client.fetch(othersQuery, { slug: id });
         setOtherStudies(others || []);
 
-      } catch (error) {
-        console.error('Error fetching case study:', error);
+      } catch {
         // Fallback to local data if Sanity is unavailable
         const localStudy = localCaseStudies.find(s => s.id === id);
         if (localStudy) {
@@ -177,7 +178,7 @@ export default function CaseStudyDetail() {
         title={study.seoModule?.metaTitle || study.seo?.metaTitle || study.title}
         description={study.seoModule?.metaDescription || study.seo?.metaDescription || study.outcome?.substring(0, 160)}
         seoModule={study.seoModule}
-        path="/case-studies/:id"
+        path={`/case-studies/${id}`}
         breadcrumbs={[{ name: 'Case Studies', url: '/case-studies' }, { name: study?.title || 'Case Study', url: `/case-studies/${id}` }]}
       />
 
@@ -186,6 +187,11 @@ export default function CaseStudyDetail() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-60 pointer-events-none" />
         
         <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+          <Breadcrumb
+            items={[{ name: 'Case Studies', url: '/case-studies' }, { name: study?.title || 'Case Study' }]}
+            variant="light"
+            className="mb-4"
+          />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -225,7 +231,7 @@ export default function CaseStudyDetail() {
               {/* Background blur layer — fills empty sides */}
               {!study.mainImage.isLocal ? (
                 <img
-                  src={urlFor(study.mainImage).width(1200).url()}
+                  src={urlFor(study.mainImage as SanityImageSource).width(1200).url()}
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover scale-110 blur-xl brightness-75 saturate-150"
@@ -243,7 +249,7 @@ export default function CaseStudyDetail() {
               {/* Foreground: full image, contained, centred — never cropped */}
               {!study.mainImage.isLocal ? (
                 <img
-                  src={urlFor(study.mainImage).url()}
+                  src={urlFor(study.mainImage as SanityImageSource).url()}
                   alt={study.title}
                   className="absolute inset-0 z-10 w-full h-full object-contain drop-shadow-2xl"
                 />
@@ -427,7 +433,7 @@ export default function CaseStudyDetail() {
                   transition={{ delay: idx * 0.1 }}
                   className="rounded-xl overflow-hidden aspect-square md:aspect-video relative group border border-black/5 shadow-sm"
                 >
-                  <img src={urlFor(img).url()} alt="Property View" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000" />
+                  <img src={urlFor(img as SanityImageSource).url()} alt="Property View" className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-1000" />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </motion.div>
               ))}
@@ -450,7 +456,7 @@ export default function CaseStudyDetail() {
                 <div className="w-full md:w-28 h-28 rounded-xl overflow-hidden shrink-0 shadow-sm bg-gradient-to-br from-neutral-50 to-neutral-100 flex items-center justify-center border border-black/5">
                   {other.mainImage && (other.mainImage.isLocal || other.mainImage.asset) ? (
                     <img 
-                      src={other.mainImage.isLocal ? other.mainImage.asset._ref : urlFor(other.mainImage).width(300).height(300).url()} 
+                      src={other.mainImage.isLocal ? other.mainImage.asset?._ref ?? "" : urlFor(other.mainImage as SanityImageSource).width(300).height(300).url()} 
                       alt={other.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                     />

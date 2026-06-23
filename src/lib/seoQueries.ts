@@ -24,6 +24,12 @@ export const SITE_SETTINGS_QUERY = `
         postalCode,
         country
       },
+      geo {
+        latitude,
+        longitude
+      },
+      openingHours,
+      priceRange,
       sameAs,
       areaServed
     },

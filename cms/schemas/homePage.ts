@@ -144,36 +144,27 @@ export default {
     },
     {
       name: 'workHighlightsSection',
-      title: 'WORK HIGHLIGHTS Section',
+      title: 'Work Highlights Section',
       type: 'object',
-      description: 'The "WORK HIGHLIGHTS" section shown between the Trusted By section and reviews.',
+      description: 'The featured case studies section on the home page ("Real World Results").',
       fields: [
-        { name: 'eyebrow', title: 'Eyebrow Label', type: 'string', description: 'e.g. "WORK HIGHLIGHTS"' },
-        { name: 'heading', title: 'Section Heading', type: 'string' },
-        { name: 'subheading', title: 'Section Subheading', type: 'text' },
+        { name: 'heading', title: 'Section Heading', type: 'string', description: 'e.g. "Real World Results. The JJ Advantage."' },
+        { name: 'subheading', title: 'Section Subheading', type: 'text', description: 'Short line shown below the heading.' },
+        { name: 'ctaText', title: 'CTA Button Text', type: 'string', description: 'e.g. "All Case Studies"' },
         {
           name: 'items',
-          title: 'Work Highlight Items',
+          title: 'Featured Case Studies',
           type: 'array',
+          description: 'Pick up to 4 case studies to feature. These are displayed as cards on the home page.',
+          validation: (Rule: any) => Rule.max(4),
           of: [
             {
-              type: 'object',
-              name: 'workHighlightItem',
-              title: 'Highlight Item',
-              fields: [
-                { name: 'title', title: 'Project Title', type: 'string' },
-                { name: 'description', title: 'Description', type: 'text' },
-                { name: 'result', title: 'Result / Outcome', type: 'string', description: 'e.g. "Secured 12% Under Asking"' },
-                { name: 'location', title: 'Location', type: 'string' },
-                { name: 'tag', title: 'Category Tag', type: 'string', description: 'e.g. "First Home Buyer"' },
-              ],
-              preview: {
-                select: { title: 'title', subtitle: 'result' }
-              }
-            }
-          ]
-        }
-      ]
+              type: 'reference',
+              to: [{ type: 'caseStudy' }],
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'faqs',

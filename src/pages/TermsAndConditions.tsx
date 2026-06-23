@@ -5,13 +5,14 @@ import PageSEO from '../components/PageSEO';
 import { client } from '../lib/sanity';
 import type { SeoModule } from '../types/seo';
 import { PortableText } from '@portabletext/react';
+import type { PortableTextBlock } from '@portabletext/react';
 
 const generateId = (title: string) => title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 interface LegalSection {
   _key: string;
   title: string;
-  body: any[];
+  body: PortableTextBlock[];
 }
 
 export default function TermsAndConditions() {
@@ -53,8 +54,7 @@ export default function TermsAndConditions() {
             setActiveSection(generateId(data.sections[0].title));
           }
         }
-      } catch (err) {
-        console.error('Error fetching terms SEO:', err);
+      } catch {
       }
     };
     fetchSeo();

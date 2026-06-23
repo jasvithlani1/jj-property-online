@@ -70,6 +70,12 @@ export interface SiteSettings {
       postalCode?: string;
       country?: string;
     };
+    geo?: {
+      latitude?: string;
+      longitude?: string;
+    };
+    openingHours?: string[];
+    priceRange?: string;
     sameAs?: string[];
     areaServed?: string[];
   };

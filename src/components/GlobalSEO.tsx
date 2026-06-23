@@ -83,6 +83,15 @@ function buildOrganizationLD(settings: SiteSettings): object | null {
         addressCountry: org.address.country || 'AU',
       },
     }),
+    ...(org.geo?.latitude && org.geo?.longitude && {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: org.geo.latitude,
+        longitude: org.geo.longitude,
+      },
+    }),
+    ...(org.openingHours?.length && { openingHoursSpecification: org.openingHours }),
+    ...(org.priceRange && { priceRange: org.priceRange }),
     ...(org.sameAs?.length && { sameAs: org.sameAs }),
     ...(org.areaServed?.length && { areaServed: org.areaServed }),
   };
@@ -114,14 +123,6 @@ function buildWebSiteLD(settings: SiteSettings): object {
     '@type': 'WebSite',
     name: settings.siteTitle,
     url: settings.siteUrl,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${settings.siteUrl}/blog?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 

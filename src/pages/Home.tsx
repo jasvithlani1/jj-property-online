@@ -192,26 +192,30 @@ export default function Home() {
  faqs,
  aboutPreview { heading, subheading, description, ctaText, image { asset, hotspot, alt } },
  differenceSection { heading, subheading, points, collageImages[] { asset, hotspot, alt } },
- processSection
+ processSection,
+ workHighlightsSection {
+   heading,
+   subheading,
+   ctaText,
+   "items": items[]->{ _id, title, "id": slug.current, "result": resultText, location, shortQuote, mainImage { asset, alt } }
+ }
  }`;
         const data = await client.fetch(query);
         if (data) setHomeData(data);
 
-        // Fetch featured case studies
-        const studiesQuery = `*[_type == "caseStudy" && slug.current in ["forever-home-northwest-sydney", "mackay-coastal-beachside", "melbourne-western-corridor", "perth-eastern-corridor"]] {
-          _id,
-          title,
-          "id": slug.current,
-          "result": resultText,
-          location,
-          shortQuote,
-          mainImage { asset, alt }
-        }`;
-        const sanityStudiesData = await client.fetch(studiesQuery);
-        setFeaturedStudies(sanityStudiesData || []);
+        // Featured case studies come from workHighlightsSection.items (dereferenced in the main query above)
+        if (data?.workHighlightsSection?.items?.length) {
+          setFeaturedStudies(data.workHighlightsSection.items);
+        } else {
+          // Fallback: fetch the 4 default featured case studies
+          const studiesQuery = `*[_type == "caseStudy" && slug.current in ["forever-home-northwest-sydney", "mackay-coastal-beachside", "melbourne-western-corridor", "perth-eastern-corridor"]] {
+            _id, title, "id": slug.current, "result": resultText, location, shortQuote, mainImage { asset, alt }
+          }`;
+          const sanityStudiesData = await client.fetch(studiesQuery);
+          setFeaturedStudies(sanityStudiesData || []);
+        }
 
-      } catch (err) {
-        console.error('Error fetching home page data:', err);
+      } catch {
       }
     };
     fetchHomeData();
@@ -233,8 +237,7 @@ export default function Home() {
         } else {
           setReviews(googleReviews);
         }
-      } catch (error) {
-        console.error('Error fetching reviews:', error);
+      } catch {
         setReviews(googleReviews);
       }
     };
@@ -420,7 +423,7 @@ export default function Home() {
             </AnimatePresence>
 
             <div className="flex gap-3 mt-4 sm:mt-8">
-              {activeSlides.map((_: any, idx: number) => (
+              {activeSlides.map((_: unknown, idx: number) => (
                 <button
                   key={idx}
                   onClick={() => setCurrentSlide(idx)}
@@ -516,7 +519,7 @@ export default function Home() {
               className="relative aspect-square rounded-3xl overflow-hidden bg-neutral-100 shadow-2xl flex flex-col"
             >
               <img
-                src={homeData?.aboutPreview?.image?.asset ? urlFor(homeData.aboutPreview.image).width(600).height(600).url() : "/advisor-parramatta.png"}
+                src={homeData?.aboutPreview?.image?.asset ? urlFor(homeData.aboutPreview.image).width(600).height(600).url() : "/advisor-parramatta.jpg"}
                 alt={homeData?.aboutPreview?.image?.alt || "Alex - Principal Property Strategist"}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                 loading="lazy"
@@ -704,18 +707,18 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-4 mt-4">
                         <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl">
-                          <img src={imgSrc(0, '/broker-handing-keys.png')} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt={imgAlt(0, 'Broker handing over keys')} />
+                          <img src={imgSrc(0, '/broker-handing-keys.jpg')} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt={imgAlt(0, 'Broker handing keys to a new property buyer')} />
                         </div>
                         <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
-                          <img src={imgSrc(1, '/case-study-1.png')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(1, 'Property')} />
+                          <img src={imgSrc(1, '/case-study-1.jpg')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(1, 'Australian residential property acquired by JJ Property Partner')} />
                         </div>
                       </div>
                       <div className="space-y-4">
                         <div className="aspect-square rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
-                          <img src={imgSrc(2, '/case-study-2.png')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(2, 'Property')} />
+                          <img src={imgSrc(2, '/case-study-2.jpg')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(2, 'Investment property secured by JJ Property Partner buyers agent')} />
                         </div>
                         <div className="aspect-[4/5] rounded-[2rem] bg-neutral-100 overflow-hidden shadow-2xl flex items-center justify-center">
-                          <img src={imgSrc(3, '/case-study-3.png')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(3, 'Property')} />
+                          <img src={imgSrc(3, '/case-study-3.jpg')} className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" alt={imgAlt(3, 'Off-market property acquisition result for JJ Property Partner client')} />
                         </div>
                       </div>
                     </div>
@@ -847,31 +850,38 @@ export default function Home() {
             <div className="flex flex-col items-center text-center md:flex-row md:items-end md:text-left justify-between mb-3 gap-6">
               <div className="flex flex-col items-center md:items-start w-full">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-black leading-tight mb-2 md:whitespace-nowrap">
-                  Real World Results.<br className="block md:hidden" /> <span className="text-gold">The JJ Advantage.</span>
+                  {(() => {
+                    const h = homeData?.workHighlightsSection?.heading || 'Real World Results. The JJ Advantage.';
+                    const dotIdx = h.indexOf('.');
+                    if (dotIdx === -1) return <>{h}</>;
+                    const before = h.slice(0, dotIdx + 1);
+                    const after = h.slice(dotIdx + 1).trim();
+                    return <>{before}<br className="block md:hidden" /> <span className="text-gold">{after}</span></>;
+                  })()}
                 </h2>
-                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">From first homes to elite investments - curated results that define our standard.</p>
+                <p className="text-muted text-lg font-sans max-w-xl md:max-w-none md:whitespace-nowrap">
+                  {homeData?.workHighlightsSection?.subheading || 'From first homes to elite investments - curated results that define our standard.'}
+                </p>
               </div>
               <Link
                 href="/case-studies"
                 className="group flex items-center justify-center gap-2 shrink-0 text-sm font-bold uppercase tracking-widest text-black border border-black/10 rounded-full px-8 py-3.5 hover:bg-black hover:text-white transition-all duration-300 mx-auto md:mx-0"
               >
-                All Case Studies
+                {homeData?.workHighlightsSection?.ctaText || 'All Case Studies'}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-              {caseStudies.filter(s => [
+              {(featuredStudies.length > 0 ? featuredStudies : caseStudies.filter(s => [
                 'forever-home-northwest-sydney',
                 'mackay-coastal-beachside',
                 'melbourne-western-corridor',
                 'perth-eastern-corridor'
-              ].includes(s.id)).map((localStory, index) => {
-                const sanityStory = featuredStudies.find(fs => fs.id === localStory.id);
-                const story = sanityStory || localStory;
-                const imageUrl = sanityStory
-                  ? (sanityStory.mainImage && sanityStory.mainImage.asset ? urlFor(sanityStory.mainImage).width(800).height(450).url() : null)
-                  : localStory.image;
+              ].includes(s.id))).map((story: any, index: number) => {
+                const imageUrl = story.mainImage?.asset
+                  ? urlFor(story.mainImage).width(800).height(450).url()
+                  : (story.image || null);
 
                 return (
                   <Link

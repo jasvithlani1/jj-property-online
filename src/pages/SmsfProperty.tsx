@@ -5,6 +5,7 @@ import Link from '../components/Link';
 import { useEffect, useState } from 'react';
 import { client, urlFor } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
+import Breadcrumb from '../components/Breadcrumb';
 
 const smsfStepImages = [
  '/images/acquisitions/user_prop_19.png',
@@ -89,8 +90,7 @@ export default function SmsfProperty() {
  }`;
  const data = await client.fetch(query);
  if (data) setPageData(data);
- } catch (err) {
- console.error('Error fetching SMSF Property page data:', err);
+ } catch {
  }
  };
  fetchPageData();
@@ -113,6 +113,11 @@ export default function SmsfProperty() {
  <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none" />
 
  <div className="max-w-7xl mx-auto relative z-10 text-center">
+            <Breadcrumb
+              items={[{ name: 'Services', url: '/services' }, { name: 'SMSF Property' }]}
+              variant="dark"
+              className="mb-6"
+            />
  <motion.div
  initial={{ opacity: 0, y: 40 }}
  animate={{ opacity: 1, y: 0 }}

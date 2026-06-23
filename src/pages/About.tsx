@@ -36,8 +36,7 @@ export default function About() {
   }`;
  const data = await client.fetch(query);
  if (data) setAboutData(data);
- } catch (err) {
- console.error('Error fetching about page data:', err);
+ } catch {
  }
  };
  fetchAboutData();
@@ -89,7 +88,7 @@ export default function About() {
   >
   <div className="relative rounded-[3rem] overflow-hidden shadow-2xl group">
   <img
-  src={aboutData?.profile?.image ? urlFor(aboutData.profile.image).url() : "/buyers-agent-showing.png"}
+  src={aboutData?.profile?.image ? urlFor(aboutData.profile.image).url() : "/buyers-agent-showing.jpg"}
   alt={aboutData?.profile?.image?.alt || "Alex - Founder of JJ Property Partner"}
   className="w-full aspect-[3/4] max-h-[460px] object-cover hover:scale-105 transition-all duration-700 brightness-[0.95]"
   />

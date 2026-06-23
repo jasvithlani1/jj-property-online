@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import Link from '../components/Link';
 import { useEffect, useState } from 'react';
-import { client, writeClient } from '../lib/sanity';
+import { client } from '../lib/sanity';
 import PageSEO from '../components/PageSEO';
 
 export default function Contact() {
@@ -40,76 +40,37 @@ export default function Contact() {
  }`;
  const data = await client.fetch(query);
  if (data) setPageData(data);
- } catch (err) {
- console.error('Error fetching contact page data:', err);
+ } catch {
+      // silently fall back to hardcoded defaults
  }
  };
  fetchPageData();
  }, []);
 
  const handleSubmit = async (e: React.FormEvent) => {
- e.preventDefault();
- console.log('Submission attempt started...', formData);
+    e.preventDefault();
 
- if (!import.meta.env.VITE_SANITY_WRITE_TOKEN) {
- console.error('MISSING API TOKEN: Please add VITE_SANITY_WRITE_TOKEN to your GitHub Secrets or .env file.');
- setStatus('error');
- return;
- }
+    if (!formData.name || !formData.email) return;
 
- if (!formData.name || !formData.email) {
- console.warn('Validation failed: Name and Email are required.');
- return;
- }
+    setStatus('submitting');
+    try {
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
- setStatus('submitting');
- try {
- console.log('Sending data to Sanity...');
- const response = await writeClient.create({
- _type: 'inquiry',
- name: formData.name,
- email: formData.email,
- phone: formData.phone,
- goal: formData.goal,
- message: formData.message,
- submittedAt: new Date().toISOString(),
- status: 'new'
- });
- console.log('Submission successful:', response._id);
-      
-      // Send Email notifications via Brevo (via server-side PHP proxy)
-      try {
-        const emailResponse = await fetch('/send-email.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            goal: formData.goal,
-            message: formData.message,
-          }),
-        });
-        
-        const emailResult = await emailResponse.json();
-        if (emailResponse.ok && emailResult.status === 'success') {
-          console.log('Brevo emails sent successfully.');
-        } else {
-          console.warn('Brevo email dispatch returned warning/error:', emailResult);
-        }
-      } catch (emailError) {
-        console.error('Failed to send Brevo emails:', emailError);
+      const result = await response.json();
+      if (response.ok && result.status === 'success') {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', goal: '', message: '' });
+      } else {
+        setStatus('error');
       }
-
-      setStatus('success');
- setFormData({ name: '', email: '', phone: '', goal: '', message: '' });
- } catch (error) {
- console.error('Sanity creation error:', error);
- setStatus('error');
- }
- };
+    } catch {
+      setStatus('error');
+    }
+  };
 
  return (
  <>
@@ -248,12 +209,6 @@ export default function Contact() {
  ) : (
  <>
  <h3 className="text-2xl font-serif text-black mb-2">Request a Call</h3>
-
- {!import.meta.env.VITE_SANITY_WRITE_TOKEN && (
- <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs font-sans leading-relaxed">
- <strong>Deployment Notice:</strong> Contact storage is pending final activation. Please ensure your GitHub Secrets are configured with the API token.
- </div>
- )}
 
  <form onSubmit={handleSubmit} className="space-y-2">
  <div className="space-y-2">

@@ -2,7 +2,7 @@ import { useState, useEffect, type ReactElement } from 'react';
 import { ArrowUp, Mail, Phone, Award, Hash, MapPin } from 'lucide-react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import Link from './Link';
-import { client } from '../lib/sanity';
+import { client, urlFor } from '../lib/sanity';
 
 const ICON_MAP: Record<string, ReactElement> = {
   instagram: <FaInstagram className="w-4 h-4" />,
@@ -16,6 +16,10 @@ const ICON_MAP: Record<string, ReactElement> = {
 
 interface SocialLink { _key: string; platform: string; icon: string; url: string; }
 interface FooterData {
+  logo?: { asset: { _ref: string } };
+  brandName?: string;
+  tagline?: string;
+  description?: string;
   address?: string;
   email?: string;
   phone?: string;
@@ -25,6 +29,9 @@ interface FooterData {
 }
 
 const fallbackFooterData: FooterData = {
+  brandName: 'JJ PROPERTY PARTNER',
+  tagline: 'YOUR PROPERTY, OUR PRIORITY',
+  description: "Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.",
   address: '6-10 Charles Street, Parramatta, NSW 2150',
   email: 'info@jjpropertypartner.com.au',
   phone: '+61 481 334 458',
@@ -61,7 +68,7 @@ export default function Footer() {
   useEffect(() => {
     client
       .fetch<FooterData>(
-        `*[_type == "siteFooter" && _id == "siteFooter"][0]{ address, email, phone, abn, reaLicence, socialLinks }`
+        `*[_type == "siteFooter" && _id == "siteFooter"][0]{ logo, brandName, tagline, description, address, email, phone, abn, reaLicence, socialLinks }`
       )
       .then((data) => {
         if (data) setFooterData({ ...fallbackFooterData, ...data });
@@ -69,7 +76,8 @@ export default function Footer() {
       .catch(() => {});
   }, []);
 
-  const { address, email, phone, abn, reaLicence, socialLinks } = footerData;
+  const { logo, brandName, tagline, description, address, email, phone, abn, reaLicence, socialLinks } = footerData;
+  const logoSrc = logo ? urlFor(logo).width(112).height(112).url() : '/logo.png?v=7';
 
   return (
     <footer className="relative bg-[#011122] text-white pt-6 md:pt-8">
@@ -85,16 +93,18 @@ export default function Footer() {
               className="group flex flex-row items-center text-left gap-4 mb-6 md:mb-8"
             >
               <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center p-2 bg-white/5 rounded-3xl border border-white/10 group-hover:bg-white/10 transition-colors">
-                <img src="/logo.png?v=7" alt="JJ Property Partner Logo" className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
+                <img src={logoSrc} alt={`${brandName ?? 'JJ Property Partner'} Logo`} className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-500" />
               </div>
               <div className="flex flex-col">
-                <div className="font-sans font-black text-base sm:text-4xl tracking-widest text-white leading-tight uppercase">JJ PROPERTY <br className="hidden sm:block" /> PARTNER</div>
-                <div className="font-sans font-bold text-[9px] sm:text-sm tracking-[0.25em] text-gold leading-none uppercase mt-1.5">YOUR PROPERTY, OUR PRIORITY</div>
+                <div className="font-sans font-black text-base sm:text-4xl tracking-widest text-white leading-tight uppercase">{brandName ?? 'JJ PROPERTY PARTNER'}</div>
+                {tagline && <div className="font-sans font-bold text-[9px] sm:text-sm tracking-[0.25em] text-gold leading-none uppercase mt-1.5">{tagline}</div>}
               </div>
             </Link>
-            <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mx-auto lg:mx-0">
-              Australia's premier buyer's agency. We bring a data-driven approach and 20+ years of expertise to your property journey.
-            </p>
+            {description && (
+              <p className="text-base text-white/70 font-sans leading-relaxed max-w-sm mx-auto lg:mx-0">
+                {description}
+              </p>
+            )}
           </div>
 
           {/* Quick Links */}
