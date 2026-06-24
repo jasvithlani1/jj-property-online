@@ -33,7 +33,7 @@ export default function Breadcrumb({ items, variant = 'dark', className = '' }: 
             <li key={item.name} className="flex items-center gap-1.5">
               <ChevronRight className={`w-3 h-3 shrink-0 ${chevronColor}`} aria-hidden="true" />
               {isLast || !item.url ? (
-                <span className={textCurrent} aria-current={isLast ? 'page' : undefined}>
+                <span className={`${textCurrent} max-w-[140px] sm:max-w-[280px] truncate`} aria-current={isLast ? 'page' : undefined}>
                   {item.name}
                 </span>
               ) : (

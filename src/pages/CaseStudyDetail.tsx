@@ -185,10 +185,10 @@ export default function CaseStudyDetail() {
       {/* ── Editorial Hero ─────────────────────────────────────────────── */}
       <section className="relative w-full pt-28 md:pt-32 pb-6 overflow-hidden bg-gold/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 blur-[150px] rounded-full opacity-60 pointer-events-none" />
-        
+
         <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
           <Breadcrumb
-            items={[{ name: 'Case Studies', url: '/case-studies' }, { name: study?.title || 'Case Study' }]}
+            items={[{ name: 'Case Studies', url: '/case-studies' }, { name: study?.title ? (study.title.length > 35 ? study.title.slice(0, 33) + '…' : study.title) : 'Case Study' }]}
             variant="light"
             className="mb-4"
           />
