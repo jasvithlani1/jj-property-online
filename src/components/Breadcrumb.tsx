@@ -20,9 +20,9 @@ export default function Breadcrumb({ items, variant = 'dark', className = '' }: 
   const chevronColor = variant === 'dark' ? 'text-white/30' : 'text-black/30';
 
   return (
-    <nav aria-label="Breadcrumb" className={`flex items-center ${className}`}>
-      <ol className={`flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] ${textBase}`}>
-        <li>
+    <nav aria-label="Breadcrumb" className={`flex items-center overflow-x-auto ${className}`}>
+      <ol className={`flex flex-nowrap items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.15em] whitespace-nowrap ${textBase}`}>
+        <li className="shrink-0">
           <Link href="/" className={`transition-colors duration-200 ${textActive}`}>
             Home
           </Link>
@@ -30,14 +30,14 @@ export default function Breadcrumb({ items, variant = 'dark', className = '' }: 
         {items.map((item, i) => {
           const isLast = i === items.length - 1;
           return (
-            <li key={item.name} className="flex items-center gap-1.5">
+            <li key={item.name} className="flex items-center gap-1.5 shrink-0">
               <ChevronRight className={`w-3 h-3 shrink-0 ${chevronColor}`} aria-hidden="true" />
               {isLast || !item.url ? (
-                <span className={`${textCurrent} max-w-[140px] sm:max-w-[280px] truncate`} aria-current={isLast ? 'page' : undefined}>
+                <span className={`${textCurrent} max-w-[110px] sm:max-w-[200px] md:max-w-[320px] truncate`} aria-current={isLast ? 'page' : undefined}>
                   {item.name}
                 </span>
               ) : (
-                <Link href={item.url} className={`transition-colors duration-200 ${textActive}`}>
+                <Link href={item.url} className={`transition-colors duration-200 ${textActive} shrink-0`}>
                   {item.name}
                 </Link>
               )}
