@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
-import { ArrowRight, Clock, Calendar, CheckCircle2, MessageSquare, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Clock, Calendar, CheckCircle2, MessageSquare, Phone, Mail, Link2, Twitter, Linkedin } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { client, urlFor } from '../lib/sanity';
 import { PortableText } from '@portabletext/react';
@@ -128,6 +128,14 @@ export default function BlogDetail() {
   const [post, setPost] = useState<SanityPost | null>(null);
   const [otherPosts, setOtherPosts] = useState<SanityPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -225,7 +233,22 @@ export default function BlogDetail() {
           "categories": categories[]->{ title, color }
         }`;
         const others = await client.fetch(otherQuery, { slug });
-        setOtherPosts(others);
+        let combinedOthers = (others || []).slice(0, 3);
+        if (combinedOthers.length < 3) {
+          const sanitySlugSet = new Set(combinedOthers.map((p: any) => p.slug?.current));
+          const localFallbacks = localBlogPosts
+            .filter(p => p.slug !== slug && !sanitySlugSet.has(p.slug))
+            .slice(0, 3 - combinedOthers.length)
+            .map(p => ({
+              _id: p.id,
+              title: p.title,
+              slug: { current: p.slug },
+              mainImage: null,
+              categories: [{ title: p.category, color: p.categoryColor }],
+            }));
+          combinedOthers = [...combinedOthers, ...localFallbacks];
+        }
+        setOtherPosts(combinedOthers);
 
       } catch {
         // silently fall back
@@ -410,7 +433,16 @@ export default function BlogDetail() {
           {/* Sidebar */}
           <aside className="lg:col-span-4">
             <div className="sticky top-24 space-y-6">
-              
+
+              {/* Back to Blog */}
+              <Link
+                href="/blog"
+                className="hidden lg:flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted hover:text-gold transition-colors group"
+              >
+                <ArrowRight className="w-3.5 h-3.5 rotate-180 group-hover:-translate-x-1 transition-transform" />
+                Back to Blog
+              </Link>
+
               {/* Strategy Session Card */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
@@ -446,6 +478,38 @@ export default function BlogDetail() {
                   </a>
                 </div>
               </motion.div>
+
+              {/* Share This Article */}
+              <div className="p-6 rounded-[1.75rem] border border-[#011122]/5 bg-white shadow-sm">
+                <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-4">Share This Article</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={handleCopyLink}
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-[#011122]/10 text-[10px] font-bold uppercase tracking-widest text-muted hover:border-gold hover:text-gold transition-colors"
+                  >
+                    <Link2 className="w-3.5 h-3.5 shrink-0" />
+                    {copied ? 'Copied!' : 'Copy Link'}
+                  </button>
+                  <a
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post?.title || '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-[#011122]/10 text-[10px] font-bold uppercase tracking-widest text-muted hover:border-gold hover:text-gold transition-colors"
+                  >
+                    <Twitter className="w-3.5 h-3.5 shrink-0" />
+                    X / Twitter
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="col-span-2 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-[#011122]/10 text-[10px] font-bold uppercase tracking-widest text-muted hover:border-gold hover:text-gold transition-colors"
+                  >
+                    <Linkedin className="w-3.5 h-3.5 shrink-0" />
+                    Share on LinkedIn
+                  </a>
+                </div>
+              </div>
 
               {/* Related Reading */}
               {otherPosts.length > 0 && (
