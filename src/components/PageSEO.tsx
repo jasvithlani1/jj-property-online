@@ -203,9 +203,9 @@ export default function PageSEO({
     ? urlFor(settings.defaultOgImage).width(1200).height(630).url()
     : undefined;
 
-  // Full page title with site name suffix
+  // Full page title with site name suffix — skip appending if already present
   const fullTitle =
-    metaTitle === siteTitle
+    metaTitle === siteTitle || metaTitle.endsWith(`| ${siteTitle}`)
       ? metaTitle
       : `${metaTitle} | ${siteTitle}`;
 
